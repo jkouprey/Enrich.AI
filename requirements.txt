@@ -1,0 +1,29 @@
+# Enrich.AI - Requirements
+# Python 3.10+ required
+# Install: pip install -r requirements.txt
+
+# === Core UI & Data ===
+streamlit==1.48.1
+pandas==2.3.1
+numpy==1.24.4
+plotly==6.3.0
+Pillow==11.3.0
+
+# === AI / LLM (Gemini + LangGraph ReAct Agent) ===
+google-generativeai==0.8.5
+langchain==1.2.0
+langchain-core==1.2.5
+langchain-google-genai==4.1.2
+langgraph==1.0.5
+pydantic==2.11.7
+
+# === Scientific Computing ===
+scikit-learn==1.7.1
+scipy==1.15.3
+networkx==3.4.2
+
+# === HTTP ===
+requests==2.32.4
+
+# === Optional: PDF export from plots ===
+kaleido==1.2.0

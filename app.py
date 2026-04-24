@@ -129,6 +129,7 @@ def _determine_assistant_avatar(envelope: dict, previous_user_message: str = "")
 def apply_fancy_styling():
     """Apply theme based on dark_mode setting"""
     is_dark = st.session_state.get("dark_mode", True)
+    color_scheme = "dark" if is_dark else "light"
 
     if is_dark:
         # Dark theme colors
@@ -165,6 +166,7 @@ def apply_fancy_styling():
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
 
         :root {{
+            color-scheme: {color_scheme};
             --bg-primary: {bg_primary};
             --bg-secondary: {bg_secondary};
             --bg-card: {bg_card};
@@ -181,6 +183,9 @@ def apply_fancy_styling():
             --accent-red: #ef4444;
             --gradient-1: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --gradient-2: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            .stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"], .main {{
+                background-color: {bg_primary} !important;
+            }}
         }}
 
         .stApp {{
@@ -397,13 +402,13 @@ def apply_fancy_styling():
         textarea[placeholder*="genes"],
         [data-testid="stChatInput"] textarea,
         [data-testid="stChatInputContainer"] textarea {{
-            color: #f1f5f9 !important;
-            -webkit-text-fill-color: #f1f5f9 !important;
+            color: var(--text-primary) !important;
+            -webkit-text-fill-color: var(--text-primary) !important;
         }}
 
         textarea[data-testid="stChatInputTextArea"]::placeholder,
         [data-testid="stChatInput"] textarea::placeholder {{
-            color: #64748b !important;
+            color: var(--text-muted) !important;
         }}
 
         /* ========================================= */
@@ -697,6 +702,12 @@ def apply_fancy_styling():
         }
 
         /* Chat input */
+        [data-testid="stBottomBlockContainer"] {
+            background-color: var(--bg-primary) !important;
+        }
+        [data-testid="stBottom"] > div {
+            background-color: var(--bg-primary) !important;
+        }
         [data-testid="stChatInput"] {
             background: var(--bg-card) !important;
             border: 1px solid var(--border-color) !important;
@@ -704,9 +715,14 @@ def apply_fancy_styling():
         }
 
         [data-testid="stChatInput"] textarea {
-            background: transparent !important;
+            background: var(--bg-card) !important;
             color: var(--text-primary) !important;
         }
+        [data-testid="stChatInput"] > div,
+        [data-testid="stChatInput"] div[data-baseweb="base-input"],
+        [data-testid="stChatInput"] div[data-baseweb="textarea"] {
+            background: var(--bg-card) !important;
+}
 
         /* Buttons - General */
         .stButton > button {

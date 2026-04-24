@@ -4,7 +4,7 @@
   <p>An autonomous biology research assistant for gene set enrichment analysis and biological interpretation.</p>
 </div>
 
-Powered by Google Gemini 2.5 Flash and orchestrated via LangGraph, Enrich.AI uses a ReAct (Reason → Act → Observe) reasoning loop to autonomously select tools, interpret results, and synthesize biological insights — with zero hardcoded decision trees.
+Powered by Google Gemini 2.5 Flash and orchestrated via LangGraph, Enrich.AI uses a ReAct (Reason → Act → Observe) reasoning loop to autonomously select tools, interpret results, and synthesize biological insights. It can be run either from Streamlit or locally.
 
 <div align="center">
   <img src="assets/figure1.png" alt="Enrich.AI System Architecture" width="700" />

@@ -29,6 +29,7 @@ Give Enrich.AI a biological question in natural language. The model decides whic
 ## Quick Start
 
 ### 1. Clone and install
+It was tested on both Windows and Linux with Python version 3.10.11
 
 ```bash
 git clone https://github.com/jkouprey/EnrichAI.git

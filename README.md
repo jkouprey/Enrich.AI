@@ -40,8 +40,9 @@ pip install -r requirements.txt
 Or with conda:
 
 ```bash
-conda env create -f environment.yml
+conda create -n enrichai python=3.11 -y
 conda activate enrichai
+pip install -r requirements.txt
 ```
 
 ### 2. Get a Gemini API key

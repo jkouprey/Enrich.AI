@@ -15,6 +15,7 @@ langchain==1.2.0
 langchain-core==1.2.5
 langchain-google-genai==4.1.2
 langgraph==1.0.5
+langgraph-prebuilt==1.0.5
 pydantic==2.11.7
 
 # === Scientific Computing ===

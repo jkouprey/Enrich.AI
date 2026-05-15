@@ -1309,12 +1309,23 @@ def scroll_to_message(idx):
 def inject_scroll_js(element_id):
     """Inject JavaScript to scroll to an element"""
     import streamlit.components.v1 as components
+    import time
+    nonce = int(time.time() * 1000)
     components.html(f'''
         <script>
-            var element = window.parent.document.getElementById("{element_id}");
-            if (element) {{
-                element.scrollIntoView({{behavior: 'smooth', block: 'start'}});
-            }}
+            (function() {{
+                const _ = {nonce};
+                let tries = 0;
+                function scroll() {{
+                    const el = window.parent.document.getElementById("{element_id}");
+                    if (el) {{
+                        el.scrollIntoView({{behavior: 'smooth', block: 'start'}});
+                    }} else if (tries++ < 20) {{
+                        setTimeout(scroll, 50);
+                    }}
+                }}
+                scroll();
+            }})();
         </script>
     ''', height=0)
 
@@ -1877,8 +1888,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
         plot_df['term_short'] = plot_df.apply(make_unique_term, axis=1)
 
         # Sort by color_by value descending (ascending=True for horizontal bar bottom-to-top)
-        sort_col = color_col if color_col else x_col
-        plot_df = plot_df.sort_values(sort_col, ascending=True)
+        plot_df = plot_df.sort_values(x_col, ascending=True)
 
         # Calculate left margin based on max term length (approximate 7px per character)
         max_term_len = plot_df['term_short'].str.len().max()
@@ -1961,8 +1971,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
         plot_df['term_short'] = plot_df.apply(make_unique_term, axis=1)
 
         # Sort by color_by value for display order (most significant at top)
-        sort_col = color_col if color_col else x_col
-        plot_df = plot_df.sort_values(sort_col, ascending=True)
+        plot_df = plot_df.sort_values(x_col, ascending=True)
 
         # Calculate left margin based on max term length
         max_term_len = plot_df['term_short'].str.len().max()
@@ -3075,7 +3084,7 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
 
             # === SUMMARY METRICS ===
             st.markdown("#### 📊 Execution Summary")
-            col1, col2, col3, col4 = st.columns(4)
+            col1, col2, col3= st.columns(3)
             with col1:
                 st.metric("⏱️ Time", f"{exec_time:.2f}s" if exec_time else "N/A")
             with col2:
@@ -3083,8 +3092,6 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
             with col3:
                 hops = sum(1 for s in reasoning_steps if s.get("type") == "thought_action")
                 st.metric("🔄 Hops", hops)
-            with col4:
-                st.metric("📊 Confidence", f"{confidence:.0%}" if confidence else "N/A")
 
             # Tools pipeline
             if tools_used:

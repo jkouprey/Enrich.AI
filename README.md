@@ -45,16 +45,25 @@ conda activate enrichai
 pip install -r requirements.txt
 ```
 
-### 2. Get a Gemini API key
-
-Get a free key at [Google AI Studio](https://aistudio.google.com/app/apikey).
-
-### 3. Launch
+For Windows:
+1. Download folder
+2. Open cmd and navigate into the extracted folder
+3. Run:
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py
+```
+### 2. Launch
 
 ```bash
 streamlit run app.py
 ```
 
+### Also a Gemini API key is required
+
+Get a free key at [Google AI Studio](https://aistudio.google.com/app/apikey).
 Enter your API key in the sidebar when prompted.
 
 ## Architecture

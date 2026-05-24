@@ -31,9 +31,9 @@ Give Enrich.AI a biological question in natural language. The model decides whic
 ### Website
 Use it online at: [EnrichAI](https://enrichai.streamlit.app/)
 
-## OR
+### Or Locally
 
-### 1. Clone and install
+#### 1. Clone and install
 It was tested on both Windows and Linux with Python version 3.10.11
 
 ```bash
@@ -59,13 +59,13 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 ```
-### 2. Launch
+#### 2. Launch
 
 ```bash
 streamlit run app.py
 ```
 
-### Also a Gemini API key is required
+#### Also a Gemini API key is required
 
 Get a free key at [Google AI Studio](https://aistudio.google.com/app/apikey).
 Enter your API key in the sidebar when prompted.

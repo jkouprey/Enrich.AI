@@ -28,6 +28,11 @@ Give Enrich.AI a biological question in natural language. The model decides whic
 
 ## Quick Start
 
+### Website
+Use it online at: [EnrichAI](https://enrichai.streamlit.app/)
+
+## OR
+
 ### 1. Clone and install
 It was tested on both Windows and Linux with Python version 3.10.11
 

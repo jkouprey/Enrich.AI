@@ -1473,7 +1473,7 @@ def render_sidebar():
         # GitHub link at bottom
         st.markdown("""
             <div style="text-align: center; padding: 1.5rem 0; margin-top: 1rem;">
-                <a href="https://github.com/jkouprey" target="_blank" rel="noopener noreferrer" 
+                <a href="https://github.com/jkouprey/Enrich.AI" target="_blank" rel="noopener noreferrer" 
                    style="display: inline-block; text-decoration: none; transition: transform 0.2s ease;"
                    onmouseover="this.style.transform='translateY(-3px)'" 
                    onmouseout="this.style.transform='translateY(0)'">

@@ -4129,7 +4129,7 @@ def render_overview_page():
             font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
             background: transparent; white-space: pre; overflow-x: auto;">
 <span style="color: #6b7280; font-style: italic;"># 1. Clone the repository</span>
-<span style="color: #f472b6;">git</span> <span style="color: #22d3ee;">clone</span> https://github.com/jkouprey/EnrichAI.git
+<span style="color: #f472b6;">git</span> <span style="color: #22d3ee;">clone</span> https://github.com/jkouprey/Enrich.AI.git
 <span style="color: #f472b6;">cd</span> EnrichAI
 
 <span style="color: #6b7280; font-style: italic;"># 2. Create the conda environment</span>
@@ -4152,7 +4152,7 @@ def render_overview_page():
             font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
             background: transparent; white-space: pre; overflow-x: auto;">
 <span style="color: #6b7280; font-style: italic;"># 1. Clone the repository</span>
-<span style="color: #f472b6;">git</span> <span style="color: #22d3ee;">clone</span> https://github.com/jkouprey/EnrichAI.git
+<span style="color: #f472b6;">git</span> <span style="color: #22d3ee;">clone</span> https://github.com/jkouprey/Enrich.AI.git
 <span style="color: #f472b6;">cd</span> EnrichAI
 
 <span style="color: #6b7280; font-style: italic;"># 2. Create a virtual environment</span>

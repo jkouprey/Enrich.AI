@@ -27,4 +27,4 @@ networkx==3.4.2
 requests==2.32.4
 
 # === Optional: PDF export from plots ===
-kaleido==1.2.0
+kaleido==0.2.1

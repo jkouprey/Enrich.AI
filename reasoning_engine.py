@@ -79,6 +79,7 @@ for _path in _import_paths:
         sys.path.insert(0, _path)
 
 from config import CONFIG
+from llm_factory import get_llm, resolve_api_key
 from tools import (
     get_gene_info,
     db_retrieve,
@@ -696,9 +697,14 @@ class ReasoningEngine:
     - Memory persistence across queries
     """
 
-    def __init__(self, model_name: str = None):
+    def __init__(self, model_name: str = None, provider: str = None, api_key: str = None):
         """Initialize the reasoning engine."""
-        # Get model name from config or use default
+        # Provider drives which LangChain client the factory builds
+        self.provider = provider or CONFIG.get("default_provider", "gemini")
+
+        # Get model name from the provider registry or use default
+        if model_name is None:
+            model_name = CONFIG.get("providers", {}).get(self.provider, {}).get("default_model")
         if model_name is None:
             model_name = CONFIG.get("gemini", {}).get("model_name", "gemini-2.5-flash")
 
@@ -717,17 +723,17 @@ class ReasoningEngine:
         self.last_call_time = 0
         self.min_call_interval = 1.0
 
-        # Get API key
+        # Get API key: explicit -> config/env for this provider -> session state
         self.api_key = (
-                CONFIG.get("gemini", {}).get("api_key") or
-                os.environ.get("GOOGLE_API_KEY") or
-                os.environ.get("GEMINI_API_KEY") or
+                api_key or
+                resolve_api_key(self.provider) or
                 (st.session_state.get("api_key") if st else None)
         )
 
         if not self.api_key:
+            env_vars = CONFIG.get("providers", {}).get(self.provider, {}).get("api_key_env", [])
             raise ValueError(
-                "Gemini API key not found. Set GOOGLE_API_KEY or GEMINI_API_KEY"
+                f"{self.provider} API key not found. Set {' or '.join(env_vars) or 'the provider API key'}"
             )
 
         if LANGCHAIN_AVAILABLE:
@@ -737,20 +743,12 @@ class ReasoningEngine:
 
     def _init_langchain(self):
         """Initialize LangChain ReAct agent"""
-        logger.info("Initializing LangChain ReAct agent...")
+        logger.info(f"Initializing LangChain ReAct agent (provider={self.provider}, model={self.model_name})...")
 
-        gemini_config = CONFIG.get("gemini", {})
-        self.llm = ChatGoogleGenerativeAI(
+        self.llm = get_llm(
+            provider=self.provider,
             model=self.model_name,
-            google_api_key=self.api_key,
-            temperature=gemini_config.get("temperature", 0.4),
-            top_p=gemini_config.get("top_p", 0.95),
-            top_k=gemini_config.get("top_k", 40),
-            max_output_tokens=gemini_config.get("max_output_tokens", 4096),
-            max_retries=gemini_config.get("max_retries", 2),
-            convert_system_message_to_human=True,
-            thinking_budget=512,
-            include_thoughts=True,
+            api_key=self.api_key,
         )
 
         # Create tools with proper schemas
@@ -1619,18 +1617,25 @@ Provide a detailed, accurate response. If this is a follow-up question, referenc
 # FACTORY FUNCTION
 # ===============================================================================
 
-def create_reasoning_engine(model: Any = None) -> ReasoningEngine:
+def create_reasoning_engine(
+        model: Any = None,
+        provider: str = None,
+        model_name: str = None,
+        api_key: str = None
+) -> ReasoningEngine:
     """
     Factory function to create a reasoning engine.
 
     Args:
         model: Optional (for backward compatibility, ignored)
+        provider: Provider key from CONFIG["providers"]. None = configured default.
+        model_name: Model id. None = the provider's default_model.
+        api_key: Explicit key. None = resolved from config/env/session.
 
     Returns:
         ReasoningEngine instance
     """
-    model_name = CONFIG.get("gemini", {}).get("model_name", "gemini-2.5-flash")
-    return ReasoningEngine(model_name=model_name)
+    return ReasoningEngine(model_name=model_name, provider=provider, api_key=api_key)
 
 
 # ===============================================================================

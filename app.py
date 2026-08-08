@@ -309,6 +309,42 @@ def apply_fancy_styling():
             background-color: {bg_card} !important;
         }}
 
+        /* ===== Tables + download buttons: follow theme (fixes Windows light-theme leak in dark mode) ===== */
+        [data-testid="stDataFrame"] {{
+            background-color: {bg_card} !important;
+        }}
+
+        /* Table header - slightly lighter than cells */
+        [data-testid="stDataFrame"] [role="columnheader"],
+        [data-testid="stDataFrame"] thead th {{
+            background-color: {bg_card_hover} !important;
+            color: {text_primary} !important;
+        }}
+
+      /* Download-as-CSV button - unhovered follows theme */
+        [data-testid="stDownloadButton"] > button {{
+            background-color: {bg_card} !important;
+            color: {text_primary} !important;
+            border: 1px solid {border_color} !important;
+        }}
+        /* Download button - hover (kept so hovering still works) */
+        [data-testid="stDownloadButton"] > button:hover {{
+            background-color: {bg_card_hover} !important;
+            border-color: #3b82f6 !important;
+            color: {text_primary} !important;
+        }}
+
+        /* Dataframe hover toolbar */
+        [data-testid="stElementToolbar"] {{
+            background-color: {bg_card} !important;
+        }}
+        [data-testid="stElementToolbar"] button {{
+            color: {text_primary} !important;
+        }}
+        [data-testid="stElementToolbar"] button:hover {{
+            background-color: {bg_card_hover} !important;
+        }}
+
         /* Expander header (closed state) - follows theme */
         [data-testid="stSidebar"] div[data-testid="stExpander"] > details > summary {{
             background-color: {bg_card} !important;
@@ -2561,6 +2597,22 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
 
     return None
 
+def _style_df(df):
+    """Apply theme-aware colors to a dataframe (dark/light)."""
+    is_dark = st.session_state.get("dark_mode", True)
+    if is_dark:
+        _bg, _fg, _hdr_bg, _border = "#1a1f2e", "#f1f5f9", "#0f1420", "#3a4358"
+    else:
+        _bg, _fg, _hdr_bg, _border = "#ffffff", "#1e293b", "#e2e8f0", "#cbd5e1"
+    _line = "#64748b" if is_dark else "#cbd5e1"
+    return df.style.set_properties(
+        **{"background-color": _bg, "color": _fg, "border": f"1px solid {_line}"}
+    ).set_table_styles([
+        {"selector": "th", "props": [
+            ("background-color", _hdr_bg), ("color", _fg), ("border", f"1px solid {_line}")
+        ]},
+        {"selector": "td", "props": [("border", f"1px solid {_line}")]},
+    ])
 
 def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_idx: int = None):
     """Render enrichment results with Enrichr-style layout"""
@@ -2672,7 +2724,7 @@ def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_i
     div[data-testid="column"] button p,
     div[data-testid="column"] .stButton button p,
     .stButton button p {
-        background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #22d3ee 100%) !important;
+        background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 50%, #67e8f9 100%) !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
         background-clip: text !important;
@@ -2826,8 +2878,7 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
     if 'genes' in display_df.columns:
         cols.append('genes')
 
-    st.dataframe(display_df[cols], use_container_width=True, hide_index=True, height=400)
-
+    st.dataframe(_style_df(display_df[cols]), use_container_width=True, hide_index=True, height=400)
     csv = display_df.to_csv(index=False)
     st.download_button("Download as CSV", csv, "enrichment_results.csv", "text/csv",
                        key=f"dl_enrich_{hash(str(display_df.shape)) % 100000}{key_suffix}")
@@ -2952,7 +3003,6 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
                 if isinstance(enrichment_df, list):
                     enrichment_df = pd.DataFrame(enrichment_df)
                 if not enrichment_df.empty:
-                    st.markdown("### 📊 Enrichment Analysis Results")
                     render_enrichment_results(enrichment_df, envelope, msg_idx=message_idx)
 
             # Database results
@@ -3387,7 +3437,7 @@ def _render_single_gene_card(gene_info):
                             else:
                                 go_table_data.append({"Term": str(t)})
                         if go_table_data:
-                            st.dataframe(pd.DataFrame(go_table_data), use_container_width=True, hide_index=True)
+                            st.dataframe(_style_df(pd.DataFrame(go_table_data)), use_container_width=True, hide_index=True)
                     else:
                         st.caption(f"No {label} terms found")
 
@@ -3410,7 +3460,7 @@ def _render_single_gene_card(gene_info):
                         else:
                             kegg_data.append({"Pathway": str(p)})
                     if kegg_data:
-                        st.dataframe(pd.DataFrame(kegg_data), use_container_width=True, hide_index=True)
+                        st.dataframe(_style_df(pd.DataFrame(kegg_data)), use_container_width=True, hide_index=True)
                 else:
                     st.caption("No KEGG pathways found")
 
@@ -3423,7 +3473,7 @@ def _render_single_gene_card(gene_info):
                         else:
                             reactome_data.append({"Pathway": str(p)})
                     if reactome_data:
-                        st.dataframe(pd.DataFrame(reactome_data), use_container_width=True, hide_index=True)
+                        st.dataframe(_style_df(pd.DataFrame(reactome_data)), use_container_width=True, hide_index=True)
                 else:
                     st.caption("No Reactome pathways found")
 
@@ -3520,7 +3570,7 @@ def render_literature_card(papers: List[Dict], query: str = "", card_key: str = 
     if table_data:
         table_df = pd.DataFrame(table_data)
         st.dataframe(
-            table_df,
+            _style_df(table_df),
             use_container_width=True,
             hide_index=True,
             column_config={
@@ -3631,7 +3681,8 @@ def render_database_card(db_results, msg_idx: int = None):
                     display_cols.append("description_short")
 
                 if display_cols:
-                    st.dataframe(results_df[display_cols].head(100), use_container_width=True, hide_index=True)
+                    st.dataframe(_style_df(results_df[display_cols].head(100)), use_container_width=True,
+                                 hide_index=True)
 
                     # Download button
                     db_csv = results_df.to_csv(index=False)
@@ -3674,7 +3725,7 @@ def render_followup_suggestions(envelope: Dict, msg_idx: int = None):
     cols = st.columns(len(suggestions[:3]))
     for col, sugg in zip(cols, suggestions[:3]):
         with col:
-            if st.button(sugg[:30], key=f"fw_{hash(sugg)}{_ks}", use_container_width=True):
+            if st.button(sugg, key=f"fw_{hash(sugg)}{_ks}", use_container_width=True):
                 st.session_state.pending_query = sugg
                 st.rerun()
 
@@ -4583,8 +4634,11 @@ def handle_user_query(query: str):
             return None
 
     try:
-        result = st.session_state.reasoning_engine.run(query,
-                                                       selected_libraries=st.session_state.selected_libraries or None)
+        result = st.session_state.reasoning_engine.run(
+            query,
+            selected_libraries=st.session_state.selected_libraries or None,
+            progress_callback=st.session_state.get("_progress_cb"),
+        )
         envelope = result.get("envelope", {})
         return {"content": envelope.get("final_text", "I processed your request."), "envelope": envelope}
     except Exception as e:
@@ -4637,8 +4691,13 @@ def render_chat_interface():
         with st.chat_message("user", avatar=_get_user_avatar()):
             st.markdown(query)
 
-        with st.spinner("🔄 Analyzing..."):
+        with st.status("🔄 Analyzing...", expanded=True) as status:
+            def _cb(msg):
+                status.write(msg)
+            st.session_state["_progress_cb"] = _cb
             result = handle_user_query(query)
+            st.session_state["_progress_cb"] = None
+            status.update(label="✓ Analysis complete", state="complete", expanded=False)
 
         st.session_state.processing = False
 

@@ -973,6 +973,17 @@ def run_enrichment_analysis(
 
         logger.info(f"Gene list submitted. ID: {user_list_id}")
 
+        import math
+
+        def _safe_float(value, default=0.0):
+            """Coerce to a finite float; return default for strings, None, inf, or NaN."""
+            try:
+                f = float(value)
+            except (TypeError, ValueError):
+                return default
+            if not math.isfinite(f):  # rejects inf, -inf, and NaN (all invalid in JSON)
+                return default
+            return f
         # Query each library
         for library in libraries:
             try:
@@ -995,6 +1006,10 @@ def run_enrichment_analysis(
                 significant_terms = []
                 for term_data in enrichment_data:
                     adjusted_pval = term_data[6] if len(term_data) > 6 else 1.0
+                    try:
+                        adjusted_pval = float(adjusted_pval)
+                    except (TypeError, ValueError):
+                        continue  # skip terms with a non-numeric adjusted p-value
 
                     if adjusted_pval <= p_value_threshold:
                         term_name = term_data[1] if len(term_data) > 1 else ""
@@ -1016,9 +1031,9 @@ def run_enrichment_analysis(
                             "term_name": term_name,
                             "term": term_name,  # Alias for compatibility
                             "overlap": overlap_ratio,  # e.g., "4/150"
-                            "p_value": term_data[2] if len(term_data) > 2 else 1.0,
-                            "z_score": term_data[3] if len(term_data) > 3 else 0.0,  # Confirmed: z_score (can be 500+!)
-                            "combined_score": term_data[4] if len(term_data) > 4 else 0.0,
+                            "p_value": _safe_float(term_data[2] if len(term_data) > 2 else 1.0, 1.0),
+                            "z_score": _safe_float(term_data[3] if len(term_data) > 3 else 0.0, 0.0),  # can be 500+
+                            "combined_score": _safe_float(term_data[4] if len(term_data) > 4 else 0.0, 0.0),
                             "overlap_genes": genes_list,
                             "genes": genes_list,  # Alias for compatibility
                             "adjusted_p_value": adjusted_pval
@@ -1216,6 +1231,9 @@ def search_literature(
                 "first_publication_date": paper.get("firstPublicationDate", "")
             }
 
+            # Filter: skip papers with no usable abstract (useless to downstream interpretation)
+            if not (paper_info["abstract"] or "").strip():
+                continue
             results["papers"].append(paper_info)
 
         results["execution_time"] = round(time.time() - start_time, 2)

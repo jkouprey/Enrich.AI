@@ -179,7 +179,10 @@ class EnrichmentInput(BaseModel):
 
 
 class LiteratureSearchInput(BaseModel):
-    query: str = Field(description="Search query for Europe PMC")
+    query: str = Field(description=(
+        "Europe PMC search query. Build a SPECIFIC query from the user query and the results you have."
+        "You may use Europe PMC field syntax (e.g. TITLE:, ABSTRACT:) and quoted phrases for precision."
+    ))
     max_results: int = Field(default=20, description="Maximum papers to return (up to 100)")
     min_year: Optional[int] = Field(default=None, description="Minimum publication year filter")
     max_year: Optional[int] = Field(default=None, description="Maximum publication year filter")
@@ -499,6 +502,12 @@ def _wrap_search_literature(
 
         if api_key and papers:
             papers = _score_paper_relevance(query, papers, api_key)
+            # Drop papers with no usable abstract or rated Low relevance
+            # (Low = "only briefly mentions the topic"). Keep the rest.
+            filtered = [p for p in papers
+                        if (p.get("abstract") or "").strip()
+                        and str(p.get("relevance_rating", "")).strip().lower() != "low"]
+            papers = filtered if filtered else papers  # never return empty
             result["papers"] = papers
 
         # Create concise summary for LLM
@@ -592,8 +601,8 @@ Enrichment tools return lists. You provide biological meaning.
 
 Your role is to interpret what those pathways mean in the specific experimental context — identifying what is expected, mechanistically coherent, surprising, potentially artifactual, and worth follow-up.
 When biological context is provided (e.g., tissue, disease, condition), your primary task is to prioritize: rank the enriched terms by biological relevance to that context, explain why certain terms matter more than others, and flag which are noise or generic.
-You have to be detailed in your answer, highlighting terms based on context is your main aim and you have a variety if tools to validate your answer.
-You are a knowledgeable colleague reviewing results together and sharing your experience.
+You have to be consise in your answer, highlighting terms based on context is your main aim and you have a variety of tools to validate your answer.
+You are a knowledgeable colleague reviewing results together and sharing your experience. When the user explicitly asks for any specific analysis or tool, you must do it and not skip an explicitly requested action.
 
 === HOW YOU THINK ===
 
@@ -609,7 +618,12 @@ You reason, then act, then observe, then reason again. There is no fixed pipelin
 === VALIDATE WHAT YOU CLAIM IF NEEDED ===
 
 Do not state biological conclusions without evidence. Use your tools to support your interpretations:
-- Use search_literature to find papers that confirm or challenge a mechanistic link.
+- Use search_literature to find papers that confirm or challenge a mechanistic link. 
+  CONSTRUCT SPECIFIC QUERIES from the enriched terms and key genes you actually found
+  never a broad single word. If the search returns off-topic or 
+  low-quality papers, refine the query or the parameters and search again. 
+  Before searching literature decide what you actually want to answer. 
+  Decide if the literature results answered the question or you want to reframe or have a differet one.
 - Use db_retrieve with short keyword queries to check pathway membership or term overlap.
 - Use get_gene_info to verify gene functions before making claims about their role.
 - If a paper has full text available, you can retrieve it for deeper validation.
@@ -853,98 +867,116 @@ class ReasoningEngine:
 
     def _format_memory_context(self) -> str:
         """
-        Format previous query results as context for the LLM.
+        Format previous query results as context for follow-up questions.
 
-        This allows the LLM to reference previous results for follow-up questions.
-        CRITICAL: Include ALL enrichment terms so follow-ups can access complete data.
+        Gold-standard pattern: keep the MOST RECENT query in full detail (immediate
+        follow-ups need every term), and SUMMARIZE older queries (top terms + paper
+        titles only) to prevent context bloat on multi-turn sessions.
         """
         if not self.previous_envelopes:
             return ""
 
         context_parts = ["=== PREVIOUS QUERY RESULTS (for follow-up reference) ===\n"]
+        recent = self.previous_envelopes[-3:]
 
-        for i, prev in enumerate(self.previous_envelopes[-3:], 1):  # Last 3 queries
+        for i, prev in enumerate(recent, 1):
             query = prev.get("query", "")
             envelope = prev.get("envelope", {})
+            is_most_recent = (i == len(recent))
 
-            context_parts.append(f"\n--- Query {i}: \"{query[:100]}\" ---")
+            context_parts.append(f'\n--- Query {i}: "{query[:100]}" ---')
 
-            # Enrichment results - INCLUDE ALL TERMS for follow-up questions
-            if envelope.get("full_enrichment_results"):
-                enrich = envelope["full_enrichment_results"]
-                context_parts.append(f"\nEnrichment Results:")
+            enrich = envelope.get("full_enrichment_results") or {}
+            if enrich:
+                context_parts.append("\nEnrichment Results:")
                 context_parts.append(f"  Genes analyzed: {enrich.get('query_genes', [])}")
                 context_parts.append(f"  Libraries tested: {enrich.get('libraries_tested', [])}")
                 context_parts.append(f"  Total significant terms: {enrich.get('significant_terms_total', 0)}")
 
-                # Include ALL terms from ALL libraries (not truncated)
-                if enrich.get("enrichment_results"):
-                    context_parts.append("\n  COMPLETE ENRICHMENT RESULTS BY LIBRARY:")
-                    for lib, terms in enrich["enrichment_results"].items():
-                        context_parts.append(f"\n    {lib} ({len(terms)} significant terms):")
-                        for idx, term in enumerate(terms, 1):
-                            term_name = term.get("term", term.get("term_name", ""))
-                            p_val = term.get("adjusted_p_value", 1.0)
-                            genes = term.get("genes", [])
-                            overlap = term.get("overlap", "")
-                            context_parts.append(
-                                f"      {idx}. {term_name} (p={p_val:.2e}, overlap={overlap}, "
-                                f"genes: {', '.join(genes[:10])}{'...' if len(genes) > 10 else ''})"
-                            )
+                results = enrich.get("enrichment_results") or {}
+                if results:
+                    if is_most_recent:
+                        # FULL detail for the most recent query
+                        context_parts.append("\n  COMPLETE ENRICHMENT RESULTS BY LIBRARY:")
+                        for lib, terms in results.items():
+                            context_parts.append(f"\n    {lib} ({len(terms)} significant terms):")
+                            for idx, term in enumerate(terms, 1):
+                                term_name = term.get("term", term.get("term_name", ""))
+                                p_val = term.get("adjusted_p_value", 1.0)
+                                genes = term.get("genes", [])
+                                overlap = term.get("overlap", "")
+                                context_parts.append(
+                                    f"      {idx}. {term_name} (p={p_val:.2e}, overlap={overlap}, "
+                                    f"genes: {', '.join(genes[:10])}{'...' if len(genes) > 10 else ''})"
+                                )
+                    else:
+                        # SUMMARY for older queries: top 5 terms per library, no gene lists
+                        context_parts.append("\n  TOP ENRICHED TERMS (summary):")
+                        for lib, terms in results.items():
+                            top = terms[:5]
+                            names = [t.get("term", t.get("term_name", "")) for t in top]
+                            more = f" (+{len(terms) - 5} more)" if len(terms) > 5 else ""
+                            context_parts.append(f"    {lib}: {'; '.join(names)}{more}")
 
-            # Literature results - include more papers for context
-            if envelope.get("full_literature_results"):
-                papers = envelope["full_literature_results"]
-                context_parts.append(f"\nLiterature Results: {len(papers)} papers found")
-                context_parts.append("  Papers retrieved:")
-                for idx, paper in enumerate(papers[:15], 1):  # Top 15 papers
-                    title = paper.get("title", "")
-                    year = paper.get("year", paper.get("pub_year", ""))
-                    citations = paper.get("citations", paper.get("citation_count", 0))
-                    authors = paper.get("authors", [])
-                    first_author = authors[0] if authors else "Unknown"
-                    abstract = paper.get("abstract", "")[:200]
-                    context_parts.append(
-                        f"    {idx}. {title} ({first_author} et al., {year}, {citations} citations)"
-                    )
-                    if abstract:
-                        context_parts.append(f"       Abstract: {abstract}...")
+            lit = envelope.get("full_literature_results") or []
+            if lit:
+                if is_most_recent:
+                    context_parts.append(f"\nLiterature Results: {len(lit)} papers found")
+                    context_parts.append("  Papers retrieved:")
+                    for idx, paper in enumerate(lit[:15], 1):
+                        title = paper.get("title", "")
+                        year = paper.get("year", paper.get("pub_year", ""))
+                        citations = paper.get("citations", paper.get("citation_count", 0))
+                        authors = paper.get("authors", [])
+                        first_author = authors[0] if authors else "Unknown"
+                        abstract = (paper.get("abstract", "") or "")[:200]
+                        context_parts.append(
+                            f"    {idx}. {title} ({first_author} et al., {year}, {citations} citations)"
+                        )
+                        if abstract:
+                            context_parts.append(f"       Abstract: {abstract}...")
+                else:
+                    titles = [(p.get("title", "") or "")[:60] for p in lit[:3]]
+                    more = f" (+{len(lit) - 3} more)" if len(lit) > 3 else ""
+                    context_parts.append(f"\nLiterature: {len(lit)} papers — e.g. {'; '.join(titles)}{more}")
 
-            # DB results - include all
-            if envelope.get("full_db_results"):
-                db_results = envelope["full_db_results"]
-                if isinstance(db_results, list):
-                    context_parts.append(f"\nDatabase Results: {len(db_results)} result sets")
-                    for db in db_results:
-                        if isinstance(db, dict):
-                            task = db.get("task_performed", "query")
-                            total = db.get("statistics", {}).get("total_results", 0)
-                            context_parts.append(f"  Task: {task}, Results: {total}")
-                            for result in db.get("results", []):
-                                term_name = result.get("term_name", result.get("term_id", ""))
-                                desc = result.get("description", "")[:100]
-                                context_parts.append(f"    - {term_name}: {desc}")
-                elif isinstance(db_results, dict):
-                    task = db_results.get("task_performed", "query")
-                    total = db_results.get("statistics", {}).get("total_results", 0)
-                    context_parts.append(f"\nDatabase Results: Task={task}, Total={total}")
-                    for result in db_results.get("results", []):
-                        term_name = result.get("term_name", result.get("term_id", ""))
-                        context_parts.append(f"    - {term_name}")
+            # DB + gene info only for the most recent (older summarized to a mention)
+            db_results = envelope.get("full_db_results")
+            if db_results:
+                if is_most_recent:
+                    if isinstance(db_results, list):
+                        context_parts.append(f"\nDatabase Results: {len(db_results)} result sets")
+                        for db in db_results:
+                            if isinstance(db, dict):
+                                task = db.get("task_performed", "query")
+                                total = db.get("statistics", {}).get("total_results", 0)
+                                context_parts.append(f"  Task: {task}, Results: {total}")
+                                for result in db.get("results", []):
+                                    term_name = result.get("term_name", result.get("term_id", ""))
+                                    desc = (result.get("description", "") or "")[:100]
+                                    context_parts.append(f"    - {term_name}: {desc}")
+                    elif isinstance(db_results, dict):
+                        task = db_results.get("task_performed", "query")
+                        total = db_results.get("statistics", {}).get("total_results", 0)
+                        context_parts.append(f"\nDatabase Results: Task={task}, Total={total}")
+                        for result in db_results.get("results", []):
+                            term_name = result.get("term_name", result.get("term_id", ""))
+                            context_parts.append(f"    - {term_name}")
+                else:
+                    context_parts.append("\nDatabase Results: (available from earlier query)")
 
-            # Gene info
-            if envelope.get("gene_info"):
-                genes = envelope["gene_info"]
-                context_parts.append(f"\nGene Info: {len(genes)} gene(s) looked up")
-                for gene_data in genes:
-                    gene_name = gene_data.get("gene", gene_data.get("symbol", ""))
-                    summary = gene_data.get("summary", "")[:200]
-                    context_parts.append(f"  {gene_name}: {summary}...")
+            gene_info = envelope.get("gene_info")
+            if gene_info:
+                context_parts.append(f"\nGene Info: {len(gene_info)} gene(s) looked up")
+                if is_most_recent:
+                    for gene_data in gene_info:
+                        gene_name = gene_data.get("gene", gene_data.get("symbol", ""))
+                        summary = (gene_data.get("summary", "") or "")[:200]
+                        context_parts.append(f"  {gene_name}: {summary}...")
 
         context_parts.append("\n=== END PREVIOUS RESULTS ===\n")
-
         return "\n".join(context_parts)
-
+    
     def _store_envelope_in_memory(self, query: str, envelope_dict: Dict):
         """Store envelope for future follow-up questions"""
         self.previous_envelopes.append({
@@ -1324,7 +1356,8 @@ class ReasoningEngine:
 
         return envelope
 
-    def run(self, query: str, chat_history: list = None, selected_libraries: List[str] = None) -> Dict:
+    def run(self, query: str, chat_history: list = None, selected_libraries: List[str] = None,
+            progress_callback=None) -> Dict:
         """
         Main entry point - backward compatible interface for app.py.
 
@@ -1334,6 +1367,7 @@ class ReasoningEngine:
         if selected_libraries:
             self.selected_libraries = selected_libraries
 
+        self._progress_callback = progress_callback
         start_time = time.time()
         self.query_id = str(uuid.uuid4())[:8]
         self.envelope = MergedEnvelope(query_id=self.query_id)
@@ -1465,12 +1499,40 @@ class ReasoningEngine:
             messages.append(SystemMessage(content=self._langgraph_system_prompt))
         messages.append(HumanMessage(content=query))
 
-        result = self.agent_executor.invoke(
-            {"messages": messages},
-            config={"recursion_limit": 30}
-        )
+        # Stream step-by-step so we can report progress as each node/tool completes.
+        result = None
+        PRETTY = {
+            "run_enrichment_analysis": "Running enrichment analysis",
+            "search_literature": "Searching literature",
+            "db_retrieve": "Querying databases",
+            "get_gene_info": "Looking up gene information",
+        }
 
-        response_messages = result.get("messages", [])
+        def pretty(name):
+            return PRETTY.get(name, name.replace("_", " ").capitalize())
+
+        for chunk in self.agent_executor.stream(
+                {"messages": messages},
+                config={"recursion_limit": 30},
+                stream_mode="values",
+        ):
+            result = chunk  # each chunk is the full state; last one is final
+            # report the latest tool activity to the UI, if a callback was provided
+            cb = getattr(self, "_progress_callback", None)
+            if cb:
+                msgs = chunk.get("messages", [])
+                if msgs:
+                    last = msgs[-1]
+                    # a tool just produced output
+                    if type(last).__name__ == "ToolMessage":
+                        tool_name = getattr(last, "name", "tool")
+                        cb(f"✓ {pretty(tool_name)}")
+                    # the model requested tool calls
+                    elif type(last).__name__ == "AIMessage" and getattr(last, "tool_calls", None):
+                        for tc in last.tool_calls:
+                            cb(f"→ {pretty(tc.get('name', 'tool'))}")
+
+        response_messages = (result or {}).get("messages", [])
 
         # Get final output
         final_output = ""

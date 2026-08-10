@@ -22,13 +22,13 @@ import json
 import html
 import re
 from collections import defaultdict
-import google.generativeai as genai
 from PIL import Image
 
 from reasoning_engine import create_reasoning_engine
+from llm_factory import get_llm, get_utility_llm, complete_text
 from config import CONFIG
 from tool_registry import get_available_enrichr_libraries
-from visualizer import Visualizer, get_gemini_interpretation, add_pdf_download_button
+from visualizer import Visualizer, get_llm_interpretation, add_pdf_download_button
 
 # Configure logging
 logging.basicConfig(level=getattr(logging, CONFIG["logging"]["level"], "INFO"))
@@ -1256,8 +1256,15 @@ def init_session_state():
     defaults = {
         "api_key": os.environ.get("GOOGLE_API_KEY", ""),
         "api_key_valid": None,
+        # LLM selection: "free" = embedded key, "byok" = user's own key
+        "llm_mode": "free",
+        "free_model_label": (CONFIG.get("free_models") or [{}])[0].get("label", ""),
+        "byok_provider": CONFIG.get("default_provider", "gemini"),
+        "byok_model": None,
+        "byok_keys": {},  # {provider: user's api key} - kept per provider
+        "llm_signature": None,
         "reasoning_engine": None,
-        "gemini_model": None,
+        "utility_llm": None,
         "visualizer": None,
         "current_page": "chat",
         "chat_sessions": [],
@@ -1286,43 +1293,116 @@ def init_session_state():
             st.session_state[key] = value
 
 
-def validate_api_key(api_key: str) -> bool:
-    """Check if API key is valid by pinging the model"""
+def validate_api_key(api_key: str, provider: str = "gemini", model: str = None) -> bool:
+    """Check if an API key is valid by pinging the provider through the LLM factory"""
     if not api_key or len(api_key) < 10:
         return False
     try:
-        genai.configure(api_key=api_key)
-        model_name = CONFIG.get("gemini", {}).get("model_name", "gemini-2.5-flash")
-        model = genai.GenerativeModel(model_name)
-        response = model.generate_content("Hi", generation_config={"max_output_tokens": 5})
+        llm = get_llm(provider=provider, model=model, api_key=api_key)
+        llm.invoke("Hi")
         return True
     except Exception as e:
-        logger.warning(f"API key validation failed: {e}")
+        logger.warning(f"API key validation failed for {provider}: {e}")
         return False
 
 
-def get_gemini_model():
-    """Get or create the Gemini model instance.
+# --- LLM selection helpers -----------------------------------------------------
 
-    Uses the same model as the ReAct agent (CONFIG model_name).
-    Used for: visualization interpretations, plot descriptions,
-    response summaries, community naming.
+def get_embedded_key(provider: str) -> str:
+    """Deployment-provided key for a provider: st.secrets first, then environment.
+
+    This is what makes the tool free to use - no user key required.
     """
-    if st.session_state.gemini_model is None and st.session_state.api_key:
+    for name in CONFIG.get("providers", {}).get(provider, {}).get("api_key_env", []):
         try:
-            genai.configure(api_key=st.session_state.api_key)
-            model_name = CONFIG.get("gemini", {}).get("model_name", "gemini-2.5-flash")
-            st.session_state.gemini_model = genai.GenerativeModel(model_name)
+            if name in st.secrets:
+                return str(st.secrets[name])
+        except Exception:
+            pass
+        if os.environ.get(name):
+            return os.environ[name]
+    return ""
+
+
+def get_free_choice() -> dict:
+    """The currently selected entry from CONFIG['free_models']."""
+    free_models = CONFIG.get("free_models") or []
+    if not free_models:
+        return {}
+    label = st.session_state.get("free_model_label")
+    for entry in free_models:
+        if entry.get("label") == label:
+            return entry
+    return free_models[0]
+
+
+def get_active_llm_choice():
+    """Return (provider, model, api_key) for the reasoning agent.
+
+    A valid bring-your-own key wins; otherwise fall back to the free default.
+    """
+    if st.session_state.get("llm_mode") == "byok":
+        provider = st.session_state.get("byok_provider") or CONFIG.get("default_provider", "gemini")
+        user_key = ((st.session_state.get("byok_keys") or {}).get(provider) or "").strip()
+        if user_key:
+            provider_cfg = CONFIG.get("providers", {}).get(provider, {})
+            model = st.session_state.get("byok_model") or provider_cfg.get("default_model")
+            return provider, model, user_key
+
+    free = get_free_choice()
+    provider = free.get("provider", CONFIG.get("default_provider", "gemini"))
+    model = free.get("model") or CONFIG.get("providers", {}).get(provider, {}).get("default_model")
+    return provider, model, get_embedded_key(provider)
+
+
+def reset_llm_clients():
+    """Drop cached clients so the next query rebuilds them with the new selection."""
+    st.session_state.reasoning_engine = None
+    st.session_state.utility_llm = None
+    st.session_state.visualizer = None
+    st.session_state.llm_signature = None
+
+
+def get_utility_client(max_tokens: int = None):
+    """Get or create the LLM client for the non-agent features.
+
+    Runs on the SAME provider/model/key as the agent, so a bring-your-own-key
+    user is fully on their own key. Used for: visualization interpretations,
+    plot descriptions, response summaries.
+    """
+    provider, model, api_key = get_active_llm_choice()
+    if not api_key:
+        return None
+
+    # A custom token budget (e.g. summaries) gets its own short-lived client
+    if max_tokens:
+        try:
+            return get_utility_llm(provider=provider, model=model, api_key=api_key,
+                                   max_tokens=max_tokens)
         except Exception as e:
-            logger.warning(f"Failed to create Gemini model: {e}")
-    return st.session_state.gemini_model
+            logger.warning(f"Failed to create {provider} utility client: {e}")
+            return None
+
+    if st.session_state.utility_llm is None:
+        try:
+            st.session_state.utility_llm = get_utility_llm(
+                provider=provider, model=model, api_key=api_key
+            )
+        except Exception as e:
+            logger.warning(f"Failed to create {provider} utility client: {e}")
+    return st.session_state.utility_llm
+
+
+def get_utility_model_id() -> str:
+    """provider:model string - used as a cache key for cached interpretations."""
+    provider, model, _ = get_active_llm_choice()
+    return f"{provider}:{model}"
 
 
 def get_visualizer():
     """Get or create visualizer"""
     if st.session_state.visualizer is None:
-        gemini = get_gemini_model()
-        st.session_state.visualizer = Visualizer(gemini_model=gemini)
+        st.session_state.visualizer = Visualizer(llm=get_utility_client())
     return st.session_state.visualizer
 
 
@@ -1451,31 +1531,124 @@ def render_sidebar():
         # Configuration - centered header
         st.markdown("<h5 style='text-align: center;'>⚙️ Configuration</h5>", unsafe_allow_html=True)
 
-        api_key = st.text_input("Gemini API Key", value=st.session_state.api_key,
-                                type="password", key="api_key_input", placeholder="Enter API key...")
-
-        if api_key != st.session_state.api_key:
-            st.session_state.api_key = api_key
+        # NOTE: these widgets deliberately pass no index=/value= parameter. Streamlit
+        # derives a keyed widget's identity from its parameters, so recomputing
+        # index= each run orphans the stored state and the selection fails to stick.
+        # Instead the widget's own session_state entry is seeded once and owns the value.
+        mode_options = ["Free", "Use my own key"]
+        if st.session_state.get("llm_mode_radio") not in mode_options:
+            st.session_state.llm_mode_radio = (
+                mode_options[0] if st.session_state.llm_mode == "free" else mode_options[1]
+            )
+        mode_label = st.radio(
+            "Model source",
+            options=mode_options,
+            horizontal=True,
+            key="llm_mode_radio",
+            label_visibility="collapsed",
+        )
+        selected_mode = "free" if mode_label == "Free" else "byok"
+        if selected_mode != st.session_state.llm_mode:
+            st.session_state.llm_mode = selected_mode
             st.session_state.api_key_valid = None
-            st.session_state.reasoning_engine = None
-            st.session_state.gemini_model = None
-            st.session_state.visualizer = None
+            reset_llm_clients()
 
-        # Center the check button
-        col1, col2, col3 = st.columns([1, 2, 1])
-        with col2:
-            if st.button("Check", key="check_api", use_container_width=True):
-                if api_key:
-                    with st.spinner("..."):
-                        st.session_state.api_key_valid = validate_api_key(api_key)
-                    st.rerun()
+        providers_cfg = CONFIG.get("providers", {})
 
-        if st.session_state.api_key_valid is True:
-            st.markdown('<p class="api-valid" style="text-align: center;">✓ API key is valid</p>',
-                        unsafe_allow_html=True)
-        elif st.session_state.api_key_valid is False:
-            st.markdown('<p class="api-invalid" style="text-align: center;">✗ Invalid API key</p>',
-                        unsafe_allow_html=True)
+        if st.session_state.llm_mode == "free":
+            # --- FREE: models verified to drive the agent, no user key needed ---
+            free_models = CONFIG.get("free_models") or []
+            free_labels = [m.get("label", m.get("model", "")) for m in free_models]
+
+            if free_labels:
+                if st.session_state.get("free_model_select") not in free_labels:
+                    current = st.session_state.free_model_label
+                    st.session_state.free_model_select = current if current in free_labels else free_labels[0]
+                chosen = st.selectbox("Free model", free_labels, key="free_model_select")
+                if chosen != st.session_state.free_model_label:
+                    st.session_state.free_model_label = chosen
+                    reset_llm_clients()
+
+            free_provider = get_free_choice().get("provider", "gemini")
+            if get_embedded_key(free_provider):
+                st.markdown('<p class="api-valid" style="text-align: center;">✓ Free to use — no API key needed</p>',
+                            unsafe_allow_html=True)
+            else:
+                st.markdown('<p class="api-invalid" style="text-align: center;">✗ No free key configured</p>',
+                            unsafe_allow_html=True)
+                st.caption("Set the provider key in the environment or .streamlit/secrets.toml, "
+                           "or switch to \"Use my own key\".")
+
+        else:
+            # --- BYO KEY: pick a provider, supply a key, pick a model ---
+            provider_keys = list(providers_cfg.keys())
+            provider_labels = [providers_cfg[p].get("label", p) for p in provider_keys]
+
+            if st.session_state.get("byok_provider_select") not in provider_labels:
+                current_provider = st.session_state.byok_provider
+                st.session_state.byok_provider_select = providers_cfg.get(
+                    current_provider, {}).get("label", provider_labels[0])
+            chosen_label = st.selectbox("Provider", provider_labels, key="byok_provider_select")
+            provider = provider_keys[provider_labels.index(chosen_label)]
+
+            if provider != st.session_state.byok_provider:
+                st.session_state.byok_provider = provider
+                st.session_state.byok_model = providers_cfg[provider].get("default_model")
+                st.session_state.api_key_valid = None
+                reset_llm_clients()
+
+            # Widget keys are scoped per provider so switching provider never
+            # carries over the previous provider's key or an invalid model.
+            stored_key = st.session_state.byok_keys.get(provider, "")
+            key_widget = f"byok_key_input_{provider}"
+            if key_widget not in st.session_state:
+                st.session_state[key_widget] = stored_key
+            user_key = st.text_input(
+                f"{providers_cfg[provider].get('label', provider)} API Key",
+                type="password", key=key_widget, placeholder="Enter API key...",
+            )
+            if user_key != stored_key:
+                st.session_state.byok_keys[provider] = user_key
+                st.session_state.api_key_valid = None
+                reset_llm_clients()
+
+            models = providers_cfg[provider].get("models", [])
+            if models:
+                model_widget = f"byok_model_select_{provider}"
+                if st.session_state.get(model_widget) not in models:
+                    current_model = st.session_state.byok_model
+                    st.session_state[model_widget] = (
+                        current_model if current_model in models
+                        else providers_cfg[provider].get("default_model", models[0])
+                    )
+                chosen_model = st.selectbox("Model", models, key=model_widget)
+                if chosen_model != st.session_state.byok_model:
+                    st.session_state.byok_model = chosen_model
+                    st.session_state.api_key_valid = None
+                    reset_llm_clients()
+
+            # Center the check button
+            col1, col2, col3 = st.columns([1, 2, 1])
+            with col2:
+                if st.button("Check", key="check_api", use_container_width=True):
+                    if st.session_state.byok_keys.get(provider):
+                        with st.spinner("..."):
+                            st.session_state.api_key_valid = validate_api_key(
+                                st.session_state.byok_keys[provider],
+                                provider=provider,
+                                model=st.session_state.byok_model,
+                            )
+                        st.rerun()
+
+            if st.session_state.api_key_valid is True:
+                st.markdown('<p class="api-valid" style="text-align: center;">✓ API key is valid</p>',
+                            unsafe_allow_html=True)
+            elif st.session_state.api_key_valid is False:
+                st.markdown('<p class="api-invalid" style="text-align: center;">✗ Invalid API key</p>',
+                            unsafe_allow_html=True)
+
+            if not st.session_state.byok_keys.get(provider):
+                st.caption("No key entered — the free model will be used.")
 
         # Enrichr Libraries
         with st.expander("📚 Enrichr Libraries", expanded=False):
@@ -2460,7 +2633,7 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
     Create the FULL-SIZE figure for thumbnail conversion.
     Uses white/light theme for clean thumbnail appearance.
     """
-    # Create lightweight Visualizer without gemini_model - plot rendering doesn't need AI.
+    # Create lightweight Visualizer without an LLM - plot rendering doesn't need AI.
     # Avoids unhashable session_state access when called from @st.cache_data context.
     visualizer = Visualizer()
 
@@ -2889,7 +3062,7 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
     st.markdown("##### 🤖 Detailed AI Interpretations")
 
     visualizer = get_visualizer()
-    if visualizer and visualizer.gemini_model:
+    if visualizer and visualizer.llm:
         # Overall interpretation
         with st.expander("📊 Overall Biological Interpretation", expanded=True):
             top_terms = df.nsmallest(15, 'adjusted_p_value')['term'].tolist()
@@ -2900,7 +3073,8 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
 4. Suggested follow-up analyses"""
 
             data = {"top_terms": top_terms, "libraries": df['library'].unique().tolist()}
-            interp = get_gemini_interpretation(visualizer.gemini_model, prompt, json.dumps(data))
+            interp = get_llm_interpretation(visualizer.llm, prompt, json.dumps(data),
+                                            get_utility_model_id())
             st.markdown(interp)
 
 
@@ -3261,8 +3435,9 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
 
 def generate_response_summary(content: str, envelope: Dict) -> str:
     """Generate a comprehensive AI summary from the full response and envelope data"""
-    gemini = get_gemini_model()
-    if not gemini:
+    summary_max_tokens = CONFIG.get("gemini", {}).get("summary_max_tokens", 8192)
+    llm = get_utility_client(max_tokens=summary_max_tokens)
+    if not llm:
         # Fallback: extract more content
         lines = content.split('\n')
         summary_lines = []
@@ -3341,9 +3516,7 @@ PARAGRAPH 3: Biological interpretation and implications:
 
 Write as flowing prose. NO bullet points, NO headers. Be specific - mention actual pathway names, GO terms, p-values where relevant. This is the MAIN content users will see."""
 
-        summary_max_tokens = CONFIG.get("gemini", {}).get("summary_max_tokens", 8192)
-        response = gemini.generate_content(prompt, generation_config={"max_output_tokens": summary_max_tokens})
-        return response.text if hasattr(response, 'text') else content[:800]
+        return complete_text(llm, prompt) or content[:800]
     except Exception as e:
         logger.error(f"Summary generation failed: {e}")
         # Fallback - extract more content
@@ -4125,15 +4298,19 @@ def render_overview_page():
     # ── 5. HOW TO USE ──
     st.markdown("### How to Use Enrich.AI")
 
-    st.markdown("#### Getting a Gemini API Key")
+    st.markdown("#### Using Your Own API Key (optional)")
     st.markdown(
-        "To use Enrich.AI, you need a free Google Gemini API key. "
-        "Get one here: **[Google AI Studio — Get API Key](https://aistudio.google.com/app/apikey)**"
+        "Enrich.AI is free to use — no API key required. "
+        "If you would rather run it on your own account or a different model, switch the sidebar to "
+        "**Use my own key**, pick a provider, and paste your key. "
+        "Keys: **[Google AI Studio](https://aistudio.google.com/app/apikey)** · "
+        "**[OpenAI](https://platform.openai.com/api-keys)** · "
+        "**[Groq](https://console.groq.com/keys)**"
     )
 
     st.markdown("#### Quick Start")
     st.markdown("""
-    1. **Enter your Gemini API key** in the sidebar and verify it shows a green checkmark
+    1. **Just start typing** — the free model is selected by default, no API key needed
     2. **Write anything in the chat** — Enrich.AI understands natural language queries about biology
     3. **For enrichment analysis:**
        - Libraries can be selected from the **Enrichr Libraries** button in the sidebar, or specified manually in chat
@@ -4221,12 +4398,13 @@ def render_overview_page():
 
     st.markdown("#### API Key Configuration")
     st.markdown("""
-There are two ways to provide your Gemini API key:
+Enrich.AI ships with an embedded key, so it runs free out of the box. To use your own key instead:
 
-**In the UI** — Enter it in the sidebar text field after launching. 
-This is the easiest approach and requires no configuration files.
+**In the UI** — Switch the sidebar to **Use my own key**, choose a provider
+(Gemini, OpenAI or Groq), paste your key and pick a model. No configuration files needed.
 
-**As an environment variable** — Set it before launching:
+**As an environment variable** — Set it before launching
+(`GOOGLE_API_KEY`, `OPENAI_API_KEY` or `GROQ_API_KEY`):
 """)
     st.html("""
     <div style="background: #000000; border: 1px solid #1e293b; border-radius: 10px;
@@ -4621,14 +4799,23 @@ def render_library_browser():
 # ===============================================================================
 
 def handle_user_query(query: str):
-    if not st.session_state.api_key:
-        st.error("Please enter your Gemini API key.")
+    provider, model, api_key = get_active_llm_choice()
+
+    if not api_key:
+        if st.session_state.get("llm_mode") == "byok":
+            st.error("Please enter your API key in the sidebar, or switch to the free model.")
+        else:
+            st.error("No free API key is configured. Add your own key in the sidebar.")
         return None
 
-    if st.session_state.reasoning_engine is None:
-        os.environ["GOOGLE_API_KEY"] = st.session_state.api_key
+    # Rebuild the engine whenever the provider/model/key selection changes
+    signature = (provider, model, api_key)
+    if st.session_state.reasoning_engine is None or st.session_state.llm_signature != signature:
         try:
-            st.session_state.reasoning_engine = create_reasoning_engine()
+            st.session_state.reasoning_engine = create_reasoning_engine(
+                provider=provider, model_name=model, api_key=api_key
+            )
+            st.session_state.llm_signature = signature
         except Exception as e:
             st.error(f"Failed to initialize: {e}")
             return None

@@ -106,6 +106,73 @@ def get_llm(
     raise ValueError(f"Unsupported provider type '{provider_type}' for provider '{provider}'")
 
 
+def get_utility_llm(
+    provider: Optional[str] = None,
+    model: Optional[str] = None,
+    api_key: Optional[str] = None,
+    max_tokens: Optional[int] = None,
+    **params: Any,
+):
+    """
+    Chat client for one-shot text generation: visualization interpretations,
+    response summaries and paper-relevance scoring.
+
+    Same provider/model as the agent, but without the agent's thinking-trace
+    settings - those exist to populate the reasoning trace, and here they would
+    only consume the output budget and turn the reply into content blocks.
+    """
+    provider = provider or CONFIG.get("default_provider", "gemini")
+    provider_cfg = get_provider_config(provider)
+
+    kwargs: Dict[str, Any] = {}
+    if provider_cfg.get("type") == "google":
+        kwargs["thinking_budget"] = 0
+        kwargs["include_thoughts"] = False
+        if max_tokens:
+            kwargs["max_output_tokens"] = max_tokens
+    elif max_tokens:
+        kwargs["max_tokens"] = max_tokens
+
+    kwargs.update(params)
+    return get_llm(provider=provider, model=model, api_key=api_key, **kwargs)
+
+
+def extract_text(message: Any) -> str:
+    """Pull plain text out of a LangChain reply.
+
+    Content is a string for OpenAI-compatible providers but may be a list of
+    blocks (including thinking blocks) for Gemini.
+    """
+    content = getattr(message, "content", message)
+
+    if isinstance(content, str):
+        return content.strip()
+
+    if isinstance(content, list):
+        parts = []
+        for block in content:
+            if isinstance(block, dict):
+                if block.get("type") == "thinking":
+                    continue
+                if "text" in block:
+                    parts.append(block["text"])
+            elif isinstance(block, str):
+                parts.append(block)
+        return " ".join(parts).strip()
+
+    return str(content).strip()
+
+
+def complete_text(llm: Any, prompt: str) -> str:
+    """Run a one-shot prompt and return plain text.
+
+    Raises on provider errors so callers keep their own fallback behaviour.
+    """
+    if llm is None:
+        raise ValueError("No LLM client available")
+    return extract_text(llm.invoke(prompt))
+
+
 def _build_google(model: str, api_key: Optional[str], **params: Any):
     """ChatGoogleGenerativeAI with the exact parameter set the agent has always used."""
     from langchain_google_genai import ChatGoogleGenerativeAI

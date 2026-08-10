@@ -1,0 +1,29 @@
+{
+  "batch_id": "msgbatch_013pUES4EDhNJaNFPtSS28Bn",
+  "cost": 0.22503900000000004,
+  "source": "verify_db_headline_v2.csv",
+  "categories": {
+    "ABSENCE": 44,
+    "GENUINE": 14,
+    "TERMINOLOGY": 28
+  },
+  "correct": 1961,
+  "upper_bound": {
+    "k": 86,
+    "n": 2047,
+    "rate": 0.04201270151441133,
+    "ci": [
+      0.03414550868064686,
+      0.05159568166774475
+    ]
+  },
+  "corrected": {
+    "k": 14,
+    "n": 2047,
+    "rate": 0.006839276990718124,
+    "ci": [
+      0.004078363972461937,
+      0.011447749794686145
+    ]
+  }
+}

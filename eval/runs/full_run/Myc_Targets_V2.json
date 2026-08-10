@@ -1,0 +1,1627 @@
+{
+  "gene_set": "Myc_Targets_V2",
+  "context": "Myc Targets V2",
+  "genes": [
+    "SLC19A1",
+    "MRTO4",
+    "TMEM97",
+    "RRP9",
+    "PES1",
+    "TFB2M",
+    "EXOSC5",
+    "IPO4",
+    "NDUFAF4",
+    "NOC4L",
+    "MYC",
+    "SRM",
+    "PA2G4",
+    "GNL3",
+    "NOLC1",
+    "WDR43",
+    "RABEPK",
+    "NOP16",
+    "TBRG4",
+    "DDX18",
+    "NIP7",
+    "WDR74",
+    "BYSL",
+    "HSPD1",
+    "PLK4",
+    "NOP2",
+    "PPAN",
+    "NOP56",
+    "RCL1",
+    "NPM1",
+    "AIMP2",
+    "RRP12",
+    "PPRC1",
+    "TCOF1",
+    "MCM5",
+    "HK2",
+    "CBX3",
+    "PLK1",
+    "PHB",
+    "MCM4",
+    "CDK4",
+    "DUSP2",
+    "MYBBP1A",
+    "UTP20",
+    "PRMT3",
+    "FARSA",
+    "MAP3K6",
+    "LAS1L",
+    "PUS1",
+    "HSPE1",
+    "SLC29A2",
+    "DCTPP1",
+    "SUPV3L1",
+    "SORD",
+    "IMP4",
+    "GRWD1",
+    "UNG",
+    "MPHOSPH10"
+  ],
+  "n_genes": 58,
+  "query": "Analyze this gene set (biological context: Myc Targets V2) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: SLC19A1, MRTO4, TMEM97, RRP9, PES1, TFB2M, EXOSC5, IPO4, NDUFAF4, NOC4L, MYC, SRM, PA2G4, GNL3, NOLC1, WDR43, RABEPK, NOP16, TBRG4, DDX18, NIP7, WDR74, BYSL, HSPD1, PLK4, NOP2, PPAN, NOP56, RCL1, NPM1, AIMP2, RRP12, PPRC1, TCOF1, MCM5, HK2, CBX3, PLK1, PHB, MCM4, CDK4, DUSP2, MYBBP1A, UTP20, PRMT3, FARSA, MAP3K6, LAS1L, PUS1, HSPE1, SLC29A2, DCTPP1, SUPV3L1, SORD, IMP4, GRWD1, UNG, MPHOSPH10",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 49,
+  "n_papers": 4,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 4,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 4,
+    "cited_pmids": [
+      "41514470",
+      "41777667"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "The analysis of the provided gene set, identified as \"Myc Targets V2,\" reveals a prominent enrichment of biological processes and pathways directly associated with cellular growth and proliferation, consistent with the known oncogenic functions of Myc.\n\n## Detailed Analysis\n\nThe enrichment analysis using the GO_Biological_Process_2023 and KEGG_2021_Human libraries yielded highly significant terms. The most striking finding is the robust enrichment of **Ribosome Biogenesis** and related processes (e.g., \"Ribonucleoprotein Complex Biogenesis\", \"rRNA Processing\", \"Ribosomal Large Subunit Biogenesis\", and \"Ribosomal Small Subunit Biogenesis\"). This is observed across both GO and KEGG libraries, with \"Ribosome biogenesis in eukaryotes\" being the top KEGG term (adjusted p-value = 2.11e-06). This indicates that the gene set is heavily involved in the production of ribosomes, the cellular machinery responsible for protein synthesis.\n\nBeyond ribosome biogenesis, terms related to **Cell Cycle** and **DNA Replication** are also significantly enriched. These include \"Cell cycle\" (KEGG_2021_Human, adjusted p-value = 0.00119), \"DNA Metabolic Process,\" \"DNA Duplex Unwinding,\" \"Regulation Of DNA-templated DNA Replication,\" and \"Regulation Of Cell Cycle G2/M Phase Transition.\" The presence of genes like *CDK4*, *PLK1*, *MCM4*, and *MCM5* in these terms further underscores a role in promoting cell division.\n\nThe literature search strongly supports these findings and provides direct mechanistic links to MYC. For instance, studies explicitly discuss the connection between MYC and ribosome biogenesis, often in the context of cancer (Rezaenasab et al., 2026; Nasab et al., 2025). Furthermore, the role of the nucleolus, where ribosome biogenesis occurs, as a key hub linking proliferation and cell cycle regulation, with MYC as a central regulator, is also highlighted in the retrieved literature (Moraleva et al., 2026). These findings reinforce that MYC's oncogenic activity largely stems from its ability to enhance protein synthesis and drive cells through the cell cycle.\n\nIn summary, the \"Myc Targets V2\" gene set is primarily characterized by its involvement in **ribosome biogenesis** and **cell cycle progression**. These are well-established core functions through which MYC promotes cell growth and proliferation, often leading to oncogenesis.\n\n### References\n*   Rezaenasab A, Zargar SJ, Peymani M, Ghaedi K. TMEM105 upregulation promotes colorectal cancer malignancy: a novel prognostic biomarker potentially linked to the MYC-Ribosome biogenesis axis. (2026) PMID:41514470\n*   Nasab AR, Zargar SJ, Peymani M, Ghaedi K. LncRNA TMEM105 Promotes Malignancy via the MYC-Ribosome Biogenesis Axis: A Novel Prognostic Biomarker and Therapeutic Target in Colorectal Cancer (2025)\n*   Moraleva А, Antipova N, Pavlov P, Dobrochaeva K, Rubtsov Y. Nucleolus as a cornerstone linking proliferation and metabolism to cellular responses to stress: involvement of transcription factors MYC and p53. (2026) PMID:41777667",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'libraries': 'GO_Biological_Process_2023, KEGG_2021_Human', 'genes': 'SLC19A1, MRTO4, TMEM97, RRP9, PES1, TFB2M, EXOSC5, IPO4, NDUFAF4, NOC4L, MYC, SRM, PA2G4, GNL3, NOLC1, WDR43, RABEPK, NOP16, TBRG4, DDX18, NIP7, WDR74, BYSL, HSPD1, PLK4, NOP2, PPAN, NOP56, RCL1, NPM1, AIMP2, RRP12, PPRC1, TCOF1, MCM5, HK2, CBX3, PLK1, PHB, MCM4, CDK4, DUSP2, MYBBP1A, UTP20, PRMT3, FARSA, MAP3K6, LAS1L, PUS1, HSPE1, SLC29A2, DCTPP1, SUPV3L1, SORD, IMP4, GRWD1, UNG, MPHOSPH10'}",
+    "Tool: search_literature | Args: {'max_results': 5, 'query': 'MYC AND (\"ribosome biogenesis\" OR \"rRNA processing\" OR \"cell cycle\" OR \"DNA replication\")'}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Myc Targets V2) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: SLC19A1, MRTO4, TMEM97, RRP9, PES1, TFB2M, EXOSC5, IPO4, NDUFAF4,"
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Approach to Deciphering the Biological Significance of this Gene List**\n\nOkay, so I've been given a gene list and I need to extract its meaning, specifically in the context of \"Myc Targets V2.\" My plan is pretty straightforward, and it's something I've done countless times. First, I need to run an enrichment analysis. I'll use the provided gene list – *SLC19A1, MRTO4, TMEM97, RRP9, PES1, TFB2M, EXOSC5, IPO4, NDUFAF4, NOC4L, MYC, SRM, PA2G4, GNL3, NOLC1, WDR43, RABEPK, NOP16, TBRG4, DDX18, NIP7, WDR74, BYSL, HSPD1, PLK4, NOP2, PPAN, NOP56, RCL1, NPM1, AIMP2, RRP12, PPRC1, TCOF1, MCM5, HK2, CBX3, PLK1, PHB, MCM4, CDK4, DUSP2, MYBBP1A, UTP20, PRMT3, FARSA, MAP3K6, LAS1L, PUS1, HSPE1, SLC29A2, DCTPP1, SUPV3L1, SORD, IMP4, GRWD1, UNG, MPHOSPH10* – and the specified libraries, `GO_Biological_Process_2023` and `KEGG_2021_Human`. I'm expecting some significant terms to pop up.\n\nThen, the interpretation begins. \"Myc Targets V2\" is the key. I'll need to critically evaluate the enriched terms and identify those that are most relevant to Myc's known functions – probably focusing on processes related to cell cycle regulation, proliferation, metabolism, and ribosome biogenesis, knowing that this is a common theme for Myc targets. I'll be looking for overlaps and connections.\n\nAfter that, I'll move on to a literature search. I'll construct a very specific query, using the enriched terms I've identified, and of course \"Myc\" to hone in on supporting evidence. I'll set the literature search to return a maximum of 5 results initially; this is a good starting point, and I can always adjust that number if needed. The query will need to be precise to get the most relevant hits.\n\nI need to make sure I cite only papers that are actually *returned* by the search. Nothing worse than citing something that the search engine didn't find! Finally, I'll synthesize all this information into a concise summary. I'll highlight the most important terms and present a coherent, focused interpretation based on the \"Myc Targets V2\" context. That's the plan.",
+      "action": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023, KEGG_2021_Human, genes=SLC19A1, MRTO4, TMEM97, RRP9, PES1, TFB2M, EXOSC5,...",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "a13940e6-e68e-4433-a47b-ff86b95c1219",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 58 | Total significant terms: 49"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "## Summary\n\nThe analysis of the provided gene set, interpreted within the context of \"Myc Targets V2\", strongly indicates that the genes are primarily involved in fundamental cellular processes crucial for cell growth and division. The most prominent themes are **ribosome biogenesis and RNA processing**, followed by **cell cycle regulation** and **DNA replication**. This aligns with the known oncogenic roles of MYC, which drives cellular anabolism and proliferation.\n\n## Detailed Analysis\n\n### En"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so the enrichment analysis is really jumping out at me. The results are screaming **Ribosome Biogenesis, rRNA Processing**, and related GO terms. I'm also seeing \"Ribosome biogenesis in eukaryotes\" from KEGG, and those are all showing incredibly significant p-values, making it the most obvious hit. Given that the context is \"Myc Targets V2,\" I'm really not surprised. MYC is a major player in driving cell growth and proliferation, and we already know it's deeply involved in ribosome biogenesis. It fits the known biology perfectly.\n\nBeyond that, I see solid enrichment in terms related to **DNA Replication, Cell Cycle Regulation**, and **Chromatin Organization**. The p-values are a bit higher, but they are still significant. The \"Cell Cycle\" term from KEGG is also present. This confirms my expectation that MYC is driving the cell cycle machinery, which is essential for its proliferative function. And, of course, MYC's role as a transcription factor naturally implies its influence on chromatin.\n\nThe biological interpretation here is pretty clear: I'm seeing a direct link between MYC and these key processes. I need to focus my understanding on these points:\n\n1.  **Ribosome Biogenesis and RNA Processing:** This is the strongest signal, showing that MYC is really pushing the cell's protein synthesis capabilities.\n2.  **Cell Cycle and DNA Replication:** This is right where I'd expect to see MYC's influence.\n3.  **Chromatin Organization:** This further reinforces MYC as a transcription factor with direct effects on cellular architecture.\n\nMy next step is to head straight to the literature. I need to solidify this interpretation. I'm going to formulate a targeted query for `search_literature`. My search string will be a combination of \"MYC\" with the top enriched terms, such as \"ribosome biogenesis\", \"rRNA processing\", \"cell cycle\", and \"DNA replication\".",
+      "action": "search_literature",
+      "args": "max_results=5, query=MYC AND (\"ribosome biogenesis\" OR \"rRNA processing...",
+      "tool_name": "search_literature",
+      "tool_call_id": "0493d852-dd67-4605-ad90-fd97243ac5af",
+      "observation": "=== LITERATURE SEARCH: 'MYC AND (\"ribosome biogenesis\" OR \"rRNA processing\" OR \"cell cycle\" OR \"DNA replication\")' === | Found 4 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "The analysis of the provided gene set, identified as \"Myc Targets V2,\" reveals a prominent enrichment of biological processes and pathways directly associated with cellular growth and proliferation, consistent with the known oncogenic functions of Myc.\n\n## Detailed Analysis\n\nThe enrichment analysis using the GO_Biological_Process_2023 and KEGG_2021_Human libraries yielded highly significant terms. The most striking finding is the robust enrichment of **Ribosome Biogenesis** and related processes"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023, KEGG_2021_Human, genes=SLC19A1, MRTO4, TMEM97, RRP9, PES1, TFB2M, EXOSC5,...",
+      "thought": "**My Approach to Deciphering the Biological Significance of this Gene List**\n\nOkay, so I've been given a gene list and I need to extract its meaning, specifically in the context of \"Myc Targets V2.\" My plan is pretty straightforward, and it's something I've done countless times. First, I need to run an enrichment analysis. I'll use the provided gene list – *SLC19A1, MRTO4, TMEM97, RRP9, PES1, TFB2M, EXOSC5, IPO4, NDUFAF4, NOC4L, MYC, SRM, PA2G4, GNL3, NOLC1, WDR43, RABEPK, NOP16, TBRG4, DDX18, NIP7, WDR74, BYSL, HSPD1, PLK4, NOP2, PPAN, NOP56, RCL1, NPM1, AIMP2, RRP12, PPRC1, TCOF1, MCM5, HK2, CBX3, PLK1, PHB, MCM4, CDK4, DUSP2, MYBBP1A, UTP20, PRMT3, FARSA, MAP3K6, LAS1L, PUS1, HSPE1, SLC29A2, DCTPP1, SUPV3L1, SORD, IMP4, GRWD1, UNG, MPHOSPH10* – and the specified libraries, `GO_Biological_Process_2023` and `KEGG_2021_Human`. I'm expecting some significant terms to pop up.\n\nThen, the interpretation begins. \"Myc Targets V2\" is the key. I'll need to critically evaluate the enriched terms and identify those that are most relevant to Myc's known functions – probably focusing on processes related to cell cycle regulation, proliferation, metabolism, and ribosome biogenesis, knowing that this is a common theme for Myc targets. I'll be looking for overlaps and connections.\n\nAfter that, I'll move on to a literature search. I'll construct a very specific query, using the enriched terms I've identified, and of course \"Myc\" to hone in on supporting evidence. I'll set the literature search to return a maximum of 5 results initially; this is a good starting point, and I can always adjust that number if needed. The query will need to be precise to get the most relevant hits.\n\nI need to make sure I cite only papers that are actually *returned* by the search. Nothing worse than citing something that the search engine didn't find! Finally, I'll synthesize all this information into a concise summary. I'll highlight the most important terms and present a coherent, focused interpretation based on the \"Myc Targets V2\" context. That's the plan.",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 58 | Total significant terms: 49"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "max_results=5, query=MYC AND (\"ribosome biogenesis\" OR \"rRNA processing...",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so the enrichment analysis is really jumping out at me. The results are screaming **Ribosome Biogenesis, rRNA Processing**, and related GO terms. I'm also seeing \"Ribosome biogenesis in eukaryotes\" from KEGG, and those are all showing incredibly significant p-values, making it the most obvious hit. Given that the context is \"Myc Targets V2,\" I'm really not surprised. MYC is a major player in driving cell growth and proliferation, and we already know it's deeply involved in ribosome biogenesis. It fits the known biology perfectly.\n\nBeyond that, I see solid enrichment in terms related to **DNA Replication, Cell Cycle Regulation**, and **Chromatin Organization**. The p-values are a bit higher, but they are still significant. The \"Cell Cycle\" term from KEGG is also present. This confirms my expectation that MYC is driving the cell cycle machinery, which is essential for its proliferative function. And, of course, MYC's role as a transcription factor naturally implies its influence on chromatin.\n\nThe biological interpretation here is pretty clear: I'm seeing a direct link between MYC and these key processes. I need to focus my understanding on these points:\n\n1.  **Ribosome Biogenesis and RNA Processing:** This is the strongest signal, showing that MYC is really pushing the cell's protein synthesis capabilities.\n2.  **Cell Cycle and DNA Replication:** This is right where I'd expect to see MYC's influence.\n3.  **Chromatin Organization:** This further reinforces MYC as a transcription factor with direct effects on cellular architecture.\n\nMy next step is to head straight to the literature. I need to solidify this interpretation. I'm going to formulate a targeted query for `search_literature`. My search string will be a combination of \"MYC\" with the top enriched terms, such as \"ribosome biogenesis\", \"rRNA processing\", \"cell cycle\", and \"DNA replication\".",
+      "observation": "=== LITERATURE SEARCH: 'MYC AND (\"ribosome biogenesis\" OR \"rRNA processing\" OR \"cell cycle\" OR \"DNA replication\")' === | Found 4 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "SLC19A1",
+      "MRTO4",
+      "TMEM97",
+      "RRP9",
+      "PES1",
+      "TFB2M",
+      "EXOSC5",
+      "IPO4",
+      "NDUFAF4",
+      "NOC4L",
+      "MYC",
+      "SRM",
+      "PA2G4",
+      "GNL3",
+      "NOLC1",
+      "WDR43",
+      "RABEPK",
+      "NOP16",
+      "TBRG4",
+      "DDX18",
+      "NIP7",
+      "WDR74",
+      "BYSL",
+      "HSPD1",
+      "PLK4",
+      "NOP2",
+      "PPAN",
+      "NOP56",
+      "RCL1",
+      "NPM1",
+      "AIMP2",
+      "RRP12",
+      "PPRC1",
+      "TCOF1",
+      "MCM5",
+      "HK2",
+      "CBX3",
+      "PLK1",
+      "PHB",
+      "MCM4",
+      "CDK4",
+      "DUSP2",
+      "MYBBP1A",
+      "UTP20",
+      "PRMT3",
+      "FARSA",
+      "MAP3K6",
+      "LAS1L",
+      "PUS1",
+      "HSPE1",
+      "SLC29A2",
+      "DCTPP1",
+      "SUPV3L1",
+      "SORD",
+      "IMP4",
+      "GRWD1",
+      "UNG",
+      "MPHOSPH10"
+    ],
+    "gene_count": 58,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Ribosome Biogenesis (GO:0042254)",
+          "term": "Ribosome Biogenesis (GO:0042254)",
+          "overlap": "18/155",
+          "p_value": 1.2712818918755438e-24,
+          "z_score": 65.0529197080292,
+          "combined_score": 3579.3428200371823,
+          "overlap_genes": [
+            "NOP56",
+            "NPM1",
+            "NOP16",
+            "NIP7",
+            "WDR74",
+            "NOLC1",
+            "NOC4L",
+            "WDR43",
+            "BYSL",
+            "RRP9",
+            "RCL1",
+            "EXOSC5",
+            "PES1",
+            "GRWD1",
+            "MRTO4",
+            "MPHOSPH10",
+            "UTP20",
+            "RRP12"
+          ],
+          "genes": [
+            "NOP56",
+            "NPM1",
+            "NOP16",
+            "NIP7",
+            "WDR74",
+            "NOLC1",
+            "NOC4L",
+            "WDR43",
+            "BYSL",
+            "RRP9",
+            "RCL1",
+            "EXOSC5",
+            "PES1",
+            "GRWD1",
+            "MRTO4",
+            "MPHOSPH10",
+            "UTP20",
+            "RRP12"
+          ],
+          "adjusted_p_value": 6.330983821540208e-22
+        },
+        {
+          "rank": 2,
+          "term_name": "Ribonucleoprotein Complex Biogenesis (GO:0022613)",
+          "term": "Ribonucleoprotein Complex Biogenesis (GO:0022613)",
+          "overlap": "14/118",
+          "p_value": 2.280993697728445e-19,
+          "z_score": 60.69318181818182,
+          "combined_score": 2605.2248220188753,
+          "overlap_genes": [
+            "NOP56",
+            "NPM1",
+            "NOP16",
+            "NIP7",
+            "WDR74",
+            "WDR43",
+            "BYSL",
+            "RRP9",
+            "RCL1",
+            "PES1",
+            "GRWD1",
+            "MRTO4",
+            "MPHOSPH10",
+            "UTP20"
+          ],
+          "genes": [
+            "NOP56",
+            "NPM1",
+            "NOP16",
+            "NIP7",
+            "WDR74",
+            "WDR43",
+            "BYSL",
+            "RRP9",
+            "RCL1",
+            "PES1",
+            "GRWD1",
+            "MRTO4",
+            "MPHOSPH10",
+            "UTP20"
+          ],
+          "adjusted_p_value": 5.679674307343828e-17
+        },
+        {
+          "rank": 3,
+          "term_name": "rRNA Processing (GO:0006364)",
+          "term": "rRNA Processing (GO:0006364)",
+          "overlap": "13/101",
+          "p_value": 1.6328556955163386e-18,
+          "z_score": 65.17727272727272,
+          "combined_score": 2669.413497540315,
+          "overlap_genes": [
+            "NOP56",
+            "NOP2",
+            "WDR74",
+            "NOLC1",
+            "NOC4L",
+            "RRP9",
+            "EXOSC5",
+            "LAS1L",
+            "PES1",
+            "MRTO4",
+            "MPHOSPH10",
+            "UTP20",
+            "RRP12"
+          ],
+          "genes": [
+            "NOP56",
+            "NOP2",
+            "WDR74",
+            "NOLC1",
+            "NOC4L",
+            "RRP9",
+            "EXOSC5",
+            "LAS1L",
+            "PES1",
+            "MRTO4",
+            "MPHOSPH10",
+            "UTP20",
+            "RRP12"
+          ],
+          "adjusted_p_value": 2.710540454557122e-16
+        },
+        {
+          "rank": 4,
+          "term_name": "rRNA Metabolic Process (GO:0016072)",
+          "term": "rRNA Metabolic Process (GO:0016072)",
+          "overlap": "11/91",
+          "p_value": 1.7707815401817033e-15,
+          "z_score": 58.106914893617024,
+          "combined_score": 1973.7382292526877,
+          "overlap_genes": [
+            "NOP56",
+            "EXOSC5",
+            "PES1",
+            "MRTO4",
+            "WDR74",
+            "NOLC1",
+            "NOC4L",
+            "UTP20",
+            "RRP12",
+            "BYSL",
+            "RRP9"
+          ],
+          "genes": [
+            "NOP56",
+            "EXOSC5",
+            "PES1",
+            "MRTO4",
+            "WDR74",
+            "NOLC1",
+            "NOC4L",
+            "UTP20",
+            "RRP12",
+            "BYSL",
+            "RRP9"
+          ],
+          "adjusted_p_value": 2.2046230175262206e-13
+        },
+        {
+          "rank": 5,
+          "term_name": "ncRNA Processing (GO:0034470)",
+          "term": "ncRNA Processing (GO:0034470)",
+          "overlap": "11/100",
+          "p_value": 5.197388874236078e-15,
+          "z_score": 52.20726751135549,
+          "combined_score": 1717.129398781989,
+          "overlap_genes": [
+            "NOP56",
+            "EXOSC5",
+            "PES1",
+            "MRTO4",
+            "WDR74",
+            "NOLC1",
+            "NOC4L",
+            "UTP20",
+            "RRP12",
+            "BYSL",
+            "RRP9"
+          ],
+          "genes": [
+            "NOP56",
+            "EXOSC5",
+            "PES1",
+            "MRTO4",
+            "WDR74",
+            "NOLC1",
+            "NOC4L",
+            "UTP20",
+            "RRP12",
+            "BYSL",
+            "RRP9"
+          ],
+          "adjusted_p_value": 5.176599318739134e-13
+        },
+        {
+          "rank": 6,
+          "term_name": "Ribosomal Large Subunit Biogenesis (GO:0042273)",
+          "term": "Ribosomal Large Subunit Biogenesis (GO:0042273)",
+          "overlap": "9/54",
+          "p_value": 3.6386545744657785e-14,
+          "z_score": 81.21224489795918,
+          "combined_score": 2513.0785908443327,
+          "overlap_genes": [
+            "NPM1",
+            "NOP16",
+            "LAS1L",
+            "NIP7",
+            "PES1",
+            "MRTO4",
+            "NOP2",
+            "PPAN",
+            "WDR74"
+          ],
+          "genes": [
+            "NPM1",
+            "NOP16",
+            "LAS1L",
+            "NIP7",
+            "PES1",
+            "MRTO4",
+            "NOP2",
+            "PPAN",
+            "WDR74"
+          ],
+          "adjusted_p_value": 3.0200832968065962e-12
+        },
+        {
+          "rank": 7,
+          "term_name": "Ribosomal Small Subunit Biogenesis (GO:0042274)",
+          "term": "Ribosomal Small Subunit Biogenesis (GO:0042274)",
+          "overlap": "7/84",
+          "p_value": 4.518396983755189e-09,
+          "z_score": 35.409982174688054,
+          "combined_score": 680.4066514390939,
+          "overlap_genes": [
+            "RCL1",
+            "NOP56",
+            "NPM1",
+            "MPHOSPH10",
+            "UTP20",
+            "WDR43",
+            "RRP9"
+          ],
+          "genes": [
+            "RCL1",
+            "NOP56",
+            "NPM1",
+            "MPHOSPH10",
+            "UTP20",
+            "WDR43",
+            "RRP9"
+          ],
+          "adjusted_p_value": 3.2145167113001197e-07
+        },
+        {
+          "rank": 8,
+          "term_name": "Maturation Of LSU-rRNA (GO:0000470)",
+          "term": "Maturation Of LSU-rRNA (GO:0000470)",
+          "overlap": "4/20",
+          "p_value": 2.979117263558547e-07,
+          "z_score": 92.25,
+          "combined_score": 1386.1917296973359,
+          "overlap_genes": [
+            "DDX18",
+            "LAS1L",
+            "PES1",
+            "NOP2"
+          ],
+          "genes": [
+            "DDX18",
+            "LAS1L",
+            "PES1",
+            "NOP2"
+          ],
+          "adjusted_p_value": 1.8545004965651957e-05
+        },
+        {
+          "rank": 9,
+          "term_name": "RNA Metabolic Process (GO:0016070)",
+          "term": "RNA Metabolic Process (GO:0016070)",
+          "overlap": "5/111",
+          "p_value": 1.7433095296390097e-05,
+          "z_score": 17.653969384122462,
+          "combined_score": 193.437016388702,
+          "overlap_genes": [
+            "SUPV3L1",
+            "EXOSC5",
+            "WDR74",
+            "MPHOSPH10",
+            "TBRG4"
+          ],
+          "genes": [
+            "SUPV3L1",
+            "EXOSC5",
+            "WDR74",
+            "MPHOSPH10",
+            "TBRG4"
+          ],
+          "adjusted_p_value": 0.0009537101105292432
+        },
+        {
+          "rank": 10,
+          "term_name": "DNA Metabolic Process (GO:0006259)",
+          "term": "DNA Metabolic Process (GO:0006259)",
+          "overlap": "7/288",
+          "p_value": 1.915080543231412e-05,
+          "z_score": 9.60344707277929,
+          "combined_score": 104.32383765036793,
+          "overlap_genes": [
+            "SUPV3L1",
+            "NPM1",
+            "GRWD1",
+            "MCM4",
+            "MCM5",
+            "DCTPP1",
+            "UNG"
+          ],
+          "genes": [
+            "SUPV3L1",
+            "NPM1",
+            "GRWD1",
+            "MCM4",
+            "MCM5",
+            "DCTPP1",
+            "UNG"
+          ],
+          "adjusted_p_value": 0.0009537101105292432
+        },
+        {
+          "rank": 11,
+          "term_name": "DNA Duplex Unwinding (GO:0032508)",
+          "term": "DNA Duplex Unwinding (GO:0032508)",
+          "overlap": "3/41",
+          "p_value": 0.00022813529287947707,
+          "z_score": 28.570334928229666,
+          "combined_score": 239.57859246720162,
+          "overlap_genes": [
+            "SUPV3L1",
+            "MCM4",
+            "MCM5"
+          ],
+          "genes": [
+            "SUPV3L1",
+            "MCM4",
+            "MCM5"
+          ],
+          "adjusted_p_value": 0.010328306895816326
+        },
+        {
+          "rank": 12,
+          "term_name": "Positive Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0043280)",
+          "term": "Positive Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0043280)",
+          "overlap": "4/109",
+          "p_value": 0.00028236647969373226,
+          "z_score": 13.994356261022928,
+          "combined_score": 114.36614424813044,
+          "overlap_genes": [
+            "MYC",
+            "SORD",
+            "HSPE1",
+            "HSPD1"
+          ],
+          "genes": [
+            "MYC",
+            "SORD",
+            "HSPE1",
+            "HSPD1"
+          ],
+          "adjusted_p_value": 0.01125024286337588
+        },
+        {
+          "rank": 13,
+          "term_name": "Mitochondrial RNA Processing (GO:0000963)",
+          "term": "Mitochondrial RNA Processing (GO:0000963)",
+          "overlap": "2/9",
+          "p_value": 0.00029368103860218163,
+          "z_score": 101.70918367346938,
+          "combined_score": 827.2024468729409,
+          "overlap_genes": [
+            "SUPV3L1",
+            "TBRG4"
+          ],
+          "genes": [
+            "SUPV3L1",
+            "TBRG4"
+          ],
+          "adjusted_p_value": 0.01125024286337588
+        },
+        {
+          "rank": 14,
+          "term_name": "Ribosome Assembly (GO:0042255)",
+          "term": "Ribosome Assembly (GO:0042255)",
+          "overlap": "3/50",
+          "p_value": 0.00041177118298551824,
+          "z_score": 23.088974854932303,
+          "combined_score": 179.97954590931704,
+          "overlap_genes": [
+            "NPM1",
+            "NOP2",
+            "PPAN"
+          ],
+          "genes": [
+            "NPM1",
+            "NOP2",
+            "PPAN"
+          ],
+          "adjusted_p_value": 0.014647289223342005
+        },
+        {
+          "rank": 15,
+          "term_name": "Double-Strand Break Repair Via Break-Induced Replication (GO:0000727)",
+          "term": "Double-Strand Break Repair Via Break-Induced Replication (GO:0000727)",
+          "overlap": "2/11",
+          "p_value": 0.00044700954794706256,
+          "z_score": 79.09920634920636,
+          "combined_score": 610.0866893648016,
+          "overlap_genes": [
+            "MCM4",
+            "MCM5"
+          ],
+          "genes": [
+            "MCM4",
+            "MCM5"
+          ],
+          "adjusted_p_value": 0.014840716991842478
+        },
+        {
+          "rank": 16,
+          "term_name": "Regulation Of DNA-templated DNA Replication Initiation (GO:0030174)",
+          "term": "Regulation Of DNA-templated DNA Replication Initiation (GO:0030174)",
+          "overlap": "2/12",
+          "p_value": 0.0005354125163723767,
+          "z_score": 71.18571428571428,
+          "combined_score": 536.2044743694904,
+          "overlap_genes": [
+            "MCM4",
+            "MCM5"
+          ],
+          "genes": [
+            "MCM4",
+            "MCM5"
+          ],
+          "adjusted_p_value": 0.016664714572090223
+        },
+        {
+          "rank": 17,
+          "term_name": "Endonucleolytic Cleavage Of Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000479)",
+          "term": "Endonucleolytic Cleavage Of Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000479)",
+          "overlap": "2/13",
+          "p_value": 0.0006315820253314937,
+          "z_score": 64.71103896103897,
+          "combined_score": 476.74452009710456,
+          "overlap_genes": [
+            "RCL1",
+            "UTP20"
+          ],
+          "genes": [
+            "RCL1",
+            "UTP20"
+          ],
+          "adjusted_p_value": 0.018501638153828465
+        },
+        {
+          "rank": 18,
+          "term_name": "Maturation Of LSU-rRNA From Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000463)",
+          "term": "Maturation Of LSU-rRNA From Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000463)",
+          "overlap": "2/14",
+          "p_value": 0.00073547385272901,
+          "z_score": 59.31547619047619,
+          "combined_score": 427.96089788083634,
+          "overlap_genes": [
+            "DDX18",
+            "PES1"
+          ],
+          "genes": [
+            "DDX18",
+            "PES1"
+          ],
+          "adjusted_p_value": 0.020348109925502608
+        },
+        {
+          "rank": 19,
+          "term_name": "Negative Regulation Of Programmed Cell Death (GO:0043069)",
+          "term": "Negative Regulation Of Programmed Cell Death (GO:0043069)",
+          "overlap": "6/381",
+          "p_value": 0.0008066028045331663,
+          "z_score": 6.020615384615384,
+          "combined_score": 42.882911962468235,
+          "overlap_genes": [
+            "SUPV3L1",
+            "NPM1",
+            "MYC",
+            "PLK1",
+            "PA2G4",
+            "HSPD1"
+          ],
+          "genes": [
+            "SUPV3L1",
+            "NPM1",
+            "MYC",
+            "PLK1",
+            "PA2G4",
+            "HSPD1"
+          ],
+          "adjusted_p_value": 0.021091394587988723
+        },
+        {
+          "rank": 20,
+          "term_name": "Stem Cell Development (GO:0048864)",
+          "term": "Stem Cell Development (GO:0048864)",
+          "overlap": "2/15",
+          "p_value": 0.0008470439593569769,
+          "z_score": 54.75,
+          "combined_score": 387.2882485613963,
+          "overlap_genes": [
+            "TCOF1",
+            "NOLC1"
+          ],
+          "genes": [
+            "TCOF1",
+            "NOLC1"
+          ],
+          "adjusted_p_value": 0.021091394587988723
+        },
+        {
+          "rank": 21,
+          "term_name": "Maturation Of 5.8S rRNA (GO:0000460)",
+          "term": "Maturation Of 5.8S rRNA (GO:0000460)",
+          "overlap": "2/16",
+          "p_value": 0.0009662484885702349,
+          "z_score": 50.83673469387755,
+          "combined_score": 352.9131632656073,
+          "overlap_genes": [
+            "LAS1L",
+            "PES1"
+          ],
+          "genes": [
+            "LAS1L",
+            "PES1"
+          ],
+          "adjusted_p_value": 0.021773431796257743
+        },
+        {
+          "rank": 22,
+          "term_name": "Activation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0006919)",
+          "term": "Activation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0006919)",
+          "overlap": "3/67",
+          "p_value": 0.0009719007565399648,
+          "z_score": 16.941477272727273,
+          "combined_score": 117.51043796913778,
+          "overlap_genes": [
+            "SORD",
+            "HSPE1",
+            "HSPD1"
+          ],
+          "genes": [
+            "SORD",
+            "HSPE1",
+            "HSPD1"
+          ],
+          "adjusted_p_value": 0.021773431796257743
+        },
+        {
+          "rank": 23,
+          "term_name": "Chromatin Organization (GO:0006325)",
+          "term": "Chromatin Organization (GO:0006325)",
+          "overlap": "5/268",
+          "p_value": 0.0010683517427466471,
+          "z_score": 7.058971231795681,
+          "combined_score": 48.29492755352071,
+          "overlap_genes": [
+            "NPM1",
+            "MYBBP1A",
+            "CBX3",
+            "MYC",
+            "GRWD1"
+          ],
+          "genes": [
+            "NPM1",
+            "MYBBP1A",
+            "CBX3",
+            "MYC",
+            "GRWD1"
+          ],
+          "adjusted_p_value": 0.021773431796257743
+        },
+        {
+          "rank": 24,
+          "term_name": "DNA Modification (GO:0006304)",
+          "term": "DNA Modification (GO:0006304)",
+          "overlap": "2/17",
+          "p_value": 0.0010930437648723765,
+          "z_score": 47.445238095238096,
+          "combined_score": 323.51906902748715,
+          "overlap_genes": [
+            "EXOSC5",
+            "UNG"
+          ],
+          "genes": [
+            "EXOSC5",
+            "UNG"
+          ],
+          "adjusted_p_value": 0.021773431796257743
+        },
+        {
+          "rank": 25,
+          "term_name": "Regulation Of DNA-templated DNA Replication (GO:0090329)",
+          "term": "Regulation Of DNA-templated DNA Replication (GO:0090329)",
+          "overlap": "2/17",
+          "p_value": 0.0010930437648723765,
+          "z_score": 47.445238095238096,
+          "combined_score": 323.51906902748715,
+          "overlap_genes": [
+            "MCM4",
+            "MCM5"
+          ],
+          "genes": [
+            "MCM4",
+            "MCM5"
+          ],
+          "adjusted_p_value": 0.021773431796257743
+        },
+        {
+          "rank": 26,
+          "term_name": "Neural Crest Cell Differentiation (GO:0014033)",
+          "term": "Neural Crest Cell Differentiation (GO:0014033)",
+          "overlap": "2/18",
+          "p_value": 0.0012273862947571772,
+          "z_score": 44.47767857142857,
+          "combined_score": 298.12802327286596,
+          "overlap_genes": [
+            "TCOF1",
+            "NOLC1"
+          ],
+          "genes": [
+            "TCOF1",
+            "NOLC1"
+          ],
+          "adjusted_p_value": 0.02216822098634511
+        },
+        {
+          "rank": 27,
+          "term_name": "Regulation Of Cell Cycle G2/M Phase Transition (GO:1902749)",
+          "term": "Regulation Of Cell Cycle G2/M Phase Transition (GO:1902749)",
+          "overlap": "2/18",
+          "p_value": 0.0012273862947571772,
+          "z_score": 44.47767857142857,
+          "combined_score": 298.12802327286596,
+          "overlap_genes": [
+            "NPM1",
+            "CDK4"
+          ],
+          "genes": [
+            "NPM1",
+            "CDK4"
+          ],
+          "adjusted_p_value": 0.02216822098634511
+        },
+        {
+          "rank": 28,
+          "term_name": "DNA Replication (GO:0006260)",
+          "term": "DNA Replication (GO:0006260)",
+          "overlap": "3/73",
+          "p_value": 0.0012464059992322552,
+          "z_score": 15.484675324675324,
+          "combined_score": 103.55362794959848,
+          "overlap_genes": [
+            "GRWD1",
+            "MCM4",
+            "MCM5"
+          ],
+          "genes": [
+            "GRWD1",
+            "MCM4",
+            "MCM5"
+          ],
+          "adjusted_p_value": 0.02216822098634511
+        },
+        {
+          "rank": 29,
+          "term_name": "Regulation Of Centriole Replication (GO:0046599)",
+          "term": "Regulation Of Centriole Replication (GO:0046599)",
+          "overlap": "2/19",
+          "p_value": 0.0013692327649010019,
+          "z_score": 41.859243697478995,
+          "combined_score": 275.99912096338653,
+          "overlap_genes": [
+            "PLK4",
+            "NPM1"
+          ],
+          "genes": [
+            "PLK4",
+            "NPM1"
+          ],
+          "adjusted_p_value": 0.023513031617955135
+        },
+        {
+          "rank": 30,
+          "term_name": "DNA Unwinding Involved In DNA Replication (GO:0006268)",
+          "term": "DNA Unwinding Involved In DNA Replication (GO:0006268)",
+          "overlap": "2/20",
+          "p_value": 0.001518540041667372,
+          "z_score": 39.53174603174603,
+          "combined_score": 256.5612651652447,
+          "overlap_genes": [
+            "MCM4",
+            "MCM5"
+          ],
+          "genes": [
+            "MCM4",
+            "MCM5"
+          ],
+          "adjusted_p_value": 0.023632279398448478
+        },
+        {
+          "rank": 31,
+          "term_name": "Mitochondrial RNA Metabolic Process (GO:0000959)",
+          "term": "Mitochondrial RNA Metabolic Process (GO:0000959)",
+          "overlap": "2/20",
+          "p_value": 0.001518540041667372,
+          "z_score": 39.53174603174603,
+          "combined_score": 256.5612651652447,
+          "overlap_genes": [
+            "TFB2M",
+            "TBRG4"
+          ],
+          "genes": [
+            "TFB2M",
+            "TBRG4"
+          ],
+          "adjusted_p_value": 0.023632279398448478
+        },
+        {
+          "rank": 32,
+          "term_name": "protein-DNA Complex Disassembly (GO:0032986)",
+          "term": "protein-DNA Complex Disassembly (GO:0032986)",
+          "overlap": "2/20",
+          "p_value": 0.001518540041667372,
+          "z_score": 39.53174603174603,
+          "combined_score": 256.5612651652447,
+          "overlap_genes": [
+            "GRWD1",
+            "MYC"
+          ],
+          "genes": [
+            "GRWD1",
+            "MYC"
+          ],
+          "adjusted_p_value": 0.023632279398448478
+        },
+        {
+          "rank": 33,
+          "term_name": "Positive Regulation Of Cellular Process (GO:0048522)",
+          "term": "Positive Regulation Of Cellular Process (GO:0048522)",
+          "overlap": "7/594",
+          "p_value": 0.0015919902322582685,
+          "z_score": 4.525670574873902,
+          "combined_score": 29.157856090004234,
+          "overlap_genes": [
+            "SUPV3L1",
+            "NPM1",
+            "CDK4",
+            "MYC",
+            "NOP2",
+            "PA2G4",
+            "TBRG4"
+          ],
+          "genes": [
+            "SUPV3L1",
+            "NPM1",
+            "CDK4",
+            "MYC",
+            "NOP2",
+            "PA2G4",
+            "TBRG4"
+          ],
+          "adjusted_p_value": 0.02402457986862478
+        },
+        {
+          "rank": 34,
+          "term_name": "Maturation Of 5.8S rRNA From Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000466)",
+          "term": "Maturation Of 5.8S rRNA From Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000466)",
+          "overlap": "2/21",
+          "p_value": 0.001675265171230403,
+          "z_score": 37.44924812030075,
+          "combined_score": 239.36749802122998,
+          "overlap_genes": [
+            "PES1",
+            "UTP20"
+          ],
+          "genes": [
+            "PES1",
+            "UTP20"
+          ],
+          "adjusted_p_value": 0.024284573736307612
+        },
+        {
+          "rank": 35,
+          "term_name": "Regulation Of Cell Cycle (GO:0051726)",
+          "term": "Regulation Of Cell Cycle (GO:0051726)",
+          "overlap": "5/298",
+          "p_value": 0.0017067471501421014,
+          "z_score": 6.326550325198016,
+          "combined_score": 40.320155249055716,
+          "overlap_genes": [
+            "CDK4",
+            "MYC",
+            "PES1",
+            "PLK1",
+            "TBRG4"
+          ],
+          "genes": [
+            "CDK4",
+            "MYC",
+            "PES1",
+            "PLK1",
+            "TBRG4"
+          ],
+          "adjusted_p_value": 0.024284573736307612
+        },
+        {
+          "rank": 36,
+          "term_name": "rRNA Methylation (GO:0031167)",
+          "term": "rRNA Methylation (GO:0031167)",
+          "overlap": "2/22",
+          "p_value": 0.0018393653781464217,
+          "z_score": 35.575,
+          "combined_score": 224.06325588650645,
+          "overlap_genes": [
+            "NOP2",
+            "TFB2M"
+          ],
+          "genes": [
+            "NOP2",
+            "TFB2M"
+          ],
+          "adjusted_p_value": 0.024756863738295082
+        },
+        {
+          "rank": 37,
+          "term_name": "Ribosomal Large Subunit Assembly (GO:0000027)",
+          "term": "Ribosomal Large Subunit Assembly (GO:0000027)",
+          "overlap": "2/22",
+          "p_value": 0.0018393653781464217,
+          "z_score": 35.575,
+          "combined_score": 224.06325588650645,
+          "overlap_genes": [
+            "NOP2",
+            "PPAN"
+          ],
+          "genes": [
+            "NOP2",
+            "PPAN"
+          ],
+          "adjusted_p_value": 0.024756863738295082
+        },
+        {
+          "rank": 38,
+          "term_name": "Positive Regulation Of Cell Cycle G2/M Phase Transition (GO:1902751)",
+          "term": "Positive Regulation Of Cell Cycle G2/M Phase Transition (GO:1902751)",
+          "overlap": "2/24",
+          "p_value": 0.002189520813159437,
+          "z_score": 32.33766233766234,
+          "combined_score": 198.03819076650805,
+          "overlap_genes": [
+            "NPM1",
+            "CDK4"
+          ],
+          "genes": [
+            "NPM1",
+            "CDK4"
+          ],
+          "adjusted_p_value": 0.02869424644614209
+        },
+        {
+          "rank": 39,
+          "term_name": "Negative Regulation Of Apoptotic Process (GO:0043066)",
+          "term": "Negative Regulation Of Apoptotic Process (GO:0043066)",
+          "overlap": "6/482",
+          "p_value": 0.002663730048411902,
+          "z_score": 4.718648998060763,
+          "combined_score": 27.97228274385253,
+          "overlap_genes": [
+            "SUPV3L1",
+            "NPM1",
+            "MYC",
+            "PLK1",
+            "PA2G4",
+            "HSPD1"
+          ],
+          "genes": [
+            "SUPV3L1",
+            "NPM1",
+            "MYC",
+            "PLK1",
+            "PA2G4",
+            "HSPD1"
+          ],
+          "adjusted_p_value": 0.034013783695105826
+        },
+        {
+          "rank": 40,
+          "term_name": "Positive Regulation Of Fibroblast Proliferation (GO:0048146)",
+          "term": "Positive Regulation Of Fibroblast Proliferation (GO:0048146)",
+          "overlap": "2/28",
+          "p_value": 0.0029764701916058,
+          "z_score": 27.357142857142858,
+          "combined_score": 159.13696999571184,
+          "overlap_genes": [
+            "CDK4",
+            "MYC"
+          ],
+          "genes": [
+            "CDK4",
+            "MYC"
+          ],
+          "adjusted_p_value": 0.03705705388549221
+        },
+        {
+          "rank": 41,
+          "term_name": "Maturation Of SSU-rRNA From Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000462)",
+          "term": "Maturation Of SSU-rRNA From Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000462)",
+          "overlap": "2/30",
+          "p_value": 0.0034125952701803378,
+          "z_score": 25.400510204081634,
+          "combined_score": 144.28206600498726,
+          "overlap_genes": [
+            "UTP20",
+            "WDR43"
+          ],
+          "genes": [
+            "UTP20",
+            "WDR43"
+          ],
+          "adjusted_p_value": 0.041450547428044104
+        },
+        {
+          "rank": 42,
+          "term_name": "Regulation Of Transcription By RNA Polymerase I (GO:0006356)",
+          "term": "Regulation Of Transcription By RNA Polymerase I (GO:0006356)",
+          "overlap": "2/32",
+          "p_value": 0.0038767126787624803,
+          "z_score": 23.704761904761906,
+          "combined_score": 131.62703700438337,
+          "overlap_genes": [
+            "MYBBP1A",
+            "WDR43"
+          ],
+          "genes": [
+            "MYBBP1A",
+            "WDR43"
+          ],
+          "adjusted_p_value": 0.045966736048183694
+        },
+        {
+          "rank": 43,
+          "term_name": "Mitotic Cell Cycle Phase Transition (GO:0044772)",
+          "term": "Mitotic Cell Cycle Phase Transition (GO:0044772)",
+          "overlap": "3/111",
+          "p_value": 0.004112633126701999,
+          "z_score": 10.017171717171717,
+          "combined_score": 55.03125404348445,
+          "overlap_genes": [
+            "CDK4",
+            "MYC",
+            "PLK1"
+          ],
+          "genes": [
+            "CDK4",
+            "MYC",
+            "PLK1"
+          ],
+          "adjusted_p_value": 0.046287456850600914
+        },
+        {
+          "rank": 44,
+          "term_name": "Positive Regulation Of RNA Metabolic Process (GO:0051254)",
+          "term": "Positive Regulation Of RNA Metabolic Process (GO:0051254)",
+          "overlap": "2/33",
+          "p_value": 0.004119166057686395,
+          "z_score": 22.9389400921659,
+          "combined_score": 125.98305723611935,
+          "overlap_genes": [
+            "SUPV3L1",
+            "WDR43"
+          ],
+          "genes": [
+            "SUPV3L1",
+            "WDR43"
+          ],
+          "adjusted_p_value": 0.046287456850600914
+        },
+        {
+          "rank": 45,
+          "term_name": "Chromatin Remodeling (GO:0006338)",
+          "term": "Chromatin Remodeling (GO:0006338)",
+          "overlap": "4/228",
+          "p_value": 0.004312628621506949,
+          "z_score": 6.520502645502646,
+          "combined_score": 35.51201153187947,
+          "overlap_genes": [
+            "NPM1",
+            "MYBBP1A",
+            "CBX3",
+            "MYC"
+          ],
+          "genes": [
+            "NPM1",
+            "MYBBP1A",
+            "CBX3",
+            "MYC"
+          ],
+          "adjusted_p_value": 0.046287456850600914
+        },
+        {
+          "rank": 46,
+          "term_name": "Apoptotic Mitochondrial Changes (GO:0008637)",
+          "term": "Apoptotic Mitochondrial Changes (GO:0008637)",
+          "overlap": "2/34",
+          "p_value": 0.00436849492365109,
+          "z_score": 22.220982142857142,
+          "combined_score": 120.73407868148206,
+          "overlap_genes": [
+            "HK2",
+            "HSPD1"
+          ],
+          "genes": [
+            "HK2",
+            "HSPD1"
+          ],
+          "adjusted_p_value": 0.046287456850600914
+        },
+        {
+          "rank": 47,
+          "term_name": "Positive Regulation Of Transcription By RNA Polymerase I (GO:0045943)",
+          "term": "Positive Regulation Of Transcription By RNA Polymerase I (GO:0045943)",
+          "overlap": "2/34",
+          "p_value": 0.00436849492365109,
+          "z_score": 22.220982142857142,
+          "combined_score": 120.73407868148206,
+          "overlap_genes": [
+            "MYBBP1A",
+            "WDR43"
+          ],
+          "genes": [
+            "MYBBP1A",
+            "WDR43"
+          ],
+          "adjusted_p_value": 0.046287456850600914
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Ribosome biogenesis in eukaryotes",
+          "term": "Ribosome biogenesis in eukaryotes",
+          "overlap": "7/108",
+          "p_value": 2.6363056988718806e-08,
+          "z_score": 26.96311395845467,
+          "combined_score": 470.5414489523691,
+          "overlap_genes": [
+            "RCL1",
+            "NOP56",
+            "TCOF1",
+            "MPHOSPH10",
+            "IMP4",
+            "WDR43",
+            "GNL3"
+          ],
+          "genes": [
+            "RCL1",
+            "NOP56",
+            "TCOF1",
+            "MPHOSPH10",
+            "IMP4",
+            "WDR43",
+            "GNL3"
+          ],
+          "adjusted_p_value": 2.1090445590975045e-06
+        },
+        {
+          "rank": 2,
+          "term_name": "Cell cycle",
+          "term": "Cell cycle",
+          "overlap": "5/124",
+          "p_value": 2.975960855669364e-05,
+          "z_score": 15.715078484223879,
+          "combined_score": 163.7881818405772,
+          "overlap_genes": [
+            "CDK4",
+            "MYC",
+            "PLK1",
+            "MCM4",
+            "MCM5"
+          ],
+          "genes": [
+            "CDK4",
+            "MYC",
+            "PLK1",
+            "MCM4",
+            "MCM5"
+          ],
+          "adjusted_p_value": 0.0011903843422677455
+        }
+      ]
+    },
+    "significant_terms_total": 49,
+    "execution_time": 1.54,
+    "dataframe": "    rank  ...                     library\n0      1  ...  GO_Biological_Process_2023\n2      3  ...  GO_Biological_Process_2023\n1      2  ...  GO_Biological_Process_2023\n5      6  ...  GO_Biological_Process_2023\n3      4  ...  GO_Biological_Process_2023\n4      5  ...  GO_Biological_Process_2023\n7      8  ...  GO_Biological_Process_2023\n12    13  ...  GO_Biological_Process_2023\n6      7  ...  GO_Biological_Process_2023\n14    15  ...  GO_Biological_Process_2023\n15    16  ...  GO_Biological_Process_2023\n16    17  ...  GO_Biological_Process_2023\n47     1  ...             KEGG_2021_Human\n17    18  ...  GO_Biological_Process_2023\n19    20  ...  GO_Biological_Process_2023\n20    21  ...  GO_Biological_Process_2023\n23    24  ...  GO_Biological_Process_2023\n24    25  ...  GO_Biological_Process_2023\n25    26  ...  GO_Biological_Process_2023\n26    27  ...  GO_Biological_Process_2023\n28    29  ...  GO_Biological_Process_2023\n31    32  ...  GO_Biological_Process_2023\n29    30  ...  GO_Biological_Process_2023\n30    31  ...  GO_Biological_Process_2023\n10    11  ...  GO_Biological_Process_2023\n33    34  ...  GO_Biological_Process_2023\n36    37  ...  GO_Biological_Process_2023\n35    36  ...  GO_Biological_Process_2023\n37    38  ...  GO_Biological_Process_2023\n8      9  ...  GO_Biological_Process_2023\n13    14  ...  GO_Biological_Process_2023\n48     2  ...             KEGG_2021_Human\n39    40  ...  GO_Biological_Process_2023\n40    41  ...  GO_Biological_Process_2023\n41    42  ...  GO_Biological_Process_2023\n43    44  ...  GO_Biological_Process_2023\n45    46  ...  GO_Biological_Process_2023\n46    47  ...  GO_Biological_Process_2023\n21    22  ...  GO_Biological_Process_2023\n11    12  ...  GO_Biological_Process_2023\n9     10  ...  GO_Biological_Process_2023\n27    28  ...  GO_Biological_Process_2023\n42    43  ...  GO_Biological_Process_2023\n22    23  ...  GO_Biological_Process_2023\n18    19  ...  GO_Biological_Process_2023\n34    35  ...  GO_Biological_Process_2023\n44    45  ...  GO_Biological_Process_2023\n32    33  ...  GO_Biological_Process_2023\n38    39  ...  GO_Biological_Process_2023\n\n[49 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "41514470",
+      "pmcid": "PMC12882376",
+      "doi": "10.1186/s12935-025-04156-4",
+      "url": "https://doi.org/10.1186/s12935-025-04156-4",
+      "title": "TMEM105 upregulation promotes colorectal cancer malignancy: a novel prognostic biomarker potentially linked to the MYC-Ribosome biogenesis axis.",
+      "abstract": "Transmembrane protein 105 (TMEM105 ) has recently emerged as a potential oncogenic factor in various malignancies, yet its role in colorectal cancer (CRC) remains unclear. In this study, we comprehensively investigated the expression and function of TMEM105 in CRC through an integrated in silico, ex vivo, and in vitro approach. Publicly available datasets (TCGA, GSE41328, and GSE25070) were analyzed to assess TMEM105 transcript expression and its association with clinicopathological features, followed by weighted gene co-expression network analysis to identify relevant biological pathways. The expression levels were further validated via RT‒qPCR in 25 paired CRC and adjacent non-tumorous tissues. Functional assays were performed after siRNA-mediated silencing of TMEM105 in CRC cell lines to evaluate its impact on cell viability, clonogenicity, migration, apoptosis, and pathway-specific gene expression. TMEM105 was significantly upregulated in CRC tissues, and elevated expression levels were correlated with advanced stage (stage IV) and metastasis. Co-expression analysis revealed ribosome biogenesis and MYC signaling as pathways strongly associated with TMEM105. The functional inhibition of TMEM105 reduced cell viability, impaired colony formation, suppressed migration, and promoted apoptosis, accompanied by the downregulation of the ribosomal genes RPL7 and RPS2 and a marked decrease in total protein synthesis. Collectively, these findings establish TMEM105 as a putative oncogenic driver in CRC. Our data reveal a strong correlation between TMEM105 upregulation and the modulation of ribosome biogenesis, a process known to be driven by MYC signaling, which aligns with recent mechanistic evidence in other malignancies.",
+      "authors": "Rezaenasab A, Zargar SJ, Peymani M, Ghaedi K.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "76",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2026-01-09",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates MYC and ribosome biogenesis"
+    },
+    {
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.21203/rs.3.rs-7789906/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-7789906/v1",
+      "title": "LncRNA TMEM105 Promotes Malignancy via the MYC-Ribosome Biogenesis Axis: A Novel Prognostic Biomarker and Therapeutic Target in Colorectal Cancer",
+      "abstract": "<title>Abstract</title>  <p>Transmembrane protein 105 (TMEM105) has recently emerged as a potential oncogenic factor in various malignancies, yet its role in colorectal cancer (CRC) remains unclear. In this study, we comprehensively investigated the expression and function of TMEM105 in CRC through an integrated in silico, ex vivo, and in vitro approach. Publicly available datasets (TCGA, GSE41328, and GSE25070) were analyzed to assess TMEM105 expression and its association with clinicopathological features, followed by weighted gene co-expression network analysis to identify relevant biological pathways. The expression levels were further validated via RT‒qPCR in 25 paired CRC and adjacent non-tumorous tissues. Functional assays were performed after siRNA-mediated silencing of TMEM105 in CRC cell lines to evaluate its impact on cell viability, clonogenicity, migration, apoptosis, and pathway-specific gene expression. TMEM105 was significantly upregulated in CRC tissues, and elevated TMEM105 expression was correlated with advanced stage (stage IV) and metastasis. Co-expression analysis revealed ribosome biogenesis and MYC signaling as pathways strongly associated with TMEM105. The functional inhibition of TMEM105 reduced cell viability, impaired colony formation, suppressed migration, and promoted apoptosis, accompanied by the downregulation of the ribosomal genes RPL7 and RPS2 and a marked decrease in global protein synthesis. Collectively, these findings establish TMEM105 as a putative oncogenic driver that promotes CRC progression by modulating ribosome biogenesis, potentially in concert with MYC signaling. TMEM105 may therefore serve as a promising prognostic biomarker and novel therapeutic target for advanced colorectal cancer.</p>",
+      "authors": "Nasab AR, Zargar SJ, Peymani M, Ghaedi K.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2025,
+      "pub_year": 2025,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "PPR",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2025-10-27",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates MYC and ribosome biogenesis"
+    },
+    {
+      "pmid": "41777667",
+      "pmcid": "PMC12950704",
+      "doi": "10.3389/fmolb.2026.1749992",
+      "url": "https://doi.org/10.3389/fmolb.2026.1749992",
+      "title": "Nucleolus as a cornerstone linking proliferation and metabolism to cellular responses to stress: involvement of transcription factors MYC and p53.",
+      "abstract": "The nucleoli are a dynamic membraneless organelles in the nucleus playing a key role in cellular homeostasis. Transcription of rDNA, processing of rRNA, and assembly of the ribosomal subunits occur in nucleoli. Aside from ribosome biogenesis, the nucleolus is also involved in the regulation of other crucial functions, including DNA repair, regulation of cell cycle and apoptosis by mediating nucleolar stress responses. This makes it a key hub participating in regulation of various cellular processes. Given the fact, that protein biosynthesis is directly linked to multiple pathways and depends on ribosome production, it is not surprising that ribosome biogenesis is a centerpiece connecting fundamental cellular processes with each other. Of particular interest is the relationship between the nucleolus, cell cycle, and oncogenesis. In tumor and hyperproliferative cells, an increase in nucleolar size and activity directly correlates with enhanced ribosome biogenesis. This process is mutually controlled by oncogenes of the MYC family and tumor suppressors such as p53 and ARF. MYC plays a central role in regulating DNA transcription, and disrupting of ribosome biogenesis regulation could result in nucleolar stress. It induces activation of p53-dependent and p53-independent checkpoint pathways resulting in cell cycle arrest or apoptosis. In addition to its role in carcinogenesis, impaired ribosome biogenesis is associated with neurodegenerative diseases and ribosomopathies such as Diamond-Blackfan anemia. Thus, understanding the molecular mechanisms of nucleolar functions, and its links with main regulators of the cell cycle and oncogenesis is of great importance. It may help finding novel molecular targets and therapeutic approaches to treat disorders associated with dysregulated ribosome biogenesis and control of proliferation. This review considers the main aspects of nucleolar activity regulation, its role in the cell cycle and diseases, and the therapeutic prospects for targeting these processes.",
+      "authors": "Moraleva А, Antipova N, Pavlov P, Dobrochaeva K, Rubtsov Y.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 1,
+      "citation_count": 1,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "1749992",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-02-16",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates MYC, ribosome biogenesis, and cell cycle"
+    },
+    {
+      "pmid": "41610859",
+      "pmcid": "PMC12866967",
+      "doi": "10.1016/j.molcel.2026.01.007",
+      "url": "https://doi.org/10.1016/j.molcel.2026.01.007",
+      "title": "Signaling to make human ribosomes: Connections between the cytoplasm and the nucleolus.",
+      "abstract": "Ribosome biogenesis is a complex, multi-step cellular process that begins in the nucleolus and produces ribosomes that translate mRNA into proteins in the cytoplasm. This process is essential for cellular growth yet is resource intensive. It is therefore tightly coordinated with cytoplasmic requirements, energy availability, and the cell cycle through several kinase signaling pathways. Increasing evidence indicates that proteins shared between the cytoplasm and nucleolus may enhance this coordination. Here, we evaluate the interplay between the cytoplasm and nucleolus in human cells, presenting an intricate bidirectional regulatory network with emerging clinical relevance. We describe the phosphorylation events that promote ribosome biogenesis during interphase, focusing on mammalian target of rapamycin complex 1 (mTORC1), extracellular signal-regulated kinase (ERK), and casein kinase II (CK2). By contrast, protein phosphorylation inactivates ribosome biogenesis during mitosis. We further summarize several factors shared among the mitotic machinery, cytoplasmic organelles, and the nucleolus. Moreover, we highlight the mounting evidence that dysregulated cytoplasmic-nucleolar feedback contributes to the progression of several diseases.",
+      "authors": "Lawrence IR, Sutton EC, Bhaskar S, Baserga SJ.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 3,
+      "citation_count": 3,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "469-490",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-01-28",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context of ribosome biogenesis and cell cycle"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 22.87518048286438,
+  "phase": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Ribosome Biogenesis (GO:0042254) -> genes: [NOP56, NPM1, NOP16, NIP7, WDR74, NOLC1, NOC4L, WDR43, BYSL, RRP9, RCL1, EXOSC5, PES1, GRWD1, MRTO4, MPHOSPH10, UTP20, RRP12]\n- Ribonucleoprotein Complex Biogenesis (GO:0022613) -> genes: [NOP56, NPM1, NOP16, NIP7, WDR74, WDR43, BYSL, RRP9, RCL1, PES1, GRWD1, MRTO4, MPHOSPH10, UTP20]\n- rRNA Processing (GO:0006364) -> genes: [NOP56, NOP2, WDR74, NOLC1, NOC4L, RRP9, EXOSC5, LAS1L, PES1, MRTO4, MPHOSPH10, UTP20, RRP12]\n- rRNA Metabolic Process (GO:0016072) -> genes: [NOP56, EXOSC5, PES1, MRTO4, WDR74, NOLC1, NOC4L, UTP20, RRP12, BYSL, RRP9]\n- ncRNA Processing (GO:0034470) -> genes: [NOP56, EXOSC5, PES1, MRTO4, WDR74, NOLC1, NOC4L, UTP20, RRP12, BYSL, RRP9]\n- Ribosomal Large Subunit Biogenesis (GO:0042273) -> genes: [NPM1, NOP16, LAS1L, NIP7, PES1, MRTO4, NOP2, PPAN, WDR74]\n- Ribosomal Small Subunit Biogenesis (GO:0042274) -> genes: [RCL1, NOP56, NPM1, MPHOSPH10, UTP20, WDR43, RRP9]\n- Maturation Of LSU-rRNA (GO:0000470) -> genes: [DDX18, LAS1L, PES1, NOP2]\n- RNA Metabolic Process (GO:0016070) -> genes: [SUPV3L1, EXOSC5, WDR74, MPHOSPH10, TBRG4]\n- DNA Metabolic Process (GO:0006259) -> genes: [SUPV3L1, NPM1, GRWD1, MCM4, MCM5, DCTPP1, UNG]\n- DNA Duplex Unwinding (GO:0032508) -> genes: [SUPV3L1, MCM4, MCM5]\n- Positive Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0043280) -> genes: [MYC, SORD, HSPE1, HSPD1]\n- Mitochondrial RNA Processing (GO:0000963) -> genes: [SUPV3L1, TBRG4]\n- Ribosome Assembly (GO:0042255) -> genes: [NPM1, NOP2, PPAN]\n- Double-Strand Break Repair Via Break-Induced Replication (GO:0000727) -> genes: [MCM4, MCM5]\n- Regulation Of DNA-templated DNA Replication Initiation (GO:0030174) -> genes: [MCM4, MCM5]\n- Endonucleolytic Cleavage Of Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000479) -> genes: [RCL1, UTP20]\n- Maturation Of LSU-rRNA From Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000463) -> genes: [DDX18, PES1]\n- Negative Regulation Of Programmed Cell Death (GO:0043069) -> genes: [SUPV3L1, NPM1, MYC, PLK1, PA2G4, HSPD1]\n- Stem Cell Development (GO:0048864) -> genes: [TCOF1, NOLC1]\n- Maturation Of 5.8S rRNA (GO:0000460) -> genes: [LAS1L, PES1]\n- Activation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0006919) -> genes: [SORD, HSPE1, HSPD1]\n- Chromatin Organization (GO:0006325) -> genes: [NPM1, MYBBP1A, CBX3, MYC, GRWD1]\n- DNA Modification (GO:0006304) -> genes: [EXOSC5, UNG]\n- Regulation Of DNA-templated DNA Replication (GO:0090329) -> genes: [MCM4, MCM5]\n- Neural Crest Cell Differentiation (GO:0014033) -> genes: [TCOF1, NOLC1]\n- Regulation Of Cell Cycle G2/M Phase Transition (GO:1902749) -> genes: [NPM1, CDK4]\n- DNA Replication (GO:0006260) -> genes: [GRWD1, MCM4, MCM5]\n- Regulation Of Centriole Replication (GO:0046599) -> genes: [PLK4, NPM1]\n- DNA Unwinding Involved In DNA Replication (GO:0006268) -> genes: [MCM4, MCM5]\n- Mitochondrial RNA Metabolic Process (GO:0000959) -> genes: [TFB2M, TBRG4]\n- protein-DNA Complex Disassembly (GO:0032986) -> genes: [GRWD1, MYC]\n- Positive Regulation Of Cellular Process (GO:0048522) -> genes: [SUPV3L1, NPM1, CDK4, MYC, NOP2, PA2G4, TBRG4]\n- Maturation Of 5.8S rRNA From Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000466) -> genes: [PES1, UTP20]\n- Regulation Of Cell Cycle (GO:0051726) -> genes: [CDK4, MYC, PES1, PLK1, TBRG4]\n- rRNA Methylation (GO:0031167) -> genes: [NOP2, TFB2M]\n- Ribosomal Large Subunit Assembly (GO:0000027) -> genes: [NOP2, PPAN]\n- Positive Regulation Of Cell Cycle G2/M Phase Transition (GO:1902751) -> genes: [NPM1, CDK4]\n- Negative Regulation Of Apoptotic Process (GO:0043066) -> genes: [SUPV3L1, NPM1, MYC, PLK1, PA2G4, HSPD1]\n- Positive Regulation Of Fibroblast Proliferation (GO:0048146) -> genes: [CDK4, MYC]\n- Maturation Of SSU-rRNA From Tricistronic rRNA Transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA) (GO:0000462) -> genes: [UTP20, WDR43]\n- Regulation Of Transcription By RNA Polymerase I (GO:0006356) -> genes: [MYBBP1A, WDR43]\n- Mitotic Cell Cycle Phase Transition (GO:0044772) -> genes: [CDK4, MYC, PLK1]\n- Positive Regulation Of RNA Metabolic Process (GO:0051254) -> genes: [SUPV3L1, WDR43]\n- Chromatin Remodeling (GO:0006338) -> genes: [NPM1, MYBBP1A, CBX3, MYC]\n- Apoptotic Mitochondrial Changes (GO:0008637) -> genes: [HK2, HSPD1]\n- Positive Regulation Of Transcription By RNA Polymerase I (GO:0045943) -> genes: [MYBBP1A, WDR43]\n\n[KEGG_2021_Human]\n- Ribosome biogenesis in eukaryotes -> genes: [RCL1, NOP56, TCOF1, MPHOSPH10, IMP4, WDR43, GNL3]\n- Cell cycle -> genes: [CDK4, MYC, PLK1, MCM4, MCM5]\n\n=== ABSTRACTS ===\n[1] TMEM105 upregulation promotes colorectal cancer malignancy: a novel prognostic biomarker potentially linked to the MYC-Ribosome biogenesis axis.\nTransmembrane protein 105 (TMEM105 ) has recently emerged as a potential oncogenic factor in various malignancies, yet its role in colorectal cancer (CRC) remains unclear. In this study, we comprehensively investigated the expression and function of TMEM105 in CRC through an integrated in silico, ex vivo, and in vitro approach. Publicly available datasets (TCGA, GSE41328, and GSE25070) were analyzed to assess TMEM105 transcript expression and its association with clinicopathological features, followed by weighted gene co-expression network analysis to identify relevant biological pathways. The expression levels were further validated via RT‒qPCR in 25 paired CRC and adjacent non-tumorous tissues. Functional assays were performed after siRNA-mediated silencing of TMEM105 in CRC cell lines to evaluate its impact on cell viability, clonogenicity, migration, apoptosis, and pathway-specific gene expression. TMEM105 was significantly upregulated in CRC tissues, and elevated expression levels were correlated with advanced stage (stage IV) and metastasis. Co-expression analysis revealed ribosome biogenesis and MYC signaling as pathways strongly associated with TMEM105. The functional inhibition of TMEM105 reduced cell viability, impaired colony formation, suppressed migration, and promoted apoptosis, accompanied by the downregulation of the ribosomal genes RPL7 and RPS2 and a marked decrease in total protein synthesis. Collectively, these findings establish TMEM105 as a putative oncogenic driver in CRC. Our data reveal a strong correlation between TMEM105 upregulation and the modulation of ribosome biogenesis, a process known to be driven by MYC signaling, which aligns with recent mechanistic evidence in other malignancies.\n[2] LncRNA TMEM105 Promotes Malignancy via the MYC-Ribosome Biogenesis Axis: A Novel Prognostic Biomarker and Therapeutic Target in Colorectal Cancer\n<title>Abstract</title>  <p>Transmembrane protein 105 (TMEM105) has recently emerged as a potential oncogenic factor in various malignancies, yet its role in colorectal cancer (CRC) remains unclear. In this study, we comprehensively investigated the expression and function of TMEM105 in CRC through an integrated in silico, ex vivo, and in vitro approach. Publicly available datasets (TCGA, GSE41328, and GSE25070) were analyzed to assess TMEM105 expression and its association with clinicopathological features, followed by weighted gene co-expression network analysis to identify relevant biological pathways. The expression levels were further validated via RT‒qPCR in 25 paired CRC and adjacent non-tumorous tissues. Functional assays were performed after siRNA-mediated silencing of TMEM105 in CRC cell lines to evaluate its impact on cell viability, clonogenicity, migration, apoptosis, and pathway-specific gene expression. TMEM105 was significantly upregulated in CRC tissues, and elevated TMEM105 expression was correlated with advanced stage (stage IV) and metastasis. Co-expression analysis revealed ribosome biogenesis and MYC signaling as pathways strongly associated with TMEM105. The functional inhibition of TMEM105 reduced cell viability, impaired colony formation, suppressed migration, and promoted apoptosis, accompanied by the downregulation of the ribosomal genes RPL7 and RPS2 and a marked decrease in global protein synthesis. Collectively, these findings establish TMEM105 as a putative oncogenic driver that promotes CRC progression by modulating ribosome biogenesis, potentially in concert with MYC signaling. TMEM105 may therefore serve as a promising prognostic biomarker and novel therapeutic target for advanced colorectal cancer.</p>\n[3] Nucleolus as a cornerstone linking proliferation and metabolism to cellular responses to stress: involvement of transcription factors MYC and p53.\nThe nucleoli are a dynamic membraneless organelles in the nucleus playing a key role in cellular homeostasis. Transcription of rDNA, processing of rRNA, and assembly of the ribosomal subunits occur in nucleoli. Aside from ribosome biogenesis, the nucleolus is also involved in the regulation of other crucial functions, including DNA repair, regulation of cell cycle and apoptosis by mediating nucleolar stress responses. This makes it a key hub participating in regulation of various cellular processes. Given the fact, that protein biosynthesis is directly linked to multiple pathways and depends on ribosome production, it is not surprising that ribosome biogenesis is a centerpiece connecting fundamental cellular processes with each other. Of particular interest is the relationship between the nucleolus, cell cycle, and oncogenesis. In tumor and hyperproliferative cells, an increase in nucleolar size and activity directly correlates with enhanced ribosome biogenesis. This process is mutually controlled by oncogenes of the MYC family and tumor suppressors such as p53 and ARF. MYC plays a central role in regulating DNA transcription, and disrupting of ribosome biogenesis regulation could result in nucleolar stress. It induces activation of p53-dependent and p53-independent checkpoint pathways resulting in cell cycle arrest or apoptosis. In addition to its role in carcinogenesis, impaired ribosome biogenesis is associated with neurodegenerative diseases and ribosomopathies such as Diamond-Blackfan anemia. Thus, understanding the molecular mechanisms of nucleolar functions, and its links with main regulators of the cell cycle and oncogenesis is of great importance. It may help finding novel molecular targets and therapeutic approaches to treat disorders associated with dysregulated ribosome biogenesis and control of proliferation. This review considers the main aspects of nucleolar activity regulation, its role in the cell cycle and diseases, and the therapeutic prospects for targeting these processes.\n[4] Signaling to make human ribosomes: Connections between the cytoplasm and the nucleolus.\nRibosome biogenesis is a complex, multi-step cellular process that begins in the nucleolus and produces ribosomes that translate mRNA into proteins in the cytoplasm. This process is essential for cellular growth yet is resource intensive. It is therefore tightly coordinated with cytoplasmic requirements, energy availability, and the cell cycle through several kinase signaling pathways. Increasing evidence indicates that proteins shared between the cytoplasm and nucleolus may enhance this coordination. Here, we evaluate the interplay between the cytoplasm and nucleolus in human cells, presenting an intricate bidirectional regulatory network with emerging clinical relevance. We describe the phosphorylation events that promote ribosome biogenesis during interphase, focusing on mammalian target of rapamycin complex 1 (mTORC1), extracellular signal-regulated kinase (ERK), and casein kinase II (CK2). By contrast, protein phosphorylation inactivates ribosome biogenesis during mitosis. We further summarize several factors shared among the mitotic machinery, cytoplasmic organelles, and the nucleolus. Moreover, we highlight the mounting evidence that dysregulated cytoplasmic-nucleolar feedback contributes to the progression of several diseases.",
+  "judge_claims": [
+    {
+      "claim": "Myc is an oncogene with known oncogenic functions.",
+      "label": "BACKGROUND",
+      "why": "MYC's oncogenic function is well-established textbook biology, but this specific characterization is not explicitly stated in the provided evidence."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for ribosome biogenesis processes.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'Ribosome Biogenesis (GO:0042254)' with multiple genes listed, and abstracts [1], [2], and [3] explicitly link MYC to ribosome biogenesis."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for ribonucleoprotein complex biogenesis.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'Ribonucleoprotein Complex Biogenesis (GO:0022613)' with multiple genes listed."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for rRNA processing.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'rRNA Processing (GO:0006364)' with multiple genes listed."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for ribosomal large subunit biogenesis.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'Ribosomal Large Subunit Biogenesis (GO:0042273)' with multiple genes listed."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for ribosomal small subunit biogenesis.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'Ribosomal Small Subunit Biogenesis (GO:0042274)' with multiple genes listed."
+    },
+    {
+      "claim": "Ribosomes are the cellular machinery responsible for protein synthesis.",
+      "label": "BACKGROUND",
+      "why": "This is fundamental textbook biology about ribosome function, not explicitly stated in the evidence."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for cell cycle processes.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'Regulation Of Cell Cycle (GO:0051726)' and 'Cell cycle' KEGG pathway, both listing MYC among the genes."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for DNA replication processes.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'DNA Replication (GO:0006260)' with genes listed."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for DNA metabolic processes.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'DNA Metabolic Process (GO:0006259)' with multiple genes listed."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for DNA duplex unwinding.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'DNA Duplex Unwinding (GO:0032508)' with genes listed."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for regulation of DNA-templated DNA replication.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'Regulation Of DNA-templated DNA Replication Initiation (GO:0030174)' and 'Regulation Of DNA-templated DNA Replication (GO:0090329)' with genes listed."
+    },
+    {
+      "claim": "The Myc Targets V2 gene set is enriched for regulation of cell cycle G2/M phase transition.",
+      "label": "GROUNDED",
+      "why": "The evidence shows enrichment for 'Regulation Of Cell Cycle G2/M Phase Transition (GO:1902749)' with genes listed."
+    },
+    {
+      "claim": "CDK4 is involved in cell cycle regulation.",
+      "label": "GROUNDED",
+      "why": "CDK4 appears in 'Regulation Of Cell Cycle (GO:0051726)' and 'Cell cycle' KEGG pathway in the evidence."
+    },
+    {
+      "claim": "PLK1 is involved in cell cycle regulation.",
+      "label": "GROUNDED",
+      "why": "PLK1 appears in 'Regulation Of Cell Cycle (GO:0051726)' and 'Cell cycle' KEGG pathway in the evidence."
+    },
+    {
+      "claim": "MCM4 is involved in cell cycle regulation.",
+      "label": "GROUNDED",
+      "why": "MCM4 appears in 'Cell cycle' KEGG pathway and multiple DNA replication-related terms in the evidence."
+    },
+    {
+      "claim": "MCM5 is involved in cell cycle regulation.",
+      "label": "GROUNDED",
+      "why": "MCM5 appears in 'Cell cycle' KEGG pathway and multiple DNA replication-related terms in the evidence."
+    },
+    {
+      "claim": "MYC is connected to ribosome biogenesis in the context of cancer.",
+      "label": "GROUNDED",
+      "why": "Abstracts [1], [2], and [3] explicitly discuss the connection between MYC and ribosome biogenesis in cancer contexts."
+    },
+    {
+      "claim": "Ribosome biogenesis occurs in the nucleolus.",
+      "label": "GROUNDED",
+      "why": "Abstract [3] states 'Transcription of rDNA, processing of rRNA, and assembly of the ribosomal subunits occur in nucleoli' and abstract [4] states 'Ribosome biogenesis is a complex, multi-step cellular process that begins in the nucleolus'."
+    },
+    {
+      "claim": "The nucleolus is a key hub linking proliferation and cell cycle regulation.",
+      "label": "GROUNDED",
+      "why": "Abstract [3] explicitly states the nucleolus is 'a key hub participating in regulation of various cellular processes' and discusses its role in cell cycle regulation."
+    },
+    {
+      "claim": "MYC is a central regulator of nucleolar function.",
+      "label": "GROUNDED",
+      "why": "Abstract [3] states 'MYC plays a central role in regulating DNA transcription' and discusses MYC's control of ribosome biogenesis and nucleolar function."
+    },
+    {
+      "claim": "MYC enhances protein synthesis.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] states that TMEM105 inhibition led to 'a marked decrease in total protein synthesis' in the context of MYC-ribosome biogenesis axis, and abstract [3] discusses MYC's role in protein biosynthesis through ribosome production."
+    },
+    {
+      "claim": "MYC drives cells through the cell cycle.",
+      "label": "GROUNDED",
+      "why": "MYC appears in multiple cell cycle-related terms including 'Regulation Of Cell Cycle (GO:0051726)', 'Mitotic Cell Cycle Phase Transition (GO:0044772)', and 'Cell cycle' KEGG pathway."
+    },
+    {
+      "claim": "MYC promotes cell growth through ribosome biogenesis.",
+      "label": "GROUNDED",
+      "why": "Abstract [3] states 'protein biosynthesis is directly linked to multiple pathways and depends on ribosome production' and discusses MYC's role in ribosome biogenesis in the context of cell growth and proliferation."
+    },
+    {
+      "claim": "MYC promotes cell proliferation through ribosome biogenesis.",
+      "label": "GROUNDED",
+      "why": "Abstract [3] discusses MYC's role in ribosome biogenesis in tumor and hyperproliferative cells, linking enhanced ribosome biogenesis to proliferation."
+    },
+    {
+      "claim": "MYC promotes cell growth through cell cycle progression.",
+      "label": "GROUNDED",
+      "why": "MYC appears in cell cycle regulation terms and abstract [3] discusses the relationship between nucleolus, cell cycle, and oncogenesis with MYC as a central regulator."
+    },
+    {
+      "claim": "MYC promotes cell proliferation through cell cycle progression.",
+      "label": "GROUNDED",
+      "why": "Abstract [3] discusses MYC's role in both cell cycle regulation and proliferation in the context of tumor cells."
+    },
+    {
+      "claim": "MYC activity can lead to oncogenesis.",
+      "label": "GROUNDED",
+      "why": "Abstract [3] explicitly discusses 'the relationship between the nucleolus, cell cycle, and oncogenesis' and states 'This process is mutually controlled by oncogenes of the MYC family'."
+    },
+    {
+      "claim": "TMEM105 upregulation promotes colorectal cancer malignancy.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] title explicitly states 'TMEM105 upregulation promotes colorectal cancer malignancy' and the findings establish TMEM105 as a putative oncogenic driver."
+    },
+    {
+      "claim": "TMEM105 is potentially linked to the MYC-ribosome biogenesis axis.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] title states TMEM105 is 'potentially linked to the MYC-Ribosome biogenesis axis' and the text discusses this association."
+    },
+    {
+      "claim": "LncRNA TMEM105 promotes malignancy via the MYC-ribosome biogenesis axis in colorectal cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract [2] title explicitly states 'LncRNA TMEM105 Promotes Malignancy via the MYC-Ribosome Biogenesis Axis' in colorectal cancer."
+    }
+  ],
+  "summary": {
+    "n_claims": 31,
+    "n_scored": 31,
+    "grounded_rate": 0.935,
+    "hallucination_rate": 0.0,
+    "grounded": 29,
+    "background": 2,
+    "unsupported": 0
+  }
+}

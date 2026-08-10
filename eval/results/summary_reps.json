@@ -1,0 +1,980 @@
+{
+  "judge_model": "claude-sonnet-4-5-20250929",
+  "decompose_model": "claude-sonnet-4-5-20250929",
+  "tool_model": "gemini-2.5-flash",
+  "n_sets_judged": 49,
+  "n_sets_in_aggregate": 47,
+  "hallucination_rate_mean": 0.029,
+  "hallucination_rate_sd": 0.0462,
+  "grounded_rate_mean": 0.7193,
+  "n_runs_total": 50,
+  "tool_less_rate": 0.04,
+  "empty_response_rate": 0.02,
+  "empty_response_runs": [
+    "Unfolded_Protein_Response"
+  ],
+  "tool_less_sets": [
+    "Cholesterol_Homeostasis",
+    "Unfolded_Protein_Response"
+  ],
+  "fabricated_citation_rate": 0.0,
+  "fabricated_citation_sets": [],
+  "excluded_toolless_sets": [
+    "Cholesterol_Homeostasis",
+    "Unfolded_Protein_Response"
+  ],
+  "skipped_sets": [
+    {
+      "gene_set": "Unfolded_Protein_Response",
+      "reason": "not judged"
+    }
+  ],
+  "per_set": [
+    {
+      "gene_set": "Xenobiotic_Metabolism",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 201,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 151,
+      "n_scored": 151,
+      "grounded_rate": 0.576,
+      "hallucination_rate": 0.245,
+      "grounded": 87,
+      "background": 27,
+      "unsupported": 37
+    },
+    {
+      "gene_set": "Complement",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 689,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 86,
+      "n_scored": 86,
+      "grounded_rate": 0.709,
+      "hallucination_rate": 0.14,
+      "grounded": 61,
+      "background": 13,
+      "unsupported": 12
+    },
+    {
+      "gene_set": "Adipogenesis",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 149,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 107,
+      "n_scored": 107,
+      "grounded_rate": 0.692,
+      "hallucination_rate": 0.103,
+      "grounded": 74,
+      "background": 22,
+      "unsupported": 11
+    },
+    {
+      "gene_set": "Pperoxisome",
+      "n_genes": 104,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 141,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 97,
+      "n_scored": 97,
+      "grounded_rate": 0.722,
+      "hallucination_rate": 0.103,
+      "grounded": 70,
+      "background": 17,
+      "unsupported": 10
+    },
+    {
+      "gene_set": "Adipogenesis",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 149,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 141,
+      "n_scored": 141,
+      "grounded_rate": 0.454,
+      "hallucination_rate": 0.085,
+      "grounded": 64,
+      "background": 65,
+      "unsupported": 12
+    },
+    {
+      "gene_set": "Xenobiotic_Metabolism",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 99,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 134,
+      "n_scored": 134,
+      "grounded_rate": 0.791,
+      "hallucination_rate": 0.075,
+      "grounded": 106,
+      "background": 18,
+      "unsupported": 10
+    },
+    {
+      "gene_set": "Cholesterol_Homeostasis",
+      "n_genes": 74,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 45,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 78,
+      "n_scored": 78,
+      "grounded_rate": 0.731,
+      "hallucination_rate": 0.064,
+      "grounded": 57,
+      "background": 16,
+      "unsupported": 5
+    },
+    {
+      "gene_set": "Adipogenesis",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis"
+      ],
+      "n_evidence_terms": 149,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 108,
+      "n_scored": 108,
+      "grounded_rate": 0.509,
+      "hallucination_rate": 0.056,
+      "grounded": 55,
+      "background": 47,
+      "unsupported": 6
+    },
+    {
+      "gene_set": "Pperoxisome",
+      "n_genes": 104,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 141,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 91,
+      "n_scored": 91,
+      "grounded_rate": 0.824,
+      "hallucination_rate": 0.055,
+      "grounded": 75,
+      "background": 11,
+      "unsupported": 5
+    },
+    {
+      "gene_set": "Pperoxisome",
+      "n_genes": 104,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 141,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 60,
+      "n_scored": 60,
+      "grounded_rate": 0.767,
+      "hallucination_rate": 0.05,
+      "grounded": 46,
+      "background": 11,
+      "unsupported": 3
+    },
+    {
+      "gene_set": "Unfolded_Protein_Response",
+      "n_genes": 113,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis"
+      ],
+      "n_evidence_terms": 164,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 104,
+      "n_scored": 104,
+      "grounded_rate": 0.788,
+      "hallucination_rate": 0.048,
+      "grounded": 82,
+      "background": 17,
+      "unsupported": 5
+    },
+    {
+      "gene_set": "Xenobiotic_Metabolism",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis"
+      ],
+      "n_evidence_terms": 40,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 87,
+      "n_scored": 87,
+      "grounded_rate": 0.678,
+      "hallucination_rate": 0.046,
+      "grounded": 59,
+      "background": 24,
+      "unsupported": 4
+    },
+    {
+      "gene_set": "DNA_Repair",
+      "n_genes": 150,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 143,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 79,
+      "n_scored": 79,
+      "grounded_rate": 0.81,
+      "hallucination_rate": 0.038,
+      "grounded": 64,
+      "background": 12,
+      "unsupported": 3
+    },
+    {
+      "gene_set": "Angiogenesis",
+      "n_genes": 36,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 245,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 94,
+      "n_scored": 94,
+      "grounded_rate": 0.691,
+      "hallucination_rate": 0.032,
+      "grounded": 65,
+      "background": 26,
+      "unsupported": 3
+    },
+    {
+      "gene_set": "Cholesterol_Homeostasis",
+      "n_genes": 74,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 45,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 36,
+      "n_scored": 36,
+      "grounded_rate": 0.722,
+      "hallucination_rate": 0.028,
+      "grounded": 26,
+      "background": 9,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Complement",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 689,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 78,
+      "n_scored": 78,
+      "grounded_rate": 0.705,
+      "hallucination_rate": 0.026,
+      "grounded": 55,
+      "background": 21,
+      "unsupported": 2
+    },
+    {
+      "gene_set": "Interferon_Gamma_Response",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "get_gene_info",
+        "get_gene_info"
+      ],
+      "n_evidence_terms": 559,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 78,
+      "n_scored": 78,
+      "grounded_rate": 0.551,
+      "hallucination_rate": 0.026,
+      "grounded": 43,
+      "background": 33,
+      "unsupported": 2
+    },
+    {
+      "gene_set": "Cholesterol_Homeostasis",
+      "n_genes": 74,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 45,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 40,
+      "n_scored": 40,
+      "grounded_rate": 0.925,
+      "hallucination_rate": 0.025,
+      "grounded": 37,
+      "background": 2,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Adipogenesis",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 149,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 103,
+      "n_scored": 103,
+      "grounded_rate": 0.816,
+      "hallucination_rate": 0.019,
+      "grounded": 84,
+      "background": 17,
+      "unsupported": 2
+    },
+    {
+      "gene_set": "DNA_Repair",
+      "n_genes": 150,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 143,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 117,
+      "n_scored": 117,
+      "grounded_rate": 0.932,
+      "hallucination_rate": 0.017,
+      "grounded": 109,
+      "background": 6,
+      "unsupported": 2
+    },
+    {
+      "gene_set": "Adipogenesis",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 149,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 72,
+      "n_scored": 72,
+      "grounded_rate": 0.611,
+      "hallucination_rate": 0.014,
+      "grounded": 44,
+      "background": 27,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Complement",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 689,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 150,
+      "n_scored": 150,
+      "grounded_rate": 0.84,
+      "hallucination_rate": 0.013,
+      "grounded": 126,
+      "background": 22,
+      "unsupported": 2
+    },
+    {
+      "gene_set": "Complement",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 20,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 76,
+      "n_scored": 76,
+      "grounded_rate": 0.789,
+      "hallucination_rate": 0.013,
+      "grounded": 60,
+      "background": 15,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Angiogenesis",
+      "n_genes": 36,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 245,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 94,
+      "n_scored": 94,
+      "grounded_rate": 0.617,
+      "hallucination_rate": 0.011,
+      "grounded": 58,
+      "background": 35,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Complement",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 40,
+      "n_papers": 8,
+      "fabricated_citation": false,
+      "n_claims": 97,
+      "n_scored": 97,
+      "grounded_rate": 0.577,
+      "hallucination_rate": 0.01,
+      "grounded": 56,
+      "background": 40,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Interferon_Gamma_Response",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 559,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 128,
+      "n_scored": 128,
+      "grounded_rate": 0.891,
+      "hallucination_rate": 0.008,
+      "grounded": 114,
+      "background": 13,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Apical_Junction",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 505,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 139,
+      "n_scored": 139,
+      "grounded_rate": 0.741,
+      "hallucination_rate": 0.007,
+      "grounded": 103,
+      "background": 35,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Pperoxisome",
+      "n_genes": 104,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 141,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 167,
+      "n_scored": 167,
+      "grounded_rate": 0.772,
+      "hallucination_rate": 0.006,
+      "grounded": 129,
+      "background": 37,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Angiogenesis",
+      "n_genes": 36,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis"
+      ],
+      "n_evidence_terms": 245,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 63,
+      "n_scored": 63,
+      "grounded_rate": 0.587,
+      "hallucination_rate": 0.0,
+      "grounded": 37,
+      "background": 26,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Angiogenesis",
+      "n_genes": 36,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 245,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 137,
+      "n_scored": 137,
+      "grounded_rate": 0.555,
+      "hallucination_rate": 0.0,
+      "grounded": 76,
+      "background": 61,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Angiogenesis",
+      "n_genes": 36,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 245,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 96,
+      "n_scored": 96,
+      "grounded_rate": 0.688,
+      "hallucination_rate": 0.0,
+      "grounded": 66,
+      "background": 30,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Apical_Junction",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 505,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 154,
+      "n_scored": 154,
+      "grounded_rate": 0.649,
+      "hallucination_rate": 0.0,
+      "grounded": 100,
+      "background": 54,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Apical_Junction",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 505,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 110,
+      "n_scored": 110,
+      "grounded_rate": 0.745,
+      "hallucination_rate": 0.0,
+      "grounded": 82,
+      "background": 28,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Apical_Junction",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 20,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 131,
+      "n_scored": 131,
+      "grounded_rate": 0.794,
+      "hallucination_rate": 0.0,
+      "grounded": 104,
+      "background": 27,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Apical_Junction",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 505,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 89,
+      "n_scored": 89,
+      "grounded_rate": 0.809,
+      "hallucination_rate": 0.0,
+      "grounded": 72,
+      "background": 17,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Cholesterol_Homeostasis",
+      "n_genes": 74,
+      "valid": false,
+      "tools_used": [],
+      "n_evidence_terms": 0,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 48,
+      "n_scored": 48,
+      "grounded_rate": 0.0,
+      "hallucination_rate": 0.0,
+      "grounded": 0,
+      "background": 48,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Cholesterol_Homeostasis",
+      "n_genes": 74,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 18,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 57,
+      "n_scored": 57,
+      "grounded_rate": 0.772,
+      "hallucination_rate": 0.0,
+      "grounded": 44,
+      "background": 13,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "DNA_Repair",
+      "n_genes": 150,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 143,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 107,
+      "n_scored": 107,
+      "grounded_rate": 0.869,
+      "hallucination_rate": 0.0,
+      "grounded": 93,
+      "background": 14,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "DNA_Repair",
+      "n_genes": 150,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 143,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 105,
+      "n_scored": 105,
+      "grounded_rate": 0.848,
+      "hallucination_rate": 0.0,
+      "grounded": 89,
+      "background": 16,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "DNA_Repair",
+      "n_genes": 150,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 143,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 37,
+      "n_scored": 37,
+      "grounded_rate": 0.73,
+      "hallucination_rate": 0.0,
+      "grounded": 27,
+      "background": 10,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Interferon_Gamma_Response",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 559,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 204,
+      "n_scored": 204,
+      "grounded_rate": 0.569,
+      "hallucination_rate": 0.0,
+      "grounded": 116,
+      "background": 88,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Interferon_Gamma_Response",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 20,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 207,
+      "n_scored": 207,
+      "grounded_rate": 0.667,
+      "hallucination_rate": 0.0,
+      "grounded": 138,
+      "background": 69,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Interferon_Gamma_Response",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 559,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 147,
+      "n_scored": 147,
+      "grounded_rate": 0.776,
+      "hallucination_rate": 0.0,
+      "grounded": 114,
+      "background": 33,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Pperoxisome",
+      "n_genes": 104,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 141,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 113,
+      "n_scored": 113,
+      "grounded_rate": 0.602,
+      "hallucination_rate": 0.0,
+      "grounded": 68,
+      "background": 45,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Unfolded_Protein_Response",
+      "n_genes": 113,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 170,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 141,
+      "n_scored": 141,
+      "grounded_rate": 0.709,
+      "hallucination_rate": 0.0,
+      "grounded": 100,
+      "background": 41,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Unfolded_Protein_Response",
+      "n_genes": 113,
+      "valid": false,
+      "tools_used": [
+        "search_literature"
+      ],
+      "n_evidence_terms": 0,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 56,
+      "n_scored": 56,
+      "grounded_rate": 0.375,
+      "hallucination_rate": 0.0,
+      "grounded": 21,
+      "background": 35,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Unfolded_Protein_Response",
+      "n_genes": 113,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis"
+      ],
+      "n_evidence_terms": 170,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 58,
+      "n_scored": 58,
+      "grounded_rate": 0.828,
+      "hallucination_rate": 0.0,
+      "grounded": 48,
+      "background": 10,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Xenobiotic_Metabolism",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis"
+      ],
+      "n_evidence_terms": 201,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 123,
+      "n_scored": 123,
+      "grounded_rate": 0.715,
+      "hallucination_rate": 0.0,
+      "grounded": 88,
+      "background": 35,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Xenobiotic_Metabolism",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 201,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 77,
+      "n_scored": 77,
+      "grounded_rate": 0.662,
+      "hallucination_rate": 0.0,
+      "grounded": 51,
+      "background": 26,
+      "unsupported": 0
+    }
+  ]
+}

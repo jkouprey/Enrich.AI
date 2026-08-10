@@ -1,0 +1,4862 @@
+{
+  "gene_set": "Interferon_Alpha_Response",
+  "context": "Interferon Alpha Response",
+  "genes": [
+    "MX1",
+    "ISG15",
+    "OAS1",
+    "IFIT3",
+    "IFI44",
+    "IFI35",
+    "IRF7",
+    "RSAD2",
+    "IFI44L",
+    "IFITM1",
+    "IFI27",
+    "IRF9",
+    "OASL",
+    "EIF2AK2",
+    "IFIT2",
+    "CXCL10",
+    "TAP1",
+    "SP110",
+    "DDX60",
+    "UBE2L6",
+    "USP18",
+    "PSMB8",
+    "IFIH1",
+    "BST2",
+    "LGALS3BP",
+    "ADAR",
+    "ISG20",
+    "GBP2",
+    "IRF1",
+    "PLSCR1",
+    "PSMB9",
+    "HERC6",
+    "SAMD9",
+    "CMPK2",
+    "IFITM3",
+    "RTP4",
+    "STAT2",
+    "SAMD9L",
+    "LY6E",
+    "IFITM2",
+    "HELZ2",
+    "CXCL11",
+    "TRIM21",
+    "PARP14",
+    "TRIM26",
+    "PARP12",
+    "NMI",
+    "RNF31",
+    "HLA-C",
+    "CASP1",
+    "TRIM14",
+    "TDRD7",
+    "DHX58",
+    "PARP9",
+    "PNPT1",
+    "TRIM25",
+    "PSME1",
+    "WARS1",
+    "EPSTI1",
+    "UBA7",
+    "PSME2",
+    "B2M",
+    "TRIM5",
+    "C1S",
+    "LAP3",
+    "LAMP3",
+    "GBP4",
+    "NCOA7",
+    "TMEM140",
+    "CD74",
+    "GMPR",
+    "PSMA3",
+    "PROCR",
+    "IL7",
+    "IFI30",
+    "IRF2",
+    "CSF1",
+    "IL15",
+    "CNP",
+    "TENT5A",
+    "IL4R",
+    "CMTR1",
+    "CD47",
+    "LPAR6",
+    "MOV10",
+    "CASP8",
+    "TXNIP",
+    "SLC25A28",
+    "SELL",
+    "TRAFD1",
+    "BATF2",
+    "RIPK2",
+    "CCRL2",
+    "NUB1",
+    "OGFR",
+    "MVB12A",
+    "ELF1"
+  ],
+  "n_genes": 97,
+  "query": "Analyze this gene set (biological context: Interferon Alpha Response) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: MX1, ISG15, OAS1, IFIT3, IFI44, IFI35, IRF7, RSAD2, IFI44L, IFITM1, IFI27, IRF9, OASL, EIF2AK2, IFIT2, CXCL10, TAP1, SP110, DDX60, UBE2L6, USP18, PSMB8, IFIH1, BST2, LGALS3BP, ADAR, ISG20, GBP2, IRF1, PLSCR1, PSMB9, HERC6, SAMD9, CMPK2, IFITM3, RTP4, STAT2, SAMD9L, LY6E, IFITM2, HELZ2, CXCL11, TRIM21, PARP14, TRIM26, PARP12, NMI, RNF31, HLA-C, CASP1, TRIM14, TDRD7, DHX58, PARP9, PNPT1, TRIM25, PSME1, WARS1, EPSTI1, UBA7, PSME2, B2M, TRIM5, C1S, LAP3, LAMP3, GBP4, NCOA7, TMEM140, CD74, GMPR, PSMA3, PROCR, IL7, IFI30, IRF2, CSF1, IL15, CNP, TENT5A, IL4R, CMTR1, CD47, LPAR6, MOV10, CASP8, TXNIP, SLC25A28, SELL, TRAFD1, BATF2, RIPK2, CCRL2, NUB1, OGFR, MVB12A, ELF1",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 166,
+  "n_papers": 2,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 2,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 2,
+    "cited_pmids": [
+      "40284971"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "This gene set exhibits a robust and highly coordinated **Interferon Alpha Response**, primarily characterized by a strong **antiviral defense** program. The enrichment analysis consistently highlights pathways involved in sensing viral pathogens, initiating interferon production, and executing downstream antiviral effector mechanisms.\n\n## Detailed Analysis\n\n**Core Interferon-Mediated Antiviral Response:**\nThe most prominent themes are directly related to antiviral defense and interferon signaling. Terms like \"Defense Response To Virus\" (p=3.29e-40), \"Negative Regulation Of Viral Process\", \"Antiviral Innate Immune Response\" (p=1.71e-12), and specifically \"Response To Interferon-Alpha\" (p=8.32e-09) from GO_Biological_Process_2023, along with several virus-specific infection pathways from KEGG (e.g., \"Influenza A\", \"Epstein-Barr virus infection\", \"Coronavirus disease\", \"Measles\", \"Hepatitis C\", \"Herpes simplex virus 1 infection\", \"Human papillomavirus infection\"), are overwhelmingly enriched. These collectively indicate a comprehensive cellular response aimed at combating viral threats.\n\nKey genes driving this response include established interferon-stimulated genes (ISGs) such as MX1, ISG15, OAS1, IFITM1/2/3, IFIH1 (MDA5), EIF2AK2 (PKR), STAT2, and the interferon regulatory factors IRF1, IRF7, IRF9.\n\n**Mechanism of Antiviral Action:**\n*   **Viral Replication Inhibition:** Several GO terms point to direct interference with viral life cycles, including \"Negative Regulation Of Viral Genome Replication\", \"Regulation Of Viral Genome Replication\", \"Negative Regulation Of Viral Life Cycle\", and \"Negative Regulation Of Viral Entry Into Host Cell\". Genes like MX1, OAS1, ISG15, IFITM proteins, and RSAD2 (Viperin) are known to directly inhibit various stages of viral replication and assembly.\n*   **ISGylation:** The \"ISG15-protein Conjugation\" (p=2.97e-05) GO term is highly enriched, highlighting the importance of ISG15, a ubiquitin-like protein, in modifying host and viral proteins to regulate immune responses and inhibit viral replication. Genes like UBA7, ISG15, and UBE2L6 are central to this process.\n*   **Pattern Recognition and Signaling:** \"RIG-I-like receptor signaling pathway\" (KEGG p=7.26e-07) and \"Cytosolic Pattern Recognition Receptor Signaling Pathway\" (GO p=9.55e-05) are highly enriched, involving IFIH1 (MDA5), DHX58, and DDX60. This indicates activation of pathways responsible for sensing viral RNA in the cytoplasm, leading to interferon production. \"NOD-like receptor signaling pathway\" (KEGG p=5.73e-08) and \"Toll-like receptor signaling pathway\" (KEGG p=7.99e-03) also appear, suggesting broader innate immune sensing.\n*   **JAK-STAT Pathway:** The presence of STAT2 and IRF9, and the enrichment of the \"JAK-STAT signaling pathway\" (KEGG p=5.93e-03), confirms the canonical signaling cascade downstream of type I interferon receptor binding, which leads to the transcription of ISGs.\n*   **Antigen Presentation:** \"Antigen processing and presentation\" (KEGG p=1.16e-06) and \"Antigen Processing And Presentation Of Peptide Antigen Via MHC Class I\" (GO p=1.08e-03) are enriched, involving genes like TAP1, HLA-C, and B2M. This suggests that infected cells are priming the adaptive immune system by presenting viral antigens via MHC class I.\n\n**Cytokine and Immune Regulation:**\nBeyond direct antiviral effects, the gene set also reflects broad immune activation and regulation. Terms like \"Response To Cytokine\" (GO p=4.64e-15), \"Regulation Of Innate Immune Response\", \"Positive Regulation Of Cytokine Production\", and \"Regulation Of Immune Response\" are significant. The presence of chemokines CXCL10 and CXCL11 and their enrichment in \"T Cell Chemotaxis\" (GO p=9.19e-03) and \"T Cell Migration\" suggests recruitment of immune cells, particularly T cells, to sites of infection.\n\n**Proteostasis and Cell Fate:**\n\"Proteasome\" (KEGG p=2.89e-05) and related GO terms (e.g., \"Regulation Of Endopeptidase Activity\", \"Protein Ubiquitination\") are highly enriched, reflecting the increased proteasomal degradation activity crucial for antigen processing and turnover of cellular and viral proteins during an antiviral response. Processes like \"Pyroptosis\" (GO p=1.91e-04) and \"Necroptosis\" (KEGG p=9.59e-04) are also enriched, indicating programmed cell death mechanisms in response to infection.\n\n**Literature Support:**\nThe literature search confirms that genes like MX1, ISG15, OAS1, IFITM, STAT2, and IRF7 are central to the Type I Interferon response and antiviral defense. The retrieved paper by Muhammad et al. (2025) directly supports this by outlining how PAMP-PRR interactions lead to Type I Interferon production, which then activates ISG expression and ISGylation, specifically mentioning STAT1, STAT2, IRF9, and ISG15 as crucial components.\n\nIn summary, the gene list represents a robust and well-orchestrated host antiviral response, highly characteristic of interferon-alpha stimulation, encompassing viral sensing, signaling, direct antiviral effector mechanisms, immune cell recruitment, and antigen presentation.\n\n**References:**\n*   Muhammad I, Contes K, Bility MT, Tang Q. Chasing Virus Replication and Infection: PAMP-PRR Interaction Drives Type I Interferon Production, Which in Turn Activates ISG Expression and ISGylation. Viruses. 2025 Apr 4;17(4):528. PMID:40284971.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human', 'genes': 'MX1, ISG15, OAS1, IFIT3, IFI44, IFI35, IRF7, RSAD2, IFI44L, IFITM1, IFI27, IRF9, OASL, EIF2AK2, IFIT2, CXCL10, TAP1, SP110, DDX60, UBE2L6, USP18, PSMB8, IFIH1, BST2, LGALS3BP, ADAR, ISG20, GBP2, IRF1, PLSCR1, PSMB9, HERC6, SAMD9, CMPK2, IFITM3, RTP4, STAT2, SAMD9L, LY6E, IFITM2, HELZ2, CXCL11, TRIM21, PARP14, TRIM26, PARP12, NMI, RNF31, HLA-C, CASP1, TRIM14, TDRD7, DHX58, PARP9, PNPT1, TRIM25, PSME1, WARS1, EPSTI1, UBA7, PSME2, B2M, TRIM5, C1S, LAP3, LAMP3, GBP4, NCOA7, TMEM140, CD74, GMPR, PSMA3, PROCR, IL7, IFI30, IRF2, CSF1, IL15, CNP, TENT5A, IL4R, CMTR1, CD47, LPAR6, MOV10, CASP8, TXNIP, SLC25A28, SELL, TRAFD1, BATF2, RIPK2, CCRL2, NUB1, OGFR, MVB12A, ELF1'}",
+    "Tool: search_literature | Args: {'max_results': 5, 'query': 'Interferon Alpha Response antiviral genes MX1 ISG15 OAS1 IFITM STAT2 IRF7'}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Interferon Alpha Response) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: MX1, ISG15, OAS1, IFIT3, IFI44, IFI35, IRF7, RSAD2, IF"
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given this gene list and the crucial context is the \"Interferon Alpha Response.\" My plan is pretty straightforward, but I need to be meticulous. First, I'm going to kick off the analysis with `run_enrichment_analysis`. I'll be using the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries; these are the right tools for the job to identify relevant pathways.\n\nNext, and this is where my expertise comes in, I will interpret the enriched terms with a laser focus on \"Interferon Alpha Response.\" I'm not just looking for any enrichment; I'm digging for those connections. I'll need to prioritize the terms that directly relate to, or strongly hint at, this specific response. I'll be thinking critically, questioning the relevance of each hit.\n\nThen comes the literature search – the real meat of the investigation. Using `search_literature`, I will need to construct very targeted queries, weaving in the most compelling enriched terms alongside the key genes that emerge from the analysis. The goal is to find supporting evidence, to back up any interpretation I make. Naturally, I’ll only cite papers that *actually* come up in the search, I won't reach for citations that aren't warranted.\n\nFinally, I'll synthesize everything into a concise biological interpretation. This isn't just a regurgitation of the results. It's about explaining what the pathways *mean* in the context of the Interferon Alpha Response. I'll highlight the most important terms and explain *why* they matter. I’ll be flagging any noise, or generic terms that don't add much value to the overall picture. I will be looking for the most concise way to explain what I've learned. Let's get to work!",
+      "action": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023,KEGG_2021_Human, genes=MX1, ISG15, OAS1, IFIT3, IFI44, IFI35, IRF7, RSAD2...",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "b7e9fa8e-1d5d-45a7-97cc-5baaf72a8c37",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 97 | Total significant terms: 166"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "This gene set is profoundly indicative of a robust **Interferon Alpha (IFN-α) Response** and a generalized **antiviral state**. The enrichment analysis results are highly consistent, pointing towards a coordinated cellular effort to combat viral infection, primarily driven by Type I interferon signaling.\n\n## Detailed Analysis\n\nThe enrichment analysis, using both GO Biological Process and KEGG Human Pathway libraries, overwhelmingly highlights pathways central to antiviral immunity and interferon"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so the enrichment analysis is screaming \"interferon alpha response\" and \"antiviral activity\" at me. It's incredibly clear, actually. The top GO terms all revolve around viral defense: Defense Response to Virus, Negative Regulation of Viral Process, Antiviral Innate Immune Response, and the response to Interferon-Alpha/Beta. That's a good starting point, and I'm not surprised to see pathways like \"Influenza A,\" \"Epstein-Barr virus infection,\" and \"Coronavirus disease\" popping up, along with the core immune signaling players, RIG-I, NOD-like receptors, and JAK-STAT.\n\nGiven that context, my focus narrows to the terms directly tied to interferon responses and antiviral activity. No need to get distracted by anything tangential.\n\nNow, to solidify this and see what else is out there, I need to craft a laser-focused literature search. I'll distill the key themes from this enrichment data:\n\n*   **Interferon Response**: Response To Interferon-Alpha, Response To Type I Interferon, Type I Interferon-Mediated Signaling Pathway, and the JAK-STAT signaling pathway.\n*   **Antiviral Defense**: Defense Response To Virus, Antiviral Innate Immune Response, Negative Regulation Of Viral Process, and the RIG-I-like receptor signaling pathway.\n*   **Key Genes**: I need to include MX1, ISG15, OAS1, IFITM1-3, IFIH1 (MDA5), DHX58 (LGP2), IRF7, STAT2, and EIF2AK2 (PKR). These are textbook Interferon-Stimulated Genes and crucial in antiviral signaling. They are central to this whole response.\n\nSo, I'm going to formulate a concise query focused on the interferon alpha response and key genes implicated in the antiviral defense. The goal is to get a highly relevant subset of literature, quickly, to validate and broaden this understanding. Time to get searching.",
+      "action": "search_literature",
+      "args": "max_results=5, query=Interferon Alpha Response antiviral genes MX1 ISG1...",
+      "tool_name": "search_literature",
+      "tool_call_id": "a3d96b33-fdd8-4341-9877-266926a2a89c",
+      "observation": "=== LITERATURE SEARCH: 'Interferon Alpha Response antiviral genes MX1 ISG15 OAS1 IFITM STAT2 IRF7' === | Found 2 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "This gene set exhibits a robust and highly coordinated **Interferon Alpha Response**, primarily characterized by a strong **antiviral defense** program. The enrichment analysis consistently highlights pathways involved in sensing viral pathogens, initiating interferon production, and executing downstream antiviral effector mechanisms.\n\n## Detailed Analysis\n\n**Core Interferon-Mediated Antiviral Response:**\nThe most prominent themes are directly related to antiviral defense and interferon signalin"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023,KEGG_2021_Human, genes=MX1, ISG15, OAS1, IFIT3, IFI44, IFI35, IRF7, RSAD2...",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given this gene list and the crucial context is the \"Interferon Alpha Response.\" My plan is pretty straightforward, but I need to be meticulous. First, I'm going to kick off the analysis with `run_enrichment_analysis`. I'll be using the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries; these are the right tools for the job to identify relevant pathways.\n\nNext, and this is where my expertise comes in, I will interpret the enriched terms with a laser focus on \"Interferon Alpha Response.\" I'm not just looking for any enrichment; I'm digging for those connections. I'll need to prioritize the terms that directly relate to, or strongly hint at, this specific response. I'll be thinking critically, questioning the relevance of each hit.\n\nThen comes the literature search – the real meat of the investigation. Using `search_literature`, I will need to construct very targeted queries, weaving in the most compelling enriched terms alongside the key genes that emerge from the analysis. The goal is to find supporting evidence, to back up any interpretation I make. Naturally, I’ll only cite papers that *actually* come up in the search, I won't reach for citations that aren't warranted.\n\nFinally, I'll synthesize everything into a concise biological interpretation. This isn't just a regurgitation of the results. It's about explaining what the pathways *mean* in the context of the Interferon Alpha Response. I'll highlight the most important terms and explain *why* they matter. I’ll be flagging any noise, or generic terms that don't add much value to the overall picture. I will be looking for the most concise way to explain what I've learned. Let's get to work!",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 97 | Total significant terms: 166"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "max_results=5, query=Interferon Alpha Response antiviral genes MX1 ISG1...",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so the enrichment analysis is screaming \"interferon alpha response\" and \"antiviral activity\" at me. It's incredibly clear, actually. The top GO terms all revolve around viral defense: Defense Response to Virus, Negative Regulation of Viral Process, Antiviral Innate Immune Response, and the response to Interferon-Alpha/Beta. That's a good starting point, and I'm not surprised to see pathways like \"Influenza A,\" \"Epstein-Barr virus infection,\" and \"Coronavirus disease\" popping up, along with the core immune signaling players, RIG-I, NOD-like receptors, and JAK-STAT.\n\nGiven that context, my focus narrows to the terms directly tied to interferon responses and antiviral activity. No need to get distracted by anything tangential.\n\nNow, to solidify this and see what else is out there, I need to craft a laser-focused literature search. I'll distill the key themes from this enrichment data:\n\n*   **Interferon Response**: Response To Interferon-Alpha, Response To Type I Interferon, Type I Interferon-Mediated Signaling Pathway, and the JAK-STAT signaling pathway.\n*   **Antiviral Defense**: Defense Response To Virus, Antiviral Innate Immune Response, Negative Regulation Of Viral Process, and the RIG-I-like receptor signaling pathway.\n*   **Key Genes**: I need to include MX1, ISG15, OAS1, IFITM1-3, IFIH1 (MDA5), DHX58 (LGP2), IRF7, STAT2, and EIF2AK2 (PKR). These are textbook Interferon-Stimulated Genes and crucial in antiviral signaling. They are central to this whole response.\n\nSo, I'm going to formulate a concise query focused on the interferon alpha response and key genes implicated in the antiviral defense. The goal is to get a highly relevant subset of literature, quickly, to validate and broaden this understanding. Time to get searching.",
+      "observation": "=== LITERATURE SEARCH: 'Interferon Alpha Response antiviral genes MX1 ISG15 OAS1 IFITM STAT2 IRF7' === | Found 2 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "MX1",
+      "ISG15",
+      "OAS1",
+      "IFIT3",
+      "IFI44",
+      "IFI35",
+      "IRF7",
+      "RSAD2",
+      "IFI44L",
+      "IFITM1",
+      "IFI27",
+      "IRF9",
+      "OASL",
+      "EIF2AK2",
+      "IFIT2",
+      "CXCL10",
+      "TAP1",
+      "SP110",
+      "DDX60",
+      "UBE2L6",
+      "USP18",
+      "PSMB8",
+      "IFIH1",
+      "BST2",
+      "LGALS3BP",
+      "ADAR",
+      "ISG20",
+      "GBP2",
+      "IRF1",
+      "PLSCR1",
+      "PSMB9",
+      "HERC6",
+      "SAMD9",
+      "CMPK2",
+      "IFITM3",
+      "RTP4",
+      "STAT2",
+      "SAMD9L",
+      "LY6E",
+      "IFITM2",
+      "HELZ2",
+      "CXCL11",
+      "TRIM21",
+      "PARP14",
+      "TRIM26",
+      "PARP12",
+      "NMI",
+      "RNF31",
+      "HLA-C",
+      "CASP1",
+      "TRIM14",
+      "TDRD7",
+      "DHX58",
+      "PARP9",
+      "PNPT1",
+      "TRIM25",
+      "PSME1",
+      "WARS1",
+      "EPSTI1",
+      "UBA7",
+      "PSME2",
+      "B2M",
+      "TRIM5",
+      "C1S",
+      "LAP3",
+      "LAMP3",
+      "GBP4",
+      "NCOA7",
+      "TMEM140",
+      "CD74",
+      "GMPR",
+      "PSMA3",
+      "PROCR",
+      "IL7",
+      "IFI30",
+      "IRF2",
+      "CSF1",
+      "IL15",
+      "CNP",
+      "TENT5A",
+      "IL4R",
+      "CMTR1",
+      "CD47",
+      "LPAR6",
+      "MOV10",
+      "CASP8",
+      "TXNIP",
+      "SLC25A28",
+      "SELL",
+      "TRAFD1",
+      "BATF2",
+      "RIPK2",
+      "CCRL2",
+      "NUB1",
+      "OGFR",
+      "MVB12A",
+      "ELF1"
+    ],
+    "gene_count": 97,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Defense Response To Virus (GO:0051607)",
+          "term": "Defense Response To Virus (GO:0051607)",
+          "overlap": "33/189",
+          "p_value": 4.3495709548655315e-43,
+          "z_score": 65.26953125,
+          "combined_score": 6366.460686023349,
+          "overlap_genes": [
+            "IFITM3",
+            "RTP4",
+            "IFITM1",
+            "IFITM2",
+            "DDX60",
+            "USP18",
+            "IFI44L",
+            "IFIT3",
+            "IFIT2",
+            "OASL",
+            "IFIH1",
+            "TRIM5",
+            "DHX58",
+            "CASP1",
+            "TRIM25",
+            "TRIM26",
+            "GBP2",
+            "TRIM21",
+            "RSAD2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "ISG20",
+            "BST2",
+            "CXCL10",
+            "MOV10",
+            "PLSCR1",
+            "IFI27",
+            "OAS1",
+            "IRF1",
+            "IRF2",
+            "IRF7"
+          ],
+          "genes": [
+            "IFITM3",
+            "RTP4",
+            "IFITM1",
+            "IFITM2",
+            "DDX60",
+            "USP18",
+            "IFI44L",
+            "IFIT3",
+            "IFIT2",
+            "OASL",
+            "IFIH1",
+            "TRIM5",
+            "DHX58",
+            "CASP1",
+            "TRIM25",
+            "TRIM26",
+            "GBP2",
+            "TRIM21",
+            "RSAD2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "ISG20",
+            "BST2",
+            "CXCL10",
+            "MOV10",
+            "PLSCR1",
+            "IFI27",
+            "OAS1",
+            "IRF1",
+            "IRF2",
+            "IRF7"
+          ],
+          "adjusted_p_value": 3.2926252128332075e-40
+        },
+        {
+          "rank": 2,
+          "term_name": "Defense Response To Symbiont (GO:0140546)",
+          "term": "Defense Response To Symbiont (GO:0140546)",
+          "overlap": "27/148",
+          "p_value": 1.1676076666127718e-35,
+          "z_score": 63.0595041322314,
+          "combined_score": 5072.224089604453,
+          "overlap_genes": [
+            "IFITM3",
+            "RTP4",
+            "IFITM1",
+            "IFITM2",
+            "DDX60",
+            "IFI44L",
+            "IFIT3",
+            "IFIT2",
+            "OASL",
+            "IFIH1",
+            "TRIM5",
+            "CASP1",
+            "GBP2",
+            "RSAD2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "ISG20",
+            "BST2",
+            "MOV10",
+            "PLSCR1",
+            "IFI27",
+            "OAS1",
+            "IRF1",
+            "IRF2",
+            "IRF7"
+          ],
+          "genes": [
+            "IFITM3",
+            "RTP4",
+            "IFITM1",
+            "IFITM2",
+            "DDX60",
+            "IFI44L",
+            "IFIT3",
+            "IFIT2",
+            "OASL",
+            "IFIH1",
+            "TRIM5",
+            "CASP1",
+            "GBP2",
+            "RSAD2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "ISG20",
+            "BST2",
+            "MOV10",
+            "PLSCR1",
+            "IFI27",
+            "OAS1",
+            "IRF1",
+            "IRF2",
+            "IRF7"
+          ],
+          "adjusted_p_value": 4.4193950181293415e-33
+        },
+        {
+          "rank": 3,
+          "term_name": "Negative Regulation Of Viral Process (GO:0048525)",
+          "term": "Negative Regulation Of Viral Process (GO:0048525)",
+          "overlap": "15/61",
+          "p_value": 3.662909050626624e-22,
+          "z_score": 78.96474019088016,
+          "combined_score": 3897.590161613296,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "OAS1",
+            "TRIM14",
+            "TRIM21"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "OAS1",
+            "TRIM14",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 9.242740504414515e-20
+        },
+        {
+          "rank": 4,
+          "term_name": "Negative Regulation Of Viral Genome Replication (GO:0045071)",
+          "term": "Negative Regulation Of Viral Genome Replication (GO:0045071)",
+          "overlap": "13/53",
+          "p_value": 2.5569305796875853e-19,
+          "z_score": 76.85089285714285,
+          "combined_score": 3290.010487052853,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "OAS1"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "OAS1"
+          ],
+          "adjusted_p_value": 4.8389911220587555e-17
+        },
+        {
+          "rank": 5,
+          "term_name": "Regulation Of Viral Genome Replication (GO:0045069)",
+          "term": "Regulation Of Viral Genome Replication (GO:0045069)",
+          "overlap": "13/67",
+          "p_value": 7.300020384700569e-18,
+          "z_score": 56.88646384479718,
+          "combined_score": 2244.6633244739164,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "OAS1"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "OAS1"
+          ],
+          "adjusted_p_value": 1.1052230862436661e-15
+        },
+        {
+          "rank": 6,
+          "term_name": "Response To Cytokine (GO:0034097)",
+          "term": "Response To Cytokine (GO:0034097)",
+          "overlap": "15/125",
+          "p_value": 3.6776469232085636e-17,
+          "z_score": 32.91518847006652,
+          "combined_score": 1245.565813836077,
+          "overlap_genes": [
+            "IFITM3",
+            "CD74",
+            "IFITM1",
+            "IFITM2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "ADAR",
+            "BST2",
+            "PLSCR1",
+            "NUB1",
+            "CASP8",
+            "SELL",
+            "LAMP3",
+            "TRIM21"
+          ],
+          "genes": [
+            "IFITM3",
+            "CD74",
+            "IFITM1",
+            "IFITM2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "ADAR",
+            "BST2",
+            "PLSCR1",
+            "NUB1",
+            "CASP8",
+            "SELL",
+            "LAMP3",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 4.639964534781471e-15
+        },
+        {
+          "rank": 7,
+          "term_name": "Antiviral Innate Immune Response (GO:0140374)",
+          "term": "Antiviral Innate Immune Response (GO:0140374)",
+          "overlap": "10/46",
+          "p_value": 1.577849270220025e-14,
+          "z_score": 63.4323116219668,
+          "combined_score": 2015.8870209672568,
+          "overlap_genes": [
+            "IFIH1",
+            "CXCL10",
+            "OAS1",
+            "DHX58",
+            "MX1",
+            "TRIM25",
+            "EIF2AK2",
+            "USP18",
+            "IFIT3",
+            "IFIT2"
+          ],
+          "genes": [
+            "IFIH1",
+            "CXCL10",
+            "OAS1",
+            "DHX58",
+            "MX1",
+            "TRIM25",
+            "EIF2AK2",
+            "USP18",
+            "IFIT3",
+            "IFIT2"
+          ],
+          "adjusted_p_value": 1.7063312822236556e-12
+        },
+        {
+          "rank": 8,
+          "term_name": "Response To Type II Interferon (GO:0034341)",
+          "term": "Response To Type II Interferon (GO:0034341)",
+          "overlap": "11/80",
+          "p_value": 1.5498870347196467e-13,
+          "z_score": 36.76676777890125,
+          "combined_score": 1084.4514106850859,
+          "overlap_genes": [
+            "IFITM3",
+            "BST2",
+            "CD74",
+            "IFITM1",
+            "NUB1",
+            "IFITM2",
+            "CASP1",
+            "CD47",
+            "GBP2",
+            "TRIM21",
+            "GBP4"
+          ],
+          "genes": [
+            "IFITM3",
+            "BST2",
+            "CD74",
+            "IFITM1",
+            "NUB1",
+            "IFITM2",
+            "CASP1",
+            "CD47",
+            "GBP2",
+            "TRIM21",
+            "GBP4"
+          ],
+          "adjusted_p_value": 1.4665806066034657e-11
+        },
+        {
+          "rank": 9,
+          "term_name": "Regulation Of Viral Entry Into Host Cell (GO:0046596)",
+          "term": "Regulation Of Viral Entry Into Host Cell (GO:0046596)",
+          "overlap": "9/44",
+          "p_value": 6.258137942774607e-13,
+          "z_score": 58.055844155844156,
+          "combined_score": 1631.3531695742895,
+          "overlap_genes": [
+            "IFITM3",
+            "CD74",
+            "IFITM1",
+            "IFITM2",
+            "TRIM5",
+            "TRIM25",
+            "TRIM26",
+            "TRIM21",
+            "LY6E"
+          ],
+          "genes": [
+            "IFITM3",
+            "CD74",
+            "IFITM1",
+            "IFITM2",
+            "TRIM5",
+            "TRIM25",
+            "TRIM26",
+            "TRIM21",
+            "LY6E"
+          ],
+          "adjusted_p_value": 5.263789358533753e-11
+        },
+        {
+          "rank": 10,
+          "term_name": "Response To Interferon-Beta (GO:0035456)",
+          "term": "Response To Interferon-Beta (GO:0035456)",
+          "overlap": "8/29",
+          "p_value": 8.998537558767274e-13,
+          "z_score": 85.10219368646335,
+          "combined_score": 2360.440751447357,
+          "overlap_genes": [
+            "IFITM3",
+            "BST2",
+            "IFITM1",
+            "PLSCR1",
+            "IFITM2",
+            "PNPT1",
+            "OAS1",
+            "IRF1"
+          ],
+          "genes": [
+            "IFITM3",
+            "BST2",
+            "IFITM1",
+            "PLSCR1",
+            "IFITM2",
+            "PNPT1",
+            "OAS1",
+            "IRF1"
+          ],
+          "adjusted_p_value": 6.811892931986826e-11
+        },
+        {
+          "rank": 11,
+          "term_name": "Negative Regulation Of Viral Life Cycle (GO:1903901)",
+          "term": "Negative Regulation Of Viral Life Cycle (GO:1903901)",
+          "overlap": "7/20",
+          "p_value": 3.727716418641256e-12,
+          "z_score": 119.0,
+          "combined_score": 3131.5118095051866,
+          "overlap_genes": [
+            "IFITM3",
+            "BST2",
+            "IFITM1",
+            "IFITM2",
+            "TRIM5",
+            "TRIM26",
+            "LY6E"
+          ],
+          "genes": [
+            "IFITM3",
+            "BST2",
+            "IFITM1",
+            "IFITM2",
+            "TRIM5",
+            "TRIM26",
+            "LY6E"
+          ],
+          "adjusted_p_value": 2.5653466626467555e-10
+        },
+        {
+          "rank": 12,
+          "term_name": "Response To Interferon-Alpha (GO:0035455)",
+          "term": "Response To Interferon-Alpha (GO:0035455)",
+          "overlap": "6/17",
+          "p_value": 1.3186026860786378e-10,
+          "z_score": 119.23276723276723,
+          "combined_score": 2712.459407259252,
+          "overlap_genes": [
+            "IFITM3",
+            "BST2",
+            "IFITM1",
+            "IFITM2",
+            "LAMP3",
+            "EIF2AK2"
+          ],
+          "genes": [
+            "IFITM3",
+            "BST2",
+            "IFITM1",
+            "IFITM2",
+            "LAMP3",
+            "EIF2AK2"
+          ],
+          "adjusted_p_value": 8.31818527801274e-09
+        },
+        {
+          "rank": 13,
+          "term_name": "Negative Regulation Of Viral Entry Into Host Cell (GO:0046597)",
+          "term": "Negative Regulation Of Viral Entry Into Host Cell (GO:0046597)",
+          "overlap": "6/18",
+          "p_value": 1.9702080337586964e-10,
+          "z_score": 109.29120879120879,
+          "combined_score": 2442.408435451373,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "TRIM5",
+            "TRIM26",
+            "LY6E"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "TRIM5",
+            "TRIM26",
+            "LY6E"
+          ],
+          "adjusted_p_value": 1.1472672935041025e-08
+        },
+        {
+          "rank": 14,
+          "term_name": "Regulation Of Innate Immune Response (GO:0045088)",
+          "term": "Regulation Of Innate Immune Response (GO:0045088)",
+          "overlap": "8/78",
+          "p_value": 4.048636375854704e-09,
+          "z_score": 25.467736757624397,
+          "combined_score": 492.1611021294605,
+          "overlap_genes": [
+            "PLSCR1",
+            "CASP8",
+            "IRF1",
+            "DHX58",
+            "TRAFD1",
+            "IFI35",
+            "PARP9",
+            "TRIM21"
+          ],
+          "genes": [
+            "PLSCR1",
+            "CASP8",
+            "IRF1",
+            "DHX58",
+            "TRAFD1",
+            "IFI35",
+            "PARP9",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 2.1891555260871506e-07
+        },
+        {
+          "rank": 15,
+          "term_name": "Negative Regulation Of Innate Immune Response (GO:0045824)",
+          "term": "Negative Regulation Of Innate Immune Response (GO:0045824)",
+          "overlap": "7/52",
+          "p_value": 5.671330740992732e-09,
+          "z_score": 34.32246913580247,
+          "combined_score": 651.7096226533395,
+          "overlap_genes": [
+            "OAS1",
+            "STAT2",
+            "DHX58",
+            "TRAFD1",
+            "ISG15",
+            "TRIM21",
+            "USP18"
+          ],
+          "genes": [
+            "OAS1",
+            "STAT2",
+            "DHX58",
+            "TRAFD1",
+            "ISG15",
+            "TRIM21",
+            "USP18"
+          ],
+          "adjusted_p_value": 2.862131580620999e-07
+        },
+        {
+          "rank": 16,
+          "term_name": "Positive Regulation Of Interferon-Beta Production (GO:0032728)",
+          "term": "Positive Regulation Of Interferon-Beta Production (GO:0032728)",
+          "overlap": "6/36",
+          "p_value": 1.9270315998316808e-08,
+          "z_score": 43.676923076923075,
+          "combined_score": 775.9074334713466,
+          "overlap_genes": [
+            "IFIH1",
+            "OAS1",
+            "RIPK2",
+            "IRF1",
+            "IRF7",
+            "ISG15"
+          ],
+          "genes": [
+            "IFIH1",
+            "OAS1",
+            "RIPK2",
+            "IRF1",
+            "IRF7",
+            "ISG15"
+          ],
+          "adjusted_p_value": 9.11726825670364e-07
+        },
+        {
+          "rank": 17,
+          "term_name": "Positive Regulation Of Type I Interferon Production (GO:0032481)",
+          "term": "Positive Regulation Of Type I Interferon Production (GO:0032481)",
+          "overlap": "7/64",
+          "p_value": 2.5118010005467697e-08,
+          "z_score": 27.080311890838207,
+          "combined_score": 473.8968118338526,
+          "overlap_genes": [
+            "IFIH1",
+            "OAS1",
+            "RIPK2",
+            "IRF1",
+            "DHX58",
+            "IRF7",
+            "ISG15"
+          ],
+          "genes": [
+            "IFIH1",
+            "OAS1",
+            "RIPK2",
+            "IRF1",
+            "DHX58",
+            "IRF7",
+            "ISG15"
+          ],
+          "adjusted_p_value": 1.1184902102434733e-06
+        },
+        {
+          "rank": 18,
+          "term_name": "Positive Regulation Of Cytokine-Mediated Signaling Pathway (GO:0001961)",
+          "term": "Positive Regulation Of Cytokine-Mediated Signaling Pathway (GO:0001961)",
+          "overlap": "6/44",
+          "p_value": 6.769221282789363e-08,
+          "z_score": 34.4679005205321,
+          "combined_score": 569.0062590814279,
+          "overlap_genes": [
+            "CD74",
+            "CSF1",
+            "IL7",
+            "CASP1",
+            "PARP14",
+            "PARP9"
+          ],
+          "genes": [
+            "CD74",
+            "CSF1",
+            "IL7",
+            "CASP1",
+            "PARP14",
+            "PARP9"
+          ],
+          "adjusted_p_value": 2.846833617261971e-06
+        },
+        {
+          "rank": 19,
+          "term_name": "Regulation Of Immune Response (GO:0050776)",
+          "term": "Regulation Of Immune Response (GO:0050776)",
+          "overlap": "7/77",
+          "p_value": 9.237999794335846e-08,
+          "z_score": 22.036666666666665,
+          "combined_score": 356.93572082220373,
+          "overlap_genes": [
+            "PLSCR1",
+            "CASP8",
+            "RSAD2",
+            "IL15",
+            "IRF1",
+            "DHX58",
+            "IRF7"
+          ],
+          "genes": [
+            "PLSCR1",
+            "CASP8",
+            "RSAD2",
+            "IL15",
+            "IRF1",
+            "DHX58",
+            "IRF7"
+          ],
+          "adjusted_p_value": 3.680613602269598e-06
+        },
+        {
+          "rank": 20,
+          "term_name": "Interferon-Mediated Signaling Pathway (GO:0140888)",
+          "term": "Interferon-Mediated Signaling Pathway (GO:0140888)",
+          "overlap": "6/49",
+          "p_value": 1.3150672211079896e-07,
+          "z_score": 30.452338359315103,
+          "combined_score": 482.4931790292774,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "IFI27",
+            "IRF1",
+            "STAT2"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "IFI27",
+            "IRF1",
+            "STAT2"
+          ],
+          "adjusted_p_value": 4.977529431893741e-06
+        },
+        {
+          "rank": 21,
+          "term_name": "Regulation Of Interferon-Beta Production (GO:0032648)",
+          "term": "Regulation Of Interferon-Beta Production (GO:0032648)",
+          "overlap": "6/50",
+          "p_value": 1.4885773098570034e-07,
+          "z_score": 29.75874125874126,
+          "combined_score": 467.81559066853623,
+          "overlap_genes": [
+            "IFIH1",
+            "OAS1",
+            "RIPK2",
+            "IRF1",
+            "IRF7",
+            "ISG15"
+          ],
+          "genes": [
+            "IFIH1",
+            "OAS1",
+            "RIPK2",
+            "IRF1",
+            "IRF7",
+            "ISG15"
+          ],
+          "adjusted_p_value": 5.365966778865484e-06
+        },
+        {
+          "rank": 22,
+          "term_name": "Positive Regulation Of I-kappaB kinase/NF-kappaB Signaling (GO:0043123)",
+          "term": "Positive Regulation Of I-kappaB kinase/NF-kappaB Signaling (GO:0043123)",
+          "overlap": "9/175",
+          "p_value": 1.806286834583847e-07,
+          "z_score": 12.159980832420592,
+          "combined_score": 188.8058625953306,
+          "overlap_genes": [
+            "RNF31",
+            "BST2",
+            "CD74",
+            "CASP8",
+            "TRIM5",
+            "RIPK2",
+            "CASP1",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "genes": [
+            "RNF31",
+            "BST2",
+            "CD74",
+            "CASP8",
+            "TRIM5",
+            "RIPK2",
+            "CASP1",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 6.215268789908964e-06
+        },
+        {
+          "rank": 23,
+          "term_name": "Positive Regulation Of Cytokine Production (GO:0001819)",
+          "term": "Positive Regulation Of Cytokine Production (GO:0001819)",
+          "overlap": "11/320",
+          "p_value": 4.3353453273264683e-07,
+          "z_score": 8.110709716264017,
+          "combined_score": 118.8323957130355,
+          "overlap_genes": [
+            "IFIH1",
+            "CD74",
+            "IL15",
+            "IL7",
+            "RIPK2",
+            "IRF1",
+            "DHX58",
+            "IRF7",
+            "CASP1",
+            "EIF2AK2",
+            "ISG15"
+          ],
+          "genes": [
+            "IFIH1",
+            "CD74",
+            "IL15",
+            "IL7",
+            "RIPK2",
+            "IRF1",
+            "DHX58",
+            "IRF7",
+            "CASP1",
+            "EIF2AK2",
+            "ISG15"
+          ],
+          "adjusted_p_value": 1.4268940925157114e-05
+        },
+        {
+          "rank": 24,
+          "term_name": "Negative Regulation Of Type I Interferon-Mediated Signaling Pathway (GO:0060339)",
+          "term": "Negative Regulation Of Type I Interferon-Mediated Signaling Pathway (GO:0060339)",
+          "overlap": "4/15",
+          "p_value": 6.810788975518571e-07,
+          "z_score": 77.77908113391985,
+          "combined_score": 1104.4308823920642,
+          "overlap_genes": [
+            "OAS1",
+            "STAT2",
+            "ISG15",
+            "USP18"
+          ],
+          "genes": [
+            "OAS1",
+            "STAT2",
+            "ISG15",
+            "USP18"
+          ],
+          "adjusted_p_value": 2.1482363560281495e-05
+        },
+        {
+          "rank": 25,
+          "term_name": "Type I Interferon-Mediated Signaling Pathway (GO:0060337)",
+          "term": "Type I Interferon-Mediated Signaling Pathway (GO:0060337)",
+          "overlap": "5/37",
+          "p_value": 9.320841086283713e-07,
+          "z_score": 33.74830163043478,
+          "combined_score": 468.6236105667687,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "IFI27",
+            "STAT2"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "IFI27",
+            "STAT2"
+          ],
+          "adjusted_p_value": 2.8223506809267084e-05
+        },
+        {
+          "rank": 26,
+          "term_name": "Cellular Response To Type I Interferon (GO:0071357)",
+          "term": "Cellular Response To Type I Interferon (GO:0071357)",
+          "overlap": "5/38",
+          "p_value": 1.069204558184425e-06,
+          "z_score": 32.723978919631094,
+          "combined_score": 449.9087522459158,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "IFI27",
+            "STAT2"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM1",
+            "IFITM2",
+            "IFI27",
+            "STAT2"
+          ],
+          "adjusted_p_value": 2.9687466048373554e-05
+        },
+        {
+          "rank": 27,
+          "term_name": "ISG15-protein Conjugation (GO:0032020)",
+          "term": "ISG15-protein Conjugation (GO:0032020)",
+          "overlap": "3/5",
+          "p_value": 1.0980832884471064e-06,
+          "z_score": 317.5691489361702,
+          "combined_score": 4357.6661931283625,
+          "overlap_genes": [
+            "UBA7",
+            "ISG15",
+            "UBE2L6"
+          ],
+          "genes": [
+            "UBA7",
+            "ISG15",
+            "UBE2L6"
+          ],
+          "adjusted_p_value": 2.9687466048373554e-05
+        },
+        {
+          "rank": 28,
+          "term_name": "Interleukin-27-Mediated Signaling Pathway (GO:0070106)",
+          "term": "Interleukin-27-Mediated Signaling Pathway (GO:0070106)",
+          "overlap": "3/5",
+          "p_value": 1.0980832884471064e-06,
+          "z_score": 317.5691489361702,
+          "combined_score": 4357.6661931283625,
+          "overlap_genes": [
+            "OAS1",
+            "MX1",
+            "OASL"
+          ],
+          "genes": [
+            "OAS1",
+            "MX1",
+            "OASL"
+          ],
+          "adjusted_p_value": 2.9687466048373554e-05
+        },
+        {
+          "rank": 29,
+          "term_name": "Positive Regulation Of Pattern Recognition Receptor Signaling Pathway (GO:0062208)",
+          "term": "Positive Regulation Of Pattern Recognition Receptor Signaling Pathway (GO:0062208)",
+          "overlap": "5/39",
+          "p_value": 1.221750769573859e-06,
+          "z_score": 31.759910485933503,
+          "combined_score": 432.4183485536199,
+          "overlap_genes": [
+            "RSAD2",
+            "DHX58",
+            "IFI35",
+            "DDX60",
+            "OASL"
+          ],
+          "genes": [
+            "RSAD2",
+            "DHX58",
+            "IFI35",
+            "DDX60",
+            "OASL"
+          ],
+          "adjusted_p_value": 3.1891908019565906e-05
+        },
+        {
+          "rank": 30,
+          "term_name": "Regulation Of Cytokine Production (GO:0001817)",
+          "term": "Regulation Of Cytokine Production (GO:0001817)",
+          "overlap": "8/167",
+          "p_value": 1.5360756451497589e-06,
+          "z_score": 11.16189668574659,
+          "combined_score": 149.41627075344883,
+          "overlap_genes": [
+            "IFIH1",
+            "CASP8",
+            "IL15",
+            "IRF7",
+            "EIF2AK2",
+            "ISG15",
+            "CD47",
+            "TRIM21"
+          ],
+          "genes": [
+            "IFIH1",
+            "CASP8",
+            "IL15",
+            "IRF7",
+            "EIF2AK2",
+            "ISG15",
+            "CD47",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 3.8760308779278915e-05
+        },
+        {
+          "rank": 31,
+          "term_name": "Regulation Of I-kappaB kinase/NF-kappaB Signaling (GO:0043122)",
+          "term": "Regulation Of I-kappaB kinase/NF-kappaB Signaling (GO:0043122)",
+          "overlap": "9/232",
+          "p_value": 1.9192611884371603e-06,
+          "z_score": 9.02568283734203,
+          "combined_score": 118.81021002641322,
+          "overlap_genes": [
+            "RNF31",
+            "BST2",
+            "CD74",
+            "CASP8",
+            "TRIM5",
+            "RIPK2",
+            "CASP1",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "genes": [
+            "RNF31",
+            "BST2",
+            "CD74",
+            "CASP8",
+            "TRIM5",
+            "RIPK2",
+            "CASP1",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 4.686711998861065e-05
+        },
+        {
+          "rank": 32,
+          "term_name": "Cellular Response To Cytokine Stimulus (GO:0071345)",
+          "term": "Cellular Response To Cytokine Stimulus (GO:0071345)",
+          "overlap": "10/308",
+          "p_value": 2.4988084356202927e-06,
+          "z_score": 7.561906965980097,
+          "combined_score": 97.54630531741297,
+          "overlap_genes": [
+            "IL4R",
+            "IFITM2",
+            "PNPT1",
+            "OAS1",
+            "IL7",
+            "IRF1",
+            "CASP1",
+            "CD47",
+            "GBP2",
+            "GBP4"
+          ],
+          "genes": [
+            "IL4R",
+            "IFITM2",
+            "PNPT1",
+            "OAS1",
+            "IL7",
+            "IRF1",
+            "CASP1",
+            "CD47",
+            "GBP2",
+            "GBP4"
+          ],
+          "adjusted_p_value": 5.911243705514255e-05
+        },
+        {
+          "rank": 33,
+          "term_name": "Cellular Response To Interferon-Beta (GO:0035458)",
+          "term": "Cellular Response To Interferon-Beta (GO:0035458)",
+          "overlap": "4/22",
+          "p_value": 3.5561004954459454e-06,
+          "z_score": 47.51493428912784,
+          "combined_score": 596.1625622707741,
+          "overlap_genes": [
+            "IFITM2",
+            "PNPT1",
+            "OAS1",
+            "IRF1"
+          ],
+          "genes": [
+            "IFITM2",
+            "PNPT1",
+            "OAS1",
+            "IRF1"
+          ],
+          "adjusted_p_value": 8.15747901531085e-05
+        },
+        {
+          "rank": 34,
+          "term_name": "Cytosolic Pattern Recognition Receptor Signaling Pathway (GO:0002753)",
+          "term": "Cytosolic Pattern Recognition Receptor Signaling Pathway (GO:0002753)",
+          "overlap": "4/23",
+          "p_value": 4.2887789768120305e-06,
+          "z_score": 45.011884550084886,
+          "combined_score": 556.3247690823125,
+          "overlap_genes": [
+            "IFIH1",
+            "DHX58",
+            "IRF7",
+            "TRIM25"
+          ],
+          "genes": [
+            "IFIH1",
+            "DHX58",
+            "IRF7",
+            "TRIM25"
+          ],
+          "adjusted_p_value": 9.548840251313845e-05
+        },
+        {
+          "rank": 35,
+          "term_name": "Regulation Of Viral Life Cycle (GO:1903900)",
+          "term": "Regulation Of Viral Life Cycle (GO:1903900)",
+          "overlap": "4/24",
+          "p_value": 5.127438351516854e-06,
+          "z_score": 42.759139784946235,
+          "combined_score": 520.8449926715696,
+          "overlap_genes": [
+            "TRIM5",
+            "LAMP3",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "genes": [
+            "TRIM5",
+            "LAMP3",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.00011089916663137882
+        },
+        {
+          "rank": 36,
+          "term_name": "Positive Regulation Of RIG-I Signaling Pathway (GO:1900246)",
+          "term": "Positive Regulation Of RIG-I Signaling Pathway (GO:1900246)",
+          "overlap": "3/9",
+          "p_value": 9.094827359220871e-06,
+          "z_score": 105.83510638297872,
+          "combined_score": 1228.5132482732306,
+          "overlap_genes": [
+            "DHX58",
+            "DDX60",
+            "OASL"
+          ],
+          "genes": [
+            "DHX58",
+            "DDX60",
+            "OASL"
+          ],
+          "adjusted_p_value": 0.0001891304101217362
+        },
+        {
+          "rank": 37,
+          "term_name": "Positive Regulation Of NF-kappaB Transcription Factor Activity (GO:0051092)",
+          "term": "Positive Regulation Of NF-kappaB Transcription Factor Activity (GO:0051092)",
+          "overlap": "7/152",
+          "p_value": 9.244154787984464e-06,
+          "z_score": 10.59816091954023,
+          "combined_score": 122.84878494622986,
+          "overlap_genes": [
+            "RNF31",
+            "TRIM5",
+            "RIPK2",
+            "TRIM14",
+            "EIF2AK2",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "genes": [
+            "RNF31",
+            "TRIM5",
+            "RIPK2",
+            "TRIM14",
+            "EIF2AK2",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.0001891304101217362
+        },
+        {
+          "rank": 38,
+          "term_name": "Pyroptosis (GO:0070269)",
+          "term": "Pyroptosis (GO:0070269)",
+          "overlap": "4/28",
+          "p_value": 9.734151747479139e-06,
+          "z_score": 35.62544802867384,
+          "combined_score": 411.1130409821331,
+          "overlap_genes": [
+            "CASP8",
+            "IFI27",
+            "CASP1",
+            "TRIM21"
+          ],
+          "genes": [
+            "CASP8",
+            "IFI27",
+            "CASP1",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.00019100398818799492
+        },
+        {
+          "rank": 39,
+          "term_name": "Negative Regulation Of Cytokine-Mediated Signaling Pathway (GO:0001960)",
+          "term": "Negative Regulation Of Cytokine-Mediated Signaling Pathway (GO:0001960)",
+          "overlap": "5/59",
+          "p_value": 9.840363988549276e-06,
+          "z_score": 19.97685185185185,
+          "combined_score": 230.3134817242068,
+          "overlap_genes": [
+            "OAS1",
+            "STAT2",
+            "ISG15",
+            "PARP14",
+            "USP18"
+          ],
+          "genes": [
+            "OAS1",
+            "STAT2",
+            "ISG15",
+            "PARP14",
+            "USP18"
+          ],
+          "adjusted_p_value": 0.00019100398818799492
+        },
+        {
+          "rank": 40,
+          "term_name": "Regulation Of Response To Biotic Stimulus (GO:0002831)",
+          "term": "Regulation Of Response To Biotic Stimulus (GO:0002831)",
+          "overlap": "4/31",
+          "p_value": 1.4793169040768268e-05,
+          "z_score": 31.662285941855835,
+          "combined_score": 352.1272065575142,
+          "overlap_genes": [
+            "CASP8",
+            "TRIM5",
+            "IRF1",
+            "DHX58"
+          ],
+          "genes": [
+            "CASP8",
+            "TRIM5",
+            "IRF1",
+            "DHX58"
+          ],
+          "adjusted_p_value": 0.00027996072409653945
+        },
+        {
+          "rank": 41,
+          "term_name": "Cellular Response To Type II Interferon (GO:0071346)",
+          "term": "Cellular Response To Type II Interferon (GO:0071346)",
+          "overlap": "5/66",
+          "p_value": 1.7101945455848547e-05,
+          "z_score": 17.678189593727726,
+          "combined_score": 194.04143650676335,
+          "overlap_genes": [
+            "IRF1",
+            "CASP1",
+            "CD47",
+            "GBP2",
+            "GBP4"
+          ],
+          "genes": [
+            "IRF1",
+            "CASP1",
+            "CD47",
+            "GBP2",
+            "GBP4"
+          ],
+          "adjusted_p_value": 0.00031576031000188663
+        },
+        {
+          "rank": 42,
+          "term_name": "Regulation Of Type I Interferon-Mediated Signaling Pathway (GO:0060338)",
+          "term": "Regulation Of Type I Interferon-Mediated Signaling Pathway (GO:0060338)",
+          "overlap": "4/33",
+          "p_value": 1.9096016231793966e-05,
+          "z_score": 29.475713756025215,
+          "combined_score": 320.2840140825737,
+          "overlap_genes": [
+            "OAS1",
+            "STAT2",
+            "ISG15",
+            "USP18"
+          ],
+          "genes": [
+            "OAS1",
+            "STAT2",
+            "ISG15",
+            "USP18"
+          ],
+          "adjusted_p_value": 0.0003441829592254294
+        },
+        {
+          "rank": 43,
+          "term_name": "Regulation Of Endopeptidase Activity (GO:0052548)",
+          "term": "Regulation Of Endopeptidase Activity (GO:0052548)",
+          "overlap": "5/69",
+          "p_value": 2.126100195788039e-05,
+          "z_score": 16.846976902173914,
+          "combined_score": 181.25049315757917,
+          "overlap_genes": [
+            "PSMA3",
+            "PSME1",
+            "PSME2",
+            "PSMB8",
+            "PSMB9"
+          ],
+          "genes": [
+            "PSMA3",
+            "PSME1",
+            "PSME2",
+            "PSMB8",
+            "PSMB9"
+          ],
+          "adjusted_p_value": 0.00037429252283989434
+        },
+        {
+          "rank": 44,
+          "term_name": "Positive Regulation Of DNA-binding Transcription Factor Activity (GO:0051091)",
+          "term": "Positive Regulation Of DNA-binding Transcription Factor Activity (GO:0051091)",
+          "overlap": "8/246",
+          "p_value": 2.632499290517124e-05,
+          "z_score": 7.427060711925219,
+          "combined_score": 78.31829407848241,
+          "overlap_genes": [
+            "RNF31",
+            "TRIM5",
+            "RIPK2",
+            "TRIM14",
+            "EIF2AK2",
+            "TRIM25",
+            "TRIM26",
+            "TRIM21"
+          ],
+          "genes": [
+            "RNF31",
+            "TRIM5",
+            "RIPK2",
+            "TRIM14",
+            "EIF2AK2",
+            "TRIM25",
+            "TRIM26",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.00045290953702760515
+        },
+        {
+          "rank": 45,
+          "term_name": "Suppression Of Viral Release By Host (GO:0044790)",
+          "term": "Suppression Of Viral Release By Host (GO:0044790)",
+          "overlap": "3/13",
+          "p_value": 3.053236254789822e-05,
+          "z_score": 63.488297872340425,
+          "combined_score": 660.0702701944115,
+          "overlap_genes": [
+            "TRIM5",
+            "TRIM26",
+            "TRIM21"
+          ],
+          "genes": [
+            "TRIM5",
+            "TRIM26",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.0005024564880164989
+        },
+        {
+          "rank": 46,
+          "term_name": "Negative Regulation Of Viral Transcription (GO:0032897)",
+          "term": "Negative Regulation Of Viral Transcription (GO:0032897)",
+          "overlap": "3/13",
+          "p_value": 3.053236254789822e-05,
+          "z_score": 63.488297872340425,
+          "combined_score": 660.0702701944115,
+          "overlap_genes": [
+            "IFITM3",
+            "TRIM14",
+            "TRIM21"
+          ],
+          "genes": [
+            "IFITM3",
+            "TRIM14",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.0005024564880164989
+        },
+        {
+          "rank": 47,
+          "term_name": "Positive Regulation Of Defense Response (GO:0031349)",
+          "term": "Positive Regulation Of Defense Response (GO:0031349)",
+          "overlap": "6/124",
+          "p_value": 3.135601788653386e-05,
+          "z_score": 11.055131309368598,
+          "combined_score": 114.64286529441256,
+          "overlap_genes": [
+            "RNF31",
+            "PLSCR1",
+            "IL15",
+            "CASP1",
+            "IFI35",
+            "CD47"
+          ],
+          "genes": [
+            "RNF31",
+            "PLSCR1",
+            "IL15",
+            "CASP1",
+            "IFI35",
+            "CD47"
+          ],
+          "adjusted_p_value": 0.0005050320327682154
+        },
+        {
+          "rank": 48,
+          "term_name": "Regulation Of Response To External Stimulus (GO:0032101)",
+          "term": "Regulation Of Response To External Stimulus (GO:0032101)",
+          "overlap": "6/127",
+          "p_value": 3.5877750804104634e-05,
+          "z_score": 10.779402415766052,
+          "combined_score": 110.3314222872661,
+          "overlap_genes": [
+            "CASP8",
+            "TRIM5",
+            "IRF1",
+            "DHX58",
+            "CASP1",
+            "USP18"
+          ],
+          "genes": [
+            "CASP8",
+            "TRIM5",
+            "IRF1",
+            "DHX58",
+            "CASP1",
+            "USP18"
+          ],
+          "adjusted_p_value": 0.0005552850828438119
+        },
+        {
+          "rank": 49,
+          "term_name": "Cytokine-Mediated Signaling Pathway (GO:0019221)",
+          "term": "Cytokine-Mediated Signaling Pathway (GO:0019221)",
+          "overlap": "8/257",
+          "p_value": 3.5943155956864974e-05,
+          "z_score": 7.0949866883263395,
+          "combined_score": 72.60705618205006,
+          "overlap_genes": [
+            "CXCL10",
+            "CXCL11",
+            "IL4R",
+            "OAS1",
+            "IL15",
+            "IL7",
+            "MX1",
+            "OASL"
+          ],
+          "genes": [
+            "CXCL10",
+            "CXCL11",
+            "IL4R",
+            "OAS1",
+            "IL15",
+            "IL7",
+            "MX1",
+            "OASL"
+          ],
+          "adjusted_p_value": 0.0005552850828438119
+        },
+        {
+          "rank": 50,
+          "term_name": "Positive Regulation Of Response To Cytokine Stimulus (GO:0060760)",
+          "term": "Positive Regulation Of Response To Cytokine Stimulus (GO:0060760)",
+          "overlap": "3/14",
+          "p_value": 3.872272902959414e-05,
+          "z_score": 57.7137330754352,
+          "combined_score": 586.3186516997341,
+          "overlap_genes": [
+            "IFIH1",
+            "CD74",
+            "IL7"
+          ],
+          "genes": [
+            "IFIH1",
+            "CD74",
+            "IL7"
+          ],
+          "adjusted_p_value": 0.0005862621175080553
+        },
+        {
+          "rank": 51,
+          "term_name": "Positive Regulation Of Immune Response (GO:0050778)",
+          "term": "Positive Regulation Of Immune Response (GO:0050778)",
+          "overlap": "5/80",
+          "p_value": 4.3606372417334387e-05,
+          "z_score": 14.368115942028986,
+          "combined_score": 144.26029883298006,
+          "overlap_genes": [
+            "CD74",
+            "PLSCR1",
+            "RSAD2",
+            "IL15",
+            "IFI35"
+          ],
+          "genes": [
+            "CD74",
+            "PLSCR1",
+            "RSAD2",
+            "IL15",
+            "IFI35"
+          ],
+          "adjusted_p_value": 0.0006472553709788654
+        },
+        {
+          "rank": 52,
+          "term_name": "Positive Regulation Of Intracellular Signal Transduction (GO:1902533)",
+          "term": "Positive Regulation Of Intracellular Signal Transduction (GO:1902533)",
+          "overlap": "11/525",
+          "p_value": 4.7635157133954456e-05,
+          "z_score": 4.8248801013482945,
+          "combined_score": 48.01691473842216,
+          "overlap_genes": [
+            "RNF31",
+            "BST2",
+            "CD74",
+            "CASP8",
+            "TRIM5",
+            "RIPK2",
+            "CASP1",
+            "EIF2AK2",
+            "TRIM25",
+            "IFI35",
+            "TRIM21"
+          ],
+          "genes": [
+            "RNF31",
+            "BST2",
+            "CD74",
+            "CASP8",
+            "TRIM5",
+            "RIPK2",
+            "CASP1",
+            "EIF2AK2",
+            "TRIM25",
+            "IFI35",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.0006715057822852108
+        },
+        {
+          "rank": 53,
+          "term_name": "Regulation Of Monocyte Differentiation (GO:0045655)",
+          "term": "Regulation Of Monocyte Differentiation (GO:0045655)",
+          "overlap": "3/15",
+          "p_value": 4.823323311955126e-05,
+          "z_score": 52.901595744680854,
+          "combined_score": 525.8134160212837,
+          "overlap_genes": [
+            "CD74",
+            "CSF1",
+            "IRF7"
+          ],
+          "genes": [
+            "CD74",
+            "CSF1",
+            "IRF7"
+          ],
+          "adjusted_p_value": 0.0006715057822852108
+        },
+        {
+          "rank": 54,
+          "term_name": "Defense Response To Protozoan (GO:0042832)",
+          "term": "Defense Response To Protozoan (GO:0042832)",
+          "overlap": "3/15",
+          "p_value": 4.823323311955126e-05,
+          "z_score": 52.901595744680854,
+          "combined_score": 525.8134160212837,
+          "overlap_genes": [
+            "BATF2",
+            "GBP2",
+            "GBP4"
+          ],
+          "genes": [
+            "BATF2",
+            "GBP2",
+            "GBP4"
+          ],
+          "adjusted_p_value": 0.0006715057822852108
+        },
+        {
+          "rank": 55,
+          "term_name": "Protein Ubiquitination (GO:0016567)",
+          "term": "Protein Ubiquitination (GO:0016567)",
+          "overlap": "10/434",
+          "p_value": 4.878839897712892e-05,
+          "z_score": 5.280579050097593,
+          "combined_score": 52.42568385580473,
+          "overlap_genes": [
+            "RNF31",
+            "NUB1",
+            "TRIM5",
+            "TRIM14",
+            "TRIM25",
+            "UBE2L6",
+            "ISG15",
+            "TRIM26",
+            "TRIM21",
+            "HERC6"
+          ],
+          "genes": [
+            "RNF31",
+            "NUB1",
+            "TRIM5",
+            "TRIM14",
+            "TRIM25",
+            "UBE2L6",
+            "ISG15",
+            "TRIM26",
+            "TRIM21",
+            "HERC6"
+          ],
+          "adjusted_p_value": 0.0006715057822852108
+        },
+        {
+          "rank": 56,
+          "term_name": "Protein Modification By Small Protein Conjugation (GO:0032446)",
+          "term": "Protein Modification By Small Protein Conjugation (GO:0032446)",
+          "overlap": "9/364",
+          "p_value": 6.934400701204294e-05,
+          "z_score": 5.631626120358515,
+          "combined_score": 53.930878010429375,
+          "overlap_genes": [
+            "IFIH1",
+            "NUB1",
+            "UBA7",
+            "TRIM14",
+            "UBE2L6",
+            "ISG15",
+            "TRIM26",
+            "TRIM21",
+            "HERC6"
+          ],
+          "genes": [
+            "IFIH1",
+            "NUB1",
+            "UBA7",
+            "TRIM14",
+            "UBE2L6",
+            "ISG15",
+            "TRIM26",
+            "TRIM21",
+            "HERC6"
+          ],
+          "adjusted_p_value": 0.0009373823805020804
+        },
+        {
+          "rank": 57,
+          "term_name": "Regulation Of Viral Transcription (GO:0046782)",
+          "term": "Regulation Of Viral Transcription (GO:0046782)",
+          "overlap": "3/17",
+          "p_value": 7.157895938391714e-05,
+          "z_score": 45.33966565349544,
+          "combined_score": 432.75393252672956,
+          "overlap_genes": [
+            "IFITM3",
+            "TRIM14",
+            "TRIM21"
+          ],
+          "genes": [
+            "IFITM3",
+            "TRIM14",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.0009506188114671102
+        },
+        {
+          "rank": 58,
+          "term_name": "Regulation Of Cell Population Proliferation (GO:0042127)",
+          "term": "Regulation Of Cell Population Proliferation (GO:0042127)",
+          "overlap": "13/766",
+          "p_value": 8.264500204116119e-05,
+          "z_score": 3.9358439258837663,
+          "combined_score": 37.000696384414915,
+          "overlap_genes": [
+            "IFITM1",
+            "CSF1",
+            "IL15",
+            "STAT2",
+            "EIF2AK2",
+            "IFI35",
+            "IFIT3",
+            "WARS1",
+            "CXCL10",
+            "CXCL11",
+            "IL7",
+            "IRF1",
+            "CD47"
+          ],
+          "genes": [
+            "IFITM1",
+            "CSF1",
+            "IL15",
+            "STAT2",
+            "EIF2AK2",
+            "IFI35",
+            "IFIT3",
+            "WARS1",
+            "CXCL10",
+            "CXCL11",
+            "IL7",
+            "IRF1",
+            "CD47"
+          ],
+          "adjusted_p_value": 0.0010786597680199832
+        },
+        {
+          "rank": 59,
+          "term_name": "Antigen Processing And Presentation Of Peptide Antigen Via MHC Class I (GO:0002474)",
+          "term": "Antigen Processing And Presentation Of Peptide Antigen Via MHC Class I (GO:0002474)",
+          "overlap": "3/18",
+          "p_value": 8.559289873755705e-05,
+          "z_score": 42.314893617021276,
+          "combined_score": 396.31741067252864,
+          "overlap_genes": [
+            "TAP1",
+            "IFI30",
+            "B2M"
+          ],
+          "genes": [
+            "TAP1",
+            "IFI30",
+            "B2M"
+          ],
+          "adjusted_p_value": 0.0010798970724055115
+        },
+        {
+          "rank": 60,
+          "term_name": "Regulation Of RIG-I Signaling Pathway (GO:0039535)",
+          "term": "Regulation Of RIG-I Signaling Pathway (GO:0039535)",
+          "overlap": "3/18",
+          "p_value": 8.559289873755705e-05,
+          "z_score": 42.314893617021276,
+          "combined_score": 396.31741067252864,
+          "overlap_genes": [
+            "DHX58",
+            "DDX60",
+            "OASL"
+          ],
+          "genes": [
+            "DHX58",
+            "DDX60",
+            "OASL"
+          ],
+          "adjusted_p_value": 0.0010798970724055115
+        },
+        {
+          "rank": 61,
+          "term_name": "Positive Regulation Of Response To External Stimulus (GO:0032103)",
+          "term": "Positive Regulation Of Response To External Stimulus (GO:0032103)",
+          "overlap": "6/155",
+          "p_value": 0.00010870714840249347,
+          "z_score": 8.74135260712442,
+          "combined_score": 79.78104029547333,
+          "overlap_genes": [
+            "RNF31",
+            "PLSCR1",
+            "IL15",
+            "CASP1",
+            "IFI35",
+            "CD47"
+          ],
+          "genes": [
+            "RNF31",
+            "PLSCR1",
+            "IL15",
+            "CASP1",
+            "IFI35",
+            "CD47"
+          ],
+          "adjusted_p_value": 0.0013375959370240604
+        },
+        {
+          "rank": 62,
+          "term_name": "Regulation Of Defense Response (GO:0031347)",
+          "term": "Regulation Of Defense Response (GO:0031347)",
+          "overlap": "5/97",
+          "p_value": 0.00010955211109047786,
+          "z_score": 11.703095463137997,
+          "combined_score": 106.721817461592,
+          "overlap_genes": [
+            "CASP8",
+            "IRF1",
+            "DHX58",
+            "CASP1",
+            "USP18"
+          ],
+          "genes": [
+            "CASP8",
+            "IRF1",
+            "DHX58",
+            "CASP1",
+            "USP18"
+          ],
+          "adjusted_p_value": 0.0013375959370240604
+        },
+        {
+          "rank": 63,
+          "term_name": "Apoptotic Process (GO:0006915)",
+          "term": "Apoptotic Process (GO:0006915)",
+          "overlap": "7/228",
+          "p_value": 0.00012282942398605953,
+          "z_score": 6.926797385620915,
+          "combined_score": 62.37382912987091,
+          "overlap_genes": [
+            "PLSCR1",
+            "CASP8",
+            "IFI27",
+            "RIPK2",
+            "IRF1",
+            "MX1",
+            "IFIT2"
+          ],
+          "genes": [
+            "PLSCR1",
+            "CASP8",
+            "IFI27",
+            "RIPK2",
+            "IRF1",
+            "MX1",
+            "IFIT2"
+          ],
+          "adjusted_p_value": 0.0014759027612293186
+        },
+        {
+          "rank": 64,
+          "term_name": "Positive Regulation Of Chemokine Production (GO:0032722)",
+          "term": "Positive Regulation Of Chemokine Production (GO:0032722)",
+          "overlap": "4/53",
+          "p_value": 0.0001268792879806981,
+          "z_score": 17.427254772876893,
+          "combined_score": 156.36211206742396,
+          "overlap_genes": [
+            "CD74",
+            "OAS1",
+            "IL7",
+            "EIF2AK2"
+          ],
+          "genes": [
+            "CD74",
+            "OAS1",
+            "IL7",
+            "EIF2AK2"
+          ],
+          "adjusted_p_value": 0.0015007440781466947
+        },
+        {
+          "rank": 65,
+          "term_name": "Positive Regulation Of Interferon-Alpha Production (GO:0032727)",
+          "term": "Positive Regulation Of Interferon-Alpha Production (GO:0032727)",
+          "overlap": "3/21",
+          "p_value": 0.0001380429046278352,
+          "z_score": 35.25709219858156,
+          "combined_score": 313.3631322135997,
+          "overlap_genes": [
+            "IFIH1",
+            "RIPK2",
+            "IRF7"
+          ],
+          "genes": [
+            "IFIH1",
+            "RIPK2",
+            "IRF7"
+          ],
+          "adjusted_p_value": 0.0015596787881085262
+        },
+        {
+          "rank": 66,
+          "term_name": "Macrophage Differentiation (GO:0030225)",
+          "term": "Macrophage Differentiation (GO:0030225)",
+          "overlap": "3/21",
+          "p_value": 0.0001380429046278352,
+          "z_score": 35.25709219858156,
+          "combined_score": 313.3631322135997,
+          "overlap_genes": [
+            "CASP8",
+            "CSF1",
+            "IL15"
+          ],
+          "genes": [
+            "CASP8",
+            "CSF1",
+            "IL15"
+          ],
+          "adjusted_p_value": 0.0015596787881085262
+        },
+        {
+          "rank": 67,
+          "term_name": "Modulation By Symbiont Of Entry Into Host (GO:0052372)",
+          "term": "Modulation By Symbiont Of Entry Into Host (GO:0052372)",
+          "overlap": "3/21",
+          "p_value": 0.0001380429046278352,
+          "z_score": 35.25709219858156,
+          "combined_score": 313.3631322135997,
+          "overlap_genes": [
+            "TRIM5",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "genes": [
+            "TRIM5",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.0015596787881085262
+        },
+        {
+          "rank": 68,
+          "term_name": "Pattern Recognition Receptor Signaling Pathway (GO:0002221)",
+          "term": "Pattern Recognition Receptor Signaling Pathway (GO:0002221)",
+          "overlap": "4/56",
+          "p_value": 0.00015738537673937753,
+          "z_score": 16.419354838709676,
+          "combined_score": 143.7812220604575,
+          "overlap_genes": [
+            "IFIH1",
+            "DHX58",
+            "CASP1",
+            "TRIM25"
+          ],
+          "genes": [
+            "IFIH1",
+            "DHX58",
+            "CASP1",
+            "TRIM25"
+          ],
+          "adjusted_p_value": 0.0017520695616427763
+        },
+        {
+          "rank": 69,
+          "term_name": "Regulation Of Type I Interferon Production (GO:0032479)",
+          "term": "Regulation Of Type I Interferon Production (GO:0032479)",
+          "overlap": "4/59",
+          "p_value": 0.00019286851309184758,
+          "z_score": 15.521407624633431,
+          "combined_score": 132.7623893061232,
+          "overlap_genes": [
+            "IRF1",
+            "DHX58",
+            "IRF7",
+            "TRIM21"
+          ],
+          "genes": [
+            "IRF1",
+            "DHX58",
+            "IRF7",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.002115963252326502
+        },
+        {
+          "rank": 70,
+          "term_name": "Regulation Of Proteolysis Involved In Protein Catabolic Process (GO:1903050)",
+          "term": "Regulation Of Proteolysis Involved In Protein Catabolic Process (GO:1903050)",
+          "overlap": "3/24",
+          "p_value": 0.0002078692558571044,
+          "z_score": 30.21580547112462,
+          "combined_score": 256.18776614331455,
+          "overlap_genes": [
+            "NUB1",
+            "PSME1",
+            "PSME2"
+          ],
+          "genes": [
+            "NUB1",
+            "PSME1",
+            "PSME2"
+          ],
+          "adjusted_p_value": 0.0022479575240546864
+        },
+        {
+          "rank": 71,
+          "term_name": "Regulation Of Ribonuclease Activity (GO:0060700)",
+          "term": "Regulation Of Ribonuclease Activity (GO:0060700)",
+          "overlap": "2/5",
+          "p_value": 0.0002305997141023247,
+          "z_score": 139.64912280701753,
+          "combined_score": 1169.5372707339718,
+          "overlap_genes": [
+            "OAS1",
+            "OASL"
+          ],
+          "genes": [
+            "OAS1",
+            "OASL"
+          ],
+          "adjusted_p_value": 0.0024586476559923915
+        },
+        {
+          "rank": 72,
+          "term_name": "Regulation Of Interferon-Alpha Production (GO:0032647)",
+          "term": "Regulation Of Interferon-Alpha Production (GO:0032647)",
+          "overlap": "3/26",
+          "p_value": 0.0002651547273213109,
+          "z_score": 27.585568917668827,
+          "combined_score": 227.17259510257435,
+          "overlap_genes": [
+            "IFIH1",
+            "RIPK2",
+            "IRF7"
+          ],
+          "genes": [
+            "IFIH1",
+            "RIPK2",
+            "IRF7"
+          ],
+          "adjusted_p_value": 0.002787807341419894
+        },
+        {
+          "rank": 73,
+          "term_name": "Regulation Of Nuclease Activity (GO:0032069)",
+          "term": "Regulation Of Nuclease Activity (GO:0032069)",
+          "overlap": "2/6",
+          "p_value": 0.00034480635511841256,
+          "z_score": 104.73157894736842,
+          "combined_score": 834.9754024954899,
+          "overlap_genes": [
+            "OAS1",
+            "OASL"
+          ],
+          "genes": [
+            "OAS1",
+            "OASL"
+          ],
+          "adjusted_p_value": 0.003527275821954572
+        },
+        {
+          "rank": 74,
+          "term_name": "Regulation Of MDA-5 Signaling Pathway (GO:0039533)",
+          "term": "Regulation Of MDA-5 Signaling Pathway (GO:0039533)",
+          "overlap": "2/6",
+          "p_value": 0.00034480635511841256,
+          "z_score": 104.73157894736842,
+          "combined_score": 834.9754024954899,
+          "overlap_genes": [
+            "DHX58",
+            "DDX60"
+          ],
+          "genes": [
+            "DHX58",
+            "DDX60"
+          ],
+          "adjusted_p_value": 0.003527275821954572
+        },
+        {
+          "rank": 75,
+          "term_name": "Myeloid Leukocyte Differentiation (GO:0002573)",
+          "term": "Myeloid Leukocyte Differentiation (GO:0002573)",
+          "overlap": "4/71",
+          "p_value": 0.00039386550800842794,
+          "z_score": 12.733750601829563,
+          "combined_score": 99.82625130480756,
+          "overlap_genes": [
+            "BATF2",
+            "CASP8",
+            "CSF1",
+            "IL15"
+          ],
+          "genes": [
+            "BATF2",
+            "CASP8",
+            "CSF1",
+            "IL15"
+          ],
+          "adjusted_p_value": 0.003975415860831733
+        },
+        {
+          "rank": 76,
+          "term_name": "Positive Regulation Of Peptidyl-Tyrosine Phosphorylation (GO:0050731)",
+          "term": "Positive Regulation Of Peptidyl-Tyrosine Phosphorylation (GO:0050731)",
+          "overlap": "5/130",
+          "p_value": 0.0004290843870761085,
+          "z_score": 8.599130434782609,
+          "combined_score": 66.67642730211416,
+          "overlap_genes": [
+            "CD74",
+            "IL15",
+            "RIPK2",
+            "PARP14",
+            "PARP9"
+          ],
+          "genes": [
+            "CD74",
+            "IL15",
+            "RIPK2",
+            "PARP14",
+            "PARP9"
+          ],
+          "adjusted_p_value": 0.004273906329165976
+        },
+        {
+          "rank": 77,
+          "term_name": "Defense Response To Bacterium (GO:0042742)",
+          "term": "Defense Response To Bacterium (GO:0042742)",
+          "overlap": "6/204",
+          "p_value": 0.000478439571372278,
+          "z_score": 6.561771561771562,
+          "combined_score": 50.16461657136256,
+          "overlap_genes": [
+            "RNF31",
+            "OAS1",
+            "CASP1",
+            "ISG15",
+            "GBP2",
+            "GBP4"
+          ],
+          "genes": [
+            "RNF31",
+            "OAS1",
+            "CASP1",
+            "ISG15",
+            "GBP2",
+            "GBP4"
+          ],
+          "adjusted_p_value": 0.004703620201672915
+        },
+        {
+          "rank": 78,
+          "term_name": "Protein Polyubiquitination (GO:0000209)",
+          "term": "Protein Polyubiquitination (GO:0000209)",
+          "overlap": "6/226",
+          "p_value": 0.0008182276678344715,
+          "z_score": 5.899000999000999,
+          "combined_score": 41.932281362876296,
+          "overlap_genes": [
+            "RNF31",
+            "IFI27",
+            "TRIM5",
+            "TRIM25",
+            "UBE2L6",
+            "TRIM21"
+          ],
+          "genes": [
+            "RNF31",
+            "IFI27",
+            "TRIM5",
+            "TRIM25",
+            "UBE2L6",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.007756570300120766
+        },
+        {
+          "rank": 79,
+          "term_name": "Positive Regulation Of Monocyte Differentiation (GO:0045657)",
+          "term": "Positive Regulation Of Monocyte Differentiation (GO:0045657)",
+          "overlap": "2/9",
+          "p_value": 0.0008197168084671879,
+          "z_score": 59.8375939849624,
+          "combined_score": 425.2389512416095,
+          "overlap_genes": [
+            "CD74",
+            "CSF1"
+          ],
+          "genes": [
+            "CD74",
+            "CSF1"
+          ],
+          "adjusted_p_value": 0.007756570300120766
+        },
+        {
+          "rank": 80,
+          "term_name": "Response To Type I Interferon (GO:0034340)",
+          "term": "Response To Type I Interferon (GO:0034340)",
+          "overlap": "2/9",
+          "p_value": 0.0008197168084671879,
+          "z_score": 59.8375939849624,
+          "combined_score": 425.2389512416095,
+          "overlap_genes": [
+            "MX1",
+            "ISG15"
+          ],
+          "genes": [
+            "MX1",
+            "ISG15"
+          ],
+          "adjusted_p_value": 0.007756570300120766
+        },
+        {
+          "rank": 81,
+          "term_name": "Regulation Of Cytokine-Mediated Signaling Pathway (GO:0001959)",
+          "term": "Regulation Of Cytokine-Mediated Signaling Pathway (GO:0001959)",
+          "overlap": "3/40",
+          "p_value": 0.0009592676665435392,
+          "z_score": 17.13571017826337,
+          "combined_score": 119.08188322959369,
+          "overlap_genes": [
+            "CD74",
+            "CASP8",
+            "IL7"
+          ],
+          "genes": [
+            "CD74",
+            "CASP8",
+            "IL7"
+          ],
+          "adjusted_p_value": 0.008855678336261698
+        },
+        {
+          "rank": 82,
+          "term_name": "Positive Regulation Of Myeloid Leukocyte Differentiation (GO:0002763)",
+          "term": "Positive Regulation Of Myeloid Leukocyte Differentiation (GO:0002763)",
+          "overlap": "3/40",
+          "p_value": 0.0009592676665435392,
+          "z_score": 17.13571017826337,
+          "combined_score": 119.08188322959369,
+          "overlap_genes": [
+            "CD74",
+            "CASP8",
+            "CSF1"
+          ],
+          "genes": [
+            "CD74",
+            "CASP8",
+            "CSF1"
+          ],
+          "adjusted_p_value": 0.008855678336261698
+        },
+        {
+          "rank": 83,
+          "term_name": "Positive Regulation Of Binding (GO:0051099)",
+          "term": "Positive Regulation Of Binding (GO:0051099)",
+          "overlap": "4/91",
+          "p_value": 0.0010062648288207015,
+          "z_score": 9.796564083549622,
+          "combined_score": 67.61108491599774,
+          "overlap_genes": [
+            "RIPK2",
+            "PARP9",
+            "B2M",
+            "TRIM21"
+          ],
+          "genes": [
+            "RIPK2",
+            "PARP9",
+            "B2M",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.009177620185750253
+        },
+        {
+          "rank": 84,
+          "term_name": "T Cell Chemotaxis (GO:0010818)",
+          "term": "T Cell Chemotaxis (GO:0010818)",
+          "overlap": "2/10",
+          "p_value": 0.0010214106211725933,
+          "z_score": 52.35526315789474,
+          "combined_score": 360.54821838294885,
+          "overlap_genes": [
+            "CXCL10",
+            "CXCL11"
+          ],
+          "genes": [
+            "CXCL10",
+            "CXCL11"
+          ],
+          "adjusted_p_value": 0.0091853301386673
+        },
+        {
+          "rank": 85,
+          "term_name": "Regulation Of Chemokine Production (GO:0032642)",
+          "term": "Regulation Of Chemokine Production (GO:0032642)",
+          "overlap": "3/41",
+          "p_value": 0.001031377888753924,
+          "z_score": 16.683930571108622,
+          "combined_score": 114.73304835836942,
+          "overlap_genes": [
+            "CD74",
+            "IL7",
+            "EIF2AK2"
+          ],
+          "genes": [
+            "CD74",
+            "IL7",
+            "EIF2AK2"
+          ],
+          "adjusted_p_value": 0.0091853301386673
+        },
+        {
+          "rank": 86,
+          "term_name": "Post-Transcriptional Gene Silencing (GO:0016441)",
+          "term": "Post-Transcriptional Gene Silencing (GO:0016441)",
+          "overlap": "2/11",
+          "p_value": 0.0012444500801154995,
+          "z_score": 46.53567251461988,
+          "combined_score": 311.2799776913074,
+          "overlap_genes": [
+            "HELZ2",
+            "MOV10"
+          ],
+          "genes": [
+            "HELZ2",
+            "MOV10"
+          ],
+          "adjusted_p_value": 0.010828146099395784
+        },
+        {
+          "rank": 87,
+          "term_name": "Regulation Of Type II Interferon-Mediated Signaling Pathway (GO:0060334)",
+          "term": "Regulation Of Type II Interferon-Mediated Signaling Pathway (GO:0060334)",
+          "overlap": "2/11",
+          "p_value": 0.0012444500801154995,
+          "z_score": 46.53567251461988,
+          "combined_score": 311.2799776913074,
+          "overlap_genes": [
+            "PARP14",
+            "PARP9"
+          ],
+          "genes": [
+            "PARP14",
+            "PARP9"
+          ],
+          "adjusted_p_value": 0.010828146099395784
+        },
+        {
+          "rank": 88,
+          "term_name": "Negative Regulation Of Response To Biotic Stimulus (GO:0002832)",
+          "term": "Negative Regulation Of Response To Biotic Stimulus (GO:0002832)",
+          "overlap": "3/45",
+          "p_value": 0.0013538080248683298,
+          "z_score": 15.091945288753799,
+          "combined_score": 99.67979183363049,
+          "overlap_genes": [
+            "DHX58",
+            "TRAFD1",
+            "TRIM21"
+          ],
+          "genes": [
+            "DHX58",
+            "TRAFD1",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.01164582585028779
+        },
+        {
+          "rank": 89,
+          "term_name": "Positive Regulation Of mRNA Metabolic Process (GO:1903313)",
+          "term": "Positive Regulation Of mRNA Metabolic Process (GO:1903313)",
+          "overlap": "2/12",
+          "p_value": 0.0014886277004994327,
+          "z_score": 41.88,
+          "combined_score": 272.6346367003197,
+          "overlap_genes": [
+            "MOV10",
+            "PNPT1"
+          ],
+          "genes": [
+            "MOV10",
+            "PNPT1"
+          ],
+          "adjusted_p_value": 0.012661698531214276
+        },
+        {
+          "rank": 90,
+          "term_name": "Cellular Response To Mechanical Stimulus (GO:0071260)",
+          "term": "Cellular Response To Mechanical Stimulus (GO:0071260)",
+          "overlap": "3/48",
+          "p_value": 0.0016328984325665091,
+          "z_score": 14.083687943262412,
+          "combined_score": 90.38064018796555,
+          "overlap_genes": [
+            "CASP8",
+            "IRF1",
+            "CASP1"
+          ],
+          "genes": [
+            "CASP8",
+            "IRF1",
+            "CASP1"
+          ],
+          "adjusted_p_value": 0.01372762785931674
+        },
+        {
+          "rank": 91,
+          "term_name": "Positive Regulation Of Inflammatory Response (GO:0050729)",
+          "term": "Positive Regulation Of Inflammatory Response (GO:0050729)",
+          "overlap": "4/104",
+          "p_value": 0.0016502168232467942,
+          "z_score": 8.51741935483871,
+          "combined_score": 54.56981619825008,
+          "overlap_genes": [
+            "IL15",
+            "CASP1",
+            "IFI35",
+            "CD47"
+          ],
+          "genes": [
+            "IL15",
+            "CASP1",
+            "IFI35",
+            "CD47"
+          ],
+          "adjusted_p_value": 0.01372762785931674
+        },
+        {
+          "rank": 92,
+          "term_name": "Positive Regulation Of T Cell Activation (GO:0050870)",
+          "term": "Positive Regulation Of T Cell Activation (GO:0050870)",
+          "overlap": "4/107",
+          "p_value": 0.0018317432558167916,
+          "z_score": 8.268086439085499,
+          "combined_score": 52.10950867596669,
+          "overlap_genes": [
+            "IL15",
+            "IL7",
+            "CD47",
+            "B2M"
+          ],
+          "genes": [
+            "IL15",
+            "IL7",
+            "CD47",
+            "B2M"
+          ],
+          "adjusted_p_value": 0.015072061354927295
+        },
+        {
+          "rank": 93,
+          "term_name": "Regulation Of Leukocyte Activation (GO:0002694)",
+          "term": "Regulation Of Leukocyte Activation (GO:0002694)",
+          "overlap": "2/14",
+          "p_value": 0.002039574841630082,
+          "z_score": 34.896491228070175,
+          "combined_score": 216.18424835215666,
+          "overlap_genes": [
+            "CD74",
+            "PLSCR1"
+          ],
+          "genes": [
+            "CD74",
+            "PLSCR1"
+          ],
+          "adjusted_p_value": 0.016425086756531617
+        },
+        {
+          "rank": 94,
+          "term_name": "Regulation Of Macrophage Differentiation (GO:0045649)",
+          "term": "Regulation Of Macrophage Differentiation (GO:0045649)",
+          "overlap": "2/14",
+          "p_value": 0.002039574841630082,
+          "z_score": 34.896491228070175,
+          "combined_score": 216.18424835215666,
+          "overlap_genes": [
+            "CASP8",
+            "CSF1"
+          ],
+          "genes": [
+            "CASP8",
+            "CSF1"
+          ],
+          "adjusted_p_value": 0.016425086756531617
+        },
+        {
+          "rank": 95,
+          "term_name": "Ubiquitin-Dependent Protein Catabolic Process (GO:0006511)",
+          "term": "Ubiquitin-Dependent Protein Catabolic Process (GO:0006511)",
+          "overlap": "7/367",
+          "p_value": 0.00206748220043342,
+          "z_score": 4.222253086419753,
+          "combined_score": 26.09953546605782,
+          "overlap_genes": [
+            "NUB1",
+            "PSMA3",
+            "IFI27",
+            "MVB12A",
+            "TRIM25",
+            "UBE2L6",
+            "HERC6"
+          ],
+          "genes": [
+            "NUB1",
+            "PSMA3",
+            "IFI27",
+            "MVB12A",
+            "TRIM25",
+            "UBE2L6",
+            "HERC6"
+          ],
+          "adjusted_p_value": 0.016474568691874726
+        },
+        {
+          "rank": 96,
+          "term_name": "Regulation Of Proteasomal Protein Catabolic Process (GO:0061136)",
+          "term": "Regulation Of Proteasomal Protein Catabolic Process (GO:0061136)",
+          "overlap": "3/53",
+          "p_value": 0.002173281013710703,
+          "z_score": 12.672127659574468,
+          "combined_score": 77.69936953463504,
+          "overlap_genes": [
+            "LAMP3",
+            "PSME1",
+            "PSME2"
+          ],
+          "genes": [
+            "LAMP3",
+            "PSME1",
+            "PSME2"
+          ],
+          "adjusted_p_value": 0.017137226326864607
+        },
+        {
+          "rank": 97,
+          "term_name": "Negative Regulation Of Phagocytosis (GO:0050765)",
+          "term": "Negative Regulation Of Phagocytosis (GO:0050765)",
+          "overlap": "2/15",
+          "p_value": 0.0023459367198198867,
+          "z_score": 32.21052631578947,
+          "combined_score": 195.03700777322305,
+          "overlap_genes": [
+            "PLSCR1",
+            "CD47"
+          ],
+          "genes": [
+            "PLSCR1",
+            "CD47"
+          ],
+          "adjusted_p_value": 0.018307980380450044
+        },
+        {
+          "rank": 98,
+          "term_name": "Positive Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042531)",
+          "term": "Positive Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042531)",
+          "overlap": "3/55",
+          "p_value": 0.002416922437563227,
+          "z_score": 12.183510638297872,
+          "combined_score": 73.40882257552953,
+          "overlap_genes": [
+            "IL15",
+            "PARP9",
+            "PARP14"
+          ],
+          "genes": [
+            "IL15",
+            "PARP9",
+            "PARP14"
+          ],
+          "adjusted_p_value": 0.018669492706483295
+        },
+        {
+          "rank": 99,
+          "term_name": "Modification-Dependent Protein Catabolic Process (GO:0019941)",
+          "term": "Modification-Dependent Protein Catabolic Process (GO:0019941)",
+          "overlap": "5/192",
+          "p_value": 0.00244409439675686,
+          "z_score": 5.730062776098582,
+          "combined_score": 34.46105946183786,
+          "overlap_genes": [
+            "NUB1",
+            "TRIM25",
+            "UBE2L6",
+            "ISG15",
+            "HERC6"
+          ],
+          "genes": [
+            "NUB1",
+            "TRIM25",
+            "UBE2L6",
+            "ISG15",
+            "HERC6"
+          ],
+          "adjusted_p_value": 0.018688681397423666
+        },
+        {
+          "rank": 100,
+          "term_name": "Negative Regulation Of Cell Population Proliferation (GO:0008285)",
+          "term": "Negative Regulation Of Cell Population Proliferation (GO:0008285)",
+          "overlap": "7/379",
+          "p_value": 0.0024757294318556657,
+          "z_score": 4.083542413381123,
+          "combined_score": 24.50623724504242,
+          "overlap_genes": [
+            "IFITM1",
+            "IRF1",
+            "EIF2AK2",
+            "IFI35",
+            "B2M",
+            "IFIT3",
+            "WARS1"
+          ],
+          "genes": [
+            "IFITM1",
+            "IRF1",
+            "EIF2AK2",
+            "IFI35",
+            "B2M",
+            "IFIT3",
+            "WARS1"
+          ],
+          "adjusted_p_value": 0.01874127179914739
+        },
+        {
+          "rank": 101,
+          "term_name": "Cellular Response To Molecule Of Bacterial Origin (GO:0071219)",
+          "term": "Cellular Response To Molecule Of Bacterial Origin (GO:0071219)",
+          "overlap": "4/117",
+          "p_value": 0.0025364362312531802,
+          "z_score": 7.532591112379865,
+          "combined_score": 45.02226123652992,
+          "overlap_genes": [
+            "CXCL10",
+            "CXCL11",
+            "CASP1",
+            "GBP2"
+          ],
+          "genes": [
+            "CXCL10",
+            "CXCL11",
+            "CASP1",
+            "GBP2"
+          ],
+          "adjusted_p_value": 0.01901071511939265
+        },
+        {
+          "rank": 102,
+          "term_name": "Regulation Of Protein Binding (GO:0043393)",
+          "term": "Regulation Of Protein Binding (GO:0043393)",
+          "overlap": "4/118",
+          "p_value": 0.0026158014645757477,
+          "z_score": 7.466138464440672,
+          "combined_score": 44.39503861155078,
+          "overlap_genes": [
+            "RIPK2",
+            "B2M",
+            "TRIM21",
+            "IFIT2"
+          ],
+          "genes": [
+            "RIPK2",
+            "B2M",
+            "TRIM21",
+            "IFIT2"
+          ],
+          "adjusted_p_value": 0.019116621480813445
+        },
+        {
+          "rank": 103,
+          "term_name": "Activation Of Cysteine-Type Endopeptidase Activity (GO:0097202)",
+          "term": "Activation Of Cysteine-Type Endopeptidase Activity (GO:0097202)",
+          "overlap": "2/16",
+          "p_value": 0.002672621458078075,
+          "z_score": 29.90827067669173,
+          "combined_score": 177.1973957558835,
+          "overlap_genes": [
+            "CASP8",
+            "RIPK2"
+          ],
+          "genes": [
+            "CASP8",
+            "RIPK2"
+          ],
+          "adjusted_p_value": 0.019116621480813445
+        },
+        {
+          "rank": 104,
+          "term_name": "Cell Surface Toll-Like Receptor Signaling Pathway (GO:0140895)",
+          "term": "Cell Surface Toll-Like Receptor Signaling Pathway (GO:0140895)",
+          "overlap": "2/16",
+          "p_value": 0.002672621458078075,
+          "z_score": 29.90827067669173,
+          "combined_score": 177.1973957558835,
+          "overlap_genes": [
+            "OAS1",
+            "RIPK2"
+          ],
+          "genes": [
+            "OAS1",
+            "RIPK2"
+          ],
+          "adjusted_p_value": 0.019116621480813445
+        },
+        {
+          "rank": 105,
+          "term_name": "Regulation Of Response To Cytokine Stimulus (GO:0060759)",
+          "term": "Regulation Of Response To Cytokine Stimulus (GO:0060759)",
+          "overlap": "2/16",
+          "p_value": 0.002672621458078075,
+          "z_score": 29.90827067669173,
+          "combined_score": 177.1973957558835,
+          "overlap_genes": [
+            "IFIH1",
+            "PARP9"
+          ],
+          "genes": [
+            "IFIH1",
+            "PARP9"
+          ],
+          "adjusted_p_value": 0.019116621480813445
+        },
+        {
+          "rank": 106,
+          "term_name": "Positive Regulation Of Interleukin-1 Beta Production (GO:0032731)",
+          "term": "Positive Regulation Of Interleukin-1 Beta Production (GO:0032731)",
+          "overlap": "3/57",
+          "p_value": 0.002676832069968593,
+          "z_score": 11.731087470449173,
+          "combined_score": 69.48465344771182,
+          "overlap_genes": [
+            "CASP8",
+            "RIPK2",
+            "CASP1"
+          ],
+          "genes": [
+            "CASP8",
+            "RIPK2",
+            "CASP1"
+          ],
+          "adjusted_p_value": 0.019116621480813445
+        },
+        {
+          "rank": 107,
+          "term_name": "Regulation Of Phagocytosis (GO:0050764)",
+          "term": "Regulation Of Phagocytosis (GO:0050764)",
+          "overlap": "3/58",
+          "p_value": 0.002812998401694823,
+          "z_score": 11.517214700193424,
+          "combined_score": 67.6464102690016,
+          "overlap_genes": [
+            "PLSCR1",
+            "IL15",
+            "CD47"
+          ],
+          "genes": [
+            "PLSCR1",
+            "IL15",
+            "CD47"
+          ],
+          "adjusted_p_value": 0.019901306449373653
+        },
+        {
+          "rank": 108,
+          "term_name": "Positive Regulation Of Protein Binding (GO:0032092)",
+          "term": "Positive Regulation Of Protein Binding (GO:0032092)",
+          "overlap": "3/59",
+          "p_value": 0.0029533630809532164,
+          "z_score": 11.310980243161094,
+          "combined_score": 65.88431909313756,
+          "overlap_genes": [
+            "RIPK2",
+            "B2M",
+            "TRIM21"
+          ],
+          "genes": [
+            "RIPK2",
+            "B2M",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.020700887521125786
+        },
+        {
+          "rank": 109,
+          "term_name": "T Cell Migration (GO:0072678)",
+          "term": "T Cell Migration (GO:0072678)",
+          "overlap": "2/17",
+          "p_value": 0.0030194288446408635,
+          "z_score": 27.91298245614035,
+          "combined_score": 161.9703168917892,
+          "overlap_genes": [
+            "CXCL10",
+            "CXCL11"
+          ],
+          "genes": [
+            "CXCL10",
+            "CXCL11"
+          ],
+          "adjusted_p_value": 0.020969794820120492
+        },
+        {
+          "rank": 110,
+          "term_name": "Cellular Response To Lipopolysaccharide (GO:0071222)",
+          "term": "Cellular Response To Lipopolysaccharide (GO:0071222)",
+          "overlap": "4/124",
+          "p_value": 0.0031280926687588828,
+          "z_score": 7.09068100358423,
+          "combined_score": 40.89431025668346,
+          "overlap_genes": [
+            "CXCL10",
+            "CXCL11",
+            "CASP1",
+            "GBP2"
+          ],
+          "genes": [
+            "CXCL10",
+            "CXCL11",
+            "CASP1",
+            "GBP2"
+          ],
+          "adjusted_p_value": 0.02152696500227704
+        },
+        {
+          "rank": 111,
+          "term_name": "ncRNA-mediated Post-Transcriptional Gene Silencing (GO:0035194)",
+          "term": "ncRNA-mediated Post-Transcriptional Gene Silencing (GO:0035194)",
+          "overlap": "2/18",
+          "p_value": 0.003386160098682633,
+          "z_score": 26.167105263157893,
+          "combined_score": 148.84003110829175,
+          "overlap_genes": [
+            "HELZ2",
+            "MOV10"
+          ],
+          "genes": [
+            "HELZ2",
+            "MOV10"
+          ],
+          "adjusted_p_value": 0.022886814238417437
+        },
+        {
+          "rank": 112,
+          "term_name": "Regulation Of Adaptive Immune Response (GO:0002819)",
+          "term": "Regulation Of Adaptive Immune Response (GO:0002819)",
+          "overlap": "2/18",
+          "p_value": 0.003386160098682633,
+          "z_score": 26.167105263157893,
+          "combined_score": 148.84003110829175,
+          "overlap_genes": [
+            "IRF1",
+            "IRF7"
+          ],
+          "genes": [
+            "IRF1",
+            "IRF7"
+          ],
+          "adjusted_p_value": 0.022886814238417437
+        },
+        {
+          "rank": 113,
+          "term_name": "Positive Regulation Of Interleukin-1 Production (GO:0032732)",
+          "term": "Positive Regulation Of Interleukin-1 Production (GO:0032732)",
+          "overlap": "3/64",
+          "p_value": 0.003719596442749538,
+          "z_score": 10.381234740146494,
+          "combined_score": 58.07408154439389,
+          "overlap_genes": [
+            "CASP8",
+            "RIPK2",
+            "CASP1"
+          ],
+          "genes": [
+            "CASP8",
+            "RIPK2",
+            "CASP1"
+          ],
+          "adjusted_p_value": 0.024484647888360002
+        },
+        {
+          "rank": 114,
+          "term_name": "Cellular Response To Virus (GO:0098586)",
+          "term": "Cellular Response To Virus (GO:0098586)",
+          "overlap": "3/64",
+          "p_value": 0.003719596442749538,
+          "z_score": 10.381234740146494,
+          "combined_score": 58.07408154439389,
+          "overlap_genes": [
+            "IFIH1",
+            "CXCL10",
+            "OAS1"
+          ],
+          "genes": [
+            "IFIH1",
+            "CXCL10",
+            "OAS1"
+          ],
+          "adjusted_p_value": 0.024484647888360002
+        },
+        {
+          "rank": 115,
+          "term_name": "Positive Regulation Of Cysteine-Type Endopeptidase Activity (GO:2001056)",
+          "term": "Positive Regulation Of Cysteine-Type Endopeptidase Activity (GO:2001056)",
+          "overlap": "3/64",
+          "p_value": 0.003719596442749538,
+          "z_score": 10.381234740146494,
+          "combined_score": 58.07408154439389,
+          "overlap_genes": [
+            "CASP8",
+            "RIPK2",
+            "CASP1"
+          ],
+          "genes": [
+            "CASP8",
+            "RIPK2",
+            "CASP1"
+          ],
+          "adjusted_p_value": 0.024484647888360002
+        },
+        {
+          "rank": 116,
+          "term_name": "Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042509)",
+          "term": "Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042509)",
+          "overlap": "3/65",
+          "p_value": 0.0038859998059354536,
+          "z_score": 10.21328071379547,
+          "combined_score": 56.687537716796164,
+          "overlap_genes": [
+            "IL15",
+            "PARP9",
+            "PARP14"
+          ],
+          "genes": [
+            "IL15",
+            "PARP9",
+            "PARP14"
+          ],
+          "adjusted_p_value": 0.025359498733561536
+        },
+        {
+          "rank": 117,
+          "term_name": "Negative Regulation Of Immune Response (GO:0050777)",
+          "term": "Negative Regulation Of Immune Response (GO:0050777)",
+          "overlap": "3/66",
+          "p_value": 0.004056876290720975,
+          "z_score": 10.05065856129686,
+          "combined_score": 55.35241390188424,
+          "overlap_genes": [
+            "DHX58",
+            "TRAFD1",
+            "TRIM21"
+          ],
+          "genes": [
+            "DHX58",
+            "TRAFD1",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.02624833634252802
+        },
+        {
+          "rank": 118,
+          "term_name": "Regulation Of Toll-Like Receptor Signaling Pathway (GO:0034121)",
+          "term": "Regulation Of Toll-Like Receptor Signaling Pathway (GO:0034121)",
+          "overlap": "2/20",
+          "p_value": 0.004178606166116967,
+          "z_score": 23.257309941520468,
+          "combined_score": 127.39837006488538,
+          "overlap_genes": [
+            "IRF1",
+            "IRF7"
+          ],
+          "genes": [
+            "IRF1",
+            "IRF7"
+          ],
+          "adjusted_p_value": 0.026806820913140204
+        },
+        {
+          "rank": 119,
+          "term_name": "Negative Regulation Of Cellular Process (GO:0048523)",
+          "term": "Negative Regulation Of Cellular Process (GO:0048523)",
+          "overlap": "8/537",
+          "p_value": 0.004586056874070408,
+          "z_score": 3.292028631507402,
+          "combined_score": 17.7267007822651,
+          "overlap_genes": [
+            "BST2",
+            "IFITM1",
+            "IRF1",
+            "EIF2AK2",
+            "TXNIP",
+            "IFI35",
+            "IFIT3",
+            "WARS1"
+          ],
+          "genes": [
+            "BST2",
+            "IFITM1",
+            "IRF1",
+            "EIF2AK2",
+            "TXNIP",
+            "IFI35",
+            "IFIT3",
+            "WARS1"
+          ],
+          "adjusted_p_value": 0.029043128107297186
+        },
+        {
+          "rank": 120,
+          "term_name": "Antigen Processing And Presentation Of Endogenous Peptide Antigen (GO:0002483)",
+          "term": "Antigen Processing And Presentation Of Endogenous Peptide Antigen (GO:0002483)",
+          "overlap": "2/21",
+          "p_value": 0.004603930479360188,
+          "z_score": 22.03213296398892,
+          "combined_score": 118.55149003737445,
+          "overlap_genes": [
+            "HLA-C",
+            "TAP1"
+          ],
+          "genes": [
+            "HLA-C",
+            "TAP1"
+          ],
+          "adjusted_p_value": 0.029043128107297186
+        },
+        {
+          "rank": 121,
+          "term_name": "Protein K48-linked Ubiquitination (GO:0070936)",
+          "term": "Protein K48-linked Ubiquitination (GO:0070936)",
+          "overlap": "3/70",
+          "p_value": 0.0047858178995341906,
+          "z_score": 9.448713877421403,
+          "combined_score": 50.47595870829253,
+          "overlap_genes": [
+            "IFI27",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "genes": [
+            "IFI27",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.029941026032622994
+        },
+        {
+          "rank": 122,
+          "term_name": "Regulation Of Cellular Localization (GO:0060341)",
+          "term": "Regulation Of Cellular Localization (GO:0060341)",
+          "overlap": "3/72",
+          "p_value": 0.005178020415295395,
+          "z_score": 9.173913043478262,
+          "combined_score": 48.2853542607344,
+          "overlap_genes": [
+            "TRIM5",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "genes": [
+            "TRIM5",
+            "TRIM25",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.03212919224900503
+        },
+        {
+          "rank": 123,
+          "term_name": "Positive Regulation Of Cellular Catabolic Process (GO:0031331)",
+          "term": "Positive Regulation Of Cellular Catabolic Process (GO:0031331)",
+          "overlap": "4/146",
+          "p_value": 0.005587157960690799,
+          "z_score": 5.9854611540209,
+          "combined_score": 31.048290085111645,
+          "overlap_genes": [
+            "MOV10",
+            "PNPT1",
+            "TRIM5",
+            "TRIM21"
+          ],
+          "genes": [
+            "MOV10",
+            "PNPT1",
+            "TRIM5",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.03412024839863361
+        },
+        {
+          "rank": 124,
+          "term_name": "Positive Regulation Of Lymphocyte Proliferation (GO:0050671)",
+          "term": "Positive Regulation Of Lymphocyte Proliferation (GO:0050671)",
+          "overlap": "3/74",
+          "p_value": 0.005589049935839588,
+          "z_score": 8.914593946658675,
+          "combined_score": 46.23951709294446,
+          "overlap_genes": [
+            "CD74",
+            "IL15",
+            "IL7"
+          ],
+          "genes": [
+            "CD74",
+            "IL15",
+            "IL7"
+          ],
+          "adjusted_p_value": 0.03412024839863361
+        },
+        {
+          "rank": 125,
+          "term_name": "Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944)",
+          "term": "Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944)",
+          "overlap": "11/938",
+          "p_value": 0.005710042392961931,
+          "z_score": 2.6182985875918816,
+          "combined_score": 13.524896842386028,
+          "overlap_genes": [
+            "HELZ2",
+            "CXCL10",
+            "PLSCR1",
+            "ELF1",
+            "RIPK2",
+            "IRF1",
+            "STAT2",
+            "IRF2",
+            "IRF7",
+            "NCOA7",
+            "IRF9"
+          ],
+          "genes": [
+            "HELZ2",
+            "CXCL10",
+            "PLSCR1",
+            "ELF1",
+            "RIPK2",
+            "IRF1",
+            "STAT2",
+            "IRF2",
+            "IRF7",
+            "NCOA7",
+            "IRF9"
+          ],
+          "adjusted_p_value": 0.03458001673177745
+        },
+        {
+          "rank": 126,
+          "term_name": "Positive Regulation Of Response To Stimulus (GO:0048584)",
+          "term": "Positive Regulation Of Response To Stimulus (GO:0048584)",
+          "overlap": "3/77",
+          "p_value": 0.0062414139495764595,
+          "z_score": 8.551897642323175,
+          "combined_score": 43.41412338591267,
+          "overlap_genes": [
+            "IFIH1",
+            "RSAD2",
+            "IL15"
+          ],
+          "genes": [
+            "IFIH1",
+            "RSAD2",
+            "IL15"
+          ],
+          "adjusted_p_value": 0.03748006650906514
+        },
+        {
+          "rank": 127,
+          "term_name": "Regulation Of Inflammatory Response (GO:0050727)",
+          "term": "Regulation Of Inflammatory Response (GO:0050727)",
+          "overlap": "5/240",
+          "p_value": 0.006287937181837877,
+          "z_score": 4.548566142460684,
+          "combined_score": 23.05723767491808,
+          "overlap_genes": [
+            "IL15",
+            "CASP1",
+            "IFI35",
+            "CD47",
+            "USP18"
+          ],
+          "genes": [
+            "IL15",
+            "CASP1",
+            "IFI35",
+            "CD47",
+            "USP18"
+          ],
+          "adjusted_p_value": 0.03748006650906514
+        },
+        {
+          "rank": 128,
+          "term_name": "Proteolysis Involved In Protein Catabolic Process (GO:0051603)",
+          "term": "Proteolysis Involved In Protein Catabolic Process (GO:0051603)",
+          "overlap": "3/78",
+          "p_value": 0.006468533144283884,
+          "z_score": 8.437446808510638,
+          "combined_score": 42.531531760157,
+          "overlap_genes": [
+            "CASP8",
+            "ISG15",
+            "TRIM21"
+          ],
+          "genes": [
+            "CASP8",
+            "ISG15",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 0.038112575350581816
+        },
+        {
+          "rank": 129,
+          "term_name": "Positive Regulation Of Peptidase Activity (GO:0010952)",
+          "term": "Positive Regulation Of Peptidase Activity (GO:0010952)",
+          "overlap": "2/25",
+          "p_value": 0.006494745337153308,
+          "z_score": 18.19679633867277,
+          "combined_score": 91.652929385015,
+          "overlap_genes": [
+            "PSME1",
+            "PSME2"
+          ],
+          "genes": [
+            "PSME1",
+            "PSME2"
+          ],
+          "adjusted_p_value": 0.038112575350581816
+        },
+        {
+          "rank": 130,
+          "term_name": "Positive Regulation Of Endocytosis (GO:0045807)",
+          "term": "Positive Regulation Of Endocytosis (GO:0045807)",
+          "overlap": "3/79",
+          "p_value": 0.0067005293500432715,
+          "z_score": 8.3260078387458,
+          "combined_score": 41.67640463520224,
+          "overlap_genes": [
+            "IL15",
+            "CD47",
+            "B2M"
+          ],
+          "genes": [
+            "IL15",
+            "CD47",
+            "B2M"
+          ],
+          "adjusted_p_value": 0.039017697830636584
+        },
+        {
+          "rank": 131,
+          "term_name": "Positive Regulation Of DNA-templated Transcription (GO:0045893)",
+          "term": "Positive Regulation Of DNA-templated Transcription (GO:0045893)",
+          "overlap": "13/1243",
+          "p_value": 0.006950370274757818,
+          "z_score": 2.3494870305845916,
+          "combined_score": 11.674507883437636,
+          "overlap_genes": [
+            "CD74",
+            "RIPK2",
+            "STAT2",
+            "PARP9",
+            "HELZ2",
+            "CXCL10",
+            "PLSCR1",
+            "ELF1",
+            "IRF1",
+            "IRF2",
+            "IRF7",
+            "NCOA7",
+            "IRF9"
+          ],
+          "genes": [
+            "CD74",
+            "RIPK2",
+            "STAT2",
+            "PARP9",
+            "HELZ2",
+            "CXCL10",
+            "PLSCR1",
+            "ELF1",
+            "IRF1",
+            "IRF2",
+            "IRF7",
+            "NCOA7",
+            "IRF9"
+          ],
+          "adjusted_p_value": 0.0401635900610051
+        },
+        {
+          "rank": 132,
+          "term_name": "Response To Lipopolysaccharide (GO:0032496)",
+          "term": "Response To Lipopolysaccharide (GO:0032496)",
+          "overlap": "4/159",
+          "p_value": 0.007519639738029235,
+          "z_score": 5.4798473812001385,
+          "combined_score": 26.79775268830075,
+          "overlap_genes": [
+            "CXCL10",
+            "CXCL11",
+            "CASP1",
+            "GBP2"
+          ],
+          "genes": [
+            "CXCL10",
+            "CXCL11",
+            "CASP1",
+            "GBP2"
+          ],
+          "adjusted_p_value": 0.0426587130052613
+        },
+        {
+          "rank": 133,
+          "term_name": "Positive Regulation Of Immune System Process (GO:0002684)",
+          "term": "Positive Regulation Of Immune System Process (GO:0002684)",
+          "overlap": "2/27",
+          "p_value": 0.007551212077549556,
+          "z_score": 16.73936842105263,
+          "combined_score": 81.78934401151223,
+          "overlap_genes": [
+            "RSAD2",
+            "IL15"
+          ],
+          "genes": [
+            "RSAD2",
+            "IL15"
+          ],
+          "adjusted_p_value": 0.0426587130052613
+        },
+        {
+          "rank": 134,
+          "term_name": "Regulation Of Peptidase Activity (GO:0052547)",
+          "term": "Regulation Of Peptidase Activity (GO:0052547)",
+          "overlap": "2/27",
+          "p_value": 0.007551212077549556,
+          "z_score": 16.73936842105263,
+          "combined_score": 81.78934401151223,
+          "overlap_genes": [
+            "PSMA3",
+            "PSMB8"
+          ],
+          "genes": [
+            "PSMA3",
+            "PSMB8"
+          ],
+          "adjusted_p_value": 0.0426587130052613
+        },
+        {
+          "rank": 135,
+          "term_name": "Regulation Of Interleukin-1 Beta Production (GO:0032651)",
+          "term": "Regulation Of Interleukin-1 Beta Production (GO:0032651)",
+          "overlap": "3/84",
+          "p_value": 0.00793454197809714,
+          "z_score": 7.810086682427108,
+          "combined_score": 37.77371579610627,
+          "overlap_genes": [
+            "CASP8",
+            "RIPK2",
+            "CASP1"
+          ],
+          "genes": [
+            "CASP8",
+            "RIPK2",
+            "CASP1"
+          ],
+          "adjusted_p_value": 0.04449220946236693
+        },
+        {
+          "rank": 136,
+          "term_name": "Macromolecule Catabolic Process (GO:0009057)",
+          "term": "Macromolecule Catabolic Process (GO:0009057)",
+          "overlap": "3/85",
+          "p_value": 0.008196316228527628,
+          "z_score": 7.714452516865594,
+          "combined_score": 37.060773498205016,
+          "overlap_genes": [
+            "ISG20",
+            "PNPT1",
+            "MVB12A"
+          ],
+          "genes": [
+            "ISG20",
+            "PNPT1",
+            "MVB12A"
+          ],
+          "adjusted_p_value": 0.04562214253673099
+        },
+        {
+          "rank": 137,
+          "term_name": "RNA-mediated Gene Silencing (GO:0031047)",
+          "term": "RNA-mediated Gene Silencing (GO:0031047)",
+          "overlap": "2/29",
+          "p_value": 0.00867973088912956,
+          "z_score": 15.497855750487329,
+          "combined_score": 73.56467544436724,
+          "overlap_genes": [
+            "HELZ2",
+            "MOV10"
+          ],
+          "genes": [
+            "HELZ2",
+            "MOV10"
+          ],
+          "adjusted_p_value": 0.04693254487907912
+        },
+        {
+          "rank": 138,
+          "term_name": "Integrated Stress Response Signaling (GO:0140467)",
+          "term": "Integrated Stress Response Signaling (GO:0140467)",
+          "overlap": "2/29",
+          "p_value": 0.00867973088912956,
+          "z_score": 15.497855750487329,
+          "combined_score": 73.56467544436724,
+          "overlap_genes": [
+            "BATF2",
+            "EIF2AK2"
+          ],
+          "genes": [
+            "BATF2",
+            "EIF2AK2"
+          ],
+          "adjusted_p_value": 0.04693254487907912
+        },
+        {
+          "rank": 139,
+          "term_name": "Positive Regulation Of B Cell Proliferation (GO:0030890)",
+          "term": "Positive Regulation Of B Cell Proliferation (GO:0030890)",
+          "overlap": "2/29",
+          "p_value": 0.00867973088912956,
+          "z_score": 15.497855750487329,
+          "combined_score": 73.56467544436724,
+          "overlap_genes": [
+            "CD74",
+            "IL7"
+          ],
+          "genes": [
+            "CD74",
+            "IL7"
+          ],
+          "adjusted_p_value": 0.04693254487907912
+        },
+        {
+          "rank": 140,
+          "term_name": "Positive Regulation Of Endopeptidase Activity (GO:0010950)",
+          "term": "Positive Regulation Of Endopeptidase Activity (GO:0010950)",
+          "overlap": "2/29",
+          "p_value": 0.00867973088912956,
+          "z_score": 15.497855750487329,
+          "combined_score": 73.56467544436724,
+          "overlap_genes": [
+            "PSME1",
+            "PSME2"
+          ],
+          "genes": [
+            "PSME1",
+            "PSME2"
+          ],
+          "adjusted_p_value": 0.04693254487907912
+        },
+        {
+          "rank": 141,
+          "term_name": "Positive Regulation Of Gene Expression (GO:0010628)",
+          "term": "Positive Regulation Of Gene Expression (GO:0010628)",
+          "overlap": "7/480",
+          "p_value": 0.008835192025749198,
+          "z_score": 3.19497298567066,
+          "combined_score": 15.109066990813782,
+          "overlap_genes": [
+            "CD74",
+            "PLSCR1",
+            "CSF1",
+            "IL15",
+            "LAMP3",
+            "EIF2AK2",
+            "WARS1"
+          ],
+          "genes": [
+            "CD74",
+            "PLSCR1",
+            "CSF1",
+            "IL15",
+            "LAMP3",
+            "EIF2AK2",
+            "WARS1"
+          ],
+          "adjusted_p_value": 0.047434328819093215
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Influenza A",
+          "term": "Influenza A",
+          "overlap": "13/172",
+          "p_value": 2.2183801607384516e-12,
+          "z_score": 19.21772985923929,
+          "combined_score": 515.6932491651595,
+          "overlap_genes": [
+            "RSAD2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ADAR",
+            "IFIH1",
+            "CXCL10",
+            "CASP8",
+            "OAS1",
+            "IRF7",
+            "CASP1",
+            "TRIM25",
+            "IRF9"
+          ],
+          "genes": [
+            "RSAD2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ADAR",
+            "IFIH1",
+            "CXCL10",
+            "CASP8",
+            "OAS1",
+            "IRF7",
+            "CASP1",
+            "TRIM25",
+            "IRF9"
+          ],
+          "adjusted_p_value": 2.0409097478793756e-10
+        },
+        {
+          "rank": 2,
+          "term_name": "NOD-like receptor signaling pathway",
+          "term": "NOD-like receptor signaling pathway",
+          "overlap": "11/181",
+          "p_value": 1.2449375150017797e-09,
+          "z_score": 14.846990424076607,
+          "combined_score": 304.4253714931332,
+          "overlap_genes": [
+            "RNF31",
+            "CASP8",
+            "OAS1",
+            "RIPK2",
+            "STAT2",
+            "IRF7",
+            "CASP1",
+            "TXNIP",
+            "GBP2",
+            "GBP4",
+            "IRF9"
+          ],
+          "genes": [
+            "RNF31",
+            "CASP8",
+            "OAS1",
+            "RIPK2",
+            "STAT2",
+            "IRF7",
+            "CASP1",
+            "TXNIP",
+            "GBP2",
+            "GBP4",
+            "IRF9"
+          ],
+          "adjusted_p_value": 5.726712569008187e-08
+        },
+        {
+          "rank": 3,
+          "term_name": "Epstein-Barr virus infection",
+          "term": "Epstein-Barr virus infection",
+          "overlap": "11/202",
+          "p_value": 3.959612927854468e-09,
+          "z_score": 13.200535736028248,
+          "combined_score": 255.39234316671528,
+          "overlap_genes": [
+            "CXCL10",
+            "CASP8",
+            "OAS1",
+            "STAT2",
+            "IRF7",
+            "TAP1",
+            "HLA-C",
+            "EIF2AK2",
+            "ISG15",
+            "B2M",
+            "IRF9"
+          ],
+          "genes": [
+            "CXCL10",
+            "CASP8",
+            "OAS1",
+            "STAT2",
+            "IRF7",
+            "TAP1",
+            "HLA-C",
+            "EIF2AK2",
+            "ISG15",
+            "B2M",
+            "IRF9"
+          ],
+          "adjusted_p_value": 1.2142812978753702e-07
+        },
+        {
+          "rank": 4,
+          "term_name": "Coronavirus disease",
+          "term": "Coronavirus disease",
+          "overlap": "11/232",
+          "p_value": 1.67228587234008e-08,
+          "z_score": 11.39124487004104,
+          "combined_score": 203.97720401027462,
+          "overlap_genes": [
+            "IFIH1",
+            "CXCL10",
+            "OAS1",
+            "C1S",
+            "STAT2",
+            "MX1",
+            "CASP1",
+            "EIF2AK2",
+            "ISG15",
+            "ADAR",
+            "IRF9"
+          ],
+          "genes": [
+            "IFIH1",
+            "CXCL10",
+            "OAS1",
+            "C1S",
+            "STAT2",
+            "MX1",
+            "CASP1",
+            "EIF2AK2",
+            "ISG15",
+            "ADAR",
+            "IRF9"
+          ],
+          "adjusted_p_value": 3.8462575063821843e-07
+        },
+        {
+          "rank": 5,
+          "term_name": "Measles",
+          "term": "Measles",
+          "overlap": "9/139",
+          "p_value": 2.4810420328449086e-08,
+          "z_score": 15.555681818181819,
+          "combined_score": 272.41113262788457,
+          "overlap_genes": [
+            "IFIH1",
+            "CASP8",
+            "OAS1",
+            "STAT2",
+            "MX1",
+            "IRF7",
+            "EIF2AK2",
+            "ADAR",
+            "IRF9"
+          ],
+          "genes": [
+            "IFIH1",
+            "CASP8",
+            "OAS1",
+            "STAT2",
+            "MX1",
+            "IRF7",
+            "EIF2AK2",
+            "ADAR",
+            "IRF9"
+          ],
+          "adjusted_p_value": 4.5651173404346316e-07
+        },
+        {
+          "rank": 6,
+          "term_name": "RIG-I-like receptor signaling pathway",
+          "term": "RIG-I-like receptor signaling pathway",
+          "overlap": "7/70",
+          "p_value": 4.73382992055213e-08,
+          "z_score": 24.493827160493826,
+          "combined_score": 413.1115701589562,
+          "overlap_genes": [
+            "IFIH1",
+            "CXCL10",
+            "CASP8",
+            "DHX58",
+            "IRF7",
+            "TRIM25",
+            "ISG15"
+          ],
+          "genes": [
+            "IFIH1",
+            "CXCL10",
+            "CASP8",
+            "DHX58",
+            "IRF7",
+            "TRIM25",
+            "ISG15"
+          ],
+          "adjusted_p_value": 7.258539211513266e-07
+        },
+        {
+          "rank": 7,
+          "term_name": "Hepatitis C",
+          "term": "Hepatitis C",
+          "overlap": "9/157",
+          "p_value": 7.128092259437731e-08,
+          "z_score": 13.651335995085995,
+          "combined_score": 224.65508254633477,
+          "overlap_genes": [
+            "CXCL10",
+            "CASP8",
+            "RSAD2",
+            "OAS1",
+            "STAT2",
+            "MX1",
+            "IRF7",
+            "EIF2AK2",
+            "IRF9"
+          ],
+          "genes": [
+            "CXCL10",
+            "CASP8",
+            "RSAD2",
+            "OAS1",
+            "STAT2",
+            "MX1",
+            "IRF7",
+            "EIF2AK2",
+            "IRF9"
+          ],
+          "adjusted_p_value": 9.368349826689589e-07
+        },
+        {
+          "rank": 8,
+          "term_name": "Antigen processing and presentation",
+          "term": "Antigen processing and presentation",
+          "overlap": "7/78",
+          "p_value": 1.0108884108543143e-07,
+          "z_score": 21.725195618153364,
+          "combined_score": 349.93350672304854,
+          "overlap_genes": [
+            "CD74",
+            "PSME1",
+            "HLA-C",
+            "TAP1",
+            "PSME2",
+            "IFI30",
+            "B2M"
+          ],
+          "genes": [
+            "CD74",
+            "PSME1",
+            "HLA-C",
+            "TAP1",
+            "PSME2",
+            "IFI30",
+            "B2M"
+          ],
+          "adjusted_p_value": 1.1625216724824614e-06
+        },
+        {
+          "rank": 9,
+          "term_name": "Proteasome",
+          "term": "Proteasome",
+          "overlap": "5/46",
+          "p_value": 2.8317731048612724e-06,
+          "z_score": 26.328207847295864,
+          "combined_score": 336.33252152457544,
+          "overlap_genes": [
+            "PSMA3",
+            "PSME1",
+            "PSME2",
+            "PSMB8",
+            "PSMB9"
+          ],
+          "genes": [
+            "PSMA3",
+            "PSME1",
+            "PSME2",
+            "PSMB8",
+            "PSMB9"
+          ],
+          "adjusted_p_value": 2.8947013960804117e-05
+        },
+        {
+          "rank": 10,
+          "term_name": "Herpes simplex virus 1 infection",
+          "term": "Herpes simplex virus 1 infection",
+          "overlap": "12/498",
+          "p_value": 5.205656481921186e-06,
+          "z_score": 5.640377632534495,
+          "combined_score": 68.6195073142844,
+          "overlap_genes": [
+            "BST2",
+            "IFIH1",
+            "CD74",
+            "CASP8",
+            "OAS1",
+            "STAT2",
+            "IRF7",
+            "TAP1",
+            "HLA-C",
+            "EIF2AK2",
+            "B2M",
+            "IRF9"
+          ],
+          "genes": [
+            "BST2",
+            "IFIH1",
+            "CD74",
+            "CASP8",
+            "OAS1",
+            "STAT2",
+            "IRF7",
+            "TAP1",
+            "HLA-C",
+            "EIF2AK2",
+            "B2M",
+            "IRF9"
+          ],
+          "adjusted_p_value": 4.7892039633674904e-05
+        },
+        {
+          "rank": 11,
+          "term_name": "Human papillomavirus infection",
+          "term": "Human papillomavirus infection",
+          "overlap": "9/331",
+          "p_value": 3.327193177176421e-05,
+          "z_score": 6.219261716544326,
+          "combined_score": 64.12554135582651,
+          "overlap_genes": [
+            "CASP8",
+            "IRF1",
+            "STAT2",
+            "MX1",
+            "HLA-C",
+            "EIF2AK2",
+            "ISG15",
+            "IRF9",
+            "OASL"
+          ],
+          "genes": [
+            "CASP8",
+            "IRF1",
+            "STAT2",
+            "MX1",
+            "HLA-C",
+            "EIF2AK2",
+            "ISG15",
+            "IRF9",
+            "OASL"
+          ],
+          "adjusted_p_value": 0.00027827433845475523
+        },
+        {
+          "rank": 12,
+          "term_name": "Necroptosis",
+          "term": "Necroptosis",
+          "overlap": "6/159",
+          "p_value": 0.00012502253451424794,
+          "z_score": 8.511096746390864,
+          "combined_score": 76.48936741034973,
+          "overlap_genes": [
+            "RNF31",
+            "CASP8",
+            "STAT2",
+            "CASP1",
+            "EIF2AK2",
+            "IRF9"
+          ],
+          "genes": [
+            "RNF31",
+            "CASP8",
+            "STAT2",
+            "CASP1",
+            "EIF2AK2",
+            "IRF9"
+          ],
+          "adjusted_p_value": 0.0009585060979425676
+        },
+        {
+          "rank": 13,
+          "term_name": "C-type lectin receptor signaling pathway",
+          "term": "C-type lectin receptor signaling pathway",
+          "overlap": "5/104",
+          "p_value": 0.00015220821568978827,
+          "z_score": 10.871761089152393,
+          "combined_score": 95.56561896476903,
+          "overlap_genes": [
+            "CASP8",
+            "IRF1",
+            "STAT2",
+            "CASP1",
+            "IRF9"
+          ],
+          "genes": [
+            "CASP8",
+            "IRF1",
+            "STAT2",
+            "CASP1",
+            "IRF9"
+          ],
+          "adjusted_p_value": 0.0010771658341123477
+        },
+        {
+          "rank": 14,
+          "term_name": "TNF signaling pathway",
+          "term": "TNF signaling pathway",
+          "overlap": "5/112",
+          "p_value": 0.00021536911951490118,
+          "z_score": 10.054855749695246,
+          "combined_score": 84.89472738578915,
+          "overlap_genes": [
+            "CXCL10",
+            "CASP8",
+            "CSF1",
+            "IL15",
+            "IRF1"
+          ],
+          "genes": [
+            "CXCL10",
+            "CASP8",
+            "CSF1",
+            "IL15",
+            "IRF1"
+          ],
+          "adjusted_p_value": 0.0014152827853836363
+        },
+        {
+          "rank": 15,
+          "term_name": "Cytosolic DNA-sensing pathway",
+          "term": "Cytosolic DNA-sensing pathway",
+          "overlap": "4/63",
+          "p_value": 0.0002487140680659851,
+          "z_score": 14.466192819391289,
+          "combined_score": 120.05792353614245,
+          "overlap_genes": [
+            "CXCL10",
+            "CASP1",
+            "IRF7",
+            "ADAR"
+          ],
+          "genes": [
+            "CXCL10",
+            "CASP1",
+            "IRF7",
+            "ADAR"
+          ],
+          "adjusted_p_value": 0.001525446284138042
+        },
+        {
+          "rank": 16,
+          "term_name": "Kaposi sarcoma-associated herpesvirus infection",
+          "term": "Kaposi sarcoma-associated herpesvirus infection",
+          "overlap": "6/193",
+          "p_value": 0.00035648792156114565,
+          "z_score": 6.951636598695422,
+          "combined_score": 55.19050418617444,
+          "overlap_genes": [
+            "CASP8",
+            "STAT2",
+            "IRF7",
+            "HLA-C",
+            "EIF2AK2",
+            "IRF9"
+          ],
+          "genes": [
+            "CASP8",
+            "STAT2",
+            "IRF7",
+            "HLA-C",
+            "EIF2AK2",
+            "IRF9"
+          ],
+          "adjusted_p_value": 0.0020498055489765873
+        },
+        {
+          "rank": 17,
+          "term_name": "Human immunodeficiency virus 1 infection",
+          "term": "Human immunodeficiency virus 1 infection",
+          "overlap": "6/212",
+          "p_value": 0.0005859135981339877,
+          "z_score": 6.304384935452896,
+          "combined_score": 46.91936497583273,
+          "overlap_genes": [
+            "BST2",
+            "CASP8",
+            "TRIM5",
+            "TAP1",
+            "HLA-C",
+            "B2M"
+          ],
+          "genes": [
+            "BST2",
+            "CASP8",
+            "TRIM5",
+            "TAP1",
+            "HLA-C",
+            "B2M"
+          ],
+          "adjusted_p_value": 0.0031708265310780516
+        },
+        {
+          "rank": 18,
+          "term_name": "JAK-STAT signaling pathway",
+          "term": "JAK-STAT signaling pathway",
+          "overlap": "5/162",
+          "p_value": 0.0011596226707341541,
+          "z_score": 6.8353641650512325,
+          "combined_score": 46.204741905808625,
+          "overlap_genes": [
+            "IL4R",
+            "IL15",
+            "IL7",
+            "STAT2",
+            "IRF9"
+          ],
+          "genes": [
+            "IL4R",
+            "IL15",
+            "IL7",
+            "STAT2",
+            "IRF9"
+          ],
+          "adjusted_p_value": 0.0059269603170856765
+        },
+        {
+          "rank": 19,
+          "term_name": "Toll-like receptor signaling pathway",
+          "term": "Toll-like receptor signaling pathway",
+          "overlap": "4/104",
+          "p_value": 0.0016502168232467942,
+          "z_score": 8.51741935483871,
+          "combined_score": 54.56981619825008,
+          "overlap_genes": [
+            "CXCL10",
+            "CXCL11",
+            "CASP8",
+            "IRF7"
+          ],
+          "genes": [
+            "CXCL10",
+            "CXCL11",
+            "CASP8",
+            "IRF7"
+          ],
+          "adjusted_p_value": 0.007990523565195003
+        },
+        {
+          "rank": 20,
+          "term_name": "Viral carcinogenesis",
+          "term": "Viral carcinogenesis",
+          "overlap": "5/203",
+          "p_value": 0.00310641406776633,
+          "z_score": 5.408706631532718,
+          "combined_score": 31.231420337705043,
+          "overlap_genes": [
+            "CASP8",
+            "IRF7",
+            "HLA-C",
+            "EIF2AK2",
+            "IRF9"
+          ],
+          "genes": [
+            "CASP8",
+            "IRF7",
+            "HLA-C",
+            "EIF2AK2",
+            "IRF9"
+          ],
+          "adjusted_p_value": 0.01379969801312905
+        },
+        {
+          "rank": 21,
+          "term_name": "Cytokine-cytokine receptor interaction",
+          "term": "Cytokine-cytokine receptor interaction",
+          "overlap": "6/295",
+          "p_value": 0.0031499310682142397,
+          "z_score": 4.474846952355603,
+          "combined_score": 25.776795213190415,
+          "overlap_genes": [
+            "CXCL10",
+            "CXCL11",
+            "IL4R",
+            "CSF1",
+            "IL15",
+            "IL7"
+          ],
+          "genes": [
+            "CXCL10",
+            "CXCL11",
+            "IL4R",
+            "CSF1",
+            "IL15",
+            "IL7"
+          ],
+          "adjusted_p_value": 0.01379969801312905
+        },
+        {
+          "rank": 22,
+          "term_name": "Pertussis",
+          "term": "Pertussis",
+          "overlap": "3/76",
+          "p_value": 0.006019145284140429,
+          "z_score": 8.669484115418246,
+          "combined_score": 44.32542515921813,
+          "overlap_genes": [
+            "C1S",
+            "IRF1",
+            "CASP1"
+          ],
+          "genes": [
+            "C1S",
+            "IRF1",
+            "CASP1"
+          ],
+          "adjusted_p_value": 0.02517097118822361
+        },
+        {
+          "rank": 23,
+          "term_name": "Hepatitis B",
+          "term": "Hepatitis B",
+          "overlap": "4/162",
+          "p_value": 0.00802076644290239,
+          "z_score": 5.374982986252892,
+          "combined_score": 25.93816985822304,
+          "overlap_genes": [
+            "IFIH1",
+            "CASP8",
+            "STAT2",
+            "IRF7"
+          ],
+          "genes": [
+            "IFIH1",
+            "CASP8",
+            "STAT2",
+            "IRF7"
+          ],
+          "adjusted_p_value": 0.03208306577160956
+        },
+        {
+          "rank": 24,
+          "term_name": "Hematopoietic cell lineage",
+          "term": "Hematopoietic cell lineage",
+          "overlap": "3/99",
+          "p_value": 0.012399234562406965,
+          "z_score": 6.584773936170213,
+          "combined_score": 28.907951289437772,
+          "overlap_genes": [
+            "IL4R",
+            "CSF1",
+            "IL7"
+          ],
+          "genes": [
+            "IL4R",
+            "CSF1",
+            "IL7"
+          ],
+          "adjusted_p_value": 0.046877851722510994
+        },
+        {
+          "rank": 25,
+          "term_name": "Viral protein interaction with cytokine and cytokine receptor",
+          "term": "Viral protein interaction with cytokine and cytokine receptor",
+          "overlap": "3/100",
+          "p_value": 0.012738546663725812,
+          "z_score": 6.516560649265189,
+          "combined_score": 28.432553772777887,
+          "overlap_genes": [
+            "CXCL10",
+            "CXCL11",
+            "CSF1"
+          ],
+          "genes": [
+            "CXCL10",
+            "CXCL11",
+            "CSF1"
+          ],
+          "adjusted_p_value": 0.046877851722510994
+        }
+      ]
+    },
+    "significant_terms_total": 166,
+    "execution_time": 1.7,
+    "dataframe": "     rank  ...                     library\n0       1  ...  GO_Biological_Process_2023\n1       2  ...  GO_Biological_Process_2023\n27     28  ...  GO_Biological_Process_2023\n26     27  ...  GO_Biological_Process_2023\n2       3  ...  GO_Biological_Process_2023\n..    ...  ...                         ...\n126   127  ...  GO_Biological_Process_2023\n118   119  ...  GO_Biological_Process_2023\n140   141  ...  GO_Biological_Process_2023\n124   125  ...  GO_Biological_Process_2023\n130   131  ...  GO_Biological_Process_2023\n\n[166 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "40284971",
+      "pmcid": "PMC12031425",
+      "doi": "10.3390/v17040528",
+      "url": "https://doi.org/10.3390/v17040528",
+      "title": "Chasing Virus Replication and Infection: PAMP-PRR Interaction Drives Type I Interferon Production, Which in Turn Activates ISG Expression and ISGylation.",
+      "abstract": "The innate immune response, particularly the interferon-mediated pathway, serves as the first line of defense against viral infections. During virus infection, viral pathogen-associated molecular patterns (PAMPs) are recognized by host pattern recognition receptors (PRRs), triggering downstream signaling pathways. This leads to the activation of transcription factors like IRF3, IRF7, and NF-κB, which translocate to the nucleus and induce the production of type I interferons (IFN-α and IFN-β). Once secreted, type I interferons bind to their receptors (IFNARs) on the surfaces of infected and neighboring cells, activating the JAK-STAT pathway. This results in the formation of the ISGF3 complex (composed of STAT1, STAT2, and IRF9), which translocates to the nucleus and drives the expression of interferon-stimulated genes (ISGs). Some ISGs exert antiviral effects by directly or indirectly blocking infection and replication. Among these ISGs, ISG15 plays a crucial role in the ISGylation process, a ubiquitin-like modification that tags viral and host proteins, regulating immune responses and inhibiting viral replication. However, viruses have evolved counteractive strategies to evade ISG15-mediated immunity and ISGylation. This review first outlines the PAMP-PRR-induced pathways leading to the production of cytokines and ISGs, followed by a summary of ISGylation's role in antiviral defense and viral evasion mechanisms targeting ISG15 and ISGYlation.",
+      "authors": "Muhammad I, Contes K, Bility MT, Tang Q.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2025,
+      "pub_year": 2025,
+      "citations": 7,
+      "citation_count": 7,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "528",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2025-04-04",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates [topic]"
+    },
+    {
+      "pmid": "40143318",
+      "pmcid": "PMC11946419",
+      "doi": "10.3390/v17030390",
+      "url": "https://doi.org/10.3390/v17030390",
+      "title": "Deciphering Host-Virus Interactions and Advancing Therapeutics for Chronic Viral Infection.",
+      "abstract": "Chronic viral infections like HIV, HBV, and HCV establish persistent interactions with the host immune system, resulting in immune evasion and long-term immune dysfunction. These viruses use a range of strategies to limit host defenses, such as downregulating MHC class I, disrupting interferon signaling, altering apoptosis pathways, and suppressing cytotoxic T-cell activity. Key viral proteins, including HIV Nef, HBV X protein, and HCV NS5A, interfere with antigen presentation and JAK/STAT signaling, thereby reducing antiviral immune responses. Chronic infections induce immune exhaustion due to persistent antigen exposure, which leads to the expression of inhibitory receptors like PD-1 and CTLA-4 on T cells. Viral epigenetic changes, such as N6-methyladenosine modifications and histone deacetylation, enhance immune evasion by modulating gene expression in infected cells. Viruses further manipulate host cytokine networks by promoting an immunosuppressive environment through IL-10 and TGF-β secretion, which suppress inflammatory responses and inhibit T-cell activation. This review examines the molecular/cellular mechanisms that enable chronic viruses to escape host immunity, focusing on antigenic variation, cytokine disruption, and control of apoptotic pathways. It also addresses how host genetic factors, such as HLA polymorphisms, influence disease progression. Lastly, we discuss host-targeted therapies, including immune checkpoint inhibitors, cytokine treatments, and CRISPR.",
+      "authors": "Eslami M, Arjmand N, Mahmoudian F, Babaeizad A, Tahmasebi H, Fattahi F, Oksenych V.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2025,
+      "pub_year": 2025,
+      "citations": 13,
+      "citation_count": 13,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "390",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2025-03-10",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 27.56246852874756,
+  "phase": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Defense Response To Virus (GO:0051607) -> genes: [IFITM3, RTP4, IFITM1, IFITM2, DDX60, USP18, IFI44L, IFIT3, IFIT2, OASL, IFIH1, TRIM5, DHX58, CASP1, TRIM25, TRIM26, GBP2, TRIM21, RSAD2, STAT2, MX1, EIF2AK2, ISG15, ISG20, BST2, CXCL10, MOV10, PLSCR1, IFI27, OAS1, IRF1, IRF2, IRF7]\n- Defense Response To Symbiont (GO:0140546) -> genes: [IFITM3, RTP4, IFITM1, IFITM2, DDX60, IFI44L, IFIT3, IFIT2, OASL, IFIH1, TRIM5, CASP1, GBP2, RSAD2, STAT2, MX1, EIF2AK2, ISG15, ISG20, BST2, MOV10, PLSCR1, IFI27, OAS1, IRF1, IRF2, IRF7]\n- Negative Regulation Of Viral Process (GO:0048525) -> genes: [IFITM3, IFITM1, IFITM2, RSAD2, MX1, EIF2AK2, ISG15, OASL, IFIH1, BST2, ISG20, PLSCR1, OAS1, TRIM14, TRIM21]\n- Negative Regulation Of Viral Genome Replication (GO:0045071) -> genes: [IFITM3, IFITM1, IFITM2, RSAD2, MX1, EIF2AK2, ISG15, OASL, IFIH1, BST2, ISG20, PLSCR1, OAS1]\n- Regulation Of Viral Genome Replication (GO:0045069) -> genes: [IFITM3, IFITM1, IFITM2, RSAD2, MX1, EIF2AK2, ISG15, OASL, IFIH1, BST2, ISG20, PLSCR1, OAS1]\n- Response To Cytokine (GO:0034097) -> genes: [IFITM3, CD74, IFITM1, IFITM2, MX1, EIF2AK2, ISG15, ADAR, BST2, PLSCR1, NUB1, CASP8, SELL, LAMP3, TRIM21]\n- Antiviral Innate Immune Response (GO:0140374) -> genes: [IFIH1, CXCL10, OAS1, DHX58, MX1, TRIM25, EIF2AK2, USP18, IFIT3, IFIT2]\n- Response To Type II Interferon (GO:0034341) -> genes: [IFITM3, BST2, CD74, IFITM1, NUB1, IFITM2, CASP1, CD47, GBP2, TRIM21, GBP4]\n- Regulation Of Viral Entry Into Host Cell (GO:0046596) -> genes: [IFITM3, CD74, IFITM1, IFITM2, TRIM5, TRIM25, TRIM26, TRIM21, LY6E]\n- Response To Interferon-Beta (GO:0035456) -> genes: [IFITM3, BST2, IFITM1, PLSCR1, IFITM2, PNPT1, OAS1, IRF1]\n- Negative Regulation Of Viral Life Cycle (GO:1903901) -> genes: [IFITM3, BST2, IFITM1, IFITM2, TRIM5, TRIM26, LY6E]\n- Response To Interferon-Alpha (GO:0035455) -> genes: [IFITM3, BST2, IFITM1, IFITM2, LAMP3, EIF2AK2]\n- Negative Regulation Of Viral Entry Into Host Cell (GO:0046597) -> genes: [IFITM3, IFITM1, IFITM2, TRIM5, TRIM26, LY6E]\n- Regulation Of Innate Immune Response (GO:0045088) -> genes: [PLSCR1, CASP8, IRF1, DHX58, TRAFD1, IFI35, PARP9, TRIM21]\n- Negative Regulation Of Innate Immune Response (GO:0045824) -> genes: [OAS1, STAT2, DHX58, TRAFD1, ISG15, TRIM21, USP18]\n- Positive Regulation Of Interferon-Beta Production (GO:0032728) -> genes: [IFIH1, OAS1, RIPK2, IRF1, IRF7, ISG15]\n- Positive Regulation Of Type I Interferon Production (GO:0032481) -> genes: [IFIH1, OAS1, RIPK2, IRF1, DHX58, IRF7, ISG15]\n- Positive Regulation Of Cytokine-Mediated Signaling Pathway (GO:0001961) -> genes: [CD74, CSF1, IL7, CASP1, PARP14, PARP9]\n- Regulation Of Immune Response (GO:0050776) -> genes: [PLSCR1, CASP8, RSAD2, IL15, IRF1, DHX58, IRF7]\n- Interferon-Mediated Signaling Pathway (GO:0140888) -> genes: [IFITM3, IFITM1, IFITM2, IFI27, IRF1, STAT2]\n- Regulation Of Interferon-Beta Production (GO:0032648) -> genes: [IFIH1, OAS1, RIPK2, IRF1, IRF7, ISG15]\n- Positive Regulation Of I-kappaB kinase/NF-kappaB Signaling (GO:0043123) -> genes: [RNF31, BST2, CD74, CASP8, TRIM5, RIPK2, CASP1, TRIM25, TRIM21]\n- Positive Regulation Of Cytokine Production (GO:0001819) -> genes: [IFIH1, CD74, IL15, IL7, RIPK2, IRF1, DHX58, IRF7, CASP1, EIF2AK2, ISG15]\n- Negative Regulation Of Type I Interferon-Mediated Signaling Pathway (GO:0060339) -> genes: [OAS1, STAT2, ISG15, USP18]\n- Type I Interferon-Mediated Signaling Pathway (GO:0060337) -> genes: [IFITM3, IFITM1, IFITM2, IFI27, STAT2]\n- Cellular Response To Type I Interferon (GO:0071357) -> genes: [IFITM3, IFITM1, IFITM2, IFI27, STAT2]\n- ISG15-protein Conjugation (GO:0032020) -> genes: [UBA7, ISG15, UBE2L6]\n- Interleukin-27-Mediated Signaling Pathway (GO:0070106) -> genes: [OAS1, MX1, OASL]\n- Positive Regulation Of Pattern Recognition Receptor Signaling Pathway (GO:0062208) -> genes: [RSAD2, DHX58, IFI35, DDX60, OASL]\n- Regulation Of Cytokine Production (GO:0001817) -> genes: [IFIH1, CASP8, IL15, IRF7, EIF2AK2, ISG15, CD47, TRIM21]\n- Regulation Of I-kappaB kinase/NF-kappaB Signaling (GO:0043122) -> genes: [RNF31, BST2, CD74, CASP8, TRIM5, RIPK2, CASP1, TRIM25, TRIM21]\n- Cellular Response To Cytokine Stimulus (GO:0071345) -> genes: [IL4R, IFITM2, PNPT1, OAS1, IL7, IRF1, CASP1, CD47, GBP2, GBP4]\n- Cellular Response To Interferon-Beta (GO:0035458) -> genes: [IFITM2, PNPT1, OAS1, IRF1]\n- Cytosolic Pattern Recognition Receptor Signaling Pathway (GO:0002753) -> genes: [IFIH1, DHX58, IRF7, TRIM25]\n- Regulation Of Viral Life Cycle (GO:1903900) -> genes: [TRIM5, LAMP3, TRIM25, TRIM21]\n- Positive Regulation Of RIG-I Signaling Pathway (GO:1900246) -> genes: [DHX58, DDX60, OASL]\n- Positive Regulation Of NF-kappaB Transcription Factor Activity (GO:0051092) -> genes: [RNF31, TRIM5, RIPK2, TRIM14, EIF2AK2, TRIM25, TRIM21]\n- Pyroptosis (GO:0070269) -> genes: [CASP8, IFI27, CASP1, TRIM21]\n- Negative Regulation Of Cytokine-Mediated Signaling Pathway (GO:0001960) -> genes: [OAS1, STAT2, ISG15, PARP14, USP18]\n- Regulation Of Response To Biotic Stimulus (GO:0002831) -> genes: [CASP8, TRIM5, IRF1, DHX58]\n- Cellular Response To Type II Interferon (GO:0071346) -> genes: [IRF1, CASP1, CD47, GBP2, GBP4]\n- Regulation Of Type I Interferon-Mediated Signaling Pathway (GO:0060338) -> genes: [OAS1, STAT2, ISG15, USP18]\n- Regulation Of Endopeptidase Activity (GO:0052548) -> genes: [PSMA3, PSME1, PSME2, PSMB8, PSMB9]\n- Positive Regulation Of DNA-binding Transcription Factor Activity (GO:0051091) -> genes: [RNF31, TRIM5, RIPK2, TRIM14, EIF2AK2, TRIM25, TRIM26, TRIM21]\n- Suppression Of Viral Release By Host (GO:0044790) -> genes: [TRIM5, TRIM26, TRIM21]\n- Negative Regulation Of Viral Transcription (GO:0032897) -> genes: [IFITM3, TRIM14, TRIM21]\n- Positive Regulation Of Defense Response (GO:0031349) -> genes: [RNF31, PLSCR1, IL15, CASP1, IFI35, CD47]\n- Regulation Of Response To External Stimulus (GO:0032101) -> genes: [CASP8, TRIM5, IRF1, DHX58, CASP1, USP18]\n- Cytokine-Mediated Signaling Pathway (GO:0019221) -> genes: [CXCL10, CXCL11, IL4R, OAS1, IL15, IL7, MX1, OASL]\n- Positive Regulation Of Response To Cytokine Stimulus (GO:0060760) -> genes: [IFIH1, CD74, IL7]\n- Positive Regulation Of Immune Response (GO:0050778) -> genes: [CD74, PLSCR1, RSAD2, IL15, IFI35]\n- Positive Regulation Of Intracellular Signal Transduction (GO:1902533) -> genes: [RNF31, BST2, CD74, CASP8, TRIM5, RIPK2, CASP1, EIF2AK2, TRIM25, IFI35, TRIM21]\n- Regulation Of Monocyte Differentiation (GO:0045655) -> genes: [CD74, CSF1, IRF7]\n- Defense Response To Protozoan (GO:0042832) -> genes: [BATF2, GBP2, GBP4]\n- Protein Ubiquitination (GO:0016567) -> genes: [RNF31, NUB1, TRIM5, TRIM14, TRIM25, UBE2L6, ISG15, TRIM26, TRIM21, HERC6]\n- Protein Modification By Small Protein Conjugation (GO:0032446) -> genes: [IFIH1, NUB1, UBA7, TRIM14, UBE2L6, ISG15, TRIM26, TRIM21, HERC6]\n- Regulation Of Viral Transcription (GO:0046782) -> genes: [IFITM3, TRIM14, TRIM21]\n- Regulation Of Cell Population Proliferation (GO:0042127) -> genes: [IFITM1, CSF1, IL15, STAT2, EIF2AK2, IFI35, IFIT3, WARS1, CXCL10, CXCL11, IL7, IRF1, CD47]\n- Antigen Processing And Presentation Of Peptide Antigen Via MHC Class I (GO:0002474) -> genes: [TAP1, IFI30, B2M]\n- Regulation Of RIG-I Signaling Pathway (GO:0039535) -> genes: [DHX58, DDX60, OASL]\n- Positive Regulation Of Response To External Stimulus (GO:0032103) -> genes: [RNF31, PLSCR1, IL15, CASP1, IFI35, CD47]\n- Regulation Of Defense Response (GO:0031347) -> genes: [CASP8, IRF1, DHX58, CASP1, USP18]\n- Apoptotic Process (GO:0006915) -> genes: [PLSCR1, CASP8, IFI27, RIPK2, IRF1, MX1, IFIT2]\n- Positive Regulation Of Chemokine Production (GO:0032722) -> genes: [CD74, OAS1, IL7, EIF2AK2]\n- Positive Regulation Of Interferon-Alpha Production (GO:0032727) -> genes: [IFIH1, RIPK2, IRF7]\n- Macrophage Differentiation (GO:0030225) -> genes: [CASP8, CSF1, IL15]\n- Modulation By Symbiont Of Entry Into Host (GO:0052372) -> genes: [TRIM5, TRIM25, TRIM21]\n- Pattern Recognition Receptor Signaling Pathway (GO:0002221) -> genes: [IFIH1, DHX58, CASP1, TRIM25]\n- Regulation Of Type I Interferon Production (GO:0032479) -> genes: [IRF1, DHX58, IRF7, TRIM21]\n- Regulation Of Proteolysis Involved In Protein Catabolic Process (GO:1903050) -> genes: [NUB1, PSME1, PSME2]\n- Regulation Of Ribonuclease Activity (GO:0060700) -> genes: [OAS1, OASL]\n- Regulation Of Interferon-Alpha Production (GO:0032647) -> genes: [IFIH1, RIPK2, IRF7]\n- Regulation Of Nuclease Activity (GO:0032069) -> genes: [OAS1, OASL]\n- Regulation Of MDA-5 Signaling Pathway (GO:0039533) -> genes: [DHX58, DDX60]\n- Myeloid Leukocyte Differentiation (GO:0002573) -> genes: [BATF2, CASP8, CSF1, IL15]\n- Positive Regulation Of Peptidyl-Tyrosine Phosphorylation (GO:0050731) -> genes: [CD74, IL15, RIPK2, PARP14, PARP9]\n- Defense Response To Bacterium (GO:0042742) -> genes: [RNF31, OAS1, CASP1, ISG15, GBP2, GBP4]\n- Protein Polyubiquitination (GO:0000209) -> genes: [RNF31, IFI27, TRIM5, TRIM25, UBE2L6, TRIM21]\n- Positive Regulation Of Monocyte Differentiation (GO:0045657) -> genes: [CD74, CSF1]\n- Response To Type I Interferon (GO:0034340) -> genes: [MX1, ISG15]\n- Regulation Of Cytokine-Mediated Signaling Pathway (GO:0001959) -> genes: [CD74, CASP8, IL7]\n- Positive Regulation Of Myeloid Leukocyte Differentiation (GO:0002763) -> genes: [CD74, CASP8, CSF1]\n- Positive Regulation Of Binding (GO:0051099) -> genes: [RIPK2, PARP9, B2M, TRIM21]\n- T Cell Chemotaxis (GO:0010818) -> genes: [CXCL10, CXCL11]\n- Regulation Of Chemokine Production (GO:0032642) -> genes: [CD74, IL7, EIF2AK2]\n- Post-Transcriptional Gene Silencing (GO:0016441) -> genes: [HELZ2, MOV10]\n- Regulation Of Type II Interferon-Mediated Signaling Pathway (GO:0060334) -> genes: [PARP14, PARP9]\n- Negative Regulation Of Response To Biotic Stimulus (GO:0002832) -> genes: [DHX58, TRAFD1, TRIM21]\n- Positive Regulation Of mRNA Metabolic Process (GO:1903313) -> genes: [MOV10, PNPT1]\n- Cellular Response To Mechanical Stimulus (GO:0071260) -> genes: [CASP8, IRF1, CASP1]\n- Positive Regulation Of Inflammatory Response (GO:0050729) -> genes: [IL15, CASP1, IFI35, CD47]\n- Positive Regulation Of T Cell Activation (GO:0050870) -> genes: [IL15, IL7, CD47, B2M]\n- Regulation Of Leukocyte Activation (GO:0002694) -> genes: [CD74, PLSCR1]\n- Regulation Of Macrophage Differentiation (GO:0045649) -> genes: [CASP8, CSF1]\n- Ubiquitin-Dependent Protein Catabolic Process (GO:0006511) -> genes: [NUB1, PSMA3, IFI27, MVB12A, TRIM25, UBE2L6, HERC6]\n- Regulation Of Proteasomal Protein Catabolic Process (GO:0061136) -> genes: [LAMP3, PSME1, PSME2]\n- Negative Regulation Of Phagocytosis (GO:0050765) -> genes: [PLSCR1, CD47]\n- Positive Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042531) -> genes: [IL15, PARP9, PARP14]\n- Modification-Dependent Protein Catabolic Process (GO:0019941) -> genes: [NUB1, TRIM25, UBE2L6, ISG15, HERC6]\n- Negative Regulation Of Cell Population Proliferation (GO:0008285) -> genes: [IFITM1, IRF1, EIF2AK2, IFI35, B2M, IFIT3, WARS1]\n- Cellular Response To Molecule Of Bacterial Origin (GO:0071219) -> genes: [CXCL10, CXCL11, CASP1, GBP2]\n- Regulation Of Protein Binding (GO:0043393) -> genes: [RIPK2, B2M, TRIM21, IFIT2]\n- Activation Of Cysteine-Type Endopeptidase Activity (GO:0097202) -> genes: [CASP8, RIPK2]\n- Cell Surface Toll-Like Receptor Signaling Pathway (GO:0140895) -> genes: [OAS1, RIPK2]\n- Regulation Of Response To Cytokine Stimulus (GO:0060759) -> genes: [IFIH1, PARP9]\n- Positive Regulation Of Interleukin-1 Beta Production (GO:0032731) -> genes: [CASP8, RIPK2, CASP1]\n- Regulation Of Phagocytosis (GO:0050764) -> genes: [PLSCR1, IL15, CD47]\n- Positive Regulation Of Protein Binding (GO:0032092) -> genes: [RIPK2, B2M, TRIM21]\n- T Cell Migration (GO:0072678) -> genes: [CXCL10, CXCL11]\n- Cellular Response To Lipopolysaccharide (GO:0071222) -> genes: [CXCL10, CXCL11, CASP1, GBP2]\n- ncRNA-mediated Post-Transcriptional Gene Silencing (GO:0035194) -> genes: [HELZ2, MOV10]\n- Regulation Of Adaptive Immune Response (GO:0002819) -> genes: [IRF1, IRF7]\n- Positive Regulation Of Interleukin-1 Production (GO:0032732) -> genes: [CASP8, RIPK2, CASP1]\n- Cellular Response To Virus (GO:0098586) -> genes: [IFIH1, CXCL10, OAS1]\n- Positive Regulation Of Cysteine-Type Endopeptidase Activity (GO:2001056) -> genes: [CASP8, RIPK2, CASP1]\n- Regulation Of Tyrosine Phosphorylation Of STAT Protein (GO:0042509) -> genes: [IL15, PARP9, PARP14]\n- Negative Regulation Of Immune Response (GO:0050777) -> genes: [DHX58, TRAFD1, TRIM21]\n- Regulation Of Toll-Like Receptor Signaling Pathway (GO:0034121) -> genes: [IRF1, IRF7]\n- Negative Regulation Of Cellular Process (GO:0048523) -> genes: [BST2, IFITM1, IRF1, EIF2AK2, TXNIP, IFI35, IFIT3, WARS1]\n- Antigen Processing And Presentation Of Endogenous Peptide Antigen (GO:0002483) -> genes: [HLA-C, TAP1]\n- Protein K48-linked Ubiquitination (GO:0070936) -> genes: [IFI27, TRIM25, TRIM21]\n- Regulation Of Cellular Localization (GO:0060341) -> genes: [TRIM5, TRIM25, TRIM21]\n- Positive Regulation Of Cellular Catabolic Process (GO:0031331) -> genes: [MOV10, PNPT1, TRIM5, TRIM21]\n- Positive Regulation Of Lymphocyte Proliferation (GO:0050671) -> genes: [CD74, IL15, IL7]\n- Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944) -> genes: [HELZ2, CXCL10, PLSCR1, ELF1, RIPK2, IRF1, STAT2, IRF2, IRF7, NCOA7, IRF9]\n- Positive Regulation Of Response To Stimulus (GO:0048584) -> genes: [IFIH1, RSAD2, IL15]\n- Regulation Of Inflammatory Response (GO:0050727) -> genes: [IL15, CASP1, IFI35, CD47, USP18]\n- Proteolysis Involved In Protein Catabolic Process (GO:0051603) -> genes: [CASP8, ISG15, TRIM21]\n- Positive Regulation Of Peptidase Activity (GO:0010952) -> genes: [PSME1, PSME2]\n- Positive Regulation Of Endocytosis (GO:0045807) -> genes: [IL15, CD47, B2M]\n- Positive Regulation Of DNA-templated Transcription (GO:0045893) -> genes: [CD74, RIPK2, STAT2, PARP9, HELZ2, CXCL10, PLSCR1, ELF1, IRF1, IRF2, IRF7, NCOA7, IRF9]\n- Response To Lipopolysaccharide (GO:0032496) -> genes: [CXCL10, CXCL11, CASP1, GBP2]\n- Positive Regulation Of Immune System Process (GO:0002684) -> genes: [RSAD2, IL15]\n- Regulation Of Peptidase Activity (GO:0052547) -> genes: [PSMA3, PSMB8]\n- Regulation Of Interleukin-1 Beta Production (GO:0032651) -> genes: [CASP8, RIPK2, CASP1]\n- Macromolecule Catabolic Process (GO:0009057) -> genes: [ISG20, PNPT1, MVB12A]\n- RNA-mediated Gene Silencing (GO:0031047) -> genes: [HELZ2, MOV10]\n- Integrated Stress Response Signaling (GO:0140467) -> genes: [BATF2, EIF2AK2]\n- Positive Regulation Of B Cell Proliferation (GO:0030890) -> genes: [CD74, IL7]\n- Positive Regulation Of Endopeptidase Activity (GO:0010950) -> genes: [PSME1, PSME2]\n- Positive Regulation Of Gene Expression (GO:0010628) -> genes: [CD74, PLSCR1, CSF1, IL15, LAMP3, EIF2AK2, WARS1]\n\n[KEGG_2021_Human]\n- Influenza A -> genes: [RSAD2, STAT2, MX1, EIF2AK2, ADAR, IFIH1, CXCL10, CASP8, OAS1, IRF7, CASP1, TRIM25, IRF9]\n- NOD-like receptor signaling pathway -> genes: [RNF31, CASP8, OAS1, RIPK2, STAT2, IRF7, CASP1, TXNIP, GBP2, GBP4, IRF9]\n- Epstein-Barr virus infection -> genes: [CXCL10, CASP8, OAS1, STAT2, IRF7, TAP1, HLA-C, EIF2AK2, ISG15, B2M, IRF9]\n- Coronavirus disease -> genes: [IFIH1, CXCL10, OAS1, C1S, STAT2, MX1, CASP1, EIF2AK2, ISG15, ADAR, IRF9]\n- Measles -> genes: [IFIH1, CASP8, OAS1, STAT2, MX1, IRF7, EIF2AK2, ADAR, IRF9]\n- RIG-I-like receptor signaling pathway -> genes: [IFIH1, CXCL10, CASP8, DHX58, IRF7, TRIM25, ISG15]\n- Hepatitis C -> genes: [CXCL10, CASP8, RSAD2, OAS1, STAT2, MX1, IRF7, EIF2AK2, IRF9]\n- Antigen processing and presentation -> genes: [CD74, PSME1, HLA-C, TAP1, PSME2, IFI30, B2M]\n- Proteasome -> genes: [PSMA3, PSME1, PSME2, PSMB8, PSMB9]\n- Herpes simplex virus 1 infection -> genes: [BST2, IFIH1, CD74, CASP8, OAS1, STAT2, IRF7, TAP1, HLA-C, EIF2AK2, B2M, IRF9]\n- Human papillomavirus infection -> genes: [CASP8, IRF1, STAT2, MX1, HLA-C, EIF2AK2, ISG15, IRF9, OASL]\n- Necroptosis -> genes: [RNF31, CASP8, STAT2, CASP1, EIF2AK2, IRF9]\n- C-type lectin receptor signaling pathway -> genes: [CASP8, IRF1, STAT2, CASP1, IRF9]\n- TNF signaling pathway -> genes: [CXCL10, CASP8, CSF1, IL15, IRF1]\n- Cytosolic DNA-sensing pathway -> genes: [CXCL10, CASP1, IRF7, ADAR]\n- Kaposi sarcoma-associated herpesvirus infection -> genes: [CASP8, STAT2, IRF7, HLA-C, EIF2AK2, IRF9]\n- Human immunodeficiency virus 1 infection -> genes: [BST2, CASP8, TRIM5, TAP1, HLA-C, B2M]\n- JAK-STAT signaling pathway -> genes: [IL4R, IL15, IL7, STAT2, IRF9]\n- Toll-like receptor signaling pathway -> genes: [CXCL10, CXCL11, CASP8, IRF7]\n- Viral carcinogenesis -> genes: [CASP8, IRF7, HLA-C, EIF2AK2, IRF9]\n- Cytokine-cytokine receptor interaction -> genes: [CXCL10, CXCL11, IL4R, CSF1, IL15, IL7]\n- Pertussis -> genes: [C1S, IRF1, CASP1]\n- Hepatitis B -> genes: [IFIH1, CASP8, STAT2, IRF7]\n- Hematopoietic cell lineage -> genes: [IL4R, CSF1, IL7]\n- Viral protein interaction with cytokine and cytokine receptor -> genes: [CXCL10, CXCL11, CSF1]\n\n=== ABSTRACTS ===\n[1] Chasing Virus Replication and Infection: PAMP-PRR Interaction Drives Type I Interferon Production, Which in Turn Activates ISG Expression and ISGylation.\nThe innate immune response, particularly the interferon-mediated pathway, serves as the first line of defense against viral infections. During virus infection, viral pathogen-associated molecular patterns (PAMPs) are recognized by host pattern recognition receptors (PRRs), triggering downstream signaling pathways. This leads to the activation of transcription factors like IRF3, IRF7, and NF-κB, which translocate to the nucleus and induce the production of type I interferons (IFN-α and IFN-β). Once secreted, type I interferons bind to their receptors (IFNARs) on the surfaces of infected and neighboring cells, activating the JAK-STAT pathway. This results in the formation of the ISGF3 complex (composed of STAT1, STAT2, and IRF9), which translocates to the nucleus and drives the expression of interferon-stimulated genes (ISGs). Some ISGs exert antiviral effects by directly or indirectly blocking infection and replication. Among these ISGs, ISG15 plays a crucial role in the ISGylation process, a ubiquitin-like modification that tags viral and host proteins, regulating immune responses and inhibiting viral replication. However, viruses have evolved counteractive strategies to evade ISG15-mediated immunity and ISGylation. This review first outlines the PAMP-PRR-induced pathways leading to the production of cytokines and ISGs, followed by a summary of ISGylation's role in antiviral defense and viral evasion mechanisms targeting ISG15 and ISGYlation.\n[2] Deciphering Host-Virus Interactions and Advancing Therapeutics for Chronic Viral Infection.\nChronic viral infections like HIV, HBV, and HCV establish persistent interactions with the host immune system, resulting in immune evasion and long-term immune dysfunction. These viruses use a range of strategies to limit host defenses, such as downregulating MHC class I, disrupting interferon signaling, altering apoptosis pathways, and suppressing cytotoxic T-cell activity. Key viral proteins, including HIV Nef, HBV X protein, and HCV NS5A, interfere with antigen presentation and JAK/STAT signaling, thereby reducing antiviral immune responses. Chronic infections induce immune exhaustion due to persistent antigen exposure, which leads to the expression of inhibitory receptors like PD-1 and CTLA-4 on T cells. Viral epigenetic changes, such as N6-methyladenosine modifications and histone deacetylation, enhance immune evasion by modulating gene expression in infected cells. Viruses further manipulate host cytokine networks by promoting an immunosuppressive environment through IL-10 and TGF-β secretion, which suppress inflammatory responses and inhibit T-cell activation. This review examines the molecular/cellular mechanisms that enable chronic viruses to escape host immunity, focusing on antigenic variation, cytokine disruption, and control of apoptotic pathways. It also addresses how host genetic factors, such as HLA polymorphisms, influence disease progression. Lastly, we discuss host-targeted therapies, including immune checkpoint inhibitors, cytokine treatments, and CRISPR.",
+  "judge_claims": [
+    {
+      "claim": "MX1 is an interferon-stimulated gene.",
+      "label": "GROUNDED",
+      "why": "MX1 appears in multiple ISG and interferon response terms including Defense Response To Virus, Negative Regulation Of Viral Genome Replication, and Response To Type I Interferon"
+    },
+    {
+      "claim": "ISG15 is an interferon-stimulated gene.",
+      "label": "GROUNDED",
+      "why": "ISG15 appears in multiple ISG and interferon response terms including Defense Response To Virus, Negative Regulation Of Viral Genome Replication, and ISG15-protein Conjugation"
+    },
+    {
+      "claim": "OAS1 is an interferon-stimulated gene.",
+      "label": "GROUNDED",
+      "why": "OAS1 appears in multiple ISG and interferon response terms including Defense Response To Virus, Negative Regulation Of Viral Genome Replication, and Response To Interferon-Beta"
+    },
+    {
+      "claim": "IFITM1 is an interferon-stimulated gene.",
+      "label": "GROUNDED",
+      "why": "IFITM1 appears in interferon response terms including Type I Interferon-Mediated Signaling Pathway, Cellular Response To Type I Interferon, and Response To Interferon-Beta"
+    },
+    {
+      "claim": "IFITM2 is an interferon-stimulated gene.",
+      "label": "GROUNDED",
+      "why": "IFITM2 appears in interferon response terms including Type I Interferon-Mediated Signaling Pathway, Cellular Response To Type I Interferon, and Response To Interferon-Beta"
+    },
+    {
+      "claim": "IFITM3 is an interferon-stimulated gene.",
+      "label": "GROUNDED",
+      "why": "IFITM3 appears in interferon response terms including Type I Interferon-Mediated Signaling Pathway, Cellular Response To Type I Interferon, and Response To Interferon-Beta"
+    },
+    {
+      "claim": "IFIH1 (MDA5) is an interferon-stimulated gene.",
+      "label": "BACKGROUND",
+      "why": "IFIH1 appears in many antiviral and PRR signaling terms but is not explicitly labeled as an ISG in the evidence, though this is well-established biology"
+    },
+    {
+      "claim": "EIF2AK2 (PKR) is an interferon-stimulated gene.",
+      "label": "BACKGROUND",
+      "why": "EIF2AK2 appears in many antiviral terms but is not explicitly labeled as an ISG in the evidence, though this is well-established biology"
+    },
+    {
+      "claim": "STAT2 is an interferon-stimulated gene.",
+      "label": "BACKGROUND",
+      "why": "STAT2 appears in many interferon signaling terms but is not explicitly labeled as an ISG in the evidence; it is a signaling component rather than typically classified as an ISG"
+    },
+    {
+      "claim": "IRF1 is an interferon regulatory factor.",
+      "label": "GROUNDED",
+      "why": "IRF1 is listed in multiple interferon regulatory terms and the evidence shows it in interferon-related pathways"
+    },
+    {
+      "claim": "IRF7 is an interferon regulatory factor.",
+      "label": "GROUNDED",
+      "why": "IRF7 is listed in multiple interferon regulatory terms and the evidence shows it in interferon-related pathways"
+    },
+    {
+      "claim": "IRF9 is an interferon regulatory factor.",
+      "label": "GROUNDED",
+      "why": "IRF9 is listed in multiple interferon signaling terms and is part of the ISGF3 complex per abstract 1"
+    },
+    {
+      "claim": "MX1 directly inhibits various stages of viral replication and assembly.",
+      "label": "GROUNDED",
+      "why": "MX1 appears in Negative Regulation Of Viral Genome Replication and Negative Regulation Of Viral Process terms"
+    },
+    {
+      "claim": "OAS1 directly inhibits various stages of viral replication and assembly.",
+      "label": "GROUNDED",
+      "why": "OAS1 appears in Negative Regulation Of Viral Genome Replication and Negative Regulation Of Viral Process terms"
+    },
+    {
+      "claim": "ISG15 directly inhibits various stages of viral replication and assembly.",
+      "label": "GROUNDED",
+      "why": "ISG15 appears in Negative Regulation Of Viral Genome Replication and Negative Regulation Of Viral Process terms"
+    },
+    {
+      "claim": "IFITM proteins directly inhibit various stages of viral replication and assembly.",
+      "label": "GROUNDED",
+      "why": "IFITM proteins (IFITM1, IFITM2, IFITM3) appear in Negative Regulation Of Viral Entry Into Host Cell and Negative Regulation Of Viral Genome Replication"
+    },
+    {
+      "claim": "RSAD2 (Viperin) directly inhibits various stages of viral replication and assembly.",
+      "label": "GROUNDED",
+      "why": "RSAD2 appears in Negative Regulation Of Viral Genome Replication and Negative Regulation Of Viral Process terms"
+    },
+    {
+      "claim": "ISG15 is a ubiquitin-like protein.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states ISG15 plays a crucial role in ISGylation, a ubiquitin-like modification"
+    },
+    {
+      "claim": "ISG15 modifies host proteins to regulate immune responses.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states ISGylation tags host proteins, regulating immune responses"
+    },
+    {
+      "claim": "ISG15 modifies viral proteins to regulate immune responses.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states ISGylation tags viral proteins, regulating immune responses"
+    },
+    {
+      "claim": "ISG15 modifies host proteins to inhibit viral replication.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states ISGylation tags host proteins and inhibits viral replication"
+    },
+    {
+      "claim": "ISG15 modifies viral proteins to inhibit viral replication.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states ISGylation tags viral proteins and inhibits viral replication"
+    },
+    {
+      "claim": "UBA7 is central to the ISG15-protein conjugation process.",
+      "label": "GROUNDED",
+      "why": "UBA7 appears in the ISG15-protein Conjugation term"
+    },
+    {
+      "claim": "ISG15 is central to the ISG15-protein conjugation process.",
+      "label": "GROUNDED",
+      "why": "ISG15 appears in the ISG15-protein Conjugation term"
+    },
+    {
+      "claim": "UBE2L6 is central to the ISG15-protein conjugation process.",
+      "label": "GROUNDED",
+      "why": "UBE2L6 appears in the ISG15-protein Conjugation term"
+    },
+    {
+      "claim": "IFIH1 (MDA5) is involved in the RIG-I-like receptor signaling pathway.",
+      "label": "GROUNDED",
+      "why": "IFIH1 appears in RIG-I-like receptor signaling pathway term in KEGG"
+    },
+    {
+      "claim": "DHX58 is involved in the RIG-I-like receptor signaling pathway.",
+      "label": "GROUNDED",
+      "why": "DHX58 appears in RIG-I-like receptor signaling pathway term in KEGG"
+    },
+    {
+      "claim": "DDX60 is involved in the RIG-I-like receptor signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "DDX60 does not appear in the RIG-I-like receptor signaling pathway term but appears in related regulation terms; RIG-I-like receptor involvement is plausible but not stated"
+    },
+    {
+      "claim": "IFIH1 (MDA5) senses viral RNA in the cytoplasm.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 describes PAMP-PRR recognition during virus infection, and IFIH1 is in Cytosolic Pattern Recognition Receptor Signaling Pathway"
+    },
+    {
+      "claim": "DHX58 senses viral RNA in the cytoplasm.",
+      "label": "BACKGROUND",
+      "why": "DHX58 is in cytosolic PRR pathways but viral RNA sensing is not explicitly stated in the evidence"
+    },
+    {
+      "claim": "DDX60 senses viral RNA in the cytoplasm.",
+      "label": "BACKGROUND",
+      "why": "DDX60 is in regulation of PRR pathways but viral RNA sensing is not explicitly stated in the evidence"
+    },
+    {
+      "claim": "Sensing of viral RNA in the cytoplasm by IFIH1, DHX58, and DDX60 leads to interferon production.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states PAMP-PRR interaction drives Type I Interferon production, and these genes are in relevant PRR and interferon production pathways"
+    },
+    {
+      "claim": "STAT2 is involved in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "STAT2 appears in JAK-STAT signaling pathway term in KEGG"
+    },
+    {
+      "claim": "IRF9 is involved in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "IRF9 appears in JAK-STAT signaling pathway term in KEGG"
+    },
+    {
+      "claim": "The JAK-STAT signaling pathway is downstream of type I interferon receptor binding.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states type I interferons bind to IFNARs, activating the JAK-STAT pathway"
+    },
+    {
+      "claim": "Type I interferon receptor binding leads to the transcription of interferon-stimulated genes via the JAK-STAT pathway.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 describes type I interferon binding activating JAK-STAT pathway, leading to ISGF3 formation and ISG expression"
+    },
+    {
+      "claim": "TAP1 is involved in antigen processing and presentation.",
+      "label": "GROUNDED",
+      "why": "TAP1 appears in Antigen processing and presentation term in KEGG"
+    },
+    {
+      "claim": "HLA-C is involved in antigen processing and presentation.",
+      "label": "GROUNDED",
+      "why": "HLA-C appears in Antigen processing and presentation term in KEGG"
+    },
+    {
+      "claim": "B2M is involved in antigen processing and presentation.",
+      "label": "GROUNDED",
+      "why": "B2M appears in Antigen processing and presentation term in KEGG"
+    },
+    {
+      "claim": "TAP1 is involved in antigen processing and presentation of peptide antigen via MHC class I.",
+      "label": "GROUNDED",
+      "why": "TAP1 appears in Antigen Processing And Presentation Of Peptide Antigen Via MHC Class I term"
+    },
+    {
+      "claim": "HLA-C is involved in antigen processing and presentation of peptide antigen via MHC class I.",
+      "label": "BACKGROUND",
+      "why": "HLA-C appears in antigen processing terms but not specifically in the MHC Class I peptide antigen presentation term listed"
+    },
+    {
+      "claim": "B2M is involved in antigen processing and presentation of peptide antigen via MHC class I.",
+      "label": "GROUNDED",
+      "why": "B2M appears in Antigen Processing And Presentation Of Peptide Antigen Via MHC Class I term"
+    },
+    {
+      "claim": "Infected cells present viral antigens via MHC class I to prime the adaptive immune system.",
+      "label": "BACKGROUND",
+      "why": "This is well-established immunology but not explicitly stated in the evidence"
+    },
+    {
+      "claim": "CXCL10 is a chemokine involved in T cell chemotaxis.",
+      "label": "GROUNDED",
+      "why": "CXCL10 appears in T Cell Chemotaxis term"
+    },
+    {
+      "claim": "CXCL11 is a chemokine involved in T cell chemotaxis.",
+      "label": "GROUNDED",
+      "why": "CXCL11 appears in T Cell Chemotaxis term"
+    },
+    {
+      "claim": "CXCL10 is involved in T cell migration.",
+      "label": "GROUNDED",
+      "why": "CXCL10 appears in T Cell Migration term"
+    },
+    {
+      "claim": "CXCL11 is involved in T cell migration.",
+      "label": "GROUNDED",
+      "why": "CXCL11 appears in T Cell Migration term"
+    },
+    {
+      "claim": "CXCL10 recruits T cells to sites of infection.",
+      "label": "BACKGROUND",
+      "why": "While CXCL10 is in T cell chemotaxis/migration terms, recruitment to infection sites is not explicitly stated"
+    },
+    {
+      "claim": "CXCL11 recruits T cells to sites of infection.",
+      "label": "BACKGROUND",
+      "why": "While CXCL11 is in T cell chemotaxis/migration terms, recruitment to infection sites is not explicitly stated"
+    },
+    {
+      "claim": "Increased proteasomal degradation activity is crucial for antigen processing during an antiviral response.",
+      "label": "BACKGROUND",
+      "why": "Proteasomal genes appear in antigen processing terms but increased activity for antigen processing is not explicitly stated"
+    },
+    {
+      "claim": "Increased proteasomal degradation activity is crucial for turnover of cellular proteins during an antiviral response.",
+      "label": "BACKGROUND",
+      "why": "Proteasomal activity for protein turnover is general biology not explicitly stated in the evidence"
+    },
+    {
+      "claim": "Increased proteasomal degradation activity is crucial for turnover of viral proteins during an antiviral response.",
+      "label": "BACKGROUND",
+      "why": "While proteasomal genes appear in antiviral terms, increased activity for viral protein turnover is not explicitly stated"
+    },
+    {
+      "claim": "MX1 is central to the Type I Interferon response.",
+      "label": "GROUNDED",
+      "why": "MX1 appears in Type I Interferon-Mediated Signaling Pathway and Response To Type I Interferon terms"
+    },
+    {
+      "claim": "ISG15 is central to the Type I Interferon response.",
+      "label": "GROUNDED",
+      "why": "ISG15 appears in Type I Interferon-Mediated Signaling Pathway related terms and is extensively discussed in abstract 1"
+    },
+    {
+      "claim": "OAS1 is central to the Type I Interferon response.",
+      "label": "GROUNDED",
+      "why": "OAS1 appears in Type I Interferon-Mediated Signaling Pathway related terms"
+    },
+    {
+      "claim": "IFITM proteins are central to the Type I Interferon response.",
+      "label": "GROUNDED",
+      "why": "IFITM proteins appear in Type I Interferon-Mediated Signaling Pathway and Cellular Response To Type I Interferon terms"
+    },
+    {
+      "claim": "STAT2 is central to the Type I Interferon response.",
+      "label": "GROUNDED",
+      "why": "STAT2 appears in Type I Interferon-Mediated Signaling Pathway and Cellular Response To Type I Interferon terms"
+    },
+    {
+      "claim": "IRF7 is central to the Type I Interferon response.",
+      "label": "GROUNDED",
+      "why": "IRF7 appears in multiple Type I Interferon production and signaling terms"
+    },
+    {
+      "claim": "MX1 is central to antiviral defense.",
+      "label": "GROUNDED",
+      "why": "MX1 appears in Defense Response To Virus and multiple antiviral terms"
+    },
+    {
+      "claim": "ISG15 is central to antiviral defense.",
+      "label": "GROUNDED",
+      "why": "ISG15 appears in Defense Response To Virus and abstract 1 describes its crucial antiviral role"
+    },
+    {
+      "claim": "OAS1 is central to antiviral defense.",
+      "label": "GROUNDED",
+      "why": "OAS1 appears in Defense Response To Virus and Antiviral Innate Immune Response terms"
+    },
+    {
+      "claim": "IFITM proteins are central to antiviral defense.",
+      "label": "GROUNDED",
+      "why": "IFITM proteins appear in Defense Response To Virus and multiple negative regulation of viral process terms"
+    },
+    {
+      "claim": "STAT2 is central to antiviral defense.",
+      "label": "GROUNDED",
+      "why": "STAT2 appears in Defense Response To Virus and multiple antiviral signaling terms"
+    },
+    {
+      "claim": "IRF7 is central to antiviral defense.",
+      "label": "GROUNDED",
+      "why": "IRF7 appears in Defense Response To Virus and multiple interferon production terms"
+    },
+    {
+      "claim": "PAMP-PRR interactions lead to Type I Interferon production.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states PAMP-PRR interaction drives Type I Interferon production"
+    },
+    {
+      "claim": "Type I Interferon production activates interferon-stimulated gene expression.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states Type I Interferon production drives the expression of interferon-stimulated genes"
+    },
+    {
+      "claim": "Type I Interferon production activates ISGylation.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 title states PAMP-PRR interaction drives Type I Interferon production, which in turn activates ISGylation"
+    },
+    {
+      "claim": "STAT1 is a crucial component of the interferon response pathway.",
+      "label": "BACKGROUND",
+      "why": "STAT1 is mentioned in abstract 1 as part of ISGF3 complex but does not appear in the enriched terms"
+    },
+    {
+      "claim": "STAT2 is a crucial component of the interferon response pathway.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 describes STAT2 as part of ISGF3 complex in interferon response, and it appears in multiple interferon signaling terms"
+    },
+    {
+      "claim": "IRF9 is a crucial component of the interferon response pathway.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 describes IRF9 as part of ISGF3 complex in interferon response, and it appears in multiple interferon signaling terms"
+    },
+    {
+      "claim": "ISG15 is a crucial component of the interferon response pathway.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 extensively describes ISG15's crucial role in interferon response and ISGylation"
+    }
+  ],
+  "summary": {
+    "n_claims": 71,
+    "n_scored": 71,
+    "grounded_rate": 0.803,
+    "hallucination_rate": 0.0,
+    "grounded": 57,
+    "background": 14,
+    "unsupported": 0
+  }
+}

@@ -16,25 +16,38 @@ CONFIG = {
             "api_key_env": ["GOOGLE_API_KEY", "GEMINI_API_KEY"],
             # Kept in sync with CONFIG["gemini"]["model_name"] by load_env_overrides()
             "default_model": "gemini-2.5-flash",
-            "models": ["gemini-2.5-flash", "gemini-2.5-pro", "gemini-2.0-flash"],
+            "models": ["gemini-2.5-flash", "gemini-3.5-flash"],
         },
         "groq": {
             "type": "openai",
             "label": "Groq",
             "base_url": "https://api.groq.com/openai/v1",
             "api_key_env": ["GROQ_API_KEY"],
-            "default_model": "llama-3.3-70b-versatile",
-            "models": ["llama-3.3-70b-versatile", "openai/gpt-oss-120b"],
+            # llama-3.3-70b-versatile is deliberately excluded: it emits tool calls as
+            # plain text instead of native tool_calls, so the agent silently runs no
+            # tools and fabricates results. gpt-oss-120b calls tools correctly.
+            "default_model": "openai/gpt-oss-120b",
+            "models": ["openai/gpt-oss-120b"],
         },
         "openai": {
             "type": "openai",
             "label": "OpenAI",
             "base_url": "https://api.openai.com/v1",
             "api_key_env": ["OPENAI_API_KEY"],
-            "default_model": "gpt-4o-mini",
-            "models": ["gpt-4o-mini", "gpt-4o"],
+            "default_model": "gpt-5.4-mini",
+            "models": ["gpt-5.4-mini"],
         },
     },
+
+    # Models offered as FREE (no user key) in the sidebar. Only combinations
+    # verified to drive the ReAct agent's tool calling reliably belong here.
+    "free_models": [
+        {
+            "provider": "gemini",
+            "model": "gemini-2.5-flash",
+            "label": "Gemini 2.5 Flash",
+        },
+    ],
 
     # Generation defaults for OpenAI-compatible providers (groq, openai).
     # Gemini keeps its own section below so its behaviour is untouched.

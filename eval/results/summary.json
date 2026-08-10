@@ -1,0 +1,969 @@
+{
+  "judge_model": "claude-sonnet-4-5-20250929",
+  "decompose_model": "claude-sonnet-4-5-20250929",
+  "tool_model": "gemini-2.5-flash",
+  "n_sets_judged": 50,
+  "n_sets_in_aggregate": 45,
+  "hallucination_rate_mean": 0.02,
+  "hallucination_rate_sd": 0.0456,
+  "grounded_rate_mean": 0.7198,
+  "n_runs_total": 50,
+  "tool_less_rate": 0.1,
+  "empty_response_rate": 0.0,
+  "empty_response_runs": [],
+  "tool_less_sets": [
+    "Bile_Acid_Metabolism",
+    "Glycolysis",
+    "IL-6_JAK_STAT3_Signaling",
+    "KRAS_Signaling_Up",
+    "mTORC1_Signaling"
+  ],
+  "fabricated_citation_rate": 0.0,
+  "fabricated_citation_sets": [],
+  "excluded_toolless_sets": [
+    "Bile_Acid_Metabolism",
+    "Glycolysis",
+    "IL-6_JAK_STAT3_Signaling",
+    "KRAS_Signaling_Up",
+    "mTORC1_Signaling"
+  ],
+  "skipped_sets": [],
+  "per_set": [
+    {
+      "gene_set": "Xenobiotic_Metabolism",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 201,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 151,
+      "n_scored": 151,
+      "grounded_rate": 0.576,
+      "hallucination_rate": 0.245,
+      "grounded": 87,
+      "background": 27,
+      "unsupported": 37
+    },
+    {
+      "gene_set": "Complement",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 689,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 86,
+      "n_scored": 86,
+      "grounded_rate": 0.709,
+      "hallucination_rate": 0.14,
+      "grounded": 61,
+      "background": 13,
+      "unsupported": 12
+    },
+    {
+      "gene_set": "Adipogenesis",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 149,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 107,
+      "n_scored": 107,
+      "grounded_rate": 0.692,
+      "hallucination_rate": 0.103,
+      "grounded": 74,
+      "background": 22,
+      "unsupported": 11
+    },
+    {
+      "gene_set": "KRAS_Signaling_Dn",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 46,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 126,
+      "n_scored": 126,
+      "grounded_rate": 0.571,
+      "hallucination_rate": 0.095,
+      "grounded": 72,
+      "background": 42,
+      "unsupported": 12
+    },
+    {
+      "gene_set": "Glycolysis",
+      "n_genes": 200,
+      "valid": false,
+      "tools_used": [],
+      "n_evidence_terms": 0,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 72,
+      "n_scored": 72,
+      "grounded_rate": 0.0,
+      "hallucination_rate": 0.069,
+      "grounded": 0,
+      "background": 67,
+      "unsupported": 5
+    },
+    {
+      "gene_set": "Cholesterol_Homeostasis",
+      "n_genes": 74,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 45,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 78,
+      "n_scored": 78,
+      "grounded_rate": 0.731,
+      "hallucination_rate": 0.064,
+      "grounded": 57,
+      "background": 16,
+      "unsupported": 5
+    },
+    {
+      "gene_set": "DNA_Repair",
+      "n_genes": 150,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 143,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 79,
+      "n_scored": 79,
+      "grounded_rate": 0.81,
+      "hallucination_rate": 0.038,
+      "grounded": 64,
+      "background": 12,
+      "unsupported": 3
+    },
+    {
+      "gene_set": "Angiogenesis",
+      "n_genes": 36,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 245,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 94,
+      "n_scored": 94,
+      "grounded_rate": 0.691,
+      "hallucination_rate": 0.032,
+      "grounded": 65,
+      "background": 26,
+      "unsupported": 3
+    },
+    {
+      "gene_set": "Estrogen_Response_Late",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis"
+      ],
+      "n_evidence_terms": 63,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 65,
+      "n_scored": 65,
+      "grounded_rate": 0.462,
+      "hallucination_rate": 0.031,
+      "grounded": 30,
+      "background": 33,
+      "unsupported": 2
+    },
+    {
+      "gene_set": "Androgen_Response",
+      "n_genes": 100,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 73,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 140,
+      "n_scored": 140,
+      "grounded_rate": 0.721,
+      "hallucination_rate": 0.029,
+      "grounded": 101,
+      "background": 35,
+      "unsupported": 4
+    },
+    {
+      "gene_set": "p53_Pathway",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 349,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 75,
+      "n_scored": 75,
+      "grounded_rate": 0.84,
+      "hallucination_rate": 0.027,
+      "grounded": 63,
+      "background": 10,
+      "unsupported": 2
+    },
+    {
+      "gene_set": "Bile_Acid_Metabolism",
+      "n_genes": 112,
+      "valid": false,
+      "tools_used": [],
+      "n_evidence_terms": 0,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 137,
+      "n_scored": 137,
+      "grounded_rate": 0.0,
+      "hallucination_rate": 0.022,
+      "grounded": 0,
+      "background": 134,
+      "unsupported": 3
+    },
+    {
+      "gene_set": "heme_Metabolism",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 25,
+      "n_papers": 8,
+      "fabricated_citation": false,
+      "n_claims": 57,
+      "n_scored": 57,
+      "grounded_rate": 0.825,
+      "hallucination_rate": 0.018,
+      "grounded": 47,
+      "background": 9,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Inflammatory_Response",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 765,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 118,
+      "n_scored": 118,
+      "grounded_rate": 0.593,
+      "hallucination_rate": 0.017,
+      "grounded": 70,
+      "background": 46,
+      "unsupported": 2
+    },
+    {
+      "gene_set": "Hedgehog_Signaling",
+      "n_genes": 36,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 277,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 78,
+      "n_scored": 78,
+      "grounded_rate": 0.808,
+      "hallucination_rate": 0.013,
+      "grounded": 63,
+      "background": 14,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Reactive_Oxygen_Species_Pathway",
+      "n_genes": 49,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 63,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 75,
+      "n_scored": 75,
+      "grounded_rate": 0.64,
+      "hallucination_rate": 0.013,
+      "grounded": 48,
+      "background": 26,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Hypoxia",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 265,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 100,
+      "n_scored": 100,
+      "grounded_rate": 0.73,
+      "hallucination_rate": 0.01,
+      "grounded": 73,
+      "background": 26,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Protein_Secretion",
+      "n_genes": 96,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 120,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 117,
+      "n_scored": 117,
+      "grounded_rate": 0.855,
+      "hallucination_rate": 0.009,
+      "grounded": 100,
+      "background": 16,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "TNF-alpha_Signaling_via_NF-kB",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 787,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 143,
+      "n_scored": 143,
+      "grounded_rate": 0.888,
+      "hallucination_rate": 0.007,
+      "grounded": 127,
+      "background": 15,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Pperoxisome",
+      "n_genes": 104,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 141,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 167,
+      "n_scored": 167,
+      "grounded_rate": 0.772,
+      "hallucination_rate": 0.006,
+      "grounded": 129,
+      "background": 37,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Coagulation",
+      "n_genes": 138,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 329,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 192,
+      "n_scored": 192,
+      "grounded_rate": 0.661,
+      "hallucination_rate": 0.005,
+      "grounded": 127,
+      "background": 64,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Allograft_Rejection",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 1051,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 78,
+      "n_scored": 78,
+      "grounded_rate": 0.564,
+      "hallucination_rate": 0.0,
+      "grounded": 44,
+      "background": 34,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Apical_Junction",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 505,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 154,
+      "n_scored": 154,
+      "grounded_rate": 0.649,
+      "hallucination_rate": 0.0,
+      "grounded": 100,
+      "background": 54,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Apical_Surface",
+      "n_genes": 44,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 114,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 75,
+      "n_scored": 75,
+      "grounded_rate": 0.573,
+      "hallucination_rate": 0.0,
+      "grounded": 43,
+      "background": 32,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Apoptosis",
+      "n_genes": 161,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 836,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 115,
+      "n_scored": 115,
+      "grounded_rate": 0.8,
+      "hallucination_rate": 0.0,
+      "grounded": 92,
+      "background": 23,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "E2F_Targets",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 366,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 107,
+      "n_scored": 107,
+      "grounded_rate": 0.654,
+      "hallucination_rate": 0.0,
+      "grounded": 70,
+      "background": 37,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Epithelial_Mesenchymal_Transition",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 563,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 80,
+      "n_scored": 80,
+      "grounded_rate": 0.75,
+      "hallucination_rate": 0.0,
+      "grounded": 60,
+      "background": 20,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Estrogen_Response_Early",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis"
+      ],
+      "n_evidence_terms": 30,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 91,
+      "n_scored": 91,
+      "grounded_rate": 0.418,
+      "hallucination_rate": 0.0,
+      "grounded": 38,
+      "background": 53,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Fatty_Acid_Metabolism",
+      "n_genes": 158,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 167,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 29,
+      "n_scored": 29,
+      "grounded_rate": 0.862,
+      "hallucination_rate": 0.0,
+      "grounded": 25,
+      "background": 4,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "G2-M_Checkpoint",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 396,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 76,
+      "n_scored": 76,
+      "grounded_rate": 0.711,
+      "hallucination_rate": 0.0,
+      "grounded": 54,
+      "background": 22,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "IL-2_STAT5_Signaling",
+      "n_genes": 199,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 185,
+      "n_papers": 1,
+      "fabricated_citation": false,
+      "n_claims": 54,
+      "n_scored": 54,
+      "grounded_rate": 0.648,
+      "hallucination_rate": 0.0,
+      "grounded": 35,
+      "background": 19,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "IL-6_JAK_STAT3_Signaling",
+      "n_genes": 87,
+      "valid": false,
+      "tools_used": [],
+      "n_evidence_terms": 0,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 26,
+      "n_scored": 26,
+      "grounded_rate": 0.0,
+      "hallucination_rate": 0.0,
+      "grounded": 0,
+      "background": 26,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Interferon_Alpha_Response",
+      "n_genes": 97,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 166,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 71,
+      "n_scored": 71,
+      "grounded_rate": 0.803,
+      "hallucination_rate": 0.0,
+      "grounded": 57,
+      "background": 14,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Interferon_Gamma_Response",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 559,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 204,
+      "n_scored": 204,
+      "grounded_rate": 0.569,
+      "hallucination_rate": 0.0,
+      "grounded": 116,
+      "background": 88,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "KRAS_Signaling_Up",
+      "n_genes": 200,
+      "valid": false,
+      "tools_used": [],
+      "n_evidence_terms": 0,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 57,
+      "n_scored": 57,
+      "grounded_rate": 0.0,
+      "hallucination_rate": 0.0,
+      "grounded": 0,
+      "background": 57,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Mitotic_Spindle",
+      "n_genes": 199,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 83,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 76,
+      "n_scored": 76,
+      "grounded_rate": 0.711,
+      "hallucination_rate": 0.0,
+      "grounded": 54,
+      "background": 22,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "mTORC1_Signaling",
+      "n_genes": 200,
+      "valid": false,
+      "tools_used": [],
+      "n_evidence_terms": 0,
+      "n_papers": 0,
+      "fabricated_citation": false,
+      "n_claims": 73,
+      "n_scored": 73,
+      "grounded_rate": 0.0,
+      "hallucination_rate": 0.0,
+      "grounded": 0,
+      "background": 73,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Myc_Targets_V1",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 246,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 41,
+      "n_scored": 41,
+      "grounded_rate": 0.585,
+      "hallucination_rate": 0.0,
+      "grounded": 24,
+      "background": 17,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Myc_Targets_V2",
+      "n_genes": 58,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 49,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 31,
+      "n_scored": 31,
+      "grounded_rate": 0.935,
+      "hallucination_rate": 0.0,
+      "grounded": 29,
+      "background": 2,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Myogenesis",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 414,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 69,
+      "n_scored": 69,
+      "grounded_rate": 0.58,
+      "hallucination_rate": 0.0,
+      "grounded": 40,
+      "background": 29,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Notch_Signaling",
+      "n_genes": 32,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 323,
+      "n_papers": 1,
+      "fabricated_citation": false,
+      "n_claims": 91,
+      "n_scored": 91,
+      "grounded_rate": 0.956,
+      "hallucination_rate": 0.0,
+      "grounded": 87,
+      "background": 4,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Oxidative_Phosphorylation",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 187,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 72,
+      "n_scored": 72,
+      "grounded_rate": 0.806,
+      "hallucination_rate": 0.0,
+      "grounded": 58,
+      "background": 14,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Pancreas_Beta_Cells",
+      "n_genes": 40,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 94,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 55,
+      "n_scored": 55,
+      "grounded_rate": 0.8,
+      "hallucination_rate": 0.0,
+      "grounded": 44,
+      "background": 11,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "PI3K_AKT_mTOR__Signaling",
+      "n_genes": 105,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 589,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 104,
+      "n_scored": 104,
+      "grounded_rate": 0.971,
+      "hallucination_rate": 0.0,
+      "grounded": 101,
+      "background": 3,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Spermatogenesis",
+      "n_genes": 135,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 11,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 127,
+      "n_scored": 127,
+      "grounded_rate": 0.661,
+      "hallucination_rate": 0.0,
+      "grounded": 84,
+      "background": 43,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "TGF-beta_Signaling",
+      "n_genes": 54,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 515,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 106,
+      "n_scored": 106,
+      "grounded_rate": 0.774,
+      "hallucination_rate": 0.0,
+      "grounded": 82,
+      "background": 24,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Unfolded_Protein_Response",
+      "n_genes": 113,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 170,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 141,
+      "n_scored": 141,
+      "grounded_rate": 0.709,
+      "hallucination_rate": 0.0,
+      "grounded": 100,
+      "background": 41,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "UV_Response_Dn",
+      "n_genes": 144,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 477,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 120,
+      "n_scored": 120,
+      "grounded_rate": 0.867,
+      "hallucination_rate": 0.0,
+      "grounded": 104,
+      "background": 16,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "UV_Response_Up",
+      "n_genes": 158,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 169,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 41,
+      "n_scored": 41,
+      "grounded_rate": 0.805,
+      "hallucination_rate": 0.0,
+      "grounded": 33,
+      "background": 8,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Wnt-beta_Catenin_Signaling",
+      "n_genes": 42,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 425,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 116,
+      "n_scored": 116,
+      "grounded_rate": 0.655,
+      "hallucination_rate": 0.0,
+      "grounded": 76,
+      "background": 40,
+      "unsupported": 0
+    }
+  ]
+}

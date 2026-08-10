@@ -1,0 +1,4132 @@
+{
+  "gene_set": "Pperoxisome",
+  "context": "Pperoxisome",
+  "genes": [
+    "ABCD3",
+    "ACOT8",
+    "ACOX1",
+    "ACSL1",
+    "ECH1",
+    "ECI2",
+    "EHHADH",
+    "GSTK1",
+    "HSD17B4",
+    "MLYCD",
+    "PEX11A",
+    "RETSAT",
+    "SLC27A2",
+    "PEX13",
+    "PEX14",
+    "SCP2",
+    "HSD3B7",
+    "GNPAT",
+    "ABCD2",
+    "SLC25A17",
+    "PEX2",
+    "ACAA1",
+    "HAO2",
+    "HSD17B11",
+    "CRAT",
+    "PEX11B",
+    "LONP2",
+    "IDH1",
+    "FIS1",
+    "PEX6",
+    "ABCB4",
+    "SOD1",
+    "ABCB1",
+    "ISOC1",
+    "YWHAH",
+    "EPHX2",
+    "ABCD1",
+    "HMGCL",
+    "ACSL5",
+    "ALDH9A1",
+    "DHCR24",
+    "ELOVL5",
+    "NUDT19",
+    "PRDX5",
+    "CTPS1",
+    "IDE",
+    "SLC23A2",
+    "PEX5",
+    "BCL10",
+    "NR1I2",
+    "TSPO",
+    "CNBP",
+    "MSH2",
+    "DHRS3",
+    "DIO1",
+    "SLC25A4",
+    "PRDX1",
+    "IDI1",
+    "HRAS",
+    "MVP",
+    "ABCC8",
+    "CLN6",
+    "CAT",
+    "ACSL4",
+    "IDH2",
+    "ABCC5",
+    "SOD2",
+    "SLC35B2",
+    "FDPS",
+    "ALB",
+    "FADS1",
+    "STS",
+    "SMARCC1",
+    "ITGB1BP1",
+    "SIAH1",
+    "SLC25A19",
+    "CDK7",
+    "RXRG",
+    "ALDH1A1",
+    "UGT2B17",
+    "CADM1",
+    "SERPINA6",
+    "CLN8",
+    "RDH11",
+    "CTBP1",
+    "HSD11B2",
+    "TTR",
+    "ERCC3",
+    "ATXN1",
+    "SULT2B1",
+    "CRABP2",
+    "CRABP1",
+    "TOP2A",
+    "SCGB1A1",
+    "ERCC1",
+    "DLG4",
+    "PABPC1",
+    "FABP6",
+    "ABCB9",
+    "CACNA1B",
+    "SEMA3C",
+    "VPS4B",
+    "CEL",
+    "ESR2"
+  ],
+  "n_genes": 104,
+  "query": "Analyze this gene set (biological context: Pperoxisome) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: ABCD3, ACOT8, ACOX1, ACSL1, ECH1, ECI2, EHHADH, GSTK1, HSD17B4, MLYCD, PEX11A, RETSAT, SLC27A2, PEX13, PEX14, SCP2, HSD3B7, GNPAT, ABCD2, SLC25A17, PEX2, ACAA1, HAO2, HSD17B11, CRAT, PEX11B, LONP2, IDH1, FIS1, PEX6, ABCB4, SOD1, ABCB1, ISOC1, YWHAH, EPHX2, ABCD1, HMGCL, ACSL5, ALDH9A1, DHCR24, ELOVL5, NUDT19, PRDX5, CTPS1, IDE, SLC23A2, PEX5, BCL10, NR1I2, TSPO, CNBP, MSH2, DHRS3, DIO1, SLC25A4, PRDX1, IDI1, HRAS, MVP, ABCC8, CLN6, CAT, ACSL4, IDH2, ABCC5, SOD2, SLC35B2, FDPS, ALB, FADS1, STS, SMARCC1, ITGB1BP1, SIAH1, SLC25A19, CDK7, RXRG, ALDH1A1, UGT2B17, CADM1, SERPINA6, CLN8, RDH11, CTBP1, HSD11B2, TTR, ERCC3, ATXN1, SULT2B1, CRABP2, CRABP1, TOP2A, SCGB1A1, ERCC1, DLG4, PABPC1, FABP6, ABCB9, CACNA1B, SEMA3C, VPS4B, CEL, ESR2",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 141,
+  "n_papers": 3,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 3,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 3,
+    "cited_pmids": [],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "## Summary\n\nThis gene set is overwhelmingly enriched for biological processes and pathways central to **peroxisome biology**, particularly **fatty acid metabolism and peroxisome biogenesis**. The most significant findings across both GO Biological Process and KEGG Human pathways directly point to the peroxisome as the primary organelle where these genes exert their function.\n\n## Detailed Analysis\n\nThe enrichment analysis revealed an extremely strong signal for peroxisome-related functions:\n\n### GO Biological Process 2023\n\n*   **Fatty Acid Metabolism (Catabolic, Beta-Oxidation, Oxidation, Alpha-Oxidation)**: The top enriched terms (e.g., \"Fatty Acid Catabolic Process\", \"Fatty Acid Metabolic Process\", \"Fatty Acid Beta-Oxidation\", \"Fatty Acid Oxidation\", \"Very Long-Chain Fatty Acid Metabolic Process\", \"Fatty Acid Alpha-Oxidation\") highlight the central role of peroxisomes in breaking down various types of fatty acids, including very long-chain and branched-chain fatty acids, a defining function of this organelle. Genes such as ABCD2, ACOX1, EHHADH, ECI2, HSD17B4, and SCP2 are prominent in these terms.\n*   **Peroxisome Biogenesis and Dynamics**: Terms like \"Peroxisome Organization\", \"Peroxisomal Membrane Transport\", \"Protein Import Into Peroxisome Matrix\", \"Protein Targeting To Peroxisome\", and \"Peroxisome Fission\" are highly significant. This indicates that many genes in your list are involved in the formation, maintenance, and regulation of peroxisomes. Key genes here include several PEX (peroxin) genes (PEX2, PEX5, PEX6, PEX11A, PEX11B, PEX13, PEX14) and proteins like FIS1 and LONP2. The term \"Pexophagy\" also appeared, indicating the degradation pathway for peroxisomes.\n*   **Steroid and Lipid Metabolism/Transport**: \"Steroid Metabolic Process\", \"Bile Acid Metabolic Process\", \"Lipid Transport\", and \"Fatty Acid Transport\" were also significantly enriched. Peroxisomes are crucial for the synthesis of bile acids and certain steroids, as well as the transport of lipids, involving genes like ABCD3, HSD3B7, SLC25A17, and SCP2.\n*   **Response to Oxidative Stress**: \"Response To Reactive Oxygen Species\" and \"Removal Of Superoxide Radicals\" were enriched, with genes such as PRDX5, CAT, SOD1, and SOD2. Peroxisomes produce and neutralize reactive oxygen species (ROS), making their involvement in oxidative stress response expected.\n\n### KEGG 2021 Human\n\n*   **Peroxisome**: This pathway was the most significantly enriched term (p=3.62e-65), with a substantial overlap of 38 out of 82 genes in the pathway. This directly confirms the strong peroxisomal context of the provided gene list.\n*   **PPAR signaling pathway**: This pathway is a key regulator of lipid metabolism and peroxisome proliferation, further reinforcing the connection to fatty acid and lipid processing within peroxisomes. Genes like SCP2, ACOX1, EHHADH, and RXRG are involved.\n*   **Fatty acid degradation**: Consistent with the GO terms, this pathway highlights the breakdown of fatty acids in peroxisomes.\n*   **ABC transporters**: Several ABC transporter genes (ABCD1, ABCD2, ABCD3, ABCB1, ABCB4, ABCC5, ABCC8, ABCB9) are enriched, which are known to be involved in the transport of various substrates, including very long-chain fatty acids, into and out of the peroxisome.\n*   **Biosynthesis of unsaturated fatty acids** and **Primary bile acid biosynthesis**: These pathways further underscore the peroxisome's role in lipid and bile acid synthesis.\n\n### Literature Support\n\nThe literature search for \"peroxisome fatty acid oxidation regulation\" or \"PEX genes\" provided relevant insights, particularly concerning the PEX genes:\n\n*   The papers by Omri S et al. (2026) and Baronio D et al. (2025) discuss Zellweger Spectrum Disorders (ZSDs), which are caused by mutations in **PEX genes** essential for peroxisome biogenesis and function. This directly supports the enrichment of \"Peroxisome Organization\" and other PEX-related terms. Baronio D et al. (2025) specifically highlight that PEX gene mutations lead to dysregulation of lipid metabolism, including very long-chain fatty acids, and impaired mitochondrial and peroxisomal function, which aligns perfectly with the metabolic and organizational terms found in the enrichment analysis. (Baronio D et al., 2025)\n\nIn summary, the provided gene list robustly indicates a highly active and regulated peroxisomal system, heavily involved in diverse aspects of fatty acid and lipid metabolism, organelle biogenesis, transport, and oxidative stress response. The presence of numerous PEX genes and ABC transporters further emphasizes the foundational role of peroxisomes in the functions encoded by this gene set.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'genes': 'ABCD3, ACOT8, ACOX1, ACSL1, ECH1, ECI2, EHHADH, GSTK1, HSD17B4, MLYCD, PEX11A, RETSAT, SLC27A2, PEX13, PEX14, SCP2, HSD3B7, GNPAT, ABCD2, SLC25A17, PEX2, ACAA1, HAO2, HSD17B11, CRAT, PEX11B, LONP2, IDH1, FIS1, PEX6, ABCB4, SOD1, ABCB1, ISOC1, YWHAH, EPHX2, ABCD1, HMGCL, ACSL5, ALDH9A1, DHCR24, ELOVL5, NUDT19, PRDX5, CTPS1, IDE, SLC23A2, PEX5, BCL10, NR1I2, TSPO, CNBP, MSH2, DHRS3, DIO1, SLC25A4, PRDX1, IDI1, HRAS, MVP, ABCC8, CLN6, CAT, ACSL4, IDH2, ABCC5, SOD2, SLC35B2, FDPS, ALB, FADS1, STS, SMARCC1, ITGB1BP1, SIAH1, SLC25A19, CDK7, RXRG, ALDH1A1, UGT2B17, CADM1, SERPINA6, CLN8, RDH11, CTBP1, HSD11B2, TTR, ERCC3, ATXN1, SULT2B1, CRABP2, CRABP1, TOP2A, SCGB1A1, ERCC1, DLG4, PABPC1, FABP6, ABCB9, CACNA1B, SEMA3C, VPS4B, CEL, ESR2', 'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human'}",
+    "Tool: search_literature | Args: {'query': '\"peroxisome fatty acid oxidation regulation\" OR \"PEX genes\"', 'max_results': 5}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Pperoxisome) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: ABCD3, ACOT8, ACOX1, ACSL1, ECH1, ECI2, EHHADH, GSTK1, HSD17B4, MLYC"
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given a gene list and I need to figure out its biological meaning, specifically focusing on peroxisomes. My plan is pretty straightforward. First, I'm going to leverage my expertise by doing some rigorous enrichment analysis. I'll use the \"GO\\_Biological\\_Process\\_2023\" and \"KEGG\\_2021\\_Human\" libraries, because those are the most relevant datasets for this. This should give me a good handle on which biological processes and pathways are over-represented in the list.\n\nOnce I have those results, I'll need to interpret them. I'll focus on the top-ranked enriched terms from both sets – GO and KEGG. Then, and this is crucial, I need to tie this all back to \"Pperoxisome.\" So, I'll formulate a very precise literature search query, based on the most significant enriched terms, always keeping peroxisomes in mind.\n\nNext, I’ll call `search_literature` to pull out at most five supporting papers that are relevant to the results of the enrichment analysis. Finally, I’ll synthesize it all – the enrichment analysis findings, combined with the context from those papers – into a concise biological interpretation. I'll make sure to highlight anything related to peroxisomes and be sure to cite those papers I retrieved. I'm ready to dive in and get this enrichment analysis rolling.",
+      "action": "run_enrichment_analysis",
+      "args": "genes=ABCD3, ACOT8, ACOX1, ACSL1, ECH1, ECI2, EHHADH, GS..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "3fdbb963-5bc9-4815-a15b-1e7625e8d624",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 104 | Total significant terms: 141"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "The analysis of your gene set in the context of \"Pperoxisome\" reveals a highly enriched profile centered around peroxisomal biology, particularly fatty acid metabolism, peroxisome organization and transport, and oxidative stress response.\n\n## Detailed Analysis\n\nThe enrichment analysis using GO_Biological_Process_2023 and KEGG_2021_Human libraries strongly confirms that your gene list is highly relevant to peroxisome function.\n\n**Peroxisomal Metabolism:**\nThe most striking finding is the robust e"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Assessment of the Enrichment Analysis Results**\n\nOkay, let's break down these enrichment results. The data is screaming peroxisome involvement, and frankly, I'm not surprised given the context. The GO Biological Process analysis (2023 version, of course – I'm always keeping up with the latest annotations!) is incredibly robust. The fatty acid metabolism connection is undeniably strong. I see the usual suspects – the catabolic processes, beta-oxidation, and the key enzymes and transporters like ABCD2, ACOX1, EHHADH – the entire suite. They're all there. It's a textbook peroxisomal fatty acid metabolism signature.\n\nBeyond that, the structural and transport components are well-represented too. \"Peroxisome Organization,\" \"Membrane Transport,\" the protein import machinery… all the PEX genes are popping up – PEX2, PEX5, the whole PEX11 family, FIS1, LONP2. It's a comprehensive picture of peroxisome biogenesis and function.\n\nThe bile acid and steroid metabolism hits are expected. It reinforces the peroxisomal role in these pathways, specifically cholesterol and steroid metabolism. I’m thinking bile acid synthesis in particular.\n\nThe ROS detoxification terms are also significant. \"Response to Reactive Oxygen Species,\" the superoxide and hydrogen peroxide processes are all highlighting the peroxisome's role as a cellular antioxidant center. It makes perfect sense, considering the peroxisome's oxidative environment and the presence of enzymes like PRDX5, CAT, and SODs.\n\nAnd the presence of \"Pexophagy\" is interesting. It indicates a level of regulatory control over peroxisome turnover – very relevant for the overall cellular response.\n\nThe KEGG analysis is even more straightforward – \"Peroxisome\" itself is the top term, and the overlap is substantial. So, to put it simply, this gene list is overwhelmingly peroxisomal. Nothing unexpected, but a very strong confirmation of my initial hypothesis. Overall, these results are incredibly compelling and provides solid evidence supporting peroxisomal involvement. I’m satisfied with this.",
+      "action": "search_literature",
+      "args": "query=\"peroxisome fatty acid oxidation regulation\" OR \"P..., max_results=5",
+      "tool_name": "search_literature",
+      "tool_call_id": "f44f7880-50b9-4899-abce-aef6d534c543",
+      "observation": "=== LITERATURE SEARCH: '\"peroxisome fatty acid oxidation regulation\" OR \"PEX genes\"' === | Found 3 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "## Summary\n\nThis gene set is overwhelmingly enriched for biological processes and pathways central to **peroxisome biology**, particularly **fatty acid metabolism and peroxisome biogenesis**. The most significant findings across both GO Biological Process and KEGG Human pathways directly point to the peroxisome as the primary organelle where these genes exert their function.\n\n## Detailed Analysis\n\nThe enrichment analysis revealed an extremely strong signal for peroxisome-related functions:\n\n### "
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "genes=ABCD3, ACOT8, ACOX1, ACSL1, ECH1, ECI2, EHHADH, GS..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given a gene list and I need to figure out its biological meaning, specifically focusing on peroxisomes. My plan is pretty straightforward. First, I'm going to leverage my expertise by doing some rigorous enrichment analysis. I'll use the \"GO\\_Biological\\_Process\\_2023\" and \"KEGG\\_2021\\_Human\" libraries, because those are the most relevant datasets for this. This should give me a good handle on which biological processes and pathways are over-represented in the list.\n\nOnce I have those results, I'll need to interpret them. I'll focus on the top-ranked enriched terms from both sets – GO and KEGG. Then, and this is crucial, I need to tie this all back to \"Pperoxisome.\" So, I'll formulate a very precise literature search query, based on the most significant enriched terms, always keeping peroxisomes in mind.\n\nNext, I’ll call `search_literature` to pull out at most five supporting papers that are relevant to the results of the enrichment analysis. Finally, I’ll synthesize it all – the enrichment analysis findings, combined with the context from those papers – into a concise biological interpretation. I'll make sure to highlight anything related to peroxisomes and be sure to cite those papers I retrieved. I'm ready to dive in and get this enrichment analysis rolling.",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 104 | Total significant terms: 141"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "query=\"peroxisome fatty acid oxidation regulation\" OR \"P..., max_results=5",
+      "thought": "**My Assessment of the Enrichment Analysis Results**\n\nOkay, let's break down these enrichment results. The data is screaming peroxisome involvement, and frankly, I'm not surprised given the context. The GO Biological Process analysis (2023 version, of course – I'm always keeping up with the latest annotations!) is incredibly robust. The fatty acid metabolism connection is undeniably strong. I see the usual suspects – the catabolic processes, beta-oxidation, and the key enzymes and transporters like ABCD2, ACOX1, EHHADH – the entire suite. They're all there. It's a textbook peroxisomal fatty acid metabolism signature.\n\nBeyond that, the structural and transport components are well-represented too. \"Peroxisome Organization,\" \"Membrane Transport,\" the protein import machinery… all the PEX genes are popping up – PEX2, PEX5, the whole PEX11 family, FIS1, LONP2. It's a comprehensive picture of peroxisome biogenesis and function.\n\nThe bile acid and steroid metabolism hits are expected. It reinforces the peroxisomal role in these pathways, specifically cholesterol and steroid metabolism. I’m thinking bile acid synthesis in particular.\n\nThe ROS detoxification terms are also significant. \"Response to Reactive Oxygen Species,\" the superoxide and hydrogen peroxide processes are all highlighting the peroxisome's role as a cellular antioxidant center. It makes perfect sense, considering the peroxisome's oxidative environment and the presence of enzymes like PRDX5, CAT, and SODs.\n\nAnd the presence of \"Pexophagy\" is interesting. It indicates a level of regulatory control over peroxisome turnover – very relevant for the overall cellular response.\n\nThe KEGG analysis is even more straightforward – \"Peroxisome\" itself is the top term, and the overlap is substantial. So, to put it simply, this gene list is overwhelmingly peroxisomal. Nothing unexpected, but a very strong confirmation of my initial hypothesis. Overall, these results are incredibly compelling and provides solid evidence supporting peroxisomal involvement. I’m satisfied with this.",
+      "observation": "=== LITERATURE SEARCH: '\"peroxisome fatty acid oxidation regulation\" OR \"PEX genes\"' === | Found 3 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "ABCD3",
+      "ACOT8",
+      "ACOX1",
+      "ACSL1",
+      "ECH1",
+      "ECI2",
+      "EHHADH",
+      "GSTK1",
+      "HSD17B4",
+      "MLYCD",
+      "PEX11A",
+      "RETSAT",
+      "SLC27A2",
+      "PEX13",
+      "PEX14",
+      "SCP2",
+      "HSD3B7",
+      "GNPAT",
+      "ABCD2",
+      "SLC25A17",
+      "PEX2",
+      "ACAA1",
+      "HAO2",
+      "HSD17B11",
+      "CRAT",
+      "PEX11B",
+      "LONP2",
+      "IDH1",
+      "FIS1",
+      "PEX6",
+      "ABCB4",
+      "SOD1",
+      "ABCB1",
+      "ISOC1",
+      "YWHAH",
+      "EPHX2",
+      "ABCD1",
+      "HMGCL",
+      "ACSL5",
+      "ALDH9A1",
+      "DHCR24",
+      "ELOVL5",
+      "NUDT19",
+      "PRDX5",
+      "CTPS1",
+      "IDE",
+      "SLC23A2",
+      "PEX5",
+      "BCL10",
+      "NR1I2",
+      "TSPO",
+      "CNBP",
+      "MSH2",
+      "DHRS3",
+      "DIO1",
+      "SLC25A4",
+      "PRDX1",
+      "IDI1",
+      "HRAS",
+      "MVP",
+      "ABCC8",
+      "CLN6",
+      "CAT",
+      "ACSL4",
+      "IDH2",
+      "ABCC5",
+      "SOD2",
+      "SLC35B2",
+      "FDPS",
+      "ALB",
+      "FADS1",
+      "STS",
+      "SMARCC1",
+      "ITGB1BP1",
+      "SIAH1",
+      "SLC25A19",
+      "CDK7",
+      "RXRG",
+      "ALDH1A1",
+      "UGT2B17",
+      "CADM1",
+      "SERPINA6",
+      "CLN8",
+      "RDH11",
+      "CTBP1",
+      "HSD11B2",
+      "TTR",
+      "ERCC3",
+      "ATXN1",
+      "SULT2B1",
+      "CRABP2",
+      "CRABP1",
+      "TOP2A",
+      "SCGB1A1",
+      "ERCC1",
+      "DLG4",
+      "PABPC1",
+      "FABP6",
+      "ABCB9",
+      "CACNA1B",
+      "SEMA3C",
+      "VPS4B",
+      "CEL",
+      "ESR2"
+    ],
+    "gene_count": 104,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Fatty Acid Catabolic Process (GO:0009062)",
+          "term": "Fatty Acid Catabolic Process (GO:0009062)",
+          "overlap": "15/61",
+          "p_value": 1.112362900069356e-21,
+          "z_score": 72.72838299951148,
+          "combined_score": 3508.9845108336935,
+          "overlap_genes": [
+            "ABCD2",
+            "ACOT8",
+            "ABCD3",
+            "ECI2",
+            "HSD17B4",
+            "PEX2",
+            "PEX13",
+            "SLC25A17",
+            "SCP2",
+            "ACOX1",
+            "EHHADH",
+            "NUDT19",
+            "ACAA1",
+            "SLC27A2",
+            "HAO2"
+          ],
+          "genes": [
+            "ABCD2",
+            "ACOT8",
+            "ABCD3",
+            "ECI2",
+            "HSD17B4",
+            "PEX2",
+            "PEX13",
+            "SLC25A17",
+            "SCP2",
+            "ACOX1",
+            "EHHADH",
+            "NUDT19",
+            "ACAA1",
+            "SLC27A2",
+            "HAO2"
+          ],
+          "adjusted_p_value": 1.1112505371692867e-18
+        },
+        {
+          "rank": 2,
+          "term_name": "Fatty Acid Metabolic Process (GO:0006631)",
+          "term": "Fatty Acid Metabolic Process (GO:0006631)",
+          "overlap": "17/122",
+          "p_value": 6.241230242513889e-20,
+          "z_score": 36.830541871921184,
+          "combined_score": 1628.665880767601,
+          "overlap_genes": [
+            "ACOT8",
+            "ABCD2",
+            "ABCD3",
+            "ACSL1",
+            "ACSL5",
+            "ACSL4",
+            "PEX2",
+            "GNPAT",
+            "ACOX1",
+            "NUDT19",
+            "TSPO",
+            "MLYCD",
+            "ACAA1",
+            "CRAT",
+            "SLC27A2",
+            "HAO2",
+            "ABCD1"
+          ],
+          "genes": [
+            "ACOT8",
+            "ABCD2",
+            "ABCD3",
+            "ACSL1",
+            "ACSL5",
+            "ACSL4",
+            "PEX2",
+            "GNPAT",
+            "ACOX1",
+            "NUDT19",
+            "TSPO",
+            "MLYCD",
+            "ACAA1",
+            "CRAT",
+            "SLC27A2",
+            "HAO2",
+            "ABCD1"
+          ],
+          "adjusted_p_value": 3.1174945061356874e-17
+        },
+        {
+          "rank": 3,
+          "term_name": "Fatty Acid Beta-Oxidation (GO:0006635)",
+          "term": "Fatty Acid Beta-Oxidation (GO:0006635)",
+          "overlap": "13/49",
+          "p_value": 2.1026155932980711e-19,
+          "z_score": 78.80952380952381,
+          "combined_score": 3389.277232842921,
+          "overlap_genes": [
+            "ABCD2",
+            "ACOT8",
+            "ABCD3",
+            "ECI2",
+            "HSD17B4",
+            "PEX2",
+            "SLC25A17",
+            "SCP2",
+            "ACOX1",
+            "EHHADH",
+            "ACAA1",
+            "SLC27A2",
+            "CRAT"
+          ],
+          "genes": [
+            "ABCD2",
+            "ACOT8",
+            "ABCD3",
+            "ECI2",
+            "HSD17B4",
+            "PEX2",
+            "SLC25A17",
+            "SCP2",
+            "ACOX1",
+            "EHHADH",
+            "ACAA1",
+            "SLC27A2",
+            "CRAT"
+          ],
+          "adjusted_p_value": 7.001709925682577e-17
+        },
+        {
+          "rank": 4,
+          "term_name": "Fatty Acid Oxidation (GO:0019395)",
+          "term": "Fatty Acid Oxidation (GO:0019395)",
+          "overlap": "13/52",
+          "p_value": 5.020463025104031e-19,
+          "z_score": 72.73626373626374,
+          "combined_score": 3064.7857216088273,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD3",
+            "ECI2",
+            "HSD17B4",
+            "PEX2",
+            "PEX13",
+            "SLC25A17",
+            "SCP2",
+            "ACOX1",
+            "EHHADH",
+            "ACAA1",
+            "SLC27A2",
+            "HAO2"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD3",
+            "ECI2",
+            "HSD17B4",
+            "PEX2",
+            "PEX13",
+            "SLC25A17",
+            "SCP2",
+            "ACOX1",
+            "EHHADH",
+            "ACAA1",
+            "SLC27A2",
+            "HAO2"
+          ],
+          "adjusted_p_value": 1.253860640519732e-16
+        },
+        {
+          "rank": 5,
+          "term_name": "Peroxisome Organization (GO:0007031)",
+          "term": "Peroxisome Organization (GO:0007031)",
+          "overlap": "10/24",
+          "p_value": 1.7110914104705387e-17,
+          "z_score": 151.0790273556231,
+          "combined_score": 5832.680084010005,
+          "overlap_genes": [
+            "FIS1",
+            "ABCD2",
+            "ACOT8",
+            "ABCD3",
+            "PEX11A",
+            "PEX6",
+            "PEX11B",
+            "LONP2",
+            "PEX2",
+            "PEX14"
+          ],
+          "genes": [
+            "FIS1",
+            "ABCD2",
+            "ACOT8",
+            "ABCD3",
+            "PEX11A",
+            "PEX6",
+            "PEX11B",
+            "LONP2",
+            "PEX2",
+            "PEX14"
+          ],
+          "adjusted_p_value": 3.4187606381201364e-15
+        },
+        {
+          "rank": 6,
+          "term_name": "Very Long-Chain Fatty Acid Metabolic Process (GO:0000038)",
+          "term": "Very Long-Chain Fatty Acid Metabolic Process (GO:0000038)",
+          "overlap": "8/32",
+          "p_value": 3.8549145497180364e-12,
+          "z_score": 69.0,
+          "combined_score": 1813.4353869922656,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD3",
+            "ACSL1",
+            "ELOVL5",
+            "ACOX1",
+            "PEX2",
+            "ACAA1",
+            "SLC27A2"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD3",
+            "ACSL1",
+            "ELOVL5",
+            "ACOX1",
+            "PEX2",
+            "ACAA1",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 6.418432725280531e-10
+        },
+        {
+          "rank": 7,
+          "term_name": "Long-Chain Fatty Acid Metabolic Process (GO:0001676)",
+          "term": "Long-Chain Fatty Acid Metabolic Process (GO:0001676)",
+          "overlap": "10/78",
+          "p_value": 8.71354601566181e-12,
+          "z_score": 31.020025031289112,
+          "combined_score": 789.9603712198494,
+          "overlap_genes": [
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4",
+            "ACAA1",
+            "SLC27A2",
+            "FADS1"
+          ],
+          "genes": [
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4",
+            "ACAA1",
+            "SLC27A2",
+            "FADS1"
+          ],
+          "adjusted_p_value": 1.2435474956637355e-09
+        },
+        {
+          "rank": 8,
+          "term_name": "Steroid Metabolic Process (GO:0008202)",
+          "term": "Steroid Metabolic Process (GO:0008202)",
+          "overlap": "10/92",
+          "p_value": 4.7025411521849984e-11,
+          "z_score": 25.705760249091853,
+          "combined_score": 611.291538475527,
+          "overlap_genes": [
+            "SULT2B1",
+            "HSD11B2",
+            "STS",
+            "SCP2",
+            "NR1I2",
+            "TSPO",
+            "UGT2B17",
+            "DHCR24",
+            "CEL",
+            "ACAA1"
+          ],
+          "genes": [
+            "SULT2B1",
+            "HSD11B2",
+            "STS",
+            "SCP2",
+            "NR1I2",
+            "TSPO",
+            "UGT2B17",
+            "DHCR24",
+            "CEL",
+            "ACAA1"
+          ],
+          "adjusted_p_value": 5.872298263791017e-09
+        },
+        {
+          "rank": 9,
+          "term_name": "Peroxisomal Membrane Transport (GO:0015919)",
+          "term": "Peroxisomal Membrane Transport (GO:0015919)",
+          "overlap": "6/17",
+          "p_value": 2.018094465940674e-10,
+          "z_score": 110.67717996289424,
+          "combined_score": 2470.72385215815,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD3",
+            "PEX6",
+            "PEX5",
+            "PEX2",
+            "PEX14"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD3",
+            "PEX6",
+            "PEX5",
+            "PEX2",
+            "PEX14"
+          ],
+          "adjusted_p_value": 2.240084857194148e-08
+        },
+        {
+          "rank": 10,
+          "term_name": "Alpha-Linolenic Acid Metabolic Process (GO:0036109)",
+          "term": "Alpha-Linolenic Acid Metabolic Process (GO:0036109)",
+          "overlap": "5/9",
+          "p_value": 4.2751521828869214e-10,
+          "z_score": 251.16161616161617,
+          "combined_score": 5418.317389193948,
+          "overlap_genes": [
+            "ACOT8",
+            "SCP2",
+            "ELOVL5",
+            "ACAA1",
+            "FADS1"
+          ],
+          "genes": [
+            "ACOT8",
+            "SCP2",
+            "ELOVL5",
+            "ACAA1",
+            "FADS1"
+          ],
+          "adjusted_p_value": 4.2708770307040346e-08
+        },
+        {
+          "rank": 11,
+          "term_name": "Fatty Acid Beta-Oxidation Using acyl-CoA Oxidase (GO:0033540)",
+          "term": "Fatty Acid Beta-Oxidation Using acyl-CoA Oxidase (GO:0033540)",
+          "overlap": "5/11",
+          "p_value": 1.5546911102465994e-09,
+          "z_score": 167.42424242424244,
+          "combined_score": 3395.696635476212,
+          "overlap_genes": [
+            "ACOT8",
+            "SCP2",
+            "ACOX1",
+            "EHHADH",
+            "CRAT"
+          ],
+          "genes": [
+            "ACOT8",
+            "SCP2",
+            "ACOX1",
+            "EHHADH",
+            "CRAT"
+          ],
+          "adjusted_p_value": 1.411942199214866e-07
+        },
+        {
+          "rank": 12,
+          "term_name": "Protein Import Into Peroxisome Matrix (GO:0016558)",
+          "term": "Protein Import Into Peroxisome Matrix (GO:0016558)",
+          "overlap": "5/13",
+          "p_value": 4.295359161742507e-09,
+          "z_score": 125.55555555555556,
+          "combined_score": 2418.9195164239263,
+          "overlap_genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2",
+            "PEX13",
+            "PEX14"
+          ],
+          "genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2",
+            "PEX13",
+            "PEX14"
+          ],
+          "adjusted_p_value": 3.575886502150637e-07
+        },
+        {
+          "rank": 13,
+          "term_name": "Lipid Transport (GO:0006869)",
+          "term": "Lipid Transport (GO:0006869)",
+          "overlap": "9/108",
+          "p_value": 4.990830573431549e-09,
+          "z_score": 18.944497607655503,
+          "combined_score": 362.13664132045614,
+          "overlap_genes": [
+            "SLC25A17",
+            "ABCD3",
+            "CRABP2",
+            "SCP2",
+            "ACSL1",
+            "FABP6",
+            "EHHADH",
+            "CRABP1",
+            "CLN8"
+          ],
+          "genes": [
+            "SLC25A17",
+            "ABCD3",
+            "CRABP2",
+            "SCP2",
+            "ACSL1",
+            "FABP6",
+            "EHHADH",
+            "CRABP1",
+            "CLN8"
+          ],
+          "adjusted_p_value": 3.83526134066009e-07
+        },
+        {
+          "rank": 14,
+          "term_name": "Very Long-Chain Fatty Acid Catabolic Process (GO:0042760)",
+          "term": "Very Long-Chain Fatty Acid Catabolic Process (GO:0042760)",
+          "overlap": "4/6",
+          "p_value": 1.0264591820610299e-08,
+          "z_score": 397.88,
+          "combined_score": 7318.829741612564,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD3",
+            "ACOX1",
+            "SLC27A2"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD3",
+            "ACOX1",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 7.324519449135492e-07
+        },
+        {
+          "rank": 15,
+          "term_name": "Bile Acid Metabolic Process (GO:0008206)",
+          "term": "Bile Acid Metabolic Process (GO:0008206)",
+          "overlap": "6/31",
+          "p_value": 1.1320368077481468e-08,
+          "z_score": 48.66367346938775,
+          "combined_score": 890.3827972660523,
+          "overlap_genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "ACAA1",
+            "SLC27A2"
+          ],
+          "genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "ACAA1",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 7.539365139602657e-07
+        },
+        {
+          "rank": 16,
+          "term_name": "Protein Targeting To Peroxisome (GO:0006625)",
+          "term": "Protein Targeting To Peroxisome (GO:0006625)",
+          "overlap": "5/16",
+          "p_value": 1.4398911799537089e-08,
+          "z_score": 91.29935720844811,
+          "combined_score": 1648.51152908917,
+          "overlap_genes": [
+            "PEX6",
+            "PEX5",
+            "LONP2",
+            "PEX2",
+            "PEX14"
+          ],
+          "genes": [
+            "PEX6",
+            "PEX5",
+            "LONP2",
+            "PEX2",
+            "PEX14"
+          ],
+          "adjusted_p_value": 8.99032055483597e-07
+        },
+        {
+          "rank": 17,
+          "term_name": "Fatty Acid Alpha-Oxidation (GO:0001561)",
+          "term": "Fatty Acid Alpha-Oxidation (GO:0001561)",
+          "overlap": "4/7",
+          "p_value": 2.3855258736722944e-08,
+          "z_score": 265.24,
+          "combined_score": 4655.296507906373,
+          "overlap_genes": [
+            "SLC25A17",
+            "HAO2",
+            "PEX13",
+            "SLC27A2"
+          ],
+          "genes": [
+            "SLC25A17",
+            "HAO2",
+            "PEX13",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 1.4018472634109542e-06
+        },
+        {
+          "rank": 18,
+          "term_name": "Response To Reactive Oxygen Species (GO:0000302)",
+          "term": "Response To Reactive Oxygen Species (GO:0000302)",
+          "overlap": "7/66",
+          "p_value": 5.073742954724354e-08,
+          "z_score": 24.263323431766555,
+          "combined_score": 407.54138550628596,
+          "overlap_genes": [
+            "PRDX5",
+            "CAT",
+            "PEX5",
+            "PEX2",
+            "PEX13",
+            "PEX14",
+            "SOD1"
+          ],
+          "genes": [
+            "PRDX5",
+            "CAT",
+            "PEX5",
+            "PEX2",
+            "PEX13",
+            "PEX14",
+            "SOD1"
+          ],
+          "adjusted_p_value": 2.815927339872017e-06
+        },
+        {
+          "rank": 19,
+          "term_name": "Monocarboxylic Acid Transport (GO:0015718)",
+          "term": "Monocarboxylic Acid Transport (GO:0015718)",
+          "overlap": "7/73",
+          "p_value": 1.0304197105170541e-07,
+          "z_score": 21.68228678537957,
+          "combined_score": 348.82743648366255,
+          "overlap_genes": [
+            "ABCD3",
+            "SLC25A17",
+            "CRABP2",
+            "ACSL1",
+            "FABP6",
+            "ABCB4",
+            "CRABP1"
+          ],
+          "genes": [
+            "ABCD3",
+            "SLC25A17",
+            "CRABP2",
+            "ACSL1",
+            "FABP6",
+            "ABCB4",
+            "CRABP1"
+          ],
+          "adjusted_p_value": 5.417838372665985e-06
+        },
+        {
+          "rank": 20,
+          "term_name": "Bile Acid Biosynthetic Process (GO:0006699)",
+          "term": "Bile Acid Biosynthetic Process (GO:0006699)",
+          "overlap": "5/25",
+          "p_value": 1.6875700768304298e-07,
+          "z_score": 50.19191919191919,
+          "combined_score": 782.7332416142872,
+          "overlap_genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "SLC27A2"
+          ],
+          "genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 8.028011936921901e-06
+        },
+        {
+          "rank": 21,
+          "term_name": "fatty-acyl-CoA Biosynthetic Process (GO:0046949)",
+          "term": "fatty-acyl-CoA Biosynthetic Process (GO:0046949)",
+          "overlap": "5/25",
+          "p_value": 1.6875700768304298e-07,
+          "z_score": 50.19191919191919,
+          "combined_score": 782.7332416142872,
+          "overlap_genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4",
+            "SLC27A2"
+          ],
+          "genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 8.028011936921901e-06
+        },
+        {
+          "rank": 22,
+          "term_name": "Monocarboxylic Acid Biosynthetic Process (GO:0072330)",
+          "term": "Monocarboxylic Acid Biosynthetic Process (GO:0072330)",
+          "overlap": "6/65",
+          "p_value": 1.1009649839669619e-06,
+          "z_score": 20.584918713248012,
+          "combined_score": 282.4111591424129,
+          "overlap_genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "MLYCD",
+            "SLC27A2"
+          ],
+          "genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "MLYCD",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 4.9993819044681585e-05
+        },
+        {
+          "rank": 23,
+          "term_name": "Fatty Acid Transport (GO:0015908)",
+          "term": "Fatty Acid Transport (GO:0015908)",
+          "overlap": "5/38",
+          "p_value": 1.511097039871464e-06,
+          "z_score": 30.399449035812673,
+          "combined_score": 407.4339251015799,
+          "overlap_genes": [
+            "SLC25A17",
+            "CRABP2",
+            "ACSL1",
+            "FABP6",
+            "CRABP1"
+          ],
+          "genes": [
+            "SLC25A17",
+            "CRABP2",
+            "ACSL1",
+            "FABP6",
+            "CRABP1"
+          ],
+          "adjusted_p_value": 6.487542521054012e-05
+        },
+        {
+          "rank": 24,
+          "term_name": "Long-Chain fatty-acyl-CoA Biosynthetic Process (GO:0035338)",
+          "term": "Long-Chain fatty-acyl-CoA Biosynthetic Process (GO:0035338)",
+          "overlap": "4/17",
+          "p_value": 1.5585687738267898e-06,
+          "z_score": 61.17846153846154,
+          "combined_score": 818.0626409983915,
+          "overlap_genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 6.487542521054012e-05
+        },
+        {
+          "rank": 25,
+          "term_name": "fatty-acyl-CoA Metabolic Process (GO:0035337)",
+          "term": "fatty-acyl-CoA Metabolic Process (GO:0035337)",
+          "overlap": "4/18",
+          "p_value": 1.995876401632498e-06,
+          "z_score": 56.80571428571429,
+          "combined_score": 745.5424676527139,
+          "overlap_genes": [
+            "NUDT19",
+            "HSD17B4",
+            "ACSL4",
+            "SLC27A2"
+          ],
+          "genes": [
+            "NUDT19",
+            "HSD17B4",
+            "ACSL4",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 7.975522100923462e-05
+        },
+        {
+          "rank": 26,
+          "term_name": "Purine Ribonucleotide Transport (GO:0015868)",
+          "term": "Purine Ribonucleotide Transport (GO:0015868)",
+          "overlap": "4/19",
+          "p_value": 2.518020766039419e-06,
+          "z_score": 53.016,
+          "combined_score": 683.4842534909736,
+          "overlap_genes": [
+            "SLC35B2",
+            "SLC25A17",
+            "ABCC5",
+            "SLC25A4"
+          ],
+          "genes": [
+            "SLC35B2",
+            "SLC25A17",
+            "ABCC5",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 9.320520471680746e-05
+        },
+        {
+          "rank": 27,
+          "term_name": "Organic Hydroxy Compound Biosynthetic Process (GO:1901617)",
+          "term": "Organic Hydroxy Compound Biosynthetic Process (GO:1901617)",
+          "overlap": "5/42",
+          "p_value": 2.519059586940742e-06,
+          "z_score": 27.107562107562106,
+          "combined_score": 349.4605228034083,
+          "overlap_genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "SLC27A2"
+          ],
+          "genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 9.320520471680746e-05
+        },
+        {
+          "rank": 28,
+          "term_name": "Protein Import Into Peroxisome Matrix, Receptor Recycling (GO:0016562)",
+          "term": "Protein Import Into Peroxisome Matrix, Receptor Recycling (GO:0016562)",
+          "overlap": "3/6",
+          "p_value": 2.7008344446614184e-06,
+          "z_score": 196.96039603960395,
+          "combined_score": 2525.4163064959603,
+          "overlap_genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2"
+          ],
+          "genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2"
+          ],
+          "adjusted_p_value": 9.636191465059847e-05
+        },
+        {
+          "rank": 29,
+          "term_name": "Adenine Nucleotide Transport (GO:0051503)",
+          "term": "Adenine Nucleotide Transport (GO:0051503)",
+          "overlap": "4/20",
+          "p_value": 3.134965568265195e-06,
+          "z_score": 49.7,
+          "combined_score": 629.8427506373758,
+          "overlap_genes": [
+            "SLC35B2",
+            "SLC25A17",
+            "ABCC5",
+            "SLC25A4"
+          ],
+          "genes": [
+            "SLC35B2",
+            "SLC25A17",
+            "ABCC5",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.00010799415871368725
+        },
+        {
+          "rank": 30,
+          "term_name": "Intracellular Protein Transmembrane Transport (GO:0065002)",
+          "term": "Intracellular Protein Transmembrane Transport (GO:0065002)",
+          "overlap": "5/46",
+          "p_value": 3.992816317399941e-06,
+          "z_score": 24.4579945799458,
+          "combined_score": 304.0376664827699,
+          "overlap_genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2",
+            "PEX13",
+            "PEX14"
+          ],
+          "genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2",
+            "PEX13",
+            "PEX14"
+          ],
+          "adjusted_p_value": 0.00013296078336941803
+        },
+        {
+          "rank": 31,
+          "term_name": "Secondary Alcohol Metabolic Process (GO:1902652)",
+          "term": "Secondary Alcohol Metabolic Process (GO:1902652)",
+          "overlap": "5/47",
+          "p_value": 4.449780403278208e-06,
+          "z_score": 23.874458874458874,
+          "combined_score": 294.1967393738442,
+          "overlap_genes": [
+            "SULT2B1",
+            "IDH1",
+            "IDH2",
+            "CLN8",
+            "CLN6"
+          ],
+          "genes": [
+            "SULT2B1",
+            "IDH1",
+            "IDH2",
+            "CLN8",
+            "CLN6"
+          ],
+          "adjusted_p_value": 0.00014339776202822356
+        },
+        {
+          "rank": 32,
+          "term_name": "Unsaturated Fatty Acid Metabolic Process (GO:0033559)",
+          "term": "Unsaturated Fatty Acid Metabolic Process (GO:0033559)",
+          "overlap": "5/49",
+          "p_value": 5.486261556235768e-06,
+          "z_score": 22.786960514233243,
+          "combined_score": 276.02445683479726,
+          "overlap_genes": [
+            "ACOT8",
+            "SCP2",
+            "ELOVL5",
+            "ACAA1",
+            "FADS1"
+          ],
+          "genes": [
+            "ACOT8",
+            "SCP2",
+            "ELOVL5",
+            "ACAA1",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.00016634333090478147
+        },
+        {
+          "rank": 33,
+          "term_name": "Long-Chain Fatty Acid Transport (GO:0015909)",
+          "term": "Long-Chain Fatty Acid Transport (GO:0015909)",
+          "overlap": "4/23",
+          "p_value": 5.661334585347918e-06,
+          "z_score": 41.846315789473685,
+          "combined_score": 505.5809481279125,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD3",
+            "ACSL1",
+            "SLC27A2"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD3",
+            "ACSL1",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 0.00016634333090478147
+        },
+        {
+          "rank": 34,
+          "term_name": "Long-Chain fatty-acyl-CoA Metabolic Process (GO:0035336)",
+          "term": "Long-Chain fatty-acyl-CoA Metabolic Process (GO:0035336)",
+          "overlap": "4/23",
+          "p_value": 5.661334585347918e-06,
+          "z_score": 41.846315789473685,
+          "combined_score": 505.5809481279125,
+          "overlap_genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 0.00016634333090478147
+        },
+        {
+          "rank": 35,
+          "term_name": "Steroid Biosynthetic Process (GO:0006694)",
+          "term": "Steroid Biosynthetic Process (GO:0006694)",
+          "overlap": "5/50",
+          "p_value": 6.070787982586676e-06,
+          "z_score": 22.27946127946128,
+          "combined_score": 267.6213822766063,
+          "overlap_genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "SLC27A2"
+          ],
+          "genes": [
+            "HSD3B7",
+            "ACOT8",
+            "ABCD3",
+            "SCP2",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 0.00017327763413154543
+        },
+        {
+          "rank": 36,
+          "term_name": "Organic Anion Transport (GO:0015711)",
+          "term": "Organic Anion Transport (GO:0015711)",
+          "overlap": "6/89",
+          "p_value": 7.003727433927259e-06,
+          "z_score": 14.614949594295549,
+          "combined_score": 173.46583142919673,
+          "overlap_genes": [
+            "SLC23A2",
+            "SLC35B2",
+            "SLC25A17",
+            "SLC25A19",
+            "ABCC5",
+            "SLC25A4"
+          ],
+          "genes": [
+            "SLC23A2",
+            "SLC35B2",
+            "SLC25A17",
+            "SLC25A19",
+            "ABCC5",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.00019435343629148143
+        },
+        {
+          "rank": 37,
+          "term_name": "Peroxisome Fission (GO:0016559)",
+          "term": "Peroxisome Fission (GO:0016559)",
+          "overlap": "3/8",
+          "p_value": 7.505283330562849e-06,
+          "z_score": 118.16435643564357,
+          "combined_score": 1394.3279843335679,
+          "overlap_genes": [
+            "FIS1",
+            "PEX11A",
+            "PEX11B"
+          ],
+          "genes": [
+            "FIS1",
+            "PEX11A",
+            "PEX11B"
+          ],
+          "adjusted_p_value": 0.00020264264992519694
+        },
+        {
+          "rank": 38,
+          "term_name": "Removal Of Superoxide Radicals (GO:0019430)",
+          "term": "Removal Of Superoxide Radicals (GO:0019430)",
+          "overlap": "3/10",
+          "p_value": 1.596140787437272e-05,
+          "z_score": 84.3946251768034,
+          "combined_score": 932.1670555715073,
+          "overlap_genes": [
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.0004196170122762723
+        },
+        {
+          "rank": 39,
+          "term_name": "Cellular Response To Superoxide (GO:0071451)",
+          "term": "Cellular Response To Superoxide (GO:0071451)",
+          "overlap": "3/11",
+          "p_value": 2.186399432891262e-05,
+          "z_score": 73.84158415841584,
+          "combined_score": 792.3696252663755,
+          "overlap_genes": [
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.000553909469025989
+        },
+        {
+          "rank": 40,
+          "term_name": "Protein Transmembrane Import Into Intracellular Organelle (GO:0044743)",
+          "term": "Protein Transmembrane Import Into Intracellular Organelle (GO:0044743)",
+          "overlap": "4/32",
+          "p_value": 2.217855731835792e-05,
+          "z_score": 28.382857142857144,
+          "combined_score": 304.16161382593043,
+          "overlap_genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2",
+            "PEX14"
+          ],
+          "genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2",
+            "PEX14"
+          ],
+          "adjusted_p_value": 0.000553909469025989
+        },
+        {
+          "rank": 41,
+          "term_name": "Steroid Catabolic Process (GO:0006706)",
+          "term": "Steroid Catabolic Process (GO:0006706)",
+          "overlap": "3/12",
+          "p_value": 2.9041833961725803e-05,
+          "z_score": 65.63366336633663,
+          "combined_score": 685.6599965923051,
+          "overlap_genes": [
+            "STS",
+            "HSD17B11",
+            "YWHAH"
+          ],
+          "genes": [
+            "STS",
+            "HSD17B11",
+            "YWHAH"
+          ],
+          "adjusted_p_value": 0.0007076290762869288
+        },
+        {
+          "rank": 42,
+          "term_name": "Cellular Response To Oxidative Stress (GO:0034599)",
+          "term": "Cellular Response To Oxidative Stress (GO:0034599)",
+          "overlap": "6/117",
+          "p_value": 3.352234073750715e-05,
+          "z_score": 10.912851627137341,
+          "combined_score": 112.43836729552996,
+          "overlap_genes": [
+            "PRDX5",
+            "PEX5",
+            "PEX2",
+            "SOD2",
+            "PEX13",
+            "PEX14"
+          ],
+          "genes": [
+            "PRDX5",
+            "PEX5",
+            "PEX2",
+            "SOD2",
+            "PEX13",
+            "PEX14"
+          ],
+          "adjusted_p_value": 0.0007949358430998311
+        },
+        {
+          "rank": 43,
+          "term_name": "Lipid Biosynthetic Process (GO:0008610)",
+          "term": "Lipid Biosynthetic Process (GO:0008610)",
+          "overlap": "5/71",
+          "p_value": 3.421645771100374e-05,
+          "z_score": 15.17447199265381,
+          "combined_score": 156.03611842117448,
+          "overlap_genes": [
+            "SCP2",
+            "ACSL1",
+            "MLYCD",
+            "CLN8",
+            "FADS1"
+          ],
+          "genes": [
+            "SCP2",
+            "ACSL1",
+            "MLYCD",
+            "CLN8",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.0007949358430998311
+        },
+        {
+          "rank": 44,
+          "term_name": "Regulation Of Fatty Acid Beta-Oxidation (GO:0031998)",
+          "term": "Regulation Of Fatty Acid Beta-Oxidation (GO:0031998)",
+          "overlap": "3/13",
+          "p_value": 3.7611738100889086e-05,
+          "z_score": 59.067326732673266,
+          "combined_score": 601.7894058314013,
+          "overlap_genes": [
+            "ABCD2",
+            "LONP2",
+            "ABCD1"
+          ],
+          "genes": [
+            "ABCD2",
+            "LONP2",
+            "ABCD1"
+          ],
+          "adjusted_p_value": 0.0008539574173360954
+        },
+        {
+          "rank": 45,
+          "term_name": "Cellular Response To Reactive Oxygen Species (GO:0034614)",
+          "term": "Cellular Response To Reactive Oxygen Species (GO:0034614)",
+          "overlap": "5/73",
+          "p_value": 3.915029615355271e-05,
+          "z_score": 14.726678550207962,
+          "combined_score": 149.4478444572112,
+          "overlap_genes": [
+            "PRDX5",
+            "PEX5",
+            "PEX2",
+            "PEX13",
+            "PEX14"
+          ],
+          "genes": [
+            "PRDX5",
+            "PEX5",
+            "PEX2",
+            "PEX13",
+            "PEX14"
+          ],
+          "adjusted_p_value": 0.0008691365746088701
+        },
+        {
+          "rank": 46,
+          "term_name": "Organelle Organization (GO:0006996)",
+          "term": "Organelle Organization (GO:0006996)",
+          "overlap": "10/418",
+          "p_value": 6.485126859040287e-05,
+          "z_score": 5.081351689612015,
+          "combined_score": 49.00157845685587,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD3",
+            "PEX11A",
+            "PEX6",
+            "VPS4B",
+            "PEX11B",
+            "LONP2",
+            "PEX2",
+            "ABCD1",
+            "PEX14"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD3",
+            "PEX11A",
+            "PEX6",
+            "VPS4B",
+            "PEX11B",
+            "LONP2",
+            "PEX2",
+            "ABCD1",
+            "PEX14"
+          ],
+          "adjusted_p_value": 0.0014084003765611405
+        },
+        {
+          "rank": 47,
+          "term_name": "Regulation Of Fatty Acid Oxidation (GO:0046320)",
+          "term": "Regulation Of Fatty Acid Oxidation (GO:0046320)",
+          "overlap": "3/16",
+          "p_value": 7.281401281950036e-05,
+          "z_score": 45.42955064737243,
+          "combined_score": 432.8346838535662,
+          "overlap_genes": [
+            "LONP2",
+            "MLYCD",
+            "ABCD1"
+          ],
+          "genes": [
+            "LONP2",
+            "MLYCD",
+            "ABCD1"
+          ],
+          "adjusted_p_value": 0.0015476850809932096
+        },
+        {
+          "rank": 48,
+          "term_name": "Receptor Recycling (GO:0001881)",
+          "term": "Receptor Recycling (GO:0001881)",
+          "overlap": "3/17",
+          "p_value": 8.808317003142788e-05,
+          "z_score": 42.18246110325318,
+          "combined_score": 393.86730230343085,
+          "overlap_genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2"
+          ],
+          "genes": [
+            "PEX6",
+            "PEX5",
+            "PEX2"
+          ],
+          "adjusted_p_value": 0.0018332309762790927
+        },
+        {
+          "rank": 49,
+          "term_name": "Xenobiotic Transport (GO:0042908)",
+          "term": "Xenobiotic Transport (GO:0042908)",
+          "overlap": "3/20",
+          "p_value": 0.00014600305870235113,
+          "z_score": 34.733255678509025,
+          "combined_score": 306.76004989136413,
+          "overlap_genes": [
+            "ABCB1",
+            "ABCC5",
+            "NR1I2"
+          ],
+          "genes": [
+            "ABCB1",
+            "ABCC5",
+            "NR1I2"
+          ],
+          "adjusted_p_value": 0.0028599422675225253
+        },
+        {
+          "rank": 50,
+          "term_name": "Hydrogen Peroxide Catabolic Process (GO:0042744)",
+          "term": "Hydrogen Peroxide Catabolic Process (GO:0042744)",
+          "overlap": "3/20",
+          "p_value": 0.00014600305870235113,
+          "z_score": 34.733255678509025,
+          "combined_score": 306.76004989136413,
+          "overlap_genes": [
+            "PRDX5",
+            "PRDX1",
+            "CAT"
+          ],
+          "genes": [
+            "PRDX5",
+            "PRDX1",
+            "CAT"
+          ],
+          "adjusted_p_value": 0.0028599422675225253
+        },
+        {
+          "rank": 51,
+          "term_name": "Monocarboxylic Acid Catabolic Process (GO:0072329)",
+          "term": "Monocarboxylic Acid Catabolic Process (GO:0072329)",
+          "overlap": "3/20",
+          "p_value": 0.00014600305870235113,
+          "z_score": 34.733255678509025,
+          "combined_score": 306.76004989136413,
+          "overlap_genes": [
+            "ACOT8",
+            "ACOX1",
+            "NUDT19"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACOX1",
+            "NUDT19"
+          ],
+          "adjusted_p_value": 0.0028599422675225253
+        },
+        {
+          "rank": 52,
+          "term_name": "Monocarboxylic Acid Metabolic Process (GO:0032787)",
+          "term": "Monocarboxylic Acid Metabolic Process (GO:0032787)",
+          "overlap": "5/97",
+          "p_value": 0.00015220821568978827,
+          "z_score": 10.871761089152393,
+          "combined_score": 95.56561896476903,
+          "overlap_genes": [
+            "GNPAT",
+            "SCP2",
+            "TSPO",
+            "ACSL4",
+            "ACAA1"
+          ],
+          "genes": [
+            "GNPAT",
+            "SCP2",
+            "TSPO",
+            "ACSL4",
+            "ACAA1"
+          ],
+          "adjusted_p_value": 0.002924153989886509
+        },
+        {
+          "rank": 53,
+          "term_name": "Protein Catabolic Process (GO:0030163)",
+          "term": "Protein Catabolic Process (GO:0030163)",
+          "overlap": "5/102",
+          "p_value": 0.00019272366380918135,
+          "z_score": 10.3087576798917,
+          "combined_score": 88.18372325568018,
+          "overlap_genes": [
+            "SIAH1",
+            "CEL",
+            "IDE",
+            "CLN8",
+            "CLN6"
+          ],
+          "genes": [
+            "SIAH1",
+            "CEL",
+            "IDE",
+            "CLN8",
+            "CLN6"
+          ],
+          "adjusted_p_value": 0.0036213168514591847
+        },
+        {
+          "rank": 54,
+          "term_name": "Organelle Fission (GO:0048285)",
+          "term": "Organelle Fission (GO:0048285)",
+          "overlap": "3/22",
+          "p_value": 0.0001957468568356316,
+          "z_score": 31.07399687337155,
+          "combined_score": 265.3311729233719,
+          "overlap_genes": [
+            "FIS1",
+            "PEX11A",
+            "PEX11B"
+          ],
+          "genes": [
+            "FIS1",
+            "PEX11A",
+            "PEX11B"
+          ],
+          "adjusted_p_value": 0.0036213168514591847
+        },
+        {
+          "rank": 55,
+          "term_name": "Cellular Lipid Catabolic Process (GO:0044242)",
+          "term": "Cellular Lipid Catabolic Process (GO:0044242)",
+          "overlap": "3/23",
+          "p_value": 0.00022425989539796195,
+          "z_score": 29.518811881188117,
+          "combined_score": 248.03786616205497,
+          "overlap_genes": [
+            "ACOT8",
+            "ACOX1",
+            "NUDT19"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACOX1",
+            "NUDT19"
+          ],
+          "adjusted_p_value": 0.004000636348260071
+        },
+        {
+          "rank": 56,
+          "term_name": "Positive Regulation Of Protein Targeting To Membrane (GO:0090314)",
+          "term": "Positive Regulation Of Protein Targeting To Membrane (GO:0090314)",
+          "overlap": "3/23",
+          "p_value": 0.00022425989539796195,
+          "z_score": 29.518811881188117,
+          "combined_score": 248.03786616205497,
+          "overlap_genes": [
+            "FIS1",
+            "ITGB1BP1",
+            "HRAS"
+          ],
+          "genes": [
+            "FIS1",
+            "ITGB1BP1",
+            "HRAS"
+          ],
+          "adjusted_p_value": 0.004000636348260071
+        },
+        {
+          "rank": 57,
+          "term_name": "Pexophagy (GO:0000425)",
+          "term": "Pexophagy (GO:0000425)",
+          "overlap": "2/5",
+          "p_value": 0.0002650830977784653,
+          "z_score": 130.01960784313727,
+          "combined_score": 1070.77221634846,
+          "overlap_genes": [
+            "PEX5",
+            "PEX2"
+          ],
+          "genes": [
+            "PEX5",
+            "PEX2"
+          ],
+          "adjusted_p_value": 0.004479622897019746
+        },
+        {
+          "rank": 58,
+          "term_name": "Medium-Chain fatty-acyl-CoA Metabolic Process (GO:0036112)",
+          "term": "Medium-Chain fatty-acyl-CoA Metabolic Process (GO:0036112)",
+          "overlap": "2/5",
+          "p_value": 0.0002650830977784653,
+          "z_score": 130.01960784313727,
+          "combined_score": 1070.77221634846,
+          "overlap_genes": [
+            "NUDT19",
+            "HSD17B4"
+          ],
+          "genes": [
+            "NUDT19",
+            "HSD17B4"
+          ],
+          "adjusted_p_value": 0.004479622897019746
+        },
+        {
+          "rank": 59,
+          "term_name": "Sterol Metabolic Process (GO:0016125)",
+          "term": "Sterol Metabolic Process (GO:0016125)",
+          "overlap": "4/60",
+          "p_value": 0.0002689875751950125,
+          "z_score": 14.17142857142857,
+          "combined_score": 116.50112293355623,
+          "overlap_genes": [
+            "SULT2B1",
+            "CEL",
+            "CLN8",
+            "CLN6"
+          ],
+          "genes": [
+            "SULT2B1",
+            "CEL",
+            "CLN8",
+            "CLN6"
+          ],
+          "adjusted_p_value": 0.004479622897019746
+        },
+        {
+          "rank": 60,
+          "term_name": "Cellular Response To Oxygen-Containing Compound (GO:1901701)",
+          "term": "Cellular Response To Oxygen-Containing Compound (GO:1901701)",
+          "overlap": "9/406",
+          "p_value": 0.0002690464202414262,
+          "z_score": 4.653082327986213,
+          "combined_score": 38.25125248444843,
+          "overlap_genes": [
+            "PRDX5",
+            "DLG4",
+            "ABCB4",
+            "EHHADH",
+            "PEX5",
+            "PEX2",
+            "BCL10",
+            "PEX13",
+            "PEX14"
+          ],
+          "genes": [
+            "PRDX5",
+            "DLG4",
+            "ABCB4",
+            "EHHADH",
+            "PEX5",
+            "PEX2",
+            "BCL10",
+            "PEX13",
+            "PEX14"
+          ],
+          "adjusted_p_value": 0.004479622897019746
+        },
+        {
+          "rank": 61,
+          "term_name": "Protein-Containing Complex Disassembly (GO:0032984)",
+          "term": "Protein-Containing Complex Disassembly (GO:0032984)",
+          "overlap": "4/62",
+          "p_value": 0.0003052776807943483,
+          "z_score": 13.681379310344827,
+          "combined_score": 110.74103486484861,
+          "overlap_genes": [
+            "VPS4B",
+            "PEX5",
+            "PEX2",
+            "PEX14"
+          ],
+          "genes": [
+            "VPS4B",
+            "PEX5",
+            "PEX2",
+            "PEX14"
+          ],
+          "adjusted_p_value": 0.004999547592025475
+        },
+        {
+          "rank": 62,
+          "term_name": "Phospholipid Biosynthetic Process (GO:0008654)",
+          "term": "Phospholipid Biosynthetic Process (GO:0008654)",
+          "overlap": "3/27",
+          "p_value": 0.00036483642283579584,
+          "z_score": 24.594059405940595,
+          "combined_score": 194.68808584393466,
+          "overlap_genes": [
+            "IDI1",
+            "FDPS",
+            "FADS1"
+          ],
+          "genes": [
+            "IDI1",
+            "FDPS",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.005805488311664596
+        },
+        {
+          "rank": 63,
+          "term_name": "Fatty Acid Biosynthetic Process (GO:0006633)",
+          "term": "Fatty Acid Biosynthetic Process (GO:0006633)",
+          "overlap": "4/65",
+          "p_value": 0.0003661118755103799,
+          "z_score": 13.00655737704918,
+          "combined_score": 102.91531652161811,
+          "overlap_genes": [
+            "ABCD3",
+            "ELOVL5",
+            "MLYCD",
+            "FADS1"
+          ],
+          "genes": [
+            "ABCD3",
+            "ELOVL5",
+            "MLYCD",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.005805488311664596
+        },
+        {
+          "rank": 64,
+          "term_name": "Regulation Of Phospholipid Transport (GO:2001138)",
+          "term": "Regulation Of Phospholipid Transport (GO:2001138)",
+          "overlap": "2/6",
+          "p_value": 0.0003962753614965705,
+          "z_score": 97.50980392156863,
+          "combined_score": 763.833418078085,
+          "overlap_genes": [
+            "ABCB4",
+            "TSPO"
+          ],
+          "genes": [
+            "ABCB4",
+            "TSPO"
+          ],
+          "adjusted_p_value": 0.006040924082073243
+        },
+        {
+          "rank": 65,
+          "term_name": "Nucleotide Transport (GO:0006862)",
+          "term": "Nucleotide Transport (GO:0006862)",
+          "overlap": "2/6",
+          "p_value": 0.0003962753614965705,
+          "z_score": 97.50980392156863,
+          "combined_score": 763.833418078085,
+          "overlap_genes": [
+            "SLC25A19",
+            "ABCC5"
+          ],
+          "genes": [
+            "SLC25A19",
+            "ABCC5"
+          ],
+          "adjusted_p_value": 0.006040924082073243
+        },
+        {
+          "rank": 66,
+          "term_name": "Regulation Of Protein Targeting To Membrane (GO:0090313)",
+          "term": "Regulation Of Protein Targeting To Membrane (GO:0090313)",
+          "overlap": "3/28",
+          "p_value": 0.0004070772946660061,
+          "z_score": 23.609108910891088,
+          "combined_score": 184.30468524688126,
+          "overlap_genes": [
+            "FIS1",
+            "ITGB1BP1",
+            "HRAS"
+          ],
+          "genes": [
+            "FIS1",
+            "ITGB1BP1",
+            "HRAS"
+          ],
+          "adjusted_p_value": 0.006040924082073243
+        },
+        {
+          "rank": 67,
+          "term_name": "Diterpenoid Metabolic Process (GO:0016101)",
+          "term": "Diterpenoid Metabolic Process (GO:0016101)",
+          "overlap": "3/28",
+          "p_value": 0.0004070772946660061,
+          "z_score": 23.609108910891088,
+          "combined_score": 184.30468524688126,
+          "overlap_genes": [
+            "RDH11",
+            "ALDH1A1",
+            "DHRS3"
+          ],
+          "genes": [
+            "RDH11",
+            "ALDH1A1",
+            "DHRS3"
+          ],
+          "adjusted_p_value": 0.006040924082073243
+        },
+        {
+          "rank": 68,
+          "term_name": "Cholesterol Metabolic Process (GO:0008203)",
+          "term": "Cholesterol Metabolic Process (GO:0008203)",
+          "overlap": "4/67",
+          "p_value": 0.0004111940316125931,
+          "z_score": 12.592380952380953,
+          "combined_score": 98.1758100285217,
+          "overlap_genes": [
+            "SULT2B1",
+            "DHCR24",
+            "CLN8",
+            "CLN6"
+          ],
+          "genes": [
+            "SULT2B1",
+            "DHCR24",
+            "CLN8",
+            "CLN6"
+          ],
+          "adjusted_p_value": 0.006040924082073243
+        },
+        {
+          "rank": 69,
+          "term_name": "Establishment Of Protein Localization To Peroxisome (GO:0072663)",
+          "term": "Establishment Of Protein Localization To Peroxisome (GO:0072663)",
+          "overlap": "2/7",
+          "p_value": 0.0005529033005328641,
+          "z_score": 78.00392156862745,
+          "combined_score": 585.0549529900652,
+          "overlap_genes": [
+            "PEX6",
+            "LONP2"
+          ],
+          "genes": [
+            "PEX6",
+            "LONP2"
+          ],
+          "adjusted_p_value": 0.007890719960461876
+        },
+        {
+          "rank": 70,
+          "term_name": "Glucocorticoid Metabolic Process (GO:0008211)",
+          "term": "Glucocorticoid Metabolic Process (GO:0008211)",
+          "overlap": "2/7",
+          "p_value": 0.0005529033005328641,
+          "z_score": 78.00392156862745,
+          "combined_score": 585.0549529900652,
+          "overlap_genes": [
+            "HSD11B2",
+            "YWHAH"
+          ],
+          "genes": [
+            "HSD11B2",
+            "YWHAH"
+          ],
+          "adjusted_p_value": 0.007890719960461876
+        },
+        {
+          "rank": 71,
+          "term_name": "Superoxide Metabolic Process (GO:0006801)",
+          "term": "Superoxide Metabolic Process (GO:0006801)",
+          "overlap": "3/34",
+          "p_value": 0.0007269355198078752,
+          "z_score": 19.033854998403065,
+          "combined_score": 137.5514417752364,
+          "overlap_genes": [
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.009657490307010474
+        },
+        {
+          "rank": 72,
+          "term_name": "Organonitrogen Compound Catabolic Process (GO:1901565)",
+          "term": "Organonitrogen Compound Catabolic Process (GO:1901565)",
+          "overlap": "4/78",
+          "p_value": 0.0007325165895680621,
+          "z_score": 10.714594594594594,
+          "combined_score": 77.34892163012836,
+          "overlap_genes": [
+            "SIAH1",
+            "IDE",
+            "CLN8",
+            "CLN6"
+          ],
+          "genes": [
+            "SIAH1",
+            "IDE",
+            "CLN8",
+            "CLN6"
+          ],
+          "adjusted_p_value": 0.009657490307010474
+        },
+        {
+          "rank": 73,
+          "term_name": "Peroxisomal Transport (GO:0043574)",
+          "term": "Peroxisomal Transport (GO:0043574)",
+          "overlap": "2/8",
+          "p_value": 0.0007347039673000961,
+          "z_score": 65.0,
+          "combined_score": 469.0427888549896,
+          "overlap_genes": [
+            "PEX6",
+            "LONP2"
+          ],
+          "genes": [
+            "PEX6",
+            "LONP2"
+          ],
+          "adjusted_p_value": 0.009657490307010474
+        },
+        {
+          "rank": 74,
+          "term_name": "Ribonucleoside Bisphosphate Catabolic Process (GO:0034031)",
+          "term": "Ribonucleoside Bisphosphate Catabolic Process (GO:0034031)",
+          "overlap": "2/8",
+          "p_value": 0.0007347039673000961,
+          "z_score": 65.0,
+          "combined_score": 469.0427888549896,
+          "overlap_genes": [
+            "NUDT19",
+            "MLYCD"
+          ],
+          "genes": [
+            "NUDT19",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.009657490307010474
+        },
+        {
+          "rank": 75,
+          "term_name": "Tricarboxylic Acid Metabolic Process (GO:0072350)",
+          "term": "Tricarboxylic Acid Metabolic Process (GO:0072350)",
+          "overlap": "2/8",
+          "p_value": 0.0007347039673000961,
+          "z_score": 65.0,
+          "combined_score": 469.0427888549896,
+          "overlap_genes": [
+            "IDH1",
+            "IDH2"
+          ],
+          "genes": [
+            "IDH1",
+            "IDH2"
+          ],
+          "adjusted_p_value": 0.009657490307010474
+        },
+        {
+          "rank": 76,
+          "term_name": "Purine Nucleoside Bisphosphate Catabolic Process (GO:0034034)",
+          "term": "Purine Nucleoside Bisphosphate Catabolic Process (GO:0034034)",
+          "overlap": "2/8",
+          "p_value": 0.0007347039673000961,
+          "z_score": 65.0,
+          "combined_score": 469.0427888549896,
+          "overlap_genes": [
+            "NUDT19",
+            "MLYCD"
+          ],
+          "genes": [
+            "NUDT19",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.009657490307010474
+        },
+        {
+          "rank": 77,
+          "term_name": "Negative Regulation Of Cell Population Proliferation (GO:0008285)",
+          "term": "Negative Regulation Of Cell Population Proliferation (GO:0008285)",
+          "overlap": "8/379",
+          "p_value": 0.0008180042015064501,
+          "z_score": 4.385669362084457,
+          "combined_score": 31.176158184135755,
+          "overlap_genes": [
+            "SULT2B1",
+            "CTBP1",
+            "FABP6",
+            "PEX2",
+            "ITGB1BP1",
+            "CEL",
+            "SOD2",
+            "HRAS"
+          ],
+          "genes": [
+            "SULT2B1",
+            "CTBP1",
+            "FABP6",
+            "PEX2",
+            "ITGB1BP1",
+            "CEL",
+            "SOD2",
+            "HRAS"
+          ],
+          "adjusted_p_value": 0.01061280775720706
+        },
+        {
+          "rank": 78,
+          "term_name": "Autophagy Of Peroxisome (GO:0030242)",
+          "term": "Autophagy Of Peroxisome (GO:0030242)",
+          "overlap": "2/9",
+          "p_value": 0.0009414164080052198,
+          "z_score": 55.71148459383753,
+          "combined_score": 388.20458857334756,
+          "overlap_genes": [
+            "PEX5",
+            "PEX2"
+          ],
+          "genes": [
+            "PEX5",
+            "PEX2"
+          ],
+          "adjusted_p_value": 0.011904746729078666
+        },
+        {
+          "rank": 79,
+          "term_name": "Myelin Maintenance (GO:0043217)",
+          "term": "Myelin Maintenance (GO:0043217)",
+          "overlap": "2/9",
+          "p_value": 0.0009414164080052198,
+          "z_score": 55.71148459383753,
+          "combined_score": 388.20458857334756,
+          "overlap_genes": [
+            "ABCD2",
+            "SOD1"
+          ],
+          "genes": [
+            "ABCD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.011904746729078666
+        },
+        {
+          "rank": 80,
+          "term_name": "Macromolecule Catabolic Process (GO:0009057)",
+          "term": "Macromolecule Catabolic Process (GO:0009057)",
+          "overlap": "4/85",
+          "p_value": 0.0010113137816671746,
+          "z_score": 9.785185185185185,
+          "combined_score": 67.48357874611766,
+          "overlap_genes": [
+            "SIAH1",
+            "IDE",
+            "CLN8",
+            "CLN6"
+          ],
+          "genes": [
+            "SIAH1",
+            "IDE",
+            "CLN8",
+            "CLN6"
+          ],
+          "adjusted_p_value": 0.012628780848568843
+        },
+        {
+          "rank": 81,
+          "term_name": "Retina Homeostasis (GO:0001895)",
+          "term": "Retina Homeostasis (GO:0001895)",
+          "overlap": "3/39",
+          "p_value": 0.0010894872341728871,
+          "z_score": 16.386138613861387,
+          "combined_score": 111.78702613771516,
+          "overlap_genes": [
+            "PRDX1",
+            "ALB",
+            "SOD1"
+          ],
+          "genes": [
+            "PRDX1",
+            "ALB",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.013273143255350174
+        },
+        {
+          "rank": 82,
+          "term_name": "Positive Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001244)",
+          "term": "Positive Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001244)",
+          "overlap": "3/39",
+          "p_value": 0.0010894872341728871,
+          "z_score": 16.386138613861387,
+          "combined_score": 111.78702613771516,
+          "overlap_genes": [
+            "FIS1",
+            "SIAH1",
+            "SOD1"
+          ],
+          "genes": [
+            "FIS1",
+            "SIAH1",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.013273143255350174
+        },
+        {
+          "rank": 83,
+          "term_name": "Positive Regulation Of Phospholipid Transport (GO:2001140)",
+          "term": "Positive Regulation Of Phospholipid Transport (GO:2001140)",
+          "overlap": "2/10",
+          "p_value": 0.0011727816519245243,
+          "z_score": 48.745098039215684,
+          "combined_score": 328.95029221317066,
+          "overlap_genes": [
+            "ABCB4",
+            "TSPO"
+          ],
+          "genes": [
+            "ABCB4",
+            "TSPO"
+          ],
+          "adjusted_p_value": 0.013790876958913312
+        },
+        {
+          "rank": 84,
+          "term_name": "Retinoid Metabolic Process (GO:0001523)",
+          "term": "Retinoid Metabolic Process (GO:0001523)",
+          "overlap": "3/40",
+          "p_value": 0.0011733979394470786,
+          "z_score": 15.942467219694942,
+          "combined_score": 107.57740162154838,
+          "overlap_genes": [
+            "RDH11",
+            "ALDH1A1",
+            "DHRS3"
+          ],
+          "genes": [
+            "RDH11",
+            "ALDH1A1",
+            "DHRS3"
+          ],
+          "adjusted_p_value": 0.013790876958913312
+        },
+        {
+          "rank": 85,
+          "term_name": "Water-Soluble Vitamin Metabolic Process (GO:0006767)",
+          "term": "Water-Soluble Vitamin Metabolic Process (GO:0006767)",
+          "overlap": "3/40",
+          "p_value": 0.0011733979394470786,
+          "z_score": 15.942467219694942,
+          "combined_score": 107.57740162154838,
+          "overlap_genes": [
+            "SLC23A2",
+            "SLC25A19",
+            "ABCD1"
+          ],
+          "genes": [
+            "SLC23A2",
+            "SLC25A19",
+            "ABCD1"
+          ],
+          "adjusted_p_value": 0.013790876958913312
+        },
+        {
+          "rank": 86,
+          "term_name": "Negative Regulation Of Reactive Oxygen Species Biosynthetic Process (GO:1903427)",
+          "term": "Negative Regulation Of Reactive Oxygen Species Biosynthetic Process (GO:1903427)",
+          "overlap": "2/11",
+          "p_value": 0.0014285426986205881,
+          "z_score": 43.326797385620914,
+          "combined_score": 283.8382016858443,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD1"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD1"
+          ],
+          "adjusted_p_value": 0.016217206317295084
+        },
+        {
+          "rank": 87,
+          "term_name": "Organic Cyclic Compound Catabolic Process (GO:1901361)",
+          "term": "Organic Cyclic Compound Catabolic Process (GO:1901361)",
+          "overlap": "2/11",
+          "p_value": 0.0014285426986205881,
+          "z_score": 43.326797385620914,
+          "combined_score": 283.8382016858443,
+          "overlap_genes": [
+            "STS",
+            "EPHX2"
+          ],
+          "genes": [
+            "STS",
+            "EPHX2"
+          ],
+          "adjusted_p_value": 0.016217206317295084
+        },
+        {
+          "rank": 88,
+          "term_name": "Positive Regulation Of Lipid Transport (GO:0032370)",
+          "term": "Positive Regulation Of Lipid Transport (GO:0032370)",
+          "overlap": "2/11",
+          "p_value": 0.0014285426986205881,
+          "z_score": 43.326797385620914,
+          "combined_score": 283.8382016858443,
+          "overlap_genes": [
+            "ABCB4",
+            "TSPO"
+          ],
+          "genes": [
+            "ABCB4",
+            "TSPO"
+          ],
+          "adjusted_p_value": 0.016217206317295084
+        },
+        {
+          "rank": 89,
+          "term_name": "DNA Conformation Change (GO:0071103)",
+          "term": "DNA Conformation Change (GO:0071103)",
+          "overlap": "2/12",
+          "p_value": 0.001708444506433439,
+          "z_score": 38.9921568627451,
+          "combined_score": 248.4647289250997,
+          "overlap_genes": [
+            "TOP2A",
+            "ERCC3"
+          ],
+          "genes": [
+            "TOP2A",
+            "ERCC3"
+          ],
+          "adjusted_p_value": 0.018755341339857203
+        },
+        {
+          "rank": 90,
+          "term_name": "Positive Regulation Of Fatty Acid Oxidation (GO:0046321)",
+          "term": "Positive Regulation Of Fatty Acid Oxidation (GO:0046321)",
+          "overlap": "2/12",
+          "p_value": 0.001708444506433439,
+          "z_score": 38.9921568627451,
+          "combined_score": 248.4647289250997,
+          "overlap_genes": [
+            "ABCD2",
+            "MLYCD"
+          ],
+          "genes": [
+            "ABCD2",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.018755341339857203
+        },
+        {
+          "rank": 91,
+          "term_name": "Fatty Acid Transmembrane Transport (GO:1902001)",
+          "term": "Fatty Acid Transmembrane Transport (GO:1902001)",
+          "overlap": "2/12",
+          "p_value": 0.001708444506433439,
+          "z_score": 38.9921568627451,
+          "combined_score": 248.4647289250997,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD3"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD3"
+          ],
+          "adjusted_p_value": 0.018755341339857203
+        },
+        {
+          "rank": 92,
+          "term_name": "Negative Regulation Of Cellular Process (GO:0048523)",
+          "term": "Negative Regulation Of Cellular Process (GO:0048523)",
+          "overlap": "9/537",
+          "p_value": 0.0019469595383354694,
+          "z_score": 3.4751196172248804,
+          "combined_score": 21.689911601144768,
+          "overlap_genes": [
+            "SULT2B1",
+            "SMARCC1",
+            "CTBP1",
+            "FABP6",
+            "VPS4B",
+            "ITGB1BP1",
+            "SOD2",
+            "HRAS",
+            "ESR2"
+          ],
+          "genes": [
+            "SULT2B1",
+            "SMARCC1",
+            "CTBP1",
+            "FABP6",
+            "VPS4B",
+            "ITGB1BP1",
+            "SOD2",
+            "HRAS",
+            "ESR2"
+          ],
+          "adjusted_p_value": 0.021141441073881887
+        },
+        {
+          "rank": 93,
+          "term_name": "ATP Transport (GO:0015867)",
+          "term": "ATP Transport (GO:0015867)",
+          "overlap": "2/13",
+          "p_value": 0.0020122339799297684,
+          "z_score": 35.445632798573975,
+          "combined_score": 220.06455651629238,
+          "overlap_genes": [
+            "SLC25A17",
+            "SLC25A4"
+          ],
+          "genes": [
+            "SLC25A17",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.02116022890473514
+        },
+        {
+          "rank": 94,
+          "term_name": "acyl-CoA Biosynthetic Process (GO:0071616)",
+          "term": "acyl-CoA Biosynthetic Process (GO:0071616)",
+          "overlap": "2/13",
+          "p_value": 0.0020122339799297684,
+          "z_score": 35.445632798573975,
+          "combined_score": 220.06455651629238,
+          "overlap_genes": [
+            "MLYCD",
+            "SLC27A2"
+          ],
+          "genes": [
+            "MLYCD",
+            "SLC27A2"
+          ],
+          "adjusted_p_value": 0.02116022890473514
+        },
+        {
+          "rank": 95,
+          "term_name": "Positive Regulation Of Fatty Acid Biosynthetic Process (GO:0045723)",
+          "term": "Positive Regulation Of Fatty Acid Biosynthetic Process (GO:0045723)",
+          "overlap": "2/13",
+          "p_value": 0.0020122339799297684,
+          "z_score": 35.445632798573975,
+          "combined_score": 220.06455651629238,
+          "overlap_genes": [
+            "ABCD2",
+            "ELOVL5"
+          ],
+          "genes": [
+            "ABCD2",
+            "ELOVL5"
+          ],
+          "adjusted_p_value": 0.02116022890473514
+        },
+        {
+          "rank": 96,
+          "term_name": "Dicarboxylic Acid Metabolic Process (GO:0043648)",
+          "term": "Dicarboxylic Acid Metabolic Process (GO:0043648)",
+          "overlap": "3/50",
+          "p_value": 0.0022418858798504493,
+          "z_score": 12.544133136717926,
+          "combined_score": 76.5247046664134,
+          "overlap_genes": [
+            "ACOT8",
+            "IDH1",
+            "IDH2"
+          ],
+          "genes": [
+            "ACOT8",
+            "IDH1",
+            "IDH2"
+          ],
+          "adjusted_p_value": 0.02332962493719374
+        },
+        {
+          "rank": 97,
+          "term_name": "2-Oxoglutarate Metabolic Process (GO:0006103)",
+          "term": "2-Oxoglutarate Metabolic Process (GO:0006103)",
+          "overlap": "2/14",
+          "p_value": 0.002339659956910014,
+          "z_score": 32.490196078431374,
+          "combined_score": 196.81747482356616,
+          "overlap_genes": [
+            "IDH1",
+            "IDH2"
+          ],
+          "genes": [
+            "IDH1",
+            "IDH2"
+          ],
+          "adjusted_p_value": 0.023373202969531038
+        },
+        {
+          "rank": 98,
+          "term_name": "T Cell Proliferation (GO:0042098)",
+          "term": "T Cell Proliferation (GO:0042098)",
+          "overlap": "2/14",
+          "p_value": 0.002339659956910014,
+          "z_score": 32.490196078431374,
+          "combined_score": 196.81747482356616,
+          "overlap_genes": [
+            "CADM1",
+            "CTPS1"
+          ],
+          "genes": [
+            "CADM1",
+            "CTPS1"
+          ],
+          "adjusted_p_value": 0.023373202969531038
+        },
+        {
+          "rank": 99,
+          "term_name": "Ceramide Transport (GO:0035627)",
+          "term": "Ceramide Transport (GO:0035627)",
+          "overlap": "2/14",
+          "p_value": 0.002339659956910014,
+          "z_score": 32.490196078431374,
+          "combined_score": 196.81747482356616,
+          "overlap_genes": [
+            "ABCB1",
+            "ABCB4"
+          ],
+          "genes": [
+            "ABCB1",
+            "ABCB4"
+          ],
+          "adjusted_p_value": 0.023373202969531038
+        },
+        {
+          "rank": 100,
+          "term_name": "Mitotic Recombination (GO:0006312)",
+          "term": "Mitotic Recombination (GO:0006312)",
+          "overlap": "2/14",
+          "p_value": 0.002339659956910014,
+          "z_score": 32.490196078431374,
+          "combined_score": 196.81747482356616,
+          "overlap_genes": [
+            "MSH2",
+            "ERCC1"
+          ],
+          "genes": [
+            "MSH2",
+            "ERCC1"
+          ],
+          "adjusted_p_value": 0.023373202969531038
+        },
+        {
+          "rank": 101,
+          "term_name": "Mitochondrial Transport (GO:0006839)",
+          "term": "Mitochondrial Transport (GO:0006839)",
+          "overlap": "3/53",
+          "p_value": 0.0026494970110091014,
+          "z_score": 11.78970297029703,
+          "combined_score": 69.95285223079561,
+          "overlap_genes": [
+            "FIS1",
+            "TSPO",
+            "SLC25A4"
+          ],
+          "genes": [
+            "FIS1",
+            "TSPO",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.026206411029684084
+        },
+        {
+          "rank": 102,
+          "term_name": "Vasodilation (GO:0042311)",
+          "term": "Vasodilation (GO:0042311)",
+          "overlap": "2/15",
+          "p_value": 0.002690473196205733,
+          "z_score": 29.9894419306184,
+          "combined_score": 177.47866268622553,
+          "overlap_genes": [
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.02635081100989733
+        },
+        {
+          "rank": 103,
+          "term_name": "Positive Regulation Of Apoptotic Process (GO:0043065)",
+          "term": "Positive Regulation Of Apoptotic Process (GO:0043065)",
+          "overlap": "6/270",
+          "p_value": 0.002882246598833919,
+          "z_score": 4.552875695732839,
+          "combined_score": 26.630613227478957,
+          "overlap_genes": [
+            "TOP2A",
+            "ERCC3",
+            "SIAH1",
+            "CEL",
+            "BCL10",
+            "SOD1"
+          ],
+          "genes": [
+            "TOP2A",
+            "ERCC3",
+            "SIAH1",
+            "CEL",
+            "BCL10",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.02795499371102024
+        },
+        {
+          "rank": 104,
+          "term_name": "Ceramide Metabolic Process (GO:0006672)",
+          "term": "Ceramide Metabolic Process (GO:0006672)",
+          "overlap": "3/55",
+          "p_value": 0.0029450101063204955,
+          "z_score": 11.335110434120335,
+          "combined_score": 66.05697731791128,
+          "overlap_genes": [
+            "CEL",
+            "CLN8",
+            "CLN6"
+          ],
+          "genes": [
+            "CEL",
+            "CLN8",
+            "CLN6"
+          ],
+          "adjusted_p_value": 0.028289087463597835
+        },
+        {
+          "rank": 105,
+          "term_name": "Negative Regulation Of Biosynthetic Process (GO:0009890)",
+          "term": "Negative Regulation Of Biosynthetic Process (GO:0009890)",
+          "overlap": "2/16",
+          "p_value": 0.003064426365651794,
+          "z_score": 27.84593837535014,
+          "combined_score": 161.16936424905956,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD1"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD1"
+          ],
+          "adjusted_p_value": 0.029155827993201353
+        },
+        {
+          "rank": 106,
+          "term_name": "Nicotinamide Nucleotide Metabolic Process (GO:0046496)",
+          "term": "Nicotinamide Nucleotide Metabolic Process (GO:0046496)",
+          "overlap": "2/17",
+          "p_value": 0.0034612740273215416,
+          "z_score": 25.988235294117647,
+          "combined_score": 147.2524218660231,
+          "overlap_genes": [
+            "IDH1",
+            "IDH2"
+          ],
+          "genes": [
+            "IDH1",
+            "IDH2"
+          ],
+          "adjusted_p_value": 0.03201678475272426
+        },
+        {
+          "rank": 107,
+          "term_name": "Carbohydrate Derivative Transport (GO:1901264)",
+          "term": "Carbohydrate Derivative Transport (GO:1901264)",
+          "overlap": "2/17",
+          "p_value": 0.0034612740273215416,
+          "z_score": 25.988235294117647,
+          "combined_score": 147.2524218660231,
+          "overlap_genes": [
+            "SLC25A19",
+            "EHHADH"
+          ],
+          "genes": [
+            "SLC25A19",
+            "EHHADH"
+          ],
+          "adjusted_p_value": 0.03201678475272426
+        },
+        {
+          "rank": 108,
+          "term_name": "Positive Regulation Of Fatty Acid Metabolic Process (GO:0045923)",
+          "term": "Positive Regulation Of Fatty Acid Metabolic Process (GO:0045923)",
+          "overlap": "2/17",
+          "p_value": 0.0034612740273215416,
+          "z_score": 25.988235294117647,
+          "combined_score": 147.2524218660231,
+          "overlap_genes": [
+            "ELOVL5",
+            "MLYCD"
+          ],
+          "genes": [
+            "ELOVL5",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.03201678475272426
+        },
+        {
+          "rank": 109,
+          "term_name": "Phospholipid Transport (GO:0015914)",
+          "term": "Phospholipid Transport (GO:0015914)",
+          "overlap": "3/59",
+          "p_value": 0.003594964812856532,
+          "z_score": 10.523338048090523,
+          "combined_score": 59.2276729885338,
+          "overlap_genes": [
+            "ABCB1",
+            "SCP2",
+            "ABCB4"
+          ],
+          "genes": [
+            "ABCB1",
+            "SCP2",
+            "ABCB4"
+          ],
+          "adjusted_p_value": 0.03294834722975849
+        },
+        {
+          "rank": 110,
+          "term_name": "Regulation Of Oxidative Stress-Induced Intrinsic Apoptotic Signaling Pathway (GO:1902175)",
+          "term": "Regulation Of Oxidative Stress-Induced Intrinsic Apoptotic Signaling Pathway (GO:1902175)",
+          "overlap": "2/18",
+          "p_value": 0.003880772627961155,
+          "z_score": 24.362745098039216,
+          "combined_score": 135.25516392567505,
+          "overlap_genes": [
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.0349269536516504
+        },
+        {
+          "rank": 111,
+          "term_name": "Intracellular Lipid Transport (GO:0032365)",
+          "term": "Intracellular Lipid Transport (GO:0032365)",
+          "overlap": "2/18",
+          "p_value": 0.003880772627961155,
+          "z_score": 24.362745098039216,
+          "combined_score": 135.25516392567505,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD3"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD3"
+          ],
+          "adjusted_p_value": 0.0349269536516504
+        },
+        {
+          "rank": 112,
+          "term_name": "Positive Regulation Of Apoptotic Signaling Pathway (GO:2001235)",
+          "term": "Positive Regulation Of Apoptotic Signaling Pathway (GO:2001235)",
+          "overlap": "3/62",
+          "p_value": 0.004135523216690181,
+          "z_score": 9.986742742070817,
+          "combined_score": 54.808656542076136,
+          "overlap_genes": [
+            "FIS1",
+            "SIAH1",
+            "BCL10"
+          ],
+          "genes": [
+            "FIS1",
+            "SIAH1",
+            "BCL10"
+          ],
+          "adjusted_p_value": 0.03688739012029903
+        },
+        {
+          "rank": 113,
+          "term_name": "NADP Metabolic Process (GO:0006739)",
+          "term": "NADP Metabolic Process (GO:0006739)",
+          "overlap": "2/19",
+          "p_value": 0.004322680484764938,
+          "z_score": 22.928489042675896,
+          "combined_score": 124.81993345011934,
+          "overlap_genes": [
+            "IDH1",
+            "IDH2"
+          ],
+          "genes": [
+            "IDH1",
+            "IDH2"
+          ],
+          "adjusted_p_value": 0.037550937428523244
+        },
+        {
+          "rank": 114,
+          "term_name": "Release Of Cytochrome C From Mitochondria (GO:0001836)",
+          "term": "Release Of Cytochrome C From Mitochondria (GO:0001836)",
+          "overlap": "2/19",
+          "p_value": 0.004322680484764938,
+          "z_score": 22.928489042675896,
+          "combined_score": 124.81993345011934,
+          "overlap_genes": [
+            "FIS1",
+            "SOD2"
+          ],
+          "genes": [
+            "FIS1",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.037550937428523244
+        },
+        {
+          "rank": 115,
+          "term_name": "Linoleic Acid Metabolic Process (GO:0043651)",
+          "term": "Linoleic Acid Metabolic Process (GO:0043651)",
+          "overlap": "2/19",
+          "p_value": 0.004322680484764938,
+          "z_score": 22.928489042675896,
+          "combined_score": 124.81993345011934,
+          "overlap_genes": [
+            "ELOVL5",
+            "FADS1"
+          ],
+          "genes": [
+            "ELOVL5",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.037550937428523244
+        },
+        {
+          "rank": 116,
+          "term_name": "Protein Targeting (GO:0006605)",
+          "term": "Protein Targeting (GO:0006605)",
+          "overlap": "4/129",
+          "p_value": 0.004620952797616301,
+          "z_score": 6.32672,
+          "combined_score": 34.01975004452858,
+          "overlap_genes": [
+            "FIS1",
+            "PEX6",
+            "LONP2",
+            "TSPO"
+          ],
+          "genes": [
+            "FIS1",
+            "PEX6",
+            "LONP2",
+            "TSPO"
+          ],
+          "adjusted_p_value": 0.03979596417947143
+        },
+        {
+          "rank": 117,
+          "term_name": "Sulfur Compound Catabolic Process (GO:0044273)",
+          "term": "Sulfur Compound Catabolic Process (GO:0044273)",
+          "overlap": "2/20",
+          "p_value": 0.004786757771404614,
+          "z_score": 21.65359477124183,
+          "combined_score": 115.67138059180391,
+          "overlap_genes": [
+            "NUDT19",
+            "MLYCD"
+          ],
+          "genes": [
+            "NUDT19",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.040525178081637366
+        },
+        {
+          "rank": 118,
+          "term_name": "Positive Regulation Of Lipid Catabolic Process (GO:0050996)",
+          "term": "Positive Regulation Of Lipid Catabolic Process (GO:0050996)",
+          "overlap": "2/20",
+          "p_value": 0.004786757771404614,
+          "z_score": 21.65359477124183,
+          "combined_score": 115.67138059180391,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD1"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD1"
+          ],
+          "adjusted_p_value": 0.040525178081637366
+        },
+        {
+          "rank": 119,
+          "term_name": "Negative Regulation Of Reactive Oxygen Species Metabolic Process (GO:2000378)",
+          "term": "Negative Regulation Of Reactive Oxygen Species Metabolic Process (GO:2000378)",
+          "overlap": "2/21",
+          "p_value": 0.0052727665104504075,
+          "z_score": 20.512899896800825,
+          "combined_score": 107.59426458228977,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD1"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD1"
+          ],
+          "adjusted_p_value": 0.04426465331041981
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Peroxisome",
+          "term": "Peroxisome",
+          "overlap": "38/82",
+          "p_value": 2.0910256558368347e-67,
+          "z_score": 259.77134986225894,
+          "combined_score": 39884.13617668627,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCD3",
+            "PEX11A",
+            "ECI2",
+            "PEX11B",
+            "HSD17B4",
+            "HMGCL",
+            "PRDX5",
+            "SCP2",
+            "PRDX1",
+            "NUDT19",
+            "MLYCD",
+            "ACAA1",
+            "ABCD1",
+            "HAO2",
+            "GSTK1",
+            "ACOT8",
+            "ACSL1",
+            "EPHX2",
+            "IDH1",
+            "ECH1",
+            "IDH2",
+            "ACSL5",
+            "ACSL4",
+            "PEX2",
+            "SOD2",
+            "PEX13",
+            "PEX14",
+            "SOD1",
+            "GNPAT",
+            "SLC25A17",
+            "ACOX1",
+            "EHHADH",
+            "PEX6",
+            "CAT",
+            "PEX5",
+            "SLC27A2",
+            "CRAT"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCD3",
+            "PEX11A",
+            "ECI2",
+            "PEX11B",
+            "HSD17B4",
+            "HMGCL",
+            "PRDX5",
+            "SCP2",
+            "PRDX1",
+            "NUDT19",
+            "MLYCD",
+            "ACAA1",
+            "ABCD1",
+            "HAO2",
+            "GSTK1",
+            "ACOT8",
+            "ACSL1",
+            "EPHX2",
+            "IDH1",
+            "ECH1",
+            "IDH2",
+            "ACSL5",
+            "ACSL4",
+            "PEX2",
+            "SOD2",
+            "PEX13",
+            "PEX14",
+            "SOD1",
+            "GNPAT",
+            "SLC25A17",
+            "ACOX1",
+            "EHHADH",
+            "PEX6",
+            "CAT",
+            "PEX5",
+            "SLC27A2",
+            "CRAT"
+          ],
+          "adjusted_p_value": 3.617474384597724e-65
+        },
+        {
+          "rank": 2,
+          "term_name": "PPAR signaling pathway",
+          "term": "PPAR signaling pathway",
+          "overlap": "10/74",
+          "p_value": 5.060770185030523e-12,
+          "z_score": 32.965425531914896,
+          "combined_score": 857.4143156013407,
+          "overlap_genes": [
+            "SCP2",
+            "ACSL1",
+            "ACOX1",
+            "FABP6",
+            "EHHADH",
+            "ACSL5",
+            "ACSL4",
+            "ACAA1",
+            "SLC27A2",
+            "RXRG"
+          ],
+          "genes": [
+            "SCP2",
+            "ACSL1",
+            "ACOX1",
+            "FABP6",
+            "EHHADH",
+            "ACSL5",
+            "ACSL4",
+            "ACAA1",
+            "SLC27A2",
+            "RXRG"
+          ],
+          "adjusted_p_value": 4.3775662100514023e-10
+        },
+        {
+          "rank": 3,
+          "term_name": "Fatty acid degradation",
+          "term": "Fatty acid degradation",
+          "overlap": "8/43",
+          "p_value": 5.070607438076162e-11,
+          "z_score": 47.28809523809524,
+          "combined_score": 1120.963134437672,
+          "overlap_genes": [
+            "ACSL1",
+            "ACOX1",
+            "EHHADH",
+            "ECI2",
+            "ACSL5",
+            "ACSL4",
+            "ACAA1",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ACSL1",
+            "ACOX1",
+            "EHHADH",
+            "ECI2",
+            "ACSL5",
+            "ACSL4",
+            "ACAA1",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 2.9240502892905866e-09
+        },
+        {
+          "rank": 4,
+          "term_name": "ABC transporters",
+          "term": "ABC transporters",
+          "overlap": "8/45",
+          "p_value": 7.473267798371817e-11,
+          "z_score": 44.72747747747748,
+          "combined_score": 1042.9152289344977,
+          "overlap_genes": [
+            "ABCD2",
+            "ABCB1",
+            "ABCD3",
+            "ABCC8",
+            "ABCB4",
+            "ABCC5",
+            "ABCB9",
+            "ABCD1"
+          ],
+          "genes": [
+            "ABCD2",
+            "ABCB1",
+            "ABCD3",
+            "ABCC8",
+            "ABCB4",
+            "ABCC5",
+            "ABCB9",
+            "ABCD1"
+          ],
+          "adjusted_p_value": 3.2321883227958106e-09
+        },
+        {
+          "rank": 5,
+          "term_name": "Biosynthesis of unsaturated fatty acids",
+          "term": "Biosynthesis of unsaturated fatty acids",
+          "overlap": "6/27",
+          "p_value": 4.628313169816746e-09,
+          "z_score": 57.94460641399417,
+          "combined_score": 1112.0191925886813,
+          "overlap_genes": [
+            "SCP2",
+            "ELOVL5",
+            "ACOX1",
+            "HSD17B4",
+            "ACAA1",
+            "FADS1"
+          ],
+          "genes": [
+            "SCP2",
+            "ELOVL5",
+            "ACOX1",
+            "HSD17B4",
+            "ACAA1",
+            "FADS1"
+          ],
+          "adjusted_p_value": 1.6013963567565942e-07
+        },
+        {
+          "rank": 6,
+          "term_name": "Primary bile acid biosynthesis",
+          "term": "Primary bile acid biosynthesis",
+          "overlap": "4/17",
+          "p_value": 1.5585687738267898e-06,
+          "z_score": 61.17846153846154,
+          "combined_score": 818.0626409983915,
+          "overlap_genes": [
+            "HSD3B7",
+            "ACOT8",
+            "SCP2",
+            "HSD17B4"
+          ],
+          "genes": [
+            "HSD3B7",
+            "ACOT8",
+            "SCP2",
+            "HSD17B4"
+          ],
+          "adjusted_p_value": 4.4938732978672436e-05
+        },
+        {
+          "rank": 7,
+          "term_name": "beta-Alanine metabolism",
+          "term": "beta-Alanine metabolism",
+          "overlap": "4/30",
+          "p_value": 1.7037757824365123e-05,
+          "z_score": 30.56923076923077,
+          "combined_score": 335.6525574527429,
+          "overlap_genes": [
+            "ACOX1",
+            "EHHADH",
+            "MLYCD",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ACOX1",
+            "EHHADH",
+            "MLYCD",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.00042107601480216665
+        },
+        {
+          "rank": 8,
+          "term_name": "Retinol metabolism",
+          "term": "Retinol metabolism",
+          "overlap": "5/68",
+          "p_value": 2.7734821053546128e-05,
+          "z_score": 15.899470899470899,
+          "combined_score": 166.8303157605365,
+          "overlap_genes": [
+            "RETSAT",
+            "RDH11",
+            "ALDH1A1",
+            "UGT2B17",
+            "DHRS3"
+          ],
+          "genes": [
+            "RETSAT",
+            "RDH11",
+            "ALDH1A1",
+            "UGT2B17",
+            "DHRS3"
+          ],
+          "adjusted_p_value": 0.000599765505282935
+        },
+        {
+          "rank": 9,
+          "term_name": "Fatty acid biosynthesis",
+          "term": "Fatty acid biosynthesis",
+          "overlap": "3/18",
+          "p_value": 0.00010530077458913369,
+          "z_score": 39.36831683168317,
+          "combined_score": 360.5622011335209,
+          "overlap_genes": [
+            "ACSL1",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "genes": [
+            "ACSL1",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 0.001947762232025205
+        },
+        {
+          "rank": 10,
+          "term_name": "Valine, leucine and isoleucine degradation",
+          "term": "Valine, leucine and isoleucine degradation",
+          "overlap": "4/48",
+          "p_value": 0.00011258741225579219,
+          "z_score": 18.047272727272727,
+          "combined_score": 164.08184479017487,
+          "overlap_genes": [
+            "HMGCL",
+            "EHHADH",
+            "ACAA1",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "HMGCL",
+            "EHHADH",
+            "ACAA1",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.001947762232025205
+        },
+        {
+          "rank": 11,
+          "term_name": "Chemical carcinogenesis",
+          "term": "Chemical carcinogenesis",
+          "overlap": "7/281",
+          "p_value": 0.00025321230452741365,
+          "z_score": 6.116601493067899,
+          "combined_score": 50.65330351429567,
+          "overlap_genes": [
+            "GSTK1",
+            "EPHX2",
+            "CACNA1B",
+            "UGT2B17",
+            "RXRG",
+            "HRAS",
+            "ESR2"
+          ],
+          "genes": [
+            "GSTK1",
+            "EPHX2",
+            "CACNA1B",
+            "UGT2B17",
+            "RXRG",
+            "HRAS",
+            "ESR2"
+          ],
+          "adjusted_p_value": 0.003982338971203869
+        },
+        {
+          "rank": 12,
+          "term_name": "Steroid hormone biosynthesis",
+          "term": "Steroid hormone biosynthesis",
+          "overlap": "4/61",
+          "p_value": 0.000286720775576936,
+          "z_score": 13.922105263157894,
+          "combined_score": 113.56263662192356,
+          "overlap_genes": [
+            "SULT2B1",
+            "HSD11B2",
+            "STS",
+            "UGT2B17"
+          ],
+          "genes": [
+            "SULT2B1",
+            "HSD11B2",
+            "STS",
+            "UGT2B17"
+          ],
+          "adjusted_p_value": 0.004133557847900827
+        },
+        {
+          "rank": 13,
+          "term_name": "Adipocytokine signaling pathway",
+          "term": "Adipocytokine signaling pathway",
+          "overlap": "4/69",
+          "p_value": 0.0004601070632537537,
+          "z_score": 12.203692307692307,
+          "combined_score": 93.77379834407922,
+          "overlap_genes": [
+            "ACSL1",
+            "ACSL5",
+            "ACSL4",
+            "RXRG"
+          ],
+          "genes": [
+            "ACSL1",
+            "ACSL5",
+            "ACSL4",
+            "RXRG"
+          ],
+          "adjusted_p_value": 0.006122963226376877
+        },
+        {
+          "rank": 14,
+          "term_name": "Propanoate metabolism",
+          "term": "Propanoate metabolism",
+          "overlap": "3/34",
+          "p_value": 0.0007269355198078752,
+          "z_score": 19.033854998403065,
+          "combined_score": 137.5514417752364,
+          "overlap_genes": [
+            "ACOX1",
+            "EHHADH",
+            "MLYCD"
+          ],
+          "genes": [
+            "ACOX1",
+            "EHHADH",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.008982846066197316
+        },
+        {
+          "rank": 15,
+          "term_name": "Ferroptosis",
+          "term": "Ferroptosis",
+          "overlap": "3/41",
+          "p_value": 0.0012612780858936997,
+          "z_score": 15.522146951537259,
+          "combined_score": 103.62010548063469,
+          "overlap_genes": [
+            "ACSL1",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "genes": [
+            "ACSL1",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 0.014546740590640669
+        },
+        {
+          "rank": 16,
+          "term_name": "Tryptophan metabolism",
+          "term": "Tryptophan metabolism",
+          "overlap": "3/42",
+          "p_value": 0.0013531974285584697,
+          "z_score": 15.123381568926124,
+          "combined_score": 99.8942457490359,
+          "overlap_genes": [
+            "EHHADH",
+            "CAT",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "EHHADH",
+            "CAT",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.014631447196288455
+        },
+        {
+          "rank": 17,
+          "term_name": "Nucleotide excision repair",
+          "term": "Nucleotide excision repair",
+          "overlap": "3/47",
+          "p_value": 0.0018757278755952534,
+          "z_score": 13.401440144014401,
+          "combined_score": 84.1444061437359,
+          "overlap_genes": [
+            "CDK7",
+            "ERCC3",
+            "ERCC1"
+          ],
+          "genes": [
+            "CDK7",
+            "ERCC3",
+            "ERCC1"
+          ],
+          "adjusted_p_value": 0.01907144279856711
+        },
+        {
+          "rank": 18,
+          "term_name": "Longevity regulating pathway",
+          "term": "Longevity regulating pathway",
+          "overlap": "4/151",
+          "p_value": 0.001984311967480971,
+          "z_score": 8.080816326530613,
+          "combined_score": 50.28274254771109,
+          "overlap_genes": [
+            "CAT",
+            "SOD2",
+            "HRAS",
+            "SOD1"
+          ],
+          "genes": [
+            "CAT",
+            "SOD2",
+            "HRAS",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.01907144279856711
+        },
+        {
+          "rank": 19,
+          "term_name": "Glutathione metabolism",
+          "term": "Glutathione metabolism",
+          "overlap": "3/57",
+          "p_value": 0.003260032682528182,
+          "z_score": 10.914191419141915,
+          "combined_score": 62.49485715816841,
+          "overlap_genes": [
+            "GSTK1",
+            "IDH1",
+            "IDH2"
+          ],
+          "genes": [
+            "GSTK1",
+            "IDH1",
+            "IDH2"
+          ],
+          "adjusted_p_value": 0.029683455477756603
+        },
+        {
+          "rank": 20,
+          "term_name": "Steroid biosynthesis",
+          "term": "Steroid biosynthesis",
+          "overlap": "2/20",
+          "p_value": 0.004786757771404614,
+          "z_score": 21.65359477124183,
+          "combined_score": 115.67138059180391,
+          "overlap_genes": [
+            "DHCR24",
+            "CEL"
+          ],
+          "genes": [
+            "DHCR24",
+            "CEL"
+          ],
+          "adjusted_p_value": 0.04140545472264991
+        },
+        {
+          "rank": 21,
+          "term_name": "Terpenoid backbone biosynthesis",
+          "term": "Terpenoid backbone biosynthesis",
+          "overlap": "2/22",
+          "p_value": 0.0057804705554863455,
+          "z_score": 19.48627450980392,
+          "combined_score": 100.41803751878932,
+          "overlap_genes": [
+            "FDPS",
+            "IDI1"
+          ],
+          "genes": [
+            "FDPS",
+            "IDI1"
+          ],
+          "adjusted_p_value": 0.045680914140310086
+        },
+        {
+          "rank": 22,
+          "term_name": "Central carbon metabolism in cancer",
+          "term": "Central carbon metabolism in cancer",
+          "overlap": "3/70",
+          "p_value": 0.005809133590097237,
+          "z_score": 8.79074922417615,
+          "combined_score": 45.25762382994262,
+          "overlap_genes": [
+            "IDH1",
+            "IDH2",
+            "HRAS"
+          ],
+          "genes": [
+            "IDH1",
+            "IDH2",
+            "HRAS"
+          ],
+          "adjusted_p_value": 0.045680914140310086
+        }
+      ]
+    },
+    "significant_terms_total": 141,
+    "execution_time": 1.75,
+    "dataframe": "     rank  ...                     library\n119     1  ...             KEGG_2021_Human\n13     14  ...  GO_Biological_Process_2023\n4       5  ...  GO_Biological_Process_2023\n9      10  ...  GO_Biological_Process_2023\n16     17  ...  GO_Biological_Process_2023\n..    ...  ...                         ...\n59     60  ...  GO_Biological_Process_2023\n115   116  ...  GO_Biological_Process_2023\n76     77  ...  GO_Biological_Process_2023\n102   103  ...  GO_Biological_Process_2023\n91     92  ...  GO_Biological_Process_2023\n\n[141 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.64898/2026.05.11.723906",
+      "url": "https://doi.org/10.64898/2026.05.11.723906",
+      "title": "Clinically relevant AAV8-  <i>PEX1</i>  gene therapy preserves retinal integrity and function long-term in a murine model of Zellweger spectrum disorder",
+      "abstract": "Inherited retinal diseases (IRDs) are a heterogeneous group of genetic disorders that cause progressive vision loss. A subset of IRDs is associated with ubiquitously expressed genes involved in fundamental cellular processes, often resulting in multisystem disease. Among these is Zellweger spectrum disorder (ZSD), caused by pathogenic variants in  PEX genes required for peroxisome biogenesis and function. There are no proven targeted disease-modifying treatments for ZSD, and it is unclear whether localized restoration of peroxisome function is sufficient to mitigate retinal degeneration. We previously demonstrated that  HsPEX1 retinal gene augmentation therapy in a mouse model of mild ZSD homozygous for the murine equivalent (PEX1-p.[Gly844Asp]) of the most common deleterious allele in patients (  PEX1 -c.[2528G>A], PEX1-p.[Gly843Asp]), improved retinal electrophysiological response. Here, we present a comprehensive, dose-range evaluation of a re-designed, clinically relevant AAV8-delivered  HsPEX1 subretinal gene therapy, employing expanded outcome measures. We observed a marked improvement in functional vision, retinal response, photoreceptor structure, retinal pigment epithelium integrity, subretinal inflammation, and peroxisomal metabolites, durable to the endpoint of 6 months post single subretinal injection. These studies provide preclinical proof-of-concept that localized retinal gene replacement can mitigate vision loss in peroxisome-mediated IRD.",
+      "authors": "Omri S, Di Pietro E, McDougald DS, Bennett J, Hacia JG, Braverman N, Argyriou C.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "PPR",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-05-14",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    },
+    {
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1101/2025.10.14.682039",
+      "url": "https://doi.org/10.1101/2025.10.14.682039",
+      "title": "<i>ATAD1</i>  Overexpression Enhances Mitochondrial and Peroxisomal Function in Zellweger Syndrome Disorder Models",
+      "abstract": "<h4>ABSTRACT</h4>  Zellweger Spectrum Disorders (ZSDs) are caused by mutations in any of the different peroxin (PEX) genes, which are essential for peroxisome biogenesis and function. Clinical features of ZSDs include seizures, leukodystrophy, renal and liver dysfunction, skeletal abnormalities, and they usually result in death during infancy or early childhood. There are no treatments for ZSDs, and their rarity, the large size of the PEX genes, and the numerous different genes, has impaired therapeutic development. We previously demonstrated that ATAD1, a mitochondrial protein quality control chaperone, could correct both mitochondrial and peroxisomal phenotypes in PEX3 patient fibroblasts. In this study, we investigated whether overexpressing ATAD1 could provide similar benefits in PEX1 and PEX6 patient cell lines, which account for over 70% of ZSD cases. We used established PEX6  -/- HEK293 cells, patient-derived fibroblasts with pathogenic PEX1 mutations, and newly created zebrafish mutants. Lipidomic profiling of the cell lines demonstrated widespread dysregulation, including accumulation of lysophosphatidylcholines with very-long-chain fatty acids, depletion of plasmalogens and cholesteryl esters containing polyunsaturated fatty acids, and a decrease in cardiolipins. Overexpressing ATAD1 partly corrected these imbalances, including normalizing VLCFA metabolism in PEX1 fibroblasts and restoring plasmalogens and cardiolipins in PEX6-deficient cells. Mitochondrial function analysis (Seahorse XF) showed that ATAD1 increased basal and ATP-linked respiration in both PEX1- and PEX6-deficient cells, sometimes surpassing the effects of PEX gene re-expression. ATAD1 increased peroxisome numbers in both PEX6 and PEX1 cells. Zebrafish Pex1 mutants exhibited impaired maximal respiration despite normal basal activity, confirming mitochondrial vulnerability in vivo. These findings further confirm a role for ATAD1 as a modifier that improves lipid metabolism, mitochondrial function, and peroxisome abundance that could function across multiple ZSDs.",
+      "authors": "Baronio D, Stevenson TJ, Demmitt-Rice CE, Nuebel EC, Blackwell AM, Bonkowsky JL.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2025,
+      "pub_year": 2025,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "PPR",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2025-10-15",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates [topic]"
+    },
+    {
+      "pmid": "42151956",
+      "pmcid": "PMC13182054",
+      "doi": "10.1186/s12887-026-06931-2",
+      "url": "https://doi.org/10.1186/s12887-026-06931-2",
+      "title": "Early hypotonia and visual regression as presenting features of peroxisome biogenesis disorder: an Egyptian case report.",
+      "abstract": "<h4>Introduction</h4>Peroxisome biogenesis disorders (PBDs) are rare autosomal recessive neurodegenerative diseases caused by variants in Peroxin (PEX) genes, leading to defective peroxisome assembly and multisystem dysfunction. The PEX12 variant NM_000286.3: c.1047_1049del (NP_000277.1: p.Gln349del) has been described almost exclusively in Egyptian patients, suggesting a founder effect. We present the first Egyptian case with this variant showing bilateral optic atrophy, expanding the known clinical phenotype of PEX12-related PBD.<h4>Case presentation</h4>A six-year-old Egyptian boy, born to first-cousin parents, presented with early hypotonia, developmental regression, visual inattention, and sensorineural hearing loss. Early milestones were initially normal, followed by progressive motor and cognitive decline beginning at age three. Ophthalmologic examination revealed bilateral optic atrophy, and audiologic testing confirmed profound sensorineural hearing loss. Brain Magnetic Resonance Imaging (MRI) showed bilateral periventricular and cerebellar white matter hyperintensities, with restricted diffusion in the involved areas and corpus callosum involvement. Laboratory studies were unremarkable, but trio whole-exome sequencing identified a homozygous PEX12 deletion (c.1047_1049del), confirming a diagnosis within the Zellweger spectrum of peroxisome biogenesis disorders. The patient was managed with supportive multidisciplinary care, including levetiracetam for seizure control, physiotherapy, nutritional support, and regular follow-up. At one-year follow-up, seizures were controlled, but severe neurological disability persisted.<h4>Conclusion</h4>This case highlights a rare PEX12-related peroxisome biogenesis disorder with optic atrophy-an unreported feature of this variant-broadening its phenotypic spectrum. It underscores the diagnostic value of whole-exome sequencing when biochemical tests are inconclusive and emphasizes the need for increased awareness of founder variants in populations with high consanguinity to enable earlier diagnosis, counseling, and targeted screening.",
+      "authors": "Sadek AA, Aladawy MA, Hassan K, Mansour TMM, Naser M, Elmoursy MM, Hedewy S, Hagag A, Mohamed KR, Abdelkreem E.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "438",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-05-18",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 27.3296537399292,
+  "phase": 2,
+  "rep": 4,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Fatty Acid Catabolic Process (GO:0009062) -> genes: [ABCD2, ACOT8, ABCD3, ECI2, HSD17B4, PEX2, PEX13, SLC25A17, SCP2, ACOX1, EHHADH, NUDT19, ACAA1, SLC27A2, HAO2]\n- Fatty Acid Metabolic Process (GO:0006631) -> genes: [ACOT8, ABCD2, ABCD3, ACSL1, ACSL5, ACSL4, PEX2, GNPAT, ACOX1, NUDT19, TSPO, MLYCD, ACAA1, CRAT, SLC27A2, HAO2, ABCD1]\n- Fatty Acid Beta-Oxidation (GO:0006635) -> genes: [ABCD2, ACOT8, ABCD3, ECI2, HSD17B4, PEX2, SLC25A17, SCP2, ACOX1, EHHADH, ACAA1, SLC27A2, CRAT]\n- Fatty Acid Oxidation (GO:0019395) -> genes: [ABCD2, ABCD3, ECI2, HSD17B4, PEX2, PEX13, SLC25A17, SCP2, ACOX1, EHHADH, ACAA1, SLC27A2, HAO2]\n- Peroxisome Organization (GO:0007031) -> genes: [FIS1, ABCD2, ACOT8, ABCD3, PEX11A, PEX6, PEX11B, LONP2, PEX2, PEX14]\n- Very Long-Chain Fatty Acid Metabolic Process (GO:0000038) -> genes: [ABCD2, ABCD3, ACSL1, ELOVL5, ACOX1, PEX2, ACAA1, SLC27A2]\n- Long-Chain Fatty Acid Metabolic Process (GO:0001676) -> genes: [ACOT8, ABCD3, SCP2, ACSL1, ELOVL5, ACSL5, ACSL4, ACAA1, SLC27A2, FADS1]\n- Steroid Metabolic Process (GO:0008202) -> genes: [SULT2B1, HSD11B2, STS, SCP2, NR1I2, TSPO, UGT2B17, DHCR24, CEL, ACAA1]\n- Peroxisomal Membrane Transport (GO:0015919) -> genes: [ABCD2, ABCD3, PEX6, PEX5, PEX2, PEX14]\n- Alpha-Linolenic Acid Metabolic Process (GO:0036109) -> genes: [ACOT8, SCP2, ELOVL5, ACAA1, FADS1]\n- Fatty Acid Beta-Oxidation Using acyl-CoA Oxidase (GO:0033540) -> genes: [ACOT8, SCP2, ACOX1, EHHADH, CRAT]\n- Protein Import Into Peroxisome Matrix (GO:0016558) -> genes: [PEX6, PEX5, PEX2, PEX13, PEX14]\n- Lipid Transport (GO:0006869) -> genes: [SLC25A17, ABCD3, CRABP2, SCP2, ACSL1, FABP6, EHHADH, CRABP1, CLN8]\n- Very Long-Chain Fatty Acid Catabolic Process (GO:0042760) -> genes: [ABCD2, ABCD3, ACOX1, SLC27A2]\n- Bile Acid Metabolic Process (GO:0008206) -> genes: [HSD3B7, ACOT8, ABCD3, SCP2, ACAA1, SLC27A2]\n- Protein Targeting To Peroxisome (GO:0006625) -> genes: [PEX6, PEX5, LONP2, PEX2, PEX14]\n- Fatty Acid Alpha-Oxidation (GO:0001561) -> genes: [SLC25A17, HAO2, PEX13, SLC27A2]\n- Response To Reactive Oxygen Species (GO:0000302) -> genes: [PRDX5, CAT, PEX5, PEX2, PEX13, PEX14, SOD1]\n- Monocarboxylic Acid Transport (GO:0015718) -> genes: [ABCD3, SLC25A17, CRABP2, ACSL1, FABP6, ABCB4, CRABP1]\n- Bile Acid Biosynthetic Process (GO:0006699) -> genes: [HSD3B7, ACOT8, ABCD3, SCP2, SLC27A2]\n- fatty-acyl-CoA Biosynthetic Process (GO:0046949) -> genes: [ACSL1, ELOVL5, ACSL5, ACSL4, SLC27A2]\n- Monocarboxylic Acid Biosynthetic Process (GO:0072330) -> genes: [HSD3B7, ACOT8, ABCD3, SCP2, MLYCD, SLC27A2]\n- Fatty Acid Transport (GO:0015908) -> genes: [SLC25A17, CRABP2, ACSL1, FABP6, CRABP1]\n- Long-Chain fatty-acyl-CoA Biosynthetic Process (GO:0035338) -> genes: [ACSL1, ELOVL5, ACSL5, ACSL4]\n- fatty-acyl-CoA Metabolic Process (GO:0035337) -> genes: [NUDT19, HSD17B4, ACSL4, SLC27A2]\n- Purine Ribonucleotide Transport (GO:0015868) -> genes: [SLC35B2, SLC25A17, ABCC5, SLC25A4]\n- Organic Hydroxy Compound Biosynthetic Process (GO:1901617) -> genes: [HSD3B7, ACOT8, ABCD3, SCP2, SLC27A2]\n- Protein Import Into Peroxisome Matrix, Receptor Recycling (GO:0016562) -> genes: [PEX6, PEX5, PEX2]\n- Adenine Nucleotide Transport (GO:0051503) -> genes: [SLC35B2, SLC25A17, ABCC5, SLC25A4]\n- Intracellular Protein Transmembrane Transport (GO:0065002) -> genes: [PEX6, PEX5, PEX2, PEX13, PEX14]\n- Secondary Alcohol Metabolic Process (GO:1902652) -> genes: [SULT2B1, IDH1, IDH2, CLN8, CLN6]\n- Unsaturated Fatty Acid Metabolic Process (GO:0033559) -> genes: [ACOT8, SCP2, ELOVL5, ACAA1, FADS1]\n- Long-Chain Fatty Acid Transport (GO:0015909) -> genes: [ABCD2, ABCD3, ACSL1, SLC27A2]\n- Long-Chain fatty-acyl-CoA Metabolic Process (GO:0035336) -> genes: [ACSL1, ELOVL5, ACSL5, ACSL4]\n- Steroid Biosynthetic Process (GO:0006694) -> genes: [HSD3B7, ACOT8, ABCD3, SCP2, SLC27A2]\n- Organic Anion Transport (GO:0015711) -> genes: [SLC23A2, SLC35B2, SLC25A17, SLC25A19, ABCC5, SLC25A4]\n- Peroxisome Fission (GO:0016559) -> genes: [FIS1, PEX11A, PEX11B]\n- Removal Of Superoxide Radicals (GO:0019430) -> genes: [PRDX1, SOD2, SOD1]\n- Cellular Response To Superoxide (GO:0071451) -> genes: [PRDX1, SOD2, SOD1]\n- Protein Transmembrane Import Into Intracellular Organelle (GO:0044743) -> genes: [PEX6, PEX5, PEX2, PEX14]\n- Steroid Catabolic Process (GO:0006706) -> genes: [STS, HSD17B11, YWHAH]\n- Cellular Response To Oxidative Stress (GO:0034599) -> genes: [PRDX5, PEX5, PEX2, SOD2, PEX13, PEX14]\n- Lipid Biosynthetic Process (GO:0008610) -> genes: [SCP2, ACSL1, MLYCD, CLN8, FADS1]\n- Regulation Of Fatty Acid Beta-Oxidation (GO:0031998) -> genes: [ABCD2, LONP2, ABCD1]\n- Cellular Response To Reactive Oxygen Species (GO:0034614) -> genes: [PRDX5, PEX5, PEX2, PEX13, PEX14]\n- Organelle Organization (GO:0006996) -> genes: [ABCD2, ABCD3, PEX11A, PEX6, VPS4B, PEX11B, LONP2, PEX2, ABCD1, PEX14]\n- Regulation Of Fatty Acid Oxidation (GO:0046320) -> genes: [LONP2, MLYCD, ABCD1]\n- Receptor Recycling (GO:0001881) -> genes: [PEX6, PEX5, PEX2]\n- Xenobiotic Transport (GO:0042908) -> genes: [ABCB1, ABCC5, NR1I2]\n- Hydrogen Peroxide Catabolic Process (GO:0042744) -> genes: [PRDX5, PRDX1, CAT]\n- Monocarboxylic Acid Catabolic Process (GO:0072329) -> genes: [ACOT8, ACOX1, NUDT19]\n- Monocarboxylic Acid Metabolic Process (GO:0032787) -> genes: [GNPAT, SCP2, TSPO, ACSL4, ACAA1]\n- Protein Catabolic Process (GO:0030163) -> genes: [SIAH1, CEL, IDE, CLN8, CLN6]\n- Organelle Fission (GO:0048285) -> genes: [FIS1, PEX11A, PEX11B]\n- Cellular Lipid Catabolic Process (GO:0044242) -> genes: [ACOT8, ACOX1, NUDT19]\n- Positive Regulation Of Protein Targeting To Membrane (GO:0090314) -> genes: [FIS1, ITGB1BP1, HRAS]\n- Pexophagy (GO:0000425) -> genes: [PEX5, PEX2]\n- Medium-Chain fatty-acyl-CoA Metabolic Process (GO:0036112) -> genes: [NUDT19, HSD17B4]\n- Sterol Metabolic Process (GO:0016125) -> genes: [SULT2B1, CEL, CLN8, CLN6]\n- Cellular Response To Oxygen-Containing Compound (GO:1901701) -> genes: [PRDX5, DLG4, ABCB4, EHHADH, PEX5, PEX2, BCL10, PEX13, PEX14]\n- Protein-Containing Complex Disassembly (GO:0032984) -> genes: [VPS4B, PEX5, PEX2, PEX14]\n- Phospholipid Biosynthetic Process (GO:0008654) -> genes: [IDI1, FDPS, FADS1]\n- Fatty Acid Biosynthetic Process (GO:0006633) -> genes: [ABCD3, ELOVL5, MLYCD, FADS1]\n- Regulation Of Phospholipid Transport (GO:2001138) -> genes: [ABCB4, TSPO]\n- Nucleotide Transport (GO:0006862) -> genes: [SLC25A19, ABCC5]\n- Regulation Of Protein Targeting To Membrane (GO:0090313) -> genes: [FIS1, ITGB1BP1, HRAS]\n- Diterpenoid Metabolic Process (GO:0016101) -> genes: [RDH11, ALDH1A1, DHRS3]\n- Cholesterol Metabolic Process (GO:0008203) -> genes: [SULT2B1, DHCR24, CLN8, CLN6]\n- Establishment Of Protein Localization To Peroxisome (GO:0072663) -> genes: [PEX6, LONP2]\n- Glucocorticoid Metabolic Process (GO:0008211) -> genes: [HSD11B2, YWHAH]\n- Superoxide Metabolic Process (GO:0006801) -> genes: [PRDX1, SOD2, SOD1]\n- Organonitrogen Compound Catabolic Process (GO:1901565) -> genes: [SIAH1, IDE, CLN8, CLN6]\n- Peroxisomal Transport (GO:0043574) -> genes: [PEX6, LONP2]\n- Ribonucleoside Bisphosphate Catabolic Process (GO:0034031) -> genes: [NUDT19, MLYCD]\n- Tricarboxylic Acid Metabolic Process (GO:0072350) -> genes: [IDH1, IDH2]\n- Purine Nucleoside Bisphosphate Catabolic Process (GO:0034034) -> genes: [NUDT19, MLYCD]\n- Negative Regulation Of Cell Population Proliferation (GO:0008285) -> genes: [SULT2B1, CTBP1, FABP6, PEX2, ITGB1BP1, CEL, SOD2, HRAS]\n- Autophagy Of Peroxisome (GO:0030242) -> genes: [PEX5, PEX2]\n- Myelin Maintenance (GO:0043217) -> genes: [ABCD2, SOD1]\n- Macromolecule Catabolic Process (GO:0009057) -> genes: [SIAH1, IDE, CLN8, CLN6]\n- Retina Homeostasis (GO:0001895) -> genes: [PRDX1, ALB, SOD1]\n- Positive Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001244) -> genes: [FIS1, SIAH1, SOD1]\n- Positive Regulation Of Phospholipid Transport (GO:2001140) -> genes: [ABCB4, TSPO]\n- Retinoid Metabolic Process (GO:0001523) -> genes: [RDH11, ALDH1A1, DHRS3]\n- Water-Soluble Vitamin Metabolic Process (GO:0006767) -> genes: [SLC23A2, SLC25A19, ABCD1]\n- Negative Regulation Of Reactive Oxygen Species Biosynthetic Process (GO:1903427) -> genes: [ABCD2, ABCD1]\n- Organic Cyclic Compound Catabolic Process (GO:1901361) -> genes: [STS, EPHX2]\n- Positive Regulation Of Lipid Transport (GO:0032370) -> genes: [ABCB4, TSPO]\n- DNA Conformation Change (GO:0071103) -> genes: [TOP2A, ERCC3]\n- Positive Regulation Of Fatty Acid Oxidation (GO:0046321) -> genes: [ABCD2, MLYCD]\n- Fatty Acid Transmembrane Transport (GO:1902001) -> genes: [ABCD2, ABCD3]\n- Negative Regulation Of Cellular Process (GO:0048523) -> genes: [SULT2B1, SMARCC1, CTBP1, FABP6, VPS4B, ITGB1BP1, SOD2, HRAS, ESR2]\n- ATP Transport (GO:0015867) -> genes: [SLC25A17, SLC25A4]\n- acyl-CoA Biosynthetic Process (GO:0071616) -> genes: [MLYCD, SLC27A2]\n- Positive Regulation Of Fatty Acid Biosynthetic Process (GO:0045723) -> genes: [ABCD2, ELOVL5]\n- Dicarboxylic Acid Metabolic Process (GO:0043648) -> genes: [ACOT8, IDH1, IDH2]\n- 2-Oxoglutarate Metabolic Process (GO:0006103) -> genes: [IDH1, IDH2]\n- T Cell Proliferation (GO:0042098) -> genes: [CADM1, CTPS1]\n- Ceramide Transport (GO:0035627) -> genes: [ABCB1, ABCB4]\n- Mitotic Recombination (GO:0006312) -> genes: [MSH2, ERCC1]\n- Mitochondrial Transport (GO:0006839) -> genes: [FIS1, TSPO, SLC25A4]\n- Vasodilation (GO:0042311) -> genes: [SOD2, SOD1]\n- Positive Regulation Of Apoptotic Process (GO:0043065) -> genes: [TOP2A, ERCC3, SIAH1, CEL, BCL10, SOD1]\n- Ceramide Metabolic Process (GO:0006672) -> genes: [CEL, CLN8, CLN6]\n- Negative Regulation Of Biosynthetic Process (GO:0009890) -> genes: [ABCD2, ABCD1]\n- Nicotinamide Nucleotide Metabolic Process (GO:0046496) -> genes: [IDH1, IDH2]\n- Carbohydrate Derivative Transport (GO:1901264) -> genes: [SLC25A19, EHHADH]\n- Positive Regulation Of Fatty Acid Metabolic Process (GO:0045923) -> genes: [ELOVL5, MLYCD]\n- Phospholipid Transport (GO:0015914) -> genes: [ABCB1, SCP2, ABCB4]\n- Regulation Of Oxidative Stress-Induced Intrinsic Apoptotic Signaling Pathway (GO:1902175) -> genes: [SOD2, SOD1]\n- Intracellular Lipid Transport (GO:0032365) -> genes: [ABCD2, ABCD3]\n- Positive Regulation Of Apoptotic Signaling Pathway (GO:2001235) -> genes: [FIS1, SIAH1, BCL10]\n- NADP Metabolic Process (GO:0006739) -> genes: [IDH1, IDH2]\n- Release Of Cytochrome C From Mitochondria (GO:0001836) -> genes: [FIS1, SOD2]\n- Linoleic Acid Metabolic Process (GO:0043651) -> genes: [ELOVL5, FADS1]\n- Protein Targeting (GO:0006605) -> genes: [FIS1, PEX6, LONP2, TSPO]\n- Sulfur Compound Catabolic Process (GO:0044273) -> genes: [NUDT19, MLYCD]\n- Positive Regulation Of Lipid Catabolic Process (GO:0050996) -> genes: [ABCD2, ABCD1]\n- Negative Regulation Of Reactive Oxygen Species Metabolic Process (GO:2000378) -> genes: [ABCD2, ABCD1]\n\n[KEGG_2021_Human]\n- Peroxisome -> genes: [ABCD2, ABCD3, PEX11A, ECI2, PEX11B, HSD17B4, HMGCL, PRDX5, SCP2, PRDX1, NUDT19, MLYCD, ACAA1, ABCD1, HAO2, GSTK1, ACOT8, ACSL1, EPHX2, IDH1, ECH1, IDH2, ACSL5, ACSL4, PEX2, SOD2, PEX13, PEX14, SOD1, GNPAT, SLC25A17, ACOX1, EHHADH, PEX6, CAT, PEX5, SLC27A2, CRAT]\n- PPAR signaling pathway -> genes: [SCP2, ACSL1, ACOX1, FABP6, EHHADH, ACSL5, ACSL4, ACAA1, SLC27A2, RXRG]\n- Fatty acid degradation -> genes: [ACSL1, ACOX1, EHHADH, ECI2, ACSL5, ACSL4, ACAA1, ALDH9A1]\n- ABC transporters -> genes: [ABCD2, ABCB1, ABCD3, ABCC8, ABCB4, ABCC5, ABCB9, ABCD1]\n- Biosynthesis of unsaturated fatty acids -> genes: [SCP2, ELOVL5, ACOX1, HSD17B4, ACAA1, FADS1]\n- Primary bile acid biosynthesis -> genes: [HSD3B7, ACOT8, SCP2, HSD17B4]\n- beta-Alanine metabolism -> genes: [ACOX1, EHHADH, MLYCD, ALDH9A1]\n- Retinol metabolism -> genes: [RETSAT, RDH11, ALDH1A1, UGT2B17, DHRS3]\n- Fatty acid biosynthesis -> genes: [ACSL1, ACSL5, ACSL4]\n- Valine, leucine and isoleucine degradation -> genes: [HMGCL, EHHADH, ACAA1, ALDH9A1]\n- Chemical carcinogenesis -> genes: [GSTK1, EPHX2, CACNA1B, UGT2B17, RXRG, HRAS, ESR2]\n- Steroid hormone biosynthesis -> genes: [SULT2B1, HSD11B2, STS, UGT2B17]\n- Adipocytokine signaling pathway -> genes: [ACSL1, ACSL5, ACSL4, RXRG]\n- Propanoate metabolism -> genes: [ACOX1, EHHADH, MLYCD]\n- Ferroptosis -> genes: [ACSL1, ACSL5, ACSL4]\n- Tryptophan metabolism -> genes: [EHHADH, CAT, ALDH9A1]\n- Nucleotide excision repair -> genes: [CDK7, ERCC3, ERCC1]\n- Longevity regulating pathway -> genes: [CAT, SOD2, HRAS, SOD1]\n- Glutathione metabolism -> genes: [GSTK1, IDH1, IDH2]\n- Steroid biosynthesis -> genes: [DHCR24, CEL]\n- Terpenoid backbone biosynthesis -> genes: [FDPS, IDI1]\n- Central carbon metabolism in cancer -> genes: [IDH1, IDH2, HRAS]\n\n=== ABSTRACTS ===\n[1] Clinically relevant AAV8-  <i>PEX1</i>  gene therapy preserves retinal integrity and function long-term in a murine model of Zellweger spectrum disorder\nInherited retinal diseases (IRDs) are a heterogeneous group of genetic disorders that cause progressive vision loss. A subset of IRDs is associated with ubiquitously expressed genes involved in fundamental cellular processes, often resulting in multisystem disease. Among these is Zellweger spectrum disorder (ZSD), caused by pathogenic variants in  PEX genes required for peroxisome biogenesis and function. There are no proven targeted disease-modifying treatments for ZSD, and it is unclear whether localized restoration of peroxisome function is sufficient to mitigate retinal degeneration. We previously demonstrated that  HsPEX1 retinal gene augmentation therapy in a mouse model of mild ZSD homozygous for the murine equivalent (PEX1-p.[Gly844Asp]) of the most common deleterious allele in patients (  PEX1 -c.[2528G>A], PEX1-p.[Gly843Asp]), improved retinal electrophysiological response. Here, we present a comprehensive, dose-range evaluation of a re-designed, clinically relevant AAV8-delivered  HsPEX1 subretinal gene therapy, employing expanded outcome measures. We observed a marked improvement in functional vision, retinal response, photoreceptor structure, retinal pigment epithelium integrity, subretinal inflammation, and peroxisomal metabolites, durable to the endpoint of 6 months post single subretinal injection. These studies provide preclinical proof-of-concept that localized retinal gene replacement can mitigate vision loss in peroxisome-mediated IRD.\n[2] <i>ATAD1</i>  Overexpression Enhances Mitochondrial and Peroxisomal Function in Zellweger Syndrome Disorder Models\n<h4>ABSTRACT</h4>  Zellweger Spectrum Disorders (ZSDs) are caused by mutations in any of the different peroxin (PEX) genes, which are essential for peroxisome biogenesis and function. Clinical features of ZSDs include seizures, leukodystrophy, renal and liver dysfunction, skeletal abnormalities, and they usually result in death during infancy or early childhood. There are no treatments for ZSDs, and their rarity, the large size of the PEX genes, and the numerous different genes, has impaired therapeutic development. We previously demonstrated that ATAD1, a mitochondrial protein quality control chaperone, could correct both mitochondrial and peroxisomal phenotypes in PEX3 patient fibroblasts. In this study, we investigated whether overexpressing ATAD1 could provide similar benefits in PEX1 and PEX6 patient cell lines, which account for over 70% of ZSD cases. We used established PEX6  -/- HEK293 cells, patient-derived fibroblasts with pathogenic PEX1 mutations, and newly created zebrafish mutants. Lipidomic profiling of the cell lines demonstrated widespread dysregulation, including accumulation of lysophosphatidylcholines with very-long-chain fatty acids, depletion of plasmalogens and cholesteryl esters containing polyunsaturated fatty acids, and a decrease in cardiolipins. Overexpressing ATAD1 partly corrected these imbalances, including normalizing VLCFA metabolism in PEX1 fibroblasts and restoring plasmalogens and cardiolipins in PEX6-deficient cells. Mitochondrial function analysis (Seahorse XF) showed that ATAD1 increased basal and ATP-linked respiration in both PEX1- and PEX6-deficient cells, sometimes surpassing the effects of PEX gene re-expression. ATAD1 increased peroxisome numbers in both PEX6 and PEX1 cells. Zebrafish Pex1 mutants exhibited impaired maximal respiration despite normal basal activity, confirming mitochondrial vulnerability in vivo. These findings further confirm a role for ATAD1 as a modifier that improves lipid metabolism, mitochondrial function, and peroxisome abundance that could function across multiple ZSDs.\n[3] Early hypotonia and visual regression as presenting features of peroxisome biogenesis disorder: an Egyptian case report.\n<h4>Introduction</h4>Peroxisome biogenesis disorders (PBDs) are rare autosomal recessive neurodegenerative diseases caused by variants in Peroxin (PEX) genes, leading to defective peroxisome assembly and multisystem dysfunction. The PEX12 variant NM_000286.3: c.1047_1049del (NP_000277.1: p.Gln349del) has been described almost exclusively in Egyptian patients, suggesting a founder effect. We present the first Egyptian case with this variant showing bilateral optic atrophy, expanding the known clinical phenotype of PEX12-related PBD.<h4>Case presentation</h4>A six-year-old Egyptian boy, born to first-cousin parents, presented with early hypotonia, developmental regression, visual inattention, and sensorineural hearing loss. Early milestones were initially normal, followed by progressive motor and cognitive decline beginning at age three. Ophthalmologic examination revealed bilateral optic atrophy, and audiologic testing confirmed profound sensorineural hearing loss. Brain Magnetic Resonance Imaging (MRI) showed bilateral periventricular and cerebellar white matter hyperintensities, with restricted diffusion in the involved areas and corpus callosum involvement. Laboratory studies were unremarkable, but trio whole-exome sequencing identified a homozygous PEX12 deletion (c.1047_1049del), confirming a diagnosis within the Zellweger spectrum of peroxisome biogenesis disorders. The patient was managed with supportive multidisciplinary care, including levetiracetam for seizure control, physiotherapy, nutritional support, and regular follow-up. At one-year follow-up, seizures were controlled, but severe neurological disability persisted.<h4>Conclusion</h4>This case highlights a rare PEX12-related peroxisome biogenesis disorder with optic atrophy-an unreported feature of this variant-broadening its phenotypic spectrum. It underscores the diagnostic value of whole-exome sequencing when biochemical tests are inconclusive and emphasizes the need for increased awareness of founder variants in populations with high consanguinity to enable earlier diagnosis, counseling, and targeted screening.",
+  "judge_claims": [
+    {
+      "claim": "Peroxisomes are the primary organelle where fatty acid metabolism occurs.",
+      "label": "BACKGROUND",
+      "why": "Peroxisomes are a major site of fatty acid metabolism, particularly for very long-chain fatty acids, but mitochondria are the primary organelle for most fatty acid metabolism. This is well-established biology not contradicted by the evidence."
+    },
+    {
+      "claim": "Peroxisomes are the primary organelle where peroxisome biogenesis occurs.",
+      "label": "GROUNDED",
+      "why": "The term 'Peroxisome Organization (GO:0007031)' explicitly lists genes involved in peroxisome biogenesis, and peroxisomes are by definition the organelle where their own biogenesis occurs."
+    },
+    {
+      "claim": "ABCD2 is involved in fatty acid catabolic processes.",
+      "label": "GROUNDED",
+      "why": "ABCD2 appears in the gene list for 'Fatty Acid Catabolic Process (GO:0009062)'."
+    },
+    {
+      "claim": "ACOX1 is involved in fatty acid catabolic processes.",
+      "label": "GROUNDED",
+      "why": "ACOX1 appears in the gene list for 'Fatty Acid Catabolic Process (GO:0009062)'."
+    },
+    {
+      "claim": "EHHADH is involved in fatty acid catabolic processes.",
+      "label": "GROUNDED",
+      "why": "EHHADH appears in the gene list for 'Fatty Acid Catabolic Process (GO:0009062)'."
+    },
+    {
+      "claim": "ECI2 is involved in fatty acid catabolic processes.",
+      "label": "GROUNDED",
+      "why": "ECI2 appears in the gene list for 'Fatty Acid Catabolic Process (GO:0009062)'."
+    },
+    {
+      "claim": "HSD17B4 is involved in fatty acid catabolic processes.",
+      "label": "GROUNDED",
+      "why": "HSD17B4 appears in the gene list for 'Fatty Acid Catabolic Process (GO:0009062)'."
+    },
+    {
+      "claim": "SCP2 is involved in fatty acid catabolic processes.",
+      "label": "GROUNDED",
+      "why": "SCP2 appears in the gene list for 'Fatty Acid Catabolic Process (GO:0009062)'."
+    },
+    {
+      "claim": "Peroxisomes break down very long-chain fatty acids.",
+      "label": "GROUNDED",
+      "why": "The term 'Very Long-Chain Fatty Acid Catabolic Process (GO:0042760)' with multiple genes confirms peroxisomes break down very long-chain fatty acids."
+    },
+    {
+      "claim": "Peroxisomes break down branched-chain fatty acids.",
+      "label": "BACKGROUND",
+      "why": "Peroxisomes are known to break down branched-chain fatty acids like phytanic acid, but this specific function is not stated in the evidence."
+    },
+    {
+      "claim": "PEX2 is involved in peroxisome organization.",
+      "label": "GROUNDED",
+      "why": "PEX2 appears in the gene list for 'Peroxisome Organization (GO:0007031)'."
+    },
+    {
+      "claim": "PEX5 is involved in peroxisome organization.",
+      "label": "UNSUPPORTED",
+      "why": "PEX5 does not appear in the 'Peroxisome Organization (GO:0007031)' term gene list, though it appears in other peroxisome-related terms."
+    },
+    {
+      "claim": "PEX6 is involved in peroxisome organization.",
+      "label": "GROUNDED",
+      "why": "PEX6 appears in the gene list for 'Peroxisome Organization (GO:0007031)'."
+    },
+    {
+      "claim": "PEX11A is involved in peroxisome organization.",
+      "label": "GROUNDED",
+      "why": "PEX11A appears in the gene list for 'Peroxisome Organization (GO:0007031)'."
+    },
+    {
+      "claim": "PEX11B is involved in peroxisome organization.",
+      "label": "GROUNDED",
+      "why": "PEX11B appears in the gene list for 'Peroxisome Organization (GO:0007031)'."
+    },
+    {
+      "claim": "PEX13 is involved in peroxisome organization.",
+      "label": "UNSUPPORTED",
+      "why": "PEX13 does not appear in the 'Peroxisome Organization (GO:0007031)' term gene list."
+    },
+    {
+      "claim": "PEX14 is involved in peroxisome organization.",
+      "label": "GROUNDED",
+      "why": "PEX14 appears in the gene list for 'Peroxisome Organization (GO:0007031)'."
+    },
+    {
+      "claim": "FIS1 is involved in peroxisome organization.",
+      "label": "GROUNDED",
+      "why": "FIS1 appears in the gene list for 'Peroxisome Organization (GO:0007031)'."
+    },
+    {
+      "claim": "LONP2 is involved in peroxisome organization.",
+      "label": "GROUNDED",
+      "why": "LONP2 appears in the gene list for 'Peroxisome Organization (GO:0007031)'."
+    },
+    {
+      "claim": "PEX2 is involved in the formation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX2 appears in 'Protein Import Into Peroxisome Matrix (GO:0016558)' and other biogenesis-related terms, supporting its role in peroxisome formation."
+    },
+    {
+      "claim": "PEX5 is involved in the formation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX5 appears in 'Protein Import Into Peroxisome Matrix (GO:0016558)' and other biogenesis-related terms, supporting its role in peroxisome formation."
+    },
+    {
+      "claim": "PEX6 is involved in the formation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX6 appears in 'Protein Import Into Peroxisome Matrix (GO:0016558)' and other biogenesis-related terms, supporting its role in peroxisome formation."
+    },
+    {
+      "claim": "PEX11A is involved in the formation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX11A appears in 'Peroxisome Organization (GO:0007031)' and 'Peroxisome Fission (GO:0016559)', supporting its role in peroxisome formation."
+    },
+    {
+      "claim": "PEX11B is involved in the formation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX11B appears in 'Peroxisome Organization (GO:0007031)' and 'Peroxisome Fission (GO:0016559)', supporting its role in peroxisome formation."
+    },
+    {
+      "claim": "PEX13 is involved in the formation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX13 appears in 'Protein Import Into Peroxisome Matrix (GO:0016558)', supporting its role in peroxisome formation."
+    },
+    {
+      "claim": "PEX14 is involved in the formation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX14 appears in 'Protein Import Into Peroxisome Matrix (GO:0016558)', supporting its role in peroxisome formation."
+    },
+    {
+      "claim": "FIS1 is involved in the formation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "FIS1 appears in 'Peroxisome Fission (GO:0016559)', which is part of peroxisome formation/proliferation."
+    },
+    {
+      "claim": "LONP2 is involved in the formation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "LONP2 appears in 'Protein Targeting To Peroxisome (GO:0006625)', supporting its role in peroxisome formation."
+    },
+    {
+      "claim": "PEX2 is involved in the maintenance of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX2 is involved in peroxisome biogenesis and organization, and maintenance is a reasonable extension, but 'maintenance' as a specific function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX5 is involved in the maintenance of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX5 is involved in peroxisome biogenesis and organization, and maintenance is a reasonable extension, but 'maintenance' as a specific function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX6 is involved in the maintenance of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX6 is involved in peroxisome biogenesis and organization, and maintenance is a reasonable extension, but 'maintenance' as a specific function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX11A is involved in the maintenance of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX11A is involved in peroxisome organization and fission, and maintenance is a reasonable extension, but 'maintenance' as a specific function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX11B is involved in the maintenance of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX11B is involved in peroxisome organization and fission, and maintenance is a reasonable extension, but 'maintenance' as a specific function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX13 is involved in the maintenance of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX13 is involved in peroxisome biogenesis, and maintenance is a reasonable extension, but 'maintenance' as a specific function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX14 is involved in the maintenance of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX14 is involved in peroxisome biogenesis, and maintenance is a reasonable extension, but 'maintenance' as a specific function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "FIS1 is involved in the maintenance of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "FIS1 is involved in peroxisome fission, and maintenance is a reasonable extension, but 'maintenance' as a specific function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "LONP2 is involved in the maintenance of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "LONP2 is involved in peroxisome targeting and organization, and maintenance is a reasonable extension, but 'maintenance' as a specific function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX2 is involved in the regulation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX2 appears in 'Regulation Of Fatty Acid Beta-Oxidation (GO:0031998)' and other regulatory terms related to peroxisomal processes."
+    },
+    {
+      "claim": "PEX5 is involved in the regulation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX5 appears in 'Cellular Response To Oxidative Stress (GO:0034599)' and 'Response To Reactive Oxygen Species (GO:0000302)', indicating regulatory roles."
+    },
+    {
+      "claim": "PEX6 is involved in the regulation of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX6 is involved in peroxisome biogenesis, which inherently involves regulation, but specific regulatory function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX11A is involved in the regulation of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX11A is involved in peroxisome fission and organization, which involves regulation, but specific regulatory function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX11B is involved in the regulation of peroxisomes.",
+      "label": "BACKGROUND",
+      "why": "PEX11B is involved in peroxisome fission and organization, which involves regulation, but specific regulatory function is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PEX13 is involved in the regulation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX13 appears in 'Response To Reactive Oxygen Species (GO:0000302)' and 'Cellular Response To Oxidative Stress (GO:0034599)', indicating regulatory roles."
+    },
+    {
+      "claim": "PEX14 is involved in the regulation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "PEX14 appears in 'Response To Reactive Oxygen Species (GO:0000302)' and 'Cellular Response To Oxidative Stress (GO:0034599)', indicating regulatory roles."
+    },
+    {
+      "claim": "FIS1 is involved in the regulation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "FIS1 appears in 'Regulation Of Protein Targeting To Membrane (GO:0090313)' and 'Positive Regulation Of Protein Targeting To Membrane (GO:0090314)'."
+    },
+    {
+      "claim": "LONP2 is involved in the regulation of peroxisomes.",
+      "label": "GROUNDED",
+      "why": "LONP2 appears in 'Regulation Of Fatty Acid Beta-Oxidation (GO:0031998)' and 'Regulation Of Fatty Acid Oxidation (GO:0046320)'."
+    },
+    {
+      "claim": "Peroxisomes are crucial for the synthesis of bile acids.",
+      "label": "GROUNDED",
+      "why": "The term 'Bile Acid Biosynthetic Process (GO:0006699)' lists multiple genes, and the KEGG term 'Primary bile acid biosynthesis' confirms peroxisomal involvement."
+    },
+    {
+      "claim": "Peroxisomes are crucial for the synthesis of certain steroids.",
+      "label": "GROUNDED",
+      "why": "The term 'Steroid Biosynthetic Process (GO:0006694)' lists multiple genes, confirming peroxisomal involvement in steroid synthesis."
+    },
+    {
+      "claim": "ABCD3 is involved in bile acid metabolic processes.",
+      "label": "GROUNDED",
+      "why": "ABCD3 appears in the gene list for 'Bile Acid Metabolic Process (GO:0008206)'."
+    },
+    {
+      "claim": "HSD3B7 is involved in bile acid metabolic processes.",
+      "label": "GROUNDED",
+      "why": "HSD3B7 appears in the gene list for 'Bile Acid Metabolic Process (GO:0008206)'."
+    },
+    {
+      "claim": "SLC25A17 is involved in lipid transport.",
+      "label": "GROUNDED",
+      "why": "SLC25A17 appears in the gene list for 'Lipid Transport (GO:0006869)'."
+    },
+    {
+      "claim": "SCP2 is involved in lipid transport.",
+      "label": "GROUNDED",
+      "why": "SCP2 appears in the gene list for 'Lipid Transport (GO:0006869)'."
+    },
+    {
+      "claim": "PRDX5 is involved in response to reactive oxygen species.",
+      "label": "GROUNDED",
+      "why": "PRDX5 appears in the gene list for 'Response To Reactive Oxygen Species (GO:0000302)'."
+    },
+    {
+      "claim": "CAT is involved in response to reactive oxygen species.",
+      "label": "GROUNDED",
+      "why": "CAT appears in the gene list for 'Response To Reactive Oxygen Species (GO:0000302)'."
+    },
+    {
+      "claim": "SOD1 is involved in response to reactive oxygen species.",
+      "label": "GROUNDED",
+      "why": "SOD1 appears in the gene list for 'Response To Reactive Oxygen Species (GO:0000302)'."
+    },
+    {
+      "claim": "SOD2 is involved in response to reactive oxygen species.",
+      "label": "UNSUPPORTED",
+      "why": "SOD2 does not appear in the 'Response To Reactive Oxygen Species (GO:0000302)' gene list, though it appears in other ROS-related terms."
+    },
+    {
+      "claim": "PRDX5 is involved in removal of superoxide radicals.",
+      "label": "UNSUPPORTED",
+      "why": "PRDX5 does not appear in the 'Removal Of Superoxide Radicals (GO:0019430)' gene list, which only lists PRDX1, SOD2, and SOD1."
+    },
+    {
+      "claim": "CAT is involved in removal of superoxide radicals.",
+      "label": "UNSUPPORTED",
+      "why": "CAT does not appear in the 'Removal Of Superoxide Radicals (GO:0019430)' gene list, which only lists PRDX1, SOD2, and SOD1."
+    },
+    {
+      "claim": "SOD1 is involved in removal of superoxide radicals.",
+      "label": "GROUNDED",
+      "why": "SOD1 appears in the gene list for 'Removal Of Superoxide Radicals (GO:0019430)'."
+    },
+    {
+      "claim": "SOD2 is involved in removal of superoxide radicals.",
+      "label": "GROUNDED",
+      "why": "SOD2 appears in the gene list for 'Removal Of Superoxide Radicals (GO:0019430)'."
+    },
+    {
+      "claim": "Peroxisomes produce reactive oxygen species.",
+      "label": "BACKGROUND",
+      "why": "Peroxisomes produce hydrogen peroxide and superoxide as byproducts of fatty acid oxidation, which is well-established biology not stated in the evidence."
+    },
+    {
+      "claim": "Peroxisomes neutralize reactive oxygen species.",
+      "label": "GROUNDED",
+      "why": "Multiple terms show peroxisomal genes involved in 'Hydrogen Peroxide Catabolic Process (GO:0042744)' and 'Removal Of Superoxide Radicals (GO:0019430)', confirming ROS neutralization."
+    },
+    {
+      "claim": "The PPAR signaling pathway is a key regulator of lipid metabolism.",
+      "label": "BACKGROUND",
+      "why": "PPAR signaling pathway's role in lipid metabolism is well-established textbook biology, though the evidence does show the pathway with lipid-related genes."
+    },
+    {
+      "claim": "The PPAR signaling pathway is a key regulator of peroxisome proliferation.",
+      "label": "BACKGROUND",
+      "why": "PPAR signaling pathway's role in peroxisome proliferation is well-established textbook biology and the basis for the name 'Peroxisome Proliferator-Activated Receptor', though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "SCP2 is involved in the PPAR signaling pathway.",
+      "label": "GROUNDED",
+      "why": "SCP2 appears in the gene list for 'PPAR signaling pathway' in KEGG_2021_Human."
+    },
+    {
+      "claim": "ACOX1 is involved in the PPAR signaling pathway.",
+      "label": "GROUNDED",
+      "why": "ACOX1 appears in the gene list for 'PPAR signaling pathway' in KEGG_2021_Human."
+    },
+    {
+      "claim": "EHHADH is involved in the PPAR signaling pathway.",
+      "label": "GROUNDED",
+      "why": "EHHADH appears in the gene list for 'PPAR signaling pathway' in KEGG_2021_Human."
+    },
+    {
+      "claim": "RXRG is involved in the PPAR signaling pathway.",
+      "label": "GROUNDED",
+      "why": "RXRG appears in the gene list for 'PPAR signaling pathway' in KEGG_2021_Human."
+    },
+    {
+      "claim": "ABCD1 is an ABC transporter involved in transport of substrates into and out of the peroxisome.",
+      "label": "GROUNDED",
+      "why": "ABCD1 appears in 'ABC transporters' in KEGG and in peroxisomal transport terms, confirming its role in peroxisomal substrate transport."
+    },
+    {
+      "claim": "ABCD2 is an ABC transporter involved in transport of substrates into and out of the peroxisome.",
+      "label": "GROUNDED",
+      "why": "ABCD2 appears in 'ABC transporters' in KEGG and in 'Peroxisomal Membrane Transport (GO:0015919)', confirming its role in peroxisomal substrate transport."
+    },
+    {
+      "claim": "ABCD3 is an ABC transporter involved in transport of substrates into and out of the peroxisome.",
+      "label": "GROUNDED",
+      "why": "ABCD3 appears in 'ABC transporters' in KEGG and in 'Peroxisomal Membrane Transport (GO:0015919)', confirming its role in peroxisomal substrate transport."
+    },
+    {
+      "claim": "ABCB1 is an ABC transporter involved in transport of substrates into and out of the peroxisome.",
+      "label": "UNSUPPORTED",
+      "why": "ABCB1 appears in 'ABC transporters' but not in any peroxisomal transport terms; it is primarily a multidrug resistance transporter at the plasma membrane, not a peroxisomal transporter."
+    },
+    {
+      "claim": "ABCB4 is an ABC transporter involved in transport of substrates into and out of the peroxisome.",
+      "label": "UNSUPPORTED",
+      "why": "ABCB4 appears in 'ABC transporters' but not in any peroxisomal transport terms; it is primarily a phospholipid transporter at the canalicular membrane, not a peroxisomal transporter."
+    },
+    {
+      "claim": "ABCC5 is an ABC transporter involved in transport of substrates into and out of the peroxisome.",
+      "label": "UNSUPPORTED",
+      "why": "ABCC5 appears in 'ABC transporters' but not in any peroxisomal transport terms; it is primarily a nucleotide transporter at the plasma membrane, not a peroxisomal transporter."
+    },
+    {
+      "claim": "ABCC8 is an ABC transporter involved in transport of substrates into and out of the peroxisome.",
+      "label": "UNSUPPORTED",
+      "why": "ABCC8 appears in 'ABC transporters' but not in any peroxisomal transport terms; it is a sulfonylurea receptor in the plasma membrane, not a peroxisomal transporter."
+    },
+    {
+      "claim": "ABCB9 is an ABC transporter involved in transport of substrates into and out of the peroxisome.",
+      "label": "UNSUPPORTED",
+      "why": "ABCB9 appears in 'ABC transporters' but not in any peroxisomal transport terms; it is primarily involved in peptide transport in the ER/lysosomes, not peroxisomes."
+    },
+    {
+      "claim": "ABC transporters are involved in the transport of very long-chain fatty acids into and out of the peroxisome.",
+      "label": "GROUNDED",
+      "why": "The term 'Long-Chain Fatty Acid Transport (GO:0015909)' lists ABCD2 and ABCD3, and 'Very Long-Chain Fatty Acid Catabolic Process' confirms ABC transporters' role in VLCFA transport."
+    },
+    {
+      "claim": "Zellweger Spectrum Disorders are caused by mutations in PEX genes.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] states 'Zellweger spectrum disorder (ZSD), caused by pathogenic variants in PEX genes' and abstract [3] states 'Peroxisome biogenesis disorders (PBDs) are...caused by variants in Peroxin (PEX) genes'."
+    },
+    {
+      "claim": "PEX genes are essential for peroxisome biogenesis.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] states 'PEX genes required for peroxisome biogenesis' and abstract [2] states 'PEX genes, which are essential for peroxisome biogenesis'."
+    },
+    {
+      "claim": "PEX genes are essential for peroxisome function.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] states 'PEX genes required for peroxisome biogenesis and function' and abstract [2] states 'PEX genes, which are essential for peroxisome biogenesis and function'."
+    },
+    {
+      "claim": "PEX gene mutations lead to dysregulation of lipid metabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract [2] states 'Lipidomic profiling of the cell lines demonstrated widespread dysregulation' in PEX1 and PEX6 patient cells."
+    },
+    {
+      "claim": "PEX gene mutations lead to dysregulation of very long-chain fatty acid metabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract [2] states 'accumulation of lysophosphatidylcholines with very-long-chain fatty acids' in PEX-deficient cells, and 'ATAD1 partly corrected these imbalances, including normalizing VLCFA metabolism in PEX1 fibroblasts'."
+    },
+    {
+      "claim": "PEX gene mutations lead to impaired mitochondrial function.",
+      "label": "GROUNDED",
+      "why": "Abstract [2] states 'Mitochondrial function analysis (Seahorse XF) showed' impairments in PEX1- and PEX6-deficient cells, and 'Zebrafish Pex1 mutants exhibited impaired maximal respiration'."
+    },
+    {
+      "claim": "PEX gene mutations lead to impaired peroxisomal function.",
+      "label": "GROUNDED",
+      "why": "Abstract [2] discusses peroxisomal dysfunction in PEX mutants and states 'ATAD1 increased peroxisome numbers' and improved peroxisomal metabolites, confirming impaired peroxisomal function from PEX mutations."
+    },
+    {
+      "claim": "Peroxisomes are involved in fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "The term 'Fatty Acid Beta-Oxidation (GO:0006635)' lists multiple genes, and the KEGG term 'Peroxisome' includes beta-oxidation genes."
+    },
+    {
+      "claim": "Peroxisomes are involved in fatty acid alpha-oxidation.",
+      "label": "GROUNDED",
+      "why": "The term 'Fatty Acid Alpha-Oxidation (GO:0001561)' lists genes including SLC25A17, HAO2, PEX13, and SLC27A2."
+    },
+    {
+      "claim": "Peroxisomes are involved in very long-chain fatty acid metabolic processes.",
+      "label": "GROUNDED",
+      "why": "The term 'Very Long-Chain Fatty Acid Metabolic Process (GO:0000038)' lists multiple genes involved in peroxisomal VLCFA metabolism."
+    },
+    {
+      "claim": "Peroxisomes are involved in peroxisomal membrane transport.",
+      "label": "GROUNDED",
+      "why": "The term 'Peroxisomal Membrane Transport (GO:0015919)' explicitly lists genes ABCD2, ABCD3, PEX6, PEX5, PEX2, and PEX14."
+    },
+    {
+      "claim": "Peroxisomes are involved in protein import into peroxisome matrix.",
+      "label": "GROUNDED",
+      "why": "The term 'Protein Import Into Peroxisome Matrix (GO:0016558)' explicitly lists genes PEX6, PEX5, PEX2, PEX13, and PEX14."
+    },
+    {
+      "claim": "Peroxisomes are involved in protein targeting to peroxisome.",
+      "label": "GROUNDED",
+      "why": "The term 'Protein Targeting To Peroxisome (GO:0006625)' explicitly lists genes PEX6, PEX5, LONP2, PEX2, and PEX14."
+    },
+    {
+      "claim": "Peroxisomes are involved in peroxisome fission.",
+      "label": "GROUNDED",
+      "why": "The term 'Peroxisome Fission (GO:0016559)' explicitly lists genes FIS1, PEX11A, and PEX11B."
+    },
+    {
+      "claim": "Pexophagy is the degradation pathway for peroxisomes.",
+      "label": "GROUNDED",
+      "why": "The term 'Pexophagy (GO:0000425)' explicitly lists genes PEX5 and PEX2, and is defined as 'Autophagy Of Peroxisome (GO:0030242)'."
+    },
+    {
+      "claim": "Peroxisomes are involved in steroid metabolic processes.",
+      "label": "GROUNDED",
+      "why": "The term 'Steroid Metabolic Process (GO:0008202)' lists multiple genes, confirming peroxisomal involvement in steroid metabolism."
+    },
+    {
+      "claim": "Peroxisomes are involved in fatty acid transport.",
+      "label": "GROUNDED",
+      "why": "The term 'Fatty Acid Transport (GO:0015908)' lists genes including SLC25A17, CRABP2, ACSL1, FABP6, and CRABP1."
+    },
+    {
+      "claim": "Peroxisomes are involved in fatty acid degradation.",
+      "label": "GROUNDED",
+      "why": "The KEGG term 'Fatty acid degradation' lists multiple peroxisomal genes, and the GO term 'Fatty Acid Catabolic Process' confirms this."
+    },
+    {
+      "claim": "Peroxisomes are involved in biosynthesis of unsaturated fatty acids.",
+      "label": "GROUNDED",
+      "why": "The KEGG term 'Biosynthesis of unsaturated fatty acids' lists genes SCP2, ELOVL5, ACOX1, HSD17B4, ACAA1, and FADS1."
+    },
+    {
+      "claim": "Peroxisomes are involved in primary bile acid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "The KEGG term 'Primary bile acid biosynthesis' lists genes HSD3B7, ACOT8, SCP2, and HSD17B4, and the GO term 'Bile Acid Biosynthetic Process' confirms this."
+    }
+  ],
+  "summary": {
+    "n_claims": 97,
+    "n_scored": 97,
+    "grounded_rate": 0.722,
+    "hallucination_rate": 0.103,
+    "grounded": 70,
+    "background": 17,
+    "unsupported": 10
+  }
+}

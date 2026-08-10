@@ -79,7 +79,7 @@ for _path in _import_paths:
         sys.path.insert(0, _path)
 
 from config import CONFIG
-from llm_factory import get_llm, resolve_api_key
+from llm_factory import get_llm, get_utility_llm, complete_text, resolve_api_key
 from tools import (
     get_gene_info,
     db_retrieve,
@@ -130,6 +130,7 @@ class MergedEnvelope:
     # === METADATA ===
     execution_time: float = 0.0
     tools_used: List[str] = field(default_factory=list)
+    citation_guard: Optional[Dict] = None  # what the post-generation guard removed
 
     def to_dict(self) -> Dict:
         result = {}
@@ -383,25 +384,20 @@ def _wrap_enrichment_analysis(
         return json.dumps({"error": str(e), "tool": "run_enrichment_analysis"})
 
 
-def _score_paper_relevance(query: str, papers: List[Dict], api_key: str) -> List[Dict]:
+def _score_paper_relevance(query: str, papers: List[Dict], llm) -> List[Dict]:
     """Score paper relevance using the same model as the reasoning agent.
 
     Adds 'relevance_rating' (High/Medium/Low) and 'relevance_details' to each paper.
     The agent sees these ratings in its observation and can decide whether to
     call get_paper_annotations for deeper analysis of high-relevance papers.
+
+    The client is passed in (not resolved globally) so each session scores with
+    its own provider and key.
     """
-    if not papers or not genai:
+    if not papers or llm is None:
         return papers
 
     try:
-        genai.configure(api_key=api_key)
-        gemini_config = CONFIG.get("gemini", {})
-        model = genai.GenerativeModel(gemini_config.get("model_name", "gemini-2.5-flash"))
-        gen_config = {
-            "temperature": gemini_config.get("temperature", 0.4),
-            "max_output_tokens": gemini_config.get("max_output_tokens", 4096),
-        }
-
         batch_size = 25
         for batch_start in range(0, len(papers), batch_size):
             batch_end = min(batch_start + batch_size, len(papers))
@@ -428,11 +424,7 @@ Criteria:
 
 Respond with exactly {len(batch)} lines."""
 
-            response = model.generate_content(
-                f"{prompt}\n\nPapers:\n" + "\n".join(paper_texts),
-                generation_config=gen_config
-            )
-            text = response.text.strip()
+            text = complete_text(llm, f"{prompt}\n\nPapers:\n" + "\n".join(paper_texts))
 
             for line in text.split('\n'):
                 line = line.strip()
@@ -469,14 +461,15 @@ def _wrap_search_literature(
         max_results: int = 20,
         min_year: Optional[int] = None,
         max_year: Optional[int] = None,
-        sort_by: str = "relevance"
+        sort_by: str = "relevance",
+        scoring_llm=None
 ) -> str:
     """
     Wrapper - returns literature search results with relevance scoring.
 
-    Papers are scored by the same model as the reasoning agent. The agent
-    sees these ratings and can call get_paper_annotations for deeper
-    analysis of high-relevance papers.
+    Papers are scored by the same model as the reasoning agent (scoring_llm is
+    bound per engine instance). The agent sees these ratings and can call
+    get_paper_annotations for deeper analysis of high-relevance papers.
     """
     try:
         result = search_literature(
@@ -490,19 +483,8 @@ def _wrap_search_literature(
         papers = result.get("papers", [])
 
         # Score relevance using the same model as the reasoning agent
-        api_key = (
-                CONFIG.get("gemini", {}).get("api_key") or
-                os.environ.get("GOOGLE_API_KEY") or
-                os.environ.get("GEMINI_API_KEY")
-        )
-        if not api_key and st:
-            try:
-                api_key = st.session_state.get("api_key", "")
-            except:
-                pass
-
-        if api_key and papers:
-            papers = _score_paper_relevance(query, papers, api_key)
+        if scoring_llm is not None and papers:
+            papers = _score_paper_relevance(query, papers, scoring_llm)
             # Drop papers with no usable abstract or rated Low relevance
             # (Low = "only briefly mentions the topic"). Keep the rest.
             filtered = [p for p in papers
@@ -630,6 +612,21 @@ Do not state biological conclusions without evidence. Use your tools to support 
 - If a paper has full text available, you can retrieve it for deeper validation.
 Your credibility depends on grounding interpretation in data, not generating plausible-sounding text.
 
+=== CITATIONS ===
+
+Citations (PMIDs, paper titles, author-year references) are ONLY allowed for papers returned by the
+search_literature tool in this run.
+If search_literature was not called, include ZERO citations — do not cite any paper, PMID, or author
+from memory.
+Never invent, recall, or reconstruct a citation. If you did not retrieve it via search_literature, it
+does not get cited.
+This does not oblige you to search — you decide whether a search is warranted. It forbids citing
+anything when no search results exist. Uncited established biology is fine; a fabricated reference is
+not, and destroys the credibility of the entire analysis.
+
+When you are given a gene list to interpret, analyse it with your tools before interpreting it. Do not
+answer from memory alone and present the result as if it were an evidence-based interpretation.
+
 === FOLLOW-UP QUESTIONS ===
 
 Look your memory to see what you have. Does the user ask about previous results?  
@@ -683,6 +680,128 @@ Thought:{agent_scratchpad}"""
 
 
 # ===============================================================================
+# CITATION GUARD - deterministic, post-generation
+# ===============================================================================
+# The system prompt asks the model not to cite papers it did not retrieve. This
+# ENFORCES it: any PMID, author-year reference or reference-list entry that does not
+# correspond to a paper returned by search_literature in this run is removed.
+#
+# It does not force a tool call and does not touch the model's reasoning - the LLM
+# still decides whether to search. It only deletes citations with nothing behind them.
+
+_PMID_CITE_RE = re.compile(r"\(?\s*PMIDs?[:\s#]*((?:\d{6,9})(?:\s*[,;and]+\s*\d{6,9})*)\s*\)?", re.I)
+_AUTHOR_YEAR_RE = re.compile(r"\(\s*([A-Z][A-Za-z\-']{2,})(?:\s+(?:and|&)\s+[A-Z][A-Za-z\-']{2,})?"
+                             r"\s+et\s+al\.?,?\s*(\d{4})\s*\)")
+_ETAL_REF_RE = re.compile(r"[A-Z][A-Za-z\-']+(?:\s*,\s*[A-Z]\.?)*\s*,?\s*et\s+al\.[^\n]*")
+# "by Semenza GL (2009)" / "by Ward PS, Thompson CB (2012)" - attribution with no PMID
+# and no "et al.", which earlier versions of this guard missed entirely.
+_BY_AUTHOR_YEAR_RE = re.compile(
+    r"\bby\s+[A-Z][A-Za-z\-']+(?:\s+[A-Z]{1,3})?"
+    r"(?:\s*,\s*[A-Z][A-Za-z\-']+(?:\s+[A-Z]{1,3})?)*"
+    r"(?:\s*,?\s*et\s+al\.)?\s*\(\d{4}\)")
+# a bullet/numbered line whose payload is a quoted title = a reference-list entry
+_REF_LINE_RE = re.compile(r'^\s*(?:[-*•]|\d+[.)])\s*\**\s*["“][^"”\n]{20,}["”]')
+
+
+def _norm_paper_title(s: str) -> str:
+    s = re.sub(r"<[^>]+>", "", s or "")
+    return re.sub(r"[^a-z0-9 ]", " ", s.lower()).strip()
+
+
+def _tidy(text: str) -> str:
+    """Clean up punctuation left behind after removing a citation."""
+    text = re.sub(r"\(\s*[,;]?\s*\)", "", text)      # empty parens
+    text = re.sub(r"[ \t]{2,}", " ", text)
+    text = re.sub(r"\s+([.,;:])", r"\1", text)
+    text = re.sub(r"\.\s*\.", ".", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+
+def verify_citations(text: str, papers: List[Dict]) -> tuple:
+    """Strip citations that no retrieved paper backs.
+
+    Returns (clean_text, report). report records what was removed so the UI and the
+    eval can see it; an empty report means the model cited cleanly on its own.
+    """
+    if not text:
+        return text, {"checked": False}
+
+    papers = [p for p in (papers or []) if isinstance(p, dict)]
+    got_pmids = {str(p.get("pmid")).strip() for p in papers if p.get("pmid")}
+    got_authors = " ".join(
+        " ".join(p.get("authors", [])) if isinstance(p.get("authors"), list) else str(p.get("authors", ""))
+        for p in papers
+    ).lower()
+
+    removed_pmids, removed_author_years, removed_refs = [], [], []
+
+    def _pmid_sub(m):
+        ids = re.findall(r"\d{6,9}", m.group(1))
+        unverified = [i for i in ids if i not in got_pmids]
+        if not unverified:
+            return m.group(0)
+        removed_pmids.extend(unverified)
+        kept = [i for i in ids if i in got_pmids]
+        return f" (PMID: {', '.join(kept)})" if kept else ""
+
+    out = _PMID_CITE_RE.sub(_pmid_sub, text)
+
+    def _ay_sub(m):
+        surname = m.group(1)
+        if surname.lower() in got_authors and got_authors:
+            return m.group(0)
+        removed_author_years.append(f"{surname} et al., {m.group(2)}")
+        return ""
+
+    out = _AUTHOR_YEAR_RE.sub(_ay_sub, out)
+
+    # With nothing retrieved, EVERY citation-shaped construct is unverifiable by
+    # definition: "et al." references, "by Author (Year)" attributions, and
+    # reference-list lines built around a quoted title.
+    if not papers:
+        lines = []
+        for line in out.split("\n"):
+            is_list_item = re.match(r"^\s*(?:[-*•]|\d+[.)])\s", line) is not None
+            looks_like_reference = (
+                "et al." in line
+                or re.search(r"\(\d{4}\)", line)
+                or _REF_LINE_RE.match(line)
+                or _BY_AUTHOR_YEAR_RE.search(line)
+            )
+            # a bibliography entry: drop the whole line, quoted title or not
+            if is_list_item and looks_like_reference:
+                removed_refs.append(line.strip()[:160])
+                continue
+            # inline attribution inside prose: strip the citation, keep the sentence
+            new_line = _BY_AUTHOR_YEAR_RE.sub("", line)
+            if "et al." in new_line:
+                new_line = re.sub(r"[A-Z][A-Za-z\-'.]*(?:[^.\n]*?)et al\.[^.\n]*\.?", "", new_line)
+            if new_line != line:
+                removed_refs.append(line.strip()[:160])
+                if len(re.sub(r"[^A-Za-z0-9]", "", new_line)) < 25:
+                    continue
+                line = new_line
+            lines.append(line)
+        out = "\n".join(lines)
+
+    n_removed = len(removed_pmids) + len(removed_author_years) + len(removed_refs)
+    if n_removed:
+        out = _tidy(out)
+        out += (f"\n\n> *{n_removed} citation(s) were removed by the citation guard: they did not "
+                f"correspond to any paper retrieved by search_literature in this run.*")
+
+    return out, {
+        "checked": True,
+        "n_papers_retrieved": len(papers),
+        "removed_pmids": removed_pmids,
+        "removed_author_years": removed_author_years,
+        "removed_reference_lines": removed_refs,
+        "n_removed": n_removed,
+    }
+
+
+# ===============================================================================
 # REASONING ENGINE CLASS
 # ===============================================================================
 
@@ -724,11 +843,12 @@ class ReasoningEngine:
         self.min_call_interval = 1.0
 
         # Get API key: explicit -> config/env for this provider -> session state
-        self.api_key = (
-                api_key or
-                resolve_api_key(self.provider) or
-                (st.session_state.get("api_key") if st else None)
-        )
+        self.api_key = api_key or resolve_api_key(self.provider)
+        if not self.api_key and st:
+            # Provider-specific key from the sidebar, else the legacy Gemini field
+            self.api_key = st.session_state.get(f"{self.provider}_api_key")
+            if not self.api_key and self.provider == "gemini":
+                self.api_key = st.session_state.get("api_key")
 
         if not self.api_key:
             env_vars = CONFIG.get("providers", {}).get(self.provider, {}).get("api_key_env", [])
@@ -750,6 +870,32 @@ class ReasoningEngine:
             model=self.model_name,
             api_key=self.api_key,
         )
+
+        # Separate client for one-shot scoring (no thinking trace). Bound into the
+        # literature tool below so each engine instance scores with its own
+        # provider/key - a module-level client would be shared across the
+        # concurrent Streamlit sessions of different users.
+        self.utility_llm = get_utility_llm(
+            provider=self.provider,
+            model=self.model_name,
+            api_key=self.api_key,
+        )
+
+        def _search_literature_with_scoring(
+                query: str,
+                max_results: int = 20,
+                min_year: Optional[int] = None,
+                max_year: Optional[int] = None,
+                sort_by: str = "relevance"
+        ) -> str:
+            return _wrap_search_literature(
+                query=query,
+                max_results=max_results,
+                min_year=min_year,
+                max_year=max_year,
+                sort_by=sort_by,
+                scoring_llm=self.utility_llm,
+            )
 
         # Create tools with proper schemas
         self.tools = [
@@ -790,7 +936,7 @@ class ReasoningEngine:
                 args_schema=EnrichmentInput
             ),
             StructuredTool.from_function(
-                func=_wrap_search_literature,
+                func=_search_literature_with_scoring,
                 name="search_literature",
                 description=(
                     "Search Europe PMC for scientific papers. "
@@ -1384,7 +1530,18 @@ class ReasoningEngine:
             else:
                 result = self._run_fallback(query, memory_context)
 
-            self.envelope.final_text = result.get("output", "I couldn't generate a response.")
+            # Deterministic guard: remove any citation not backed by a paper this run
+            # actually retrieved. Runs before anything downstream reads final_text.
+            guarded_text, guard_report = verify_citations(
+                result.get("output", "I couldn't generate a response."),
+                result.get("literature") or []
+            )
+            if guard_report.get("n_removed"):
+                logger.warning(f"Citation guard removed {guard_report['n_removed']} unverifiable "
+                               f"citation(s): {guard_report['removed_pmids']} "
+                               f"{guard_report['removed_author_years']}")
+            self.envelope.final_text = guarded_text
+            self.envelope.citation_guard = guard_report
             self.envelope.tools_used = result.get("tools_used", [])
             self.envelope.reasoning_trace = result.get("trace", [])
             self.envelope.reasoning_steps = result.get("reasoning_steps", [])

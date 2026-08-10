@@ -1,0 +1,174 @@
+{
+  "judge_model": "claude-sonnet-4-5-20250929",
+  "decompose_model": "claude-sonnet-4-5-20250929",
+  "tool_model": "gemini-2.5-flash",
+  "n_sets_judged": 8,
+  "n_sets_in_aggregate": 8,
+  "hallucination_rate_mean": 0.017,
+  "hallucination_rate_sd": 0.0387,
+  "grounded_rate_mean": 0.7496,
+  "n_runs_total": 8,
+  "tool_less_rate": 0.0,
+  "empty_response_rate": 0.0,
+  "empty_response_runs": [],
+  "tool_less_sets": [],
+  "fabricated_citation_rate": 0.0,
+  "fabricated_citation_sets": [],
+  "excluded_toolless_sets": [],
+  "skipped_sets": [],
+  "per_set": [
+    {
+      "gene_set": "Adipogenesis",
+      "n_genes": 200,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 149,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 107,
+      "n_scored": 107,
+      "grounded_rate": 0.692,
+      "hallucination_rate": 0.112,
+      "grounded": 74,
+      "background": 21,
+      "unsupported": 12
+    },
+    {
+      "gene_set": "Reactive_Oxygen_Species_Pathway",
+      "n_genes": 49,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 63,
+      "n_papers": 5,
+      "fabricated_citation": false,
+      "n_claims": 75,
+      "n_scored": 75,
+      "grounded_rate": 0.64,
+      "hallucination_rate": 0.013,
+      "grounded": 48,
+      "background": 26,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Pperoxisome",
+      "n_genes": 104,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature",
+        "search_literature"
+      ],
+      "n_evidence_terms": 141,
+      "n_papers": 3,
+      "fabricated_citation": false,
+      "n_claims": 167,
+      "n_scored": 167,
+      "grounded_rate": 0.772,
+      "hallucination_rate": 0.006,
+      "grounded": 129,
+      "background": 37,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Coagulation",
+      "n_genes": 138,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 329,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 192,
+      "n_scored": 192,
+      "grounded_rate": 0.615,
+      "hallucination_rate": 0.005,
+      "grounded": 118,
+      "background": 73,
+      "unsupported": 1
+    },
+    {
+      "gene_set": "Mitotic_Spindle",
+      "n_genes": 199,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 83,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 76,
+      "n_scored": 76,
+      "grounded_rate": 0.711,
+      "hallucination_rate": 0.0,
+      "grounded": 54,
+      "background": 22,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Notch_Signaling",
+      "n_genes": 32,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 323,
+      "n_papers": 1,
+      "fabricated_citation": false,
+      "n_claims": 91,
+      "n_scored": 91,
+      "grounded_rate": 0.945,
+      "hallucination_rate": 0.0,
+      "grounded": 86,
+      "background": 5,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "Pancreas_Beta_Cells",
+      "n_genes": 40,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 94,
+      "n_papers": 4,
+      "fabricated_citation": false,
+      "n_claims": 55,
+      "n_scored": 55,
+      "grounded_rate": 0.764,
+      "hallucination_rate": 0.0,
+      "grounded": 42,
+      "background": 13,
+      "unsupported": 0
+    },
+    {
+      "gene_set": "UV_Response_Dn",
+      "n_genes": 144,
+      "valid": true,
+      "tools_used": [
+        "run_enrichment_analysis",
+        "search_literature"
+      ],
+      "n_evidence_terms": 477,
+      "n_papers": 2,
+      "fabricated_citation": false,
+      "n_claims": 120,
+      "n_scored": 120,
+      "grounded_rate": 0.858,
+      "hallucination_rate": 0.0,
+      "grounded": 103,
+      "background": 17,
+      "unsupported": 0
+    }
+  ]
+}

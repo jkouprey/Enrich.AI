@@ -1,0 +1,2624 @@
+{
+  "gene_set": "Pancreas_Beta_Cells",
+  "context": "Pancreas Beta Cells",
+  "genes": [
+    "PAX6",
+    "NEUROD1",
+    "ISL1",
+    "NKX2-2",
+    "PCSK1",
+    "NKX6-1",
+    "SLC2A2",
+    "SEC11A",
+    "DCX",
+    "SPCS1",
+    "FOXA2",
+    "GCK",
+    "MAFB",
+    "INS",
+    "PDX1",
+    "ABCC8",
+    "IAPP",
+    "SRP9",
+    "NEUROG3",
+    "FOXO1",
+    "AKT3",
+    "GCG",
+    "DPP4",
+    "PAX4",
+    "SYT13",
+    "SCGN",
+    "HNF1A",
+    "STXBP1",
+    "CHGA",
+    "VDR",
+    "PCSK2",
+    "INSM1",
+    "SST",
+    "ELP4",
+    "SRPRB",
+    "PAK3",
+    "G6PC2",
+    "PKLR",
+    "LMO2",
+    "SRP14"
+  ],
+  "n_genes": 40,
+  "query": "Analyze this gene set (biological context: Pancreas Beta Cells) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: PAX6, NEUROD1, ISL1, NKX2-2, PCSK1, NKX6-1, SLC2A2, SEC11A, DCX, SPCS1, FOXA2, GCK, MAFB, INS, PDX1, ABCC8, IAPP, SRP9, NEUROG3, FOXO1, AKT3, GCG, DPP4, PAX4, SYT13, SCGN, HNF1A, STXBP1, CHGA, VDR, PCSK2, INSM1, SST, ELP4, SRPRB, PAK3, G6PC2, PKLR, LMO2, SRP14",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 94,
+  "n_papers": 4,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 4,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 4,
+    "cited_pmids": [
+      "41772234",
+      "41987393",
+      "42318217"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "This gene set is highly characteristic of pancreatic beta cells, indicating robust activity in processes central to beta cell identity, function, and endocrine regulation. The enrichment analysis strongly highlights pathways involved in insulin secretion, glucose homeostasis, beta cell development, and protein processing essential for hormone production. The most striking finding is the significant enrichment for \"Maturity onset diabetes of the young (MODY)\" in the KEGG database, which aligns perfectly with the genes provided and the context of pancreatic beta cells, as many genes in your list are known MODY-causing genes.\n\n## Detailed Analysis\n\n**1. Pancreatic Beta Cell Identity and Development:**\nThe gene list includes a significant number of transcription factors crucial for pancreatic development and beta cell differentiation and maintenance. Terms like \"Type B Pancreatic Cell Differentiation\" (GO:0003309) with genes like PDX1 and INSM1, and \"Pancreas Development\" (GO:0031016) with NKX6-1 and ISL1, are highly significant. Other key transcription factors like PAX6, NEUROD1, FOXA2, HNF1A, MAFB, and NEUROG3 are also present and enriched in broader developmental and transcriptional regulation terms, such as \"Regulation Of Transcription By RNA Polymerase II\" (GO:0006357) and \"Neuron Differentiation\" (GO:0030182). The co-occurrence of these genes underscores their central role in establishing and maintaining the beta cell phenotype.\n\n**2. Glucose Homeostasis and Insulin Secretion:**\nThe most highly enriched GO terms directly relate to the core function of beta cells: \"Regulation Of Insulin Secretion\" (GO:0050796), \"Glucose Homeostasis\" (GO:0042593), and \"Insulin secretion\" (KEGG). Key genes contributing to these terms include GCK (glucokinase, the pancreatic beta cell 'glucose sensor'), SLC2A2 (GLUT2, a glucose transporter), INS (insulin), ABCC8 (a subunit of the ATP-sensitive potassium channel critical for glucose-stimulated insulin secretion), PDX1, and NEUROD1. Pathways like \"Regulation Of Gluconeogenesis\" (GO:0006111) and \"Glycolysis / Gluconeogenesis\" (KEGG) also appeared, reflecting the intricate metabolic control in these cells.\n\n**3. Protein Processing and Secretion Machinery:**\nBeta cells are highly specialized for the synthesis and secretion of insulin and other peptide hormones. The enrichment analysis revealed several terms related to protein handling, including \"Protein Targeting To ER\" (GO:0045047), \"Protein export\" (KEGG), \"Regulation Of Protein Secretion\" (GO:0050708), \"Signal Peptide Processing\" (GO:0006465), and \"Regulated Exocytosis\" (GO:0045055). Genes such as SRP9, SRP14, SRPRB, SPCS1, SEC11A, PCSK1, PCSK2, STXBP1, and SYT13 highlight the robust machinery for protein synthesis, translocation into the endoplasmic reticulum, processing (e.g., proinsulin to insulin by PCSK1/2), and regulated release via exocytosis. IAPP (islet amyloid polypeptide), co-secreted with insulin, also appears in terms related to protein complex assembly.\n\n**4. Diabetes Mellitus and Related Pathways:**\nThe KEGG pathway \"Maturity onset diabetes of the young\" (MODY) is exceptionally significant (p=1.44e-30), with a large overlap of 14 genes from your list (PKLR, PAX4, PDX1, SLC2A2, PAX6, HNF1A, GCK, INS, NEUROD1, IAPP, NKX6-1, NKX2-2, FOXA2, NEUROG3). This is highly pertinent, as several of these genes (e.g., HNF1A, GCK, PDX1, INS, NEUROD1, PAX4) are indeed known to cause different forms of monogenic diabetes. \"Type II diabetes mellitus\" and \"Insulin signaling pathway\" are also prominent, reflecting the broader context of glucose dysregulation. Other related pathways like \"Glucagon signaling pathway\" and \"AMPK signaling pathway\" indicate complex metabolic regulation beyond insulin alone.\n\n**Supporting Literature:**\nThe literature search confirms the strong relevance of these genes and pathways to pancreatic beta cell function and monogenic diabetes. Papers discussing MODY and impaired insulin secretion provide direct evidence for the biological context.\n\n*   Deng and Krishnamurthy (2026) discuss the use of patient-derived iPSCs to model monogenic beta cell disorders like MODY, demonstrating how transcription factor dysfunction perturbs insulin secretion and beta cell maturation. (PMID:42318217)\n*   Horikawa et al. (2026) provide insights from MODY into impaired insulin secretion, emphasizing how genetic abnormalities in single genes impact insulin secretory capacity. (PMID:41987393)\n*   Laver et al. (2026) systematically analyze loss-of-function variants across MODY genes, identifying gene-specific effects and expanding the spectrum of INS variants causing MODY, directly linking genes from your list to MODY pathogenesis. (PMID:41772234)\n\nIn summary, the provided gene list represents a core set of genes critical for pancreatic beta cell development, function, and hormone secretion, with a strong association with the etiology of monogenic diabetes, particularly Maturity-Onset Diabetes of the Young. The enrichment findings are highly coherent with the biological context provided.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'genes': 'PAX6, NEUROD1, ISL1, NKX2-2, PCSK1, NKX6-1, SLC2A2, SEC11A, DCX, SPCS1, FOXA2, GCK, MAFB, INS, PDX1, ABCC8, IAPP, SRP9, NEUROG3, FOXO1, AKT3, GCG, DPP4, PAX4, SYT13, SCGN, HNF1A, STXBP1, CHGA, VDR, PCSK2, INSM1, SST, ELP4, SRPRB, PAK3, G6PC2, PKLR, LMO2, SRP14', 'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human'}",
+    "Tool: search_literature | Args: {'max_results': 5, 'query': '(PAX6 OR PDX1 OR HNF1A OR NEUROD1 OR NKX6-1 OR FOXA2 OR INS OR GCK) AND (\"pancreatic beta cell differentiation\" OR \"insulin secretion\" OR \"MODY\")', 'sort_by': 'relevance'}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Pancreas Beta Cells) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: PAX6, NEUROD1, ISL1, NKX2-2, PCSK1, NKX6-1, SLC2A2, SEC11A, "
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Plan for Unveiling the Biological Secrets of My Gene List**\n\nOkay, so I have this gene list, and I'm keen to understand what it tells me about Pancreas Beta Cells. This is my game plan:\n\nFirst, I need to get a handle on what's enriched within this list. I'll use `run_enrichment_analysis` with the provided gene list, using `GO_Biological_Process_2023` and `KEGG_2021_Human` as my libraries. This will give me the building blocks to interpret the analysis.\n\nNext, I will delve into the enrichment results. I'll need to critically analyze the enriched terms, paying close attention to those that are particularly relevant to the function and regulation of Pancreas Beta Cells. This is where the real work begins.\n\nTo lend this analysis some muscle, I'll then move on to a robust literature search with `search_literature`. The results from the enrichment analysis will be essential here. I need to construct specific search queries based on the enriched terms, looking for evidence related to the key genes in the list and how they play a role in Pancreas Beta Cells. I'm aiming for up to five papers that will support my interpretation.\n\nIt's crucial that I only include citations for papers that I actually retrieve from the literature search. I'm a stickler for good practice.\n\nFinally, I'll synthesize everything into a concise biological interpretation, focusing on the most relevant findings. I'll carefully distinguish between strong conclusions based on solid evidence, informed hypotheses that warrant further investigation, and any speculative thoughts. This level of clarity will add great value to the results.\n\nThe overall approach needs to be organized. My final output will be structured as a summary, which will be followed by a \"## Detailed Analysis\" section, to allow the reader a deeper insight into the thought process.",
+      "action": "run_enrichment_analysis",
+      "args": "genes=PAX6, NEUROD1, ISL1, NKX2-2, PCSK1, NKX6-1, SLC2A2..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "f1e95abc-25d2-421a-b326-4e367435e0ed",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 40 | Total significant terms: 94"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "The analysis of your gene set reveals a strong and coherent signature indicative of pancreatic beta cell identity, function, and development. The enriched terms highlight the core processes of insulin secretion, glucose homeostasis, and the developmental programs orchestrating beta cell formation. A significant portion of the genes also points to the intricate machinery involved in protein synthesis and export, critical for peptide hormone production.\n\n## Detailed Analysis\n\n**Tools Used:**\n*   `"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Interpretation of the Enrichment Analysis for Pancreas Beta Cells**\n\nOkay, so the enrichment analysis is showing precisely what I anticipated: a strong connection to Pancreas Beta Cells, which is, of course, the focus here.\n\nDelving into the \"GO_Biological_Process_2023\" data, several core themes immediately jump out. First, unsurprisingly, the results are enriched with **Regulation of Insulin Secretion**. It's all there: related processes, confirming that my expectations were correct. Then, we have **Glucose Homeostasis**, which is intimately linked.\n\nNext, I see a significant focus on **Peptide Hormone Secretion/Regulation**, which is consistent given the endocrine function of these cells. Following this is **Protein Targeting/Processing**, which involves endoplasmic reticulum and secretion pathway-related processes. This aligns with the understanding of protein synthesis and export in Beta cells.\n\nOf course, the analysis also highlights **Pancreas Development / Beta Cell Differentiation**, which provides crucial context for understanding the cellular origin and functional maturity. Finally, and crucially, we're seeing strong evidence of **Regulation of Transcription by RNA Polymerase II / DNA-templated transcription**. This is what really piques my interest. It tells me which regulatory mechanisms are really driving the Beta cell function, including transcription factors that I'm very familiar with. The data shows several of the usual suspects, like PDX1, PAX6, HNF1A, FOXA2, NEUROD1, ISL1, NKX6-1, NKX2-2, MAFB, NEUROG3, FOXO1, and INSM1. This transcription factor information provides a very compelling validation of the enrichment analysis's biological relevance.",
+      "action": "search_literature",
+      "args": "max_results=5, query=(PAX6 OR PDX1 OR HNF1A OR NEUROD1 OR NKX6-1 OR FOX..., sort_by=relevance",
+      "tool_name": "search_literature",
+      "tool_call_id": "b7da18b9-6383-4f77-a028-4d600aa174a5",
+      "observation": "=== LITERATURE SEARCH: '(PAX6 OR PDX1 OR HNF1A OR NEUROD1 OR NKX6-1 OR FOXA2 OR INS OR GCK) AND (\"pancreatic beta cell differentiation\" OR \"insulin secretion\" OR \"MODY\")' === | Found 4 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "This gene set is highly characteristic of pancreatic beta cells, indicating robust activity in processes central to beta cell identity, function, and endocrine regulation. The enrichment analysis strongly highlights pathways involved in insulin secretion, glucose homeostasis, beta cell development, and protein processing essential for hormone production. The most striking finding is the significant enrichment for \"Maturity onset diabetes of the young (MODY)\" in the KEGG database, which aligns pe"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "genes=PAX6, NEUROD1, ISL1, NKX2-2, PCSK1, NKX6-1, SLC2A2..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "thought": "**My Plan for Unveiling the Biological Secrets of My Gene List**\n\nOkay, so I have this gene list, and I'm keen to understand what it tells me about Pancreas Beta Cells. This is my game plan:\n\nFirst, I need to get a handle on what's enriched within this list. I'll use `run_enrichment_analysis` with the provided gene list, using `GO_Biological_Process_2023` and `KEGG_2021_Human` as my libraries. This will give me the building blocks to interpret the analysis.\n\nNext, I will delve into the enrichment results. I'll need to critically analyze the enriched terms, paying close attention to those that are particularly relevant to the function and regulation of Pancreas Beta Cells. This is where the real work begins.\n\nTo lend this analysis some muscle, I'll then move on to a robust literature search with `search_literature`. The results from the enrichment analysis will be essential here. I need to construct specific search queries based on the enriched terms, looking for evidence related to the key genes in the list and how they play a role in Pancreas Beta Cells. I'm aiming for up to five papers that will support my interpretation.\n\nIt's crucial that I only include citations for papers that I actually retrieve from the literature search. I'm a stickler for good practice.\n\nFinally, I'll synthesize everything into a concise biological interpretation, focusing on the most relevant findings. I'll carefully distinguish between strong conclusions based on solid evidence, informed hypotheses that warrant further investigation, and any speculative thoughts. This level of clarity will add great value to the results.\n\nThe overall approach needs to be organized. My final output will be structured as a summary, which will be followed by a \"## Detailed Analysis\" section, to allow the reader a deeper insight into the thought process.",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 40 | Total significant terms: 94"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "max_results=5, query=(PAX6 OR PDX1 OR HNF1A OR NEUROD1 OR NKX6-1 OR FOX..., sort_by=relevance",
+      "thought": "**My Interpretation of the Enrichment Analysis for Pancreas Beta Cells**\n\nOkay, so the enrichment analysis is showing precisely what I anticipated: a strong connection to Pancreas Beta Cells, which is, of course, the focus here.\n\nDelving into the \"GO_Biological_Process_2023\" data, several core themes immediately jump out. First, unsurprisingly, the results are enriched with **Regulation of Insulin Secretion**. It's all there: related processes, confirming that my expectations were correct. Then, we have **Glucose Homeostasis**, which is intimately linked.\n\nNext, I see a significant focus on **Peptide Hormone Secretion/Regulation**, which is consistent given the endocrine function of these cells. Following this is **Protein Targeting/Processing**, which involves endoplasmic reticulum and secretion pathway-related processes. This aligns with the understanding of protein synthesis and export in Beta cells.\n\nOf course, the analysis also highlights **Pancreas Development / Beta Cell Differentiation**, which provides crucial context for understanding the cellular origin and functional maturity. Finally, and crucially, we're seeing strong evidence of **Regulation of Transcription by RNA Polymerase II / DNA-templated transcription**. This is what really piques my interest. It tells me which regulatory mechanisms are really driving the Beta cell function, including transcription factors that I'm very familiar with. The data shows several of the usual suspects, like PDX1, PAX6, HNF1A, FOXA2, NEUROD1, ISL1, NKX6-1, NKX2-2, MAFB, NEUROG3, FOXO1, and INSM1. This transcription factor information provides a very compelling validation of the enrichment analysis's biological relevance.",
+      "observation": "=== LITERATURE SEARCH: '(PAX6 OR PDX1 OR HNF1A OR NEUROD1 OR NKX6-1 OR FOXA2 OR INS OR GCK) AND (\"pancreatic beta cell differentiation\" OR \"insulin secretion\" OR \"MODY\")' === | Found 4 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "PAX6",
+      "NEUROD1",
+      "ISL1",
+      "NKX2-2",
+      "PCSK1",
+      "NKX6-1",
+      "SLC2A2",
+      "SEC11A",
+      "DCX",
+      "SPCS1",
+      "FOXA2",
+      "GCK",
+      "MAFB",
+      "INS",
+      "PDX1",
+      "ABCC8",
+      "IAPP",
+      "SRP9",
+      "NEUROG3",
+      "FOXO1",
+      "AKT3",
+      "GCG",
+      "DPP4",
+      "PAX4",
+      "SYT13",
+      "SCGN",
+      "HNF1A",
+      "STXBP1",
+      "CHGA",
+      "VDR",
+      "PCSK2",
+      "INSM1",
+      "SST",
+      "ELP4",
+      "SRPRB",
+      "PAK3",
+      "G6PC2",
+      "PKLR",
+      "LMO2",
+      "SRP14"
+    ],
+    "gene_count": 40,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Regulation Of Insulin Secretion (GO:0050796)",
+          "term": "Regulation Of Insulin Secretion (GO:0050796)",
+          "overlap": "9/87",
+          "p_value": 8.925392916824198e-14,
+          "z_score": 74.00248138957816,
+          "combined_score": 2223.574089403138,
+          "overlap_genes": [
+            "CHGA",
+            "NEUROD1",
+            "G6PC2",
+            "PDX1",
+            "GCG",
+            "ISL1",
+            "GCK",
+            "FOXO1",
+            "FOXA2"
+          ],
+          "genes": [
+            "CHGA",
+            "NEUROD1",
+            "G6PC2",
+            "PDX1",
+            "GCG",
+            "ISL1",
+            "GCK",
+            "FOXO1",
+            "FOXA2"
+          ],
+          "adjusted_p_value": 4.855413746752364e-11
+        },
+        {
+          "rank": 2,
+          "term_name": "Glucose Homeostasis (GO:0042593)",
+          "term": "Glucose Homeostasis (GO:0042593)",
+          "overlap": "8/87",
+          "p_value": 6.330877498779915e-12,
+          "z_score": 62.914556962025316,
+          "combined_score": 1622.2884841461848,
+          "overlap_genes": [
+            "NEUROD1",
+            "G6PC2",
+            "PAX6",
+            "GCG",
+            "HNF1A",
+            "GCK",
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "NEUROD1",
+            "G6PC2",
+            "PAX6",
+            "GCG",
+            "HNF1A",
+            "GCK",
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 1.721998679668137e-09
+        },
+        {
+          "rank": 3,
+          "term_name": "Regulation Of Peptide Hormone Secretion (GO:0090276)",
+          "term": "Regulation Of Peptide Hormone Secretion (GO:0090276)",
+          "overlap": "5/52",
+          "p_value": 5.989965671569145e-08,
+          "z_score": 60.525835866261396,
+          "combined_score": 1006.580667129179,
+          "overlap_genes": [
+            "NEUROD1",
+            "G6PC2",
+            "GCG",
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "NEUROD1",
+            "G6PC2",
+            "GCG",
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 1.0861804417778716e-05
+        },
+        {
+          "rank": 4,
+          "term_name": "Protein Targeting To ER (GO:0045047)",
+          "term": "Protein Targeting To ER (GO:0045047)",
+          "overlap": "4/23",
+          "p_value": 1.181311815265952e-07,
+          "z_score": 116.6140350877193,
+          "combined_score": 1860.1652965213532,
+          "overlap_genes": [
+            "SPCS1",
+            "SRPRB",
+            "SRP14",
+            "SRP9"
+          ],
+          "genes": [
+            "SPCS1",
+            "SRPRB",
+            "SRP14",
+            "SRP9"
+          ],
+          "adjusted_p_value": 1.606584068761695e-05
+        },
+        {
+          "rank": 5,
+          "term_name": "Positive Regulation Of Insulin Secretion (GO:0032024)",
+          "term": "Positive Regulation Of Insulin Secretion (GO:0032024)",
+          "overlap": "4/40",
+          "p_value": 1.18974191539574e-06,
+          "z_score": 61.49382716049383,
+          "combined_score": 838.8849018767067,
+          "overlap_genes": [
+            "PDX1",
+            "GCG",
+            "ISL1",
+            "GCK"
+          ],
+          "genes": [
+            "PDX1",
+            "GCG",
+            "ISL1",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.0001294439203950565
+        },
+        {
+          "rank": 6,
+          "term_name": "Regulation Of Protein Secretion (GO:0050708)",
+          "term": "Regulation Of Protein Secretion (GO:0050708)",
+          "overlap": "5/102",
+          "p_value": 1.7846278744489814e-06,
+          "z_score": 29.253313696612665,
+          "combined_score": 387.2056547508971,
+          "overlap_genes": [
+            "NEUROD1",
+            "G6PC2",
+            "GCG",
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "NEUROD1",
+            "G6PC2",
+            "GCG",
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.00016180626061670765
+        },
+        {
+          "rank": 7,
+          "term_name": "Positive Regulation Of Peptide Hormone Secretion (GO:0090277)",
+          "term": "Positive Regulation Of Peptide Hormone Secretion (GO:0090277)",
+          "overlap": "4/46",
+          "p_value": 2.106126363495674e-06,
+          "z_score": 52.6931216931217,
+          "combined_score": 688.7338855979177,
+          "overlap_genes": [
+            "PDX1",
+            "ISL1",
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "PDX1",
+            "ISL1",
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.00016367610596309235
+        },
+        {
+          "rank": 8,
+          "term_name": "Regulation Of Transcription By RNA Polymerase II (GO:0006357)",
+          "term": "Regulation Of Transcription By RNA Polymerase II (GO:0006357)",
+          "overlap": "15/2028",
+          "p_value": 4.010968551119964e-06,
+          "z_score": 5.3493293591654245,
+          "combined_score": 66.47332259002874,
+          "overlap_genes": [
+            "LMO2",
+            "PDX1",
+            "PAX4",
+            "PAX6",
+            "ELP4",
+            "HNF1A",
+            "ISL1",
+            "FOXO1",
+            "NEUROD1",
+            "MAFB",
+            "INSM1",
+            "NKX6-1",
+            "NEUROG3",
+            "FOXA2",
+            "NKX2-2"
+          ],
+          "genes": [
+            "LMO2",
+            "PDX1",
+            "PAX4",
+            "PAX6",
+            "ELP4",
+            "HNF1A",
+            "ISL1",
+            "FOXO1",
+            "NEUROD1",
+            "MAFB",
+            "INSM1",
+            "NKX6-1",
+            "NEUROG3",
+            "FOXA2",
+            "NKX2-2"
+          ],
+          "adjusted_p_value": 0.0002463530461437788
+        },
+        {
+          "rank": 9,
+          "term_name": "Establishment Of Protein Localization To Endoplasmic Reticulum (GO:0072599)",
+          "term": "Establishment Of Protein Localization To Endoplasmic Reticulum (GO:0072599)",
+          "overlap": "3/16",
+          "p_value": 4.075693778113988e-06,
+          "z_score": 124.4095634095634,
+          "combined_score": 1543.981101342428,
+          "overlap_genes": [
+            "SPCS1",
+            "SRPRB",
+            "SRP14"
+          ],
+          "genes": [
+            "SPCS1",
+            "SRPRB",
+            "SRP14"
+          ],
+          "adjusted_p_value": 0.0002463530461437788
+        },
+        {
+          "rank": 10,
+          "term_name": "Nitric Oxide Mediated Signal Transduction (GO:0007263)",
+          "term": "Nitric Oxide Mediated Signal Transduction (GO:0007263)",
+          "overlap": "3/18",
+          "p_value": 5.922433959591772e-06,
+          "z_score": 107.8108108108108,
+          "combined_score": 1297.6931841458138,
+          "overlap_genes": [
+            "NEUROD1",
+            "PDX1",
+            "INS"
+          ],
+          "genes": [
+            "NEUROD1",
+            "PDX1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.0003221804074017924
+        },
+        {
+          "rank": 11,
+          "term_name": "Sensory Organ Development (GO:0007423)",
+          "term": "Sensory Organ Development (GO:0007423)",
+          "overlap": "4/70",
+          "p_value": 1.1432063349449686e-05,
+          "z_score": 33.49158249158249,
+          "combined_score": 381.1036837200393,
+          "overlap_genes": [
+            "NEUROD1",
+            "MAFB",
+            "PAX6",
+            "NEUROG3"
+          ],
+          "genes": [
+            "NEUROD1",
+            "MAFB",
+            "PAX6",
+            "NEUROG3"
+          ],
+          "adjusted_p_value": 0.0005217729287677273
+        },
+        {
+          "rank": 12,
+          "term_name": "Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944)",
+          "term": "Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944)",
+          "overlap": "10/938",
+          "p_value": 1.1509696958111632e-05,
+          "z_score": 6.836206896551724,
+          "combined_score": 77.7435369540683,
+          "overlap_genes": [
+            "NEUROD1",
+            "LMO2",
+            "PDX1",
+            "PAX6",
+            "HNF1A",
+            "NKX6-1",
+            "ISL1",
+            "FOXO1",
+            "NEUROG3",
+            "FOXA2"
+          ],
+          "genes": [
+            "NEUROD1",
+            "LMO2",
+            "PDX1",
+            "PAX6",
+            "HNF1A",
+            "NKX6-1",
+            "ISL1",
+            "FOXO1",
+            "NEUROG3",
+            "FOXA2"
+          ],
+          "adjusted_p_value": 0.0005217729287677273
+        },
+        {
+          "rank": 13,
+          "term_name": "Positive Regulation Of Protein Secretion (GO:0050714)",
+          "term": "Positive Regulation Of Protein Secretion (GO:0050714)",
+          "overlap": "4/76",
+          "p_value": 1.5858932011926304e-05,
+          "z_score": 30.691358024691358,
+          "combined_score": 339.1940656626279,
+          "overlap_genes": [
+            "PDX1",
+            "ISL1",
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "PDX1",
+            "ISL1",
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.0006636353088067623
+        },
+        {
+          "rank": 14,
+          "term_name": "Positive Regulation Of DNA-templated Transcription (GO:0045893)",
+          "term": "Positive Regulation Of DNA-templated Transcription (GO:0045893)",
+          "overlap": "11/1243",
+          "p_value": 2.2157441149543922e-05,
+          "z_score": 5.766009852216749,
+          "combined_score": 61.79627173679359,
+          "overlap_genes": [
+            "NEUROD1",
+            "MAFB",
+            "LMO2",
+            "PDX1",
+            "PAX6",
+            "HNF1A",
+            "NKX6-1",
+            "ISL1",
+            "FOXO1",
+            "NEUROG3",
+            "FOXA2"
+          ],
+          "genes": [
+            "NEUROD1",
+            "MAFB",
+            "LMO2",
+            "PDX1",
+            "PAX6",
+            "HNF1A",
+            "NKX6-1",
+            "ISL1",
+            "FOXO1",
+            "NEUROG3",
+            "FOXA2"
+          ],
+          "adjusted_p_value": 0.0008609748560965638
+        },
+        {
+          "rank": 15,
+          "term_name": "Regulation Of Gluconeogenesis (GO:0006111)",
+          "term": "Regulation Of Gluconeogenesis (GO:0006111)",
+          "overlap": "3/31",
+          "p_value": 3.204173532237099e-05,
+          "z_score": 57.71814671814672,
+          "combined_score": 597.2945834229336,
+          "overlap_genes": [
+            "FOXO1",
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "FOXO1",
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.001162046934357988
+        },
+        {
+          "rank": 16,
+          "term_name": "Axon Development (GO:0061564)",
+          "term": "Axon Development (GO:0061564)",
+          "overlap": "4/99",
+          "p_value": 4.5017312340260724e-05,
+          "z_score": 23.23391812865497,
+          "combined_score": 232.5358197753936,
+          "overlap_genes": [
+            "NEUROD1",
+            "PAK3",
+            "ISL1",
+            "NEUROG3"
+          ],
+          "genes": [
+            "NEUROD1",
+            "PAK3",
+            "ISL1",
+            "NEUROG3"
+          ],
+          "adjusted_p_value": 0.0014405539948883432
+        },
+        {
+          "rank": 17,
+          "term_name": "Cellular Response To Insulin Stimulus (GO:0032869)",
+          "term": "Cellular Response To Insulin Stimulus (GO:0032869)",
+          "overlap": "4/99",
+          "p_value": 4.5017312340260724e-05,
+          "z_score": 23.23391812865497,
+          "combined_score": 232.5358197753936,
+          "overlap_genes": [
+            "PKLR",
+            "GCK",
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "PKLR",
+            "GCK",
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.0014405539948883432
+        },
+        {
+          "rank": 18,
+          "term_name": "Regulation Of DNA-templated Transcription (GO:0006355)",
+          "term": "Regulation Of DNA-templated Transcription (GO:0006355)",
+          "overlap": "13/1922",
+          "p_value": 5.731438566930116e-05,
+          "z_score": 4.55276177172458,
+          "combined_score": 44.466637137578225,
+          "overlap_genes": [
+            "PDX1",
+            "PAX4",
+            "PAX6",
+            "ELP4",
+            "HNF1A",
+            "FOXO1",
+            "INS",
+            "NEUROD1",
+            "MAFB",
+            "NKX6-1",
+            "NEUROG3",
+            "FOXA2",
+            "NKX2-2"
+          ],
+          "genes": [
+            "PDX1",
+            "PAX4",
+            "PAX6",
+            "ELP4",
+            "HNF1A",
+            "FOXO1",
+            "INS",
+            "NEUROD1",
+            "MAFB",
+            "NKX6-1",
+            "NEUROG3",
+            "FOXA2",
+            "NKX2-2"
+          ],
+          "adjusted_p_value": 0.0017321681002277684
+        },
+        {
+          "rank": 19,
+          "term_name": "Negative Regulation Of Protein Secretion (GO:0050709)",
+          "term": "Negative Regulation Of Protein Secretion (GO:0050709)",
+          "overlap": "3/39",
+          "p_value": 6.442749129145759e-05,
+          "z_score": 44.873873873873876,
+          "combined_score": 433.0315426140274,
+          "overlap_genes": [
+            "CHGA",
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "CHGA",
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.0018446608032922595
+        },
+        {
+          "rank": 20,
+          "term_name": "Protein Processing (GO:0016485)",
+          "term": "Protein Processing (GO:0016485)",
+          "overlap": "4/117",
+          "p_value": 8.639335900397582e-05,
+          "z_score": 19.515240904621436,
+          "combined_score": 182.5962981398698,
+          "overlap_genes": [
+            "PCSK2",
+            "PCSK1",
+            "SPCS1",
+            "SEC11A"
+          ],
+          "genes": [
+            "PCSK2",
+            "PCSK1",
+            "SPCS1",
+            "SEC11A"
+          ],
+          "adjusted_p_value": 0.0023498993649081422
+        },
+        {
+          "rank": 21,
+          "term_name": "Regulation Of Protein-Containing Complex Assembly (GO:0043254)",
+          "term": "Regulation Of Protein-Containing Complex Assembly (GO:0043254)",
+          "overlap": "4/119",
+          "p_value": 9.22694248956724e-05,
+          "z_score": 19.17391304347826,
+          "combined_score": 178.1409477649009,
+          "overlap_genes": [
+            "STXBP1",
+            "IAPP",
+            "INSM1",
+            "ISL1"
+          ],
+          "genes": [
+            "STXBP1",
+            "IAPP",
+            "INSM1",
+            "ISL1"
+          ],
+          "adjusted_p_value": 0.0023902174830117045
+        },
+        {
+          "rank": 22,
+          "term_name": "Positive Regulation Of Developmental Process (GO:0051094)",
+          "term": "Positive Regulation Of Developmental Process (GO:0051094)",
+          "overlap": "5/233",
+          "p_value": 9.699707482682551e-05,
+          "z_score": 12.363408521303258,
+          "combined_score": 114.24815310617953,
+          "overlap_genes": [
+            "NEUROD1",
+            "INSM1",
+            "ISL1",
+            "FOXA2",
+            "INS"
+          ],
+          "genes": [
+            "NEUROD1",
+            "INSM1",
+            "ISL1",
+            "FOXA2",
+            "INS"
+          ],
+          "adjusted_p_value": 0.0023984731229905946
+        },
+        {
+          "rank": 23,
+          "term_name": "Positive Regulation Of Nucleic Acid-Templated Transcription (GO:1903508)",
+          "term": "Positive Regulation Of Nucleic Acid-Templated Transcription (GO:1903508)",
+          "overlap": "7/557",
+          "p_value": 0.00010499668736014211,
+          "z_score": 7.485950413223141,
+          "combined_score": 68.58314674150408,
+          "overlap_genes": [
+            "NEUROD1",
+            "MAFB",
+            "PAX6",
+            "HNF1A",
+            "FOXO1",
+            "NEUROG3",
+            "FOXA2"
+          ],
+          "genes": [
+            "NEUROD1",
+            "MAFB",
+            "PAX6",
+            "HNF1A",
+            "FOXO1",
+            "NEUROG3",
+            "FOXA2"
+          ],
+          "adjusted_p_value": 0.0024564762565799977
+        },
+        {
+          "rank": 24,
+          "term_name": "Type B Pancreatic Cell Differentiation (GO:0003309)",
+          "term": "Type B Pancreatic Cell Differentiation (GO:0003309)",
+          "overlap": "2/8",
+          "p_value": 0.00010837395249617636,
+          "z_score": 175.03508771929825,
+          "combined_score": 1598.0568361483106,
+          "overlap_genes": [
+            "PDX1",
+            "INSM1"
+          ],
+          "genes": [
+            "PDX1",
+            "INSM1"
+          ],
+          "adjusted_p_value": 0.0024564762565799977
+        },
+        {
+          "rank": 25,
+          "term_name": "SRP-dependent Cotranslational Protein Targeting To Membrane (GO:0006614)",
+          "term": "SRP-dependent Cotranslational Protein Targeting To Membrane (GO:0006614)",
+          "overlap": "2/10",
+          "p_value": 0.00017373245503849396,
+          "z_score": 131.26315789473685,
+          "combined_score": 1136.4756409312342,
+          "overlap_genes": [
+            "SRPRB",
+            "SRP9"
+          ],
+          "genes": [
+            "SRPRB",
+            "SRP9"
+          ],
+          "adjusted_p_value": 0.0037804182216376286
+        },
+        {
+          "rank": 26,
+          "term_name": "Peptide Metabolic Process (GO:0006518)",
+          "term": "Peptide Metabolic Process (GO:0006518)",
+          "overlap": "3/56",
+          "p_value": 0.00019087164058820475,
+          "z_score": 30.454360020397758,
+          "combined_score": 260.8083798864988,
+          "overlap_genes": [
+            "PCSK1",
+            "SPCS1",
+            "SEC11A"
+          ],
+          "genes": [
+            "PCSK1",
+            "SPCS1",
+            "SEC11A"
+          ],
+          "adjusted_p_value": 0.003993622018460899
+        },
+        {
+          "rank": 27,
+          "term_name": "Glucose Import (GO:0046323)",
+          "term": "Glucose Import (GO:0046323)",
+          "overlap": "2/12",
+          "p_value": 0.00025416386531107297,
+          "z_score": 105.0,
+          "combined_score": 869.1407927935406,
+          "overlap_genes": [
+            "SLC2A2",
+            "HNF1A"
+          ],
+          "genes": [
+            "SLC2A2",
+            "HNF1A"
+          ],
+          "adjusted_p_value": 0.005120931212193471
+        },
+        {
+          "rank": 28,
+          "term_name": "Positive Regulation Of Glycogen Biosynthetic Process (GO:0045725)",
+          "term": "Positive Regulation Of Glycogen Biosynthetic Process (GO:0045725)",
+          "overlap": "2/13",
+          "p_value": 0.0002999958070148033,
+          "z_score": 95.44976076555024,
+          "combined_score": 774.2638390210535,
+          "overlap_genes": [
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.005439923967201766
+        },
+        {
+          "rank": 29,
+          "term_name": "Cotranslational Protein Targeting To Membrane (GO:0006613)",
+          "term": "Cotranslational Protein Targeting To Membrane (GO:0006613)",
+          "overlap": "2/13",
+          "p_value": 0.0002999958070148033,
+          "z_score": 95.44976076555024,
+          "combined_score": 774.2638390210535,
+          "overlap_genes": [
+            "SRP14",
+            "SRP9"
+          ],
+          "genes": [
+            "SRP14",
+            "SRP9"
+          ],
+          "adjusted_p_value": 0.005439923967201766
+        },
+        {
+          "rank": 30,
+          "term_name": "Signal Peptide Processing (GO:0006465)",
+          "term": "Signal Peptide Processing (GO:0006465)",
+          "overlap": "2/13",
+          "p_value": 0.0002999958070148033,
+          "z_score": 95.44976076555024,
+          "combined_score": 774.2638390210535,
+          "overlap_genes": [
+            "SPCS1",
+            "SEC11A"
+          ],
+          "genes": [
+            "SPCS1",
+            "SEC11A"
+          ],
+          "adjusted_p_value": 0.005439923967201766
+        },
+        {
+          "rank": 31,
+          "term_name": "Positive Regulation Of Glycogen Metabolic Process (GO:0070875)",
+          "term": "Positive Regulation Of Glycogen Metabolic Process (GO:0070875)",
+          "overlap": "2/14",
+          "p_value": 0.00034955273047183893,
+          "z_score": 87.49122807017544,
+          "combined_score": 696.3300971664896,
+          "overlap_genes": [
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.005942396418021262
+        },
+        {
+          "rank": 32,
+          "term_name": "Pancreas Development (GO:0031016)",
+          "term": "Pancreas Development (GO:0031016)",
+          "overlap": "2/14",
+          "p_value": 0.00034955273047183893,
+          "z_score": 87.49122807017544,
+          "combined_score": 696.3300971664896,
+          "overlap_genes": [
+            "NKX6-1",
+            "ISL1"
+          ],
+          "genes": [
+            "NKX6-1",
+            "ISL1"
+          ],
+          "adjusted_p_value": 0.005942396418021262
+        },
+        {
+          "rank": 33,
+          "term_name": "Neuron Differentiation (GO:0030182)",
+          "term": "Neuron Differentiation (GO:0030182)",
+          "overlap": "4/173",
+          "p_value": 0.00038753028688949645,
+          "z_score": 13.011834319526628,
+          "combined_score": 102.21728224242763,
+          "overlap_genes": [
+            "NEUROD1",
+            "PAX6",
+            "INSM1",
+            "FOXA2"
+          ],
+          "genes": [
+            "NEUROD1",
+            "PAX6",
+            "INSM1",
+            "FOXA2"
+          ],
+          "adjusted_p_value": 0.006388378062663214
+        },
+        {
+          "rank": 34,
+          "term_name": "Negative Regulation Of Gluconeogenesis (GO:0045721)",
+          "term": "Negative Regulation Of Gluconeogenesis (GO:0045721)",
+          "overlap": "2/15",
+          "p_value": 0.00040282030348904685,
+          "z_score": 80.75708502024291,
+          "combined_score": 631.279748139968,
+          "overlap_genes": [
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.00644512485582475
+        },
+        {
+          "rank": 35,
+          "term_name": "Negative Regulation Of Insulin Secretion (GO:0046676)",
+          "term": "Negative Regulation Of Insulin Secretion (GO:0046676)",
+          "overlap": "2/17",
+          "p_value": 0.0005204302673761171,
+          "z_score": 69.98245614035088,
+          "combined_score": 529.127179015688,
+          "overlap_genes": [
+            "CHGA",
+            "FOXO1"
+          ],
+          "genes": [
+            "CHGA",
+            "FOXO1"
+          ],
+          "adjusted_p_value": 0.00796158384112822
+        },
+        {
+          "rank": 36,
+          "term_name": "Response To Insulin (GO:0032868)",
+          "term": "Response To Insulin (GO:0032868)",
+          "overlap": "3/79",
+          "p_value": 0.0005274600185017646,
+          "z_score": 21.213371266002845,
+          "combined_score": 160.1065935779919,
+          "overlap_genes": [
+            "PKLR",
+            "GCK",
+            "FOXO1"
+          ],
+          "genes": [
+            "PKLR",
+            "GCK",
+            "FOXO1"
+          ],
+          "adjusted_p_value": 0.00796158384112822
+        },
+        {
+          "rank": 37,
+          "term_name": "Glucose 6-Phosphate Metabolic Process (GO:0051156)",
+          "term": "Glucose 6-Phosphate Metabolic Process (GO:0051156)",
+          "overlap": "2/18",
+          "p_value": 0.0005847441918510701,
+          "z_score": 65.60526315789474,
+          "combined_score": 488.3876279088855,
+          "overlap_genes": [
+            "G6PC2",
+            "GCK"
+          ],
+          "genes": [
+            "G6PC2",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.00796158384112822
+        },
+        {
+          "rank": 38,
+          "term_name": "Negative Regulation Of Peptide Hormone Secretion (GO:0090278)",
+          "term": "Negative Regulation Of Peptide Hormone Secretion (GO:0090278)",
+          "overlap": "2/18",
+          "p_value": 0.0005847441918510701,
+          "z_score": 65.60526315789474,
+          "combined_score": 488.3876279088855,
+          "overlap_genes": [
+            "CHGA",
+            "FOXO1"
+          ],
+          "genes": [
+            "CHGA",
+            "FOXO1"
+          ],
+          "adjusted_p_value": 0.00796158384112822
+        },
+        {
+          "rank": 39,
+          "term_name": "Neuron Fate Commitment (GO:0048663)",
+          "term": "Neuron Fate Commitment (GO:0048663)",
+          "overlap": "2/18",
+          "p_value": 0.0005847441918510701,
+          "z_score": 65.60526315789474,
+          "combined_score": 488.3876279088855,
+          "overlap_genes": [
+            "PAX6",
+            "ISL1"
+          ],
+          "genes": [
+            "PAX6",
+            "ISL1"
+          ],
+          "adjusted_p_value": 0.00796158384112822
+        },
+        {
+          "rank": 40,
+          "term_name": "Regulation Of Cell Differentiation (GO:0045595)",
+          "term": "Regulation Of Cell Differentiation (GO:0045595)",
+          "overlap": "4/193",
+          "p_value": 0.0005854105765535456,
+          "z_score": 11.623162845385067,
+          "combined_score": 86.51349217706132,
+          "overlap_genes": [
+            "NEUROD1",
+            "INSM1",
+            "ISL1",
+            "INS"
+          ],
+          "genes": [
+            "NEUROD1",
+            "INSM1",
+            "ISL1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.00796158384112822
+        },
+        {
+          "rank": 41,
+          "term_name": "Insulin Secretion (GO:0030073)",
+          "term": "Insulin Secretion (GO:0030073)",
+          "overlap": "2/19",
+          "p_value": 0.0006527118331915355,
+          "z_score": 61.743034055727556,
+          "combined_score": 452.84655446685724,
+          "overlap_genes": [
+            "NEUROD1",
+            "PDX1"
+          ],
+          "genes": [
+            "NEUROD1",
+            "PDX1"
+          ],
+          "adjusted_p_value": 0.008660371640395006
+        },
+        {
+          "rank": 42,
+          "term_name": "Cellular Response To Peptide Hormone Stimulus (GO:0071375)",
+          "term": "Cellular Response To Peptide Hormone Stimulus (GO:0071375)",
+          "overlap": "3/89",
+          "p_value": 0.0007470773989519929,
+          "z_score": 18.737272155876806,
+          "combined_score": 134.89602599667444,
+          "overlap_genes": [
+            "PKLR",
+            "GCK",
+            "FOXO1"
+          ],
+          "genes": [
+            "PKLR",
+            "GCK",
+            "FOXO1"
+          ],
+          "adjusted_p_value": 0.009676431072140099
+        },
+        {
+          "rank": 43,
+          "term_name": "Positive Regulation Of Transcription Regulatory Region DNA Binding (GO:2000679)",
+          "term": "Positive Regulation Of Transcription Regulatory Region DNA Binding (GO:2000679)",
+          "overlap": "2/21",
+          "p_value": 0.0007995517676019706,
+          "z_score": 55.2382271468144,
+          "combined_score": 393.92916747621626,
+          "overlap_genes": [
+            "NEUROD1",
+            "PAX6"
+          ],
+          "genes": [
+            "NEUROD1",
+            "PAX6"
+          ],
+          "adjusted_p_value": 0.010115259571522605
+        },
+        {
+          "rank": 44,
+          "term_name": "Glucose Transmembrane Transport (GO:1904659)",
+          "term": "Glucose Transmembrane Transport (GO:1904659)",
+          "overlap": "2/22",
+          "p_value": 0.000878395909700633,
+          "z_score": 52.473684210526315,
+          "combined_score": 369.2789949643409,
+          "overlap_genes": [
+            "SLC2A2",
+            "HNF1A"
+          ],
+          "genes": [
+            "SLC2A2",
+            "HNF1A"
+          ],
+          "adjusted_p_value": 0.01086016761084419
+        },
+        {
+          "rank": 45,
+          "term_name": "Regulation Of Glycogen Biosynthetic Process (GO:0005979)",
+          "term": "Regulation Of Glycogen Biosynthetic Process (GO:0005979)",
+          "overlap": "2/25",
+          "p_value": 0.0011364569536468786,
+          "z_score": 45.62242562929062,
+          "combined_score": 309.3127366723546,
+          "overlap_genes": [
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.01343983875617178
+        },
+        {
+          "rank": 46,
+          "term_name": "Peptide Hormone Secretion (GO:0030072)",
+          "term": "Peptide Hormone Secretion (GO:0030072)",
+          "overlap": "2/25",
+          "p_value": 0.0011364569536468786,
+          "z_score": 45.62242562929062,
+          "combined_score": 309.3127366723546,
+          "overlap_genes": [
+            "NEUROD1",
+            "PDX1"
+          ],
+          "genes": [
+            "NEUROD1",
+            "PDX1"
+          ],
+          "adjusted_p_value": 0.01343983875617178
+        },
+        {
+          "rank": 47,
+          "term_name": "Regulation Of Insulin Secretion Involved In Cellular Response To Glucose Stimulus (GO:0061178)",
+          "term": "Regulation Of Insulin Secretion Involved In Cellular Response To Glucose Stimulus (GO:0061178)",
+          "overlap": "2/27",
+          "p_value": 0.0013262988762919497,
+          "z_score": 41.96842105263158,
+          "combined_score": 278.0560246700436,
+          "overlap_genes": [
+            "GCG",
+            "FOXA2"
+          ],
+          "genes": [
+            "GCG",
+            "FOXA2"
+          ],
+          "adjusted_p_value": 0.01535120401495363
+        },
+        {
+          "rank": 48,
+          "term_name": "Regulation Of Calcium Ion-Dependent Exocytosis (GO:0017158)",
+          "term": "Regulation Of Calcium Ion-Dependent Exocytosis (GO:0017158)",
+          "overlap": "2/28",
+          "p_value": 0.0014265186232744749,
+          "z_score": 40.35222672064777,
+          "combined_score": 264.40870533107534,
+          "overlap_genes": [
+            "STXBP1",
+            "SYT13"
+          ],
+          "genes": [
+            "STXBP1",
+            "SYT13"
+          ],
+          "adjusted_p_value": 0.016167211063777383
+        },
+        {
+          "rank": 49,
+          "term_name": "Glycolytic Process (GO:0006096)",
+          "term": "Glycolytic Process (GO:0006096)",
+          "overlap": "2/29",
+          "p_value": 0.00153025250365294,
+          "z_score": 38.85575048732944,
+          "combined_score": 251.87550649817445,
+          "overlap_genes": [
+            "PKLR",
+            "GCK"
+          ],
+          "genes": [
+            "PKLR",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.016988925754840803
+        },
+        {
+          "rank": 50,
+          "term_name": "Negative Regulation Of Carbohydrate Metabolic Process (GO:0045912)",
+          "term": "Negative Regulation Of Carbohydrate Metabolic Process (GO:0045912)",
+          "overlap": "2/30",
+          "p_value": 0.0016374867723787483,
+          "z_score": 37.46616541353384,
+          "combined_score": 240.3301899756201,
+          "overlap_genes": [
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.017815856083480783
+        },
+        {
+          "rank": 51,
+          "term_name": "Regulation Of Long-Term Synaptic Potentiation (GO:1900271)",
+          "term": "Regulation Of Long-Term Synaptic Potentiation (GO:1900271)",
+          "overlap": "2/31",
+          "p_value": 0.0017482077236044978,
+          "z_score": 36.172413793103445,
+          "combined_score": 229.6645937348641,
+          "overlap_genes": [
+            "SCGN",
+            "INS"
+          ],
+          "genes": [
+            "SCGN",
+            "INS"
+          ],
+          "adjusted_p_value": 0.018647549051781308
+        },
+        {
+          "rank": 52,
+          "term_name": "Negative Regulation Of Small Molecule Metabolic Process (GO:0062014)",
+          "term": "Negative Regulation Of Small Molecule Metabolic Process (GO:0062014)",
+          "overlap": "2/33",
+          "p_value": 0.0019800550402056874,
+          "z_score": 33.835314091680814,
+          "combined_score": 210.61233269332834,
+          "overlap_genes": [
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.020714421959074882
+        },
+        {
+          "rank": 53,
+          "term_name": "Cellular Response To Glucose Stimulus (GO:0071333)",
+          "term": "Cellular Response To Glucose Stimulus (GO:0071333)",
+          "overlap": "2/34",
+          "p_value": 0.0021011541850646455,
+          "z_score": 32.776315789473685,
+          "combined_score": 202.0747864077191,
+          "overlap_genes": [
+            "PDX1",
+            "NKX6-1"
+          ],
+          "genes": [
+            "PDX1",
+            "NKX6-1"
+          ],
+          "adjusted_p_value": 0.02156656371085221
+        },
+        {
+          "rank": 54,
+          "term_name": "Protein Targeting (GO:0006605)",
+          "term": "Protein Targeting (GO:0006605)",
+          "overlap": "3/129",
+          "p_value": 0.0021756863065532065,
+          "z_score": 12.763191763191763,
+          "combined_score": 78.24361272416819,
+          "overlap_genes": [
+            "SPCS1",
+            "SRPRB",
+            "SRP14"
+          ],
+          "genes": [
+            "SPCS1",
+            "SRPRB",
+            "SRP14"
+          ],
+          "adjusted_p_value": 0.021918025014165635
+        },
+        {
+          "rank": 55,
+          "term_name": "Central Nervous System Development (GO:0007417)",
+          "term": "Central Nervous System Development (GO:0007417)",
+          "overlap": "4/283",
+          "p_value": 0.002402535636762463,
+          "z_score": 7.837913181999204,
+          "combined_score": 47.27226169824597,
+          "overlap_genes": [
+            "DCX",
+            "PAX6",
+            "NEUROG3",
+            "NKX2-2"
+          ],
+          "genes": [
+            "DCX",
+            "PAX6",
+            "NEUROG3",
+            "NKX2-2"
+          ],
+          "adjusted_p_value": 0.023338917614263925
+        },
+        {
+          "rank": 56,
+          "term_name": "Positive Regulation Of Cell Differentiation (GO:0045597)",
+          "term": "Positive Regulation Of Cell Differentiation (GO:0045597)",
+          "overlap": "4/283",
+          "p_value": 0.002402535636762463,
+          "z_score": 7.837913181999204,
+          "combined_score": 47.27226169824597,
+          "overlap_genes": [
+            "NEUROD1",
+            "INSM1",
+            "ISL1",
+            "INS"
+          ],
+          "genes": [
+            "NEUROD1",
+            "INSM1",
+            "ISL1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.023338917614263925
+        },
+        {
+          "rank": 57,
+          "term_name": "Regulation Of Glycolytic Process (GO:0006110)",
+          "term": "Regulation Of Glycolytic Process (GO:0006110)",
+          "overlap": "2/40",
+          "p_value": 0.0028993544104051667,
+          "z_score": 27.592797783933516,
+          "combined_score": 161.23208980213658,
+          "overlap_genes": [
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.027193944814834666
+        },
+        {
+          "rank": 58,
+          "term_name": "Negative Regulation Of Secretion By Cell (GO:1903531)",
+          "term": "Negative Regulation Of Secretion By Cell (GO:1903531)",
+          "overlap": "2/40",
+          "p_value": 0.0028993544104051667,
+          "z_score": 27.592797783933516,
+          "combined_score": 161.23208980213658,
+          "overlap_genes": [
+            "CHGA",
+            "INS"
+          ],
+          "genes": [
+            "CHGA",
+            "INS"
+          ],
+          "adjusted_p_value": 0.027193944814834666
+        },
+        {
+          "rank": 59,
+          "term_name": "Carbohydrate Catabolic Process (GO:0016052)",
+          "term": "Carbohydrate Catabolic Process (GO:0016052)",
+          "overlap": "2/41",
+          "p_value": 0.003044196749720607,
+          "z_score": 26.883940620782727,
+          "combined_score": 155.7794833711756,
+          "overlap_genes": [
+            "PKLR",
+            "GCK"
+          ],
+          "genes": [
+            "PKLR",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.0280685259635256
+        },
+        {
+          "rank": 60,
+          "term_name": "Intracellular Glucose Homeostasis (GO:0001678)",
+          "term": "Intracellular Glucose Homeostasis (GO:0001678)",
+          "overlap": "2/43",
+          "p_value": 0.003343883466309401,
+          "z_score": 25.569961489088573,
+          "combined_score": 145.76469607458566,
+          "overlap_genes": [
+            "GCK",
+            "FOXO1"
+          ],
+          "genes": [
+            "GCK",
+            "FOXO1"
+          ],
+          "adjusted_p_value": 0.030317876761205235
+        },
+        {
+          "rank": 61,
+          "term_name": "Negative Regulation Of Cellular Metabolic Process (GO:0031324)",
+          "term": "Negative Regulation Of Cellular Metabolic Process (GO:0031324)",
+          "overlap": "2/46",
+          "p_value": 0.003818220426103208,
+          "z_score": 23.822966507177032,
+          "combined_score": 132.6455824042491,
+          "overlap_genes": [
+            "AKT3",
+            "INS"
+          ],
+          "genes": [
+            "AKT3",
+            "INS"
+          ],
+          "adjusted_p_value": 0.03320033201511322
+        },
+        {
+          "rank": 62,
+          "term_name": "Negative Regulation Of Transcription By RNA Polymerase II (GO:0000122)",
+          "term": "Negative Regulation Of Transcription By RNA Polymerase II (GO:0000122)",
+          "overlap": "6/763",
+          "p_value": 0.003832591824325666,
+          "z_score": 4.476571606185407,
+          "combined_score": 24.90860234997938,
+          "overlap_genes": [
+            "MAFB",
+            "PAX6",
+            "INSM1",
+            "NKX6-1",
+            "ISL1",
+            "NEUROG3"
+          ],
+          "genes": [
+            "MAFB",
+            "PAX6",
+            "INSM1",
+            "NKX6-1",
+            "ISL1",
+            "NEUROG3"
+          ],
+          "adjusted_p_value": 0.03320033201511322
+        },
+        {
+          "rank": 63,
+          "term_name": "Negative Regulation Of DNA-templated Transcription (GO:0045892)",
+          "term": "Negative Regulation Of DNA-templated Transcription (GO:0045892)",
+          "overlap": "7/1025",
+          "p_value": 0.003844891391456127,
+          "z_score": 3.9469548133595285,
+          "combined_score": 21.949054883194208,
+          "overlap_genes": [
+            "MAFB",
+            "PAX6",
+            "INSM1",
+            "NKX6-1",
+            "ISL1",
+            "FOXO1",
+            "NEUROG3"
+          ],
+          "genes": [
+            "MAFB",
+            "PAX6",
+            "INSM1",
+            "NKX6-1",
+            "ISL1",
+            "FOXO1",
+            "NEUROG3"
+          ],
+          "adjusted_p_value": 0.03320033201511322
+        },
+        {
+          "rank": 64,
+          "term_name": "Insulin Receptor Signaling Pathway (GO:0008286)",
+          "term": "Insulin Receptor Signaling Pathway (GO:0008286)",
+          "overlap": "2/47",
+          "p_value": 0.003982895320046974,
+          "z_score": 23.292397660818715,
+          "combined_score": 128.70787918647866,
+          "overlap_genes": [
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.03385461022039928
+        },
+        {
+          "rank": 65,
+          "term_name": "Proteolysis (GO:0006508)",
+          "term": "Proteolysis (GO:0006508)",
+          "overlap": "4/330",
+          "p_value": 0.004165676598068206,
+          "z_score": 6.691888207225631,
+          "combined_score": 36.6774132709321,
+          "overlap_genes": [
+            "PCSK2",
+            "DPP4",
+            "PCSK1",
+            "SPCS1"
+          ],
+          "genes": [
+            "PCSK2",
+            "DPP4",
+            "PCSK1",
+            "SPCS1"
+          ],
+          "adjusted_p_value": 0.03486350875921699
+        },
+        {
+          "rank": 66,
+          "term_name": "Pyruvate Metabolic Process (GO:0006090)",
+          "term": "Pyruvate Metabolic Process (GO:0006090)",
+          "overlap": "2/50",
+          "p_value": 0.004496424806807151,
+          "z_score": 21.833333333333332,
+          "combined_score": 117.99765363023795,
+          "overlap_genes": [
+            "PKLR",
+            "GCK"
+          ],
+          "genes": [
+            "PKLR",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.037061440831865
+        },
+        {
+          "rank": 67,
+          "term_name": "Regulated Exocytosis (GO:0045055)",
+          "term": "Regulated Exocytosis (GO:0045055)",
+          "overlap": "2/51",
+          "p_value": 0.004674059598481964,
+          "z_score": 21.386680988184747,
+          "combined_score": 114.75509786105277,
+          "overlap_genes": [
+            "STXBP1",
+            "SYT13"
+          ],
+          "genes": [
+            "STXBP1",
+            "SYT13"
+          ],
+          "adjusted_p_value": 0.037950573456331176
+        },
+        {
+          "rank": 68,
+          "term_name": "Positive Regulation Of Cellular Biosynthetic Process (GO:0031328)",
+          "term": "Positive Regulation Of Cellular Biosynthetic Process (GO:0031328)",
+          "overlap": "3/174",
+          "p_value": 0.005048987454843115,
+          "z_score": 9.383119962067331,
+          "combined_score": 49.62326384100674,
+          "overlap_genes": [
+            "GCK",
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "GCK",
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.04039189963874492
+        },
+        {
+          "rank": 69,
+          "term_name": "Glucose Metabolic Process (GO:0006006)",
+          "term": "Glucose Metabolic Process (GO:0006006)",
+          "overlap": "2/59",
+          "p_value": 0.00620953355419871,
+          "z_score": 18.37765466297322,
+          "combined_score": 93.38916714382763,
+          "overlap_genes": [
+            "G6PC2",
+            "GCK"
+          ],
+          "genes": [
+            "G6PC2",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.04825694647834426
+        },
+        {
+          "rank": 70,
+          "term_name": "Negative Regulation Of Protein-Containing Complex Assembly (GO:0031333)",
+          "term": "Negative Regulation Of Protein-Containing Complex Assembly (GO:0031333)",
+          "overlap": "2/59",
+          "p_value": 0.00620953355419871,
+          "z_score": 18.37765466297322,
+          "combined_score": 93.38916714382763,
+          "overlap_genes": [
+            "IAPP",
+            "ISL1"
+          ],
+          "genes": [
+            "IAPP",
+            "ISL1"
+          ],
+          "adjusted_p_value": 0.04825694647834426
+        },
+        {
+          "rank": 71,
+          "term_name": "Positive Regulation Of Cellular Process (GO:0048522)",
+          "term": "Positive Regulation Of Cellular Process (GO:0048522)",
+          "overlap": "5/594",
+          "p_value": 0.006335469454548243,
+          "z_score": 4.698277952946883,
+          "combined_score": 23.780763107861105,
+          "overlap_genes": [
+            "DPP4",
+            "NEUROD1",
+            "INSM1",
+            "ISL1",
+            "INS"
+          ],
+          "genes": [
+            "DPP4",
+            "NEUROD1",
+            "INSM1",
+            "ISL1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.048542188496820335
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Maturity onset diabetes of the young",
+          "term": "Maturity onset diabetes of the young",
+          "overlap": "14/26",
+          "p_value": 1.1776159813952434e-32,
+          "z_score": 895.1025641025641,
+          "combined_score": 65807.25212143965,
+          "overlap_genes": [
+            "PKLR",
+            "PAX4",
+            "PDX1",
+            "SLC2A2",
+            "PAX6",
+            "HNF1A",
+            "GCK",
+            "INS",
+            "NEUROD1",
+            "IAPP",
+            "NKX6-1",
+            "NKX2-2",
+            "FOXA2",
+            "NEUROG3"
+          ],
+          "genes": [
+            "PKLR",
+            "PAX4",
+            "PDX1",
+            "SLC2A2",
+            "PAX6",
+            "HNF1A",
+            "GCK",
+            "INS",
+            "NEUROD1",
+            "IAPP",
+            "NKX6-1",
+            "NKX2-2",
+            "FOXA2",
+            "NEUROG3"
+          ],
+          "adjusted_p_value": 1.436691497302197e-30
+        },
+        {
+          "rank": 2,
+          "term_name": "Type II diabetes mellitus",
+          "term": "Type II diabetes mellitus",
+          "overlap": "6/46",
+          "p_value": 3.817461614111453e-10,
+          "z_score": 87.88235294117646,
+          "combined_score": 1905.8400146659808,
+          "overlap_genes": [
+            "PKLR",
+            "ABCC8",
+            "PDX1",
+            "SLC2A2",
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "PKLR",
+            "ABCC8",
+            "PDX1",
+            "SLC2A2",
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 2.3286515846079863e-08
+        },
+        {
+          "rank": 3,
+          "term_name": "Protein export",
+          "term": "Protein export",
+          "overlap": "5/23",
+          "p_value": 8.090012318988089e-10,
+          "z_score": 158.26984126984127,
+          "combined_score": 3313.4140533599657,
+          "overlap_genes": [
+            "SPCS1",
+            "SRPRB",
+            "SRP14",
+            "SEC11A",
+            "SRP9"
+          ],
+          "genes": [
+            "SPCS1",
+            "SRPRB",
+            "SRP14",
+            "SEC11A",
+            "SRP9"
+          ],
+          "adjusted_p_value": 3.289938343055156e-08
+        },
+        {
+          "rank": 4,
+          "term_name": "Insulin secretion",
+          "term": "Insulin secretion",
+          "overlap": "6/86",
+          "p_value": 1.807574331073348e-08,
+          "z_score": 43.85294117647059,
+          "combined_score": 781.8407107225929,
+          "overlap_genes": [
+            "ABCC8",
+            "PDX1",
+            "SLC2A2",
+            "GCG",
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "ABCC8",
+            "PDX1",
+            "SLC2A2",
+            "GCG",
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 5.513101709773712e-07
+        },
+        {
+          "rank": 5,
+          "term_name": "Glucagon signaling pathway",
+          "term": "Glucagon signaling pathway",
+          "overlap": "6/107",
+          "p_value": 6.738496665820506e-08,
+          "z_score": 34.69831100757135,
+          "combined_score": 572.967792932769,
+          "overlap_genes": [
+            "G6PC2",
+            "AKT3",
+            "SLC2A2",
+            "GCG",
+            "GCK",
+            "FOXO1"
+          ],
+          "genes": [
+            "G6PC2",
+            "AKT3",
+            "SLC2A2",
+            "GCG",
+            "GCK",
+            "FOXO1"
+          ],
+          "adjusted_p_value": 1.6441931864602033e-06
+        },
+        {
+          "rank": 6,
+          "term_name": "Insulin signaling pathway",
+          "term": "Insulin signaling pathway",
+          "overlap": "6/137",
+          "p_value": 2.933014421287107e-07,
+          "z_score": 26.71171980242479,
+          "combined_score": 401.7994240358336,
+          "overlap_genes": [
+            "G6PC2",
+            "PKLR",
+            "AKT3",
+            "GCK",
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "G6PC2",
+            "PKLR",
+            "AKT3",
+            "GCK",
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 5.96379598995045e-06
+        },
+        {
+          "rank": 7,
+          "term_name": "Insulin resistance",
+          "term": "Insulin resistance",
+          "overlap": "5/108",
+          "p_value": 2.3675464944943145e-06,
+          "z_score": 27.540915395284326,
+          "combined_score": 356.7555542403053,
+          "overlap_genes": [
+            "G6PC2",
+            "AKT3",
+            "SLC2A2",
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "G6PC2",
+            "AKT3",
+            "SLC2A2",
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 4.126295318975805e-05
+        },
+        {
+          "rank": 8,
+          "term_name": "Prolactin signaling pathway",
+          "term": "Prolactin signaling pathway",
+          "overlap": "4/70",
+          "p_value": 1.1432063349449686e-05,
+          "z_score": 33.49158249158249,
+          "combined_score": 381.1036837200393,
+          "overlap_genes": [
+            "AKT3",
+            "SLC2A2",
+            "GCK",
+            "INS"
+          ],
+          "genes": [
+            "AKT3",
+            "SLC2A2",
+            "GCK",
+            "INS"
+          ],
+          "adjusted_p_value": 0.0001743389660791077
+        },
+        {
+          "rank": 9,
+          "term_name": "Longevity regulating pathway",
+          "term": "Longevity regulating pathway",
+          "overlap": "4/151",
+          "p_value": 5.060089817750042e-05,
+          "z_score": 22.519274376417233,
+          "combined_score": 222.75033099294876,
+          "overlap_genes": [
+            "AKT3",
+            "FOXO1",
+            "FOXA2",
+            "INS"
+          ],
+          "genes": [
+            "AKT3",
+            "FOXO1",
+            "FOXA2",
+            "INS"
+          ],
+          "adjusted_p_value": 0.0006859232864061169
+        },
+        {
+          "rank": 10,
+          "term_name": "AMPK signaling pathway",
+          "term": "AMPK signaling pathway",
+          "overlap": "4/120",
+          "p_value": 9.531399588101902e-05,
+          "z_score": 19.007662835249043,
+          "combined_score": 175.97928912646188,
+          "overlap_genes": [
+            "G6PC2",
+            "AKT3",
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "G6PC2",
+            "AKT3",
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.001162830749748432
+        },
+        {
+          "rank": 11,
+          "term_name": "Carbohydrate digestion and absorption",
+          "term": "Carbohydrate digestion and absorption",
+          "overlap": "3/47",
+          "p_value": 0.00011305169994989168,
+          "z_score": 36.7002457002457,
+          "combined_score": 333.5195501664382,
+          "overlap_genes": [
+            "G6PC2",
+            "AKT3",
+            "SLC2A2"
+          ],
+          "genes": [
+            "G6PC2",
+            "AKT3",
+            "SLC2A2"
+          ],
+          "adjusted_p_value": 0.0012538461267169805
+        },
+        {
+          "rank": 12,
+          "term_name": "FoxO signaling pathway",
+          "term": "FoxO signaling pathway",
+          "overlap": "4/131",
+          "p_value": 0.00013381580441233142,
+          "z_score": 17.35170603674541,
+          "combined_score": 154.76066948359357,
+          "overlap_genes": [
+            "G6PC2",
+            "AKT3",
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "G6PC2",
+            "AKT3",
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.001360460678192036
+        },
+        {
+          "rank": 13,
+          "term_name": "Glycolysis / Gluconeogenesis",
+          "term": "Glycolysis / Gluconeogenesis",
+          "overlap": "3/67",
+          "p_value": 0.00032487593877538796,
+          "z_score": 25.20608108108108,
+          "combined_score": 202.45693647070655,
+          "overlap_genes": [
+            "G6PC2",
+            "PKLR",
+            "GCK"
+          ],
+          "genes": [
+            "G6PC2",
+            "PKLR",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.0030488357331228716
+        },
+        {
+          "rank": 14,
+          "term_name": "Central carbon metabolism in cancer",
+          "term": "Central carbon metabolism in cancer",
+          "overlap": "3/70",
+          "p_value": 0.00036969110044934205,
+          "z_score": 24.07382008874546,
+          "combined_score": 190.25161490628952,
+          "overlap_genes": [
+            "AKT3",
+            "SLC2A2",
+            "GCK"
+          ],
+          "genes": [
+            "AKT3",
+            "SLC2A2",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.0032215938753442663
+        },
+        {
+          "rank": 15,
+          "term_name": "Prostate cancer",
+          "term": "Prostate cancer",
+          "overlap": "3/97",
+          "p_value": 0.0009592676665435392,
+          "z_score": 17.13571017826337,
+          "combined_score": 119.08188322959369,
+          "overlap_genes": [
+            "AKT3",
+            "FOXO1",
+            "INS"
+          ],
+          "genes": [
+            "AKT3",
+            "FOXO1",
+            "INS"
+          ],
+          "adjusted_p_value": 0.007802043687887452
+        },
+        {
+          "rank": 16,
+          "term_name": "Galactose metabolism",
+          "term": "Galactose metabolism",
+          "overlap": "2/31",
+          "p_value": 0.0017482077236044978,
+          "z_score": 36.172413793103445,
+          "combined_score": 229.6645937348641,
+          "overlap_genes": [
+            "G6PC2",
+            "GCK"
+          ],
+          "genes": [
+            "G6PC2",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.013330083892484296
+        },
+        {
+          "rank": 17,
+          "term_name": "Starch and sucrose metabolism",
+          "term": "Starch and sucrose metabolism",
+          "overlap": "2/36",
+          "p_value": 0.0023536356819974097,
+          "z_score": 30.845201238390093,
+          "combined_score": 186.6688052523798,
+          "overlap_genes": [
+            "G6PC2",
+            "GCK"
+          ],
+          "genes": [
+            "G6PC2",
+            "GCK"
+          ],
+          "adjusted_p_value": 0.01689079724727553
+        },
+        {
+          "rank": 18,
+          "term_name": "Signaling pathways regulating pluripotency of stem cells",
+          "term": "Signaling pathways regulating pluripotency of stem cells",
+          "overlap": "3/143",
+          "p_value": 0.0029137748393922,
+          "z_score": 11.478764478764479,
+          "combined_score": 67.01653772406777,
+          "overlap_genes": [
+            "AKT3",
+            "PAX6",
+            "ISL1"
+          ],
+          "genes": [
+            "AKT3",
+            "PAX6",
+            "ISL1"
+          ],
+          "adjusted_p_value": 0.019748918355880465
+        },
+        {
+          "rank": 19,
+          "term_name": "Non-alcoholic fatty liver disease",
+          "term": "Non-alcoholic fatty liver disease",
+          "overlap": "3/155",
+          "p_value": 0.003655767919427225,
+          "z_score": 10.566145092460882,
+          "combined_score": 59.29138544113468,
+          "overlap_genes": [
+            "PKLR",
+            "AKT3",
+            "INS"
+          ],
+          "genes": [
+            "PKLR",
+            "AKT3",
+            "INS"
+          ],
+          "adjusted_p_value": 0.02347387821948008
+        },
+        {
+          "rank": 20,
+          "term_name": "Regulation of lipolysis in adipocytes",
+          "term": "Regulation of lipolysis in adipocytes",
+          "overlap": "2/55",
+          "p_value": 0.005416545994675769,
+          "z_score": 19.768619662363456,
+          "combined_score": 103.15852743339593,
+          "overlap_genes": [
+            "AKT3",
+            "INS"
+          ],
+          "genes": [
+            "AKT3",
+            "INS"
+          ],
+          "adjusted_p_value": 0.033040930567522185
+        },
+        {
+          "rank": 21,
+          "term_name": "Adipocytokine signaling pathway",
+          "term": "Adipocytokine signaling pathway",
+          "overlap": "2/69",
+          "p_value": 0.008407640867576695,
+          "z_score": 15.626865671641792,
+          "combined_score": 74.6747646924916,
+          "overlap_genes": [
+            "G6PC2",
+            "AKT3"
+          ],
+          "genes": [
+            "G6PC2",
+            "AKT3"
+          ],
+          "adjusted_p_value": 0.046624190265652586
+        },
+        {
+          "rank": 22,
+          "term_name": "Renal cell carcinoma",
+          "term": "Renal cell carcinoma",
+          "overlap": "2/69",
+          "p_value": 0.008407640867576695,
+          "z_score": 15.626865671641792,
+          "combined_score": 74.6747646924916,
+          "overlap_genes": [
+            "AKT3",
+            "PAK3"
+          ],
+          "genes": [
+            "AKT3",
+            "PAK3"
+          ],
+          "adjusted_p_value": 0.046624190265652586
+        },
+        {
+          "rank": 23,
+          "term_name": "cAMP signaling pathway",
+          "term": "cAMP signaling pathway",
+          "overlap": "3/216",
+          "p_value": 0.009148166567967688,
+          "z_score": 7.5169394746859535,
+          "combined_score": 35.28603077390957,
+          "overlap_genes": [
+            "SST",
+            "AKT3",
+            "GCG"
+          ],
+          "genes": [
+            "SST",
+            "AKT3",
+            "GCG"
+          ],
+          "adjusted_p_value": 0.04852505744748078
+        }
+      ]
+    },
+    "significant_terms_total": 94,
+    "execution_time": 1.53,
+    "dataframe": "    rank  ...                     library\n71     1  ...             KEGG_2021_Human\n73     3  ...             KEGG_2021_Human\n0      1  ...  GO_Biological_Process_2023\n72     2  ...             KEGG_2021_Human\n3      4  ...  GO_Biological_Process_2023\n..   ...  ...                         ...\n64    65  ...  GO_Biological_Process_2023\n93    23  ...             KEGG_2021_Human\n61    62  ...  GO_Biological_Process_2023\n70    71  ...  GO_Biological_Process_2023\n62    63  ...  GO_Biological_Process_2023\n\n[94 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "42318217",
+      "pmcid": "PMC13271997",
+      "doi": "10.3389/fendo.2026.1819394",
+      "url": "https://doi.org/10.3389/fendo.2026.1819394",
+      "title": "Patient-derived induced pluripotent stem cells for precision modelling of monogenic beta cell disorders.",
+      "abstract": "Over the past several years, research and technologies involving patient-derived induced pluripotent stem cells (iPSCs) have rapidly advanced, enabling the study of various disease pathologies, including rare pathologies like monogenic disorders of beta cell function. iPSCs offer a unique model to study monogenic beta cell disorders such as Maturity-onset diabetes of the young (MODY) and congenital hyperinsulinism as they can be derived directly from patients with novel genetic variants and then differentiated into pancreatic progenitors and beta cells. Studies have used iPSC-derived SC-islets to demonstrate how transcription factor dysfunction can perturb insulin secretion, beta cell maturation, and endocrine lineage specification in MODY subtypes. Additional studies in congenital hyperinsulinism have utilized iPSC-derived SC-islets to model disease-specific hallmarks such as excess insulin secretion and increased beta cell proliferation. These studies provide the foundation for future studies using iPSC-derived SC-islets as a platform for elucidating mechanisms of how single-gene variants disrupt beta cell specification, maturation, and survival.",
+      "authors": "Deng L, Krishnamurthy M.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "1819394",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-06-03",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates MODY using iPSCs to study beta cell disorders."
+    },
+    {
+      "pmid": "41987393",
+      "pmcid": "PMC13271856",
+      "doi": "10.1507/endocrj.ej26-0092",
+      "url": "https://doi.org/10.1507/endocrj.ej26-0092",
+      "title": "Insights from maturity-onset diabetes of the young into impaired insulin secretion in type 2 diabetes.",
+      "abstract": "Monogenic diabetes arises from pathogenic variants in a single gene that are sufficient to cause disease predisposition. In general, a greater functional impact of genetic abnormalities is associated with an earlier age of onset. Accordingly, monogenic diabetes encompasses a wide clinical spectrum, including neonatal diabetes mellitus presenting within the first six months of life, and maturity-onset diabetes of the young (MODY) typically manifesting from childhood to early adulthood; both diabetic types exhibit impaired insulin secretory capacity. Although MODY is currently classified as diabetes of monogenic defect with impaired insulin secretion, it has become evident that mutations in rare MODY subtypes exhibit reduced pathogenic effects and low penetrance. In addition, observed differences in the clinical phenotypes caused by the same mutation, even in the same family, might be caused by other phenotypic modifying factors. Furthermore, their clinical expression is influenced, at least in part, by environmental factors, such as the intrauterine environment. Nevertheless, identification of the causative genes underlying monogenic diabetes has elucidated previously unrecognized molecular mechanisms responsible for the impaired insulin secretion. These findings have not only revealed novel therapeutic targets but have also provided important insights into the pathophysiology of common type 2 diabetes mellitus in the Japanese population, a multifactorial disease in which defective insulin secretion plays a central role.",
+      "authors": "Horikawa Y, Takahashi Y, Hosomichi K.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "667-675",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-04-16",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates MODY and impaired insulin secretion."
+    },
+    {
+      "pmid": "41772234",
+      "pmcid": "PMC13109276",
+      "doi": "10.1007/s00125-026-06685-7",
+      "url": "https://doi.org/10.1007/s00125-026-06685-7",
+      "title": "Systematic analysis of loss-of-function variants across MODY genes demonstrates gene-specific effects and expands the spectrum of INS variants causing MODY.",
+      "abstract": "<h4>Aims/hypothesis</h4>Accurate interpretation of loss-of-function (LOF) variants in MODY genes is essential for diagnosis but remains challenging, particularly for variants that are predicted to escape nonsense-mediated decay (NMD). We aimed to systematically evaluate the pathogenicity of LOF variants, stratified by NMD-triggering and NMD-escape status, across all known MODY genes.<h4>Methods</h4>We analysed ultra-rare LOF variants (minor allele frequency <1 in 10,000) in 5171 individuals of European ancestry with suspected MODY, compared with 155,501 population-based control individuals from UK Biobank. LOF variants in ABCC8, GCK, HNF1A, HNF4A, HNF1B, INS, KCNJ11, NEUROD1, PDX1 and RFX6 were classified as NMD-triggering or NMD-escape. We tested for gene-level enrichment in cases vs controls. For novel associations, we performed replication in additional MODY patients, assessed familial co-segregation, and undertook in silico protein modelling.<h4>Results</h4>LOF variants were significantly enriched in all MODY genes except ABCC8 and KCNJ11. Both NMD-triggering and NMD-escape variants were enriched in GCK, HNF1A and HNF4A, consistent with haploinsufficiency (all p<10<sup>-3</sup>). HNF1B and RFX6 showed enrichment only for NMD-triggering variants, while NEUROD1 and PDX1 were enriched only for NMD-escape variants. A novel finding was the significant enrichment of only NMD-escape LOF variants in INS (OR=181, p<10<sup>-5</sup>). Including replication in additional MODY patients, we identified eight families with 17 affected individuals carrying INS variants. These variants co-segregated with diabetes (logarithm of the odds score=3), included one de novo case, and were absent from >800,000 population control individuals. Individuals presented with diabetes at a median age of 19 years, had median BMI of 22.9 kg/m<sup>2</sup>, were negative for islet autoantibodies, and had low type 1 diabetes genetic risk scores. Compared with INS missense MODY, diagnosis occurred approximately 10 years later in individuals with NMD-escape LOF variants. Protein modelling suggested that INS NMD-escape variants produce aberrant proinsulin molecules with unpaired B-chain cysteines, leading to milder misfolding.<h4>Conclusions/interpretation</h4>The pathogenicity of LOF variants in MODY genes depends on gene context and NMD status. Heterozygous NMD-escape LOF variants in INS are a novel cause of MODY. These findings provide systematic gene-level evidence to inform variant interpretation guidelines and improve the accuracy of MODY diagnosis in clinical practice.",
+      "authors": "Laver TW, Sriram A, Wakeling MN, Şiklar Z, Kobaisi F, Kalyon O, Hattersley AT, Weedon MN, Flanagan SE, De Franco E, Colclough K, Patel KA.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 1,
+      "citation_count": 1,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "1569-1580",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2026-03-03",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates MODY genes and INS variants."
+    },
+    {
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.64898/2026.06.12.26355541",
+      "url": "https://doi.org/10.64898/2026.06.12.26355541",
+      "title": "Population-Scale, Genotype-First Characterization of Monogenic Diabetes in 374,973 Multi-Ancestry Individuals from the  <i>All of Us</i>  Research Program",
+      "abstract": "<h4>OBJECTIVE</h4>  To characterize the prevalence and penetrance of maturity-onset diabetes of the young (MODY) in a multi-ancestry population using a genotype-first design. <h4>RESEARCH DESIGN AND METHODS</h4>  We analyzed whole-genome sequencing and clinical data from 374,973 unrelated  All of Us participants (42.0% non-European ancestry). We identified pathogenic or likely pathogenic (P/LP) variants in 10 established MODY genes and assessed carrier prevalence, diabetes penetrance, and glycemic profiles. We evaluated age-dependent diabetes risk by comparing carriers with non-carriers stratified by type 2 diabetes polygenic risk score (T2D PRS).  <h4>RESULTS</h4>  We identified 370 carriers of P/LP MODY gene variants (0.099%; 1 in 1,013), with similar carrier prevalence among European- and African-ancestry participants (0.105% in both groups). Diabetes penetrance was incomplete (13.4% by age 40; 43.5% by age 60) and varied by etiology: highest for  GCK (56.0% by age 60), intermediate for HNF genes (  HNF1A /  HNF1B /  HNF4A ; 45.4%), and lowest for non-GCK/HNF genes (  ABCC8 /  INS /  KCNJ11 /  NEUROD1 /  PDX1 /  RFX6 ; 29.0%). In multivariable Cox models using non-carriers in the middle 80% of the T2D PRS as the reference, non-GCK/HNF gene variant carriers had modestly increased diabetes risk (HR, 1.57), similar to non-carriers in the top 10% of T2D PRS (HR, 1.64). These associations were observed in both European- and non-European-ancestry individuals. HbA1c profiles differed by etiology, with stable mild hyperglycemia in  GCK variant carriers and greater variability among HNF and non-GCK/HNF gene variant carriers.  <h4>CONCLUSIONS</h4>  MODY gene variants showed incomplete, etiology-dependent penetrance across ancestries. Carriers of P/LP variants in lower-penetrance genes had diabetes risk comparable to that of non-carriers with high polygenic susceptibility. <h4>Graphical Abstract</h4>",
+      "authors": "Hasebe M, Yoshiji S.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "PPR",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-06-22",
+      "relevance_rating": "Medium",
+      "relevance_details": "Directly investigates MODY prevalence and penetrance, but doesn't focus on specific gene mechanisms."
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 29.556350231170654,
+  "phase": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Regulation Of Insulin Secretion (GO:0050796) -> genes: [CHGA, NEUROD1, G6PC2, PDX1, GCG, ISL1, GCK, FOXO1, FOXA2]\n- Glucose Homeostasis (GO:0042593) -> genes: [NEUROD1, G6PC2, PAX6, GCG, HNF1A, GCK, FOXO1, INS]\n- Regulation Of Peptide Hormone Secretion (GO:0090276) -> genes: [NEUROD1, G6PC2, GCG, GCK, INS]\n- Protein Targeting To ER (GO:0045047) -> genes: [SPCS1, SRPRB, SRP14, SRP9]\n- Positive Regulation Of Insulin Secretion (GO:0032024) -> genes: [PDX1, GCG, ISL1, GCK]\n- Regulation Of Protein Secretion (GO:0050708) -> genes: [NEUROD1, G6PC2, GCG, GCK, INS]\n- Positive Regulation Of Peptide Hormone Secretion (GO:0090277) -> genes: [PDX1, ISL1, GCK, INS]\n- Regulation Of Transcription By RNA Polymerase II (GO:0006357) -> genes: [LMO2, PDX1, PAX4, PAX6, ELP4, HNF1A, ISL1, FOXO1, NEUROD1, MAFB, INSM1, NKX6-1, NEUROG3, FOXA2, NKX2-2]\n- Establishment Of Protein Localization To Endoplasmic Reticulum (GO:0072599) -> genes: [SPCS1, SRPRB, SRP14]\n- Nitric Oxide Mediated Signal Transduction (GO:0007263) -> genes: [NEUROD1, PDX1, INS]\n- Sensory Organ Development (GO:0007423) -> genes: [NEUROD1, MAFB, PAX6, NEUROG3]\n- Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944) -> genes: [NEUROD1, LMO2, PDX1, PAX6, HNF1A, NKX6-1, ISL1, FOXO1, NEUROG3, FOXA2]\n- Positive Regulation Of Protein Secretion (GO:0050714) -> genes: [PDX1, ISL1, GCK, INS]\n- Positive Regulation Of DNA-templated Transcription (GO:0045893) -> genes: [NEUROD1, MAFB, LMO2, PDX1, PAX6, HNF1A, NKX6-1, ISL1, FOXO1, NEUROG3, FOXA2]\n- Regulation Of Gluconeogenesis (GO:0006111) -> genes: [FOXO1, GCK, INS]\n- Axon Development (GO:0061564) -> genes: [NEUROD1, PAK3, ISL1, NEUROG3]\n- Cellular Response To Insulin Stimulus (GO:0032869) -> genes: [PKLR, GCK, FOXO1, INS]\n- Regulation Of DNA-templated Transcription (GO:0006355) -> genes: [PDX1, PAX4, PAX6, ELP4, HNF1A, FOXO1, INS, NEUROD1, MAFB, NKX6-1, NEUROG3, FOXA2, NKX2-2]\n- Negative Regulation Of Protein Secretion (GO:0050709) -> genes: [CHGA, FOXO1, INS]\n- Protein Processing (GO:0016485) -> genes: [PCSK2, PCSK1, SPCS1, SEC11A]\n- Regulation Of Protein-Containing Complex Assembly (GO:0043254) -> genes: [STXBP1, IAPP, INSM1, ISL1]\n- Positive Regulation Of Developmental Process (GO:0051094) -> genes: [NEUROD1, INSM1, ISL1, FOXA2, INS]\n- Positive Regulation Of Nucleic Acid-Templated Transcription (GO:1903508) -> genes: [NEUROD1, MAFB, PAX6, HNF1A, FOXO1, NEUROG3, FOXA2]\n- Type B Pancreatic Cell Differentiation (GO:0003309) -> genes: [PDX1, INSM1]\n- SRP-dependent Cotranslational Protein Targeting To Membrane (GO:0006614) -> genes: [SRPRB, SRP9]\n- Peptide Metabolic Process (GO:0006518) -> genes: [PCSK1, SPCS1, SEC11A]\n- Glucose Import (GO:0046323) -> genes: [SLC2A2, HNF1A]\n- Positive Regulation Of Glycogen Biosynthetic Process (GO:0045725) -> genes: [GCK, INS]\n- Cotranslational Protein Targeting To Membrane (GO:0006613) -> genes: [SRP14, SRP9]\n- Signal Peptide Processing (GO:0006465) -> genes: [SPCS1, SEC11A]\n- Positive Regulation Of Glycogen Metabolic Process (GO:0070875) -> genes: [GCK, INS]\n- Pancreas Development (GO:0031016) -> genes: [NKX6-1, ISL1]\n- Neuron Differentiation (GO:0030182) -> genes: [NEUROD1, PAX6, INSM1, FOXA2]\n- Negative Regulation Of Gluconeogenesis (GO:0045721) -> genes: [GCK, INS]\n- Negative Regulation Of Insulin Secretion (GO:0046676) -> genes: [CHGA, FOXO1]\n- Response To Insulin (GO:0032868) -> genes: [PKLR, GCK, FOXO1]\n- Glucose 6-Phosphate Metabolic Process (GO:0051156) -> genes: [G6PC2, GCK]\n- Negative Regulation Of Peptide Hormone Secretion (GO:0090278) -> genes: [CHGA, FOXO1]\n- Neuron Fate Commitment (GO:0048663) -> genes: [PAX6, ISL1]\n- Regulation Of Cell Differentiation (GO:0045595) -> genes: [NEUROD1, INSM1, ISL1, INS]\n- Insulin Secretion (GO:0030073) -> genes: [NEUROD1, PDX1]\n- Cellular Response To Peptide Hormone Stimulus (GO:0071375) -> genes: [PKLR, GCK, FOXO1]\n- Positive Regulation Of Transcription Regulatory Region DNA Binding (GO:2000679) -> genes: [NEUROD1, PAX6]\n- Glucose Transmembrane Transport (GO:1904659) -> genes: [SLC2A2, HNF1A]\n- Regulation Of Glycogen Biosynthetic Process (GO:0005979) -> genes: [GCK, INS]\n- Peptide Hormone Secretion (GO:0030072) -> genes: [NEUROD1, PDX1]\n- Regulation Of Insulin Secretion Involved In Cellular Response To Glucose Stimulus (GO:0061178) -> genes: [GCG, FOXA2]\n- Regulation Of Calcium Ion-Dependent Exocytosis (GO:0017158) -> genes: [STXBP1, SYT13]\n- Glycolytic Process (GO:0006096) -> genes: [PKLR, GCK]\n- Negative Regulation Of Carbohydrate Metabolic Process (GO:0045912) -> genes: [GCK, INS]\n- Regulation Of Long-Term Synaptic Potentiation (GO:1900271) -> genes: [SCGN, INS]\n- Negative Regulation Of Small Molecule Metabolic Process (GO:0062014) -> genes: [GCK, INS]\n- Cellular Response To Glucose Stimulus (GO:0071333) -> genes: [PDX1, NKX6-1]\n- Protein Targeting (GO:0006605) -> genes: [SPCS1, SRPRB, SRP14]\n- Central Nervous System Development (GO:0007417) -> genes: [DCX, PAX6, NEUROG3, NKX2-2]\n- Positive Regulation Of Cell Differentiation (GO:0045597) -> genes: [NEUROD1, INSM1, ISL1, INS]\n- Regulation Of Glycolytic Process (GO:0006110) -> genes: [GCK, INS]\n- Negative Regulation Of Secretion By Cell (GO:1903531) -> genes: [CHGA, INS]\n- Carbohydrate Catabolic Process (GO:0016052) -> genes: [PKLR, GCK]\n- Intracellular Glucose Homeostasis (GO:0001678) -> genes: [GCK, FOXO1]\n- Negative Regulation Of Cellular Metabolic Process (GO:0031324) -> genes: [AKT3, INS]\n- Negative Regulation Of Transcription By RNA Polymerase II (GO:0000122) -> genes: [MAFB, PAX6, INSM1, NKX6-1, ISL1, NEUROG3]\n- Negative Regulation Of DNA-templated Transcription (GO:0045892) -> genes: [MAFB, PAX6, INSM1, NKX6-1, ISL1, FOXO1, NEUROG3]\n- Insulin Receptor Signaling Pathway (GO:0008286) -> genes: [FOXO1, INS]\n- Proteolysis (GO:0006508) -> genes: [PCSK2, DPP4, PCSK1, SPCS1]\n- Pyruvate Metabolic Process (GO:0006090) -> genes: [PKLR, GCK]\n- Regulated Exocytosis (GO:0045055) -> genes: [STXBP1, SYT13]\n- Positive Regulation Of Cellular Biosynthetic Process (GO:0031328) -> genes: [GCK, FOXO1, INS]\n- Glucose Metabolic Process (GO:0006006) -> genes: [G6PC2, GCK]\n- Negative Regulation Of Protein-Containing Complex Assembly (GO:0031333) -> genes: [IAPP, ISL1]\n- Positive Regulation Of Cellular Process (GO:0048522) -> genes: [DPP4, NEUROD1, INSM1, ISL1, INS]\n\n[KEGG_2021_Human]\n- Maturity onset diabetes of the young -> genes: [PKLR, PAX4, PDX1, SLC2A2, PAX6, HNF1A, GCK, INS, NEUROD1, IAPP, NKX6-1, NKX2-2, FOXA2, NEUROG3]\n- Type II diabetes mellitus -> genes: [PKLR, ABCC8, PDX1, SLC2A2, GCK, INS]\n- Protein export -> genes: [SPCS1, SRPRB, SRP14, SEC11A, SRP9]\n- Insulin secretion -> genes: [ABCC8, PDX1, SLC2A2, GCG, GCK, INS]\n- Glucagon signaling pathway -> genes: [G6PC2, AKT3, SLC2A2, GCG, GCK, FOXO1]\n- Insulin signaling pathway -> genes: [G6PC2, PKLR, AKT3, GCK, FOXO1, INS]\n- Insulin resistance -> genes: [G6PC2, AKT3, SLC2A2, FOXO1, INS]\n- Prolactin signaling pathway -> genes: [AKT3, SLC2A2, GCK, INS]\n- Longevity regulating pathway -> genes: [AKT3, FOXO1, FOXA2, INS]\n- AMPK signaling pathway -> genes: [G6PC2, AKT3, FOXO1, INS]\n- Carbohydrate digestion and absorption -> genes: [G6PC2, AKT3, SLC2A2]\n- FoxO signaling pathway -> genes: [G6PC2, AKT3, FOXO1, INS]\n- Glycolysis / Gluconeogenesis -> genes: [G6PC2, PKLR, GCK]\n- Central carbon metabolism in cancer -> genes: [AKT3, SLC2A2, GCK]\n- Prostate cancer -> genes: [AKT3, FOXO1, INS]\n- Galactose metabolism -> genes: [G6PC2, GCK]\n- Starch and sucrose metabolism -> genes: [G6PC2, GCK]\n- Signaling pathways regulating pluripotency of stem cells -> genes: [AKT3, PAX6, ISL1]\n- Non-alcoholic fatty liver disease -> genes: [PKLR, AKT3, INS]\n- Regulation of lipolysis in adipocytes -> genes: [AKT3, INS]\n- Adipocytokine signaling pathway -> genes: [G6PC2, AKT3]\n- Renal cell carcinoma -> genes: [AKT3, PAK3]\n- cAMP signaling pathway -> genes: [SST, AKT3, GCG]\n\n=== ABSTRACTS ===\n[1] Patient-derived induced pluripotent stem cells for precision modelling of monogenic beta cell disorders.\nOver the past several years, research and technologies involving patient-derived induced pluripotent stem cells (iPSCs) have rapidly advanced, enabling the study of various disease pathologies, including rare pathologies like monogenic disorders of beta cell function. iPSCs offer a unique model to study monogenic beta cell disorders such as Maturity-onset diabetes of the young (MODY) and congenital hyperinsulinism as they can be derived directly from patients with novel genetic variants and then differentiated into pancreatic progenitors and beta cells. Studies have used iPSC-derived SC-islets to demonstrate how transcription factor dysfunction can perturb insulin secretion, beta cell maturation, and endocrine lineage specification in MODY subtypes. Additional studies in congenital hyperinsulinism have utilized iPSC-derived SC-islets to model disease-specific hallmarks such as excess insulin secretion and increased beta cell proliferation. These studies provide the foundation for future studies using iPSC-derived SC-islets as a platform for elucidating mechanisms of how single-gene variants disrupt beta cell specification, maturation, and survival.\n[2] Insights from maturity-onset diabetes of the young into impaired insulin secretion in type 2 diabetes.\nMonogenic diabetes arises from pathogenic variants in a single gene that are sufficient to cause disease predisposition. In general, a greater functional impact of genetic abnormalities is associated with an earlier age of onset. Accordingly, monogenic diabetes encompasses a wide clinical spectrum, including neonatal diabetes mellitus presenting within the first six months of life, and maturity-onset diabetes of the young (MODY) typically manifesting from childhood to early adulthood; both diabetic types exhibit impaired insulin secretory capacity. Although MODY is currently classified as diabetes of monogenic defect with impaired insulin secretion, it has become evident that mutations in rare MODY subtypes exhibit reduced pathogenic effects and low penetrance. In addition, observed differences in the clinical phenotypes caused by the same mutation, even in the same family, might be caused by other phenotypic modifying factors. Furthermore, their clinical expression is influenced, at least in part, by environmental factors, such as the intrauterine environment. Nevertheless, identification of the causative genes underlying monogenic diabetes has elucidated previously unrecognized molecular mechanisms responsible for the impaired insulin secretion. These findings have not only revealed novel therapeutic targets but have also provided important insights into the pathophysiology of common type 2 diabetes mellitus in the Japanese population, a multifactorial disease in which defective insulin secretion plays a central role.\n[3] Systematic analysis of loss-of-function variants across MODY genes demonstrates gene-specific effects and expands the spectrum of INS variants causing MODY.\n<h4>Aims/hypothesis</h4>Accurate interpretation of loss-of-function (LOF) variants in MODY genes is essential for diagnosis but remains challenging, particularly for variants that are predicted to escape nonsense-mediated decay (NMD). We aimed to systematically evaluate the pathogenicity of LOF variants, stratified by NMD-triggering and NMD-escape status, across all known MODY genes.<h4>Methods</h4>We analysed ultra-rare LOF variants (minor allele frequency <1 in 10,000) in 5171 individuals of European ancestry with suspected MODY, compared with 155,501 population-based control individuals from UK Biobank. LOF variants in ABCC8, GCK, HNF1A, HNF4A, HNF1B, INS, KCNJ11, NEUROD1, PDX1 and RFX6 were classified as NMD-triggering or NMD-escape. We tested for gene-level enrichment in cases vs controls. For novel associations, we performed replication in additional MODY patients, assessed familial co-segregation, and undertook in silico protein modelling.<h4>Results</h4>LOF variants were significantly enriched in all MODY genes except ABCC8 and KCNJ11. Both NMD-triggering and NMD-escape variants were enriched in GCK, HNF1A and HNF4A, consistent with haploinsufficiency (all p<10<sup>-3</sup>). HNF1B and RFX6 showed enrichment only for NMD-triggering variants, while NEUROD1 and PDX1 were enriched only for NMD-escape variants. A novel finding was the significant enrichment of only NMD-escape LOF variants in INS (OR=181, p<10<sup>-5</sup>). Including replication in additional MODY patients, we identified eight families with 17 affected individuals carrying INS variants. These variants co-segregated with diabetes (logarithm of the odds score=3), included one de novo case, and were absent from >800,000 population control individuals. Individuals presented with diabetes at a median age of 19 years, had median BMI of 22.9 kg/m<sup>2</sup>, were negative for islet autoantibodies, and had low type 1 diabetes genetic risk scores. Compared with INS missense MODY, diagnosis occurred approximately 10 years later in individuals with NMD-escape LOF variants. Protein modelling suggested that INS NMD-escape variants produce aberrant proinsulin molecules with unpaired B-chain cysteines, leading to milder misfolding.<h4>Conclusions/interpretation</h4>The pathogenicity of LOF variants in MODY genes depends on gene context and NMD status. Heterozygous NMD-escape LOF variants in INS are a novel cause of MODY. These findings provide systematic gene-level evidence to inform variant interpretation guidelines and improve the accuracy of MODY diagnosis in clinical practice.\n[4] Population-Scale, Genotype-First Characterization of Monogenic Diabetes in 374,973 Multi-Ancestry Individuals from the  <i>All of Us</i>  Research Program\n<h4>OBJECTIVE</h4>  To characterize the prevalence and penetrance of maturity-onset diabetes of the young (MODY) in a multi-ancestry population using a genotype-first design. <h4>RESEARCH DESIGN AND METHODS</h4>  We analyzed whole-genome sequencing and clinical data from 374,973 unrelated  All of Us participants (42.0% non-European ancestry). We identified pathogenic or likely pathogenic (P/LP) variants in 10 established MODY genes and assessed carrier prevalence, diabetes penetrance, and glycemic profiles. We evaluated age-dependent diabetes risk by comparing carriers with non-carriers stratified by type 2 diabetes polygenic risk score (T2D PRS).  <h4>RESULTS</h4>  We identified 370 carriers of P/LP MODY gene variants (0.099%; 1 in 1,013), with similar carrier prevalence among European- and African-ancestry participants (0.105% in both groups). Diabetes penetrance was incomplete (13.4% by age 40; 43.5% by age 60) and varied by etiology: highest for  GCK (56.0% by age 60), intermediate for HNF genes (  HNF1A /  HNF1B /  HNF4A ; 45.4%), and lowest for non-GCK/HNF genes (  ABCC8 /  INS /  KCNJ11 /  NEUROD1 /  PDX1 /  RFX6 ; 29.0%). In multivariable Cox models using non-carriers in the middle 80% of the T2D PRS as the reference, non-GCK/HNF gene variant carriers had modestly increased diabetes risk (HR, 1.57), similar to non-carriers in the top 10% of T2D PRS (HR, 1.64). These associations were observed in both European- and non-European-ancestry individuals. HbA1c profiles differed by etiology, with stable mild hyperglycemia in  GCK variant carriers and greater variability among HNF and non-GCK/HNF gene variant carriers.  <h4>CONCLUSIONS</h4>  MODY gene variants showed incomplete, etiology-dependent penetrance across ancestries. Carriers of P/LP variants in lower-penetrance genes had diabetes risk comparable to that of non-carriers with high polygenic susceptibility. <h4>Graphical Abstract</h4>",
+  "judge_claims": [
+    {
+      "claim": "PDX1 is crucial for pancreatic development and beta cell differentiation and maintenance.",
+      "label": "GROUNDED",
+      "why": "PDX1 appears in multiple terms related to pancreas development, beta cell differentiation (Type B Pancreatic Cell Differentiation), and transcriptional regulation of beta cell function."
+    },
+    {
+      "claim": "INSM1 is crucial for pancreatic development and beta cell differentiation and maintenance.",
+      "label": "GROUNDED",
+      "why": "INSM1 appears in Type B Pancreatic Cell Differentiation (GO:0003309), Positive Regulation Of Developmental Process, and Neuron Differentiation terms, supporting its role in pancreatic development and beta cell differentiation."
+    },
+    {
+      "claim": "NKX6-1 is crucial for pancreatic development.",
+      "label": "GROUNDED",
+      "why": "NKX6-1 appears in Pancreas Development (GO:0031016) and Type B Pancreatic Cell Differentiation terms."
+    },
+    {
+      "claim": "ISL1 is crucial for pancreatic development.",
+      "label": "GROUNDED",
+      "why": "ISL1 appears in Pancreas Development (GO:0031016) and multiple developmental regulation terms."
+    },
+    {
+      "claim": "PAX6 is a key transcription factor involved in beta cell identity.",
+      "label": "BACKGROUND",
+      "why": "PAX6 appears in multiple transcriptional regulation terms and neuron differentiation, but the evidence does not explicitly state its role in beta cell identity specifically."
+    },
+    {
+      "claim": "NEUROD1 is a key transcription factor involved in beta cell identity.",
+      "label": "GROUNDED",
+      "why": "NEUROD1 appears extensively in transcriptional regulation, insulin secretion, and beta cell-related terms, supporting its role as a key transcription factor in beta cell identity."
+    },
+    {
+      "claim": "FOXA2 is a key transcription factor involved in beta cell identity.",
+      "label": "BACKGROUND",
+      "why": "FOXA2 appears in transcriptional regulation terms but the evidence does not explicitly state its role in beta cell identity."
+    },
+    {
+      "claim": "HNF1A is a key transcription factor involved in beta cell identity.",
+      "label": "BACKGROUND",
+      "why": "HNF1A appears in multiple transcriptional regulation and glucose homeostasis terms, but the evidence does not explicitly state its role in beta cell identity."
+    },
+    {
+      "claim": "MAFB is a key transcription factor involved in beta cell identity.",
+      "label": "BACKGROUND",
+      "why": "MAFB appears in transcriptional regulation terms but the evidence does not explicitly state its role in beta cell identity."
+    },
+    {
+      "claim": "NEUROG3 is a key transcription factor involved in beta cell identity.",
+      "label": "BACKGROUND",
+      "why": "NEUROG3 appears in transcriptional regulation and developmental terms but the evidence does not explicitly state its role in beta cell identity."
+    },
+    {
+      "claim": "GCK is glucokinase, the pancreatic beta cell glucose sensor.",
+      "label": "BACKGROUND",
+      "why": "GCK appears in glucose metabolic processes and insulin secretion regulation, but the evidence does not explicitly state it is the pancreatic beta cell glucose sensor."
+    },
+    {
+      "claim": "SLC2A2 is GLUT2, a glucose transporter.",
+      "label": "BACKGROUND",
+      "why": "SLC2A2 appears in glucose transport terms but the evidence does not explicitly identify it as GLUT2."
+    },
+    {
+      "claim": "ABCC8 is a subunit of the ATP-sensitive potassium channel critical for glucose-stimulated insulin secretion.",
+      "label": "BACKGROUND",
+      "why": "ABCC8 appears in insulin secretion and Type II diabetes terms but the evidence does not explicitly describe it as a subunit of the ATP-sensitive potassium channel."
+    },
+    {
+      "claim": "GCK contributes to regulation of insulin secretion.",
+      "label": "GROUNDED",
+      "why": "GCK appears in Regulation Of Insulin Secretion (GO:0050796) and multiple related insulin secretion regulation terms."
+    },
+    {
+      "claim": "SLC2A2 contributes to regulation of insulin secretion.",
+      "label": "GROUNDED",
+      "why": "SLC2A2 appears in the KEGG Insulin secretion pathway."
+    },
+    {
+      "claim": "INS contributes to regulation of insulin secretion.",
+      "label": "GROUNDED",
+      "why": "INS appears in Regulation Of Insulin Secretion (GO:0050796) and multiple related insulin secretion regulation terms."
+    },
+    {
+      "claim": "ABCC8 contributes to regulation of insulin secretion.",
+      "label": "GROUNDED",
+      "why": "ABCC8 appears in the KEGG Insulin secretion pathway."
+    },
+    {
+      "claim": "PDX1 contributes to regulation of insulin secretion.",
+      "label": "GROUNDED",
+      "why": "PDX1 appears in Regulation Of Insulin Secretion (GO:0050796) and Positive Regulation Of Insulin Secretion terms."
+    },
+    {
+      "claim": "NEUROD1 contributes to regulation of insulin secretion.",
+      "label": "GROUNDED",
+      "why": "NEUROD1 appears in Regulation Of Insulin Secretion (GO:0050796) and Insulin Secretion (GO:0030073) terms."
+    },
+    {
+      "claim": "SRP9 is involved in protein synthesis and translocation into the endoplasmic reticulum.",
+      "label": "GROUNDED",
+      "why": "SRP9 appears in Protein Targeting To ER, SRP-dependent Cotranslational Protein Targeting To Membrane, and Cotranslational Protein Targeting To Membrane terms."
+    },
+    {
+      "claim": "SRP14 is involved in protein synthesis and translocation into the endoplasmic reticulum.",
+      "label": "GROUNDED",
+      "why": "SRP14 appears in Protein Targeting To ER, Establishment Of Protein Localization To Endoplasmic Reticulum, and Cotranslational Protein Targeting To Membrane terms."
+    },
+    {
+      "claim": "SRPRB is involved in protein synthesis and translocation into the endoplasmic reticulum.",
+      "label": "GROUNDED",
+      "why": "SRPRB appears in Protein Targeting To ER, SRP-dependent Cotranslational Protein Targeting To Membrane, and related terms."
+    },
+    {
+      "claim": "SPCS1 is involved in protein processing in beta cells.",
+      "label": "GROUNDED",
+      "why": "SPCS1 appears in Protein Processing (GO:0016485), Signal Peptide Processing, and Peptide Metabolic Process terms."
+    },
+    {
+      "claim": "SEC11A is involved in protein processing in beta cells.",
+      "label": "GROUNDED",
+      "why": "SEC11A appears in Protein Processing (GO:0016485), Signal Peptide Processing, and Peptide Metabolic Process terms."
+    },
+    {
+      "claim": "PCSK1 processes proinsulin to insulin.",
+      "label": "BACKGROUND",
+      "why": "PCSK1 appears in Protein Processing and Proteolysis terms, but the evidence does not explicitly state it processes proinsulin to insulin."
+    },
+    {
+      "claim": "PCSK2 processes proinsulin to insulin.",
+      "label": "BACKGROUND",
+      "why": "PCSK2 appears in Protein Processing and Proteolysis terms, but the evidence does not explicitly state it processes proinsulin to insulin."
+    },
+    {
+      "claim": "STXBP1 is involved in regulated release of insulin via exocytosis.",
+      "label": "GROUNDED",
+      "why": "STXBP1 appears in Regulation Of Calcium Ion-Dependent Exocytosis and Regulated Exocytosis terms, supporting its role in insulin release via exocytosis."
+    },
+    {
+      "claim": "SYT13 is involved in regulated release of insulin via exocytosis.",
+      "label": "GROUNDED",
+      "why": "SYT13 appears in Regulation Of Calcium Ion-Dependent Exocytosis and Regulated Exocytosis terms."
+    },
+    {
+      "claim": "IAPP is islet amyloid polypeptide, co-secreted with insulin.",
+      "label": "BACKGROUND",
+      "why": "IAPP appears in multiple terms but the evidence does not explicitly state it is islet amyloid polypeptide or that it is co-secreted with insulin."
+    },
+    {
+      "claim": "HNF1A causes monogenic diabetes.",
+      "label": "GROUNDED",
+      "why": "HNF1A appears in the KEGG Maturity onset diabetes of the young pathway and abstract 3 discusses HNF1A variants causing MODY."
+    },
+    {
+      "claim": "GCK causes monogenic diabetes.",
+      "label": "GROUNDED",
+      "why": "GCK appears in the KEGG Maturity onset diabetes of the young pathway and abstracts 3 and 4 discuss GCK variants causing MODY."
+    },
+    {
+      "claim": "PDX1 causes monogenic diabetes.",
+      "label": "GROUNDED",
+      "why": "PDX1 appears in the KEGG Maturity onset diabetes of the young pathway and abstract 3 mentions PDX1 as a MODY gene."
+    },
+    {
+      "claim": "INS causes monogenic diabetes.",
+      "label": "GROUNDED",
+      "why": "INS appears in the KEGG Maturity onset diabetes of the young pathway and abstract 3 extensively discusses INS variants as a novel cause of MODY."
+    },
+    {
+      "claim": "NEUROD1 causes monogenic diabetes.",
+      "label": "GROUNDED",
+      "why": "NEUROD1 appears in the KEGG Maturity onset diabetes of the young pathway and abstract 3 mentions NEUROD1 as a MODY gene."
+    },
+    {
+      "claim": "PAX4 causes monogenic diabetes.",
+      "label": "GROUNDED",
+      "why": "PAX4 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "PKLR is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "PKLR appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "PAX4 is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "PAX4 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "PDX1 is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "PDX1 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "SLC2A2 is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "SLC2A2 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "PAX6 is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "PAX6 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "HNF1A is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "HNF1A appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "GCK is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "GCK appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "INS is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "INS appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "NEUROD1 is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "NEUROD1 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "IAPP is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "IAPP appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "NKX6-1 is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "NKX6-1 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "NKX2-2 is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "NKX2-2 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "FOXA2 is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "FOXA2 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "NEUROG3 is associated with Maturity onset diabetes of the young (MODY).",
+      "label": "GROUNDED",
+      "why": "NEUROG3 appears in the KEGG Maturity onset diabetes of the young pathway."
+    },
+    {
+      "claim": "Patient-derived iPSCs can model monogenic beta cell disorders like MODY.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states that iPSCs can be derived from patients and differentiated to model monogenic beta cell disorders like MODY."
+    },
+    {
+      "claim": "Transcription factor dysfunction perturbs insulin secretion in MODY.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states that studies have used iPSC-derived SC-islets to demonstrate how transcription factor dysfunction can perturb insulin secretion in MODY subtypes."
+    },
+    {
+      "claim": "Transcription factor dysfunction perturbs beta cell maturation in MODY.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states that transcription factor dysfunction can perturb beta cell maturation in MODY subtypes."
+    },
+    {
+      "claim": "Genetic abnormalities in single genes impact insulin secretory capacity in MODY.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 explicitly states that monogenic diabetes arises from pathogenic variants in a single gene and that MODY exhibits impaired insulin secretory capacity."
+    },
+    {
+      "claim": "Loss-of-function variants across MODY genes have gene-specific effects.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 title explicitly states 'Systematic analysis of loss-of-function variants across MODY genes demonstrates gene-specific effects'."
+    },
+    {
+      "claim": "INS variants cause MODY.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 explicitly states 'Heterozygous NMD-escape LOF variants in INS are a novel cause of MODY' and provides extensive evidence for INS variants causing MODY."
+    }
+  ],
+  "summary": {
+    "n_claims": 55,
+    "n_scored": 55,
+    "grounded_rate": 0.8,
+    "hallucination_rate": 0.0,
+    "grounded": 44,
+    "background": 11,
+    "unsupported": 0
+  }
+}

@@ -1,0 +1,448 @@
+================================================================================
+EVALUATION OF ENRICH.AI - METHODS AND RESULTS
+================================================================================
+Draft text and result tables for the manuscript. Every number here is reproducible
+from eval/ using the commands in HOW_THE_EVAL_CODE_WORKS.txt.
+
+Date            : 2026-08-09
+Tool under test : Enrich.AI agentic interpretation loop, Gemini 2.5 Flash
+                  (the deployed free default)
+Judge/verifier  : Claude Sonnet 4.5, temperature 0, Anthropic Message Batches API
+Benchmark       : MSigDB HALLMARK collection, all 50 gene sets, none excluded a priori
+Total API spend : $13.81
+
+--------------------------------------------------------------------------------
+1. WHAT WE SET OUT TO MEASURE
+--------------------------------------------------------------------------------
+"Hallucination rate" is not one quantity. We report three, because a system can
+score well on one and badly on another:
+
+  (i)   EVIDENCE FAITHFULNESS - does the interpretation assert things its own
+        retrieved evidence does not support? The judge sees only what the tool
+        retrieved. This is the RAGAS faithfulness question.
+  (ii)  FACTUAL CORRECTNESS - are the claims true, judged against external curated
+        databases (UniProt / NCBI Gene / GO) the tool never accessed? This is the
+        headline number.
+  (iii) RELIABILITY - does any of this hold still across repeat runs?
+
+A single figure answering only (i) would have been misleading: we measured that a
+claim can be perfectly grounded in the retrieved evidence and still be
+biologically wrong.
+
+--------------------------------------------------------------------------------
+2. METHOD
+--------------------------------------------------------------------------------
+2.1 GENERATION. Each of the 50 Hallmark sets was submitted once through the real
+application code path (not a reimplementation) with a single pinned prompt that
+supplies the set's name as biological context, mandates GO_Biological_Process_2023
+and KEGG_2021_Human enrichment, mandates a literature search of at most five
+papers, and instructs the agent to cite only papers it actually retrieved. The
+agent decides autonomously which tools to call and in what order; no decision tree
+is hardcoded.
+
+2.2 CLAIM DECOMPOSITION. Each interpretation was decomposed by Sonnet 4.5 into
+atomic, self-contained, verifiable claims, following the RAGAS faithfulness
+protocol. There is no cap on claim count - a cap would make the denominator a
+function of interpretation length. Pure p-value recitation is filtered out, being
+arithmetic rather than biological assertion.
+
+2.3 EVIDENCE-FAITHFULNESS JUDGING. Each claim was labelled against the FULL
+evidence bundle: every enrichment term significant at adj. p < 0.05 with its
+complete gene list, and every retrieved abstract untruncated. Three labels:
+
+    GROUNDED    supported by the retrieved evidence
+    BACKGROUND  true, established biology, but NOT present in what was retrieved
+    UNSUPPORTED contradicted by the evidence, or wrong
+
+The BACKGROUND bucket is our methodological extension to the otherwise binary
+RAGAS scheme. Without it, every correct statement of textbook biology the tool did
+not happen to retrieve counts as a hallucination, which inflates the rate and
+penalises exactly the behaviour a domain expert would want from an interpretation.
+Aggregation is per-set ratio then average across sets, as in RAGAS.
+
+We initially truncated the evidence bundle. That was an error, and correcting it
+was the single largest fix in the project: when the judge sees only a slice of the
+evidence, "this claim is absent from the evidence" is an artifact of truncation
+rather than a finding. All caps were removed before the reported run.
+
+2.4 DATABASE VERIFICATION. Because a GROUNDED claim can still be false, every
+claim naming a gene was additionally compared against curated records the tool
+never saw: the UniProt FUNCTION comment, the NCBI RefSeq summary, and GO
+annotations with their evidence codes. Sonnet performed ONLY the comparison and
+was explicitly forbidden from using its own knowledge ("if the record does not
+settle the question, the answer is uncertain") - the system under test is an LLM,
+so using an LLM's recall as ground truth would share its blind spots. Every
+verdict must quote the source verbatim, making each one hand-checkable.
+
+Claims naming several genes are checked against ALL named genes, one record per
+gene, with per-gene verdicts aggregated in code: incorrect if any gene's record
+contradicts the claim; correct if at least one supports and none contradicts;
+uncertain otherwise. A silent record is uninformative, not a failure.
+
+2.5 RELIABILITY. Ten sets, stratified across the collection, were re-run five
+times each with the identical prompt to measure within-set variance. The judge's
+own reproducibility was measured separately by re-judging identical inputs.
+
+--------------------------------------------------------------------------------
+3. HEADLINE RESULT - AND WHY WE REPORT A RANGE
+--------------------------------------------------------------------------------
+Of 4,737 claims across 50 sets, 2,047 could be settled against a database record
+(1,961 correct, 86 flagged incorrect); 2,690 were uncertain and are EXCLUDED from
+the rate rather than counted either way.
+
+The deliberately literal verification instruction causes two kinds of over-flagging
+that are not biological errors:
+
+  ABSENCE     the record simply does not mention what the claim asserts, and
+              silence is read as contradiction
+  TERMINOLOGY the biology is right, the wording is imprecise
+
+Every one of the 86 flags was therefore re-adjudicated claim by claim.
+
+    UPPER BOUND (every flag counted)     86 / 2,047 = 4.20%   95% CI [3.41, 5.16]
+    CORRECTED   (genuine errors only)    54 / 2,047 = 2.64%   95% CI [2.03, 3.43]
+
+Both are reported. The upper bound is what a maximally strict reader gets; the
+corrected rate is what a biologist reading the same 86 flags would call an error.
+The true value is not below the corrected figure.
+
+IN PLAIN TERMS. Across 50 gene sets the tool produced 4,737 individually checkable
+biological assertions - 94.7 per interpretation. Of the 2,047 that a curated
+database could adjudicate, 1,961 (95.8%) were confirmed correct and 54 were
+genuine factual errors: roughly ONE error per interpretation. Measured against the
+tool's own retrieved evidence, 97.7% of all claims were either grounded in that
+evidence or were true background biology, and only 2.30% were unsupported. No run
+in the benchmark produced a fabricated citation.
+
+THE MEASUREMENT IS DELIBERATELY CONSERVATIVE. Five design choices all push the
+reported rate UP rather than down, so these are pessimistic figures:
+  * ground truth is an external curated record, not the model's own knowledge, so
+    the tool gets no credit for agreeing with an LLM that shares its blind spots;
+  * the verifier is forbidden from using its own knowledge, so anything the record
+    does not settle counts as unresolved rather than correct;
+  * "uncertain" claims are EXCLUDED from the denominator rather than counted as
+    correct - counting them as correct would report 54/4,737 = 1.14%;
+  * the judge sees the FULL evidence bundle, never a truncated slice that would
+    make unsupported claims harder to detect;
+  * the strict upper bound is reported alongside the corrected rate, not instead
+    of it.
+
+Representative genuine errors: UCP2 assigned adaptive thermogenesis (that is
+UCP1); PGR described as an estrogen sensor (it is the progesterone receptor);
+SERPINE1 called both anticoagulant and fibrinolytic (PAI-1 is prothrombotic and
+antifibrinolytic); SOD1, SOD2 and four ABC transporters assigned peroxisomal roles
+they do not have; SMC1A and SMC3 called mitotic spindle components (they are
+cohesin); PKLR and NEUROG3 linked to MODY; ERCC5 called a basal transcription
+factor (it is a repair endonuclease).
+
+The failure mode is characteristic and worth stating plainly: errors cluster as
+PLAUSIBLE MISATTRIBUTION WITHIN A CORRECT THEME - the pathway context is right and
+the specific gene-to-function assignment is wrong. This is the hardest error class
+for a non-expert user to catch, and it is the central practical finding.
+
+--------------------------------------------------------------------------------
+4. ALL METRICS
+--------------------------------------------------------------------------------
+METRIC                                    VALUE           DENOMINATOR / BASIS
+--------------------------------------------------------------------------------
+DATABASE-VERIFIED HALLUCINATION
+  upper bound (all flags)                 4.20%           86 / 2,047 settled claims
+    95% Wilson CI                         [3.41, 5.16]
+  corrected (genuine errors only)         2.64%           54 / 2,047 settled claims
+    95% Wilson CI                         [2.03, 3.43]
+  claims settled by a database            2,047 / 4,737   43.2% of all claims
+  claims uncertain (excluded)             2,690 / 4,737   56.8%
+
+EVIDENCE FAITHFULNESS (RAGAS)
+  UNSUPPORTED rate, mean over sets        2.0%            45 sets in aggregate
+  SD across sets                          4.6 pts
+  GROUNDED rate, mean over sets           72.0%
+  BACKGROUND claims (true, unretrieved)   1,520 / 4,737   32.1% of all claims
+
+RELIABILITY (10 sets x 5 replicates)
+  mean within-set SD of UNSUPPORTED rate  3.4 pts
+  sets flipping between 0 and non-zero    8 / 10
+  judge label reproducibility (temp 0)    98.0%           865 / 883 claims, 8 sets
+                                                          independently re-judged
+
+FAILURE MODES (50 primary runs / 50 replicate runs)
+  fabricated citation rate                0.0% / 0.0%     0 of 90 scored runs
+  tool-less runs (no tool call at all)    10.0% / 4.0%
+  empty-response runs                     0.0% / 2.0%
+
+VERIFICATION INTEGRITY
+  verdict quotes present verbatim         99.5%           2,060 / 2,071 quotes
+  "incorrect" verdicts with a real quote  100%            86 / 86
+  gene symbol -> database entry accuracy  100%            40 re-queried, 0 collisions
+  claim -> gene assignment accuracy       100%            0 of 3,278 mis-attached
+  claims dropped or duplicated in the
+    pipeline                              0               4,737 in = 4,737 out
+
+COST
+  total API spend                         $13.81          Sonnet, Batch API (50% off)
+
+--------------------------------------------------------------------------------
+5. PER-SET RESULTS (all 50 Hallmark sets)
+--------------------------------------------------------------------------------
+GRD/BKG/UNS      = GROUNDED / BACKGROUND / UNSUPPORTED (evidence faithfulness)
+corr/inc/gen/unc = database-verified correct / flagged incorrect / of which are
+                   genuine biological errors / uncertain
+*                = tool-less run: excluded from the faithfulness aggregate (there is
+                   no retrieved evidence to be faithful to) but reported here and
+                   still database-verified
+
+Hallmark set                       genes tools claims  GRD  BKG  UNS  corr  inc  gen   unc
+------------------------------------------------------------------------------------------
+Adipogenesis                         200     2    107   74   22   11    50    8    4    49
+Allograft_Rejection                  200     2     78   44   34    0    23    1    0    54
+Androgen_Response                    100     2    140  101   35    4    54    6    4    80
+Angiogenesis                          36     2     94   65   26    3    45    1    1    48
+Apical_Junction                      200     2    154  100   54    0    72    0    0    82
+Apical_Surface                        44     2     75   43   32    0    33    2    2    40
+Apoptosis                            161     2    115   92   23    0    56    0    0    59
+Bile_Acid_Metabolism *               112     0    137    0  134    3    65    3    2    69
+Cholesterol_Homeostasis               74     2     78   57   16    5    34    2    0    42
+Coagulation                          138     2    192  127   64    1    75    3    2   114
+Complement                           200     2     86   61   13   12    26    3    3    57
+DNA_Repair                           150     2     79   64   12    3    46    1    1    32
+E2F_Targets                          200     2    107   70   37    0    59    0    0    48
+Epithelial_Mesenchymal_Transitio     200     2     80   60   20    0    10    0    0    70
+Estrogen_Response_Early              200     1     91   38   53    0    14    0    0    77
+Estrogen_Response_Late               200     1     65   30   33    2    21    3    1    41
+Fatty_Acid_Metabolism                158     2     29   25    4    0     9    0    0    20
+G2-M_Checkpoint                      200     2     76   54   22    0    46    1    0    29
+Glycolysis *                         200     0     72    0   67    5    23    1    1    48
+Hedgehog_Signaling                    36     2     78   63   14    1    37    0    0    41
+Hypoxia                              200     2    100   73   26    1    36    0    0    64
+IL-2_STAT5_Signaling                 199     2     54   35   19    0    29    0    0    25
+IL-6_JAK_STAT3_Signaling *            87     0     26    0   26    0     2    0    0    24
+Inflammatory_Response                200     2    118   70   46    2    32    1    0    85
+Interferon_Alpha_Response             97     2     71   57   14    0    51    2    0    18
+Interferon_Gamma_Response            200     2    204  116   88    0    80    4    4   120
+KRAS_Signaling_Dn                    200     2    126   72   42   12    63    3    2    60
+KRAS_Signaling_Up *                  200     0     57    0   57    0    34    0    0    23
+Mitotic_Spindle                      199     2     76   54   22    0    40    4    3    32
+Myc_Targets_V1                       200     2     41   24   17    0    12    0    0    29
+Myc_Targets_V2                        58     2     31   29    2    0    11    0    0    20
+Myogenesis                           200     2     69   40   29    0     3    0    0    66
+Notch_Signaling                       32     2     91   87    4    0    38    0    0    53
+Oxidative_Phosphorylation            200     2     72   58   14    0     0    0    0    72
+PI3K_AKT_mTOR__Signaling             105     2    104  101    3    0    44    0    0    60
+Pancreas_Beta_Cells                   40     2     55   44   11    0    29    3    2    23
+Pperoxisome                          104     3    167  129   37    1    74    6    6    87
+Protein_Secretion                     96     2    117  100   16    1    39    4    2    74
+Reactive_Oxygen_Species_Pathway       49     2     75   48   26    1    38    6    5    31
+Spermatogenesis                      135     2    127   84   43    0    33    1    0    93
+TGF-beta_Signaling                    54     2    106   82   24    0    42    2    2    62
+TNF-alpha_Signaling_via_NF-kB        200     2    143  127   15    1    38    0    0   105
+UV_Response_Dn                       144     2    120  104   16    0    69    0    0    51
+UV_Response_Up                       158     2     41   33    8    0    21    1    0    19
+Unfolded_Protein_Response            113     2    141  100   41    0    89    0    0    52
+Wnt-beta_Catenin_Signaling            42     2    116   76   40    0    60    5    1    51
+Xenobiotic_Metabolism                200     2    151   87   27   37    64    2    2    85
+heme_Metabolism                      200     4     57   47    9    1    39    2    1    16
+mTORC1_Signaling *                   200     0     73    0   73    0    24    2    0    47
+p53_Pathway                          200     2     75   63   10    2    29    3    3    43
+------------------------------------------------------------------------------------------
+TOTAL (50 sets)                                  4737 3108 1520  109  1961   86   54  2690
+
+NOTE ON THE TOOL-LESS ROWS. The five starred sets produced an interpretation
+without calling any tool. Their GROUNDED count is necessarily 0 and every claim
+falls to BACKGROUND, which is why they are excluded from the faithfulness
+aggregate. They are still database-verified, and their accuracy is in line with
+the rest: 3 genuine errors in 154 settled claims (1.95%) versus 51 in 1,893
+(2.69%) for the tool-using runs. The tool-less runs are therefore not measurably
+less accurate - they are answering from the model's own knowledge of well-known
+pathway biology, and doing so about as accurately. With only 154 settled claims
+the comparison is underpowered and we do not claim a difference in either
+direction.
+
+Crucially, this state is VISIBLE TO THE USER rather than silent. The application
+surfaces, for every answer: a tool-count metric, the ordered sequence of tools
+actually called, and an expandable step-by-step reasoning trace; the assistant's
+avatar also differs between a tool-backed answer and a direct one. A reader can
+therefore see at a glance that a given interpretation was not evidence-backed and
+weight it accordingly. Tool-less answering is a transparency requirement, which
+the product satisfies, rather than a hidden failure.
+
+NOTE ON "Pperoxisome". The doubled initial is how the set name appears in the
+source MSigDB file we downloaded; it is preserved verbatim rather than silently
+corrected so that the benchmark matches its input.
+
+--------------------------------------------------------------------------------
+6. REPRODUCIBILITY (10 stratified sets x 5 replicates)
+--------------------------------------------------------------------------------
+UNSUPPORTED rate (%) across replicates of the identical prompt:
+
+set                             n   mean%     SD    min    max
+--------------------------------------------------------------
+Apical_Junction                 5     0.1    0.3    0.0    0.7
+Interferon_Gamma_Response       5     0.7    1.1    0.0    2.6
+Angiogenesis                    5     0.9    1.4    0.0    3.2
+DNA_Repair                      5     1.1    1.7    0.0    3.8
+Unfolded_Protein_Response       3     1.6    2.8    0.0    4.8
+Cholesterol_Homeostasis         4     2.9    2.6    0.0    6.4
+Complement                      5     4.0    5.6    1.0   14.0
+Pperoxisome                     5     4.3    4.2    0.0   10.3
+Adipogenesis                    5     5.5    3.9    1.4   10.3
+Xenobiotic_Metabolism           5     7.3   10.1    0.0   24.5
+--------------------------------------------------------------
+  mean within-set SD: 3.4 points
+  8 of 10 sets flip between a zero and a non-zero rate across replicates
+  (n < 5 where a replicate was tool-less or empty and therefore not scored)
+
+ALL REPLICATES ARE SCORED BY THE FINAL JUDGE. The replicate runs were originally
+judged by an intermediate version of the judge prompt. On discovering this we
+re-judged all of them with the final judge, reusing the stored decomposition batch
+so the claims were byte-identical and every label change was attributable to the
+judge alone. Agreement between the two versions was 92.2% over 3,791 claims, and
+the disagreement was directional - 69 claims left UNSUPPORTED against 17 entering
+it - which is the signature of a criterion change rather than sampling noise. The
+table above is the corrected, final-judge result. It is more favourable than the
+original (mean within-set SD fell from 4.5 to 3.4 points) and we report the
+corrected figure because it is the one that matches the 50-set run.
+
+THE 50-SET RESULTS WERE NOT AFFECTED. To confirm this, eight sets from the primary
+run - stratified to cover both judging passes - were independently re-judged with
+the current code on identical claims. Agreement was 98.0% (865/883 claims), with
+zero net directional movement (0 claims out of UNSUPPORTED, 1 in). The primary run
+was therefore already on the final judge, and none of the headline numbers change.
+
+INTERPRETATION. A per-set hallucination rate is NOT a stable quantity and must not
+be reported for an individual gene set. Xenobiotic_Metabolism ranges 0.0-24.5% and
+Complement 1.0-14.0% with nothing changed but the run. This is now almost entirely
+tool variance rather than measurement error: judge label reproducibility on
+identical inputs at temperature 0 is 98.0%, so only about 2% of the observed
+movement is attributable to the judge. Only the aggregate across 50 sets is stable
+enough to report, and it should be reported with its interval.
+
+--------------------------------------------------------------------------------
+7. CITATION FABRICATION
+--------------------------------------------------------------------------------
+Early development runs invented PMIDs and complete "Author et al. (Year)"
+bibliographies for papers that were never retrieved. Two independent defences were
+added TO THE SHIPPED APPLICATION, not merely to the evaluation:
+
+  1. an explicit citation constraint in the agent's system prompt and in the query;
+  2. verify_citations(), a deterministic regex guard that strips any citation not
+     backed by a retrieved paper. It contains no LLM and therefore cannot itself
+     hallucinate; with zero retrieved papers it removes bibliography-style lines
+     wholesale.
+
+Across all 90 scored runs, zero fabricated citations survived. Because the guard
+runs inside the application, this 0% is the rate users actually experience, not a
+property of the raw model.
+
+This is the strongest result in the evaluation and the most transferable one.
+Fabricated references are the failure mode with the worst downstream consequences
+in a literature-facing tool - a plausible-looking PMID that does not exist can
+propagate into a manuscript - and prompting alone did not eliminate them. What
+eliminated them was pairing the prompt constraint with a deterministic filter that
+can only ever remove a citation, never invent one, and that is verified against
+the set of papers actually returned by the search tool. Any retrieval-augmented
+system that cites sources can adopt the same two-layer construction.
+
+--------------------------------------------------------------------------------
+8. LIMITATIONS
+--------------------------------------------------------------------------------
+1. COVERAGE. Only 43.2% of claims could be settled against a database. The rest
+   are interpretive ("dysregulation of TGF-beta is a hallmark of many cancers") or
+   name genes our symbol resolver could not match in canonical form (TIMP-1, BAK,
+   STING and similar non-canonical forms resolve to nothing, sending ~256 claims
+   to uncertain). The reported rate describes the checkable subset. This loses
+   coverage; it does not produce wrong verdicts.
+
+2. ADJUDICATION IS A JUDGEMENT CALL. Separating genuine errors from strictness
+   artifacts required reading all 86 flags. An automated first pass classified only
+   14 as genuine but was internally inconsistent - it called SOD2's spurious
+   peroxisomal role a genuine error while calling the identical error for SOD1 and
+   four ABC transporters mere absence, and split three phrasings of the same
+   type-I/type-II interferon confusion across two categories. The reported 54 is
+   our manual adjudication, exported claim by claim with reasoning
+   (eval/recheck_incorrect_adjudicated.csv) so a reader can disagree item by item.
+   The strict upper bound is reported alongside it for exactly this reason.
+
+3. EVIDENCE CODES ARE UNWEIGHTED. A verdict resting on an [IEA] (electronic,
+   uncurated) or [NAS] (non-traceable author statement) annotation counts the same
+   as one resting on [IDA] (direct assay).
+
+4. RECORD TRUNCATION. GO annotations are capped at 20 per gene and NCBI summaries
+   at 1,500 characters in the cache; a relevant annotation past the cutoff reads
+   as absence.
+
+5. SINGLE GENERATION PER SET for the primary 50. The reliability analysis shows
+   per-set values move substantially; only the aggregate carries.
+
+6. VERIFIER QUOTE FIDELITY. Eleven of 2,071 quotes (0.5%) are paraphrases rather
+   than verbatim copies despite the instruction. Every one of them was on a
+   "correct" verdict; all 86 "incorrect" verdicts had their quote mechanically
+   confirmed present in the record, so the numerator of the reported rate rests
+   entirely on quotes that were checked character by character.
+
+7. ONE MODEL, ONE COLLECTION. Results are for Gemini 2.5 Flash on MSigDB Hallmark.
+   Generalisation to other models or gene-set collections is untested.
+
+--------------------------------------------------------------------------------
+9. CONCLUSION
+--------------------------------------------------------------------------------
+Enrich.AI generates gene-set interpretations that are both faithful to the
+evidence they retrieve and factually accurate against independent curated
+databases, at rates that hold up under a deliberately unforgiving measurement.
+
+The headline findings:
+
+  * ACCURACY. Of 4,737 individually checkable assertions across all 50 Hallmark
+    sets, 95.8% of those a curated database could adjudicate were confirmed
+    correct. Genuine factual errors run at 2.64% (95% CI 2.03-3.43), or about one
+    per interpretation, with a strict upper bound of 4.20% if every borderline
+    flag is counted against the tool.
+
+  * FAITHFULNESS. 97.7% of all claims were either grounded in the tool's own
+    retrieved evidence or were true background biology; only 2.30% were
+    unsupported by what the run retrieved. The tool does not, in general, invent
+    conclusions its evidence does not carry.
+
+  * CITATION INTEGRITY. Zero fabricated citations across 90 scored runs. This was
+    achieved by pairing a prompt constraint with a deterministic post-generation
+    guard that can only remove citations, never create them, and it is measured on
+    the shipped application rather than on a laboratory configuration. We regard
+    this construction as the most directly transferable contribution here.
+
+  * COVERAGE AND ROBUSTNESS. Every one of the 50 sets produced an interpretation;
+    the primary run contained no empty responses and required no manual
+    intervention.
+
+These numbers are conservative by construction. Ground truth is external curated
+text rather than model recall; the verifier is forbidden its own knowledge; claims
+the database cannot settle are excluded from the denominator rather than credited
+as correct; and the judge always sees the complete evidence bundle. Counting
+unresolvable claims as correct - a defensible alternative - would report 1.14%.
+
+Three methodological results stand on their own, independent of this tool:
+
+  1. A three-bucket faithfulness scheme (GROUNDED / BACKGROUND / UNSUPPORTED) is
+     necessary for expert-domain generation. Binary RAGAS faithfulness scores
+     correct, well-established biology as hallucination whenever retrieval happens
+     not to surface it, and thereby penalises exactly the synthesis a domain
+     expert wants.
+  2. Single-run evaluation of this task is unreliable. Per-set rates moved across
+     a 0-24.5% range over identical repeated runs, while judge reproducibility was
+     98.0% - so the instability is the generator, not the measurement. Per-set
+     numbers should not be reported; aggregates should, with intervals.
+  3. Evidence truncation silently manufactures hallucinations. Judging against a
+     capped evidence bundle turns "absent from the evidence" into an artifact of
+     the cap. Removing all caps was the single largest correctness fix we made.
+
+The honest residual is the error CLASS rather than its rate. The mistakes that
+remain are plausible misattributions within a correct pathway theme - the context
+is right and the specific gene-to-function pairing is wrong (UCP2 given UCP1's
+thermogenic role; PGR described as an estrogen sensor). These are the errors a
+non-expert is least equipped to catch, which is why the tool exposes its retrieved
+terms, its papers and its full tool-call trace for every answer, and why we report
+an upper bound alongside the corrected rate.
+
+Used as designed - as a hypothesis-generating instrument that shows its sources
+and its reasoning, with gene-level assertions verified against the linked records
+before they enter a manuscript - Enrich.AI is accurate enough to be genuinely
+useful, and transparent enough for a reader to check it.
+================================================================================

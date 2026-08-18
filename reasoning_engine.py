@@ -79,6 +79,7 @@ for _path in _import_paths:
         sys.path.insert(0, _path)
 
 from config import CONFIG
+from llm_factory import get_llm, get_utility_llm, complete_text, resolve_api_key
 from tools import (
     get_gene_info,
     db_retrieve,
@@ -129,6 +130,7 @@ class MergedEnvelope:
     # === METADATA ===
     execution_time: float = 0.0
     tools_used: List[str] = field(default_factory=list)
+    citation_guard: Optional[Dict] = None  # what the post-generation guard removed
 
     def to_dict(self) -> Dict:
         result = {}
@@ -179,7 +181,10 @@ class EnrichmentInput(BaseModel):
 
 
 class LiteratureSearchInput(BaseModel):
-    query: str = Field(description="Search query for Europe PMC")
+    query: str = Field(description=(
+        "Europe PMC search query. Build a SPECIFIC query from the user query and the results you have."
+        "You may use Europe PMC field syntax (e.g. TITLE:, ABSTRACT:) and quoted phrases for precision."
+    ))
     max_results: int = Field(default=20, description="Maximum papers to return (up to 100)")
     min_year: Optional[int] = Field(default=None, description="Minimum publication year filter")
     max_year: Optional[int] = Field(default=None, description="Maximum publication year filter")
@@ -379,25 +384,20 @@ def _wrap_enrichment_analysis(
         return json.dumps({"error": str(e), "tool": "run_enrichment_analysis"})
 
 
-def _score_paper_relevance(query: str, papers: List[Dict], api_key: str) -> List[Dict]:
+def _score_paper_relevance(query: str, papers: List[Dict], llm) -> List[Dict]:
     """Score paper relevance using the same model as the reasoning agent.
 
     Adds 'relevance_rating' (High/Medium/Low) and 'relevance_details' to each paper.
     The agent sees these ratings in its observation and can decide whether to
     call get_paper_annotations for deeper analysis of high-relevance papers.
+
+    The client is passed in (not resolved globally) so each session scores with
+    its own provider and key.
     """
-    if not papers or not genai:
+    if not papers or llm is None:
         return papers
 
     try:
-        genai.configure(api_key=api_key)
-        gemini_config = CONFIG.get("gemini", {})
-        model = genai.GenerativeModel(gemini_config.get("model_name", "gemini-2.5-flash"))
-        gen_config = {
-            "temperature": gemini_config.get("temperature", 0.4),
-            "max_output_tokens": gemini_config.get("max_output_tokens", 4096),
-        }
-
         batch_size = 25
         for batch_start in range(0, len(papers), batch_size):
             batch_end = min(batch_start + batch_size, len(papers))
@@ -424,11 +424,7 @@ Criteria:
 
 Respond with exactly {len(batch)} lines."""
 
-            response = model.generate_content(
-                f"{prompt}\n\nPapers:\n" + "\n".join(paper_texts),
-                generation_config=gen_config
-            )
-            text = response.text.strip()
+            text = complete_text(llm, f"{prompt}\n\nPapers:\n" + "\n".join(paper_texts))
 
             for line in text.split('\n'):
                 line = line.strip()
@@ -460,19 +456,36 @@ Respond with exactly {len(batch)} lines."""
     return papers
 
 
+def keep_relevant_papers(papers: List[Dict]) -> List[Dict]:
+    """The single relevance gate for literature results.
+
+    A paper is kept only if it has a usable abstract AND was rated High or Medium.
+    Anything rated Low, or left unrated because scoring failed to parse, is dropped -
+    an unscored paper must never pass as relevant.
+
+    Used BOTH for what the agent reasons over and for what the UI displays, so the two
+    can never diverge (the display list previously came straight from the raw tool
+    observation and still contained Low papers).
+    """
+    return [p for p in papers
+            if (p.get("abstract") or "").strip()
+            and str(p.get("relevance_rating", "")).strip().lower() in ("high", "medium")]
+
+
 def _wrap_search_literature(
         query: str,
         max_results: int = 20,
         min_year: Optional[int] = None,
         max_year: Optional[int] = None,
-        sort_by: str = "relevance"
+        sort_by: str = "relevance",
+        scoring_llm=None
 ) -> str:
     """
     Wrapper - returns literature search results with relevance scoring.
 
-    Papers are scored by the same model as the reasoning agent. The agent
-    sees these ratings and can call get_paper_annotations for deeper
-    analysis of high-relevance papers.
+    Papers are scored by the same model as the reasoning agent (scoring_llm is
+    bound per engine instance). The agent sees these ratings and can call
+    get_paper_annotations for deeper analysis of high-relevance papers.
     """
     try:
         result = search_literature(
@@ -486,24 +499,29 @@ def _wrap_search_literature(
         papers = result.get("papers", [])
 
         # Score relevance using the same model as the reasoning agent
-        api_key = (
-                CONFIG.get("gemini", {}).get("api_key") or
-                os.environ.get("GOOGLE_API_KEY") or
-                os.environ.get("GEMINI_API_KEY")
-        )
-        if not api_key and st:
-            try:
-                api_key = st.session_state.get("api_key", "")
-            except:
-                pass
-
-        if api_key and papers:
-            papers = _score_paper_relevance(query, papers, api_key)
+        if scoring_llm is not None and papers:
+            papers = _score_paper_relevance(query, papers, scoring_llm)
+            # Drop papers with no usable abstract or rated Low relevance
+            # (Low = "only briefly mentions the topic"). Keep the rest.
+            # Keep only High/Medium with a usable abstract. No "if empty, keep them
+            # anyway" fallback: if everything scored Low the honest answer is none.
+            papers = keep_relevant_papers(papers)
             result["papers"] = papers
 
         # Create concise summary for LLM
         summary_parts = []
         summary_parts.append(f"=== LITERATURE SEARCH: '{query}' ===")
+        if not papers:
+            summary_parts.append(
+                "No sufficiently relevant papers found: every result was rated Low "
+                "relevance to this query, or lacked a usable abstract. Do not cite any "
+                "papers for this query."
+            )
+            # Same envelope shape as the normal return - callers parse this JSON and read
+            # full_results.papers, so a bare string here would break the tool contract.
+            result["papers"] = []
+            return json.dumps({"summary": "\n".join(summary_parts),
+                               "full_results": result}, indent=2, default=str)
         summary_parts.append(f"Found {len(papers)} papers (sorted by {sort_by})")
         if min_year or max_year:
             summary_parts.append(f"Year range: {min_year or 'any'} - {max_year or 'any'}")
@@ -592,8 +610,10 @@ Enrichment tools return lists. You provide biological meaning.
 
 Your role is to interpret what those pathways mean in the specific experimental context — identifying what is expected, mechanistically coherent, surprising, potentially artifactual, and worth follow-up.
 When biological context is provided (e.g., tissue, disease, condition), your primary task is to prioritize: rank the enriched terms by biological relevance to that context, explain why certain terms matter more than others, and flag which are noise or generic.
-You have to be detailed in your answer, highlighting terms based on context is your main aim and you have a variety if tools to validate your answer.
-You are a knowledgeable colleague reviewing results together and sharing your experience.
+That ranking is a claim about the specific context, so it must rest on retrieved evidence, not on recall alone. Before you assert that a term matters more in a named disease, tissue or condition, retrieve support for it with search_literature or db_retrieve. Prior knowledge tells you what to look for; it does not substitute for looking.
+You have to be consise in your answer, highlighting terms based on context is your main aim and you have a variety of tools to validate your answer.
+You are a knowledgeable colleague reviewing results together and sharing your experience. When the user explicitly asks for any specific analysis or tool, you must do it and not skip an explicitly requested action.
+The same obligation applies when the user names a biological context - a disease, tissue, cell type, treatment or condition (for example "in the context of lung cancer"). Naming a context is a request for evidence about that context, even when no tool is named. Answering it from your own knowledge alone is skipping a requested action.
 
 === HOW YOU THINK ===
 
@@ -606,25 +626,59 @@ You reason, then act, then observe, then reason again. There is no fixed pipelin
 - If a tool fails or returns weak signal, adapt.
 - Let the biology determine your workflow.
 
-=== VALIDATE WHAT YOU CLAIM IF NEEDED ===
+=== VALIDATE WHAT YOU CLAIM ===
 
-Do not state biological conclusions without evidence. Use your tools to support your interpretations:
-- Use search_literature to find papers that confirm or challenge a mechanistic link.
+Do not state biological conclusions without evidence. Any claim tied to a specific context - that a term, pathway or gene matters in a named disease, tissue or condition - requires retrieved support before you state it. Use your tools:
+- Use search_literature to find papers that confirm or challenge a mechanistic link. 
+  CONSTRUCT SPECIFIC QUERIES from the enriched terms and key genes you actually found
+  never a broad single word. If the search returns off-topic or 
+  low-quality papers, refine the query or the parameters and search again. 
+  Before searching literature decide what you actually want to answer. 
+  Decide if the literature results answered the question or you want to reframe or have a differet one.
 - Use db_retrieve with short keyword queries to check pathway membership or term overlap.
 - Use get_gene_info to verify gene functions before making claims about their role.
 - If a paper has full text available, you can retrieve it for deeper validation.
 Your credibility depends on grounding interpretation in data, not generating plausible-sounding text.
+
+=== CITATIONS ===
+
+Citations (PMIDs, paper titles, author-year references) are ONLY allowed for papers returned by the
+search_literature tool in this run.
+If search_literature was not called, include ZERO citations — do not cite any paper, PMID, or author
+from memory.
+Never invent, recall, or reconstruct a citation. If you did not retrieve it via search_literature, it
+does not get cited.
+This rule governs CITING, not searching. It forbids citing anything when no search results exist.
+Whether you must search is decided by what you are claiming:
+- General background biology - what a gene or pathway does in general - may be stated without a
+  search and without a citation. Uncited background of this kind is fine.
+- A claim tying terms, pathways or genes to a SPECIFIC NAMED CONTEXT (a disease, tissue, cell type,
+  treatment or condition) is not background. It requires a search first, and the papers you retrieve
+  should be cited. Recalling that a pathway is 'known to matter' in that context is not a substitute.
+A fabricated reference destroys the credibility of the entire analysis; so does presenting recall as
+if it were a validated, context-specific finding.
+
+When you are given a gene list to interpret, analyse it with your tools before interpreting it. Do not
+answer from memory alone and present the result as if it were an evidence-based interpretation.
 
 === FOLLOW-UP QUESTIONS ===
 
 Look your memory to see what you have. Does the user ask about previous results?  
 If yes, do NOT re-query tools to find information you already have. Use tools only to validate or expand — 
 not to re-discover what is already in the conversation context.
+One exception: if the follow-up names a NEW context ("what about breast cancer?"), that is not
+information you already have - it is a new claim to validate. Retrieve evidence for the new context
+even though the underlying results are already in memory. Reuse the existing results; do not reuse
+the old context's evidence.
 
 === CONTEXT IS EVERYTHING ===
 
 The same enriched term can mean different things depending on the tissue, disease, perturbation, species, or experimental design. Always anchor interpretation to the biological context.
-If context is not explicitly provided, infer it from the gene signature itself — read it like a biologist would.
+If context is not explicitly provided, infer it from the gene signature itself — read it like a
+biologist would. The evidence obligation differs between the two cases, deliberately:
+- Context the USER NAMED: validate it. Retrieve support before ranking terms by relevance to it.
+- Context YOU INFERRED: interpret freely without being forced to search. Say that the context is
+  your inference, and search only if you intend to make a firm claim that depends on it.
 
 === EVIDENCE AND CONFIDENCE ===
 
@@ -668,8 +722,222 @@ Thought:{agent_scratchpad}"""
 
 
 # ===============================================================================
+# CITATION GUARD - deterministic, post-generation
+# ===============================================================================
+# The system prompt asks the model not to cite papers it did not retrieve. This
+# ENFORCES it: any PMID, author-year reference or reference-list entry that does not
+# correspond to a paper returned by search_literature in this run is removed.
+#
+# It does not force a tool call and does not touch the model's reasoning - the LLM
+# still decides whether to search. It only deletes citations with nothing behind them.
+
+_PMID_CITE_RE = re.compile(r"\(?\s*PMIDs?[:\s#]*((?:\d{6,9})(?:\s*[,;and]+\s*\d{6,9})*)\s*\)?", re.I)
+_AUTHOR_YEAR_RE = re.compile(r"\(\s*([A-Z][A-Za-z\-']{2,})(?:\s+(?:and|&)\s+[A-Z][A-Za-z\-']{2,})?"
+                             r"\s+et\s+al\.?,?\s*(\d{4})\s*\)")
+_ETAL_REF_RE = re.compile(r"[A-Z][A-Za-z\-']+(?:\s*,\s*[A-Z]\.?)*\s*,?\s*et\s+al\.[^\n]*")
+# "by Semenza GL (2009)" / "by Ward PS, Thompson CB (2012)" - attribution with no PMID
+# and no "et al.", which earlier versions of this guard missed entirely.
+_BY_AUTHOR_YEAR_RE = re.compile(
+    r"\bby\s+[A-Z][A-Za-z\-']+(?:\s+[A-Z]{1,3})?"
+    r"(?:\s*,\s*[A-Z][A-Za-z\-']+(?:\s+[A-Z]{1,3})?)*"
+    r"(?:\s*,?\s*et\s+al\.)?\s*\(\d{4}\)")
+# a bullet/numbered line whose payload is a quoted title = a reference-list entry
+_REF_LINE_RE = re.compile(r'^\s*(?:[-*•]|\d+[.)])\s*\**\s*["“][^"”\n]{20,}["”]')
+
+
+def _norm_paper_title(s: str) -> str:
+    s = re.sub(r"<[^>]+>", "", s or "")
+    return re.sub(r"[^a-z0-9 ]", " ", s.lower()).strip()
+
+
+def _tidy(text: str) -> str:
+    """Clean up punctuation left behind after removing a citation."""
+    text = re.sub(r"\(\s*[,;]?\s*\)", "", text)      # empty parens
+    text = re.sub(r"[ \t]{2,}", " ", text)
+    text = re.sub(r"\s+([.,;:])", r"\1", text)
+    text = re.sub(r"\.\s*\.", ".", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
+
+
+def verify_citations(text: str, papers: List[Dict]) -> tuple:
+    """Strip citations that no retrieved paper backs.
+
+    Returns (clean_text, report). report records what was removed so the UI and the
+    eval can see it; an empty report means the model cited cleanly on its own.
+    """
+    if not text:
+        return text, {"checked": False}
+
+    papers = [p for p in (papers or []) if isinstance(p, dict)]
+    got_pmids = {str(p.get("pmid")).strip() for p in papers if p.get("pmid")}
+    got_authors = " ".join(
+        " ".join(p.get("authors", [])) if isinstance(p.get("authors"), list) else str(p.get("authors", ""))
+        for p in papers
+    ).lower()
+
+    removed_pmids, removed_author_years, removed_refs = [], [], []
+
+    def _pmid_sub(m):
+        ids = re.findall(r"\d{6,9}", m.group(1))
+        unverified = [i for i in ids if i not in got_pmids]
+        if not unverified:
+            return m.group(0)
+        removed_pmids.extend(unverified)
+        kept = [i for i in ids if i in got_pmids]
+        return f" (PMID: {', '.join(kept)})" if kept else ""
+
+    out = _PMID_CITE_RE.sub(_pmid_sub, text)
+
+    def _ay_sub(m):
+        surname = m.group(1)
+        if surname.lower() in got_authors and got_authors:
+            return m.group(0)
+        removed_author_years.append(f"{surname} et al., {m.group(2)}")
+        return ""
+
+    out = _AUTHOR_YEAR_RE.sub(_ay_sub, out)
+
+    # With nothing retrieved, EVERY citation-shaped construct is unverifiable by
+    # definition: "et al." references, "by Author (Year)" attributions, and
+    # reference-list lines built around a quoted title.
+    if not papers:
+        lines = []
+        for line in out.split("\n"):
+            is_list_item = re.match(r"^\s*(?:[-*•]|\d+[.)])\s", line) is not None
+            looks_like_reference = (
+                "et al." in line
+                or re.search(r"\(\d{4}\)", line)
+                or _REF_LINE_RE.match(line)
+                or _BY_AUTHOR_YEAR_RE.search(line)
+            )
+            # a bibliography entry: drop the whole line, quoted title or not
+            if is_list_item and looks_like_reference:
+                removed_refs.append(line.strip()[:160])
+                continue
+            # inline attribution inside prose: strip the citation, keep the sentence
+            new_line = _BY_AUTHOR_YEAR_RE.sub("", line)
+            if "et al." in new_line:
+                new_line = re.sub(r"[A-Z][A-Za-z\-'.]*(?:[^.\n]*?)et al\.[^.\n]*\.?", "", new_line)
+            if new_line != line:
+                removed_refs.append(line.strip()[:160])
+                if len(re.sub(r"[^A-Za-z0-9]", "", new_line)) < 25:
+                    continue
+                line = new_line
+            lines.append(line)
+        out = "\n".join(lines)
+
+    n_removed = len(removed_pmids) + len(removed_author_years) + len(removed_refs)
+    if n_removed:
+        out = _tidy(out)
+        out += (f"\n\n> *{n_removed} citation(s) were removed by the citation guard: they did not "
+                f"correspond to any paper retrieved by search_literature in this run.*")
+
+    return out, {
+        "checked": True,
+        "n_papers_retrieved": len(papers),
+        "removed_pmids": removed_pmids,
+        "removed_author_years": removed_author_years,
+        "removed_reference_lines": removed_refs,
+        "n_removed": n_removed,
+    }
+
+
+# ===============================================================================
 # REASONING ENGINE CLASS
 # ===============================================================================
+
+# Phrases that constitute an EXPLICIT request to run an analysis. Deliberately a flat
+# list of tool-shaped nouns, not biology: the guard must not know what a pathway is, only
+# that the user named an analysis this system can perform.
+# Phrases that constitute an EXPLICIT request to run an analysis. A flat phrase list,
+# not biology: the guard must not know what a pathway is, only that the user named an
+# analysis this system can perform. Matched case-insensitively as plain substrings.
+_EXPLICIT_ANALYSIS_PHRASES = (
+    "enrichment",
+    "over-representation", "overrepresentation",
+    "pathway analysis",
+    "gene info", "gene information",
+    "literature search", "search the literature", "search literature",
+    "paper annotation",
+    "db_retrieve", "db retrieve",
+    "database query", "database search", "database lookup",
+)
+
+_NOTHING_DONE_NUDGE = (
+    "You returned a final answer without calling any tool, but the request explicitly asked "
+    "for an analysis this system can run. Run the analysis that was asked for, using the "
+    "appropriate tool, and then answer. Do not answer from memory alone."
+)
+
+
+def _current_user_request(messages) -> str:
+    """The CURRENT question only.
+
+    The message the agent receives is not the raw user query: run() prepends conversation
+    memory as "<memory>
+
+CURRENT QUESTION: <query>" and appends a hint that itself
+    contains the words "enrichment analysis" when libraries are selected. Matching against
+    the whole blob made the guard fire on every follow-up, and on every query at all once a
+    library was selected. Both are stripped here so only what the user just asked is seen.
+    """
+    texts = [str(getattr(m, "content", "")) for m in messages
+             if type(m).__name__ == "HumanMessage"
+             and str(getattr(m, "content", "")).strip() != _NOTHING_DONE_NUDGE]
+    if not texts:
+        return ""
+    text = texts[-1]
+    if "CURRENT QUESTION:" in text:
+        text = text.rsplit("CURRENT QUESTION:", 1)[1]
+    marker = "[USER HAS SELECTED THESE ENRICHR LIBRARIES:"
+    if marker in text:
+        head, _, rest = text.partition(marker)
+        _, _, tail = rest.partition("]")
+        text = head + " " + tail
+    return text
+
+
+def _make_no_tool_guard(state=None):
+    """Deterministic safety net for one degenerate case: the model was explicitly asked to
+    run an analysis and returned a final answer having called NOTHING at all.
+
+    Deliberately narrow, and in the same category as verify_citations() - a mechanical
+    check on a clear-cut failure, not a decision tree:
+      * It encodes no workflow: no tool ordering, no "if context then literature", no biology.
+      * It fires ONLY when zero tools were called in the entire run. If the model engaged any
+        tool, the guard never looks again - what it does next is the model's decision.
+      * It bounces at most ONCE per run. If the second attempt still calls nothing, the answer
+        is allowed through rather than looping.
+    """
+    state = state if state is not None else {"bounced": False}
+
+    def post_model_hook(s):
+        messages = s.get("messages") or []
+        if not messages:
+            return None
+        last = messages[-1]
+
+        # only inspect a final answer: an AI message with no tool calls
+        if type(last).__name__ != "AIMessage" or getattr(last, "tool_calls", None):
+            return None
+        # the model engaged tools at some point -> not our case, leave it alone
+        if any(type(m).__name__ == "ToolMessage" for m in messages):
+            return None
+        if state["bounced"]:
+            return None                      # one bounce only, never loop
+
+        low = _current_user_request(messages).lower()
+        if not any(ph in low for ph in _EXPLICIT_ANALYSIS_PHRASES):
+            return None                      # no analysis was requested -> zero tools is correct
+
+        state["bounced"] = True
+        logger.info("no-tool guard: explicit analysis requested but no tool called - bouncing once")
+        from langchain_core.messages import HumanMessage as _HM
+        return {"messages": [_HM(content=_NOTHING_DONE_NUDGE)]}
+
+    return post_model_hook
+
 
 class ReasoningEngine:
     """
@@ -682,9 +950,14 @@ class ReasoningEngine:
     - Memory persistence across queries
     """
 
-    def __init__(self, model_name: str = None):
+    def __init__(self, model_name: str = None, provider: str = None, api_key: str = None):
         """Initialize the reasoning engine."""
-        # Get model name from config or use default
+        # Provider drives which LangChain client the factory builds
+        self.provider = provider or CONFIG.get("default_provider", "gemini")
+
+        # Get model name from the provider registry or use default
+        if model_name is None:
+            model_name = CONFIG.get("providers", {}).get(self.provider, {}).get("default_model")
         if model_name is None:
             model_name = CONFIG.get("gemini", {}).get("model_name", "gemini-2.5-flash")
 
@@ -703,17 +976,18 @@ class ReasoningEngine:
         self.last_call_time = 0
         self.min_call_interval = 1.0
 
-        # Get API key
-        self.api_key = (
-                CONFIG.get("gemini", {}).get("api_key") or
-                os.environ.get("GOOGLE_API_KEY") or
-                os.environ.get("GEMINI_API_KEY") or
-                (st.session_state.get("api_key") if st else None)
-        )
+        # Get API key: explicit -> config/env for this provider -> session state
+        self.api_key = api_key or resolve_api_key(self.provider)
+        if not self.api_key and st:
+            # Provider-specific key from the sidebar, else the legacy Gemini field
+            self.api_key = st.session_state.get(f"{self.provider}_api_key")
+            if not self.api_key and self.provider == "gemini":
+                self.api_key = st.session_state.get("api_key")
 
         if not self.api_key:
+            env_vars = CONFIG.get("providers", {}).get(self.provider, {}).get("api_key_env", [])
             raise ValueError(
-                "Gemini API key not found. Set GOOGLE_API_KEY or GEMINI_API_KEY"
+                f"{self.provider} API key not found. Set {' or '.join(env_vars) or 'the provider API key'}"
             )
 
         if LANGCHAIN_AVAILABLE:
@@ -723,21 +997,39 @@ class ReasoningEngine:
 
     def _init_langchain(self):
         """Initialize LangChain ReAct agent"""
-        logger.info("Initializing LangChain ReAct agent...")
+        logger.info(f"Initializing LangChain ReAct agent (provider={self.provider}, model={self.model_name})...")
 
-        gemini_config = CONFIG.get("gemini", {})
-        self.llm = ChatGoogleGenerativeAI(
+        self.llm = get_llm(
+            provider=self.provider,
             model=self.model_name,
-            google_api_key=self.api_key,
-            temperature=gemini_config.get("temperature", 0.4),
-            top_p=gemini_config.get("top_p", 0.95),
-            top_k=gemini_config.get("top_k", 40),
-            max_output_tokens=gemini_config.get("max_output_tokens", 4096),
-            max_retries=gemini_config.get("max_retries", 2),
-            convert_system_message_to_human=True,
-            thinking_budget=512,
-            include_thoughts=True,
+            api_key=self.api_key,
         )
+
+        # Separate client for one-shot scoring (no thinking trace). Bound into the
+        # literature tool below so each engine instance scores with its own
+        # provider/key - a module-level client would be shared across the
+        # concurrent Streamlit sessions of different users.
+        self.utility_llm = get_utility_llm(
+            provider=self.provider,
+            model=self.model_name,
+            api_key=self.api_key,
+        )
+
+        def _search_literature_with_scoring(
+                query: str,
+                max_results: int = 20,
+                min_year: Optional[int] = None,
+                max_year: Optional[int] = None,
+                sort_by: str = "relevance"
+        ) -> str:
+            return _wrap_search_literature(
+                query=query,
+                max_results=max_results,
+                min_year=min_year,
+                max_year=max_year,
+                sort_by=sort_by,
+                scoring_llm=self.utility_llm,
+            )
 
         # Create tools with proper schemas
         self.tools = [
@@ -778,7 +1070,7 @@ class ReasoningEngine:
                 args_schema=EnrichmentInput
             ),
             StructuredTool.from_function(
-                func=_wrap_search_literature,
+                func=_search_literature_with_scoring,
                 name="search_literature",
                 description=(
                     "Search Europe PMC for scientific papers. "
@@ -815,7 +1107,13 @@ class ReasoningEngine:
         self._langgraph_system_prompt = SYSTEM_PROMPT
 
         # Create agent without any custom prompt parameters (most compatible)
-        self.agent_executor = create_langgraph_react_agent(self.llm, self.tools)
+        # the guard's one-bounce flag lives on the ENGINE and is cleared at the start of
+        # every run, so a cached engine still gets one bounce per query
+        self._no_tool_guard_state = {"bounced": False}
+        self.agent_executor = create_langgraph_react_agent(
+            self.llm, self.tools,
+            post_model_hook=_make_no_tool_guard(self._no_tool_guard_state),
+        )
         self.use_langgraph = True
 
     def _init_legacy_agent(self):
@@ -853,98 +1151,116 @@ class ReasoningEngine:
 
     def _format_memory_context(self) -> str:
         """
-        Format previous query results as context for the LLM.
+        Format previous query results as context for follow-up questions.
 
-        This allows the LLM to reference previous results for follow-up questions.
-        CRITICAL: Include ALL enrichment terms so follow-ups can access complete data.
+        Gold-standard pattern: keep the MOST RECENT query in full detail (immediate
+        follow-ups need every term), and SUMMARIZE older queries (top terms + paper
+        titles only) to prevent context bloat on multi-turn sessions.
         """
         if not self.previous_envelopes:
             return ""
 
         context_parts = ["=== PREVIOUS QUERY RESULTS (for follow-up reference) ===\n"]
+        recent = self.previous_envelopes[-3:]
 
-        for i, prev in enumerate(self.previous_envelopes[-3:], 1):  # Last 3 queries
+        for i, prev in enumerate(recent, 1):
             query = prev.get("query", "")
             envelope = prev.get("envelope", {})
+            is_most_recent = (i == len(recent))
 
-            context_parts.append(f"\n--- Query {i}: \"{query[:100]}\" ---")
+            context_parts.append(f'\n--- Query {i}: "{query[:100]}" ---')
 
-            # Enrichment results - INCLUDE ALL TERMS for follow-up questions
-            if envelope.get("full_enrichment_results"):
-                enrich = envelope["full_enrichment_results"]
-                context_parts.append(f"\nEnrichment Results:")
+            enrich = envelope.get("full_enrichment_results") or {}
+            if enrich:
+                context_parts.append("\nEnrichment Results:")
                 context_parts.append(f"  Genes analyzed: {enrich.get('query_genes', [])}")
                 context_parts.append(f"  Libraries tested: {enrich.get('libraries_tested', [])}")
                 context_parts.append(f"  Total significant terms: {enrich.get('significant_terms_total', 0)}")
 
-                # Include ALL terms from ALL libraries (not truncated)
-                if enrich.get("enrichment_results"):
-                    context_parts.append("\n  COMPLETE ENRICHMENT RESULTS BY LIBRARY:")
-                    for lib, terms in enrich["enrichment_results"].items():
-                        context_parts.append(f"\n    {lib} ({len(terms)} significant terms):")
-                        for idx, term in enumerate(terms, 1):
-                            term_name = term.get("term", term.get("term_name", ""))
-                            p_val = term.get("adjusted_p_value", 1.0)
-                            genes = term.get("genes", [])
-                            overlap = term.get("overlap", "")
-                            context_parts.append(
-                                f"      {idx}. {term_name} (p={p_val:.2e}, overlap={overlap}, "
-                                f"genes: {', '.join(genes[:10])}{'...' if len(genes) > 10 else ''})"
-                            )
+                results = enrich.get("enrichment_results") or {}
+                if results:
+                    if is_most_recent:
+                        # FULL detail for the most recent query
+                        context_parts.append("\n  COMPLETE ENRICHMENT RESULTS BY LIBRARY:")
+                        for lib, terms in results.items():
+                            context_parts.append(f"\n    {lib} ({len(terms)} significant terms):")
+                            for idx, term in enumerate(terms, 1):
+                                term_name = term.get("term", term.get("term_name", ""))
+                                p_val = term.get("adjusted_p_value", 1.0)
+                                genes = term.get("genes", [])
+                                overlap = term.get("overlap", "")
+                                context_parts.append(
+                                    f"      {idx}. {term_name} (p={p_val:.2e}, overlap={overlap}, "
+                                    f"genes: {', '.join(genes[:10])}{'...' if len(genes) > 10 else ''})"
+                                )
+                    else:
+                        # SUMMARY for older queries: top 5 terms per library, no gene lists
+                        context_parts.append("\n  TOP ENRICHED TERMS (summary):")
+                        for lib, terms in results.items():
+                            top = terms[:5]
+                            names = [t.get("term", t.get("term_name", "")) for t in top]
+                            more = f" (+{len(terms) - 5} more)" if len(terms) > 5 else ""
+                            context_parts.append(f"    {lib}: {'; '.join(names)}{more}")
 
-            # Literature results - include more papers for context
-            if envelope.get("full_literature_results"):
-                papers = envelope["full_literature_results"]
-                context_parts.append(f"\nLiterature Results: {len(papers)} papers found")
-                context_parts.append("  Papers retrieved:")
-                for idx, paper in enumerate(papers[:15], 1):  # Top 15 papers
-                    title = paper.get("title", "")
-                    year = paper.get("year", paper.get("pub_year", ""))
-                    citations = paper.get("citations", paper.get("citation_count", 0))
-                    authors = paper.get("authors", [])
-                    first_author = authors[0] if authors else "Unknown"
-                    abstract = paper.get("abstract", "")[:200]
-                    context_parts.append(
-                        f"    {idx}. {title} ({first_author} et al., {year}, {citations} citations)"
-                    )
-                    if abstract:
-                        context_parts.append(f"       Abstract: {abstract}...")
+            lit = envelope.get("full_literature_results") or []
+            if lit:
+                if is_most_recent:
+                    context_parts.append(f"\nLiterature Results: {len(lit)} papers found")
+                    context_parts.append("  Papers retrieved:")
+                    for idx, paper in enumerate(lit[:15], 1):
+                        title = paper.get("title", "")
+                        year = paper.get("year", paper.get("pub_year", ""))
+                        citations = paper.get("citations", paper.get("citation_count", 0))
+                        authors = paper.get("authors", [])
+                        first_author = authors[0] if authors else "Unknown"
+                        abstract = (paper.get("abstract", "") or "")[:200]
+                        context_parts.append(
+                            f"    {idx}. {title} ({first_author} et al., {year}, {citations} citations)"
+                        )
+                        if abstract:
+                            context_parts.append(f"       Abstract: {abstract}...")
+                else:
+                    titles = [(p.get("title", "") or "")[:60] for p in lit[:3]]
+                    more = f" (+{len(lit) - 3} more)" if len(lit) > 3 else ""
+                    context_parts.append(f"\nLiterature: {len(lit)} papers — e.g. {'; '.join(titles)}{more}")
 
-            # DB results - include all
-            if envelope.get("full_db_results"):
-                db_results = envelope["full_db_results"]
-                if isinstance(db_results, list):
-                    context_parts.append(f"\nDatabase Results: {len(db_results)} result sets")
-                    for db in db_results:
-                        if isinstance(db, dict):
-                            task = db.get("task_performed", "query")
-                            total = db.get("statistics", {}).get("total_results", 0)
-                            context_parts.append(f"  Task: {task}, Results: {total}")
-                            for result in db.get("results", []):
-                                term_name = result.get("term_name", result.get("term_id", ""))
-                                desc = result.get("description", "")[:100]
-                                context_parts.append(f"    - {term_name}: {desc}")
-                elif isinstance(db_results, dict):
-                    task = db_results.get("task_performed", "query")
-                    total = db_results.get("statistics", {}).get("total_results", 0)
-                    context_parts.append(f"\nDatabase Results: Task={task}, Total={total}")
-                    for result in db_results.get("results", []):
-                        term_name = result.get("term_name", result.get("term_id", ""))
-                        context_parts.append(f"    - {term_name}")
+            # DB + gene info only for the most recent (older summarized to a mention)
+            db_results = envelope.get("full_db_results")
+            if db_results:
+                if is_most_recent:
+                    if isinstance(db_results, list):
+                        context_parts.append(f"\nDatabase Results: {len(db_results)} result sets")
+                        for db in db_results:
+                            if isinstance(db, dict):
+                                task = db.get("task_performed", "query")
+                                total = db.get("statistics", {}).get("total_results", 0)
+                                context_parts.append(f"  Task: {task}, Results: {total}")
+                                for result in db.get("results", []):
+                                    term_name = result.get("term_name", result.get("term_id", ""))
+                                    desc = (result.get("description", "") or "")[:100]
+                                    context_parts.append(f"    - {term_name}: {desc}")
+                    elif isinstance(db_results, dict):
+                        task = db_results.get("task_performed", "query")
+                        total = db_results.get("statistics", {}).get("total_results", 0)
+                        context_parts.append(f"\nDatabase Results: Task={task}, Total={total}")
+                        for result in db_results.get("results", []):
+                            term_name = result.get("term_name", result.get("term_id", ""))
+                            context_parts.append(f"    - {term_name}")
+                else:
+                    context_parts.append("\nDatabase Results: (available from earlier query)")
 
-            # Gene info
-            if envelope.get("gene_info"):
-                genes = envelope["gene_info"]
-                context_parts.append(f"\nGene Info: {len(genes)} gene(s) looked up")
-                for gene_data in genes:
-                    gene_name = gene_data.get("gene", gene_data.get("symbol", ""))
-                    summary = gene_data.get("summary", "")[:200]
-                    context_parts.append(f"  {gene_name}: {summary}...")
+            gene_info = envelope.get("gene_info")
+            if gene_info:
+                context_parts.append(f"\nGene Info: {len(gene_info)} gene(s) looked up")
+                if is_most_recent:
+                    for gene_data in gene_info:
+                        gene_name = gene_data.get("gene", gene_data.get("symbol", ""))
+                        summary = (gene_data.get("summary", "") or "")[:200]
+                        context_parts.append(f"  {gene_name}: {summary}...")
 
         context_parts.append("\n=== END PREVIOUS RESULTS ===\n")
-
         return "\n".join(context_parts)
-
+    
     def _store_envelope_in_memory(self, query: str, envelope_dict: Dict):
         """Store envelope for future follow-up questions"""
         self.previous_envelopes.append({
@@ -1324,7 +1640,8 @@ class ReasoningEngine:
 
         return envelope
 
-    def run(self, query: str, chat_history: list = None, selected_libraries: List[str] = None) -> Dict:
+    def run(self, query: str, chat_history: list = None, selected_libraries: List[str] = None,
+            progress_callback=None) -> Dict:
         """
         Main entry point - backward compatible interface for app.py.
 
@@ -1334,6 +1651,7 @@ class ReasoningEngine:
         if selected_libraries:
             self.selected_libraries = selected_libraries
 
+        self._progress_callback = progress_callback
         start_time = time.time()
         self.query_id = str(uuid.uuid4())[:8]
         self.envelope = MergedEnvelope(query_id=self.query_id)
@@ -1352,7 +1670,18 @@ class ReasoningEngine:
             else:
                 result = self._run_fallback(query, memory_context)
 
-            self.envelope.final_text = result.get("output", "I couldn't generate a response.")
+            # Deterministic guard: remove any citation not backed by a paper this run
+            # actually retrieved. Runs before anything downstream reads final_text.
+            guarded_text, guard_report = verify_citations(
+                result.get("output", "I couldn't generate a response."),
+                result.get("literature") or []
+            )
+            if guard_report.get("n_removed"):
+                logger.warning(f"Citation guard removed {guard_report['n_removed']} unverifiable "
+                               f"citation(s): {guard_report['removed_pmids']} "
+                               f"{guard_report['removed_author_years']}")
+            self.envelope.final_text = guarded_text
+            self.envelope.citation_guard = guard_report
             self.envelope.tools_used = result.get("tools_used", [])
             self.envelope.reasoning_trace = result.get("trace", [])
             self.envelope.reasoning_steps = result.get("reasoning_steps", [])
@@ -1368,8 +1697,13 @@ class ReasoningEngine:
 
             # Literature - ALL papers
             if result.get("literature"):
-                self.envelope.literature = result["literature"][:20]  # Top 20 for display
-                self.envelope.full_literature_results = result["literature"]  # ALL papers
+                # Same relevance gate the agent's list went through. results["literature"]
+                # is accumulated from the RAW tool observations (and across back-to-back
+                # search_literature calls), so without this the table still showed Low and
+                # unscored papers the agent never reasoned over.
+                _lit = keep_relevant_papers(result["literature"])
+                self.envelope.literature = _lit[:20]              # top 20 for display
+                self.envelope.full_literature_results = _lit      # all relevant papers
 
             # Database - COMPLETE results (merge multiple calls into single structure)
             if result.get("db_results"):
@@ -1459,18 +1793,54 @@ class ReasoningEngine:
         """Run using LangGraph"""
         from langchain_core.messages import HumanMessage, SystemMessage
 
+        # fresh bounce allowance for this run
+        if hasattr(self, "_no_tool_guard_state"):
+            self._no_tool_guard_state["bounced"] = False
+
         # Build messages - prepend system prompt if using fallback method
         messages = []
         if hasattr(self, '_langgraph_system_prompt'):
             messages.append(SystemMessage(content=self._langgraph_system_prompt))
         messages.append(HumanMessage(content=query))
 
-        result = self.agent_executor.invoke(
-            {"messages": messages},
-            config={"recursion_limit": 30}
-        )
+        # Stream step-by-step so we can report progress as each node/tool completes.
+        result = None
+        PRETTY = {
+            "run_enrichment_analysis": "Running enrichment analysis",
+            "search_literature": "Searching literature",
+            "db_retrieve": "Querying databases",
+            "get_gene_info": "Looking up gene information",
+        }
 
-        response_messages = result.get("messages", [])
+        def pretty(name):
+            return PRETTY.get(name, name.replace("_", " ").capitalize())
+
+        for chunk in self.agent_executor.stream(
+                {"messages": messages},
+                # 60, not 30: each tool call costs ~2 graph steps, so 30 capped the run at
+                # ~14 calls. Validation-heavy runs legitimately reach 9-10 calls and were
+                # dying with GraphRecursionError, returning an empty answer. This raises the
+                # ceiling only - it does not encourage more calls.
+                config={"recursion_limit": 60},
+                stream_mode="values",
+        ):
+            result = chunk  # each chunk is the full state; last one is final
+            # report the latest tool activity to the UI, if a callback was provided
+            cb = getattr(self, "_progress_callback", None)
+            if cb:
+                msgs = chunk.get("messages", [])
+                if msgs:
+                    last = msgs[-1]
+                    # a tool just produced output
+                    if type(last).__name__ == "ToolMessage":
+                        tool_name = getattr(last, "name", "tool")
+                        cb(f"✓ {pretty(tool_name)}")
+                    # the model requested tool calls
+                    elif type(last).__name__ == "AIMessage" and getattr(last, "tool_calls", None):
+                        for tc in last.tool_calls:
+                            cb(f"→ {pretty(tc.get('name', 'tool'))}")
+
+        response_messages = (result or {}).get("messages", [])
 
         # Get final output
         final_output = ""
@@ -1557,18 +1927,25 @@ Provide a detailed, accurate response. If this is a follow-up question, referenc
 # FACTORY FUNCTION
 # ===============================================================================
 
-def create_reasoning_engine(model: Any = None) -> ReasoningEngine:
+def create_reasoning_engine(
+        model: Any = None,
+        provider: str = None,
+        model_name: str = None,
+        api_key: str = None
+) -> ReasoningEngine:
     """
     Factory function to create a reasoning engine.
 
     Args:
         model: Optional (for backward compatibility, ignored)
+        provider: Provider key from CONFIG["providers"]. None = configured default.
+        model_name: Model id. None = the provider's default_model.
+        api_key: Explicit key. None = resolved from config/env/session.
 
     Returns:
         ReasoningEngine instance
     """
-    model_name = CONFIG.get("gemini", {}).get("model_name", "gemini-2.5-flash")
-    return ReasoningEngine(model_name=model_name)
+    return ReasoningEngine(model_name=model_name, provider=provider, api_key=api_key)
 
 
 # ===============================================================================

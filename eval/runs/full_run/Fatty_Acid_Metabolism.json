@@ -1,0 +1,4817 @@
+{
+  "gene_set": "Fatty_Acid_Metabolism",
+  "context": "Fatty Acid Metabolism",
+  "genes": [
+    "ACAA1",
+    "ACAA2",
+    "ACADL",
+    "ACADM",
+    "ACOT8",
+    "ACOX1",
+    "ACSL1",
+    "ALDH3A2",
+    "CCDC58",
+    "CPT2",
+    "CYP4A11",
+    "DECR1",
+    "ECH1",
+    "ECI1",
+    "ELOVL5",
+    "FABP1",
+    "FABP2",
+    "HADH",
+    "HIBCH",
+    "HMGCL",
+    "HSD17B11",
+    "IDH1",
+    "ME1",
+    "MGLL",
+    "MLYCD",
+    "PCBD1",
+    "RETSAT",
+    "S100A10",
+    "SUCLG1",
+    "VNN1",
+    "EHHADH",
+    "ALDH9A1",
+    "HADHB",
+    "ECHS1",
+    "ACADS",
+    "CA2",
+    "HSD17B10",
+    "ALDH1A1",
+    "ACADVL",
+    "HSD17B4",
+    "CA4",
+    "ADH1C",
+    "ADH7",
+    "PTS",
+    "MAOA",
+    "HAO2",
+    "HSD17B7",
+    "MCEE",
+    "ACAT2",
+    "AUH",
+    "HPGD",
+    "FH",
+    "HMGCS2",
+    "ALAD",
+    "GPD1",
+    "ACO2",
+    "CBR1",
+    "GRHPR",
+    "ACOT2",
+    "G0S2",
+    "MDH2",
+    "HSP90AA1",
+    "BCKDHB",
+    "UROS",
+    "YWHAH",
+    "LDHA",
+    "CRYZ",
+    "RDH16",
+    "INMT",
+    "UGDH",
+    "GSTZ1",
+    "IDH3B",
+    "MDH1",
+    "CRAT",
+    "ETFDH",
+    "CD36",
+    "ECI2",
+    "SDHD",
+    "ACSL5",
+    "HSDL2",
+    "HMGCS1",
+    "SDHC",
+    "CD1D",
+    "GCDH",
+    "GPD2",
+    "ALDH3A1",
+    "SLC22A5",
+    "PDHB",
+    "TDO2",
+    "FASN",
+    "NBN",
+    "PSME1",
+    "PPARA",
+    "NCAPH2",
+    "BPHL",
+    "ODC1",
+    "CA6",
+    "DLD",
+    "HCCS",
+    "EPHX1",
+    "DLST",
+    "FMO1",
+    "AOC3",
+    "UROD",
+    "CPT1A",
+    "KMT5A",
+    "UBE2L6",
+    "MIF",
+    "SUCLG2",
+    "CPOX",
+    "SMS",
+    "CBR3",
+    "NTHL1",
+    "CIDEA",
+    "IDI1",
+    "AADAT",
+    "REEP6",
+    "HSPH1",
+    "APEX1",
+    "NSDHL",
+    "ADIPOR2",
+    "ACSL4",
+    "ACSS1",
+    "ENO3",
+    "IDH3G",
+    "LGALS1",
+    "METAP1",
+    "ALDOA",
+    "ACSM3",
+    "LTC4S",
+    "D2HGDH",
+    "ADSL",
+    "SUCLA2",
+    "SDHA",
+    "XIST",
+    "OSTC",
+    "GLUL",
+    "CYP4A22",
+    "GABARAPL1",
+    "AQP7",
+    "CYP1A1",
+    "PRDX6",
+    "ERP29",
+    "H2AZ1",
+    "GAPDHS",
+    "DHCR24",
+    "GAD2",
+    "PTPRG",
+    "IL4I1",
+    "TP53INP2",
+    "PDHA1",
+    "RAP1GDS1",
+    "CEL",
+    "BLVRA",
+    "SERINC1",
+    "BMPR1B",
+    "RDH11",
+    "ENO2"
+  ],
+  "n_genes": 158,
+  "query": "Analyze this gene set (biological context: Fatty Acid Metabolism) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: ACAA1, ACAA2, ACADL, ACADM, ACOT8, ACOX1, ACSL1, ALDH3A2, CCDC58, CPT2, CYP4A11, DECR1, ECH1, ECI1, ELOVL5, FABP1, FABP2, HADH, HIBCH, HMGCL, HSD17B11, IDH1, ME1, MGLL, MLYCD, PCBD1, RETSAT, S100A10, SUCLG1, VNN1, EHHADH, ALDH9A1, HADHB, ECHS1, ACADS, CA2, HSD17B10, ALDH1A1, ACADVL, HSD17B4, CA4, ADH1C, ADH7, PTS, MAOA, HAO2, HSD17B7, MCEE, ACAT2, AUH, HPGD, FH, HMGCS2, ALAD, GPD1, ACO2, CBR1, GRHPR, ACOT2, G0S2, MDH2, HSP90AA1, BCKDHB, UROS, YWHAH, LDHA, CRYZ, RDH16, INMT, UGDH, GSTZ1, IDH3B, MDH1, CRAT, ETFDH, CD36, ECI2, SDHD, ACSL5, HSDL2, HMGCS1, SDHC, CD1D, GCDH, GPD2, ALDH3A1, SLC22A5, PDHB, TDO2, FASN, NBN, PSME1, PPARA, NCAPH2, BPHL, ODC1, CA6, DLD, HCCS, EPHX1, DLST, FMO1, AOC3, UROD, CPT1A, KMT5A, UBE2L6, MIF, SUCLG2, CPOX, SMS, CBR3, NTHL1, CIDEA, IDI1, AADAT, REEP6, HSPH1, APEX1, NSDHL, ADIPOR2, ACSL4, ACSS1, ENO3, IDH3G, LGALS1, METAP1, ALDOA, ACSM3, LTC4S, D2HGDH, ADSL, SUCLA2, SDHA, XIST, OSTC, GLUL, CYP4A22, GABARAPL1, AQP7, CYP1A1, PRDX6, ERP29, H2AZ1, GAPDHS, DHCR24, GAD2, PTPRG, IL4I1, TP53INP2, PDHA1, RAP1GDS1, CEL, BLVRA, SERINC1, BMPR1B, RDH11, ENO2",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 167,
+  "n_papers": 2,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 2,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 2,
+    "cited_pmids": [
+      "42014914",
+      "42283012"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "## Summary\n\nThe gene set provided is overwhelmingly enriched for pathways involved in **fatty acid degradation and oxidation**, strongly indicating its role in catabolic processes of lipids. A key regulatory pathway highlighted is the **PPAR signaling pathway**, which is known to orchestrate lipid metabolism.\n\n## Detailed Analysis\n\nThe enrichment analysis, utilizing both GO_Biological_Process_2023 and KEGG_2021_Human libraries, revealed a highly significant overrepresentation of genes associated with various aspects of fatty acid metabolism.\n\nThe top terms from **GO_Biological_Process_2023** are:\n*   **Fatty Acid Beta-Oxidation (GO:0006635)** (p=4.76e-31)\n*   **Fatty Acid Catabolic Process (GO:0009062)** (p=5.74e-25)\n*   **Fatty Acid Oxidation (GO:0019395)** (p=7.10e-25)\n*   **Fatty Acid Metabolic Process (GO:0006631)** (p=4.40e-20)\n*   **Long-Chain Fatty Acid Metabolic Process (GO:0001676)** (p=2.24e-16)\n\nSimilarly, the most significant terms from **KEGG_2021_Human** include:\n*   **Fatty acid degradation** (p=5.39e-38)\n*   **PPAR signaling pathway** (p=7.19e-21)\n\nThese results collectively demonstrate that the gene set is centrally involved in the breakdown of fatty acids, a major energy-producing pathway. The high number of overlapping genes in these terms (e.g., 22/49 for \"Fatty Acid Beta-Oxidation\" and 24/43 for \"Fatty acid degradation\") underscores the robust signal for these processes. Key genes such as ACAA1, ACAA2, ACADM, ACADVL, ACOX1, CPT1A, CPT2, EHHADH, and HADH are all integral components of fatty acid beta-oxidation and are highly represented in the enriched terms.\n\nThe enrichment of the **PPAR signaling pathway** is particularly relevant. Peroxisome proliferator-activated receptors (PPARs), especially PPARα, are nuclear receptors that play a crucial role in regulating the transcription of genes involved in fatty acid catabolism, including those for beta-oxidation, peroxisomal proliferation, and mitochondrial fatty acid uptake.\n\nTo validate this mechanistic link, a literature search was performed with the query \"Fatty Acid Beta-Oxidation PPAR signaling pathway\". The search yielded supporting evidence:\n*   One paper highlighted that traditional Chinese medicine flavonoids improve non-alcoholic fatty liver disease (NAFLD) by \"accelerat[ing] lipid catabolism by promoting fatty acid β-oxidation\" and \"activating the PPARα signaling pathways\" (Wang Y et al., 2026, PMID:42283012).\n*   Another study demonstrated that Sabinineoside B alleviates metabolic dysfunction-associated steatotic liver disease by \"modulating the PPARα signaling pathway,\" which regulates lipid metabolism and exerts lipid-lowering effects (Feng Y et al., 2026, PMID:42014914).\n\nThese literature findings directly support the biological interpretation that the observed enrichment of fatty acid degradation pathways is likely driven and regulated by the PPAR signaling pathway. The gene list therefore represents a coherent set of genes primarily involved in the intricate control and execution of fatty acid catabolism, with the PPAR pathway acting as a central regulator.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'genes': 'ACAA1, ACAA2, ACADL, ACADM, ACOT8, ACOX1, ACSL1, ALDH3A2, CCDC58, CPT2, CYP4A11, DECR1, ECH1, ECI1, ELOVL5, FABP1, FABP2, HADH, HIBCH, HMGCL, HSD17B11, IDH1, ME1, MGLL, MLYCD, PCBD1, RETSAT, S100A10, SUCLG1, VNN1, EHHADH, ALDH9A1, HADHB, ECHS1, ACADS, CA2, HSD17B10, ALDH1A1, ACADVL, HSD17B4, CA4, ADH1C, ADH7, PTS, MAOA, HAO2, HSD17B7, MCEE, ACAT2, AUH, HPGD, FH, HMGCS2, ALAD, GPD1, ACO2, CBR1, GRHPR, ACOT2, G0S2, MDH2, HSP90AA1, BCKDHB, UROS, YWHAH, LDHA, CRYZ, RDH16, INMT, UGDH, GSTZ1, IDH3B, MDH1, CRAT, ETFDH, CD36, ECI2, SDHD, ACSL5, HSDL2, HMGCS1, SDHC, CD1D, GCDH, GPD2, ALDH3A1, SLC22A5, PDHB, TDO2, FASN, NBN, PSME1, PPARA, NCAPH2, BPHL, ODC1, CA6, DLD, HCCS, EPHX1, DLST, FMO1, AOC3, UROD, CPT1A, KMT5A, UBE2L6, MIF, SUCLG2, CPOX, SMS, CBR3, NTHL1, CIDEA, IDI1, AADAT, REEP6, HSPH1, APEX1, NSDHL, ADIPOR2, ACSL4, ACSS1, ENO3, IDH3G, LGALS1, METAP1, ALDOA, ACSM3, LTC4S, D2HGDH, ADSL, SUCLA2, SDHA, XIST, OSTC, GLUL, CYP4A22, GABARAPL1, AQP7, CYP1A1, PRDX6, ERP29, H2AZ1, GAPDHS, DHCR24, GAD2, PTPRG, IL4I1, TP53INP2, PDHA1, RAP1GDS1, CEL, BLVRA, SERINC1, BMPR1B, RDH11, ENO2', 'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human'}",
+    "Tool: search_literature | Args: {'query': 'Fatty Acid Beta-Oxidation PPAR signaling pathway', 'sort_by': 'relevance', 'max_results': 5}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Fatty Acid Metabolism) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: ACAA1, ACAA2, ACADL, ACADM, ACOT8, ACOX1, ACSL1, ALDH3A2, "
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given a gene list and I need to figure out its biological meaning, specifically within the realm of Fatty Acid Metabolism. My process will be methodical, drawing upon my expertise to synthesize the information effectively.\n\nFirst, I'll leverage the power of enrichment analysis. I'll use `run_enrichment_analysis` with the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries. This initial step will give me a solid foundation – the enriched pathways and biological processes associated with this gene set.\n\nNext, I'll sift through the results from the enrichment analysis. My focus will be razor-sharp: I'll prioritize the top enriched terms related to, or hinting at, fatty acid metabolism. I'll need to develop a very clear understanding of what’s showing up as the most significant, and also what pathways are showing the most interesting connections.\n\nWith a good sense of the enriched terms, I'll formulate specific, targeted search queries for the literature. I'll use `search_literature` to pull up relevant publications, limiting the search to five papers to keep things concise. The goal here is to find supporting evidence, validating the enrichment results and providing context for interpretation.\n\nFinally, I'll synthesize everything. The enriched pathways, the biological processes, and the supporting literature – all of this will coalesce into a concise biological interpretation. I'll be sure to highlight key pathways and genes relevant to Fatty Acid Metabolism. And, of course, I'll meticulously cite the retrieved papers to ensure accuracy and provide further evidence.\n\nMy response will be structured: a clear summary followed by a detailed analysis. Let's start by getting that enrichment analysis underway!",
+      "action": "run_enrichment_analysis",
+      "args": "genes=ACAA1, ACAA2, ACADL, ACADM, ACOT8, ACOX1, ACSL1, A..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "d62d5be6-937b-492e-aba6-b3bcadb8b23f",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 158 | Total significant terms: 167"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "The gene set provided is highly enriched in pathways and processes central to **Fatty Acid Metabolism**, encompassing both breakdown (catabolism and oxidation) and synthesis, as well as associated metabolic hubs and regulatory mechanisms. This is strongly consistent with the biological context you provided.\n\n## Detailed Analysis\n\n### Enrichment Analysis (GO_Biological_Process_2023 and KEGG_2021_Human)\n\nThe enrichment analysis using both GO Biological Process and KEGG Human pathways reveals a rob"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so looking at these enrichment analysis results, the picture is incredibly clear. It's almost too obvious, which is always a good sign. The data aligns perfectly with what I'd expect given the biological context, which immediately gives me confidence in the analysis.\n\nSpecifically, the GO term analysis from 2023 screams *fatty acid metabolism*. The top terms are practically a laundry list of processes related to fatty acid oxidation and catabolism. We're seeing *Fatty Acid Beta-Oxidation*, *Fatty Acid Catabolic Process*, *Fatty Acid Oxidation*, the whole shebang. They’re all there: *Long-Chain Fatty Acid Metabolic Process*, *acyl-CoA Metabolic Process*, even the finer details like *Fatty Acid Beta-Oxidation Using acyl-CoA Dehydrogenase* and *Very Long-Chain Fatty Acid Metabolic Process*, which is exactly the granularity I want to see. The inclusion of *Fatty Acid Transport*, *Regulation Of Fatty Acid Oxidation*, *Carnitine Metabolic Process* (crucial for getting those fatty acids into the mitochondria), and *Ketone Body Biosynthetic Process* (a direct consequence of fatty acid breakdown in the liver) really completes the picture. This is a very robust set of terms, pointing to a central role for fatty acids.\n\nNow, checking the KEGG 2021 Human pathways, the same theme repeats. The *Fatty acid degradation* pathway is the most significantly enriched, which is expected. Seeing *PPAR signaling pathway* jump out is also crucial, as these nuclear receptors are central regulators of fatty acid metabolism; their presence is a strong validation. We're also seeing the *Synthesis and degradation of ketone bodies* pathway, the *Fatty acid elongation*, *fatty acid biosynthesis* and *Biosynthesis of unsaturated fatty acids* pathways, showing how fatty acid metabolism isn't just about breaking them down. Finally, the inclusion of *Peroxisome* is also critical, and I'd need to look closer at what those functions relate to in terms of fatty acid metabolism, probably the peroxisomal beta-oxidation of very long-chain fatty acids.\n\nIn short, there's no question here. This data is overwhelmingly suggesting a strong and significant involvement of fatty acid metabolism in this biological context. It's time to dig deeper, but this is a very solid starting point.",
+      "action": "search_literature",
+      "args": "query=Fatty Acid Beta-Oxidation PPAR signaling pathway, sort_by=relevance, max_results=5",
+      "tool_name": "search_literature",
+      "tool_call_id": "17e1e07e-2c0c-419d-8f77-d6a52ed79264",
+      "observation": "=== LITERATURE SEARCH: 'Fatty Acid Beta-Oxidation PPAR signaling pathway' === | Found 2 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "## Summary\n\nThe gene set provided is overwhelmingly enriched for pathways involved in **fatty acid degradation and oxidation**, strongly indicating its role in catabolic processes of lipids. A key regulatory pathway highlighted is the **PPAR signaling pathway**, which is known to orchestrate lipid metabolism.\n\n## Detailed Analysis\n\nThe enrichment analysis, utilizing both GO_Biological_Process_2023 and KEGG_2021_Human libraries, revealed a highly significant overrepresentation of genes associated"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "genes=ACAA1, ACAA2, ACADL, ACADM, ACOT8, ACOX1, ACSL1, A..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given a gene list and I need to figure out its biological meaning, specifically within the realm of Fatty Acid Metabolism. My process will be methodical, drawing upon my expertise to synthesize the information effectively.\n\nFirst, I'll leverage the power of enrichment analysis. I'll use `run_enrichment_analysis` with the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries. This initial step will give me a solid foundation – the enriched pathways and biological processes associated with this gene set.\n\nNext, I'll sift through the results from the enrichment analysis. My focus will be razor-sharp: I'll prioritize the top enriched terms related to, or hinting at, fatty acid metabolism. I'll need to develop a very clear understanding of what’s showing up as the most significant, and also what pathways are showing the most interesting connections.\n\nWith a good sense of the enriched terms, I'll formulate specific, targeted search queries for the literature. I'll use `search_literature` to pull up relevant publications, limiting the search to five papers to keep things concise. The goal here is to find supporting evidence, validating the enrichment results and providing context for interpretation.\n\nFinally, I'll synthesize everything. The enriched pathways, the biological processes, and the supporting literature – all of this will coalesce into a concise biological interpretation. I'll be sure to highlight key pathways and genes relevant to Fatty Acid Metabolism. And, of course, I'll meticulously cite the retrieved papers to ensure accuracy and provide further evidence.\n\nMy response will be structured: a clear summary followed by a detailed analysis. Let's start by getting that enrichment analysis underway!",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 158 | Total significant terms: 167"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "query=Fatty Acid Beta-Oxidation PPAR signaling pathway, sort_by=relevance, max_results=5",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so looking at these enrichment analysis results, the picture is incredibly clear. It's almost too obvious, which is always a good sign. The data aligns perfectly with what I'd expect given the biological context, which immediately gives me confidence in the analysis.\n\nSpecifically, the GO term analysis from 2023 screams *fatty acid metabolism*. The top terms are practically a laundry list of processes related to fatty acid oxidation and catabolism. We're seeing *Fatty Acid Beta-Oxidation*, *Fatty Acid Catabolic Process*, *Fatty Acid Oxidation*, the whole shebang. They’re all there: *Long-Chain Fatty Acid Metabolic Process*, *acyl-CoA Metabolic Process*, even the finer details like *Fatty Acid Beta-Oxidation Using acyl-CoA Dehydrogenase* and *Very Long-Chain Fatty Acid Metabolic Process*, which is exactly the granularity I want to see. The inclusion of *Fatty Acid Transport*, *Regulation Of Fatty Acid Oxidation*, *Carnitine Metabolic Process* (crucial for getting those fatty acids into the mitochondria), and *Ketone Body Biosynthetic Process* (a direct consequence of fatty acid breakdown in the liver) really completes the picture. This is a very robust set of terms, pointing to a central role for fatty acids.\n\nNow, checking the KEGG 2021 Human pathways, the same theme repeats. The *Fatty acid degradation* pathway is the most significantly enriched, which is expected. Seeing *PPAR signaling pathway* jump out is also crucial, as these nuclear receptors are central regulators of fatty acid metabolism; their presence is a strong validation. We're also seeing the *Synthesis and degradation of ketone bodies* pathway, the *Fatty acid elongation*, *fatty acid biosynthesis* and *Biosynthesis of unsaturated fatty acids* pathways, showing how fatty acid metabolism isn't just about breaking them down. Finally, the inclusion of *Peroxisome* is also critical, and I'd need to look closer at what those functions relate to in terms of fatty acid metabolism, probably the peroxisomal beta-oxidation of very long-chain fatty acids.\n\nIn short, there's no question here. This data is overwhelmingly suggesting a strong and significant involvement of fatty acid metabolism in this biological context. It's time to dig deeper, but this is a very solid starting point.",
+      "observation": "=== LITERATURE SEARCH: 'Fatty Acid Beta-Oxidation PPAR signaling pathway' === | Found 2 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "ACAA1",
+      "ACAA2",
+      "ACADL",
+      "ACADM",
+      "ACOT8",
+      "ACOX1",
+      "ACSL1",
+      "ALDH3A2",
+      "CCDC58",
+      "CPT2",
+      "CYP4A11",
+      "DECR1",
+      "ECH1",
+      "ECI1",
+      "ELOVL5",
+      "FABP1",
+      "FABP2",
+      "HADH",
+      "HIBCH",
+      "HMGCL",
+      "HSD17B11",
+      "IDH1",
+      "ME1",
+      "MGLL",
+      "MLYCD",
+      "PCBD1",
+      "RETSAT",
+      "S100A10",
+      "SUCLG1",
+      "VNN1",
+      "EHHADH",
+      "ALDH9A1",
+      "HADHB",
+      "ECHS1",
+      "ACADS",
+      "CA2",
+      "HSD17B10",
+      "ALDH1A1",
+      "ACADVL",
+      "HSD17B4",
+      "CA4",
+      "ADH1C",
+      "ADH7",
+      "PTS",
+      "MAOA",
+      "HAO2",
+      "HSD17B7",
+      "MCEE",
+      "ACAT2",
+      "AUH",
+      "HPGD",
+      "FH",
+      "HMGCS2",
+      "ALAD",
+      "GPD1",
+      "ACO2",
+      "CBR1",
+      "GRHPR",
+      "ACOT2",
+      "G0S2",
+      "MDH2",
+      "HSP90AA1",
+      "BCKDHB",
+      "UROS",
+      "YWHAH",
+      "LDHA",
+      "CRYZ",
+      "RDH16",
+      "INMT",
+      "UGDH",
+      "GSTZ1",
+      "IDH3B",
+      "MDH1",
+      "CRAT",
+      "ETFDH",
+      "CD36",
+      "ECI2",
+      "SDHD",
+      "ACSL5",
+      "HSDL2",
+      "HMGCS1",
+      "SDHC",
+      "CD1D",
+      "GCDH",
+      "GPD2",
+      "ALDH3A1",
+      "SLC22A5",
+      "PDHB",
+      "TDO2",
+      "FASN",
+      "NBN",
+      "PSME1",
+      "PPARA",
+      "NCAPH2",
+      "BPHL",
+      "ODC1",
+      "CA6",
+      "DLD",
+      "HCCS",
+      "EPHX1",
+      "DLST",
+      "FMO1",
+      "AOC3",
+      "UROD",
+      "CPT1A",
+      "KMT5A",
+      "UBE2L6",
+      "MIF",
+      "SUCLG2",
+      "CPOX",
+      "SMS",
+      "CBR3",
+      "NTHL1",
+      "CIDEA",
+      "IDI1",
+      "AADAT",
+      "REEP6",
+      "HSPH1",
+      "APEX1",
+      "NSDHL",
+      "ADIPOR2",
+      "ACSL4",
+      "ACSS1",
+      "ENO3",
+      "IDH3G",
+      "LGALS1",
+      "METAP1",
+      "ALDOA",
+      "ACSM3",
+      "LTC4S",
+      "D2HGDH",
+      "ADSL",
+      "SUCLA2",
+      "SDHA",
+      "XIST",
+      "OSTC",
+      "GLUL",
+      "CYP4A22",
+      "GABARAPL1",
+      "AQP7",
+      "CYP1A1",
+      "PRDX6",
+      "ERP29",
+      "H2AZ1",
+      "GAPDHS",
+      "DHCR24",
+      "GAD2",
+      "PTPRG",
+      "IL4I1",
+      "TP53INP2",
+      "PDHA1",
+      "RAP1GDS1",
+      "CEL",
+      "BLVRA",
+      "SERINC1",
+      "BMPR1B",
+      "RDH11",
+      "ENO2"
+    ],
+    "gene_count": 158,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Fatty Acid Beta-Oxidation (GO:0006635)",
+          "term": "Fatty Acid Beta-Oxidation (GO:0006635)",
+          "overlap": "22/49",
+          "p_value": 5.074902368871481e-34,
+          "z_score": 118.7173202614379,
+          "combined_score": 9101.295476678852,
+          "overlap_genes": [
+            "GCDH",
+            "ACADVL",
+            "ACOT8",
+            "ACAA2",
+            "ECHS1",
+            "ECI1",
+            "ECI2",
+            "ETFDH",
+            "HSD17B4",
+            "HSD17B10",
+            "ACAT2",
+            "HADHB",
+            "ACADL",
+            "AUH",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ACADM",
+            "ACAA1",
+            "ACADS",
+            "CRAT",
+            "DECR1"
+          ],
+          "genes": [
+            "GCDH",
+            "ACADVL",
+            "ACOT8",
+            "ACAA2",
+            "ECHS1",
+            "ECI1",
+            "ECI2",
+            "ETFDH",
+            "HSD17B4",
+            "HSD17B10",
+            "ACAT2",
+            "HADHB",
+            "ACADL",
+            "AUH",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ACADM",
+            "ACAA1",
+            "ACADS",
+            "CRAT",
+            "DECR1"
+          ],
+          "adjusted_p_value": 4.76025842200145e-31
+        },
+        {
+          "rank": 2,
+          "term_name": "Fatty Acid Catabolic Process (GO:0009062)",
+          "term": "Fatty Acid Catabolic Process (GO:0009062)",
+          "overlap": "20/61",
+          "p_value": 1.2247880532842113e-27,
+          "z_score": 69.99293036408625,
+          "combined_score": 4337.253994629098,
+          "overlap_genes": [
+            "ACOT8",
+            "ACAA2",
+            "ECHS1",
+            "ECI1",
+            "ECI2",
+            "HSD17B4",
+            "HSD17B10",
+            "ACAT2",
+            "HADHB",
+            "MCEE",
+            "ACADL",
+            "AUH",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ACADM",
+            "ACAA1",
+            "ACADS",
+            "HAO2",
+            "DECR1"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACAA2",
+            "ECHS1",
+            "ECI1",
+            "ECI2",
+            "HSD17B4",
+            "HSD17B10",
+            "ACAT2",
+            "HADHB",
+            "MCEE",
+            "ACADL",
+            "AUH",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ACADM",
+            "ACAA1",
+            "ACADS",
+            "HAO2",
+            "DECR1"
+          ],
+          "adjusted_p_value": 5.744255969902951e-25
+        },
+        {
+          "rank": 3,
+          "term_name": "Fatty Acid Oxidation (GO:0019395)",
+          "term": "Fatty Acid Oxidation (GO:0019395)",
+          "overlap": "19/52",
+          "p_value": 2.270450342008688e-27,
+          "z_score": 82.05166775670372,
+          "combined_score": 5033.854990996675,
+          "overlap_genes": [
+            "ACAA2",
+            "ECHS1",
+            "ECI1",
+            "ECI2",
+            "HSD17B4",
+            "ADH7",
+            "ADIPOR2",
+            "HSD17B10",
+            "ACAT2",
+            "HADHB",
+            "AUH",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ACADM",
+            "ACAA1",
+            "ACADS",
+            "HAO2",
+            "DECR1"
+          ],
+          "genes": [
+            "ACAA2",
+            "ECHS1",
+            "ECI1",
+            "ECI2",
+            "HSD17B4",
+            "ADH7",
+            "ADIPOR2",
+            "HSD17B10",
+            "ACAT2",
+            "HADHB",
+            "AUH",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ACADM",
+            "ACAA1",
+            "ACADS",
+            "HAO2",
+            "DECR1"
+          ],
+          "adjusted_p_value": 7.098941402680499e-25
+        },
+        {
+          "rank": 4,
+          "term_name": "Fatty Acid Metabolic Process (GO:0006631)",
+          "term": "Fatty Acid Metabolic Process (GO:0006631)",
+          "overlap": "21/122",
+          "p_value": 1.8775255431204927e-22,
+          "z_score": 29.96032376960324,
+          "combined_score": 1498.8226405951477,
+          "overlap_genes": [
+            "ACOT8",
+            "CPT1A",
+            "ACSM3",
+            "HPGD",
+            "ACSL1",
+            "CYP4A11",
+            "ACSL5",
+            "ACSL4",
+            "ADIPOR2",
+            "HSD17B10",
+            "CPT2",
+            "ACOX1",
+            "FASN",
+            "ACOT2",
+            "CYP1A1",
+            "MLYCD",
+            "ACADM",
+            "CD36",
+            "ACAA1",
+            "HAO2",
+            "CRAT"
+          ],
+          "genes": [
+            "ACOT8",
+            "CPT1A",
+            "ACSM3",
+            "HPGD",
+            "ACSL1",
+            "CYP4A11",
+            "ACSL5",
+            "ACSL4",
+            "ADIPOR2",
+            "HSD17B10",
+            "CPT2",
+            "ACOX1",
+            "FASN",
+            "ACOT2",
+            "CYP1A1",
+            "MLYCD",
+            "ACADM",
+            "CD36",
+            "ACAA1",
+            "HAO2",
+            "CRAT"
+          ],
+          "adjusted_p_value": 4.4027973986175553e-20
+        },
+        {
+          "rank": 5,
+          "term_name": "Long-Chain Fatty Acid Metabolic Process (GO:0001676)",
+          "term": "Long-Chain Fatty Acid Metabolic Process (GO:0001676)",
+          "overlap": "16/78",
+          "p_value": 1.1961299095813621e-18,
+          "z_score": 35.94729668332576,
+          "combined_score": 1483.4529235716664,
+          "overlap_genes": [
+            "ACOT8",
+            "CPT1A",
+            "ACSL1",
+            "ELOVL5",
+            "CYP4A22",
+            "CYP4A11",
+            "EPHX1",
+            "ACSL5",
+            "ACSL4",
+            "LTC4S",
+            "ACADL",
+            "CPT2",
+            "ACOT2",
+            "CYP1A1",
+            "ACAA1",
+            "MGLL"
+          ],
+          "genes": [
+            "ACOT8",
+            "CPT1A",
+            "ACSL1",
+            "ELOVL5",
+            "CYP4A22",
+            "CYP4A11",
+            "EPHX1",
+            "ACSL5",
+            "ACSL4",
+            "LTC4S",
+            "ACADL",
+            "CPT2",
+            "ACOT2",
+            "CYP1A1",
+            "ACAA1",
+            "MGLL"
+          ],
+          "adjusted_p_value": 2.2439397103746353e-16
+        },
+        {
+          "rank": 6,
+          "term_name": "acyl-CoA Metabolic Process (GO:0006637)",
+          "term": "acyl-CoA Metabolic Process (GO:0006637)",
+          "overlap": "10/31",
+          "p_value": 2.729776301144312e-14,
+          "z_score": 63.77413127413127,
+          "combined_score": 1991.7918591311645,
+          "overlap_genes": [
+            "MCEE",
+            "ACOT8",
+            "SUCLA2",
+            "ACSM3",
+            "HMGCS1",
+            "ACOT2",
+            "DLST",
+            "SUCLG2",
+            "HMGCS2",
+            "MLYCD"
+          ],
+          "genes": [
+            "MCEE",
+            "ACOT8",
+            "SUCLA2",
+            "ACSM3",
+            "HMGCS1",
+            "ACOT2",
+            "DLST",
+            "SUCLG2",
+            "HMGCS2",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 4.267550284122275e-12
+        },
+        {
+          "rank": 7,
+          "term_name": "Monocarboxylic Acid Metabolic Process (GO:0032787)",
+          "term": "Monocarboxylic Acid Metabolic Process (GO:0032787)",
+          "overlap": "13/97",
+          "p_value": 7.450337975897346e-13,
+          "z_score": 21.088177339901478,
+          "combined_score": 588.8946658427043,
+          "overlap_genes": [
+            "CPT1A",
+            "CYP4A11",
+            "ACSL4",
+            "HSD17B10",
+            "GRHPR",
+            "LDHA",
+            "VNN1",
+            "FASN",
+            "ACOT2",
+            "CYP1A1",
+            "ME1",
+            "CD36",
+            "ACAA1"
+          ],
+          "genes": [
+            "CPT1A",
+            "CYP4A11",
+            "ACSL4",
+            "HSD17B10",
+            "GRHPR",
+            "LDHA",
+            "VNN1",
+            "FASN",
+            "ACOT2",
+            "CYP1A1",
+            "ME1",
+            "CD36",
+            "ACAA1"
+          ],
+          "adjusted_p_value": 9.983452887702444e-11
+        },
+        {
+          "rank": 8,
+          "term_name": "Fatty Acid Beta-Oxidation Using acyl-CoA Dehydrogenase (GO:0033539)",
+          "term": "Fatty Acid Beta-Oxidation Using acyl-CoA Dehydrogenase (GO:0033539)",
+          "overlap": "6/10",
+          "p_value": 4.519778309618488e-11,
+          "z_score": 195.76973684210526,
+          "combined_score": 4663.229860838562,
+          "overlap_genes": [
+            "GCDH",
+            "ACADVL",
+            "ACADL",
+            "ETFDH",
+            "ACADM",
+            "ACADS"
+          ],
+          "genes": [
+            "GCDH",
+            "ACADVL",
+            "ACADL",
+            "ETFDH",
+            "ACADM",
+            "ACADS"
+          ],
+          "adjusted_p_value": 5.299440068027677e-09
+        },
+        {
+          "rank": 9,
+          "term_name": "Dicarboxylic Acid Metabolic Process (GO:0043648)",
+          "term": "Dicarboxylic Acid Metabolic Process (GO:0043648)",
+          "overlap": "9/50",
+          "p_value": 1.8098293138986095e-10,
+          "z_score": 29.17155017187756,
+          "combined_score": 654.3942528744731,
+          "overlap_genes": [
+            "ACOT8",
+            "FH",
+            "MDH1",
+            "MDH2",
+            "IDH1",
+            "ME1",
+            "DLST",
+            "D2HGDH",
+            "SDHA"
+          ],
+          "genes": [
+            "ACOT8",
+            "FH",
+            "MDH1",
+            "MDH2",
+            "IDH1",
+            "ME1",
+            "DLST",
+            "D2HGDH",
+            "SDHA"
+          ],
+          "adjusted_p_value": 1.8862443293743286e-08
+        },
+        {
+          "rank": 10,
+          "term_name": "Branched-Chain Amino Acid Catabolic Process (GO:0009083)",
+          "term": "Branched-Chain Amino Acid Catabolic Process (GO:0009083)",
+          "overlap": "6/17",
+          "p_value": 2.5447945210694946e-09,
+          "z_score": 71.16387559808612,
+          "combined_score": 1408.2773005184806,
+          "overlap_genes": [
+            "HMGCL",
+            "ECHS1",
+            "BCKDHB",
+            "HSD17B10",
+            "DLD",
+            "HIBCH"
+          ],
+          "genes": [
+            "HMGCL",
+            "ECHS1",
+            "BCKDHB",
+            "HSD17B10",
+            "DLD",
+            "HIBCH"
+          ],
+          "adjusted_p_value": 2.3870172607631857e-07
+        },
+        {
+          "rank": 11,
+          "term_name": "Pyruvate Metabolic Process (GO:0006090)",
+          "term": "Pyruvate Metabolic Process (GO:0006090)",
+          "overlap": "8/50",
+          "p_value": 5.143467417561826e-09,
+          "z_score": 25.142857142857142,
+          "combined_score": 479.86496523578876,
+          "overlap_genes": [
+            "LDHA",
+            "PDHA1",
+            "ME1",
+            "GAPDHS",
+            "PDHB",
+            "ENO2",
+            "ENO3",
+            "DLD"
+          ],
+          "genes": [
+            "LDHA",
+            "PDHA1",
+            "ME1",
+            "GAPDHS",
+            "PDHB",
+            "ENO2",
+            "ENO3",
+            "DLD"
+          ],
+          "adjusted_p_value": 4.385974943339084e-07
+        },
+        {
+          "rank": 12,
+          "term_name": "acetyl-CoA Biosynthetic Process (GO:0006085)",
+          "term": "acetyl-CoA Biosynthetic Process (GO:0006085)",
+          "overlap": "5/12",
+          "p_value": 2.1868662554340584e-08,
+          "z_score": 92.60037348272643,
+          "combined_score": 1633.304940842337,
+          "overlap_genes": [
+            "PDHA1",
+            "MLYCD",
+            "PDHB",
+            "ACSS1",
+            "DLD"
+          ],
+          "genes": [
+            "PDHA1",
+            "MLYCD",
+            "PDHB",
+            "ACSS1",
+            "DLD"
+          ],
+          "adjusted_p_value": 1.7094004563309557e-06
+        },
+        {
+          "rank": 13,
+          "term_name": "Unsaturated Fatty Acid Metabolic Process (GO:0033559)",
+          "term": "Unsaturated Fatty Acid Metabolic Process (GO:0033559)",
+          "overlap": "7/49",
+          "p_value": 1.0926240945505785e-07,
+          "z_score": 21.85430463576159,
+          "combined_score": 350.31386948156,
+          "overlap_genes": [
+            "ACOT8",
+            "ELOVL5",
+            "CYP4A22",
+            "CYP4A11",
+            "EPHX1",
+            "ACAA1",
+            "MGLL"
+          ],
+          "genes": [
+            "ACOT8",
+            "ELOVL5",
+            "CYP4A22",
+            "CYP4A11",
+            "EPHX1",
+            "ACAA1",
+            "MGLL"
+          ],
+          "adjusted_p_value": 7.877106442136783e-06
+        },
+        {
+          "rank": 14,
+          "term_name": "acetyl-CoA Metabolic Process (GO:0006084)",
+          "term": "acetyl-CoA Metabolic Process (GO:0006084)",
+          "overlap": "5/16",
+          "p_value": 1.1756875286771318e-07,
+          "z_score": 58.91562685680333,
+          "combined_score": 940.0720317410098,
+          "overlap_genes": [
+            "HMGCS1",
+            "TDO2",
+            "HMGCS2",
+            "MLYCD",
+            "ACSS1"
+          ],
+          "genes": [
+            "HMGCS1",
+            "TDO2",
+            "HMGCS2",
+            "MLYCD",
+            "ACSS1"
+          ],
+          "adjusted_p_value": 7.877106442136783e-06
+        },
+        {
+          "rank": 15,
+          "term_name": "Malate Metabolic Process (GO:0006108)",
+          "term": "Malate Metabolic Process (GO:0006108)",
+          "overlap": "4/7",
+          "p_value": 1.2882157384216553e-07,
+          "z_score": 171.76623376623377,
+          "combined_score": 2725.04339330611,
+          "overlap_genes": [
+            "FH",
+            "MDH1",
+            "MDH2",
+            "ME1"
+          ],
+          "genes": [
+            "FH",
+            "MDH1",
+            "MDH2",
+            "ME1"
+          ],
+          "adjusted_p_value": 8.055642417596751e-06
+        },
+        {
+          "rank": 16,
+          "term_name": "Regulation Of Cold-Induced Thermogenesis (GO:0120161)",
+          "term": "Regulation Of Cold-Induced Thermogenesis (GO:0120161)",
+          "overlap": "10/146",
+          "p_value": 2.50808055660669e-07,
+          "z_score": 9.790341812400635,
+          "combined_score": 148.79927278998747,
+          "overlap_genes": [
+            "FH",
+            "ACADL",
+            "CPT2",
+            "ACSL1",
+            "ALDH1A1",
+            "CIDEA",
+            "G0S2",
+            "CD36",
+            "ADIPOR2",
+            "DECR1"
+          ],
+          "genes": [
+            "FH",
+            "ACADL",
+            "CPT2",
+            "ACSL1",
+            "ALDH1A1",
+            "CIDEA",
+            "G0S2",
+            "CD36",
+            "ADIPOR2",
+            "DECR1"
+          ],
+          "adjusted_p_value": 1.2641246177407269e-05
+        },
+        {
+          "rank": 17,
+          "term_name": "Ribonucleoside Bisphosphate Catabolic Process (GO:0034031)",
+          "term": "Ribonucleoside Bisphosphate Catabolic Process (GO:0034031)",
+          "overlap": "4/8",
+          "p_value": 2.560593575381003e-07,
+          "z_score": 128.8181818181818,
+          "combined_score": 1955.1838851783364,
+          "overlap_genes": [
+            "SUCLA2",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD"
+          ],
+          "genes": [
+            "SUCLA2",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 1.2641246177407269e-05
+        },
+        {
+          "rank": 18,
+          "term_name": "succinyl-CoA Metabolic Process (GO:0006104)",
+          "term": "succinyl-CoA Metabolic Process (GO:0006104)",
+          "overlap": "4/8",
+          "p_value": 2.560593575381003e-07,
+          "z_score": 128.8181818181818,
+          "combined_score": 1955.1838851783364,
+          "overlap_genes": [
+            "SUCLA2",
+            "DLST",
+            "SUCLG2",
+            "SUCLG1"
+          ],
+          "genes": [
+            "SUCLA2",
+            "DLST",
+            "SUCLG2",
+            "SUCLG1"
+          ],
+          "adjusted_p_value": 1.2641246177407269e-05
+        },
+        {
+          "rank": 19,
+          "term_name": "Purine Nucleoside Bisphosphate Catabolic Process (GO:0034034)",
+          "term": "Purine Nucleoside Bisphosphate Catabolic Process (GO:0034034)",
+          "overlap": "4/8",
+          "p_value": 2.560593575381003e-07,
+          "z_score": 128.8181818181818,
+          "combined_score": 1955.1838851783364,
+          "overlap_genes": [
+            "SUCLA2",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD"
+          ],
+          "genes": [
+            "SUCLA2",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 1.2641246177407269e-05
+        },
+        {
+          "rank": 20,
+          "term_name": "Sulfur Compound Catabolic Process (GO:0044273)",
+          "term": "Sulfur Compound Catabolic Process (GO:0044273)",
+          "overlap": "5/20",
+          "p_value": 4.067877641898312e-07,
+          "z_score": 43.19607843137255,
+          "combined_score": 635.6291818799854,
+          "overlap_genes": [
+            "SUCLA2",
+            "FMO1",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD"
+          ],
+          "genes": [
+            "SUCLA2",
+            "FMO1",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 1.9078346140503083e-05
+        },
+        {
+          "rank": 21,
+          "term_name": "Carnitine Metabolic Process (GO:0009437)",
+          "term": "Carnitine Metabolic Process (GO:0009437)",
+          "overlap": "4/9",
+          "p_value": 4.580732949733154e-07,
+          "z_score": 103.04935064935064,
+          "combined_score": 1504.1327069490676,
+          "overlap_genes": [
+            "CPT1A",
+            "CPT2",
+            "ACADM",
+            "CRAT"
+          ],
+          "genes": [
+            "CPT1A",
+            "CPT2",
+            "ACADM",
+            "CRAT"
+          ],
+          "adjusted_p_value": 2.0460607175474755e-05
+        },
+        {
+          "rank": 22,
+          "term_name": "Porphyrin-Containing Compound Biosynthetic Process (GO:0006779)",
+          "term": "Porphyrin-Containing Compound Biosynthetic Process (GO:0006779)",
+          "overlap": "5/21",
+          "p_value": 5.305136264306358e-07,
+          "z_score": 40.494281045751634,
+          "combined_score": 585.118882251918,
+          "overlap_genes": [
+            "ALAD",
+            "SUCLA2",
+            "UROD",
+            "UROS",
+            "CPOX"
+          ],
+          "genes": [
+            "ALAD",
+            "SUCLA2",
+            "UROD",
+            "UROS",
+            "CPOX"
+          ],
+          "adjusted_p_value": 2.2619171890542562e-05
+        },
+        {
+          "rank": 23,
+          "term_name": "Fatty Acid Beta-Oxidation Using acyl-CoA Oxidase (GO:0033540)",
+          "term": "Fatty Acid Beta-Oxidation Using acyl-CoA Oxidase (GO:0033540)",
+          "overlap": "4/11",
+          "p_value": 1.185010409735985e-06,
+          "z_score": 73.59925788497218,
+          "combined_score": 1004.3177355909536,
+          "overlap_genes": [
+            "ACOT8",
+            "ACOX1",
+            "EHHADH",
+            "CRAT"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACOX1",
+            "EHHADH",
+            "CRAT"
+          ],
+          "adjusted_p_value": 4.832781584053713e-05
+        },
+        {
+          "rank": 24,
+          "term_name": "fatty-acyl-CoA Biosynthetic Process (GO:0046949)",
+          "term": "fatty-acyl-CoA Biosynthetic Process (GO:0046949)",
+          "overlap": "5/25",
+          "p_value": 1.3502485869924053e-06,
+          "z_score": 32.388888888888886,
+          "combined_score": 437.74301861246016,
+          "overlap_genes": [
+            "GCDH",
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "genes": [
+            "GCDH",
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 5.277221560828651e-05
+        },
+        {
+          "rank": 25,
+          "term_name": "Arachidonic Acid Metabolic Process (GO:0019369)",
+          "term": "Arachidonic Acid Metabolic Process (GO:0019369)",
+          "overlap": "6/52",
+          "p_value": 3.3324299361680935e-06,
+          "z_score": 16.987414187643022,
+          "combined_score": 214.24201990268534,
+          "overlap_genes": [
+            "CBR1",
+            "CYP4A22",
+            "CYP4A11",
+            "EPHX1",
+            "CYP1A1",
+            "MGLL"
+          ],
+          "genes": [
+            "CBR1",
+            "CYP4A22",
+            "CYP4A11",
+            "EPHX1",
+            "CYP1A1",
+            "MGLL"
+          ],
+          "adjusted_p_value": 0.000120223818466372
+        },
+        {
+          "rank": 26,
+          "term_name": "Icosanoid Metabolic Process (GO:0006690)",
+          "term": "Icosanoid Metabolic Process (GO:0006690)",
+          "overlap": "6/52",
+          "p_value": 3.3324299361680935e-06,
+          "z_score": 16.987414187643022,
+          "combined_score": 214.24201990268534,
+          "overlap_genes": [
+            "HPGD",
+            "CYP4A22",
+            "CYP4A11",
+            "EPHX1",
+            "LTC4S",
+            "MGLL"
+          ],
+          "genes": [
+            "HPGD",
+            "CYP4A22",
+            "CYP4A11",
+            "EPHX1",
+            "LTC4S",
+            "MGLL"
+          ],
+          "adjusted_p_value": 0.000120223818466372
+        },
+        {
+          "rank": 27,
+          "term_name": "Medium-Chain Fatty Acid Metabolic Process (GO:0051791)",
+          "term": "Medium-Chain Fatty Acid Metabolic Process (GO:0051791)",
+          "overlap": "4/14",
+          "p_value": 3.5286617269580015e-06,
+          "z_score": 51.51168831168831,
+          "combined_score": 646.7082234464089,
+          "overlap_genes": [
+            "CYP4A11",
+            "CYP4A22",
+            "ACADM",
+            "CRAT"
+          ],
+          "genes": [
+            "CYP4A11",
+            "CYP4A22",
+            "ACADM",
+            "CRAT"
+          ],
+          "adjusted_p_value": 0.00012258832221802242
+        },
+        {
+          "rank": 28,
+          "term_name": "Protein Homotetramerization (GO:0051289)",
+          "term": "Protein Homotetramerization (GO:0051289)",
+          "overlap": "6/53",
+          "p_value": 3.733474177409398e-06,
+          "z_score": 16.625139977603585,
+          "combined_score": 207.7838480406365,
+          "overlap_genes": [
+            "TDO2",
+            "ME1",
+            "ALDOA",
+            "HSD17B10",
+            "ALDH9A1",
+            "CRYZ"
+          ],
+          "genes": [
+            "TDO2",
+            "ME1",
+            "ALDOA",
+            "HSD17B10",
+            "ALDH9A1",
+            "CRYZ"
+          ],
+          "adjusted_p_value": 0.00012507138494321482
+        },
+        {
+          "rank": 29,
+          "term_name": "acetyl-CoA Biosynthetic Process From Pyruvate (GO:0006086)",
+          "term": "acetyl-CoA Biosynthetic Process From Pyruvate (GO:0006086)",
+          "overlap": "3/5",
+          "p_value": 4.781476071133503e-06,
+          "z_score": 192.0,
+          "combined_score": 2352.146161466479,
+          "overlap_genes": [
+            "PDHA1",
+            "PDHB",
+            "DLD"
+          ],
+          "genes": [
+            "PDHA1",
+            "PDHB",
+            "DLD"
+          ],
+          "adjusted_p_value": 0.00014346909563521485
+        },
+        {
+          "rank": 30,
+          "term_name": "succinyl-CoA Catabolic Process (GO:1901289)",
+          "term": "succinyl-CoA Catabolic Process (GO:1901289)",
+          "overlap": "3/5",
+          "p_value": 4.781476071133503e-06,
+          "z_score": 192.0,
+          "combined_score": 2352.146161466479,
+          "overlap_genes": [
+            "SUCLA2",
+            "SUCLG2",
+            "SUCLG1"
+          ],
+          "genes": [
+            "SUCLA2",
+            "SUCLG2",
+            "SUCLG1"
+          ],
+          "adjusted_p_value": 0.00014346909563521485
+        },
+        {
+          "rank": 31,
+          "term_name": "Branched-Chain Amino Acid Metabolic Process (GO:0009081)",
+          "term": "Branched-Chain Amino Acid Metabolic Process (GO:0009081)",
+          "overlap": "4/15",
+          "p_value": 4.782246435665421e-06,
+          "z_score": 46.82644628099174,
+          "combined_score": 573.6520701260712,
+          "overlap_genes": [
+            "ECHS1",
+            "BCKDHB",
+            "DLD",
+            "HIBCH"
+          ],
+          "genes": [
+            "ECHS1",
+            "BCKDHB",
+            "DLD",
+            "HIBCH"
+          ],
+          "adjusted_p_value": 0.00014346909563521485
+        },
+        {
+          "rank": 32,
+          "term_name": "Very Long-Chain Fatty Acid Metabolic Process (GO:0000038)",
+          "term": "Very Long-Chain Fatty Acid Metabolic Process (GO:0000038)",
+          "overlap": "5/32",
+          "p_value": 4.894468081371936e-06,
+          "z_score": 23.98329702251271,
+          "combined_score": 293.2534848165347,
+          "overlap_genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACOX1",
+            "ACOT2",
+            "ACAA1"
+          ],
+          "genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACOX1",
+            "ACOT2",
+            "ACAA1"
+          ],
+          "adjusted_p_value": 0.00014346909563521485
+        },
+        {
+          "rank": 33,
+          "term_name": "Regulation Of Fatty Acid Oxidation (GO:0046320)",
+          "term": "Regulation Of Fatty Acid Oxidation (GO:0046320)",
+          "overlap": "4/16",
+          "p_value": 6.337157283784483e-06,
+          "z_score": 42.922077922077925,
+          "combined_score": 513.7377959194982,
+          "overlap_genes": [
+            "ACADVL",
+            "ACADL",
+            "MLYCD",
+            "PPARA"
+          ],
+          "genes": [
+            "ACADVL",
+            "ACADL",
+            "MLYCD",
+            "PPARA"
+          ],
+          "adjusted_p_value": 0.0001801288949148438
+        },
+        {
+          "rank": 34,
+          "term_name": "Carboxylic Acid Biosynthetic Process (GO:0046394)",
+          "term": "Carboxylic Acid Biosynthetic Process (GO:0046394)",
+          "overlap": "4/17",
+          "p_value": 8.236151415746718e-06,
+          "z_score": 39.61838161838162,
+          "combined_score": 463.81149761077245,
+          "overlap_genes": [
+            "UGDH",
+            "UROS",
+            "CYP4A11",
+            "CYP4A22"
+          ],
+          "genes": [
+            "UGDH",
+            "UROS",
+            "CYP4A11",
+            "CYP4A22"
+          ],
+          "adjusted_p_value": 0.0002185871078001777
+        },
+        {
+          "rank": 35,
+          "term_name": "Long-Chain fatty-acyl-CoA Biosynthetic Process (GO:0035338)",
+          "term": "Long-Chain fatty-acyl-CoA Biosynthetic Process (GO:0035338)",
+          "overlap": "4/17",
+          "p_value": 8.236151415746718e-06,
+          "z_score": 39.61838161838162,
+          "combined_score": 463.81149761077245,
+          "overlap_genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 0.0002185871078001777
+        },
+        {
+          "rank": 36,
+          "term_name": "Steroid Metabolic Process (GO:0008202)",
+          "term": "Steroid Metabolic Process (GO:0008202)",
+          "overlap": "7/92",
+          "p_value": 8.389270661840509e-06,
+          "z_score": 10.775146084924035,
+          "combined_score": 125.94590888149276,
+          "overlap_genes": [
+            "CBR1",
+            "RDH16",
+            "CYP1A1",
+            "DHCR24",
+            "CEL",
+            "ACAA1",
+            "HSD17B10"
+          ],
+          "genes": [
+            "CBR1",
+            "RDH16",
+            "CYP1A1",
+            "DHCR24",
+            "CEL",
+            "ACAA1",
+            "HSD17B10"
+          ],
+          "adjusted_p_value": 0.0002185871078001777
+        },
+        {
+          "rank": 37,
+          "term_name": "Amino Acid Catabolic Process (GO:0009063)",
+          "term": "Amino Acid Catabolic Process (GO:0009063)",
+          "overlap": "5/38",
+          "p_value": 1.174242183087198e-05,
+          "z_score": 19.616755793226382,
+          "combined_score": 222.69534536269356,
+          "overlap_genes": [
+            "IL4I1",
+            "ECHS1",
+            "BCKDHB",
+            "DLD",
+            "HIBCH"
+          ],
+          "genes": [
+            "IL4I1",
+            "ECHS1",
+            "BCKDHB",
+            "DLD",
+            "HIBCH"
+          ],
+          "adjusted_p_value": 0.000297686261550214
+        },
+        {
+          "rank": 38,
+          "term_name": "Fatty Acid Biosynthetic Process (GO:0006633)",
+          "term": "Fatty Acid Biosynthetic Process (GO:0006633)",
+          "overlap": "6/65",
+          "p_value": 1.2424363868824023e-05,
+          "z_score": 13.235727029438001,
+          "combined_score": 149.5088028494483,
+          "overlap_genes": [
+            "ACSM3",
+            "ELOVL5",
+            "FASN",
+            "CYP1A1",
+            "MLYCD",
+            "LTC4S"
+          ],
+          "genes": [
+            "ACSM3",
+            "ELOVL5",
+            "FASN",
+            "CYP1A1",
+            "MLYCD",
+            "LTC4S"
+          ],
+          "adjusted_p_value": 0.0003031099066267014
+        },
+        {
+          "rank": 39,
+          "term_name": "Positive Regulation Of Cold-Induced Thermogenesis (GO:0120162)",
+          "term": "Positive Regulation Of Cold-Induced Thermogenesis (GO:0120162)",
+          "overlap": "7/98",
+          "p_value": 1.2734452582856736e-05,
+          "z_score": 10.061640346408558,
+          "combined_score": 113.40675499471212,
+          "overlap_genes": [
+            "FH",
+            "CPT2",
+            "ACSL1",
+            "G0S2",
+            "CD36",
+            "ADIPOR2",
+            "DECR1"
+          ],
+          "genes": [
+            "FH",
+            "CPT2",
+            "ACSL1",
+            "G0S2",
+            "CD36",
+            "ADIPOR2",
+            "DECR1"
+          ],
+          "adjusted_p_value": 0.0003031099066267014
+        },
+        {
+          "rank": 40,
+          "term_name": "NADP Metabolic Process (GO:0006739)",
+          "term": "NADP Metabolic Process (GO:0006739)",
+          "overlap": "4/19",
+          "p_value": 1.3248940481550915e-05,
+          "z_score": 34.33246753246753,
+          "combined_score": 385.6083010623274,
+          "overlap_genes": [
+            "MDH1",
+            "IDH1",
+            "ME1",
+            "FMO1"
+          ],
+          "genes": [
+            "MDH1",
+            "IDH1",
+            "ME1",
+            "FMO1"
+          ],
+          "adjusted_p_value": 0.0003031099066267014
+        },
+        {
+          "rank": 41,
+          "term_name": "Heme Biosynthetic Process (GO:0006783)",
+          "term": "Heme Biosynthetic Process (GO:0006783)",
+          "overlap": "4/19",
+          "p_value": 1.3248940481550915e-05,
+          "z_score": 34.33246753246753,
+          "combined_score": 385.6083010623274,
+          "overlap_genes": [
+            "ALAD",
+            "UROD",
+            "UROS",
+            "CPOX"
+          ],
+          "genes": [
+            "ALAD",
+            "UROD",
+            "UROS",
+            "CPOX"
+          ],
+          "adjusted_p_value": 0.0003031099066267014
+        },
+        {
+          "rank": 42,
+          "term_name": "Positive Regulation Of Metabolic Process (GO:0009893)",
+          "term": "Positive Regulation Of Metabolic Process (GO:0009893)",
+          "overlap": "7/108",
+          "p_value": 2.4030207915717448e-05,
+          "z_score": 9.060848468952855,
+          "combined_score": 96.3729861190852,
+          "overlap_genes": [
+            "FH",
+            "CPT2",
+            "ACSL1",
+            "G0S2",
+            "CD36",
+            "ADIPOR2",
+            "DECR1"
+          ],
+          "genes": [
+            "FH",
+            "CPT2",
+            "ACSL1",
+            "G0S2",
+            "CD36",
+            "ADIPOR2",
+            "DECR1"
+          ],
+          "adjusted_p_value": 0.0005302759195182156
+        },
+        {
+          "rank": 43,
+          "term_name": "Protein Tetramerization (GO:0051262)",
+          "term": "Protein Tetramerization (GO:0051262)",
+          "overlap": "6/73",
+          "p_value": 2.4309024029086643e-05,
+          "z_score": 11.65062843676355,
+          "combined_score": 123.78399991570551,
+          "overlap_genes": [
+            "TDO2",
+            "ME1",
+            "ALDOA",
+            "HSD17B10",
+            "ALDH9A1",
+            "CRYZ"
+          ],
+          "genes": [
+            "TDO2",
+            "ME1",
+            "ALDOA",
+            "HSD17B10",
+            "ALDH9A1",
+            "CRYZ"
+          ],
+          "adjusted_p_value": 0.0005302759195182156
+        },
+        {
+          "rank": 44,
+          "term_name": "Tricarboxylic Acid Metabolic Process (GO:0072350)",
+          "term": "Tricarboxylic Acid Metabolic Process (GO:0072350)",
+          "overlap": "3/8",
+          "p_value": 2.6312959531220248e-05,
+          "z_score": 76.78838709677419,
+          "combined_score": 809.7680185625012,
+          "overlap_genes": [
+            "IDH3G",
+            "IDH1",
+            "IDH3B"
+          ],
+          "genes": [
+            "IDH3G",
+            "IDH1",
+            "IDH3B"
+          ],
+          "adjusted_p_value": 0.0005609444554610135
+        },
+        {
+          "rank": 45,
+          "term_name": "Long-Chain Fatty Acid Transport (GO:0015909)",
+          "term": "Long-Chain Fatty Acid Transport (GO:0015909)",
+          "overlap": "4/23",
+          "p_value": 2.9531959047759925e-05,
+          "z_score": 27.09911141490089,
+          "combined_score": 282.64474891026276,
+          "overlap_genes": [
+            "CPT1A",
+            "CPT2",
+            "ACSL1",
+            "CD36"
+          ],
+          "genes": [
+            "CPT1A",
+            "CPT2",
+            "ACSL1",
+            "CD36"
+          ],
+          "adjusted_p_value": 0.0006021951649304089
+        },
+        {
+          "rank": 46,
+          "term_name": "Long-Chain fatty-acyl-CoA Metabolic Process (GO:0035336)",
+          "term": "Long-Chain fatty-acyl-CoA Metabolic Process (GO:0035336)",
+          "overlap": "4/23",
+          "p_value": 2.9531959047759925e-05,
+          "z_score": 27.09911141490089,
+          "combined_score": 282.64474891026276,
+          "overlap_genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "genes": [
+            "ACSL1",
+            "ELOVL5",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 0.0006021951649304089
+        },
+        {
+          "rank": 47,
+          "term_name": "Secondary Alcohol Biosynthetic Process (GO:1902653)",
+          "term": "Secondary Alcohol Biosynthetic Process (GO:1902653)",
+          "overlap": "4/24",
+          "p_value": 3.5220980597788345e-05,
+          "z_score": 25.742857142857144,
+          "combined_score": 263.9638748715289,
+          "overlap_genes": [
+            "NSDHL",
+            "HMGCS1",
+            "DHCR24",
+            "HSD17B7"
+          ],
+          "genes": [
+            "NSDHL",
+            "HMGCS1",
+            "DHCR24",
+            "HSD17B7"
+          ],
+          "adjusted_p_value": 0.0007029208468239461
+        },
+        {
+          "rank": 48,
+          "term_name": "Alpha-Linolenic Acid Metabolic Process (GO:0036109)",
+          "term": "Alpha-Linolenic Acid Metabolic Process (GO:0036109)",
+          "overlap": "3/9",
+          "p_value": 3.924054320624836e-05,
+          "z_score": 63.987096774193546,
+          "combined_score": 649.2002915825055,
+          "overlap_genes": [
+            "ACOT8",
+            "ELOVL5",
+            "ACAA1"
+          ],
+          "genes": [
+            "ACOT8",
+            "ELOVL5",
+            "ACAA1"
+          ],
+          "adjusted_p_value": 0.0007375264902265912
+        },
+        {
+          "rank": 49,
+          "term_name": "Amine Metabolic Process (GO:0009308)",
+          "term": "Amine Metabolic Process (GO:0009308)",
+          "overlap": "3/9",
+          "p_value": 3.924054320624836e-05,
+          "z_score": 63.987096774193546,
+          "combined_score": 649.2002915825055,
+          "overlap_genes": [
+            "AOC3",
+            "MAOA",
+            "INMT"
+          ],
+          "genes": [
+            "AOC3",
+            "MAOA",
+            "INMT"
+          ],
+          "adjusted_p_value": 0.0007375264902265912
+        },
+        {
+          "rank": 50,
+          "term_name": "Cholesterol Biosynthetic Process (GO:0006695)",
+          "term": "Cholesterol Biosynthetic Process (GO:0006695)",
+          "overlap": "4/25",
+          "p_value": 4.1672605524530206e-05,
+          "z_score": 24.515769944341372,
+          "combined_score": 247.25788177972598,
+          "overlap_genes": [
+            "NSDHL",
+            "HMGCS1",
+            "DHCR24",
+            "HSD17B7"
+          ],
+          "genes": [
+            "NSDHL",
+            "HMGCS1",
+            "DHCR24",
+            "HSD17B7"
+          ],
+          "adjusted_p_value": 0.0007375264902265912
+        },
+        {
+          "rank": 51,
+          "term_name": "Ribonucleoside Bisphosphate Metabolic Process (GO:0033875)",
+          "term": "Ribonucleoside Bisphosphate Metabolic Process (GO:0033875)",
+          "overlap": "4/25",
+          "p_value": 4.1672605524530206e-05,
+          "z_score": 24.515769944341372,
+          "combined_score": 247.25788177972598,
+          "overlap_genes": [
+            "ACOT8",
+            "ACSM3",
+            "ACOT2",
+            "MLYCD"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACSM3",
+            "ACOT2",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.0007375264902265912
+        },
+        {
+          "rank": 52,
+          "term_name": "Purine Nucleoside Bisphosphate Metabolic Process (GO:0034032)",
+          "term": "Purine Nucleoside Bisphosphate Metabolic Process (GO:0034032)",
+          "overlap": "4/25",
+          "p_value": 4.1672605524530206e-05,
+          "z_score": 24.515769944341372,
+          "combined_score": 247.25788177972598,
+          "overlap_genes": [
+            "ACOT8",
+            "ACSM3",
+            "ACOT2",
+            "MLYCD"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACSM3",
+            "ACOT2",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.0007375264902265912
+        },
+        {
+          "rank": 53,
+          "term_name": "Purine Ribonucleotide Catabolic Process (GO:0009154)",
+          "term": "Purine Ribonucleotide Catabolic Process (GO:0009154)",
+          "overlap": "4/25",
+          "p_value": 4.1672605524530206e-05,
+          "z_score": 24.515769944341372,
+          "combined_score": 247.25788177972598,
+          "overlap_genes": [
+            "SUCLA2",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD"
+          ],
+          "genes": [
+            "SUCLA2",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.0007375264902265912
+        },
+        {
+          "rank": 54,
+          "term_name": "Diterpenoid Metabolic Process (GO:0016101)",
+          "term": "Diterpenoid Metabolic Process (GO:0016101)",
+          "overlap": "4/28",
+          "p_value": 6.621752366469243e-05,
+          "z_score": 21.448051948051948,
+          "combined_score": 206.3852830472527,
+          "overlap_genes": [
+            "ALDH3A2",
+            "RDH11",
+            "ALDH1A1",
+            "ADH7"
+          ],
+          "genes": [
+            "ALDH3A2",
+            "RDH11",
+            "ALDH1A1",
+            "ADH7"
+          ],
+          "adjusted_p_value": 0.0011293097672269363
+        },
+        {
+          "rank": 55,
+          "term_name": "Sterol Biosynthetic Process (GO:0016126)",
+          "term": "Sterol Biosynthetic Process (GO:0016126)",
+          "overlap": "4/28",
+          "p_value": 6.621752366469243e-05,
+          "z_score": 21.448051948051948,
+          "combined_score": 206.3852830472527,
+          "overlap_genes": [
+            "NSDHL",
+            "HMGCS1",
+            "DHCR24",
+            "HSD17B7"
+          ],
+          "genes": [
+            "NSDHL",
+            "HMGCS1",
+            "DHCR24",
+            "HSD17B7"
+          ],
+          "adjusted_p_value": 0.0011293097672269363
+        },
+        {
+          "rank": 56,
+          "term_name": "Protein Homooligomerization (GO:0051260)",
+          "term": "Protein Homooligomerization (GO:0051260)",
+          "overlap": "7/129",
+          "p_value": 7.502321435674555e-05,
+          "z_score": 7.4932146346759305,
+          "combined_score": 71.16840180450389,
+          "overlap_genes": [
+            "ALAD",
+            "TDO2",
+            "ME1",
+            "ALDOA",
+            "HSD17B10",
+            "ALDH9A1",
+            "CRYZ"
+          ],
+          "genes": [
+            "ALAD",
+            "TDO2",
+            "ME1",
+            "ALDOA",
+            "HSD17B10",
+            "ALDH9A1",
+            "CRYZ"
+          ],
+          "adjusted_p_value": 0.0012137032976351854
+        },
+        {
+          "rank": 57,
+          "term_name": "Intestinal Lipid Absorption (GO:0098856)",
+          "term": "Intestinal Lipid Absorption (GO:0098856)",
+          "overlap": "3/11",
+          "p_value": 7.618855673427132e-05,
+          "z_score": 47.98548387096774,
+          "combined_score": 455.01271919083297,
+          "overlap_genes": [
+            "FABP2",
+            "CD36",
+            "CEL"
+          ],
+          "genes": [
+            "FABP2",
+            "CD36",
+            "CEL"
+          ],
+          "adjusted_p_value": 0.0012137032976351854
+        },
+        {
+          "rank": 58,
+          "term_name": "Alpha-Amino Acid Catabolic Process (GO:1901606)",
+          "term": "Alpha-Amino Acid Catabolic Process (GO:1901606)",
+          "overlap": "4/29",
+          "p_value": 7.634167863590185e-05,
+          "z_score": 20.58909090909091,
+          "combined_score": 195.1905839900307,
+          "overlap_genes": [
+            "HMGCL",
+            "IL4I1",
+            "HSD17B10",
+            "HIBCH"
+          ],
+          "genes": [
+            "HMGCL",
+            "IL4I1",
+            "HSD17B10",
+            "HIBCH"
+          ],
+          "adjusted_p_value": 0.0012137032976351854
+        },
+        {
+          "rank": 59,
+          "term_name": "Glycolytic Process (GO:0006096)",
+          "term": "Glycolytic Process (GO:0006096)",
+          "overlap": "4/29",
+          "p_value": 7.634167863590185e-05,
+          "z_score": 20.58909090909091,
+          "combined_score": 195.1905839900307,
+          "overlap_genes": [
+            "LDHA",
+            "GAPDHS",
+            "ENO2",
+            "ENO3"
+          ],
+          "genes": [
+            "LDHA",
+            "GAPDHS",
+            "ENO2",
+            "ENO3"
+          ],
+          "adjusted_p_value": 0.0012137032976351854
+        },
+        {
+          "rank": 60,
+          "term_name": "Biogenic Amine Metabolic Process (GO:0006576)",
+          "term": "Biogenic Amine Metabolic Process (GO:0006576)",
+          "overlap": "3/12",
+          "p_value": 0.00010099610269135403,
+          "z_score": 42.651612903225804,
+          "combined_score": 392.4131204313549,
+          "overlap_genes": [
+            "MAOA",
+            "ODC1",
+            "SMS"
+          ],
+          "genes": [
+            "MAOA",
+            "ODC1",
+            "SMS"
+          ],
+          "adjusted_p_value": 0.0015530220381063948
+        },
+        {
+          "rank": 61,
+          "term_name": "Fatty Acid Transmembrane Transport (GO:1902001)",
+          "term": "Fatty Acid Transmembrane Transport (GO:1902001)",
+          "overlap": "3/12",
+          "p_value": 0.00010099610269135403,
+          "z_score": 42.651612903225804,
+          "combined_score": 392.4131204313549,
+          "overlap_genes": [
+            "CPT1A",
+            "CPT2",
+            "CD36"
+          ],
+          "genes": [
+            "CPT1A",
+            "CPT2",
+            "CD36"
+          ],
+          "adjusted_p_value": 0.0015530220381063948
+        },
+        {
+          "rank": 62,
+          "term_name": "Gluconeogenesis (GO:0006094)",
+          "term": "Gluconeogenesis (GO:0006094)",
+          "overlap": "4/32",
+          "p_value": 0.00011347372921528642,
+          "z_score": 18.380333951762523,
+          "combined_score": 166.96583624959666,
+          "overlap_genes": [
+            "MDH1",
+            "MDH2",
+            "ENO2",
+            "ENO3"
+          ],
+          "genes": [
+            "MDH1",
+            "MDH2",
+            "ENO2",
+            "ENO3"
+          ],
+          "adjusted_p_value": 0.0017167477097409462
+        },
+        {
+          "rank": 63,
+          "term_name": "acyl-CoA Biosynthetic Process (GO:0071616)",
+          "term": "acyl-CoA Biosynthetic Process (GO:0071616)",
+          "overlap": "3/13",
+          "p_value": 0.00013053436931069142,
+          "z_score": 38.38451612903226,
+          "combined_score": 343.30627579025867,
+          "overlap_genes": [
+            "GCDH",
+            "MLYCD",
+            "ACSS1"
+          ],
+          "genes": [
+            "GCDH",
+            "MLYCD",
+            "ACSS1"
+          ],
+          "adjusted_p_value": 0.0019435117208480724
+        },
+        {
+          "rank": 64,
+          "term_name": "Hexose Biosynthetic Process (GO:0019319)",
+          "term": "Hexose Biosynthetic Process (GO:0019319)",
+          "overlap": "4/35",
+          "p_value": 0.0001622095546599652,
+          "z_score": 16.599078341013826,
+          "combined_score": 144.85387411943543,
+          "overlap_genes": [
+            "MDH1",
+            "MDH2",
+            "ENO2",
+            "ENO3"
+          ],
+          "genes": [
+            "MDH1",
+            "MDH2",
+            "ENO2",
+            "ENO3"
+          ],
+          "adjusted_p_value": 0.0023474526230763937
+        },
+        {
+          "rank": 65,
+          "term_name": "Monocarboxylic Acid Biosynthetic Process (GO:0072330)",
+          "term": "Monocarboxylic Acid Biosynthetic Process (GO:0072330)",
+          "overlap": "5/65",
+          "p_value": 0.00016277463954891139,
+          "z_score": 10.77450980392157,
+          "combined_score": 93.98759939891478,
+          "overlap_genes": [
+            "ACOT8",
+            "ACSM3",
+            "FASN",
+            "MLYCD",
+            "HSD17B10"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACSM3",
+            "FASN",
+            "MLYCD",
+            "HSD17B10"
+          ],
+          "adjusted_p_value": 0.0023474526230763937
+        },
+        {
+          "rank": 66,
+          "term_name": "2-Oxoglutarate Metabolic Process (GO:0006103)",
+          "term": "2-Oxoglutarate Metabolic Process (GO:0006103)",
+          "overlap": "3/14",
+          "p_value": 0.00016517257262584434,
+          "z_score": 34.89325513196481,
+          "combined_score": 303.8686009675006,
+          "overlap_genes": [
+            "IDH1",
+            "DLST",
+            "D2HGDH"
+          ],
+          "genes": [
+            "IDH1",
+            "DLST",
+            "D2HGDH"
+          ],
+          "adjusted_p_value": 0.0023474526230763937
+        },
+        {
+          "rank": 67,
+          "term_name": "Cholesterol Metabolic Process (GO:0008203)",
+          "term": "Cholesterol Metabolic Process (GO:0008203)",
+          "overlap": "5/67",
+          "p_value": 0.00018792228541030334,
+          "z_score": 10.425890786422096,
+          "combined_score": 89.44874292070219,
+          "overlap_genes": [
+            "NSDHL",
+            "ACAA2",
+            "HMGCS1",
+            "DHCR24",
+            "HSD17B7"
+          ],
+          "genes": [
+            "NSDHL",
+            "ACAA2",
+            "HMGCS1",
+            "DHCR24",
+            "HSD17B7"
+          ],
+          "adjusted_p_value": 0.0026309119957442467
+        },
+        {
+          "rank": 68,
+          "term_name": "Fatty Acid Transport (GO:0015908)",
+          "term": "Fatty Acid Transport (GO:0015908)",
+          "overlap": "4/38",
+          "p_value": 0.00022450599748616081,
+          "z_score": 15.132161955691368,
+          "combined_score": 127.134495006419,
+          "overlap_genes": [
+            "FABP1",
+            "FABP2",
+            "ACSL1",
+            "CD36"
+          ],
+          "genes": [
+            "FABP1",
+            "FABP2",
+            "ACSL1",
+            "CD36"
+          ],
+          "adjusted_p_value": 0.003096862141794395
+        },
+        {
+          "rank": 69,
+          "term_name": "Positive Regulation Of Multicellular Organismal Process (GO:0051240)",
+          "term": "Positive Regulation Of Multicellular Organismal Process (GO:0051240)",
+          "overlap": "11/387",
+          "p_value": 0.000262435702225968,
+          "z_score": 3.874041105804024,
+          "combined_score": 31.943423176759797,
+          "overlap_genes": [
+            "FH",
+            "CPT2",
+            "ACADL",
+            "ACSL1",
+            "EHHADH",
+            "APEX1",
+            "G0S2",
+            "CD36",
+            "BMPR1B",
+            "ADIPOR2",
+            "DECR1"
+          ],
+          "genes": [
+            "FH",
+            "CPT2",
+            "ACADL",
+            "ACSL1",
+            "EHHADH",
+            "APEX1",
+            "G0S2",
+            "CD36",
+            "BMPR1B",
+            "ADIPOR2",
+            "DECR1"
+          ],
+          "adjusted_p_value": 0.003567604183883449
+        },
+        {
+          "rank": 70,
+          "term_name": "Regulation Of Small Molecule Metabolic Process (GO:0062012)",
+          "term": "Regulation Of Small Molecule Metabolic Process (GO:0062012)",
+          "overlap": "4/40",
+          "p_value": 0.0002745718679889281,
+          "z_score": 14.29004329004329,
+          "combined_score": 117.18260651080388,
+          "overlap_genes": [
+            "ACADVL",
+            "ACADL",
+            "MLYCD",
+            "PPARA"
+          ],
+          "genes": [
+            "ACADVL",
+            "ACADL",
+            "MLYCD",
+            "PPARA"
+          ],
+          "adjusted_p_value": 0.003679263031051637
+        },
+        {
+          "rank": 71,
+          "term_name": "Carbohydrate Catabolic Process (GO:0016052)",
+          "term": "Carbohydrate Catabolic Process (GO:0016052)",
+          "overlap": "4/41",
+          "p_value": 0.00030239604127356234,
+          "z_score": 13.903123903123904,
+          "combined_score": 112.66776016812418,
+          "overlap_genes": [
+            "LDHA",
+            "GAPDHS",
+            "ENO2",
+            "ENO3"
+          ],
+          "genes": [
+            "LDHA",
+            "GAPDHS",
+            "ENO2",
+            "ENO3"
+          ],
+          "adjusted_p_value": 0.003843745904944421
+        },
+        {
+          "rank": 72,
+          "term_name": "Nicotinamide Nucleotide Metabolic Process (GO:0046496)",
+          "term": "Nicotinamide Nucleotide Metabolic Process (GO:0046496)",
+          "overlap": "3/17",
+          "p_value": 0.00030323794985702256,
+          "z_score": 27.411981566820277,
+          "combined_score": 222.06426386994713,
+          "overlap_genes": [
+            "MDH1",
+            "IDH1",
+            "ME1"
+          ],
+          "genes": [
+            "MDH1",
+            "IDH1",
+            "ME1"
+          ],
+          "adjusted_p_value": 0.003843745904944421
+        },
+        {
+          "rank": 73,
+          "term_name": "Carboxylic Acid Catabolic Process (GO:0046395)",
+          "term": "Carboxylic Acid Catabolic Process (GO:0046395)",
+          "overlap": "3/17",
+          "p_value": 0.00030323794985702256,
+          "z_score": 27.411981566820277,
+          "combined_score": 222.06426386994713,
+          "overlap_genes": [
+            "IL4I1",
+            "ACOT8",
+            "FMO1"
+          ],
+          "genes": [
+            "IL4I1",
+            "ACOT8",
+            "FMO1"
+          ],
+          "adjusted_p_value": 0.003843745904944421
+        },
+        {
+          "rank": 74,
+          "term_name": "Positive Regulation Of Fatty Acid Metabolic Process (GO:0045923)",
+          "term": "Positive Regulation Of Fatty Acid Metabolic Process (GO:0045923)",
+          "overlap": "3/17",
+          "p_value": 0.00030323794985702256,
+          "z_score": 27.411981566820277,
+          "combined_score": 222.06426386994713,
+          "overlap_genes": [
+            "ELOVL5",
+            "MLYCD",
+            "PPARA"
+          ],
+          "genes": [
+            "ELOVL5",
+            "MLYCD",
+            "PPARA"
+          ],
+          "adjusted_p_value": 0.003843745904944421
+        },
+        {
+          "rank": 75,
+          "term_name": "fatty-acyl-CoA Metabolic Process (GO:0035337)",
+          "term": "fatty-acyl-CoA Metabolic Process (GO:0035337)",
+          "overlap": "3/18",
+          "p_value": 0.0003617810855349489,
+          "z_score": 25.583225806451612,
+          "combined_score": 202.73353777323413,
+          "overlap_genes": [
+            "GCDH",
+            "HSD17B4",
+            "ACSL4"
+          ],
+          "genes": [
+            "GCDH",
+            "HSD17B4",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 0.00446514023989187
+        },
+        {
+          "rank": 76,
+          "term_name": "Icosanoid Biosynthetic Process (GO:0046456)",
+          "term": "Icosanoid Biosynthetic Process (GO:0046456)",
+          "overlap": "3/18",
+          "p_value": 0.0003617810855349489,
+          "z_score": 25.583225806451612,
+          "combined_score": 202.73353777323413,
+          "overlap_genes": [
+            "CYP4A11",
+            "CYP4A22",
+            "LTC4S"
+          ],
+          "genes": [
+            "CYP4A11",
+            "CYP4A22",
+            "LTC4S"
+          ],
+          "adjusted_p_value": 0.00446514023989187
+        },
+        {
+          "rank": 77,
+          "term_name": "Linoleic Acid Metabolic Process (GO:0043651)",
+          "term": "Linoleic Acid Metabolic Process (GO:0043651)",
+          "overlap": "3/19",
+          "p_value": 0.00042713130158700556,
+          "z_score": 23.983064516129033,
+          "combined_score": 186.07066567796508,
+          "overlap_genes": [
+            "ELOVL5",
+            "CYP4A11",
+            "CYP4A22"
+          ],
+          "genes": [
+            "ELOVL5",
+            "CYP4A11",
+            "CYP4A22"
+          ],
+          "adjusted_p_value": 0.00520323585569625
+        },
+        {
+          "rank": 78,
+          "term_name": "Secondary Alcohol Metabolic Process (GO:1902652)",
+          "term": "Secondary Alcohol Metabolic Process (GO:1902652)",
+          "overlap": "4/47",
+          "p_value": 0.0005133876153519076,
+          "z_score": 11.959528843249773,
+          "combined_score": 90.5872050078688,
+          "overlap_genes": [
+            "NSDHL",
+            "IDH3G",
+            "IDH1",
+            "IDH3B"
+          ],
+          "genes": [
+            "NSDHL",
+            "IDH3G",
+            "IDH1",
+            "IDH3B"
+          ],
+          "adjusted_p_value": 0.006173815169231914
+        },
+        {
+          "rank": 79,
+          "term_name": "L-phenylalanine Catabolic Process (GO:0006559)",
+          "term": "L-phenylalanine Catabolic Process (GO:0006559)",
+          "overlap": "2/5",
+          "p_value": 0.0006105451511103391,
+          "z_score": 84.78205128205128,
+          "combined_score": 627.4853833473186,
+          "overlap_genes": [
+            "GSTZ1",
+            "IL4I1"
+          ],
+          "genes": [
+            "GSTZ1",
+            "IL4I1"
+          ],
+          "adjusted_p_value": 0.006817754187398786
+        },
+        {
+          "rank": 80,
+          "term_name": "L-phenylalanine Metabolic Process (GO:0006558)",
+          "term": "L-phenylalanine Metabolic Process (GO:0006558)",
+          "overlap": "2/5",
+          "p_value": 0.0006105451511103391,
+          "z_score": 84.78205128205128,
+          "combined_score": 627.4853833473186,
+          "overlap_genes": [
+            "GSTZ1",
+            "IL4I1"
+          ],
+          "genes": [
+            "GSTZ1",
+            "IL4I1"
+          ],
+          "adjusted_p_value": 0.006817754187398786
+        },
+        {
+          "rank": 81,
+          "term_name": "Erythrose 4-Phosphate/Phosphoenolpyruvate Family Amino Acid Catabolic Process (GO:1902222)",
+          "term": "Erythrose 4-Phosphate/Phosphoenolpyruvate Family Amino Acid Catabolic Process (GO:1902222)",
+          "overlap": "2/5",
+          "p_value": 0.0006105451511103391,
+          "z_score": 84.78205128205128,
+          "combined_score": 627.4853833473186,
+          "overlap_genes": [
+            "GSTZ1",
+            "IL4I1"
+          ],
+          "genes": [
+            "GSTZ1",
+            "IL4I1"
+          ],
+          "adjusted_p_value": 0.006817754187398786
+        },
+        {
+          "rank": 82,
+          "term_name": "Gamma-Aminobutyric Acid Metabolic Process (GO:0009448)",
+          "term": "Gamma-Aminobutyric Acid Metabolic Process (GO:0009448)",
+          "overlap": "2/5",
+          "p_value": 0.0006105451511103391,
+          "z_score": 84.78205128205128,
+          "combined_score": 627.4853833473186,
+          "overlap_genes": [
+            "ALDH1A1",
+            "GAD2"
+          ],
+          "genes": [
+            "ALDH1A1",
+            "GAD2"
+          ],
+          "adjusted_p_value": 0.006817754187398786
+        },
+        {
+          "rank": 83,
+          "term_name": "Glutamate Catabolic Process (GO:0006538)",
+          "term": "Glutamate Catabolic Process (GO:0006538)",
+          "overlap": "2/5",
+          "p_value": 0.0006105451511103391,
+          "z_score": 84.78205128205128,
+          "combined_score": 627.4853833473186,
+          "overlap_genes": [
+            "GAD2",
+            "GLUL"
+          ],
+          "genes": [
+            "GAD2",
+            "GLUL"
+          ],
+          "adjusted_p_value": 0.006817754187398786
+        },
+        {
+          "rank": 84,
+          "term_name": "Ketone Body Biosynthetic Process (GO:0046951)",
+          "term": "Ketone Body Biosynthetic Process (GO:0046951)",
+          "overlap": "2/5",
+          "p_value": 0.0006105451511103391,
+          "z_score": 84.78205128205128,
+          "combined_score": 627.4853833473186,
+          "overlap_genes": [
+            "HMGCL",
+            "HMGCS2"
+          ],
+          "genes": [
+            "HMGCL",
+            "HMGCS2"
+          ],
+          "adjusted_p_value": 0.006817754187398786
+        },
+        {
+          "rank": 85,
+          "term_name": "Cellular Lipid Catabolic Process (GO:0044242)",
+          "term": "Cellular Lipid Catabolic Process (GO:0044242)",
+          "overlap": "3/23",
+          "p_value": 0.000762768310894135,
+          "z_score": 19.18258064516129,
+          "combined_score": 137.7032337640235,
+          "overlap_genes": [
+            "ACOT8",
+            "ACADL",
+            "ACOX1"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACADL",
+            "ACOX1"
+          ],
+          "adjusted_p_value": 0.00841737265433763
+        },
+        {
+          "rank": 86,
+          "term_name": "Amino-Acid Betaine Metabolic Process (GO:0006577)",
+          "term": "Amino-Acid Betaine Metabolic Process (GO:0006577)",
+          "overlap": "2/6",
+          "p_value": 0.0009110662414558737,
+          "z_score": 63.583333333333336,
+          "combined_score": 445.14023726569343,
+          "overlap_genes": [
+            "CPT1A",
+            "CPT2"
+          ],
+          "genes": [
+            "CPT1A",
+            "CPT2"
+          ],
+          "adjusted_p_value": 0.009711137891881926
+        },
+        {
+          "rank": 87,
+          "term_name": "Short-Chain Fatty Acid Metabolic Process (GO:0046459)",
+          "term": "Short-Chain Fatty Acid Metabolic Process (GO:0046459)",
+          "overlap": "2/6",
+          "p_value": 0.0009110662414558737,
+          "z_score": 63.583333333333336,
+          "combined_score": 445.14023726569343,
+          "overlap_genes": [
+            "MCEE",
+            "CRAT"
+          ],
+          "genes": [
+            "MCEE",
+            "CRAT"
+          ],
+          "adjusted_p_value": 0.009711137891881926
+        },
+        {
+          "rank": 88,
+          "term_name": "Ketone Body Metabolic Process (GO:1902224)",
+          "term": "Ketone Body Metabolic Process (GO:1902224)",
+          "overlap": "2/6",
+          "p_value": 0.0009110662414558737,
+          "z_score": 63.583333333333336,
+          "combined_score": 445.14023726569343,
+          "overlap_genes": [
+            "HMGCL",
+            "HMGCS2"
+          ],
+          "genes": [
+            "HMGCL",
+            "HMGCS2"
+          ],
+          "adjusted_p_value": 0.009711137891881926
+        },
+        {
+          "rank": 89,
+          "term_name": "Glucose Metabolic Process (GO:0006006)",
+          "term": "Glucose Metabolic Process (GO:0006006)",
+          "overlap": "4/59",
+          "p_value": 0.0012173504331095023,
+          "z_score": 9.344510035419127,
+          "combined_score": 62.711740934675596,
+          "overlap_genes": [
+            "MDH1",
+            "MDH2",
+            "ENO2",
+            "ENO3"
+          ],
+          "genes": [
+            "MDH1",
+            "MDH2",
+            "ENO2",
+            "ENO3"
+          ],
+          "adjusted_p_value": 0.01279793623929507
+        },
+        {
+          "rank": 90,
+          "term_name": "NADH Metabolic Process (GO:0006734)",
+          "term": "NADH Metabolic Process (GO:0006734)",
+          "overlap": "2/7",
+          "p_value": 0.0012688785397168886,
+          "z_score": 50.864102564102566,
+          "combined_score": 339.24432771676044,
+          "overlap_genes": [
+            "MDH1",
+            "ME1"
+          ],
+          "genes": [
+            "MDH1",
+            "ME1"
+          ],
+          "adjusted_p_value": 0.01279793623929507
+        },
+        {
+          "rank": 91,
+          "term_name": "Estrogen Biosynthetic Process (GO:0006703)",
+          "term": "Estrogen Biosynthetic Process (GO:0006703)",
+          "overlap": "2/7",
+          "p_value": 0.0012688785397168886,
+          "z_score": 50.864102564102566,
+          "combined_score": 339.24432771676044,
+          "overlap_genes": [
+            "HSD17B11",
+            "HSD17B7"
+          ],
+          "genes": [
+            "HSD17B11",
+            "HSD17B7"
+          ],
+          "adjusted_p_value": 0.01279793623929507
+        },
+        {
+          "rank": 92,
+          "term_name": "Ethanol Oxidation (GO:0006069)",
+          "term": "Ethanol Oxidation (GO:0006069)",
+          "overlap": "2/7",
+          "p_value": 0.0012688785397168886,
+          "z_score": 50.864102564102566,
+          "combined_score": 339.24432771676044,
+          "overlap_genes": [
+            "ADH1C",
+            "ADH7"
+          ],
+          "genes": [
+            "ADH1C",
+            "ADH7"
+          ],
+          "adjusted_p_value": 0.01279793623929507
+        },
+        {
+          "rank": 93,
+          "term_name": "Tryptophan Catabolic Process (GO:0006569)",
+          "term": "Tryptophan Catabolic Process (GO:0006569)",
+          "overlap": "2/7",
+          "p_value": 0.0012688785397168886,
+          "z_score": 50.864102564102566,
+          "combined_score": 339.24432771676044,
+          "overlap_genes": [
+            "IL4I1",
+            "TDO2"
+          ],
+          "genes": [
+            "IL4I1",
+            "TDO2"
+          ],
+          "adjusted_p_value": 0.01279793623929507
+        },
+        {
+          "rank": 94,
+          "term_name": "Fatty Acid Derivative Biosynthetic Process (GO:1901570)",
+          "term": "Fatty Acid Derivative Biosynthetic Process (GO:1901570)",
+          "overlap": "3/28",
+          "p_value": 0.0013707511680246687,
+          "z_score": 15.342193548387097,
+          "combined_score": 101.14182138722023,
+          "overlap_genes": [
+            "GCDH",
+            "HMGCL",
+            "HMGCS2"
+          ],
+          "genes": [
+            "GCDH",
+            "HMGCL",
+            "HMGCS2"
+          ],
+          "adjusted_p_value": 0.013678346761778077
+        },
+        {
+          "rank": 95,
+          "term_name": "Lipid Transport (GO:0006869)",
+          "term": "Lipid Transport (GO:0006869)",
+          "overlap": "5/108",
+          "p_value": 0.0016741292700025309,
+          "z_score": 6.262770480360429,
+          "combined_score": 40.03452285949917,
+          "overlap_genes": [
+            "FABP1",
+            "FABP2",
+            "ACSL1",
+            "EHHADH",
+            "CD36"
+          ],
+          "genes": [
+            "FABP1",
+            "FABP2",
+            "ACSL1",
+            "EHHADH",
+            "CD36"
+          ],
+          "adjusted_p_value": 0.016529823739603936
+        },
+        {
+          "rank": 96,
+          "term_name": "Bile Acid Metabolic Process (GO:0008206)",
+          "term": "Bile Acid Metabolic Process (GO:0008206)",
+          "overlap": "3/31",
+          "p_value": 0.0018485010195439346,
+          "z_score": 13.6963133640553,
+          "combined_score": 86.19610772232683,
+          "overlap_genes": [
+            "ACOT8",
+            "ACAA1",
+            "HSD17B10"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACAA1",
+            "HSD17B10"
+          ],
+          "adjusted_p_value": 0.018061395378460528
+        },
+        {
+          "rank": 97,
+          "term_name": "Intestinal Cholesterol Absorption (GO:0030299)",
+          "term": "Intestinal Cholesterol Absorption (GO:0030299)",
+          "overlap": "2/9",
+          "p_value": 0.0021527378072179896,
+          "z_score": 36.327838827838825,
+          "combined_score": 223.0897976455384,
+          "overlap_genes": [
+            "CD36",
+            "CEL"
+          ],
+          "genes": [
+            "CD36",
+            "CEL"
+          ],
+          "adjusted_p_value": 0.02081719652753066
+        },
+        {
+          "rank": 98,
+          "term_name": "Lipid Biosynthetic Process (GO:0008610)",
+          "term": "Lipid Biosynthetic Process (GO:0008610)",
+          "overlap": "4/71",
+          "p_value": 0.002415611554415894,
+          "z_score": 7.666214382632293,
+          "combined_score": 46.19509603318342,
+          "overlap_genes": [
+            "ACSM3",
+            "ACSL1",
+            "FASN",
+            "MLYCD"
+          ],
+          "genes": [
+            "ACSM3",
+            "ACSL1",
+            "FASN",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.022915679567045984
+        },
+        {
+          "rank": 99,
+          "term_name": "Purine Nucleotide Metabolic Process (GO:0006163)",
+          "term": "Purine Nucleotide Metabolic Process (GO:0006163)",
+          "overlap": "3/34",
+          "p_value": 0.0024186058391658344,
+          "z_score": 12.368990634755463,
+          "combined_score": 74.51777574817723,
+          "overlap_genes": [
+            "MDH1",
+            "IDH1",
+            "ME1"
+          ],
+          "genes": [
+            "MDH1",
+            "IDH1",
+            "ME1"
+          ],
+          "adjusted_p_value": 0.022915679567045984
+        },
+        {
+          "rank": 100,
+          "term_name": "Aromatic Amino Acid Family Catabolic Process (GO:0009074)",
+          "term": "Aromatic Amino Acid Family Catabolic Process (GO:0009074)",
+          "overlap": "2/10",
+          "p_value": 0.0026769918643785493,
+          "z_score": 31.78525641025641,
+          "combined_score": 188.26603021268724,
+          "overlap_genes": [
+            "GSTZ1",
+            "IL4I1"
+          ],
+          "genes": [
+            "GSTZ1",
+            "IL4I1"
+          ],
+          "adjusted_p_value": 0.02486156800779286
+        },
+        {
+          "rank": 101,
+          "term_name": "Omega-Hydroxylase P450 Pathway (GO:0097267)",
+          "term": "Omega-Hydroxylase P450 Pathway (GO:0097267)",
+          "overlap": "2/10",
+          "p_value": 0.0026769918643785493,
+          "z_score": 31.78525641025641,
+          "combined_score": 188.26603021268724,
+          "overlap_genes": [
+            "CYP4A11",
+            "CYP4A22"
+          ],
+          "genes": [
+            "CYP4A11",
+            "CYP4A22"
+          ],
+          "adjusted_p_value": 0.02486156800779286
+        },
+        {
+          "rank": 102,
+          "term_name": "Polyamine Metabolic Process (GO:0006595)",
+          "term": "Polyamine Metabolic Process (GO:0006595)",
+          "overlap": "2/11",
+          "p_value": 0.0032549510924288886,
+          "z_score": 28.252136752136753,
+          "combined_score": 161.8163177282467,
+          "overlap_genes": [
+            "ODC1",
+            "SMS"
+          ],
+          "genes": [
+            "ODC1",
+            "SMS"
+          ],
+          "adjusted_p_value": 0.029642175967944637
+        },
+        {
+          "rank": 103,
+          "term_name": "Intestinal Absorption (GO:0050892)",
+          "term": "Intestinal Absorption (GO:0050892)",
+          "overlap": "2/11",
+          "p_value": 0.0032549510924288886,
+          "z_score": 28.252136752136753,
+          "combined_score": 161.8163177282467,
+          "overlap_genes": [
+            "FABP2",
+            "CD36"
+          ],
+          "genes": [
+            "FABP2",
+            "CD36"
+          ],
+          "adjusted_p_value": 0.029642175967944637
+        },
+        {
+          "rank": 104,
+          "term_name": "Retinoid Metabolic Process (GO:0001523)",
+          "term": "Retinoid Metabolic Process (GO:0001523)",
+          "overlap": "3/40",
+          "p_value": 0.003857646861449497,
+          "z_score": 10.360069747166522,
+          "combined_score": 57.57813790654623,
+          "overlap_genes": [
+            "RDH11",
+            "ALDH1A1",
+            "ADH7"
+          ],
+          "genes": [
+            "RDH11",
+            "ALDH1A1",
+            "ADH7"
+          ],
+          "adjusted_p_value": 0.03406382171880562
+        },
+        {
+          "rank": 105,
+          "term_name": "Porphyrin-Containing Compound Catabolic Process (GO:0006787)",
+          "term": "Porphyrin-Containing Compound Catabolic Process (GO:0006787)",
+          "overlap": "2/12",
+          "p_value": 0.0038857451214415794,
+          "z_score": 25.425641025641024,
+          "combined_score": 141.12350817285684,
+          "overlap_genes": [
+            "UROD",
+            "BLVRA"
+          ],
+          "genes": [
+            "UROD",
+            "BLVRA"
+          ],
+          "adjusted_p_value": 0.03406382171880562
+        },
+        {
+          "rank": 106,
+          "term_name": "Positive Regulation Of Fatty Acid Oxidation (GO:0046321)",
+          "term": "Positive Regulation Of Fatty Acid Oxidation (GO:0046321)",
+          "overlap": "2/12",
+          "p_value": 0.0038857451214415794,
+          "z_score": 25.425641025641024,
+          "combined_score": 141.12350817285684,
+          "overlap_genes": [
+            "MLYCD",
+            "PPARA"
+          ],
+          "genes": [
+            "MLYCD",
+            "PPARA"
+          ],
+          "adjusted_p_value": 0.03406382171880562
+        },
+        {
+          "rank": 107,
+          "term_name": "Steroid Catabolic Process (GO:0006706)",
+          "term": "Steroid Catabolic Process (GO:0006706)",
+          "overlap": "2/12",
+          "p_value": 0.0038857451214415794,
+          "z_score": 25.425641025641024,
+          "combined_score": 141.12350817285684,
+          "overlap_genes": [
+            "HSD17B11",
+            "YWHAH"
+          ],
+          "genes": [
+            "HSD17B11",
+            "YWHAH"
+          ],
+          "adjusted_p_value": 0.03406382171880562
+        },
+        {
+          "rank": 108,
+          "term_name": "Purine Ribonucleotide Metabolic Process (GO:0009150)",
+          "term": "Purine Ribonucleotide Metabolic Process (GO:0009150)",
+          "overlap": "4/84",
+          "p_value": 0.004432700443355692,
+          "z_score": 6.416233766233766,
+          "combined_score": 34.76794297911743,
+          "overlap_genes": [
+            "ACOT8",
+            "ACSM3",
+            "ACOT2",
+            "MLYCD"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACSM3",
+            "ACOT2",
+            "MLYCD"
+          ],
+          "adjusted_p_value": 0.03849882422099666
+        },
+        {
+          "rank": 109,
+          "term_name": "Lipid Oxidation (GO:0034440)",
+          "term": "Lipid Oxidation (GO:0034440)",
+          "overlap": "2/13",
+          "p_value": 0.004568513828083745,
+          "z_score": 23.113053613053612,
+          "combined_score": 124.54624556574124,
+          "overlap_genes": [
+            "ADIPOR2",
+            "HAO2"
+          ],
+          "genes": [
+            "ADIPOR2",
+            "HAO2"
+          ],
+          "adjusted_p_value": 0.03931436670406012
+        },
+        {
+          "rank": 110,
+          "term_name": "Cellular Respiration (GO:0045333)",
+          "term": "Cellular Respiration (GO:0045333)",
+          "overlap": "4/85",
+          "p_value": 0.004623474110008823,
+          "z_score": 6.3367003367003365,
+          "combined_score": 34.0699593294414,
+          "overlap_genes": [
+            "MDH2",
+            "ETFDH",
+            "SDHC",
+            "SDHA"
+          ],
+          "genes": [
+            "MDH2",
+            "ETFDH",
+            "SDHC",
+            "SDHA"
+          ],
+          "adjusted_p_value": 0.03942562468352978
+        },
+        {
+          "rank": 111,
+          "term_name": "Regulation Of Sequestering Of Triglyceride (GO:0010889)",
+          "term": "Regulation Of Sequestering Of Triglyceride (GO:0010889)",
+          "overlap": "2/14",
+          "p_value": 0.0053024072246820875,
+          "z_score": 21.185897435897434,
+          "combined_score": 111.00550889044165,
+          "overlap_genes": [
+            "CIDEA",
+            "PPARA"
+          ],
+          "genes": [
+            "CIDEA",
+            "PPARA"
+          ],
+          "adjusted_p_value": 0.04362857874343682
+        },
+        {
+          "rank": 112,
+          "term_name": "Respiratory Electron Transport Chain (GO:0022904)",
+          "term": "Respiratory Electron Transport Chain (GO:0022904)",
+          "overlap": "2/14",
+          "p_value": 0.0053024072246820875,
+          "z_score": 21.185897435897434,
+          "combined_score": 111.00550889044165,
+          "overlap_genes": [
+            "ETFDH",
+            "SDHA"
+          ],
+          "genes": [
+            "ETFDH",
+            "SDHA"
+          ],
+          "adjusted_p_value": 0.04362857874343682
+        },
+        {
+          "rank": 113,
+          "term_name": "Electron Transport Chain (GO:0022900)",
+          "term": "Electron Transport Chain (GO:0022900)",
+          "overlap": "2/14",
+          "p_value": 0.0053024072246820875,
+          "z_score": 21.185897435897434,
+          "combined_score": 111.00550889044165,
+          "overlap_genes": [
+            "ETFDH",
+            "SDHA"
+          ],
+          "genes": [
+            "ETFDH",
+            "SDHA"
+          ],
+          "adjusted_p_value": 0.04362857874343682
+        },
+        {
+          "rank": 114,
+          "term_name": "Ethanol Metabolic Process (GO:0006067)",
+          "term": "Ethanol Metabolic Process (GO:0006067)",
+          "overlap": "2/14",
+          "p_value": 0.0053024072246820875,
+          "z_score": 21.185897435897434,
+          "combined_score": 111.00550889044165,
+          "overlap_genes": [
+            "ADH1C",
+            "ADH7"
+          ],
+          "genes": [
+            "ADH1C",
+            "ADH7"
+          ],
+          "adjusted_p_value": 0.04362857874343682
+        },
+        {
+          "rank": 115,
+          "term_name": "Positive Regulation Of Transmembrane Transport (GO:0034764)",
+          "term": "Positive Regulation Of Transmembrane Transport (GO:0034764)",
+          "overlap": "2/15",
+          "p_value": 0.006086585361302025,
+          "z_score": 19.555226824457595,
+          "combined_score": 99.76427591098042,
+          "overlap_genes": [
+            "CA2",
+            "ACSL5"
+          ],
+          "genes": [
+            "CA2",
+            "ACSL5"
+          ],
+          "adjusted_p_value": 0.0492173885250112
+        },
+        {
+          "rank": 116,
+          "term_name": "Mitotic Chromosome Condensation (GO:0007076)",
+          "term": "Mitotic Chromosome Condensation (GO:0007076)",
+          "overlap": "2/15",
+          "p_value": 0.006086585361302025,
+          "z_score": 19.555226824457595,
+          "combined_score": 99.76427591098042,
+          "overlap_genes": [
+            "NCAPH2",
+            "KMT5A"
+          ],
+          "genes": [
+            "NCAPH2",
+            "KMT5A"
+          ],
+          "adjusted_p_value": 0.0492173885250112
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Fatty acid degradation",
+          "term": "Fatty acid degradation",
+          "overlap": "24/43",
+          "p_value": 3.963077798170979e-40,
+          "z_score": 186.8625294579733,
+          "combined_score": 16953.361373836953,
+          "overlap_genes": [
+            "GCDH",
+            "ACADVL",
+            "CPT1A",
+            "ACAA2",
+            "ECHS1",
+            "ADH1C",
+            "ACSL1",
+            "ECI1",
+            "ECI2",
+            "ACSL5",
+            "ACSL4",
+            "ADH7",
+            "ACAT2",
+            "ALDH3A2",
+            "HADHB",
+            "ACADL",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ACADM",
+            "ACAA1",
+            "HADH",
+            "ACADS",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "GCDH",
+            "ACADVL",
+            "CPT1A",
+            "ACAA2",
+            "ECHS1",
+            "ADH1C",
+            "ACSL1",
+            "ECI1",
+            "ECI2",
+            "ACSL5",
+            "ACSL4",
+            "ADH7",
+            "ACAT2",
+            "ALDH3A2",
+            "HADHB",
+            "ACADL",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ACADM",
+            "ACAA1",
+            "HADH",
+            "ACADS",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 5.389785805512532e-38
+        },
+        {
+          "rank": 2,
+          "term_name": "Valine, leucine and isoleucine degradation",
+          "term": "Valine, leucine and isoleucine degradation",
+          "overlap": "21/48",
+          "p_value": 3.3207523470525775e-32,
+          "z_score": 112.49391727493918,
+          "combined_score": 8153.843914587994,
+          "overlap_genes": [
+            "ACAA2",
+            "ECHS1",
+            "HMGCS1",
+            "BCKDHB",
+            "HSD17B10",
+            "ACAT2",
+            "ALDH3A2",
+            "HADHB",
+            "HMGCL",
+            "IL4I1",
+            "MCEE",
+            "AUH",
+            "EHHADH",
+            "ACADM",
+            "HMGCS2",
+            "ACAA1",
+            "HADH",
+            "ACADS",
+            "DLD",
+            "HIBCH",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ACAA2",
+            "ECHS1",
+            "HMGCS1",
+            "BCKDHB",
+            "HSD17B10",
+            "ACAT2",
+            "ALDH3A2",
+            "HADHB",
+            "HMGCL",
+            "IL4I1",
+            "MCEE",
+            "AUH",
+            "EHHADH",
+            "ACADM",
+            "HMGCS2",
+            "ACAA1",
+            "HADH",
+            "ACADS",
+            "DLD",
+            "HIBCH",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 2.2581115959957526e-30
+        },
+        {
+          "rank": 3,
+          "term_name": "Citrate cycle (TCA cycle)",
+          "term": "Citrate cycle (TCA cycle)",
+          "overlap": "17/30",
+          "p_value": 8.217556338276741e-29,
+          "z_score": 183.9023458810693,
+          "combined_score": 11892.72468143593,
+          "overlap_genes": [
+            "FH",
+            "PDHA1",
+            "MDH1",
+            "IDH3G",
+            "MDH2",
+            "IDH1",
+            "DLST",
+            "SDHC",
+            "PDHB",
+            "SDHD",
+            "SDHA",
+            "SUCLA2",
+            "IDH3B",
+            "SUCLG2",
+            "SUCLG1",
+            "ACO2",
+            "DLD"
+          ],
+          "genes": [
+            "FH",
+            "PDHA1",
+            "MDH1",
+            "IDH3G",
+            "MDH2",
+            "IDH1",
+            "DLST",
+            "SDHC",
+            "PDHB",
+            "SDHD",
+            "SDHA",
+            "SUCLA2",
+            "IDH3B",
+            "SUCLG2",
+            "SUCLG1",
+            "ACO2",
+            "DLD"
+          ],
+          "adjusted_p_value": 3.725292206685456e-27
+        },
+        {
+          "rank": 4,
+          "term_name": "Propanoate metabolism",
+          "term": "Propanoate metabolism",
+          "overlap": "15/34",
+          "p_value": 2.4058808251982928e-23,
+          "z_score": 109.43871917556127,
+          "combined_score": 5699.737145734806,
+          "overlap_genes": [
+            "ECHS1",
+            "BCKDHB",
+            "ACAT2",
+            "LDHA",
+            "MCEE",
+            "SUCLA2",
+            "ACOX1",
+            "EHHADH",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD",
+            "ACSS1",
+            "ACADS",
+            "DLD",
+            "HIBCH"
+          ],
+          "genes": [
+            "ECHS1",
+            "BCKDHB",
+            "ACAT2",
+            "LDHA",
+            "MCEE",
+            "SUCLA2",
+            "ACOX1",
+            "EHHADH",
+            "SUCLG2",
+            "SUCLG1",
+            "MLYCD",
+            "ACSS1",
+            "ACADS",
+            "DLD",
+            "HIBCH"
+          ],
+          "adjusted_p_value": 8.179994805674196e-22
+        },
+        {
+          "rank": 5,
+          "term_name": "PPAR signaling pathway",
+          "term": "PPAR signaling pathway",
+          "overlap": "18/74",
+          "p_value": 2.644506838715093e-22,
+          "z_score": 45.42704081632653,
+          "combined_score": 2257.0146965496524,
+          "overlap_genes": [
+            "CPT1A",
+            "HMGCS1",
+            "ACSL1",
+            "AQP7",
+            "ACSL5",
+            "ACSL4",
+            "FABP1",
+            "FABP2",
+            "ACADL",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ME1",
+            "ACADM",
+            "CD36",
+            "HMGCS2",
+            "ACAA1",
+            "PPARA"
+          ],
+          "genes": [
+            "CPT1A",
+            "HMGCS1",
+            "ACSL1",
+            "AQP7",
+            "ACSL5",
+            "ACSL4",
+            "FABP1",
+            "FABP2",
+            "ACADL",
+            "CPT2",
+            "ACOX1",
+            "EHHADH",
+            "ME1",
+            "ACADM",
+            "CD36",
+            "HMGCS2",
+            "ACAA1",
+            "PPARA"
+          ],
+          "adjusted_p_value": 7.193058601305053e-21
+        },
+        {
+          "rank": 6,
+          "term_name": "Tryptophan metabolism",
+          "term": "Tryptophan metabolism",
+          "overlap": "15/42",
+          "p_value": 1.2122295408027018e-21,
+          "z_score": 76.98135198135198,
+          "combined_score": 3707.5624557418682,
+          "overlap_genes": [
+            "GCDH",
+            "ECHS1",
+            "MAOA",
+            "AADAT",
+            "DLST",
+            "ACAT2",
+            "INMT",
+            "ALDH3A2",
+            "IL4I1",
+            "TDO2",
+            "EHHADH",
+            "CYP1A1",
+            "HADH",
+            "DLD",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "GCDH",
+            "ECHS1",
+            "MAOA",
+            "AADAT",
+            "DLST",
+            "ACAT2",
+            "INMT",
+            "ALDH3A2",
+            "IL4I1",
+            "TDO2",
+            "EHHADH",
+            "CYP1A1",
+            "HADH",
+            "DLD",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 2.747720292486124e-20
+        },
+        {
+          "rank": 7,
+          "term_name": "Pyruvate metabolism",
+          "term": "Pyruvate metabolism",
+          "overlap": "15/47",
+          "p_value": 8.928938348736804e-21,
+          "z_score": 64.93662587412588,
+          "combined_score": 2997.798648460852,
+          "overlap_genes": [
+            "FH",
+            "PDHA1",
+            "ADH1C",
+            "MDH1",
+            "MDH2",
+            "PDHB",
+            "ADH7",
+            "ACAT2",
+            "ALDH3A2",
+            "GRHPR",
+            "LDHA",
+            "ME1",
+            "ACSS1",
+            "DLD",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "FH",
+            "PDHA1",
+            "ADH1C",
+            "MDH1",
+            "MDH2",
+            "PDHB",
+            "ADH7",
+            "ACAT2",
+            "ALDH3A2",
+            "GRHPR",
+            "LDHA",
+            "ME1",
+            "ACSS1",
+            "DLD",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 1.7347651648974362e-19
+        },
+        {
+          "rank": 8,
+          "term_name": "Peroxisome",
+          "term": "Peroxisome",
+          "overlap": "15/82",
+          "p_value": 9.356851965629222e-17,
+          "z_score": 30.959711929861182,
+          "combined_score": 1142.6560223856623,
+          "overlap_genes": [
+            "ACOT8",
+            "ACSL1",
+            "IDH1",
+            "ECI2",
+            "ECH1",
+            "ACSL5",
+            "HSD17B4",
+            "ACSL4",
+            "HMGCL",
+            "ACOX1",
+            "EHHADH",
+            "MLYCD",
+            "ACAA1",
+            "HAO2",
+            "CRAT"
+          ],
+          "genes": [
+            "ACOT8",
+            "ACSL1",
+            "IDH1",
+            "ECI2",
+            "ECH1",
+            "ACSL5",
+            "HSD17B4",
+            "ACSL4",
+            "HMGCL",
+            "ACOX1",
+            "EHHADH",
+            "MLYCD",
+            "ACAA1",
+            "HAO2",
+            "CRAT"
+          ],
+          "adjusted_p_value": 1.5906648341569678e-15
+        },
+        {
+          "rank": 9,
+          "term_name": "Glycolysis / Gluconeogenesis",
+          "term": "Glycolysis / Gluconeogenesis",
+          "overlap": "14/67",
+          "p_value": 1.4000483435574874e-16,
+          "z_score": 36.30057651991614,
+          "combined_score": 1325.1472721396322,
+          "overlap_genes": [
+            "PDHA1",
+            "ADH1C",
+            "PDHB",
+            "ENO2",
+            "ADH7",
+            "ENO3",
+            "ALDH3A2",
+            "ALDH3A1",
+            "LDHA",
+            "GAPDHS",
+            "ALDOA",
+            "ACSS1",
+            "DLD",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "PDHA1",
+            "ADH1C",
+            "PDHB",
+            "ENO2",
+            "ADH7",
+            "ENO3",
+            "ALDH3A2",
+            "ALDH3A1",
+            "LDHA",
+            "GAPDHS",
+            "ALDOA",
+            "ACSS1",
+            "DLD",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 2.1156286080424254e-15
+        },
+        {
+          "rank": 10,
+          "term_name": "beta-Alanine metabolism",
+          "term": "beta-Alanine metabolism",
+          "overlap": "11/30",
+          "p_value": 2.5221904158532767e-16,
+          "z_score": 78.07124955245256,
+          "combined_score": 2804.0252481810057,
+          "overlap_genes": [
+            "AOC3",
+            "ALDH3A2",
+            "ALDH3A1",
+            "ECHS1",
+            "ACOX1",
+            "EHHADH",
+            "GAD2",
+            "MLYCD",
+            "ACADS",
+            "HIBCH",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "AOC3",
+            "ALDH3A2",
+            "ALDH3A1",
+            "ECHS1",
+            "ACOX1",
+            "EHHADH",
+            "GAD2",
+            "MLYCD",
+            "ACADS",
+            "HIBCH",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 3.4301789655604563e-15
+        },
+        {
+          "rank": 11,
+          "term_name": "Butanoate metabolism",
+          "term": "Butanoate metabolism",
+          "overlap": "10/28",
+          "p_value": 8.241956241179305e-15,
+          "z_score": 74.41441441441441,
+          "combined_score": 2413.2251299511213,
+          "overlap_genes": [
+            "HMGCL",
+            "ECHS1",
+            "ACSM3",
+            "HMGCS1",
+            "EHHADH",
+            "GAD2",
+            "HMGCS2",
+            "HADH",
+            "ACADS",
+            "ACAT2"
+          ],
+          "genes": [
+            "HMGCL",
+            "ECHS1",
+            "ACSM3",
+            "HMGCS1",
+            "EHHADH",
+            "GAD2",
+            "HMGCS2",
+            "HADH",
+            "ACADS",
+            "ACAT2"
+          ],
+          "adjusted_p_value": 1.0190054989094413e-13
+        },
+        {
+          "rank": 12,
+          "term_name": "Glyoxylate and dicarboxylate metabolism",
+          "term": "Glyoxylate and dicarboxylate metabolism",
+          "overlap": "10/30",
+          "p_value": 1.8617098906618905e-14,
+          "z_score": 66.96621621621621,
+          "combined_score": 2117.116563956807,
+          "overlap_genes": [
+            "GRHPR",
+            "MCEE",
+            "MDH1",
+            "MDH2",
+            "ACO2",
+            "ACSS1",
+            "GLUL",
+            "HAO2",
+            "DLD",
+            "ACAT2"
+          ],
+          "genes": [
+            "GRHPR",
+            "MCEE",
+            "MDH1",
+            "MDH2",
+            "ACO2",
+            "ACSS1",
+            "GLUL",
+            "HAO2",
+            "DLD",
+            "ACAT2"
+          ],
+          "adjusted_p_value": 2.109937876083476e-13
+        },
+        {
+          "rank": 13,
+          "term_name": "Lysine degradation",
+          "term": "Lysine degradation",
+          "overlap": "11/63",
+          "p_value": 2.275023829849178e-12,
+          "z_score": 28.47854526425955,
+          "combined_score": 763.4821911175202,
+          "overlap_genes": [
+            "ALDH3A2",
+            "GCDH",
+            "ECHS1",
+            "AADAT",
+            "EHHADH",
+            "DLST",
+            "KMT5A",
+            "HADH",
+            "DLD",
+            "ACAT2",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ALDH3A2",
+            "GCDH",
+            "ECHS1",
+            "AADAT",
+            "EHHADH",
+            "DLST",
+            "KMT5A",
+            "HADH",
+            "DLD",
+            "ACAT2",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 2.3800249296883707e-11
+        },
+        {
+          "rank": 14,
+          "term_name": "Tyrosine metabolism",
+          "term": "Tyrosine metabolism",
+          "overlap": "8/36",
+          "p_value": 3.183164386826031e-10,
+          "z_score": 37.74095238095238,
+          "combined_score": 825.3182083407507,
+          "overlap_genes": [
+            "AOC3",
+            "GSTZ1",
+            "IL4I1",
+            "ALDH3A1",
+            "ADH1C",
+            "MAOA",
+            "MIF",
+            "ADH7"
+          ],
+          "genes": [
+            "AOC3",
+            "GSTZ1",
+            "IL4I1",
+            "ALDH3A1",
+            "ADH1C",
+            "MAOA",
+            "MIF",
+            "ADH7"
+          ],
+          "adjusted_p_value": 3.092216832916716e-09
+        },
+        {
+          "rank": 15,
+          "term_name": "Fatty acid elongation",
+          "term": "Fatty acid elongation",
+          "overlap": "6/27",
+          "p_value": 5.702317974732293e-08,
+          "z_score": 37.25751879699248,
+          "combined_score": 621.4482597006163,
+          "overlap_genes": [
+            "HADHB",
+            "ACAA2",
+            "ECHS1",
+            "ELOVL5",
+            "ACOT2",
+            "HADH"
+          ],
+          "genes": [
+            "HADHB",
+            "ACAA2",
+            "ECHS1",
+            "ELOVL5",
+            "ACOT2",
+            "HADH"
+          ],
+          "adjusted_p_value": 5.170101630423945e-07
+        },
+        {
+          "rank": 16,
+          "term_name": "Phenylalanine metabolism",
+          "term": "Phenylalanine metabolism",
+          "overlap": "5/17",
+          "p_value": 1.6549617400547941e-07,
+          "z_score": 54.00326797385621,
+          "combined_score": 843.2241862323846,
+          "overlap_genes": [
+            "AOC3",
+            "ALDH3A1",
+            "IL4I1",
+            "MAOA",
+            "MIF"
+          ],
+          "genes": [
+            "AOC3",
+            "ALDH3A1",
+            "IL4I1",
+            "MAOA",
+            "MIF"
+          ],
+          "adjusted_p_value": 1.406717479046575e-06
+        },
+        {
+          "rank": 17,
+          "term_name": "Synthesis and degradation of ketone bodies",
+          "term": "Synthesis and degradation of ketone bodies",
+          "overlap": "4/10",
+          "p_value": 7.58761950680512e-07,
+          "z_score": 85.87012987012987,
+          "combined_score": 1210.045610970492,
+          "overlap_genes": [
+            "HMGCL",
+            "HMGCS1",
+            "HMGCS2",
+            "ACAT2"
+          ],
+          "genes": [
+            "HMGCL",
+            "HMGCS1",
+            "HMGCS2",
+            "ACAT2"
+          ],
+          "adjusted_p_value": 6.070095605444096e-06
+        },
+        {
+          "rank": 18,
+          "term_name": "Porphyrin and chlorophyll metabolism",
+          "term": "Porphyrin and chlorophyll metabolism",
+          "overlap": "6/43",
+          "p_value": 1.0581254689314302e-06,
+          "z_score": 21.129089615931722,
+          "combined_score": 290.71538998695036,
+          "overlap_genes": [
+            "ALAD",
+            "UROD",
+            "UROS",
+            "CPOX",
+            "HCCS",
+            "BLVRA"
+          ],
+          "genes": [
+            "ALAD",
+            "UROD",
+            "UROS",
+            "CPOX",
+            "HCCS",
+            "BLVRA"
+          ],
+          "adjusted_p_value": 7.785132239204613e-06
+        },
+        {
+          "rank": 19,
+          "term_name": "Retinol metabolism",
+          "term": "Retinol metabolism",
+          "overlap": "7/68",
+          "p_value": 1.0876287687124093e-06,
+          "z_score": 15.032786885245901,
+          "combined_score": 206.42287355941545,
+          "overlap_genes": [
+            "ADH1C",
+            "RETSAT",
+            "RDH11",
+            "ALDH1A1",
+            "RDH16",
+            "CYP1A1",
+            "ADH7"
+          ],
+          "genes": [
+            "ADH1C",
+            "RETSAT",
+            "RDH11",
+            "ALDH1A1",
+            "RDH16",
+            "CYP1A1",
+            "ADH7"
+          ],
+          "adjusted_p_value": 7.785132239204613e-06
+        },
+        {
+          "rank": 20,
+          "term_name": "Adipocytokine signaling pathway",
+          "term": "Adipocytokine signaling pathway",
+          "overlap": "7/69",
+          "p_value": 1.2024599285919293e-06,
+          "z_score": 14.789574877163,
+          "combined_score": 201.59878283129208,
+          "overlap_genes": [
+            "CPT1A",
+            "ACSL1",
+            "ACSL5",
+            "ACSL4",
+            "CD36",
+            "PPARA",
+            "ADIPOR2"
+          ],
+          "genes": [
+            "CPT1A",
+            "ACSL1",
+            "ACSL5",
+            "ACSL4",
+            "CD36",
+            "PPARA",
+            "ADIPOR2"
+          ],
+          "adjusted_p_value": 8.17672751442512e-06
+        },
+        {
+          "rank": 21,
+          "term_name": "Biosynthesis of unsaturated fatty acids",
+          "term": "Biosynthesis of unsaturated fatty acids",
+          "overlap": "5/27",
+          "p_value": 2.0256810294587476e-06,
+          "z_score": 29.441473559120617,
+          "combined_score": 385.96607729274643,
+          "overlap_genes": [
+            "ELOVL5",
+            "ACOX1",
+            "ACOT2",
+            "HSD17B4",
+            "ACAA1"
+          ],
+          "genes": [
+            "ELOVL5",
+            "ACOX1",
+            "ACOT2",
+            "HSD17B4",
+            "ACAA1"
+          ],
+          "adjusted_p_value": 1.311869619078046e-05
+        },
+        {
+          "rank": 22,
+          "term_name": "Metabolism of xenobiotics by cytochrome P450",
+          "term": "Metabolism of xenobiotics by cytochrome P450",
+          "overlap": "7/77",
+          "p_value": 2.3265444212190454e-06,
+          "z_score": 13.284480276418082,
+          "combined_score": 172.31467378368586,
+          "overlap_genes": [
+            "CBR1",
+            "ALDH3A1",
+            "ADH1C",
+            "EPHX1",
+            "CYP1A1",
+            "ADH7",
+            "CBR3"
+          ],
+          "genes": [
+            "CBR1",
+            "ALDH3A1",
+            "ADH1C",
+            "EPHX1",
+            "CYP1A1",
+            "ADH7",
+            "CBR3"
+          ],
+          "adjusted_p_value": 1.4382274603899553e-05
+        },
+        {
+          "rank": 23,
+          "term_name": "Nitrogen metabolism",
+          "term": "Nitrogen metabolism",
+          "overlap": "4/17",
+          "p_value": 8.236151415746718e-06,
+          "z_score": 39.61838161838162,
+          "combined_score": 463.81149761077245,
+          "overlap_genes": [
+            "CA2",
+            "CA4",
+            "CA6",
+            "GLUL"
+          ],
+          "genes": [
+            "CA2",
+            "CA4",
+            "CA6",
+            "GLUL"
+          ],
+          "adjusted_p_value": 4.870072141485016e-05
+        },
+        {
+          "rank": 24,
+          "term_name": "Fatty acid biosynthesis",
+          "term": "Fatty acid biosynthesis",
+          "overlap": "4/18",
+          "p_value": 1.0524307948242549e-05,
+          "z_score": 36.78664192949907,
+          "combined_score": 421.6419761211129,
+          "overlap_genes": [
+            "ACSL1",
+            "FASN",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "genes": [
+            "ACSL1",
+            "FASN",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 5.9637745040041114e-05
+        },
+        {
+          "rank": 25,
+          "term_name": "Steroid biosynthesis",
+          "term": "Steroid biosynthesis",
+          "overlap": "4/20",
+          "p_value": 1.645951139954123e-05,
+          "z_score": 32.185064935064936,
+          "combined_score": 354.50584305049387,
+          "overlap_genes": [
+            "NSDHL",
+            "DHCR24",
+            "CEL",
+            "HSD17B7"
+          ],
+          "genes": [
+            "NSDHL",
+            "DHCR24",
+            "CEL",
+            "HSD17B7"
+          ],
+          "adjusted_p_value": 8.95397420135043e-05
+        },
+        {
+          "rank": 26,
+          "term_name": "Fat digestion and absorption",
+          "term": "Fat digestion and absorption",
+          "overlap": "5/43",
+          "p_value": 2.181382290260177e-05,
+          "z_score": 17.031303749570004,
+          "combined_score": 182.7964161892485,
+          "overlap_genes": [
+            "FABP1",
+            "FABP2",
+            "CD36",
+            "CEL",
+            "ACAT2"
+          ],
+          "genes": [
+            "FABP1",
+            "FABP2",
+            "CD36",
+            "CEL",
+            "ACAT2"
+          ],
+          "adjusted_p_value": 0.00011410307364437848
+        },
+        {
+          "rank": 27,
+          "term_name": "Terpenoid backbone biosynthesis",
+          "term": "Terpenoid backbone biosynthesis",
+          "overlap": "4/22",
+          "p_value": 2.4546559842240178e-05,
+          "z_score": 28.606060606060606,
+          "combined_score": 303.6515838486941,
+          "overlap_genes": [
+            "IDI1",
+            "HMGCS1",
+            "HMGCS2",
+            "ACAT2"
+          ],
+          "genes": [
+            "IDI1",
+            "HMGCS1",
+            "HMGCS2",
+            "ACAT2"
+          ],
+          "adjusted_p_value": 0.00011922614780516657
+        },
+        {
+          "rank": 28,
+          "term_name": "Histidine metabolism",
+          "term": "Histidine metabolism",
+          "overlap": "4/22",
+          "p_value": 2.4546559842240178e-05,
+          "z_score": 28.606060606060606,
+          "combined_score": 303.6515838486941,
+          "overlap_genes": [
+            "ALDH3A2",
+            "ALDH3A1",
+            "MAOA",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ALDH3A2",
+            "ALDH3A1",
+            "MAOA",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.00011922614780516657
+        },
+        {
+          "rank": 29,
+          "term_name": "Arginine and proline metabolism",
+          "term": "Arginine and proline metabolism",
+          "overlap": "5/50",
+          "p_value": 4.592416598080171e-05,
+          "z_score": 14.376906318082789,
+          "combined_score": 143.60400317721937,
+          "overlap_genes": [
+            "ALDH3A2",
+            "MAOA",
+            "ODC1",
+            "SMS",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ALDH3A2",
+            "MAOA",
+            "ODC1",
+            "SMS",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.0002081895524463011
+        },
+        {
+          "rank": 30,
+          "term_name": "Cysteine and methionine metabolism",
+          "term": "Cysteine and methionine metabolism",
+          "overlap": "5/50",
+          "p_value": 4.592416598080171e-05,
+          "z_score": 14.376906318082789,
+          "combined_score": 143.60400317721937,
+          "overlap_genes": [
+            "IL4I1",
+            "LDHA",
+            "MDH1",
+            "MDH2",
+            "SMS"
+          ],
+          "genes": [
+            "IL4I1",
+            "LDHA",
+            "MDH1",
+            "MDH2",
+            "SMS"
+          ],
+          "adjusted_p_value": 0.0002081895524463011
+        },
+        {
+          "rank": 31,
+          "term_name": "Thermogenesis",
+          "term": "Thermogenesis",
+          "overlap": "9/232",
+          "p_value": 9.779286181413533e-05,
+          "z_score": 5.31408192132904,
+          "combined_score": 49.0631061245055,
+          "overlap_genes": [
+            "CPT1A",
+            "CPT2",
+            "ACSL1",
+            "ACSL5",
+            "ACSL4",
+            "SDHC",
+            "SDHD",
+            "SDHA",
+            "MGLL"
+          ],
+          "genes": [
+            "CPT1A",
+            "CPT2",
+            "ACSL1",
+            "ACSL5",
+            "ACSL4",
+            "SDHC",
+            "SDHD",
+            "SDHA",
+            "MGLL"
+          ],
+          "adjusted_p_value": 0.0004290267486039485
+        },
+        {
+          "rank": 32,
+          "term_name": "Alanine, aspartate and glutamate metabolism",
+          "term": "Alanine, aspartate and glutamate metabolism",
+          "overlap": "4/37",
+          "p_value": 0.00020210969953911244,
+          "z_score": 15.591499409681228,
+          "combined_score": 132.63220710758384,
+          "overlap_genes": [
+            "IL4I1",
+            "ADSL",
+            "GAD2",
+            "GLUL"
+          ],
+          "genes": [
+            "IL4I1",
+            "ADSL",
+            "GAD2",
+            "GLUL"
+          ],
+          "adjusted_p_value": 0.0008589662230412279
+        },
+        {
+          "rank": 33,
+          "term_name": "Diabetic cardiomyopathy",
+          "term": "Diabetic cardiomyopathy",
+          "overlap": "8/203",
+          "p_value": 0.00021529879837094197,
+          "z_score": 5.373538461538462,
+          "combined_score": 45.37138459829103,
+          "overlap_genes": [
+            "PDHA1",
+            "CPT2",
+            "SDHC",
+            "SDHD",
+            "PDHB",
+            "CD36",
+            "SDHA",
+            "PPARA"
+          ],
+          "genes": [
+            "PDHA1",
+            "CPT2",
+            "SDHC",
+            "SDHD",
+            "PDHB",
+            "CD36",
+            "SDHA",
+            "PPARA"
+          ],
+          "adjusted_p_value": 0.0008872920175287306
+        },
+        {
+          "rank": 34,
+          "term_name": "HIF-1 signaling pathway",
+          "term": "HIF-1 signaling pathway",
+          "overlap": "6/109",
+          "p_value": 0.0002290003148040102,
+          "z_score": 7.5647675012774656,
+          "combined_score": 63.40627125977736,
+          "overlap_genes": [
+            "LDHA",
+            "PDHA1",
+            "PDHB",
+            "ENO2",
+            "ALDOA",
+            "ENO3"
+          ],
+          "genes": [
+            "LDHA",
+            "PDHA1",
+            "PDHB",
+            "ENO2",
+            "ALDOA",
+            "ENO3"
+          ],
+          "adjusted_p_value": 0.0009160012592160408
+        },
+        {
+          "rank": 35,
+          "term_name": "Glycine, serine and threonine metabolism",
+          "term": "Glycine, serine and threonine metabolism",
+          "overlap": "4/40",
+          "p_value": 0.0002745718679889281,
+          "z_score": 14.29004329004329,
+          "combined_score": 117.18260651080388,
+          "overlap_genes": [
+            "AOC3",
+            "GRHPR",
+            "MAOA",
+            "DLD"
+          ],
+          "genes": [
+            "AOC3",
+            "GRHPR",
+            "MAOA",
+            "DLD"
+          ],
+          "adjusted_p_value": 0.001066907829899835
+        },
+        {
+          "rank": 36,
+          "term_name": "Proximal tubule bicarbonate reclamation",
+          "term": "Proximal tubule bicarbonate reclamation",
+          "overlap": "3/23",
+          "p_value": 0.000762768310894135,
+          "z_score": 19.18258064516129,
+          "combined_score": 137.7032337640235,
+          "overlap_genes": [
+            "MDH1",
+            "CA2",
+            "CA4"
+          ],
+          "genes": [
+            "MDH1",
+            "CA2",
+            "CA4"
+          ],
+          "adjusted_p_value": 0.0028815691744889546
+        },
+        {
+          "rank": 37,
+          "term_name": "Glutathione metabolism",
+          "term": "Glutathione metabolism",
+          "overlap": "4/57",
+          "p_value": 0.0010695334678532742,
+          "z_score": 9.69811320754717,
+          "combined_score": 66.34026088278621,
+          "overlap_genes": [
+            "IDH1",
+            "ODC1",
+            "SMS",
+            "PRDX6"
+          ],
+          "genes": [
+            "IDH1",
+            "ODC1",
+            "SMS",
+            "PRDX6"
+          ],
+          "adjusted_p_value": 0.003931258152109333
+        },
+        {
+          "rank": 38,
+          "term_name": "Folate biosynthesis",
+          "term": "Folate biosynthesis",
+          "overlap": "3/26",
+          "p_value": 0.0011005483203385424,
+          "z_score": 16.67798036465638,
+          "combined_score": 113.6095141472418,
+          "overlap_genes": [
+            "CBR1",
+            "PCBD1",
+            "PTS"
+          ],
+          "genes": [
+            "CBR1",
+            "PCBD1",
+            "PTS"
+          ],
+          "adjusted_p_value": 0.003938804514895836
+        },
+        {
+          "rank": 39,
+          "term_name": "Glycerolipid metabolism",
+          "term": "Glycerolipid metabolism",
+          "overlap": "4/61",
+          "p_value": 0.001378904047358053,
+          "z_score": 9.01572112098428,
+          "combined_score": 59.381743008211515,
+          "overlap_genes": [
+            "ALDH3A2",
+            "CEL",
+            "MGLL",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ALDH3A2",
+            "CEL",
+            "MGLL",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.0048084859087357745
+        },
+        {
+          "rank": 40,
+          "term_name": "Glucagon signaling pathway",
+          "term": "Glucagon signaling pathway",
+          "overlap": "5/107",
+          "p_value": 0.0016067063253079157,
+          "z_score": 6.324490580545944,
+          "combined_score": 40.68904626208888,
+          "overlap_genes": [
+            "CPT1A",
+            "LDHA",
+            "PDHA1",
+            "PDHB",
+            "PPARA"
+          ],
+          "genes": [
+            "CPT1A",
+            "LDHA",
+            "PDHA1",
+            "PDHB",
+            "PPARA"
+          ],
+          "adjusted_p_value": 0.005437671672493425
+        },
+        {
+          "rank": 41,
+          "term_name": "Drug metabolism",
+          "term": "Drug metabolism",
+          "overlap": "5/151",
+          "p_value": 0.0016741292700025309,
+          "z_score": 6.262770480360429,
+          "combined_score": 40.03452285949917,
+          "overlap_genes": [
+            "ALDH3A1",
+            "ADH1C",
+            "MAOA",
+            "FMO1",
+            "ADH7"
+          ],
+          "genes": [
+            "ALDH3A1",
+            "ADH1C",
+            "MAOA",
+            "FMO1",
+            "ADH7"
+          ],
+          "adjusted_p_value": 0.005437671672493425
+        },
+        {
+          "rank": 42,
+          "term_name": "Ascorbate and aldarate metabolism",
+          "term": "Ascorbate and aldarate metabolism",
+          "overlap": "3/30",
+          "p_value": 0.001679280957681793,
+          "z_score": 14.204301075268818,
+          "combined_score": 90.75681326113056,
+          "overlap_genes": [
+            "ALDH3A2",
+            "UGDH",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ALDH3A2",
+            "UGDH",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.005437671672493425
+        },
+        {
+          "rank": 43,
+          "term_name": "Central carbon metabolism in cancer",
+          "term": "Central carbon metabolism in cancer",
+          "overlap": "4/70",
+          "p_value": 0.0022934361875306805,
+          "z_score": 7.782762691853601,
+          "combined_score": 47.301328468640435,
+          "overlap_genes": [
+            "LDHA",
+            "PDHA1",
+            "IDH1",
+            "PDHB"
+          ],
+          "genes": [
+            "LDHA",
+            "PDHA1",
+            "IDH1",
+            "PDHB"
+          ],
+          "adjusted_p_value": 0.007253658639631919
+        },
+        {
+          "rank": 44,
+          "term_name": "AMPK signaling pathway",
+          "term": "AMPK signaling pathway",
+          "overlap": "5/120",
+          "p_value": 0.002654211877704081,
+          "z_score": 5.605853935777209,
+          "combined_score": 33.25172532173893,
+          "overlap_genes": [
+            "CPT1A",
+            "FASN",
+            "MLYCD",
+            "CD36",
+            "ADIPOR2"
+          ],
+          "genes": [
+            "CPT1A",
+            "FASN",
+            "MLYCD",
+            "CD36",
+            "ADIPOR2"
+          ],
+          "adjusted_p_value": 0.008203927621994431
+        },
+        {
+          "rank": 45,
+          "term_name": "Ferroptosis",
+          "term": "Ferroptosis",
+          "overlap": "3/41",
+          "p_value": 0.004138325623209402,
+          "z_score": 10.086926994906621,
+          "combined_score": 55.35164887410988,
+          "overlap_genes": [
+            "ACSL1",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "genes": [
+            "ACSL1",
+            "ACSL5",
+            "ACSL4"
+          ],
+          "adjusted_p_value": 0.01250693966125508
+        },
+        {
+          "rank": 46,
+          "term_name": "Ovarian steroidogenesis",
+          "term": "Ovarian steroidogenesis",
+          "overlap": "3/51",
+          "p_value": 0.0076334984445920835,
+          "z_score": 7.981451612903226,
+          "combined_score": 38.911244952013625,
+          "overlap_genes": [
+            "ACOT2",
+            "CYP1A1",
+            "HSD17B7"
+          ],
+          "genes": [
+            "ACOT2",
+            "CYP1A1",
+            "HSD17B7"
+          ],
+          "adjusted_p_value": 0.022139274396436558
+        },
+        {
+          "rank": 47,
+          "term_name": "Primary bile acid biosynthesis",
+          "term": "Primary bile acid biosynthesis",
+          "overlap": "2/17",
+          "p_value": 0.007802485607376553,
+          "z_score": 16.946153846153845,
+          "combined_score": 82.24498754883699,
+          "overlap_genes": [
+            "ACOT8",
+            "HSD17B4"
+          ],
+          "genes": [
+            "ACOT8",
+            "HSD17B4"
+          ],
+          "adjusted_p_value": 0.022139274396436558
+        },
+        {
+          "rank": 48,
+          "term_name": "Non-alcoholic fatty liver disease",
+          "term": "Non-alcoholic fatty liver disease",
+          "overlap": "5/155",
+          "p_value": 0.00781386155168349,
+          "z_score": 4.290196078431372,
+          "combined_score": 20.815413586411132,
+          "overlap_genes": [
+            "SDHC",
+            "SDHD",
+            "SDHA",
+            "PPARA",
+            "ADIPOR2"
+          ],
+          "genes": [
+            "SDHC",
+            "SDHD",
+            "SDHA",
+            "PPARA",
+            "ADIPOR2"
+          ],
+          "adjusted_p_value": 0.022139274396436558
+        },
+        {
+          "rank": 49,
+          "term_name": "Pantothenate and CoA biosynthesis",
+          "term": "Pantothenate and CoA biosynthesis",
+          "overlap": "2/21",
+          "p_value": 0.011801835049181914,
+          "z_score": 13.375843454790823,
+          "combined_score": 59.38206032082638,
+          "overlap_genes": [
+            "ALDH3A2",
+            "VNN1"
+          ],
+          "genes": [
+            "ALDH3A2",
+            "VNN1"
+          ],
+          "adjusted_p_value": 0.03275611360589266
+        },
+        {
+          "rank": 50,
+          "term_name": "Arachidonic acid metabolism",
+          "term": "Arachidonic acid metabolism",
+          "overlap": "3/61",
+          "p_value": 0.012459111460528104,
+          "z_score": 6.602002224694105,
+          "combined_score": 28.9517806869469,
+          "overlap_genes": [
+            "CBR1",
+            "LTC4S",
+            "CBR3"
+          ],
+          "genes": [
+            "CBR1",
+            "LTC4S",
+            "CBR3"
+          ],
+          "adjusted_p_value": 0.033888783172636446
+        },
+        {
+          "rank": 51,
+          "term_name": "alpha-Linolenic acid metabolism",
+          "term": "alpha-Linolenic acid metabolism",
+          "overlap": "2/25",
+          "p_value": 0.016516209165871584,
+          "z_score": 11.047380156075809,
+          "combined_score": 45.33196342129251,
+          "overlap_genes": [
+            "ACOX1",
+            "ACAA1"
+          ],
+          "genes": [
+            "ACOX1",
+            "ACAA1"
+          ],
+          "adjusted_p_value": 0.044043224442324225
+        }
+      ]
+    },
+    "significant_terms_total": 167,
+    "execution_time": 1.83,
+    "dataframe": "     rank  ...                     library\n116     1  ...             KEGG_2021_Human\n118     3  ...             KEGG_2021_Human\n0       1  ...  GO_Biological_Process_2023\n117     2  ...             KEGG_2021_Human\n119     4  ...             KEGG_2021_Human\n..    ...  ...                         ...\n109   110  ...  GO_Biological_Process_2023\n159    44  ...             KEGG_2021_Human\n68     69  ...  GO_Biological_Process_2023\n165    50  ...             KEGG_2021_Human\n163    48  ...             KEGG_2021_Human\n\n[167 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "42283012",
+      "pmcid": "PMC13251695",
+      "doi": "10.3389/fvets.2026.1804773",
+      "url": "https://doi.org/10.3389/fvets.2026.1804773",
+      "title": "Multi-target synergistic mechanisms of flavonoid compounds from traditional Chinese medicine in non-alcoholic fatty liver disease: insights for human and veterinary medicine.",
+      "abstract": "<h4>Introduction</h4>Non-alcoholic fatty liver disease (NAFLD) is a prevalent chronic liver disorder characterized by dysregulated hepatic lipid metabolism, with a continuously rising global incidence and limited safe and effective therapeutic options. Importantly, NAFLD-like conditions, namely hepatic lipidosis or fatty liver syndrome, also prevail in veterinary clinical practice, affecting companion animals (obese cats and dogs) and livestock (periparturient dairy cows, fattening pigs, and broiler chickens). These metabolic liver disorders are primarily induced by inappropriate feeding management and metabolic stress, leading to reduced production performance and survival rate of animals, huge economic losses to the livestock industry, and impaired health of companion animals. Flavonoid compounds derived from traditional Chinese medicine (TCM) possess the advantages of low toxicity and multi-target pharmacological effects, and have emerged as promising natural agents for NAFLD amelioration.<h4>Methods</h4>This study adopted a systematic review approach to comprehensively collect, sort out, and summarize recent relevant research findings. We focused on widely reported TCM flavonoids, including quercetin, apigenin, and luteolin, and systematically analyzed the diverse molecular pathways and potential mechanisms by which these compounds exert protective effects against NAFLD and veterinary fatty liver diseases.<h4>Results</h4>Existing research evidence demonstrates that TCM flavonoids improve NAFLD through multiple core regulatory pathways. These compounds reverse hepatic lipid metabolism disorders by activating the <i>AMPK/SIRT1</i> and <i>PPARα</i> signaling pathways, inhibit lipogenesis by suppressing the key lipogenic factor <i>SREBP-1c</i>, and accelerate lipid catabolism by promoting fatty acid <i>β</i>-oxidation. In addition, flavonoids effectively alleviate hepatic oxidative stress, inhibit inflammatory responses, and delay the progression of liver fibrosis. Furthermore, they exert protective effects via regulating novel mechanisms, including cellular autophagy, ferroptosis, and intestinal microbiota homeostasis.<h4>Discussion</h4>The multi-target and systematic regulatory characteristics of TCM flavonoids make them excellent candidate natural drugs for NAFLD intervention in both human and veterinary medicine. Nevertheless, several limitations and challenges remain in current research, including low bioavailability of flavonoids and unclear synergistic effects among different flavonoid components. Future studies should focus on improving the bioavailability of flavonoids, elucidating their synergistic molecular mechanisms, and exploring species-specific pharmacokinetic characteristics in cats, dogs, and cattle. Moreover, the development of practical and palatable preparations such as feed additives is essential to promote the clinical translation and large-scale application of flavonoids for the prevention and treatment of NAFLD in human and veterinary clinical practice.",
+      "authors": "Wang Y, Wan C, Mu L, Zhu A, Li Y, Liu Y, Bao Y, Bao F.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "1804773",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-05-27",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    },
+    {
+      "pmid": "42014914",
+      "pmcid": "PMC13280483",
+      "doi": "10.1038/s42003-026-10082-6",
+      "url": "https://doi.org/10.1038/s42003-026-10082-6",
+      "title": "Sabinineoside B alleviates metabolic dysfunction-associated steatotic liver disease by targeting PPAR α.",
+      "abstract": "With the rising prevalence of metabolic dysfunction-associated steatotic liver disease (MASLD), the development of new drugs targeting this condition is particularly urgent. Sabinineoside B, a new compound of phenanthrene alkaloid glycoside isolated from the traditional Chinese herb Sabia parviflora. Through establishing a high-fat diet mouse model and integrating metabolomics, proteomics, and phosphoproteomics analyses, this study elucidated the efficacy and mechanism of Sabinineoside B in treating MASLD, while preliminarily evaluating its pharmacokinetics and safety. Molecular docking, molecular dynamics simulations, drug affinity responsive target stability (DARTS), cellular thermal shift assay (CETSA), pull-down, dual-luciferase reporter gene assays and siRNA techniques were employed to validate the binding interaction between Sabinineoside B and key targets. We found that the Sabinineoside B protein significantly reduces lipid deposition and liver damage in mice on a high-fat diet. Integrated multi-omics analysis and Western blot experiments revealed that Sabinineoside B regulates lipid metabolism and exerts lipid-lowering effects by modulating the PPAR α signaling pathway. Knocking down PPAR α attenuates the regulatory effect of Sabinineoside B on the lipid-lowering pathway, indicating that the molecular mechanism of Sabinineoside B's lipid-lowering activity may be achieved by targeting PPAR α.",
+      "authors": "Feng Y, Chen R, Li Y, Wang Y, Wang Y, Li Z, Chen D, Wang Q, Li Z.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "840",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2026-04-21",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates [topic]"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 27.317773818969727,
+  "phase": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Fatty Acid Beta-Oxidation (GO:0006635) -> genes: [GCDH, ACADVL, ACOT8, ACAA2, ECHS1, ECI1, ECI2, ETFDH, HSD17B4, HSD17B10, ACAT2, HADHB, ACADL, AUH, CPT2, ACOX1, EHHADH, ACADM, ACAA1, ACADS, CRAT, DECR1]\n- Fatty Acid Catabolic Process (GO:0009062) -> genes: [ACOT8, ACAA2, ECHS1, ECI1, ECI2, HSD17B4, HSD17B10, ACAT2, HADHB, MCEE, ACADL, AUH, CPT2, ACOX1, EHHADH, ACADM, ACAA1, ACADS, HAO2, DECR1]\n- Fatty Acid Oxidation (GO:0019395) -> genes: [ACAA2, ECHS1, ECI1, ECI2, HSD17B4, ADH7, ADIPOR2, HSD17B10, ACAT2, HADHB, AUH, CPT2, ACOX1, EHHADH, ACADM, ACAA1, ACADS, HAO2, DECR1]\n- Fatty Acid Metabolic Process (GO:0006631) -> genes: [ACOT8, CPT1A, ACSM3, HPGD, ACSL1, CYP4A11, ACSL5, ACSL4, ADIPOR2, HSD17B10, CPT2, ACOX1, FASN, ACOT2, CYP1A1, MLYCD, ACADM, CD36, ACAA1, HAO2, CRAT]\n- Long-Chain Fatty Acid Metabolic Process (GO:0001676) -> genes: [ACOT8, CPT1A, ACSL1, ELOVL5, CYP4A22, CYP4A11, EPHX1, ACSL5, ACSL4, LTC4S, ACADL, CPT2, ACOT2, CYP1A1, ACAA1, MGLL]\n- acyl-CoA Metabolic Process (GO:0006637) -> genes: [MCEE, ACOT8, SUCLA2, ACSM3, HMGCS1, ACOT2, DLST, SUCLG2, HMGCS2, MLYCD]\n- Monocarboxylic Acid Metabolic Process (GO:0032787) -> genes: [CPT1A, CYP4A11, ACSL4, HSD17B10, GRHPR, LDHA, VNN1, FASN, ACOT2, CYP1A1, ME1, CD36, ACAA1]\n- Fatty Acid Beta-Oxidation Using acyl-CoA Dehydrogenase (GO:0033539) -> genes: [GCDH, ACADVL, ACADL, ETFDH, ACADM, ACADS]\n- Dicarboxylic Acid Metabolic Process (GO:0043648) -> genes: [ACOT8, FH, MDH1, MDH2, IDH1, ME1, DLST, D2HGDH, SDHA]\n- Branched-Chain Amino Acid Catabolic Process (GO:0009083) -> genes: [HMGCL, ECHS1, BCKDHB, HSD17B10, DLD, HIBCH]\n- Pyruvate Metabolic Process (GO:0006090) -> genes: [LDHA, PDHA1, ME1, GAPDHS, PDHB, ENO2, ENO3, DLD]\n- acetyl-CoA Biosynthetic Process (GO:0006085) -> genes: [PDHA1, MLYCD, PDHB, ACSS1, DLD]\n- Unsaturated Fatty Acid Metabolic Process (GO:0033559) -> genes: [ACOT8, ELOVL5, CYP4A22, CYP4A11, EPHX1, ACAA1, MGLL]\n- acetyl-CoA Metabolic Process (GO:0006084) -> genes: [HMGCS1, TDO2, HMGCS2, MLYCD, ACSS1]\n- Malate Metabolic Process (GO:0006108) -> genes: [FH, MDH1, MDH2, ME1]\n- Regulation Of Cold-Induced Thermogenesis (GO:0120161) -> genes: [FH, ACADL, CPT2, ACSL1, ALDH1A1, CIDEA, G0S2, CD36, ADIPOR2, DECR1]\n- Ribonucleoside Bisphosphate Catabolic Process (GO:0034031) -> genes: [SUCLA2, SUCLG2, SUCLG1, MLYCD]\n- succinyl-CoA Metabolic Process (GO:0006104) -> genes: [SUCLA2, DLST, SUCLG2, SUCLG1]\n- Purine Nucleoside Bisphosphate Catabolic Process (GO:0034034) -> genes: [SUCLA2, SUCLG2, SUCLG1, MLYCD]\n- Sulfur Compound Catabolic Process (GO:0044273) -> genes: [SUCLA2, FMO1, SUCLG2, SUCLG1, MLYCD]\n- Carnitine Metabolic Process (GO:0009437) -> genes: [CPT1A, CPT2, ACADM, CRAT]\n- Porphyrin-Containing Compound Biosynthetic Process (GO:0006779) -> genes: [ALAD, SUCLA2, UROD, UROS, CPOX]\n- Fatty Acid Beta-Oxidation Using acyl-CoA Oxidase (GO:0033540) -> genes: [ACOT8, ACOX1, EHHADH, CRAT]\n- fatty-acyl-CoA Biosynthetic Process (GO:0046949) -> genes: [GCDH, ACSL1, ELOVL5, ACSL5, ACSL4]\n- Arachidonic Acid Metabolic Process (GO:0019369) -> genes: [CBR1, CYP4A22, CYP4A11, EPHX1, CYP1A1, MGLL]\n- Icosanoid Metabolic Process (GO:0006690) -> genes: [HPGD, CYP4A22, CYP4A11, EPHX1, LTC4S, MGLL]\n- Medium-Chain Fatty Acid Metabolic Process (GO:0051791) -> genes: [CYP4A11, CYP4A22, ACADM, CRAT]\n- Protein Homotetramerization (GO:0051289) -> genes: [TDO2, ME1, ALDOA, HSD17B10, ALDH9A1, CRYZ]\n- acetyl-CoA Biosynthetic Process From Pyruvate (GO:0006086) -> genes: [PDHA1, PDHB, DLD]\n- succinyl-CoA Catabolic Process (GO:1901289) -> genes: [SUCLA2, SUCLG2, SUCLG1]\n- Branched-Chain Amino Acid Metabolic Process (GO:0009081) -> genes: [ECHS1, BCKDHB, DLD, HIBCH]\n- Very Long-Chain Fatty Acid Metabolic Process (GO:0000038) -> genes: [ACSL1, ELOVL5, ACOX1, ACOT2, ACAA1]\n- Regulation Of Fatty Acid Oxidation (GO:0046320) -> genes: [ACADVL, ACADL, MLYCD, PPARA]\n- Carboxylic Acid Biosynthetic Process (GO:0046394) -> genes: [UGDH, UROS, CYP4A11, CYP4A22]\n- Long-Chain fatty-acyl-CoA Biosynthetic Process (GO:0035338) -> genes: [ACSL1, ELOVL5, ACSL5, ACSL4]\n- Steroid Metabolic Process (GO:0008202) -> genes: [CBR1, RDH16, CYP1A1, DHCR24, CEL, ACAA1, HSD17B10]\n- Amino Acid Catabolic Process (GO:0009063) -> genes: [IL4I1, ECHS1, BCKDHB, DLD, HIBCH]\n- Fatty Acid Biosynthetic Process (GO:0006633) -> genes: [ACSM3, ELOVL5, FASN, CYP1A1, MLYCD, LTC4S]\n- Positive Regulation Of Cold-Induced Thermogenesis (GO:0120162) -> genes: [FH, CPT2, ACSL1, G0S2, CD36, ADIPOR2, DECR1]\n- NADP Metabolic Process (GO:0006739) -> genes: [MDH1, IDH1, ME1, FMO1]\n- Heme Biosynthetic Process (GO:0006783) -> genes: [ALAD, UROD, UROS, CPOX]\n- Positive Regulation Of Metabolic Process (GO:0009893) -> genes: [FH, CPT2, ACSL1, G0S2, CD36, ADIPOR2, DECR1]\n- Protein Tetramerization (GO:0051262) -> genes: [TDO2, ME1, ALDOA, HSD17B10, ALDH9A1, CRYZ]\n- Tricarboxylic Acid Metabolic Process (GO:0072350) -> genes: [IDH3G, IDH1, IDH3B]\n- Long-Chain Fatty Acid Transport (GO:0015909) -> genes: [CPT1A, CPT2, ACSL1, CD36]\n- Long-Chain fatty-acyl-CoA Metabolic Process (GO:0035336) -> genes: [ACSL1, ELOVL5, ACSL5, ACSL4]\n- Secondary Alcohol Biosynthetic Process (GO:1902653) -> genes: [NSDHL, HMGCS1, DHCR24, HSD17B7]\n- Alpha-Linolenic Acid Metabolic Process (GO:0036109) -> genes: [ACOT8, ELOVL5, ACAA1]\n- Amine Metabolic Process (GO:0009308) -> genes: [AOC3, MAOA, INMT]\n- Cholesterol Biosynthetic Process (GO:0006695) -> genes: [NSDHL, HMGCS1, DHCR24, HSD17B7]\n- Ribonucleoside Bisphosphate Metabolic Process (GO:0033875) -> genes: [ACOT8, ACSM3, ACOT2, MLYCD]\n- Purine Nucleoside Bisphosphate Metabolic Process (GO:0034032) -> genes: [ACOT8, ACSM3, ACOT2, MLYCD]\n- Purine Ribonucleotide Catabolic Process (GO:0009154) -> genes: [SUCLA2, SUCLG2, SUCLG1, MLYCD]\n- Diterpenoid Metabolic Process (GO:0016101) -> genes: [ALDH3A2, RDH11, ALDH1A1, ADH7]\n- Sterol Biosynthetic Process (GO:0016126) -> genes: [NSDHL, HMGCS1, DHCR24, HSD17B7]\n- Protein Homooligomerization (GO:0051260) -> genes: [ALAD, TDO2, ME1, ALDOA, HSD17B10, ALDH9A1, CRYZ]\n- Intestinal Lipid Absorption (GO:0098856) -> genes: [FABP2, CD36, CEL]\n- Alpha-Amino Acid Catabolic Process (GO:1901606) -> genes: [HMGCL, IL4I1, HSD17B10, HIBCH]\n- Glycolytic Process (GO:0006096) -> genes: [LDHA, GAPDHS, ENO2, ENO3]\n- Biogenic Amine Metabolic Process (GO:0006576) -> genes: [MAOA, ODC1, SMS]\n- Fatty Acid Transmembrane Transport (GO:1902001) -> genes: [CPT1A, CPT2, CD36]\n- Gluconeogenesis (GO:0006094) -> genes: [MDH1, MDH2, ENO2, ENO3]\n- acyl-CoA Biosynthetic Process (GO:0071616) -> genes: [GCDH, MLYCD, ACSS1]\n- Hexose Biosynthetic Process (GO:0019319) -> genes: [MDH1, MDH2, ENO2, ENO3]\n- Monocarboxylic Acid Biosynthetic Process (GO:0072330) -> genes: [ACOT8, ACSM3, FASN, MLYCD, HSD17B10]\n- 2-Oxoglutarate Metabolic Process (GO:0006103) -> genes: [IDH1, DLST, D2HGDH]\n- Cholesterol Metabolic Process (GO:0008203) -> genes: [NSDHL, ACAA2, HMGCS1, DHCR24, HSD17B7]\n- Fatty Acid Transport (GO:0015908) -> genes: [FABP1, FABP2, ACSL1, CD36]\n- Positive Regulation Of Multicellular Organismal Process (GO:0051240) -> genes: [FH, CPT2, ACADL, ACSL1, EHHADH, APEX1, G0S2, CD36, BMPR1B, ADIPOR2, DECR1]\n- Regulation Of Small Molecule Metabolic Process (GO:0062012) -> genes: [ACADVL, ACADL, MLYCD, PPARA]\n- Carbohydrate Catabolic Process (GO:0016052) -> genes: [LDHA, GAPDHS, ENO2, ENO3]\n- Nicotinamide Nucleotide Metabolic Process (GO:0046496) -> genes: [MDH1, IDH1, ME1]\n- Carboxylic Acid Catabolic Process (GO:0046395) -> genes: [IL4I1, ACOT8, FMO1]\n- Positive Regulation Of Fatty Acid Metabolic Process (GO:0045923) -> genes: [ELOVL5, MLYCD, PPARA]\n- fatty-acyl-CoA Metabolic Process (GO:0035337) -> genes: [GCDH, HSD17B4, ACSL4]\n- Icosanoid Biosynthetic Process (GO:0046456) -> genes: [CYP4A11, CYP4A22, LTC4S]\n- Linoleic Acid Metabolic Process (GO:0043651) -> genes: [ELOVL5, CYP4A11, CYP4A22]\n- Secondary Alcohol Metabolic Process (GO:1902652) -> genes: [NSDHL, IDH3G, IDH1, IDH3B]\n- L-phenylalanine Catabolic Process (GO:0006559) -> genes: [GSTZ1, IL4I1]\n- L-phenylalanine Metabolic Process (GO:0006558) -> genes: [GSTZ1, IL4I1]\n- Erythrose 4-Phosphate/Phosphoenolpyruvate Family Amino Acid Catabolic Process (GO:1902222) -> genes: [GSTZ1, IL4I1]\n- Gamma-Aminobutyric Acid Metabolic Process (GO:0009448) -> genes: [ALDH1A1, GAD2]\n- Glutamate Catabolic Process (GO:0006538) -> genes: [GAD2, GLUL]\n- Ketone Body Biosynthetic Process (GO:0046951) -> genes: [HMGCL, HMGCS2]\n- Cellular Lipid Catabolic Process (GO:0044242) -> genes: [ACOT8, ACADL, ACOX1]\n- Amino-Acid Betaine Metabolic Process (GO:0006577) -> genes: [CPT1A, CPT2]\n- Short-Chain Fatty Acid Metabolic Process (GO:0046459) -> genes: [MCEE, CRAT]\n- Ketone Body Metabolic Process (GO:1902224) -> genes: [HMGCL, HMGCS2]\n- Glucose Metabolic Process (GO:0006006) -> genes: [MDH1, MDH2, ENO2, ENO3]\n- NADH Metabolic Process (GO:0006734) -> genes: [MDH1, ME1]\n- Estrogen Biosynthetic Process (GO:0006703) -> genes: [HSD17B11, HSD17B7]\n- Ethanol Oxidation (GO:0006069) -> genes: [ADH1C, ADH7]\n- Tryptophan Catabolic Process (GO:0006569) -> genes: [IL4I1, TDO2]\n- Fatty Acid Derivative Biosynthetic Process (GO:1901570) -> genes: [GCDH, HMGCL, HMGCS2]\n- Lipid Transport (GO:0006869) -> genes: [FABP1, FABP2, ACSL1, EHHADH, CD36]\n- Bile Acid Metabolic Process (GO:0008206) -> genes: [ACOT8, ACAA1, HSD17B10]\n- Intestinal Cholesterol Absorption (GO:0030299) -> genes: [CD36, CEL]\n- Lipid Biosynthetic Process (GO:0008610) -> genes: [ACSM3, ACSL1, FASN, MLYCD]\n- Purine Nucleotide Metabolic Process (GO:0006163) -> genes: [MDH1, IDH1, ME1]\n- Aromatic Amino Acid Family Catabolic Process (GO:0009074) -> genes: [GSTZ1, IL4I1]\n- Omega-Hydroxylase P450 Pathway (GO:0097267) -> genes: [CYP4A11, CYP4A22]\n- Polyamine Metabolic Process (GO:0006595) -> genes: [ODC1, SMS]\n- Intestinal Absorption (GO:0050892) -> genes: [FABP2, CD36]\n- Retinoid Metabolic Process (GO:0001523) -> genes: [RDH11, ALDH1A1, ADH7]\n- Porphyrin-Containing Compound Catabolic Process (GO:0006787) -> genes: [UROD, BLVRA]\n- Positive Regulation Of Fatty Acid Oxidation (GO:0046321) -> genes: [MLYCD, PPARA]\n- Steroid Catabolic Process (GO:0006706) -> genes: [HSD17B11, YWHAH]\n- Purine Ribonucleotide Metabolic Process (GO:0009150) -> genes: [ACOT8, ACSM3, ACOT2, MLYCD]\n- Lipid Oxidation (GO:0034440) -> genes: [ADIPOR2, HAO2]\n- Cellular Respiration (GO:0045333) -> genes: [MDH2, ETFDH, SDHC, SDHA]\n- Regulation Of Sequestering Of Triglyceride (GO:0010889) -> genes: [CIDEA, PPARA]\n- Respiratory Electron Transport Chain (GO:0022904) -> genes: [ETFDH, SDHA]\n- Electron Transport Chain (GO:0022900) -> genes: [ETFDH, SDHA]\n- Ethanol Metabolic Process (GO:0006067) -> genes: [ADH1C, ADH7]\n- Positive Regulation Of Transmembrane Transport (GO:0034764) -> genes: [CA2, ACSL5]\n- Mitotic Chromosome Condensation (GO:0007076) -> genes: [NCAPH2, KMT5A]\n\n[KEGG_2021_Human]\n- Fatty acid degradation -> genes: [GCDH, ACADVL, CPT1A, ACAA2, ECHS1, ADH1C, ACSL1, ECI1, ECI2, ACSL5, ACSL4, ADH7, ACAT2, ALDH3A2, HADHB, ACADL, CPT2, ACOX1, EHHADH, ACADM, ACAA1, HADH, ACADS, ALDH9A1]\n- Valine, leucine and isoleucine degradation -> genes: [ACAA2, ECHS1, HMGCS1, BCKDHB, HSD17B10, ACAT2, ALDH3A2, HADHB, HMGCL, IL4I1, MCEE, AUH, EHHADH, ACADM, HMGCS2, ACAA1, HADH, ACADS, DLD, HIBCH, ALDH9A1]\n- Citrate cycle (TCA cycle) -> genes: [FH, PDHA1, MDH1, IDH3G, MDH2, IDH1, DLST, SDHC, PDHB, SDHD, SDHA, SUCLA2, IDH3B, SUCLG2, SUCLG1, ACO2, DLD]\n- Propanoate metabolism -> genes: [ECHS1, BCKDHB, ACAT2, LDHA, MCEE, SUCLA2, ACOX1, EHHADH, SUCLG2, SUCLG1, MLYCD, ACSS1, ACADS, DLD, HIBCH]\n- PPAR signaling pathway -> genes: [CPT1A, HMGCS1, ACSL1, AQP7, ACSL5, ACSL4, FABP1, FABP2, ACADL, CPT2, ACOX1, EHHADH, ME1, ACADM, CD36, HMGCS2, ACAA1, PPARA]\n- Tryptophan metabolism -> genes: [GCDH, ECHS1, MAOA, AADAT, DLST, ACAT2, INMT, ALDH3A2, IL4I1, TDO2, EHHADH, CYP1A1, HADH, DLD, ALDH9A1]\n- Pyruvate metabolism -> genes: [FH, PDHA1, ADH1C, MDH1, MDH2, PDHB, ADH7, ACAT2, ALDH3A2, GRHPR, LDHA, ME1, ACSS1, DLD, ALDH9A1]\n- Peroxisome -> genes: [ACOT8, ACSL1, IDH1, ECI2, ECH1, ACSL5, HSD17B4, ACSL4, HMGCL, ACOX1, EHHADH, MLYCD, ACAA1, HAO2, CRAT]\n- Glycolysis / Gluconeogenesis -> genes: [PDHA1, ADH1C, PDHB, ENO2, ADH7, ENO3, ALDH3A2, ALDH3A1, LDHA, GAPDHS, ALDOA, ACSS1, DLD, ALDH9A1]\n- beta-Alanine metabolism -> genes: [AOC3, ALDH3A2, ALDH3A1, ECHS1, ACOX1, EHHADH, GAD2, MLYCD, ACADS, HIBCH, ALDH9A1]\n- Butanoate metabolism -> genes: [HMGCL, ECHS1, ACSM3, HMGCS1, EHHADH, GAD2, HMGCS2, HADH, ACADS, ACAT2]\n- Glyoxylate and dicarboxylate metabolism -> genes: [GRHPR, MCEE, MDH1, MDH2, ACO2, ACSS1, GLUL, HAO2, DLD, ACAT2]\n- Lysine degradation -> genes: [ALDH3A2, GCDH, ECHS1, AADAT, EHHADH, DLST, KMT5A, HADH, DLD, ACAT2, ALDH9A1]\n- Tyrosine metabolism -> genes: [AOC3, GSTZ1, IL4I1, ALDH3A1, ADH1C, MAOA, MIF, ADH7]\n- Fatty acid elongation -> genes: [HADHB, ACAA2, ECHS1, ELOVL5, ACOT2, HADH]\n- Phenylalanine metabolism -> genes: [AOC3, ALDH3A1, IL4I1, MAOA, MIF]\n- Synthesis and degradation of ketone bodies -> genes: [HMGCL, HMGCS1, HMGCS2, ACAT2]\n- Porphyrin and chlorophyll metabolism -> genes: [ALAD, UROD, UROS, CPOX, HCCS, BLVRA]\n- Retinol metabolism -> genes: [ADH1C, RETSAT, RDH11, ALDH1A1, RDH16, CYP1A1, ADH7]\n- Adipocytokine signaling pathway -> genes: [CPT1A, ACSL1, ACSL5, ACSL4, CD36, PPARA, ADIPOR2]\n- Biosynthesis of unsaturated fatty acids -> genes: [ELOVL5, ACOX1, ACOT2, HSD17B4, ACAA1]\n- Metabolism of xenobiotics by cytochrome P450 -> genes: [CBR1, ALDH3A1, ADH1C, EPHX1, CYP1A1, ADH7, CBR3]\n- Nitrogen metabolism -> genes: [CA2, CA4, CA6, GLUL]\n- Fatty acid biosynthesis -> genes: [ACSL1, FASN, ACSL5, ACSL4]\n- Steroid biosynthesis -> genes: [NSDHL, DHCR24, CEL, HSD17B7]\n- Fat digestion and absorption -> genes: [FABP1, FABP2, CD36, CEL, ACAT2]\n- Terpenoid backbone biosynthesis -> genes: [IDI1, HMGCS1, HMGCS2, ACAT2]\n- Histidine metabolism -> genes: [ALDH3A2, ALDH3A1, MAOA, ALDH9A1]\n- Arginine and proline metabolism -> genes: [ALDH3A2, MAOA, ODC1, SMS, ALDH9A1]\n- Cysteine and methionine metabolism -> genes: [IL4I1, LDHA, MDH1, MDH2, SMS]\n- Thermogenesis -> genes: [CPT1A, CPT2, ACSL1, ACSL5, ACSL4, SDHC, SDHD, SDHA, MGLL]\n- Alanine, aspartate and glutamate metabolism -> genes: [IL4I1, ADSL, GAD2, GLUL]\n- Diabetic cardiomyopathy -> genes: [PDHA1, CPT2, SDHC, SDHD, PDHB, CD36, SDHA, PPARA]\n- HIF-1 signaling pathway -> genes: [LDHA, PDHA1, PDHB, ENO2, ALDOA, ENO3]\n- Glycine, serine and threonine metabolism -> genes: [AOC3, GRHPR, MAOA, DLD]\n- Proximal tubule bicarbonate reclamation -> genes: [MDH1, CA2, CA4]\n- Glutathione metabolism -> genes: [IDH1, ODC1, SMS, PRDX6]\n- Folate biosynthesis -> genes: [CBR1, PCBD1, PTS]\n- Glycerolipid metabolism -> genes: [ALDH3A2, CEL, MGLL, ALDH9A1]\n- Glucagon signaling pathway -> genes: [CPT1A, LDHA, PDHA1, PDHB, PPARA]\n- Drug metabolism -> genes: [ALDH3A1, ADH1C, MAOA, FMO1, ADH7]\n- Ascorbate and aldarate metabolism -> genes: [ALDH3A2, UGDH, ALDH9A1]\n- Central carbon metabolism in cancer -> genes: [LDHA, PDHA1, IDH1, PDHB]\n- AMPK signaling pathway -> genes: [CPT1A, FASN, MLYCD, CD36, ADIPOR2]\n- Ferroptosis -> genes: [ACSL1, ACSL5, ACSL4]\n- Ovarian steroidogenesis -> genes: [ACOT2, CYP1A1, HSD17B7]\n- Primary bile acid biosynthesis -> genes: [ACOT8, HSD17B4]\n- Non-alcoholic fatty liver disease -> genes: [SDHC, SDHD, SDHA, PPARA, ADIPOR2]\n- Pantothenate and CoA biosynthesis -> genes: [ALDH3A2, VNN1]\n- Arachidonic acid metabolism -> genes: [CBR1, LTC4S, CBR3]\n- alpha-Linolenic acid metabolism -> genes: [ACOX1, ACAA1]\n\n=== ABSTRACTS ===\n[1] Multi-target synergistic mechanisms of flavonoid compounds from traditional Chinese medicine in non-alcoholic fatty liver disease: insights for human and veterinary medicine.\n<h4>Introduction</h4>Non-alcoholic fatty liver disease (NAFLD) is a prevalent chronic liver disorder characterized by dysregulated hepatic lipid metabolism, with a continuously rising global incidence and limited safe and effective therapeutic options. Importantly, NAFLD-like conditions, namely hepatic lipidosis or fatty liver syndrome, also prevail in veterinary clinical practice, affecting companion animals (obese cats and dogs) and livestock (periparturient dairy cows, fattening pigs, and broiler chickens). These metabolic liver disorders are primarily induced by inappropriate feeding management and metabolic stress, leading to reduced production performance and survival rate of animals, huge economic losses to the livestock industry, and impaired health of companion animals. Flavonoid compounds derived from traditional Chinese medicine (TCM) possess the advantages of low toxicity and multi-target pharmacological effects, and have emerged as promising natural agents for NAFLD amelioration.<h4>Methods</h4>This study adopted a systematic review approach to comprehensively collect, sort out, and summarize recent relevant research findings. We focused on widely reported TCM flavonoids, including quercetin, apigenin, and luteolin, and systematically analyzed the diverse molecular pathways and potential mechanisms by which these compounds exert protective effects against NAFLD and veterinary fatty liver diseases.<h4>Results</h4>Existing research evidence demonstrates that TCM flavonoids improve NAFLD through multiple core regulatory pathways. These compounds reverse hepatic lipid metabolism disorders by activating the <i>AMPK/SIRT1</i> and <i>PPARα</i> signaling pathways, inhibit lipogenesis by suppressing the key lipogenic factor <i>SREBP-1c</i>, and accelerate lipid catabolism by promoting fatty acid <i>β</i>-oxidation. In addition, flavonoids effectively alleviate hepatic oxidative stress, inhibit inflammatory responses, and delay the progression of liver fibrosis. Furthermore, they exert protective effects via regulating novel mechanisms, including cellular autophagy, ferroptosis, and intestinal microbiota homeostasis.<h4>Discussion</h4>The multi-target and systematic regulatory characteristics of TCM flavonoids make them excellent candidate natural drugs for NAFLD intervention in both human and veterinary medicine. Nevertheless, several limitations and challenges remain in current research, including low bioavailability of flavonoids and unclear synergistic effects among different flavonoid components. Future studies should focus on improving the bioavailability of flavonoids, elucidating their synergistic molecular mechanisms, and exploring species-specific pharmacokinetic characteristics in cats, dogs, and cattle. Moreover, the development of practical and palatable preparations such as feed additives is essential to promote the clinical translation and large-scale application of flavonoids for the prevention and treatment of NAFLD in human and veterinary clinical practice.\n[2] Sabinineoside B alleviates metabolic dysfunction-associated steatotic liver disease by targeting PPAR α.\nWith the rising prevalence of metabolic dysfunction-associated steatotic liver disease (MASLD), the development of new drugs targeting this condition is particularly urgent. Sabinineoside B, a new compound of phenanthrene alkaloid glycoside isolated from the traditional Chinese herb Sabia parviflora. Through establishing a high-fat diet mouse model and integrating metabolomics, proteomics, and phosphoproteomics analyses, this study elucidated the efficacy and mechanism of Sabinineoside B in treating MASLD, while preliminarily evaluating its pharmacokinetics and safety. Molecular docking, molecular dynamics simulations, drug affinity responsive target stability (DARTS), cellular thermal shift assay (CETSA), pull-down, dual-luciferase reporter gene assays and siRNA techniques were employed to validate the binding interaction between Sabinineoside B and key targets. We found that the Sabinineoside B protein significantly reduces lipid deposition and liver damage in mice on a high-fat diet. Integrated multi-omics analysis and Western blot experiments revealed that Sabinineoside B regulates lipid metabolism and exerts lipid-lowering effects by modulating the PPAR α signaling pathway. Knocking down PPAR α attenuates the regulatory effect of Sabinineoside B on the lipid-lowering pathway, indicating that the molecular mechanism of Sabinineoside B's lipid-lowering activity may be achieved by targeting PPAR α.",
+  "judge_claims": [
+    {
+      "claim": "Fatty acid beta-oxidation is a catabolic process of lipids.",
+      "label": "GROUNDED",
+      "why": "Fatty Acid Beta-Oxidation (GO:0006635) is listed under Fatty Acid Catabolic Process (GO:0009062), explicitly establishing beta-oxidation as a catabolic/degradative process of lipids."
+    },
+    {
+      "claim": "Fatty acid degradation is a catabolic process of lipids.",
+      "label": "GROUNDED",
+      "why": "Fatty acid degradation is explicitly listed in KEGG as a pathway, and Fatty Acid Catabolic Process (GO:0009062) is present in the enriched terms, establishing it as a catabolic process."
+    },
+    {
+      "claim": "Fatty acid oxidation is a catabolic process of lipids.",
+      "label": "GROUNDED",
+      "why": "Fatty Acid Oxidation (GO:0019395) is listed among enriched terms, and it appears alongside Fatty Acid Catabolic Process, establishing oxidation as a catabolic process."
+    },
+    {
+      "claim": "The PPAR signaling pathway orchestrates lipid metabolism.",
+      "label": "GROUNDED",
+      "why": "The PPAR signaling pathway term includes genes involved in fatty acid metabolism (CPT1A, ACSL1, ACADL, etc.), and abstract [2] states PPARα 'regulates lipid metabolism'."
+    },
+    {
+      "claim": "ACAA1 is an integral component of fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "ACAA1 appears in the gene list for Fatty Acid Beta-Oxidation (GO:0006635)."
+    },
+    {
+      "claim": "ACAA2 is an integral component of fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "ACAA2 appears in the gene list for Fatty Acid Beta-Oxidation (GO:0006635)."
+    },
+    {
+      "claim": "ACADM is an integral component of fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "ACADM appears in the gene list for Fatty Acid Beta-Oxidation (GO:0006635)."
+    },
+    {
+      "claim": "ACADVL is an integral component of fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "ACADVL appears in the gene list for Fatty Acid Beta-Oxidation (GO:0006635)."
+    },
+    {
+      "claim": "ACOX1 is an integral component of fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "ACOX1 appears in the gene list for Fatty Acid Beta-Oxidation (GO:0006635)."
+    },
+    {
+      "claim": "CPT1A is an integral component of fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "CPT1A appears in the gene list for Fatty Acid Beta-Oxidation (GO:0006635) in the KEGG pathway for fatty acid degradation."
+    },
+    {
+      "claim": "CPT2 is an integral component of fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "CPT2 appears in the gene list for Fatty Acid Beta-Oxidation (GO:0006635)."
+    },
+    {
+      "claim": "EHHADH is an integral component of fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "EHHADH appears in the gene list for Fatty Acid Beta-Oxidation (GO:0006635)."
+    },
+    {
+      "claim": "HADH is an integral component of fatty acid beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "HADH appears in the KEGG pathway for fatty acid degradation and in valine/leucine/isoleucine degradation, which involves beta-oxidation steps."
+    },
+    {
+      "claim": "Peroxisome proliferator-activated receptors (PPARs) are nuclear receptors.",
+      "label": "BACKGROUND",
+      "why": "The evidence shows PPAR signaling pathway and mentions PPARα, but does not explicitly state that PPARs are nuclear receptors, though this is well-established biology."
+    },
+    {
+      "claim": "PPARα regulates the transcription of genes involved in fatty acid catabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] states flavonoids 'reverse hepatic lipid metabolism disorders by activating the AMPK/SIRT1 and PPARα signaling pathways' and 'accelerate lipid catabolism by promoting fatty acid β-oxidation', linking PPARα to fatty acid catabolism regulation."
+    },
+    {
+      "claim": "PPARα regulates the transcription of genes involved in beta-oxidation.",
+      "label": "GROUNDED",
+      "why": "The PPAR signaling pathway includes genes involved in beta-oxidation (ACADL, ACADM, ACOX1, EHHADH), and abstract [1] links PPARα activation to promoting fatty acid β-oxidation."
+    },
+    {
+      "claim": "PPARα regulates the transcription of genes involved in peroxisomal proliferation.",
+      "label": "BACKGROUND",
+      "why": "While PPARA appears in the Peroxisome pathway term, the evidence does not explicitly state that PPARα regulates transcription of genes involved in peroxisomal proliferation."
+    },
+    {
+      "claim": "PPARα regulates the transcription of genes involved in mitochondrial fatty acid uptake.",
+      "label": "GROUNDED",
+      "why": "The PPAR signaling pathway includes CPT1A and CPT2, which are involved in Long-Chain Fatty Acid Transport and mitochondrial fatty acid uptake."
+    },
+    {
+      "claim": "Traditional Chinese medicine flavonoids improve non-alcoholic fatty liver disease (NAFLD) by accelerating lipid catabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] states 'TCM flavonoids improve NAFLD through multiple core regulatory pathways' and 'accelerate lipid catabolism by promoting fatty acid β-oxidation'."
+    },
+    {
+      "claim": "Traditional Chinese medicine flavonoids promote fatty acid β-oxidation.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] explicitly states flavonoids 'accelerate lipid catabolism by promoting fatty acid β-oxidation'."
+    },
+    {
+      "claim": "Traditional Chinese medicine flavonoids activate the PPARα signaling pathway.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] states flavonoids 'reverse hepatic lipid metabolism disorders by activating the AMPK/SIRT1 and PPARα signaling pathways'."
+    },
+    {
+      "claim": "Sabinineoside B alleviates metabolic dysfunction-associated steatotic liver disease.",
+      "label": "GROUNDED",
+      "why": "Abstract [2] title states 'Sabinineoside B alleviates metabolic dysfunction-associated steatotic liver disease'."
+    },
+    {
+      "claim": "Sabinineoside B modulates the PPARα signaling pathway.",
+      "label": "GROUNDED",
+      "why": "Abstract [2] states 'Sabinineoside B regulates lipid metabolism and exerts lipid-lowering effects by modulating the PPAR α signaling pathway'."
+    },
+    {
+      "claim": "The PPARα signaling pathway regulates lipid metabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract [2] states 'Sabinineoside B regulates lipid metabolism...by modulating the PPAR α signaling pathway', and the PPAR signaling pathway term includes numerous lipid metabolism genes."
+    },
+    {
+      "claim": "The PPARα signaling pathway exerts lipid-lowering effects.",
+      "label": "GROUNDED",
+      "why": "Abstract [2] states 'Sabinineoside B regulates lipid metabolism and exerts lipid-lowering effects by modulating the PPAR α signaling pathway'."
+    },
+    {
+      "claim": "Fatty acid degradation is a major energy-producing pathway.",
+      "label": "BACKGROUND",
+      "why": "While fatty acid degradation produces energy, the evidence does not explicitly state it is a major energy-producing pathway, though this is well-established biology."
+    },
+    {
+      "claim": "The PPAR signaling pathway drives fatty acid degradation pathways.",
+      "label": "BACKGROUND",
+      "why": "The evidence shows PPAR pathway includes fatty acid degradation genes and regulates lipid metabolism, but does not explicitly use the term 'drives' to describe this relationship."
+    },
+    {
+      "claim": "The PPAR signaling pathway regulates fatty acid degradation pathways.",
+      "label": "GROUNDED",
+      "why": "The PPAR signaling pathway includes genes from fatty acid degradation (CPT1A, ACSL1, ACADL, CPT2, ACOX1, EHHADH, ACADM, PPARA), establishing regulatory relationship."
+    },
+    {
+      "claim": "The PPAR pathway acts as a central regulator of fatty acid catabolism.",
+      "label": "GROUNDED",
+      "why": "The PPAR signaling pathway includes multiple fatty acid catabolic genes (ACADL, ACADM, ACOX1, EHHADH), and abstract [1] links PPARα to fatty acid β-oxidation and lipid catabolism."
+    }
+  ],
+  "summary": {
+    "n_claims": 29,
+    "n_scored": 29,
+    "grounded_rate": 0.862,
+    "hallucination_rate": 0.0,
+    "grounded": 25,
+    "background": 4,
+    "unsupported": 0
+  }
+}

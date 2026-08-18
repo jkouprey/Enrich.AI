@@ -1,0 +1,1452 @@
+{
+  "gene_set": "Spermatogenesis",
+  "context": "Spermatogenesis",
+  "genes": [
+    "PDHA2",
+    "TSSK2",
+    "TNP1",
+    "ZPBP",
+    "DPEP3",
+    "ADAM2",
+    "ACTL7B",
+    "GAPDHS",
+    "TUBA3C",
+    "LDHC",
+    "DDX25",
+    "PRM2",
+    "TCP11",
+    "PIAS2",
+    "PAPOLB",
+    "OAZ3",
+    "PHF7",
+    "ODF1",
+    "ACRBP",
+    "YBX2",
+    "CSNK2A2",
+    "NAA11",
+    "TULP2",
+    "ADAD1",
+    "SYCP1",
+    "DDX4",
+    "MLF1",
+    "TEKT2",
+    "SPATA6",
+    "PGK2",
+    "HSPA2",
+    "ACRV1",
+    "CLPB",
+    "CRISP2",
+    "ZC2HC1C",
+    "AKAP4",
+    "CCNA1",
+    "CCT6B",
+    "PACRG",
+    "GSG1",
+    "THEG",
+    "HSPA4L",
+    "CST8",
+    "DCC",
+    "HSPA1L",
+    "GSTM3",
+    "DNAJB8",
+    "IL13RA2",
+    "CAMK4",
+    "LPIN1",
+    "ZC3H14",
+    "COIL",
+    "PHKG2",
+    "KIF2C",
+    "RPL39L",
+    "SLC2A5",
+    "PCSK4",
+    "AURKA",
+    "MLLT10",
+    "NOS1",
+    "ART3",
+    "CCNB2",
+    "NPHP1",
+    "CLGN",
+    "MAST2",
+    "MTOR",
+    "CDKN3",
+    "ZNRF4",
+    "AGFG1",
+    "SNAP91",
+    "PSMG1",
+    "CHFR",
+    "TNP2",
+    "EZH2",
+    "HBZ",
+    "ARL4A",
+    "SLC12A2",
+    "BRAF",
+    "VDAC3",
+    "POMC",
+    "IFT88",
+    "TKTL1",
+    "NEK2",
+    "STAM2",
+    "H1-6",
+    "GMCL1",
+    "MTNR1A",
+    "RFC4",
+    "DBF4",
+    "PRKAR2A",
+    "TTK",
+    "DMC1",
+    "NCAPH",
+    "PEBP1",
+    "CHRM4",
+    "TOPBP1",
+    "SCG5",
+    "NEFH",
+    "MAP7",
+    "BUB1",
+    "SEPTIN4",
+    "PGS1",
+    "NPY5R",
+    "TSN",
+    "CDK1",
+    "SHE",
+    "PARP2",
+    "TNNI3",
+    "PCSK1N",
+    "IDE",
+    "GPR182",
+    "RAD17",
+    "TLE4",
+    "ACE",
+    "SIRT1",
+    "HTR5A",
+    "TALDO1",
+    "NF2",
+    "CLVS1",
+    "CNIH2",
+    "GRM8",
+    "STRBP",
+    "ADCYAP1",
+    "ALOX15",
+    "MEP1B",
+    "SCG3",
+    "GFI1",
+    "ELOVL3",
+    "IL12RB2",
+    "DMRT1",
+    "GAD1",
+    "CFTR",
+    "JAM3",
+    "IP6K1",
+    "HOXB1"
+  ],
+  "n_genes": 135,
+  "query": "Analyze this gene set (biological context: Spermatogenesis) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: PDHA2, TSSK2, TNP1, ZPBP, DPEP3, ADAM2, ACTL7B, GAPDHS, TUBA3C, LDHC, DDX25, PRM2, TCP11, PIAS2, PAPOLB, OAZ3, PHF7, ODF1, ACRBP, YBX2, CSNK2A2, NAA11, TULP2, ADAD1, SYCP1, DDX4, MLF1, TEKT2, SPATA6, PGK2, HSPA2, ACRV1, CLPB, CRISP2, ZC2HC1C, AKAP4, CCNA1, CCT6B, PACRG, GSG1, THEG, HSPA4L, CST8, DCC, HSPA1L, GSTM3, DNAJB8, IL13RA2, CAMK4, LPIN1, ZC3H14, COIL, PHKG2, KIF2C, RPL39L, SLC2A5, PCSK4, AURKA, MLLT10, NOS1, ART3, CCNB2, NPHP1, CLGN, MAST2, MTOR, CDKN3, ZNRF4, AGFG1, SNAP91, PSMG1, CHFR, TNP2, EZH2, HBZ, ARL4A, SLC12A2, BRAF, VDAC3, POMC, IFT88, TKTL1, NEK2, STAM2, H1-6, GMCL1, MTNR1A, RFC4, DBF4, PRKAR2A, TTK, DMC1, NCAPH, PEBP1, CHRM4, TOPBP1, SCG5, NEFH, MAP7, BUB1, SEPTIN4, PGS1, NPY5R, TSN, CDK1, SHE, PARP2, TNNI3, PCSK1N, IDE, GPR182, RAD17, TLE4, ACE, SIRT1, HTR5A, TALDO1, NF2, CLVS1, CNIH2, GRM8, STRBP, ADCYAP1, ALOX15, MEP1B, SCG3, GFI1, ELOVL3, IL12RB2, DMRT1, GAD1, CFTR, JAM3, IP6K1, HOXB1",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 11,
+  "n_papers": 5,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 5,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 5,
+    "cited_pmids": [
+      "41287933",
+      "41514294",
+      "42447171",
+      "42479652"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "## Summary\n\nThe gene set provided for analysis in the context of spermatogenesis primarily highlights key processes involved in cell cycle regulation, chromosome dynamics during meiosis, protein modification, and cellular energy metabolism. The enrichment analysis revealed significant involvement of genes related to chromosome segregation, mitotic and meiotic cell cycle transitions, and protein phosphorylation. Notably, \"Progesterone-mediated oocyte maturation\" appeared as a top KEGG pathway, which, despite its name, often shares underlying molecular machinery with spermatogenesis, particularly in terms of cell cycle progression and hormone signaling. Literature search further supports the critical role of precise meiotic regulation and chromosome dynamics in successful spermatogenesis.\n\n## Detailed Analysis\n\n### Enrichment Analysis Results\n\n**GO_Biological_Process_2023:**\n\nThe top enriched GO Biological Process terms are strongly indicative of active cell division and precise genetic material handling:\n\n*   **Regulation Of Chromosome Segregation (GO:0051983)**: This term (adjusted p-value = 0.0356) is highly relevant to spermatogenesis, as accurate chromosome segregation is crucial during meiosis to produce haploid sperm. Genes like CSNK2A2, KIF2C, BUB1, and NCAPH are involved, pointing to regulatory mechanisms ensuring proper distribution of chromosomes.\n*   **Mitotic Cell Cycle Phase Transition (GO:0044772)** and **Mitotic G2/M Transition Checkpoint (GO:0044818)**: These terms (adjusted p-value = 0.0356 and 0.0455, respectively) suggest that while the overall context is spermatogenesis (meiosis), there are also underlying mitotic processes or regulatory components active, potentially in spermatogonia proliferation or shared machinery. Genes like CCNB2, CCNA1, CDK1, AURKA, DBF4, RAD17, TOPBP1, and CHFR are key players in cell cycle control and checkpoints.\n*   **Peptidyl-Serine Phosphorylation (GO:0018105)** and **Peptidyl-Serine Modification (GO:0018209)**: These general phosphorylation/modification terms (adjusted p-value = 0.0356 for both) highlight the extensive post-translational modifications, particularly phosphorylation, that regulate proteins during spermatogenesis, impacting everything from cell cycle progression to sperm maturation. Genes like CAMK4, MAST2, CSNK2A2, CDK1, TTK, MTOR, and AURKA are central to these phosphorylation events.\n*   **Response To Unfolded Protein (GO:0006986)**: This term (adjusted p-value = 0.0455) indicates that protein quality control and stress responses are active, which is plausible given the extensive protein synthesis and remodeling occurring during germ cell development and spermiogenesis. HSPA1L, HSPA4L, HSPA2, and PACRG are among the associated genes, pointing to chaperone functions.\n\n**KEGG_2021_Human:**\n\nThe KEGG pathways provide a more consolidated view:\n\n*   **Progesterone-mediated oocyte maturation**: Despite its name, this pathway (adjusted p-value = 0.0061) is highly relevant. Many of the genes involved (CCNB2, CCNA1, CDK1, BRAF, BUB1, AURKA) are critical for cell cycle progression and meiosis in both sexes. This indicates that core cell cycle regulatory mechanisms are shared between oogenesis and spermatogenesis.\n*   **Cell cycle**: This general pathway (adjusted p-value = 0.0119) further reinforces the strong enrichment of cell division processes, with genes such as CCNB2, CCNA1, DBF4, CDK1, TTK, and BUB1.\n*   **Longevity regulating pathway** and **Cellular senescence**: These pathways (adjusted p-value = 0.0061 and 0.0304, respectively) suggest that aspects of cellular aging, survival, and cell fate decisions are also regulated, which is important for maintaining the germline stem cell pool and ensuring healthy sperm production. Genes like CLPB, HSPA1L, CAMK4, HSPA2, SIRT1, MTOR, VDAC3, CCNA1, CCNB2, and CDK1 are implicated.\n*   **Glycolysis / Gluconeogenesis**: This metabolic pathway (adjusted p-value = 0.0396) includes genes like LDHC, PDHA2, GAPDHS, and PGK2. This highlights the high energy demands of proliferating and differentiating germ cells, which rely heavily on glucose metabolism to fuel spermatogenesis.\n\n### Literature Support\n\nThe literature search for \"spermatogenesis chromosome segregation,\" \"meiotic cell cycle,\" or \"sperm protein phosphorylation\" yielded several relevant papers:\n\n*   **Histone methyltransferase MET-2 differentially regulates autosome and X-chromosome structure and transcription during meiosis in *C. elegans*** by Remsburg C and Jaramillo-Lambert A (2026). This preprint directly investigates chromosome segregation and structure during meiosis in spermatogenesis, highlighting the importance of chromatin regulation, which is implicitly connected to gene expression and chromosome dynamics observed in the enrichment analysis.\n*   **Molecular genetics of meiotic initiation in mammals** by Wenner SM et al. (2026, PMID:42479652) and **MEIOC prevents continued mitotic cycling and promotes meiotic entry during mouse oogenesis** by Ushuhuda EG et al. (2026, PMID:41287933). While the latter focuses on oogenesis, both discuss the critical transition from mitosis to meiosis and the regulation of cell cycle progression and chromosome events, which are central to spermatogenesis as well, aligning with the \"Mitotic Cell Cycle Phase Transition\" and \"Progesterone-mediated oocyte maturation\" pathways.\n*   **High-resolution global recombination mapping in C. elegans reveals sexual dimorphisms shaped by meiotic chromosomal features and structures** by Bush ZD et al. (2026, PMID:42447171). This paper discusses recombination and sexually dimorphic aspects of meiosis, reinforcing the complexity of chromosome behavior during gamete formation.\n*   **Modeling mammalian meiosis with pluripotent stem cells: progress and challenges** by Yang F et al. (2026, PMID:41514294) provides a broader context for studying mammalian meiosis, emphasizing the \"carefully regulated molecular events including double-strand break repair, remodeling of the chromatin and the segregation of the chromosomes\" which are all processes reflected in the enriched terms.\n\n### Biological Interpretation\n\nThe gene set strongly points to a tightly regulated program of **cell division and differentiation** essential for spermatogenesis. The prominent enrichment of **chromosome segregation** and **cell cycle transition** pathways from both GO and KEGG libraries confirms that the genes are critically involved in the precise meiotic divisions required to generate haploid spermatozoa. The presence of genes in \"Progesterone-mediated oocyte maturation\" (KEGG) emphasizes that fundamental cell cycle machinery and hormonal signaling components are conserved and shared between male and female germline development, even if the ultimate outcome differs.\n\nFurthermore, the significant enrichment in **protein phosphorylation and modification** indicates extensive regulatory networks fine-tuning protein function during germ cell development. This is crucial for orchestrating complex events like chromatin remodeling, flagellar assembly, and capacitation, which prepare sperm for fertilization. The \"Response To Unfolded Protein\" pathway suggests robust protein quality control mechanisms are in place, vital for maintaining cellular integrity during the demanding process of spermatogenesis, especially under stress conditions. Finally, the \"Glycolysis / Gluconeogenesis\" pathway highlights the high metabolic activity and specific energy requirements of developing sperm, which must fuel their maturation and motility.\n\nIn the context of spermatogenesis, the most biologically relevant terms are those directly related to **meiosis, chromosome segregation, and cell cycle control**, such as \"Regulation Of Chromosome Segregation,\" \"Mitotic Cell Cycle Phase Transition,\" and \"Progesterone-mediated oocyte maturation\" (due to shared underlying mechanisms). The \"Peptidyl-Serine Phosphorylation\" and \"Response To Unfolded Protein\" terms are also highly relevant as they indicate essential regulatory and quality control processes. The \"Glycolysis / Gluconeogenesis\" pathway is important for understanding the metabolic demands. Terms like \"Longevity regulating pathway\" and \"Cellular senescence\" might reflect broader cellular health and stem cell maintenance aspects within the testis microenvironment, or specific mechanisms of germ cell apoptosis during inefficient spermatogenesis, warranting further investigation to clarify their precise role in this specific context.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'genes': 'PDHA2, TSSK2, TNP1, ZPBP, DPEP3, ADAM2, ACTL7B, GAPDHS, TUBA3C, LDHC, DDX25, PRM2, TCP11, PIAS2, PAPOLB, OAZ3, PHF7, ODF1, ACRBP, YBX2, CSNK2A2, NAA11, TULP2, ADAD1, SYCP1, DDX4, MLF1, TEKT2, SPATA6, PGK2, HSPA2, ACRV1, CLPB, CRISP2, ZC2HC1C, AKAP4, CCNA1, CCT6B, PACRG, GSG1, THEG, HSPA4L, CST8, DCC, HSPA1L, GSTM3, DNAJB8, IL13RA2, CAMK4, LPIN1, ZC3H14, COIL, PHKG2, KIF2C, RPL39L, SLC2A5, PCSK4, AURKA, MLLT10, NOS1, ART3, CCNB2, NPHP1, CLGN, MAST2, MTOR, CDKN3, ZNRF4, AGFG1, SNAP91, PSMG1, CHFR, TNP2, EZH2, HBZ, ARL4A, SLC12A2, BRAF, VDAC3, POMC, IFT88, TKTL1, NEK2, STAM2, H1-6, GMCL1, MTNR1A, RFC4, DBF4, PRKAR2A, TTK, DMC1, NCAPH, PEBP1, CHRM4, TOPBP1, SCG5, NEFH, MAP7, BUB1, SEPTIN4, PGS1, NPY5R, TSN, CDK1, SHE, PARP2, TNNI3, PCSK1N, IDE, GPR182, RAD17, TLE4, ACE, SIRT1, HTR5A, TALDO1, NF2, CLVS1, CNIH2, GRM8, STRBP, ADCYAP1, ALOX15, MEP1B, SCG3, GFI1, ELOVL3, IL12RB2, DMRT1, GAD1, CFTR, JAM3, IP6K1, HOXB1', 'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human'}",
+    "Tool: search_literature | Args: {'max_results': 5, 'query': 'spermatogenesis \"chromosome segregation\" OR \"meiotic cell cycle\" OR \"sperm protein phosphorylation\"', 'sort_by': 'relevance'}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Spermatogenesis) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: PDHA2, TSSK2, TNP1, ZPBP, DPEP3, ADAM2, ACTL7B, GAPDHS, TUBA3C, "
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Analysis Plan for the Spermatogenesis Gene List**\n\nOkay, so I've got this gene list and the goal is to understand its role within spermatogenesis. My approach will be a combination of rigorous computational analysis and targeted literature review.\n\nFirst, I need to get a handle on the functional landscape. I'll kick things off by using `run_enrichment_analysis`. I'll specify the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries; these should give me a solid overview of the biological processes and pathways potentially involved.\n\nNext, I'll dive into the output. My expertise will be critical here. I'll need to sift through the results and pinpoint the most statistically significant and, crucially, the most *relevant* terms within the specific context of spermatogenesis. I'll be looking for biological functions or pathways that are strongly suggestive of a role in sperm development.\n\nThis sets the stage for the literature search. I'll need to strategically formulate queries for `search_literature`. The goal here is to find supporting evidence for the enriched terms I've identified. I'll tailor the queries to prioritize terms that are directly linked to spermatogenesis or key biological processes within that context. I want to limit myself to a manageable number of results, so I'll cap the search at five hits.\n\nFinally, the grand finale: the biological interpretation. This is where I'll synthesize everything. I'll carefully integrate the enrichment results with the findings from the literature search. The goal is to provide a concise and, above all, biologically meaningful interpretation, highlighting the most relevant terms in the context of spermatogenesis. This combined analysis will provide a strong and well-supported interpretation of this gene list.",
+      "action": "run_enrichment_analysis",
+      "args": "genes=PDHA2, TSSK2, TNP1, ZPBP, DPEP3, ADAM2, ACTL7B, GA..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "aab63148-cba2-4a75-a053-f05083b05a0b",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 135 | Total significant terms: 11"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "The enrichment analysis of your gene list, within the context of spermatogenesis, reveals several key biological processes and pathways that are highly relevant to germ cell development and function. The most prominent themes involve cell cycle regulation, chromosome dynamics, protein modification, stress response, and metabolic adaptations.\n\n## Detailed Analysis\n\n**Cell Cycle and Chromosome Dynamics:**\nThe enrichment results strongly highlight the intricate regulation of cell division. Terms li"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Interpretation of the Enrichment Analysis Findings**\n\nOkay, so looking at these enrichment analysis results, I'm seeing a really cohesive picture emerge, and it directly supports what I'd expect in the context of spermatogenesis. The key terms are all screaming \"cell division,\" \"chromatin dynamics,\" and \"metabolic adaptation,\" which are, as we know, absolutely fundamental to successful sperm development.\n\nSpecifically, the *GO Biological Process* terms are spot on. Regulation of Chromosome Segregation? That's a no-brainer for both mitotic proliferation of spermatogonia and the meiotic divisions in spermatocytes. The presence of genes like *CSNK2A2*, *KIF2C*, *BUB1*, and *NCAPH* really drive home the importance of precise chromosome handling. Then, the mitotic cell cycle and G2/M transition checkpoints, with things like *CCNB2*, *CCNA1*, and *CDK1* in the mix, further highlight the intense cell cycle activity.\n\nThe protein modification pathways, particularly *Peptidyl-Serine Phosphorylation*, are also critical. Phosphorylation is a master regulator, controlling everything from cell cycle progression to chromatin remodeling, and signal transduction which are all so vital in spermatogenesis. I'm noting genes like *CAMK4*, *MAST2*, and *AURKA* here. I'm also remembering that the response to unfolded protein pathway is highly relevant as well. Spermatogenesis requires a massive amount of protein synthesis and remodeling, so keeping cellular proteostasis, especially with all the stress, is key. Those chaperone genes, like *HSPA1L* and *HSPA4L*, are going to be essential for proper sperm formation.\n\nThe *KEGG* pathway, \"Progesterone-mediated oocyte maturation,\" is interesting, even if it's explicitly about oocytes. It's a reminder that meiotic progression is going to leverage similar regulatory machinery, and the pathways we're seeing here will likely share a significant overlap in key components and mechanisms.\n\nSo, overall, this data is reinforcing my understanding of the spermatogenesis process. It's not just a bunch of random genes; they're painting a clear picture of the cellular events that I would have expected to see. These findings align perfectly with the known biological context and the need for cell division, chromosome dynamics, and metabolic adaptation.",
+      "action": "search_literature",
+      "args": "max_results=5, query=spermatogenesis \"chromosome segregation\" OR \"meiot..., sort_by=relevance",
+      "tool_name": "search_literature",
+      "tool_call_id": "3ab213ef-2efd-46e2-8de4-09c8514876f3",
+      "observation": "=== LITERATURE SEARCH: 'spermatogenesis \"chromosome segregation\" OR \"meiotic cell cycle\" OR \"sperm protein phosphorylation\"' === | Found 5 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "## Summary\n\nThe gene set provided for analysis in the context of spermatogenesis primarily highlights key processes involved in cell cycle regulation, chromosome dynamics during meiosis, protein modification, and cellular energy metabolism. The enrichment analysis revealed significant involvement of genes related to chromosome segregation, mitotic and meiotic cell cycle transitions, and protein phosphorylation. Notably, \"Progesterone-mediated oocyte maturation\" appeared as a top KEGG pathway, wh"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "genes=PDHA2, TSSK2, TNP1, ZPBP, DPEP3, ADAM2, ACTL7B, GA..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "thought": "**My Analysis Plan for the Spermatogenesis Gene List**\n\nOkay, so I've got this gene list and the goal is to understand its role within spermatogenesis. My approach will be a combination of rigorous computational analysis and targeted literature review.\n\nFirst, I need to get a handle on the functional landscape. I'll kick things off by using `run_enrichment_analysis`. I'll specify the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries; these should give me a solid overview of the biological processes and pathways potentially involved.\n\nNext, I'll dive into the output. My expertise will be critical here. I'll need to sift through the results and pinpoint the most statistically significant and, crucially, the most *relevant* terms within the specific context of spermatogenesis. I'll be looking for biological functions or pathways that are strongly suggestive of a role in sperm development.\n\nThis sets the stage for the literature search. I'll need to strategically formulate queries for `search_literature`. The goal here is to find supporting evidence for the enriched terms I've identified. I'll tailor the queries to prioritize terms that are directly linked to spermatogenesis or key biological processes within that context. I want to limit myself to a manageable number of results, so I'll cap the search at five hits.\n\nFinally, the grand finale: the biological interpretation. This is where I'll synthesize everything. I'll carefully integrate the enrichment results with the findings from the literature search. The goal is to provide a concise and, above all, biologically meaningful interpretation, highlighting the most relevant terms in the context of spermatogenesis. This combined analysis will provide a strong and well-supported interpretation of this gene list.",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 135 | Total significant terms: 11"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "max_results=5, query=spermatogenesis \"chromosome segregation\" OR \"meiot..., sort_by=relevance",
+      "thought": "**My Interpretation of the Enrichment Analysis Findings**\n\nOkay, so looking at these enrichment analysis results, I'm seeing a really cohesive picture emerge, and it directly supports what I'd expect in the context of spermatogenesis. The key terms are all screaming \"cell division,\" \"chromatin dynamics,\" and \"metabolic adaptation,\" which are, as we know, absolutely fundamental to successful sperm development.\n\nSpecifically, the *GO Biological Process* terms are spot on. Regulation of Chromosome Segregation? That's a no-brainer for both mitotic proliferation of spermatogonia and the meiotic divisions in spermatocytes. The presence of genes like *CSNK2A2*, *KIF2C*, *BUB1*, and *NCAPH* really drive home the importance of precise chromosome handling. Then, the mitotic cell cycle and G2/M transition checkpoints, with things like *CCNB2*, *CCNA1*, and *CDK1* in the mix, further highlight the intense cell cycle activity.\n\nThe protein modification pathways, particularly *Peptidyl-Serine Phosphorylation*, are also critical. Phosphorylation is a master regulator, controlling everything from cell cycle progression to chromatin remodeling, and signal transduction which are all so vital in spermatogenesis. I'm noting genes like *CAMK4*, *MAST2*, and *AURKA* here. I'm also remembering that the response to unfolded protein pathway is highly relevant as well. Spermatogenesis requires a massive amount of protein synthesis and remodeling, so keeping cellular proteostasis, especially with all the stress, is key. Those chaperone genes, like *HSPA1L* and *HSPA4L*, are going to be essential for proper sperm formation.\n\nThe *KEGG* pathway, \"Progesterone-mediated oocyte maturation,\" is interesting, even if it's explicitly about oocytes. It's a reminder that meiotic progression is going to leverage similar regulatory machinery, and the pathways we're seeing here will likely share a significant overlap in key components and mechanisms.\n\nSo, overall, this data is reinforcing my understanding of the spermatogenesis process. It's not just a bunch of random genes; they're painting a clear picture of the cellular events that I would have expected to see. These findings align perfectly with the known biological context and the need for cell division, chromosome dynamics, and metabolic adaptation.",
+      "observation": "=== LITERATURE SEARCH: 'spermatogenesis \"chromosome segregation\" OR \"meiotic cell cycle\" OR \"sperm protein phosphorylation\"' === | Found 5 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "PDHA2",
+      "TSSK2",
+      "TNP1",
+      "ZPBP",
+      "DPEP3",
+      "ADAM2",
+      "ACTL7B",
+      "GAPDHS",
+      "TUBA3C",
+      "LDHC",
+      "DDX25",
+      "PRM2",
+      "TCP11",
+      "PIAS2",
+      "PAPOLB",
+      "OAZ3",
+      "PHF7",
+      "ODF1",
+      "ACRBP",
+      "YBX2",
+      "CSNK2A2",
+      "NAA11",
+      "TULP2",
+      "ADAD1",
+      "SYCP1",
+      "DDX4",
+      "MLF1",
+      "TEKT2",
+      "SPATA6",
+      "PGK2",
+      "HSPA2",
+      "ACRV1",
+      "CLPB",
+      "CRISP2",
+      "ZC2HC1C",
+      "AKAP4",
+      "CCNA1",
+      "CCT6B",
+      "PACRG",
+      "GSG1",
+      "THEG",
+      "HSPA4L",
+      "CST8",
+      "DCC",
+      "HSPA1L",
+      "GSTM3",
+      "DNAJB8",
+      "IL13RA2",
+      "CAMK4",
+      "LPIN1",
+      "ZC3H14",
+      "COIL",
+      "PHKG2",
+      "KIF2C",
+      "RPL39L",
+      "SLC2A5",
+      "PCSK4",
+      "AURKA",
+      "MLLT10",
+      "NOS1",
+      "ART3",
+      "CCNB2",
+      "NPHP1",
+      "CLGN",
+      "MAST2",
+      "MTOR",
+      "CDKN3",
+      "ZNRF4",
+      "AGFG1",
+      "SNAP91",
+      "PSMG1",
+      "CHFR",
+      "TNP2",
+      "EZH2",
+      "HBZ",
+      "ARL4A",
+      "SLC12A2",
+      "BRAF",
+      "VDAC3",
+      "POMC",
+      "IFT88",
+      "TKTL1",
+      "NEK2",
+      "STAM2",
+      "H1-6",
+      "GMCL1",
+      "MTNR1A",
+      "RFC4",
+      "DBF4",
+      "PRKAR2A",
+      "TTK",
+      "DMC1",
+      "NCAPH",
+      "PEBP1",
+      "CHRM4",
+      "TOPBP1",
+      "SCG5",
+      "NEFH",
+      "MAP7",
+      "BUB1",
+      "SEPTIN4",
+      "PGS1",
+      "NPY5R",
+      "TSN",
+      "CDK1",
+      "SHE",
+      "PARP2",
+      "TNNI3",
+      "PCSK1N",
+      "IDE",
+      "GPR182",
+      "RAD17",
+      "TLE4",
+      "ACE",
+      "SIRT1",
+      "HTR5A",
+      "TALDO1",
+      "NF2",
+      "CLVS1",
+      "CNIH2",
+      "GRM8",
+      "STRBP",
+      "ADCYAP1",
+      "ALOX15",
+      "MEP1B",
+      "SCG3",
+      "GFI1",
+      "ELOVL3",
+      "IL12RB2",
+      "DMRT1",
+      "GAD1",
+      "CFTR",
+      "JAM3",
+      "IP6K1",
+      "HOXB1"
+    ],
+    "gene_count": 135,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Regulation Of Chromosome Segregation (GO:0051983)",
+          "term": "Regulation Of Chromosome Segregation (GO:0051983)",
+          "overlap": "4/28",
+          "p_value": 3.584414449440255e-05,
+          "z_score": 25.24300254452926,
+          "combined_score": 258.39571276242697,
+          "overlap_genes": [
+            "CSNK2A2",
+            "KIF2C",
+            "BUB1",
+            "NCAPH"
+          ],
+          "genes": [
+            "CSNK2A2",
+            "KIF2C",
+            "BUB1",
+            "NCAPH"
+          ],
+          "adjusted_p_value": 0.03563732409347438
+        },
+        {
+          "rank": 2,
+          "term_name": "Peptidyl-Serine Phosphorylation (GO:0018105)",
+          "term": "Peptidyl-Serine Phosphorylation (GO:0018105)",
+          "overlap": "7/158",
+          "p_value": 9.989161546686333e-05,
+          "z_score": 7.139797185430464,
+          "combined_score": 65.76770489720487,
+          "overlap_genes": [
+            "CAMK4",
+            "MAST2",
+            "CSNK2A2",
+            "CDK1",
+            "TTK",
+            "MTOR",
+            "AURKA"
+          ],
+          "genes": [
+            "CAMK4",
+            "MAST2",
+            "CSNK2A2",
+            "CDK1",
+            "TTK",
+            "MTOR",
+            "AURKA"
+          ],
+          "adjusted_p_value": 0.03563732409347438
+        },
+        {
+          "rank": 3,
+          "term_name": "Mitotic Cell Cycle Phase Transition (GO:0044772)",
+          "term": "Mitotic Cell Cycle Phase Transition (GO:0044772)",
+          "overlap": "6/111",
+          "p_value": 0.00010721683713231752,
+          "z_score": 8.753045404208194,
+          "combined_score": 80.00858801109956,
+          "overlap_genes": [
+            "CCNB2",
+            "CCNA1",
+            "DBF4",
+            "CDK1",
+            "AURKA",
+            "CDKN3"
+          ],
+          "genes": [
+            "CCNB2",
+            "CCNA1",
+            "DBF4",
+            "CDK1",
+            "AURKA",
+            "CDKN3"
+          ],
+          "adjusted_p_value": 0.03563732409347438
+        },
+        {
+          "rank": 4,
+          "term_name": "Peptidyl-Serine Modification (GO:0018209)",
+          "term": "Peptidyl-Serine Modification (GO:0018209)",
+          "overlap": "7/166",
+          "p_value": 0.00013589065431258103,
+          "z_score": 6.777810534591195,
+          "combined_score": 60.34732059882401,
+          "overlap_genes": [
+            "CAMK4",
+            "MAST2",
+            "CSNK2A2",
+            "CDK1",
+            "TTK",
+            "MTOR",
+            "AURKA"
+          ],
+          "genes": [
+            "CAMK4",
+            "MAST2",
+            "CSNK2A2",
+            "CDK1",
+            "TTK",
+            "MTOR",
+            "AURKA"
+          ],
+          "adjusted_p_value": 0.03563732409347438
+        },
+        {
+          "rank": 5,
+          "term_name": "Response To Unfolded Protein (GO:0006986)",
+          "term": "Response To Unfolded Protein (GO:0006986)",
+          "overlap": "4/44",
+          "p_value": 0.00021859504173592486,
+          "z_score": 15.133587786259541,
+          "combined_score": 127.55026152395557,
+          "overlap_genes": [
+            "PACRG",
+            "HSPA1L",
+            "HSPA4L",
+            "HSPA2"
+          ],
+          "genes": [
+            "PACRG",
+            "HSPA1L",
+            "HSPA4L",
+            "HSPA2"
+          ],
+          "adjusted_p_value": 0.0454644654653209
+        },
+        {
+          "rank": 6,
+          "term_name": "Mitotic G2/M Transition Checkpoint (GO:0044818)",
+          "term": "Mitotic G2/M Transition Checkpoint (GO:0044818)",
+          "overlap": "4/46",
+          "p_value": 0.00026004460704664,
+          "z_score": 14.41148673209742,
+          "combined_score": 118.9618852536815,
+          "overlap_genes": [
+            "CDK1",
+            "RAD17",
+            "TOPBP1",
+            "CHFR"
+          ],
+          "genes": [
+            "CDK1",
+            "RAD17",
+            "TOPBP1",
+            "CHFR"
+          ],
+          "adjusted_p_value": 0.0454644654653209
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Progesterone-mediated oocyte maturation",
+          "term": "Progesterone-mediated oocyte maturation",
+          "overlap": "6/100",
+          "p_value": 5.996761645667396e-05,
+          "z_score": 9.782780801583375,
+          "combined_score": 95.10531751597773,
+          "overlap_genes": [
+            "CCNB2",
+            "CCNA1",
+            "CDK1",
+            "BRAF",
+            "BUB1",
+            "AURKA"
+          ],
+          "genes": [
+            "CCNB2",
+            "CCNA1",
+            "CDK1",
+            "BRAF",
+            "BUB1",
+            "AURKA"
+          ],
+          "adjusted_p_value": 0.006063337740718629
+        },
+        {
+          "rank": 2,
+          "term_name": "Longevity regulating pathway",
+          "term": "Longevity regulating pathway",
+          "overlap": "6/151",
+          "p_value": 6.699820707976386e-05,
+          "z_score": 9.578003875968992,
+          "combined_score": 92.0527077777344,
+          "overlap_genes": [
+            "CLPB",
+            "HSPA1L",
+            "CAMK4",
+            "HSPA2",
+            "SIRT1",
+            "MTOR"
+          ],
+          "genes": [
+            "CLPB",
+            "HSPA1L",
+            "CAMK4",
+            "HSPA2",
+            "SIRT1",
+            "MTOR"
+          ],
+          "adjusted_p_value": 0.006063337740718629
+        },
+        {
+          "rank": 3,
+          "term_name": "Cell cycle",
+          "term": "Cell cycle",
+          "overlap": "6/124",
+          "p_value": 0.0001968703769458321,
+          "z_score": 7.7836026803311,
+          "combined_score": 66.41720948521767,
+          "overlap_genes": [
+            "CCNB2",
+            "CCNA1",
+            "DBF4",
+            "CDK1",
+            "TTK",
+            "BUB1"
+          ],
+          "genes": [
+            "CCNB2",
+            "CCNA1",
+            "DBF4",
+            "CDK1",
+            "TTK",
+            "BUB1"
+          ],
+          "adjusted_p_value": 0.011877846075731871
+        },
+        {
+          "rank": 4,
+          "term_name": "Cellular senescence",
+          "term": "Cellular senescence",
+          "overlap": "6/156",
+          "p_value": 0.0006718174124996561,
+          "z_score": 6.113178294573643,
+          "combined_score": 44.6599705146811,
+          "overlap_genes": [
+            "CCNA1",
+            "CCNB2",
+            "CDK1",
+            "VDAC3",
+            "SIRT1",
+            "MTOR"
+          ],
+          "genes": [
+            "CCNA1",
+            "CCNB2",
+            "CDK1",
+            "VDAC3",
+            "SIRT1",
+            "MTOR"
+          ],
+          "adjusted_p_value": 0.03039973791560944
+        },
+        {
+          "rank": 5,
+          "term_name": "Glycolysis / Gluconeogenesis",
+          "term": "Glycolysis / Gluconeogenesis",
+          "overlap": "4/67",
+          "p_value": 0.0010949931084058525,
+          "z_score": 9.597479704349933,
+          "combined_score": 65.42608833688054,
+          "overlap_genes": [
+            "LDHC",
+            "PDHA2",
+            "GAPDHS",
+            "PGK2"
+          ],
+          "genes": [
+            "LDHC",
+            "PDHA2",
+            "GAPDHS",
+            "PGK2"
+          ],
+          "adjusted_p_value": 0.03963875052429186
+        }
+      ]
+    },
+    "significant_terms_total": 11,
+    "execution_time": 1.84,
+    "dataframe": "    rank  ...                     library\n0      1  ...  GO_Biological_Process_2023\n4      5  ...  GO_Biological_Process_2023\n5      6  ...  GO_Biological_Process_2023\n6      1  ...             KEGG_2021_Human\n7      2  ...             KEGG_2021_Human\n2      3  ...  GO_Biological_Process_2023\n8      3  ...             KEGG_2021_Human\n1      2  ...  GO_Biological_Process_2023\n10     5  ...             KEGG_2021_Human\n3      4  ...  GO_Biological_Process_2023\n9      4  ...             KEGG_2021_Human\n\n[11 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "42479652",
+      "pmcid": "",
+      "doi": "10.1093/biolre/ioag155",
+      "url": "https://doi.org/10.1093/biolre/ioag155",
+      "title": "Molecular genetics of meiotic initiation in mammals.",
+      "abstract": "Mammalian fertility is dependent upon meiosis, a specialized cell division by which diploid progenitors undergo one round of DNA replication followed by two rounds of chromosomal segregation to produce haploid gametes. The germ line in the testis and ovary undergoes several rounds of mitotic divisions before ultimately transitioning to the meiotic cell cycle. This transition is achieved by replacing the mitotic cell cycle program with the meiotic one. Here, we discuss the molecular players that regulate the transition from mitosis to meiosis. In spermatogenesis, MEIOC, YTHDC2, and RBM46 form an RNA-binding complex that post-transcriptionally represses the mitotic cell cycle program, while in oogenesis, MEIOC inhibits mitotic cycling prior to meiotic initiation. STRA8 and MEIOSIN act as a transcription factor complex to drive meiotic initiation by upregulating genes involved in cell cycle progression and the unique chromosomal events of meiosis in oogenesis and spermatogenesis. These complexes are activated by upstream molecular players, including transcription factors, epigenetic regulators of chromatin structure, and extrinsic signaling factors, that form an intricate and reinforced molecular network to precisely regulate the transition from the mitotic to meiotic cell cycle. Here, we integrate current knowledge of the regulation of meiotic initiation in mammals and highlight key gaps in this regulatory program that remain to be explored.",
+      "authors": "Wenner SM, Ola OM, Pfaltzgraff NG, Ushuhuda EG, Mikedis MM.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "ioag155",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-07-21",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    },
+    {
+      "pmid": "41287933",
+      "pmcid": "PMC12848572",
+      "doi": "10.1242/dev.205037",
+      "url": "https://doi.org/10.1242/dev.205037",
+      "title": "MEIOC prevents continued mitotic cycling and promotes meiotic entry during mouse oogenesis.",
+      "abstract": "To generate haploid gametes, germ cells must transition from mitosis to meiosis. In mammals, the transcriptional activator STRA8-MEIOSIN mediates the decision to enter the meiotic cell cycle, but how germ cells prevent continued mitotic cycling before meiotic entry remains unclear. MEIOC was previously shown to repress the mitotic program after meiotic entry. Here, we investigate the role of MEIOC in the mitosis-to-meiosis transition during mouse oogenesis. Using cell proliferation analysis and cell cycle transcriptomics, we demonstrate that MEIOC prevents continued mitotic cycling prior to meiotic entry in oogenic cells. We find that G1/S cyclin CCNA2 is downregulated during the mitosis-to-meiosis transition, and MEIOC contributes to this downregulation. MEIOC also promotes entry into meiosis by increasing Meiosin transcript abundance and consequently activating STRA8-MEIOSIN. Thus, in mouse oogenic cells, the transition from mitosis to meiosis occurs as two molecularly regulated steps - (1) the halt of mitotic cycling and (2) entry into the meiotic cell cycle - and that MEIOC modifies the cell cycle program to facilitate both steps in this transition.",
+      "authors": "Ushuhuda EG, Nguyen JT, Pfaltzgraff NG, Wenner SM, Kofron M, Mikedis MM.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 1,
+      "citation_count": 1,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "dev205037",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2026-01-12",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    },
+    {
+      "pmid": "42447171",
+      "pmcid": "",
+      "doi": "10.1371/journal.pgen.1012237",
+      "url": "https://doi.org/10.1371/journal.pgen.1012237",
+      "title": "High-resolution global recombination mapping in C. elegans reveals sexual dimorphisms shaped by meiotic chromosomal features and structures.",
+      "abstract": "Crossover recombination events during meiosis repair DNA double-strand breaks and ensure accurate chromosome segregation in most organisms. For many species, the genomic distribution of crossovers is nonrandom and sexually dimorphic. While many species evolved kilobase-scale \"hotspots\" for crossover formation, the Caenorhabditis elegans genome lacks hotspots, and crossovers are enriched across megabase-scale domains. Further, genetic and cytological studies indicate the crossover frequency in C. elegans spermatogenesis is higher relative to oogenesis in many but not all genetic intervals. To determine the genomic features that contribute to the sexually dimorphic recombination landscape in the absence of hotspots, we defined and analyzed the recombination landscape across the whole genome in C. elegans using whole-genome sequencing and high-resolution recombination mapping in single worms bearing recombinant chromosomes from individual sperm and oocytes. We find that the spatial distribution of crossovers is sexually dimorphic on chromosomes I, II, and III, and that the global rate of double-crossover events is 4.7-fold higher in spermatocytes. Additionally, we find that pairing and synapsis may contribute to the sexually dimorphic crossover landscape. In comparison to the spermatocyte crossover landscape, a higher proportion of oocyte crossovers are formed in the domains directly adjacent to the pairing centers of each chromosome. Further, reducing the genetic dosage of the synaptonemal complex central region protein SYP-2, which is a meiotic chromosome structural protein required for homologous chromosome synapsis, reshapes the oocyte crossover landscape to resemble observations in wild-type spermatocytes. Finally, we found that spermatocyte crossovers are partially enriched in H3K36me3-marked euchromatic regions, while many oocyte crossovers are enriched in H3K27me3-marked heterochromatic regions. Taken together, our studies reveal how synaptonemal complex component dosage and local chromatin states influence crossover placement and the sex-specific regulation of meiotic recombination.",
+      "authors": "Bush ZD, Conery JS, Wilson HR, Naftaly AFS, Dinwiddie D, Hillers KJ, Libuda DE.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "e1012237",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-07-14",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    },
+    {
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.64898/2026.07.26.740854",
+      "url": "https://doi.org/10.64898/2026.07.26.740854",
+      "title": "Histone methyltransferase MET-2 differentially regulates autosome and X-chromosome structure and transcription during meiosis in  <i>C. elegans</i>",
+      "abstract": "During meiosis, accurate chromosome segregation requires significant condensation and compaction. These processes are mediated by condensins, cohesins, and histone tail modifications. We identified that MET-2, a histone methyltransferase that catalyzes the dimethylation of histone H3 lysine 9 (H3K9me2), differentially impacts chromosome size in the male vs. female  C. elegans germline. In  met-2 null worms, autosomes during spermatogenesis are significantly larger than wild type, while chromosome size during oogenesis is unaffected. X-univalent size in males is also unaffected by loss of MET-2, indicating MET-2 differentially regulates autosomal and X-chromosome compaction in male spermatogenesis. Autosome size is not changed when males harbor a catalytically deficient MET-2  (met-2 CD) or have mutations preventing germline histone H3K9 methylation (H3K9R). In addition,  met-2 males, in contrast to  met-2 CD or H3K9R males, have more active RNA pol II in later stages of meiosis. These data suggest MET-2 plays a noncatalytic role in mediating chromosome structure and transcription. In  met-2 male germ lines, genes on the X chromosome, which is typically enriched in H3K9me2, are significantly more likely to be upregulated than genes on autosomes, even though X-univalent size is unchanged. These results suggest that MET-2 plays a sex-specific role that is not limited to its enzymatic activity.",
+      "authors": "Remsburg C, Jaramillo-Lambert A.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "PPR",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-07-29",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates chromosome segregation and spermatogenesis"
+    },
+    {
+      "pmid": "41514294",
+      "pmcid": "PMC12882288",
+      "doi": "10.1186/s13148-025-02044-2",
+      "url": "https://doi.org/10.1186/s13148-025-02044-2",
+      "title": "Modeling mammalian meiosis with pluripotent stem cells: progress and challenges.",
+      "abstract": "Meiosis is a specialized cell division producing haploid gametes from diploid germ cells and is vital to sexual reproduction in mammals. This process entails carefully regulated molecular events including double-strand break repair, remodeling of the chromatin and the segregation of the chromosomes. There have been significant advances in understanding the core mechanisms through genetics and imaging techniques. Nevertheless, studying human meiosis is still difficult owing to limited access to tissue and interspecies differences in models using animals. Pluripotent stem cells (PSCs), namely embryonic and induced pluripotent stem cells, have turned out to be new in vitro models to model early germ cell development and meiotic progress in recent times. This article outlines the molecular regulation of meiosis in mammals and discusses the way in which the use of PSC-based models has begun to supplement classical methodologies in the study of meiosis.",
+      "authors": "Yang F, Gu J, Chen H, Wang Y, Huang W, Chen X, Liu M, Yu X, Cp Cheung K.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "25",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-01-09",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 25.969242572784424,
+  "phase": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Regulation Of Chromosome Segregation (GO:0051983) -> genes: [CSNK2A2, KIF2C, BUB1, NCAPH]\n- Peptidyl-Serine Phosphorylation (GO:0018105) -> genes: [CAMK4, MAST2, CSNK2A2, CDK1, TTK, MTOR, AURKA]\n- Mitotic Cell Cycle Phase Transition (GO:0044772) -> genes: [CCNB2, CCNA1, DBF4, CDK1, AURKA, CDKN3]\n- Peptidyl-Serine Modification (GO:0018209) -> genes: [CAMK4, MAST2, CSNK2A2, CDK1, TTK, MTOR, AURKA]\n- Response To Unfolded Protein (GO:0006986) -> genes: [PACRG, HSPA1L, HSPA4L, HSPA2]\n- Mitotic G2/M Transition Checkpoint (GO:0044818) -> genes: [CDK1, RAD17, TOPBP1, CHFR]\n\n[KEGG_2021_Human]\n- Progesterone-mediated oocyte maturation -> genes: [CCNB2, CCNA1, CDK1, BRAF, BUB1, AURKA]\n- Longevity regulating pathway -> genes: [CLPB, HSPA1L, CAMK4, HSPA2, SIRT1, MTOR]\n- Cell cycle -> genes: [CCNB2, CCNA1, DBF4, CDK1, TTK, BUB1]\n- Cellular senescence -> genes: [CCNA1, CCNB2, CDK1, VDAC3, SIRT1, MTOR]\n- Glycolysis / Gluconeogenesis -> genes: [LDHC, PDHA2, GAPDHS, PGK2]\n\n=== ABSTRACTS ===\n[1] Molecular genetics of meiotic initiation in mammals.\nMammalian fertility is dependent upon meiosis, a specialized cell division by which diploid progenitors undergo one round of DNA replication followed by two rounds of chromosomal segregation to produce haploid gametes. The germ line in the testis and ovary undergoes several rounds of mitotic divisions before ultimately transitioning to the meiotic cell cycle. This transition is achieved by replacing the mitotic cell cycle program with the meiotic one. Here, we discuss the molecular players that regulate the transition from mitosis to meiosis. In spermatogenesis, MEIOC, YTHDC2, and RBM46 form an RNA-binding complex that post-transcriptionally represses the mitotic cell cycle program, while in oogenesis, MEIOC inhibits mitotic cycling prior to meiotic initiation. STRA8 and MEIOSIN act as a transcription factor complex to drive meiotic initiation by upregulating genes involved in cell cycle progression and the unique chromosomal events of meiosis in oogenesis and spermatogenesis. These complexes are activated by upstream molecular players, including transcription factors, epigenetic regulators of chromatin structure, and extrinsic signaling factors, that form an intricate and reinforced molecular network to precisely regulate the transition from the mitotic to meiotic cell cycle. Here, we integrate current knowledge of the regulation of meiotic initiation in mammals and highlight key gaps in this regulatory program that remain to be explored.\n[2] MEIOC prevents continued mitotic cycling and promotes meiotic entry during mouse oogenesis.\nTo generate haploid gametes, germ cells must transition from mitosis to meiosis. In mammals, the transcriptional activator STRA8-MEIOSIN mediates the decision to enter the meiotic cell cycle, but how germ cells prevent continued mitotic cycling before meiotic entry remains unclear. MEIOC was previously shown to repress the mitotic program after meiotic entry. Here, we investigate the role of MEIOC in the mitosis-to-meiosis transition during mouse oogenesis. Using cell proliferation analysis and cell cycle transcriptomics, we demonstrate that MEIOC prevents continued mitotic cycling prior to meiotic entry in oogenic cells. We find that G1/S cyclin CCNA2 is downregulated during the mitosis-to-meiosis transition, and MEIOC contributes to this downregulation. MEIOC also promotes entry into meiosis by increasing Meiosin transcript abundance and consequently activating STRA8-MEIOSIN. Thus, in mouse oogenic cells, the transition from mitosis to meiosis occurs as two molecularly regulated steps - (1) the halt of mitotic cycling and (2) entry into the meiotic cell cycle - and that MEIOC modifies the cell cycle program to facilitate both steps in this transition.\n[3] High-resolution global recombination mapping in C. elegans reveals sexual dimorphisms shaped by meiotic chromosomal features and structures.\nCrossover recombination events during meiosis repair DNA double-strand breaks and ensure accurate chromosome segregation in most organisms. For many species, the genomic distribution of crossovers is nonrandom and sexually dimorphic. While many species evolved kilobase-scale \"hotspots\" for crossover formation, the Caenorhabditis elegans genome lacks hotspots, and crossovers are enriched across megabase-scale domains. Further, genetic and cytological studies indicate the crossover frequency in C. elegans spermatogenesis is higher relative to oogenesis in many but not all genetic intervals. To determine the genomic features that contribute to the sexually dimorphic recombination landscape in the absence of hotspots, we defined and analyzed the recombination landscape across the whole genome in C. elegans using whole-genome sequencing and high-resolution recombination mapping in single worms bearing recombinant chromosomes from individual sperm and oocytes. We find that the spatial distribution of crossovers is sexually dimorphic on chromosomes I, II, and III, and that the global rate of double-crossover events is 4.7-fold higher in spermatocytes. Additionally, we find that pairing and synapsis may contribute to the sexually dimorphic crossover landscape. In comparison to the spermatocyte crossover landscape, a higher proportion of oocyte crossovers are formed in the domains directly adjacent to the pairing centers of each chromosome. Further, reducing the genetic dosage of the synaptonemal complex central region protein SYP-2, which is a meiotic chromosome structural protein required for homologous chromosome synapsis, reshapes the oocyte crossover landscape to resemble observations in wild-type spermatocytes. Finally, we found that spermatocyte crossovers are partially enriched in H3K36me3-marked euchromatic regions, while many oocyte crossovers are enriched in H3K27me3-marked heterochromatic regions. Taken together, our studies reveal how synaptonemal complex component dosage and local chromatin states influence crossover placement and the sex-specific regulation of meiotic recombination.\n[4] Histone methyltransferase MET-2 differentially regulates autosome and X-chromosome structure and transcription during meiosis in  <i>C. elegans</i>\nDuring meiosis, accurate chromosome segregation requires significant condensation and compaction. These processes are mediated by condensins, cohesins, and histone tail modifications. We identified that MET-2, a histone methyltransferase that catalyzes the dimethylation of histone H3 lysine 9 (H3K9me2), differentially impacts chromosome size in the male vs. female  C. elegans germline. In  met-2 null worms, autosomes during spermatogenesis are significantly larger than wild type, while chromosome size during oogenesis is unaffected. X-univalent size in males is also unaffected by loss of MET-2, indicating MET-2 differentially regulates autosomal and X-chromosome compaction in male spermatogenesis. Autosome size is not changed when males harbor a catalytically deficient MET-2  (met-2 CD) or have mutations preventing germline histone H3K9 methylation (H3K9R). In addition,  met-2 males, in contrast to  met-2 CD or H3K9R males, have more active RNA pol II in later stages of meiosis. These data suggest MET-2 plays a noncatalytic role in mediating chromosome structure and transcription. In  met-2 male germ lines, genes on the X chromosome, which is typically enriched in H3K9me2, are significantly more likely to be upregulated than genes on autosomes, even though X-univalent size is unchanged. These results suggest that MET-2 plays a sex-specific role that is not limited to its enzymatic activity.\n[5] Modeling mammalian meiosis with pluripotent stem cells: progress and challenges.\nMeiosis is a specialized cell division producing haploid gametes from diploid germ cells and is vital to sexual reproduction in mammals. This process entails carefully regulated molecular events including double-strand break repair, remodeling of the chromatin and the segregation of the chromosomes. There have been significant advances in understanding the core mechanisms through genetics and imaging techniques. Nevertheless, studying human meiosis is still difficult owing to limited access to tissue and interspecies differences in models using animals. Pluripotent stem cells (PSCs), namely embryonic and induced pluripotent stem cells, have turned out to be new in vitro models to model early germ cell development and meiotic progress in recent times. This article outlines the molecular regulation of meiosis in mammals and discusses the way in which the use of PSC-based models has begun to supplement classical methodologies in the study of meiosis.",
+  "judge_claims": [
+    {
+      "claim": "CSNK2A2 is involved in regulation of chromosome segregation.",
+      "label": "GROUNDED",
+      "why": "CSNK2A2 appears in the gene list for Regulation Of Chromosome Segregation (GO:0051983)"
+    },
+    {
+      "claim": "KIF2C is involved in regulation of chromosome segregation.",
+      "label": "GROUNDED",
+      "why": "KIF2C appears in the gene list for Regulation Of Chromosome Segregation (GO:0051983)"
+    },
+    {
+      "claim": "BUB1 is involved in regulation of chromosome segregation.",
+      "label": "GROUNDED",
+      "why": "BUB1 appears in the gene list for Regulation Of Chromosome Segregation (GO:0051983)"
+    },
+    {
+      "claim": "NCAPH is involved in regulation of chromosome segregation.",
+      "label": "GROUNDED",
+      "why": "NCAPH appears in the gene list for Regulation Of Chromosome Segregation (GO:0051983)"
+    },
+    {
+      "claim": "Accurate chromosome segregation is crucial during meiosis to produce haploid sperm.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states 'Crossover recombination events during meiosis...ensure accurate chromosome segregation' and abstract 5 mentions 'segregation of the chromosomes' during meiosis"
+    },
+    {
+      "claim": "CCNB2 is a key player in cell cycle control and checkpoints.",
+      "label": "GROUNDED",
+      "why": "CCNB2 appears in multiple cell cycle-related terms including Mitotic Cell Cycle Phase Transition and Cell cycle"
+    },
+    {
+      "claim": "CCNA1 is a key player in cell cycle control and checkpoints.",
+      "label": "GROUNDED",
+      "why": "CCNA1 appears in multiple cell cycle-related terms including Mitotic Cell Cycle Phase Transition and Cell cycle"
+    },
+    {
+      "claim": "CDK1 is a key player in cell cycle control and checkpoints.",
+      "label": "GROUNDED",
+      "why": "CDK1 appears in multiple cell cycle-related terms including Mitotic Cell Cycle Phase Transition, Cell cycle, and Mitotic G2/M Transition Checkpoint"
+    },
+    {
+      "claim": "AURKA is a key player in cell cycle control and checkpoints.",
+      "label": "GROUNDED",
+      "why": "AURKA appears in multiple cell cycle-related terms including Mitotic Cell Cycle Phase Transition and Progesterone-mediated oocyte maturation"
+    },
+    {
+      "claim": "DBF4 is a key player in cell cycle control and checkpoints.",
+      "label": "GROUNDED",
+      "why": "DBF4 appears in the gene list for Mitotic Cell Cycle Phase Transition and Cell cycle"
+    },
+    {
+      "claim": "RAD17 is a key player in cell cycle control and checkpoints.",
+      "label": "GROUNDED",
+      "why": "RAD17 appears in the gene list for Mitotic G2/M Transition Checkpoint"
+    },
+    {
+      "claim": "TOPBP1 is a key player in cell cycle control and checkpoints.",
+      "label": "GROUNDED",
+      "why": "TOPBP1 appears in the gene list for Mitotic G2/M Transition Checkpoint"
+    },
+    {
+      "claim": "CHFR is a key player in cell cycle control and checkpoints.",
+      "label": "GROUNDED",
+      "why": "CHFR appears in the gene list for Mitotic G2/M Transition Checkpoint"
+    },
+    {
+      "claim": "CAMK4 is central to phosphorylation events during spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "CAMK4 appears in the gene list for Peptidyl-Serine Phosphorylation"
+    },
+    {
+      "claim": "MAST2 is central to phosphorylation events during spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "MAST2 appears in the gene list for Peptidyl-Serine Phosphorylation"
+    },
+    {
+      "claim": "CSNK2A2 is central to phosphorylation events during spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "CSNK2A2 appears in the gene list for Peptidyl-Serine Phosphorylation"
+    },
+    {
+      "claim": "CDK1 is central to phosphorylation events during spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "CDK1 appears in the gene list for Peptidyl-Serine Phosphorylation"
+    },
+    {
+      "claim": "TTK is central to phosphorylation events during spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "TTK appears in the gene list for Peptidyl-Serine Phosphorylation"
+    },
+    {
+      "claim": "MTOR is central to phosphorylation events during spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "MTOR appears in the gene list for Peptidyl-Serine Phosphorylation"
+    },
+    {
+      "claim": "AURKA is central to phosphorylation events during spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "AURKA appears in the gene list for Peptidyl-Serine Phosphorylation"
+    },
+    {
+      "claim": "Phosphorylation regulates proteins during spermatogenesis.",
+      "label": "BACKGROUND",
+      "why": "General principle of phosphorylation regulating proteins during spermatogenesis is well-established biology"
+    },
+    {
+      "claim": "Phosphorylation impacts cell cycle progression during spermatogenesis.",
+      "label": "BACKGROUND",
+      "why": "Phosphorylation regulating cell cycle progression is well-established biology"
+    },
+    {
+      "claim": "Phosphorylation impacts sperm maturation.",
+      "label": "BACKGROUND",
+      "why": "Phosphorylation regulating sperm maturation is well-established biology"
+    },
+    {
+      "claim": "HSPA1L is associated with chaperone functions during germ cell development.",
+      "label": "GROUNDED",
+      "why": "HSPA1L appears in the gene list for Response To Unfolded Protein, which relates to chaperone functions"
+    },
+    {
+      "claim": "HSPA4L is associated with chaperone functions during germ cell development.",
+      "label": "GROUNDED",
+      "why": "HSPA4L appears in the gene list for Response To Unfolded Protein, which relates to chaperone functions"
+    },
+    {
+      "claim": "HSPA2 is associated with chaperone functions during germ cell development.",
+      "label": "GROUNDED",
+      "why": "HSPA2 appears in the gene list for Response To Unfolded Protein, which relates to chaperone functions"
+    },
+    {
+      "claim": "PACRG is associated with chaperone functions during germ cell development.",
+      "label": "GROUNDED",
+      "why": "PACRG appears in the gene list for Response To Unfolded Protein, which relates to chaperone functions"
+    },
+    {
+      "claim": "Protein quality control is active during germ cell development.",
+      "label": "BACKGROUND",
+      "why": "Protein quality control during germ cell development is well-established biology"
+    },
+    {
+      "claim": "Stress responses are active during spermiogenesis.",
+      "label": "BACKGROUND",
+      "why": "Stress responses during spermiogenesis are well-established biology"
+    },
+    {
+      "claim": "Extensive protein synthesis occurs during germ cell development.",
+      "label": "BACKGROUND",
+      "why": "Extensive protein synthesis during germ cell development is well-established biology"
+    },
+    {
+      "claim": "Extensive protein remodeling occurs during spermiogenesis.",
+      "label": "BACKGROUND",
+      "why": "Protein remodeling during spermiogenesis is well-established biology"
+    },
+    {
+      "claim": "CCNB2 is critical for cell cycle progression in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "CCNB2 appears in Cell cycle and Progesterone-mediated oocyte maturation terms"
+    },
+    {
+      "claim": "CCNA1 is critical for cell cycle progression in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "CCNA1 appears in Cell cycle and Progesterone-mediated oocyte maturation terms"
+    },
+    {
+      "claim": "CDK1 is critical for cell cycle progression in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "CDK1 appears in Cell cycle and Progesterone-mediated oocyte maturation terms"
+    },
+    {
+      "claim": "BRAF is critical for cell cycle progression in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "BRAF appears in the gene list for Progesterone-mediated oocyte maturation"
+    },
+    {
+      "claim": "BUB1 is critical for cell cycle progression in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "BUB1 appears in Cell cycle and Progesterone-mediated oocyte maturation terms"
+    },
+    {
+      "claim": "AURKA is critical for cell cycle progression in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "AURKA appears in the gene list for Progesterone-mediated oocyte maturation"
+    },
+    {
+      "claim": "CCNB2 is critical for meiosis in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "CCNB2 appears in Progesterone-mediated oocyte maturation, which involves meiosis"
+    },
+    {
+      "claim": "CCNA1 is critical for meiosis in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "CCNA1 appears in Progesterone-mediated oocyte maturation, which involves meiosis"
+    },
+    {
+      "claim": "CDK1 is critical for meiosis in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "CDK1 appears in Progesterone-mediated oocyte maturation, which involves meiosis"
+    },
+    {
+      "claim": "BRAF is critical for meiosis in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "BRAF appears in Progesterone-mediated oocyte maturation, which involves meiosis"
+    },
+    {
+      "claim": "BUB1 is critical for meiosis in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "BUB1 appears in Progesterone-mediated oocyte maturation, which involves meiosis"
+    },
+    {
+      "claim": "AURKA is critical for meiosis in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "AURKA appears in Progesterone-mediated oocyte maturation, which involves meiosis"
+    },
+    {
+      "claim": "Core cell cycle regulatory mechanisms are shared between oogenesis and spermatogenesis.",
+      "label": "BACKGROUND",
+      "why": "Shared core cell cycle mechanisms between oogenesis and spermatogenesis is well-established biology"
+    },
+    {
+      "claim": "CCNB2 is involved in cell division processes.",
+      "label": "GROUNDED",
+      "why": "CCNB2 appears in multiple cell cycle and cell division-related terms"
+    },
+    {
+      "claim": "CCNA1 is involved in cell division processes.",
+      "label": "GROUNDED",
+      "why": "CCNA1 appears in multiple cell cycle and cell division-related terms"
+    },
+    {
+      "claim": "DBF4 is involved in cell division processes.",
+      "label": "GROUNDED",
+      "why": "DBF4 appears in Cell cycle term"
+    },
+    {
+      "claim": "CDK1 is involved in cell division processes.",
+      "label": "GROUNDED",
+      "why": "CDK1 appears in multiple cell cycle and cell division-related terms"
+    },
+    {
+      "claim": "TTK is involved in cell division processes.",
+      "label": "GROUNDED",
+      "why": "TTK appears in Cell cycle term"
+    },
+    {
+      "claim": "BUB1 is involved in cell division processes.",
+      "label": "GROUNDED",
+      "why": "BUB1 appears in Cell cycle term"
+    },
+    {
+      "claim": "CLPB is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "CLPB appears in Longevity regulating pathway term"
+    },
+    {
+      "claim": "HSPA1L is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "HSPA1L appears in Longevity regulating pathway term"
+    },
+    {
+      "claim": "CAMK4 is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "CAMK4 appears in Longevity regulating pathway term"
+    },
+    {
+      "claim": "HSPA2 is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "HSPA2 appears in Longevity regulating pathway term"
+    },
+    {
+      "claim": "SIRT1 is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "SIRT1 appears in Longevity regulating pathway and Cellular senescence terms"
+    },
+    {
+      "claim": "MTOR is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "MTOR appears in Longevity regulating pathway and Cellular senescence terms"
+    },
+    {
+      "claim": "VDAC3 is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "VDAC3 appears in Cellular senescence term"
+    },
+    {
+      "claim": "CCNA1 is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "CCNA1 appears in Cellular senescence term"
+    },
+    {
+      "claim": "CCNB2 is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "CCNB2 appears in Cellular senescence term"
+    },
+    {
+      "claim": "CDK1 is implicated in cellular aging regulation.",
+      "label": "GROUNDED",
+      "why": "CDK1 appears in Cellular senescence term"
+    },
+    {
+      "claim": "CLPB is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "CLPB appears in Longevity regulating pathway, which relates to cellular survival"
+    },
+    {
+      "claim": "HSPA1L is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "HSPA1L appears in Longevity regulating pathway, which relates to cellular survival"
+    },
+    {
+      "claim": "CAMK4 is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "CAMK4 appears in Longevity regulating pathway, which relates to cellular survival"
+    },
+    {
+      "claim": "HSPA2 is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "HSPA2 appears in Longevity regulating pathway, which relates to cellular survival"
+    },
+    {
+      "claim": "SIRT1 is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "SIRT1 appears in Longevity regulating pathway, which relates to cellular survival"
+    },
+    {
+      "claim": "MTOR is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "MTOR appears in Longevity regulating pathway, which relates to cellular survival"
+    },
+    {
+      "claim": "VDAC3 is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "VDAC3 appears in Cellular senescence, which relates to cellular survival"
+    },
+    {
+      "claim": "CCNA1 is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "CCNA1 appears in Cellular senescence, which relates to cellular survival"
+    },
+    {
+      "claim": "CCNB2 is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "CCNB2 appears in Cellular senescence, which relates to cellular survival"
+    },
+    {
+      "claim": "CDK1 is implicated in cellular survival regulation.",
+      "label": "GROUNDED",
+      "why": "CDK1 appears in Cellular senescence, which relates to cellular survival"
+    },
+    {
+      "claim": "CLPB is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "CLPB involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "HSPA1L is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "HSPA1L involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "CAMK4 is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "CAMK4 involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "HSPA2 is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "HSPA2 involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "SIRT1 is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "SIRT1 involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "MTOR is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "MTOR involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "VDAC3 is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "VDAC3 involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "CCNA1 is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "CCNA1 involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "CCNB2 is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "CCNB2 involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "CDK1 is implicated in cell fate decisions.",
+      "label": "BACKGROUND",
+      "why": "CDK1 involvement in cell fate decisions is not stated in evidence but is plausible biology"
+    },
+    {
+      "claim": "Cellular aging regulation is important for maintaining the germline stem cell pool.",
+      "label": "BACKGROUND",
+      "why": "Cellular aging regulation maintaining germline stem cell pool is well-established biology"
+    },
+    {
+      "claim": "Cellular survival regulation is important for maintaining the germline stem cell pool.",
+      "label": "BACKGROUND",
+      "why": "Cellular survival regulation maintaining germline stem cell pool is well-established biology"
+    },
+    {
+      "claim": "Cell fate decisions are important for maintaining the germline stem cell pool.",
+      "label": "BACKGROUND",
+      "why": "Cell fate decisions maintaining germline stem cell pool is well-established biology"
+    },
+    {
+      "claim": "Cellular aging regulation is important for ensuring healthy sperm production.",
+      "label": "BACKGROUND",
+      "why": "Cellular aging regulation ensuring healthy sperm production is well-established biology"
+    },
+    {
+      "claim": "Cellular survival regulation is important for ensuring healthy sperm production.",
+      "label": "BACKGROUND",
+      "why": "Cellular survival regulation ensuring healthy sperm production is well-established biology"
+    },
+    {
+      "claim": "Cell fate decisions are important for ensuring healthy sperm production.",
+      "label": "BACKGROUND",
+      "why": "Cell fate decisions ensuring healthy sperm production is well-established biology"
+    },
+    {
+      "claim": "LDHC is involved in glycolysis.",
+      "label": "GROUNDED",
+      "why": "LDHC appears in Glycolysis / Gluconeogenesis term"
+    },
+    {
+      "claim": "PDHA2 is involved in glycolysis.",
+      "label": "GROUNDED",
+      "why": "PDHA2 appears in Glycolysis / Gluconeogenesis term"
+    },
+    {
+      "claim": "GAPDHS is involved in glycolysis.",
+      "label": "GROUNDED",
+      "why": "GAPDHS appears in Glycolysis / Gluconeogenesis term"
+    },
+    {
+      "claim": "PGK2 is involved in glycolysis.",
+      "label": "GROUNDED",
+      "why": "PGK2 appears in Glycolysis / Gluconeogenesis term"
+    },
+    {
+      "claim": "LDHC is involved in gluconeogenesis.",
+      "label": "GROUNDED",
+      "why": "LDHC appears in Glycolysis / Gluconeogenesis term"
+    },
+    {
+      "claim": "PDHA2 is involved in gluconeogenesis.",
+      "label": "GROUNDED",
+      "why": "PDHA2 appears in Glycolysis / Gluconeogenesis term"
+    },
+    {
+      "claim": "GAPDHS is involved in gluconeogenesis.",
+      "label": "GROUNDED",
+      "why": "GAPDHS appears in Glycolysis / Gluconeogenesis term"
+    },
+    {
+      "claim": "PGK2 is involved in gluconeogenesis.",
+      "label": "GROUNDED",
+      "why": "PGK2 appears in Glycolysis / Gluconeogenesis term"
+    },
+    {
+      "claim": "Proliferating germ cells have high energy demands.",
+      "label": "BACKGROUND",
+      "why": "High energy demands of proliferating germ cells is well-established biology"
+    },
+    {
+      "claim": "Differentiating germ cells have high energy demands.",
+      "label": "BACKGROUND",
+      "why": "High energy demands of differentiating germ cells is well-established biology"
+    },
+    {
+      "claim": "Germ cells rely heavily on glucose metabolism to fuel spermatogenesis.",
+      "label": "BACKGROUND",
+      "why": "Germ cells relying on glucose metabolism for spermatogenesis is well-established biology"
+    },
+    {
+      "claim": "Histone methyltransferase MET-2 regulates chromosome segregation during meiosis in C. elegans spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "Abstract 4 states MET-2 impacts chromosome structure and mentions chromosome segregation in the context of meiosis in C. elegans spermatogenesis"
+    },
+    {
+      "claim": "Histone methyltransferase MET-2 regulates chromosome structure during meiosis in C. elegans spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "Abstract 4 explicitly discusses MET-2 regulating chromosome structure during meiosis in C. elegans male germline"
+    },
+    {
+      "claim": "Histone methyltransferase MET-2 regulates transcription during meiosis in C. elegans spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "Abstract 4 states 'met-2 males...have more active RNA pol II in later stages of meiosis' indicating MET-2 regulates transcription during meiosis"
+    },
+    {
+      "claim": "Chromatin regulation is connected to gene expression during meiosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 4 discusses chromatin regulation (H3K9me2) connected to gene expression during meiosis"
+    },
+    {
+      "claim": "Chromatin regulation is connected to chromosome dynamics during meiosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 4 discusses chromatin regulation (H3K9me2) connected to chromosome dynamics (size, compaction) during meiosis"
+    },
+    {
+      "claim": "The transition from mitosis to meiosis is critical in spermatogenesis.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states 'The germ line...undergoes several rounds of mitotic divisions before ultimately transitioning to the meiotic cell cycle' and discusses this transition in spermatogenesis"
+    },
+    {
+      "claim": "Cell cycle progression is regulated during the transition from mitosis to meiosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 discusses regulation of cell cycle progression during the mitosis-to-meiosis transition"
+    },
+    {
+      "claim": "Chromosome events are regulated during the transition from mitosis to meiosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 discusses regulation of 'unique chromosomal events of meiosis' during the transition"
+    },
+    {
+      "claim": "Recombination occurs during meiosis in gamete formation.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 discusses 'Crossover recombination events during meiosis' in gamete formation"
+    },
+    {
+      "claim": "Meiosis exhibits sexually dimorphic aspects.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 discusses 'sexual dimorphisms' and 'sexually dimorphic recombination landscape' in meiosis"
+    },
+    {
+      "claim": "Chromosome behavior during gamete formation is complex.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 extensively discusses complex chromosome behavior during gamete formation"
+    },
+    {
+      "claim": "Double-strand break repair occurs during mammalian meiosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 5 mentions 'double-strand break repair' as part of mammalian meiosis"
+    },
+    {
+      "claim": "Chromatin remodeling occurs during mammalian meiosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 5 mentions 'remodeling of the chromatin' during mammalian meiosis"
+    },
+    {
+      "claim": "Chromosome segregation occurs during mammalian meiosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 5 mentions 'segregation of the chromosomes' during mammalian meiosis"
+    },
+    {
+      "claim": "Spermatogenesis involves a tightly regulated program of cell division.",
+      "label": "BACKGROUND",
+      "why": "Tightly regulated cell division program in spermatogenesis is well-established biology"
+    },
+    {
+      "claim": "Spermatogenesis involves a tightly regulated program of differentiation.",
+      "label": "BACKGROUND",
+      "why": "Tightly regulated differentiation program in spermatogenesis is well-established biology"
+    },
+    {
+      "claim": "Precise meiotic divisions are required to generate haploid spermatozoa.",
+      "label": "BACKGROUND",
+      "why": "Precise meiotic divisions required to generate haploid spermatozoa is well-established biology"
+    },
+    {
+      "claim": "Fundamental cell cycle machinery is conserved between male and female germline development.",
+      "label": "BACKGROUND",
+      "why": "Conservation of fundamental cell cycle machinery between male and female germline is well-established biology"
+    },
+    {
+      "claim": "Hormonal signaling components are conserved between male and female germline development.",
+      "label": "BACKGROUND",
+      "why": "Conservation of hormonal signaling between male and female germline is well-established biology"
+    },
+    {
+      "claim": "Protein phosphorylation fine-tunes protein function during germ cell development.",
+      "label": "BACKGROUND",
+      "why": "Protein phosphorylation fine-tuning protein function during germ cell development is well-established biology"
+    },
+    {
+      "claim": "Protein modification fine-tunes protein function during germ cell development.",
+      "label": "BACKGROUND",
+      "why": "Protein modification fine-tuning protein function during germ cell development is well-established biology"
+    },
+    {
+      "claim": "Regulatory networks orchestrate chromatin remodeling during germ cell development.",
+      "label": "BACKGROUND",
+      "why": "Regulatory networks orchestrating chromatin remodeling during germ cell development is well-established biology"
+    },
+    {
+      "claim": "Regulatory networks orchestrate flagellar assembly during germ cell development.",
+      "label": "BACKGROUND",
+      "why": "Regulatory networks orchestrating flagellar assembly during germ cell development is well-established biology"
+    },
+    {
+      "claim": "Regulatory networks orchestrate capacitation during germ cell development.",
+      "label": "BACKGROUND",
+      "why": "Regulatory networks orchestrating capacitation during germ cell development is well-established biology"
+    },
+    {
+      "claim": "Capacitation prepares sperm for fertilization.",
+      "label": "BACKGROUND",
+      "why": "Capacitation preparing sperm for fertilization is well-established biology"
+    },
+    {
+      "claim": "Protein quality control mechanisms maintain cellular integrity during spermatogenesis.",
+      "label": "BACKGROUND",
+      "why": "Protein quality control mechanisms maintaining cellular integrity during spermatogenesis is well-established biology"
+    },
+    {
+      "claim": "Developing sperm have high metabolic activity.",
+      "label": "BACKGROUND",
+      "why": "High metabolic activity of developing sperm is well-established biology"
+    },
+    {
+      "claim": "Developing sperm have specific energy requirements.",
+      "label": "BACKGROUND",
+      "why": "Specific energy requirements of developing sperm is well-established biology"
+    },
+    {
+      "claim": "Energy metabolism fuels sperm maturation.",
+      "label": "BACKGROUND",
+      "why": "Energy metabolism fueling sperm maturation is well-established biology"
+    },
+    {
+      "claim": "Energy metabolism fuels sperm motility.",
+      "label": "BACKGROUND",
+      "why": "Energy metabolism fueling sperm motility is well-established biology"
+    }
+  ],
+  "summary": {
+    "n_claims": 127,
+    "n_scored": 127,
+    "grounded_rate": 0.661,
+    "hallucination_rate": 0.0,
+    "grounded": 84,
+    "background": 43,
+    "unsupported": 0
+  }
+}

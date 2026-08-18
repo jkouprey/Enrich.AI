@@ -1,0 +1,5113 @@
+{
+  "gene_set": "UV_Response_Up",
+  "context": "UV Response Up",
+  "genes": [
+    "NXF1",
+    "SLC6A8",
+    "BAK1",
+    "CDC5L",
+    "HSPA2",
+    "POLR2H",
+    "ALAS1",
+    "TUBA4A",
+    "C4BPB",
+    "CCNE1",
+    "EPHX1",
+    "GRPEL1",
+    "ICAM1",
+    "FEN1",
+    "ARRB2",
+    "JUNB",
+    "CTSV",
+    "DGAT1",
+    "ATF3",
+    "CASP3",
+    "RASGRP1",
+    "TMBIM6",
+    "FOS",
+    "TAP1",
+    "E2F5",
+    "RAB27A",
+    "CCND3",
+    "SLC25A4",
+    "SPR",
+    "CDKN2B",
+    "SHOX2",
+    "OLFM1",
+    "IGFBP2",
+    "LYN",
+    "CLTB",
+    "BCL2L11",
+    "LHX2",
+    "NFKBIA",
+    "MSX1",
+    "H2AX",
+    "NR4A1",
+    "GLS",
+    "CDC34",
+    "MMP14",
+    "STK25",
+    "PDAP1",
+    "ABCB1",
+    "BSG",
+    "SELENOW",
+    "IRF1",
+    "RXRB",
+    "TFRC",
+    "PPIF",
+    "CDKN1C",
+    "HLA-F",
+    "CREG1",
+    "APOM",
+    "BMP2",
+    "TGFBRAP1",
+    "NAT1",
+    "CYB5R1",
+    "RRAD",
+    "POLE3",
+    "IL6",
+    "YKT6",
+    "ACAA1",
+    "CLCN2",
+    "AGO2",
+    "SOD2",
+    "PPP1R2",
+    "RHOB",
+    "RET",
+    "PDLIM3",
+    "EPCAM",
+    "DNAJA1",
+    "SULT1A1",
+    "CHKA",
+    "CYP1A1",
+    "ATP6V1F",
+    "CDO1",
+    "ALDOA",
+    "NPTXR",
+    "EIF2S3",
+    "CNP",
+    "GRINA",
+    "BID",
+    "POLG2",
+    "IL6ST",
+    "HYAL2",
+    "FOSB",
+    "MGAT1",
+    "NKX2-5",
+    "PPAT",
+    "FURIN",
+    "MRPL23",
+    "HTR7",
+    "CXCL2",
+    "KLHDC3",
+    "PRPF3",
+    "DNAJB1",
+    "AP2S1",
+    "PSMC3",
+    "TST",
+    "SIGMAR1",
+    "GCH1",
+    "BTG2",
+    "CEBPG",
+    "TARS1",
+    "UROD",
+    "PARP2",
+    "BTG3",
+    "DLG4",
+    "CHRNA5",
+    "NPTX2",
+    "ATP6V1C1",
+    "AQP3",
+    "PLCL1",
+    "NUP58",
+    "TYRO3",
+    "HMOX1",
+    "RPN1",
+    "BTG1",
+    "FMO1",
+    "ASNS",
+    "DDX21",
+    "KCNH2",
+    "COL2A1",
+    "MAOA",
+    "TCHH",
+    "CYB5B",
+    "HSPA13",
+    "GGH",
+    "GAL",
+    "NTRK3",
+    "PPT1",
+    "FGF18",
+    "FKBP4",
+    "STIP1",
+    "EIF5",
+    "ENO2",
+    "GPX3",
+    "PRKACA",
+    "PRKCD",
+    "STARD3",
+    "MARK2",
+    "SLC6A12",
+    "SQSTM1",
+    "PTPRD",
+    "MAPK8IP2",
+    "CDK2",
+    "ONECUT1",
+    "RFC4",
+    "CA2",
+    "TACR3",
+    "AMD1",
+    "HNRNPU",
+    "WIZ",
+    "CCK"
+  ],
+  "n_genes": 158,
+  "query": "Analyze this gene set (biological context: UV Response Up) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: NXF1, SLC6A8, BAK1, CDC5L, HSPA2, POLR2H, ALAS1, TUBA4A, C4BPB, CCNE1, EPHX1, GRPEL1, ICAM1, FEN1, ARRB2, JUNB, CTSV, DGAT1, ATF3, CASP3, RASGRP1, TMBIM6, FOS, TAP1, E2F5, RAB27A, CCND3, SLC25A4, SPR, CDKN2B, SHOX2, OLFM1, IGFBP2, LYN, CLTB, BCL2L11, LHX2, NFKBIA, MSX1, H2AX, NR4A1, GLS, CDC34, MMP14, STK25, PDAP1, ABCB1, BSG, SELENOW, IRF1, RXRB, TFRC, PPIF, CDKN1C, HLA-F, CREG1, APOM, BMP2, TGFBRAP1, NAT1, CYB5R1, RRAD, POLE3, IL6, YKT6, ACAA1, CLCN2, AGO2, SOD2, PPP1R2, RHOB, RET, PDLIM3, EPCAM, DNAJA1, SULT1A1, CHKA, CYP1A1, ATP6V1F, CDO1, ALDOA, NPTXR, EIF2S3, CNP, GRINA, BID, POLG2, IL6ST, HYAL2, FOSB, MGAT1, NKX2-5, PPAT, FURIN, MRPL23, HTR7, CXCL2, KLHDC3, PRPF3, DNAJB1, AP2S1, PSMC3, TST, SIGMAR1, GCH1, BTG2, CEBPG, TARS1, UROD, PARP2, BTG3, DLG4, CHRNA5, NPTX2, ATP6V1C1, AQP3, PLCL1, NUP58, TYRO3, HMOX1, RPN1, BTG1, FMO1, ASNS, DDX21, KCNH2, COL2A1, MAOA, TCHH, CYB5B, HSPA13, GGH, GAL, NTRK3, PPT1, FGF18, FKBP4, STIP1, EIF5, ENO2, GPX3, PRKACA, PRKCD, STARD3, MARK2, SLC6A12, SQSTM1, PTPRD, MAPK8IP2, CDK2, ONECUT1, RFC4, CA2, TACR3, AMD1, HNRNPU, WIZ, CCK",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 169,
+  "n_papers": 2,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 2,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 2,
+    "cited_pmids": [
+      "41982271",
+      "42305972"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "This gene set, derived from a 'UV Response Up' context, strongly indicates an active cellular response to UV-induced damage, characterized by robust DNA damage response mechanisms, initiation of programmed cell death (apoptosis) to eliminate damaged cells, activation of stress response pathways, and tight regulation of the cell cycle to allow for repair or trigger apoptosis. The enriched terms reflect a coordinated effort by the cell to cope with the detrimental effects of ultraviolet radiation.\n\n## Detailed Analysis\n\nThe enrichment analysis using GO_Biological_Process_2023 and KEGG_2021_Human libraries reveals several interconnected biological processes that are upregulated in response to UV exposure. These pathways collectively highlight the cellular strategies to mitigate UV-induced harm.\n\n**DNA Damage Response and Cell Cycle Control:**\nA significant theme is the activation of the **DNA Damage Response (GO:0006974)**, including genes like H2AX, FEN1, PARP2, and POLE3, which are crucial for detecting and repairing DNA lesions. Concurrently, pathways related to **DNA Replication (GO:0006260, KEGG: DNA replication)** and **Base excision repair (KEGG: Base excision repair)** are enriched, indicating efforts to maintain genomic integrity or potentially stalled replication due to damage. The upregulation of **Negative Regulation Of Cell Cycle (GO:0045786)**, **Negative Regulation Of Mitotic Cell Cycle (GO:0045930)**, **Cell Cycle G1/S Phase Transition (GO:0044843)**, and the **Cell cycle (KEGG: Cell cycle)** pathway, including genes like CDKN1C, CCNE1, CCND3, and CDK2, suggests a crucial checkpoint activation. This allows time for DNA repair or, if damage is too extensive, directs the cell towards apoptosis. The **p53 signaling pathway (KEGG: p53 signaling pathway)**, a central regulator of cell cycle arrest and apoptosis in response to DNA damage, is also significantly enriched.\n\n**Apoptosis and Programmed Cell Death:**\nA prominent response to irreparable UV damage is the induction of apoptosis. Terms such as **Positive Regulation Of Apoptotic Process (GO:0043065)**, **Regulation Of Apoptotic Process (GO:0042981)**, and the overarching **Apoptosis (KEGG: Apoptosis)** pathway are highly enriched. Key genes involved include pro-apoptotic factors like BAK1, BID, CASP3, and BCL2L11, alongside regulators of mitochondrial integrity such as PPIF and SLC25A4, which are linked to **Release Of Cytochrome C From Mitochondria (GO:0001836)** and **Regulation Of Mitochondrial Membrane Permeability (GO:0046902)**. This points to a mitochondrial-dependent apoptotic pathway being activated.\n\n**Oxidative Stress and Inflammatory Responses:**\nUV radiation is a potent inducer of reactive oxygen species (ROS), leading to oxidative stress. The enrichment of **Response To Hydrogen Peroxide (GO:0042542)**, **Cellular Response To Reactive Oxygen Species (GO:0034614)**, **Response To Reactive Oxygen Species (GO:0000302)**, and **Cellular Response To Oxidative Stress (GO:0034599)** highlights the cellular defense mechanisms. Genes like SOD2, HMOX1, and GPX3, involved in antioxidant defense, are present in this set. Additionally, pathways related to **TNF signaling pathway (KEGG: TNF signaling pathway)** and **NF-kappa B signaling pathway (KEGG: NF-kappa B signaling pathway)** are enriched, suggesting an inflammatory component, often associated with tissue damage and immune responses following UV exposure. This aligns with findings that UV exposure can lead to oxidative stress and chronic inflammation (Yu et al., 2026).\n\n**Protein Homeostasis and Stress Signaling:**\nThe gene set also shows enrichment for **Response To Unfolded Protein (GO:0006986)** and **Chaperone Cofactor-Dependent Protein Refolding (GO:0051085)**, with genes like DNAJA1, DNAJB1, HSPA2, and HSPA13. This indicates that UV-induced protein damage and aggregation are being addressed through protein quality control mechanisms. The presence of **Integrated Stress Response Signaling (GO:0140467)** further emphasizes a broad cellular stress response.\n\n**Supporting Literature:**\nThe literature search supports these interpretations. A recent publication, \"Exosome-Mediated Rewiring of Oxidative Stress-Inflammation-ECM Remodeling Axis Mitigates UVB-Triggered Skin Photoaging\" (Yu et al., 2026), directly investigates **DNA damage**, oxidative stress, and inflammation as key characteristics of UV-induced photoaging. This reinforces the biological relevance of the enriched pathways found in this gene set, particularly those related to DNA damage, reactive oxygen species, and inflammation. Another paper, \"Ultraviolet radiation as a double-edged regulator of melanocyte function in vitiligo therapy and melanoma carcinogenesis\" (Fan et al., 2026), further discusses how UVR can induce oxidative stress, DNA damage, and apoptosis.\n\nIn conclusion, the 'UV Response Up' gene set represents a robust and multifaceted cellular program involving DNA repair, cell cycle checkpoint activation, apoptosis induction, and the management of oxidative and proteotoxic stress, consistent with a protective response against UV radiation.\n\n**Citations:**\n*   Yu F, Zhou J, Chen M, Liu Y, Qiu J, Chen J, Teng Y, Gou K, Tang Y, Xu Y, Wu Z, Zhang Z, Chen L. Exosome-Mediated Rewiring of Oxidative Stress-Inflammation-ECM Remodeling Axis Mitigates UVB-Triggered Skin Photoaging. Int J Nanomedicine. 2026 Apr 8;21:600909. PMID: 41982271.\n*   Fan HH, Chen YY, Geng Y, Yang YF, Xu H, Xiong YY, Zheng YW, Li YM. Ultraviolet radiation as a double-edged regulator of melanocyte function in vitiligo therapy and melanoma carcinogenesis. Front Med (Lausanne). 2026 Jun 1;13:1823921. PMID: 42305972.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'genes': 'NXF1, SLC6A8, BAK1, CDC5L, HSPA2, POLR2H, ALAS1, TUBA4A, C4BPB, CCNE1, EPHX1, GRPEL1, ICAM1, FEN1, ARRB2, JUNB, CTSV, DGAT1, ATF3, CASP3, RASGRP1, TMBIM6, FOS, TAP1, E2F5, RAB27A, CCND3, SLC25A4, SPR, CDKN2B, SHOX2, OLFM1, IGFBP2, LYN, CLTB, BCL2L11, LHX2, NFKBIA, MSX1, H2AX, NR4A1, GLS, CDC34, MMP14, STK25, PDAP1, ABCB1, BSG, SELENOW, IRF1, RXRB, TFRC, PPIF, CDKN1C, HLA-F, CREG1, APOM, BMP2, TGFBRAP1, NAT1, CYB5R1, RRAD, POLE3, IL6, YKT6, ACAA1, CLCN2, AGO2, SOD2, PPP1R2, RHOB, RET, PDLIM3, EPCAM, DNAJA1, SULT1A1, CHKA, CYP1A1, ATP6V1F, CDO1, ALDOA, NPTXR, EIF2S3, CNP, GRINA, BID, POLG2, IL6ST, HYAL2, FOSB, MGAT1, NKX2-5, PPAT, FURIN, MRPL23, HTR7, CXCL2, KLHDC3, PRPF3, DNAJB1, AP2S1, PSMC3, TST, SIGMAR1, GCH1, BTG2, CEBPG, TARS1, UROD, PARP2, BTG3, DLG4, CHRNA5, NPTX2, ATP6V1C1, AQP3, PLCL1, NUP58, TYRO3, HMOX1, RPN1, BTG1, FMO1, ASNS, DDX21, KCNH2, COL2A1, MAOA, TCHH, CYB5B, HSPA13, GGH, GAL, NTRK3, PPT1, FGF18, FKBP4, STIP1, EIF5, ENO2, GPX3, PRKACA, PRKCD, STARD3, MARK2, SLC6A12, SQSTM1, PTPRD, MAPK8IP2, CDK2, ONECUT1, RFC4, CA2, TACR3, AMD1, HNRNPU, WIZ, CCK', 'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human'}",
+    "Tool: search_literature | Args: {'max_results': 5, 'query': '(UV OR ultraviolet) AND (DNA damage response OR DNA repair OR H2AX OR apoptosis OR cell cycle arrest)', 'sort_by': 'relevance'}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: UV Response Up) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: NXF1, SLC6A8, BAK1, CDC5L, HSPA2, POLR2H, ALAS1, TUBA4A, C4BPB, C"
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Analysis Plan for UV Response Up Gene Set**\n\nOkay, so I've got this gene set and the task is to understand it in the context of a \"UV Response Up\" phenotype. I need to be thorough and precise, so here's my game plan. First, I'm going to kick things off by doing some solid enrichment analysis. I'll use the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries through `run_enrichment_analysis`.\n\nNext, the critical step is interpreting the results. I’ll dive into the enriched terms, keeping a sharp eye out for anything that screams \"UV response.\" I'm looking for things like DNA damage, apoptosis, cell cycle arrest, general stress responses, and anything else that's biologically relevant.\n\nThen, I'll need to back up my interpretations. I'll formulate precise search queries for the `search_literature` function. My search queries will focus on the enriched terms related to UV. For example, I might search for terms like \"UV response DNA damage\", \"UV induced apoptosis pathway\", \"KEGG p53 pathway UV\", and \"GO DNA repair UV\". I'll keep the number of papers limited to five.\n\nThe fourth step is where I put it all together. I'll integrate the literature findings with what the enrichment analysis tells me. I’ll provide a clear biological interpretation of the most relevant enriched terms and how they relate to UV response. Importantly, I'll be sure to distinguish between well-supported conclusions, plausible hypotheses, and anything that's more speculative. And of course, I'll cite the literature I find appropriately.\n\nFinally, the report will be structured with a concise summary followed by a detailed analysis section. This should provide a clear and insightful analysis of the gene set in the context of a UV response.",
+      "action": "run_enrichment_analysis",
+      "args": "genes=NXF1, SLC6A8, BAK1, CDC5L, HSPA2, POLR2H, ALAS1, T..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "ba510acf-c5aa-4eb7-ad06-46f3f516d661",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 158 | Total significant terms: 169"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "## Summary\n\nThe gene set, interpreted in the context of a \"UV Response Up\", strongly indicates activation of protective mechanisms against cellular damage, primarily involving **DNA damage response, cell cycle arrest, and initiation of programmed cell death (apoptosis)**. There is also a significant upregulation of terms related to **oxidative stress response and unfolded protein response**, which are common consequences of UV radiation. Additionally, pathways related to altered gene expression "
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so the enrichment analysis has given me a very clear picture of what's going on here. The GO Biological Process and KEGG pathway results are remarkably consistent with what I'd expect in response to UV exposure. This is practically a textbook case.\n\nFirst off, the GO terms are screaming \"stress\" at me. The hits on \"Response to Hydrogen Peroxide,\" \"Reactive Oxygen Species,\" \"Unfolded Protein,\" and \"Oxidative Stress\" are dead giveaways. We're definitely looking at a cell that's been hit with significant oxidative damage, which is a hallmark of UV exposure. This makes complete sense. The fact that the analysis highlights terms like \"Apoptosis,\" \"Programmed Cell Death,\" and the mitochondrial changes associated with apoptosis (\"Release of Cytochrome C\") reinforces this damage. It’s pretty clear that these cells are either trying to repair the damage or, more likely, are triggering apoptosis as a result of irreparable damage.\n\nThe presence of those cell cycle regulation terms - \"Negative Regulation of Cell Cycle,\" \"Cell Cycle G1/S Phase Transition\" - is also significant. UV-induced DNA damage will typically trigger cell cycle arrest at these checkpoints, allowing time for DNA repair mechanisms to kick in. If repair fails, apoptosis is the default response. And that’s exactly what the data suggests. The \"DNA Damage Response,\" \"DNA Replication,\" terms are directly linked to UV's genotoxic effects. They also suggest that the machinery to mitigate the DNA damage is also at play.\n\nThe fact that transcription is also being regulated is entirely expected. \"Positive Regulation of DNA-templated Transcription\" and \"Transcription by RNA Polymerase II\" points to the activation of genes involved in the response to UV damage and also highlights the role of UV in changing gene expression.\n\nThe KEGG pathways are just as illuminating. The \"Apoptosis\" pathway is right there in the list, no surprises there. The \"Pathways in Cancer\" entry is noteworthy. UV is a major carcinogen, and the analysis is showing me that many pathways involved in cancer, like DNA damage response, cell cycle control, and apoptosis, are being strongly activated. The \"p53 signaling pathway\" is another key player; p53 is the central mediator of the UV response, triggering either DNA repair, cell cycle arrest, or apoptosis, depending on the severity of the damage. This analysis perfectly maps out the known impact UV has on biological processes at various levels. The \"DNA replication\" and \"Base excision repair\" pathways are also essential for repair, while the involvement of \"MAPK signaling pathway,\" \"TNF signaling pathway,\" \"IL-17 signaling pathway,\" and \"NF-kappa B signaling pathway\" hints at a complex immune or inflammatory response, which is often triggered by UV.\n\nIn short, the enrichment analysis aligns beautifully with the established understanding of UV-induced cellular stress and damage response. This data is robust and offers a high degree of confidence in the observed patterns.",
+      "action": "search_literature",
+      "args": "max_results=5, query=(UV OR ultraviolet) AND (DNA damage response OR DN..., sort_by=relevance",
+      "tool_name": "search_literature",
+      "tool_call_id": "e40f75a9-7937-4abb-a032-43ccb7ce745c",
+      "observation": "=== LITERATURE SEARCH: '(UV OR ultraviolet) AND (DNA damage response OR DNA repair OR H2AX OR apoptosis OR cell cycle arrest)' === | Found 2 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "This gene set, derived from a 'UV Response Up' context, strongly indicates an active cellular response to UV-induced damage, characterized by robust DNA damage response mechanisms, initiation of programmed cell death (apoptosis) to eliminate damaged cells, activation of stress response pathways, and tight regulation of the cell cycle to allow for repair or trigger apoptosis. The enriched terms reflect a coordinated effort by the cell to cope with the detrimental effects of ultraviolet radiation."
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "genes=NXF1, SLC6A8, BAK1, CDC5L, HSPA2, POLR2H, ALAS1, T..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "thought": "**My Analysis Plan for UV Response Up Gene Set**\n\nOkay, so I've got this gene set and the task is to understand it in the context of a \"UV Response Up\" phenotype. I need to be thorough and precise, so here's my game plan. First, I'm going to kick things off by doing some solid enrichment analysis. I'll use the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries through `run_enrichment_analysis`.\n\nNext, the critical step is interpreting the results. I’ll dive into the enriched terms, keeping a sharp eye out for anything that screams \"UV response.\" I'm looking for things like DNA damage, apoptosis, cell cycle arrest, general stress responses, and anything else that's biologically relevant.\n\nThen, I'll need to back up my interpretations. I'll formulate precise search queries for the `search_literature` function. My search queries will focus on the enriched terms related to UV. For example, I might search for terms like \"UV response DNA damage\", \"UV induced apoptosis pathway\", \"KEGG p53 pathway UV\", and \"GO DNA repair UV\". I'll keep the number of papers limited to five.\n\nThe fourth step is where I put it all together. I'll integrate the literature findings with what the enrichment analysis tells me. I’ll provide a clear biological interpretation of the most relevant enriched terms and how they relate to UV response. Importantly, I'll be sure to distinguish between well-supported conclusions, plausible hypotheses, and anything that's more speculative. And of course, I'll cite the literature I find appropriately.\n\nFinally, the report will be structured with a concise summary followed by a detailed analysis section. This should provide a clear and insightful analysis of the gene set in the context of a UV response.",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 158 | Total significant terms: 169"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "max_results=5, query=(UV OR ultraviolet) AND (DNA damage response OR DN..., sort_by=relevance",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so the enrichment analysis has given me a very clear picture of what's going on here. The GO Biological Process and KEGG pathway results are remarkably consistent with what I'd expect in response to UV exposure. This is practically a textbook case.\n\nFirst off, the GO terms are screaming \"stress\" at me. The hits on \"Response to Hydrogen Peroxide,\" \"Reactive Oxygen Species,\" \"Unfolded Protein,\" and \"Oxidative Stress\" are dead giveaways. We're definitely looking at a cell that's been hit with significant oxidative damage, which is a hallmark of UV exposure. This makes complete sense. The fact that the analysis highlights terms like \"Apoptosis,\" \"Programmed Cell Death,\" and the mitochondrial changes associated with apoptosis (\"Release of Cytochrome C\") reinforces this damage. It’s pretty clear that these cells are either trying to repair the damage or, more likely, are triggering apoptosis as a result of irreparable damage.\n\nThe presence of those cell cycle regulation terms - \"Negative Regulation of Cell Cycle,\" \"Cell Cycle G1/S Phase Transition\" - is also significant. UV-induced DNA damage will typically trigger cell cycle arrest at these checkpoints, allowing time for DNA repair mechanisms to kick in. If repair fails, apoptosis is the default response. And that’s exactly what the data suggests. The \"DNA Damage Response,\" \"DNA Replication,\" terms are directly linked to UV's genotoxic effects. They also suggest that the machinery to mitigate the DNA damage is also at play.\n\nThe fact that transcription is also being regulated is entirely expected. \"Positive Regulation of DNA-templated Transcription\" and \"Transcription by RNA Polymerase II\" points to the activation of genes involved in the response to UV damage and also highlights the role of UV in changing gene expression.\n\nThe KEGG pathways are just as illuminating. The \"Apoptosis\" pathway is right there in the list, no surprises there. The \"Pathways in Cancer\" entry is noteworthy. UV is a major carcinogen, and the analysis is showing me that many pathways involved in cancer, like DNA damage response, cell cycle control, and apoptosis, are being strongly activated. The \"p53 signaling pathway\" is another key player; p53 is the central mediator of the UV response, triggering either DNA repair, cell cycle arrest, or apoptosis, depending on the severity of the damage. This analysis perfectly maps out the known impact UV has on biological processes at various levels. The \"DNA replication\" and \"Base excision repair\" pathways are also essential for repair, while the involvement of \"MAPK signaling pathway,\" \"TNF signaling pathway,\" \"IL-17 signaling pathway,\" and \"NF-kappa B signaling pathway\" hints at a complex immune or inflammatory response, which is often triggered by UV.\n\nIn short, the enrichment analysis aligns beautifully with the established understanding of UV-induced cellular stress and damage response. This data is robust and offers a high degree of confidence in the observed patterns.",
+      "observation": "=== LITERATURE SEARCH: '(UV OR ultraviolet) AND (DNA damage response OR DNA repair OR H2AX OR apoptosis OR cell cycle arrest)' === | Found 2 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "NXF1",
+      "SLC6A8",
+      "BAK1",
+      "CDC5L",
+      "HSPA2",
+      "POLR2H",
+      "ALAS1",
+      "TUBA4A",
+      "C4BPB",
+      "CCNE1",
+      "EPHX1",
+      "GRPEL1",
+      "ICAM1",
+      "FEN1",
+      "ARRB2",
+      "JUNB",
+      "CTSV",
+      "DGAT1",
+      "ATF3",
+      "CASP3",
+      "RASGRP1",
+      "TMBIM6",
+      "FOS",
+      "TAP1",
+      "E2F5",
+      "RAB27A",
+      "CCND3",
+      "SLC25A4",
+      "SPR",
+      "CDKN2B",
+      "SHOX2",
+      "OLFM1",
+      "IGFBP2",
+      "LYN",
+      "CLTB",
+      "BCL2L11",
+      "LHX2",
+      "NFKBIA",
+      "MSX1",
+      "H2AX",
+      "NR4A1",
+      "GLS",
+      "CDC34",
+      "MMP14",
+      "STK25",
+      "PDAP1",
+      "ABCB1",
+      "BSG",
+      "SELENOW",
+      "IRF1",
+      "RXRB",
+      "TFRC",
+      "PPIF",
+      "CDKN1C",
+      "HLA-F",
+      "CREG1",
+      "APOM",
+      "BMP2",
+      "TGFBRAP1",
+      "NAT1",
+      "CYB5R1",
+      "RRAD",
+      "POLE3",
+      "IL6",
+      "YKT6",
+      "ACAA1",
+      "CLCN2",
+      "AGO2",
+      "SOD2",
+      "PPP1R2",
+      "RHOB",
+      "RET",
+      "PDLIM3",
+      "EPCAM",
+      "DNAJA1",
+      "SULT1A1",
+      "CHKA",
+      "CYP1A1",
+      "ATP6V1F",
+      "CDO1",
+      "ALDOA",
+      "NPTXR",
+      "EIF2S3",
+      "CNP",
+      "GRINA",
+      "BID",
+      "POLG2",
+      "IL6ST",
+      "HYAL2",
+      "FOSB",
+      "MGAT1",
+      "NKX2-5",
+      "PPAT",
+      "FURIN",
+      "MRPL23",
+      "HTR7",
+      "CXCL2",
+      "KLHDC3",
+      "PRPF3",
+      "DNAJB1",
+      "AP2S1",
+      "PSMC3",
+      "TST",
+      "SIGMAR1",
+      "GCH1",
+      "BTG2",
+      "CEBPG",
+      "TARS1",
+      "UROD",
+      "PARP2",
+      "BTG3",
+      "DLG4",
+      "CHRNA5",
+      "NPTX2",
+      "ATP6V1C1",
+      "AQP3",
+      "PLCL1",
+      "NUP58",
+      "TYRO3",
+      "HMOX1",
+      "RPN1",
+      "BTG1",
+      "FMO1",
+      "ASNS",
+      "DDX21",
+      "KCNH2",
+      "COL2A1",
+      "MAOA",
+      "TCHH",
+      "CYB5B",
+      "HSPA13",
+      "GGH",
+      "GAL",
+      "NTRK3",
+      "PPT1",
+      "FGF18",
+      "FKBP4",
+      "STIP1",
+      "EIF5",
+      "ENO2",
+      "GPX3",
+      "PRKACA",
+      "PRKCD",
+      "STARD3",
+      "MARK2",
+      "SLC6A12",
+      "SQSTM1",
+      "PTPRD",
+      "MAPK8IP2",
+      "CDK2",
+      "ONECUT1",
+      "RFC4",
+      "CA2",
+      "TACR3",
+      "AMD1",
+      "HNRNPU",
+      "WIZ",
+      "CCK"
+    ],
+    "gene_count": 158,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Response To Hydrogen Peroxide (GO:0042542)",
+          "term": "Response To Hydrogen Peroxide (GO:0042542)",
+          "overlap": "6/46",
+          "p_value": 1.594292260486334e-06,
+          "z_score": 19.541447368421053,
+          "combined_score": 260.86035682221893,
+          "overlap_genes": [
+            "IL6",
+            "STK25",
+            "PRKCD",
+            "PPIF",
+            "HMOX1",
+            "RHOB"
+          ],
+          "genes": [
+            "IL6",
+            "STK25",
+            "PRKCD",
+            "PPIF",
+            "HMOX1",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.0013621858691328199
+        },
+        {
+          "rank": 2,
+          "term_name": "Positive Regulation Of Apoptotic Process (GO:0043065)",
+          "term": "Positive Regulation Of Apoptotic Process (GO:0043065)",
+          "overlap": "12/270",
+          "p_value": 1.6481377726954868e-06,
+          "z_score": 6.238929595412552,
+          "combined_score": 83.0767413049377,
+          "overlap_genes": [
+            "DNAJA1",
+            "OLFM1",
+            "BMP2",
+            "IL6",
+            "BCL2L11",
+            "BTG1",
+            "CASP3",
+            "CTSV",
+            "BAK1",
+            "BID",
+            "SQSTM1",
+            "RHOB"
+          ],
+          "genes": [
+            "DNAJA1",
+            "OLFM1",
+            "BMP2",
+            "IL6",
+            "BCL2L11",
+            "BTG1",
+            "CASP3",
+            "CTSV",
+            "BAK1",
+            "BID",
+            "SQSTM1",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.0013621858691328199
+        },
+        {
+          "rank": 3,
+          "term_name": "Negative Regulation Of Cell Cycle (GO:0045786)",
+          "term": "Negative Regulation Of Cell Cycle (GO:0045786)",
+          "overlap": "7/85",
+          "p_value": 4.949929633816992e-06,
+          "z_score": 11.74630667345899,
+          "combined_score": 143.494493879546,
+          "overlap_genes": [
+            "CDKN1C",
+            "BTG3",
+            "NR4A1",
+            "BTG2",
+            "BMP2",
+            "BTG1",
+            "RHOB"
+          ],
+          "genes": [
+            "CDKN1C",
+            "BTG3",
+            "NR4A1",
+            "BTG2",
+            "BMP2",
+            "BTG1",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.0027274112282331627
+        },
+        {
+          "rank": 4,
+          "term_name": "Regulation Of Apoptotic Process (GO:0042981)",
+          "term": "Regulation Of Apoptotic Process (GO:0042981)",
+          "overlap": "18/705",
+          "p_value": 1.2165478991160081e-05,
+          "z_score": 3.584840923268871,
+          "combined_score": 40.5693156688216,
+          "overlap_genes": [
+            "TFRC",
+            "SIGMAR1",
+            "ASNS",
+            "RHOB",
+            "DNAJA1",
+            "OLFM1",
+            "BMP2",
+            "IL6",
+            "BCL2L11",
+            "CASP3",
+            "PPIF",
+            "PPT1",
+            "TMBIM6",
+            "BAK1",
+            "IL6ST",
+            "NKX2-5",
+            "BID",
+            "SQSTM1"
+          ],
+          "genes": [
+            "TFRC",
+            "SIGMAR1",
+            "ASNS",
+            "RHOB",
+            "DNAJA1",
+            "OLFM1",
+            "BMP2",
+            "IL6",
+            "BCL2L11",
+            "CASP3",
+            "PPIF",
+            "PPT1",
+            "TMBIM6",
+            "BAK1",
+            "IL6ST",
+            "NKX2-5",
+            "BID",
+            "SQSTM1"
+          ],
+          "adjusted_p_value": 0.004443158844738534
+        },
+        {
+          "rank": 5,
+          "term_name": "Positive Regulation Of DNA-templated Transcription (GO:0045893)",
+          "term": "Positive Regulation Of DNA-templated Transcription (GO:0045893)",
+          "overlap": "25/1243",
+          "p_value": 1.4716764619433522e-05,
+          "z_score": 2.874180525204637,
+          "combined_score": 31.97963647775546,
+          "overlap_genes": [
+            "RET",
+            "CDKN1C",
+            "ONECUT1",
+            "CEBPG",
+            "HNRNPU",
+            "DDX21",
+            "RXRB",
+            "EPCAM",
+            "HYAL2",
+            "NKX2-5",
+            "JUNB",
+            "KCNH2",
+            "CDC5L",
+            "FOS",
+            "NFKBIA",
+            "NR4A1",
+            "BMP2",
+            "IL6",
+            "GAL",
+            "PSMC3",
+            "LHX2",
+            "IRF1",
+            "AGO2",
+            "SQSTM1",
+            "ATF3"
+          ],
+          "genes": [
+            "RET",
+            "CDKN1C",
+            "ONECUT1",
+            "CEBPG",
+            "HNRNPU",
+            "DDX21",
+            "RXRB",
+            "EPCAM",
+            "HYAL2",
+            "NKX2-5",
+            "JUNB",
+            "KCNH2",
+            "CDC5L",
+            "FOS",
+            "NFKBIA",
+            "NR4A1",
+            "BMP2",
+            "IL6",
+            "GAL",
+            "PSMC3",
+            "LHX2",
+            "IRF1",
+            "AGO2",
+            "SQSTM1",
+            "ATF3"
+          ],
+          "adjusted_p_value": 0.004443158844738534
+        },
+        {
+          "rank": 6,
+          "term_name": "Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944)",
+          "term": "Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944)",
+          "overlap": "21/938",
+          "p_value": 1.6127618311210652e-05,
+          "z_score": 3.1634813617874853,
+          "combined_score": 34.90894511934821,
+          "overlap_genes": [
+            "ONECUT1",
+            "CEBPG",
+            "HNRNPU",
+            "CDC5L",
+            "DDX21",
+            "FOS",
+            "RXRB",
+            "NFKBIA",
+            "NR4A1",
+            "BMP2",
+            "IL6",
+            "GAL",
+            "PSMC3",
+            "EPCAM",
+            "IRF1",
+            "HYAL2",
+            "AGO2",
+            "NKX2-5",
+            "SQSTM1",
+            "JUNB",
+            "ATF3"
+          ],
+          "genes": [
+            "ONECUT1",
+            "CEBPG",
+            "HNRNPU",
+            "CDC5L",
+            "DDX21",
+            "FOS",
+            "RXRB",
+            "NFKBIA",
+            "NR4A1",
+            "BMP2",
+            "IL6",
+            "GAL",
+            "PSMC3",
+            "EPCAM",
+            "IRF1",
+            "HYAL2",
+            "AGO2",
+            "NKX2-5",
+            "SQSTM1",
+            "JUNB",
+            "ATF3"
+          ],
+          "adjusted_p_value": 0.004443158844738534
+        },
+        {
+          "rank": 7,
+          "term_name": "Cellular Response To Reactive Oxygen Species (GO:0034614)",
+          "term": "Cellular Response To Reactive Oxygen Species (GO:0034614)",
+          "overlap": "6/73",
+          "p_value": 2.4309024029086643e-05,
+          "z_score": 11.65062843676355,
+          "combined_score": 123.78399991570551,
+          "overlap_genes": [
+            "IL6",
+            "PRKCD",
+            "PPIF",
+            "FOS",
+            "SQSTM1",
+            "RHOB"
+          ],
+          "genes": [
+            "IL6",
+            "PRKCD",
+            "PPIF",
+            "FOS",
+            "SQSTM1",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.004765729773040439
+        },
+        {
+          "rank": 8,
+          "term_name": "Response To Unfolded Protein (GO:0006986)",
+          "term": "Response To Unfolded Protein (GO:0006986)",
+          "overlap": "5/44",
+          "p_value": 2.445443243467708e-05,
+          "z_score": 16.59376571141277,
+          "combined_score": 176.20420457406894,
+          "overlap_genes": [
+            "DNAJA1",
+            "DNAJB1",
+            "TMBIM6",
+            "BAK1",
+            "HSPA2"
+          ],
+          "genes": [
+            "DNAJA1",
+            "DNAJB1",
+            "TMBIM6",
+            "BAK1",
+            "HSPA2"
+          ],
+          "adjusted_p_value": 0.004765729773040439
+        },
+        {
+          "rank": 9,
+          "term_name": "Positive Regulation Of Programmed Cell Death (GO:0043068)",
+          "term": "Positive Regulation Of Programmed Cell Death (GO:0043068)",
+          "overlap": "10/245",
+          "p_value": 2.5947712012924352e-05,
+          "z_score": 5.637435307648073,
+          "combined_score": 59.52808728214362,
+          "overlap_genes": [
+            "DNAJA1",
+            "OLFM1",
+            "BMP2",
+            "IL6",
+            "BCL2L11",
+            "CASP3",
+            "BAK1",
+            "BID",
+            "SQSTM1",
+            "RHOB"
+          ],
+          "genes": [
+            "DNAJA1",
+            "OLFM1",
+            "BMP2",
+            "IL6",
+            "BCL2L11",
+            "CASP3",
+            "BAK1",
+            "BID",
+            "SQSTM1",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.004765729773040439
+        },
+        {
+          "rank": 10,
+          "term_name": "Negative Regulation Of Apoptotic Process (GO:0043066)",
+          "term": "Negative Regulation Of Apoptotic Process (GO:0043066)",
+          "overlap": "14/482",
+          "p_value": 2.988053358821733e-05,
+          "z_score": 4.024750712250713,
+          "combined_score": 41.931073788730295,
+          "overlap_genes": [
+            "TFRC",
+            "PRKCD",
+            "ASNS",
+            "MAPK8IP2",
+            "SOD2",
+            "DNAJA1",
+            "IL6",
+            "PPIF",
+            "PPT1",
+            "TYRO3",
+            "TMBIM6",
+            "IL6ST",
+            "NKX2-5",
+            "GRINA"
+          ],
+          "genes": [
+            "TFRC",
+            "PRKCD",
+            "ASNS",
+            "MAPK8IP2",
+            "SOD2",
+            "DNAJA1",
+            "IL6",
+            "PPIF",
+            "PPT1",
+            "TYRO3",
+            "TMBIM6",
+            "IL6ST",
+            "NKX2-5",
+            "GRINA"
+          ],
+          "adjusted_p_value": 0.0049392522021323255
+        },
+        {
+          "rank": 11,
+          "term_name": "Regulation Of MAP Kinase Activity (GO:0043405)",
+          "term": "Regulation Of MAP Kinase Activity (GO:0043405)",
+          "overlap": "7/114",
+          "p_value": 3.408778160229657e-05,
+          "z_score": 8.550164015596955,
+          "combined_score": 87.95187389927212,
+          "overlap_genes": [
+            "LYN",
+            "BMP2",
+            "HYAL2",
+            "NTRK3",
+            "PRKCD",
+            "FGF18",
+            "RASGRP1"
+          ],
+          "genes": [
+            "LYN",
+            "BMP2",
+            "HYAL2",
+            "NTRK3",
+            "PRKCD",
+            "FGF18",
+            "RASGRP1"
+          ],
+          "adjusted_p_value": 0.005122463908054203
+        },
+        {
+          "rank": 12,
+          "term_name": "Regulation Of Platelet Aggregation (GO:0090330)",
+          "term": "Regulation Of Platelet Aggregation (GO:0090330)",
+          "overlap": "4/25",
+          "p_value": 4.1672605524530206e-05,
+          "z_score": 24.515769944341372,
+          "combined_score": 247.25788177972598,
+          "overlap_genes": [
+            "LYN",
+            "IL6",
+            "PRKCD",
+            "IL6ST"
+          ],
+          "genes": [
+            "LYN",
+            "IL6",
+            "PRKCD",
+            "IL6ST"
+          ],
+          "adjusted_p_value": 0.0052988320716960335
+        },
+        {
+          "rank": 13,
+          "term_name": "Positive Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090200)",
+          "term": "Positive Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090200)",
+          "overlap": "4/25",
+          "p_value": 4.1672605524530206e-05,
+          "z_score": 24.515769944341372,
+          "combined_score": 247.25788177972598,
+          "overlap_genes": [
+            "BCL2L11",
+            "PPIF",
+            "BAK1",
+            "BID"
+          ],
+          "genes": [
+            "BCL2L11",
+            "PPIF",
+            "BAK1",
+            "BID"
+          ],
+          "adjusted_p_value": 0.0052988320716960335
+        },
+        {
+          "rank": 14,
+          "term_name": "Negative Regulation Of Apoptotic Signaling Pathway (GO:2001234)",
+          "term": "Negative Regulation Of Apoptotic Signaling Pathway (GO:2001234)",
+          "overlap": "6/82",
+          "p_value": 4.7166178785389524e-05,
+          "z_score": 10.266274238227147,
+          "combined_score": 102.27091435322119,
+          "overlap_genes": [
+            "PPIF",
+            "TMBIM6",
+            "BAK1",
+            "MAPK8IP2",
+            "SLC25A4",
+            "GRINA"
+          ],
+          "genes": [
+            "PPIF",
+            "TMBIM6",
+            "BAK1",
+            "MAPK8IP2",
+            "SLC25A4",
+            "GRINA"
+          ],
+          "adjusted_p_value": 0.005568978109446348
+        },
+        {
+          "rank": 15,
+          "term_name": "Negative Regulation Of MAP Kinase Activity (GO:0043407)",
+          "term": "Negative Regulation Of MAP Kinase Activity (GO:0043407)",
+          "overlap": "5/51",
+          "p_value": 5.059344104144856e-05,
+          "z_score": 14.063654447286162,
+          "combined_score": 139.11329056406893,
+          "overlap_genes": [
+            "LYN",
+            "DNAJA1",
+            "BMP2",
+            "HYAL2",
+            "PRKCD"
+          ],
+          "genes": [
+            "LYN",
+            "DNAJA1",
+            "BMP2",
+            "HYAL2",
+            "PRKCD"
+          ],
+          "adjusted_p_value": 0.005575397202767632
+        },
+        {
+          "rank": 16,
+          "term_name": "Positive Regulation Of Phosphorylation (GO:0042327)",
+          "term": "Positive Regulation Of Phosphorylation (GO:0042327)",
+          "overlap": "9/231",
+          "p_value": 9.462930771400146e-05,
+          "z_score": 5.338291311445674,
+          "combined_score": 49.46216941798041,
+          "overlap_genes": [
+            "LYN",
+            "RET",
+            "CCND3",
+            "BMP2",
+            "TFRC",
+            "NTRK3",
+            "FGF18",
+            "TYRO3",
+            "RASGRP1"
+          ],
+          "genes": [
+            "LYN",
+            "RET",
+            "CCND3",
+            "BMP2",
+            "TFRC",
+            "NTRK3",
+            "FGF18",
+            "TYRO3",
+            "RASGRP1"
+          ],
+          "adjusted_p_value": 0.009265932845573305
+        },
+        {
+          "rank": 17,
+          "term_name": "Negative Regulation Of Cellular Process (GO:0048523)",
+          "term": "Negative Regulation Of Cellular Process (GO:0048523)",
+          "overlap": "14/537",
+          "p_value": 9.529392521158269e-05,
+          "z_score": 3.5912736350116847,
+          "combined_score": 33.24996673694256,
+          "overlap_genes": [
+            "LYN",
+            "BTG3",
+            "BTG2",
+            "CDKN2B",
+            "BTG1",
+            "SOD2",
+            "RHOB",
+            "NR4A1",
+            "BMP2",
+            "IL6",
+            "IRF1",
+            "HYAL2",
+            "PPT1",
+            "MSX1"
+          ],
+          "genes": [
+            "LYN",
+            "BTG3",
+            "BTG2",
+            "CDKN2B",
+            "BTG1",
+            "SOD2",
+            "RHOB",
+            "NR4A1",
+            "BMP2",
+            "IL6",
+            "IRF1",
+            "HYAL2",
+            "PPT1",
+            "MSX1"
+          ],
+          "adjusted_p_value": 0.009265932845573305
+        },
+        {
+          "rank": 18,
+          "term_name": "Regulation Of Cell Population Proliferation (GO:0042127)",
+          "term": "Regulation Of Cell Population Proliferation (GO:0042127)",
+          "overlap": "17/766",
+          "p_value": 0.00012168785545522172,
+          "z_score": 3.073421772765579,
+          "combined_score": 27.703981691554578,
+          "overlap_genes": [
+            "LYN",
+            "BTG3",
+            "BTG2",
+            "CDKN2B",
+            "BTG1",
+            "TFRC",
+            "NTRK3",
+            "SOD2",
+            "BMP2",
+            "IL6",
+            "EPCAM",
+            "IRF1",
+            "FGF18",
+            "CDK2",
+            "IL6ST",
+            "NKX2-5",
+            "JUNB"
+          ],
+          "genes": [
+            "LYN",
+            "BTG3",
+            "BTG2",
+            "CDKN2B",
+            "BTG1",
+            "TFRC",
+            "NTRK3",
+            "SOD2",
+            "BMP2",
+            "IL6",
+            "EPCAM",
+            "IRF1",
+            "FGF18",
+            "CDK2",
+            "IL6ST",
+            "NKX2-5",
+            "JUNB"
+          ],
+          "adjusted_p_value": 0.01117500139263786
+        },
+        {
+          "rank": 19,
+          "term_name": "Cellular Response To Hydrogen Peroxide (GO:0070301)",
+          "term": "Cellular Response To Hydrogen Peroxide (GO:0070301)",
+          "overlap": "4/34",
+          "p_value": 0.00014455588284748155,
+          "z_score": 17.153246753246755,
+          "combined_score": 151.66633862119406,
+          "overlap_genes": [
+            "IL6",
+            "PRKCD",
+            "PPIF",
+            "RHOB"
+          ],
+          "genes": [
+            "IL6",
+            "PRKCD",
+            "PPIF",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.01194754371734435
+        },
+        {
+          "rank": 20,
+          "term_name": "Negative Regulation Of Mitotic Cell Cycle (GO:0045930)",
+          "term": "Negative Regulation Of Mitotic Cell Cycle (GO:0045930)",
+          "overlap": "4/34",
+          "p_value": 0.00014455588284748155,
+          "z_score": 17.153246753246755,
+          "combined_score": 151.66633862119406,
+          "overlap_genes": [
+            "CDKN1C",
+            "BTG3",
+            "BTG2",
+            "BTG1"
+          ],
+          "genes": [
+            "CDKN1C",
+            "BTG3",
+            "BTG2",
+            "BTG1"
+          ],
+          "adjusted_p_value": 0.01194754371734435
+        },
+        {
+          "rank": 21,
+          "term_name": "Response To Reactive Oxygen Species (GO:0000302)",
+          "term": "Response To Reactive Oxygen Species (GO:0000302)",
+          "overlap": "5/66",
+          "p_value": 0.0001750039258274698,
+          "z_score": 10.597342762241508,
+          "combined_score": 91.67445582812802,
+          "overlap_genes": [
+            "STK25",
+            "HYAL2",
+            "HMOX1",
+            "FOS",
+            "SQSTM1"
+          ],
+          "genes": [
+            "STK25",
+            "HYAL2",
+            "HMOX1",
+            "FOS",
+            "SQSTM1"
+          ],
+          "adjusted_p_value": 0.013775309018705122
+        },
+        {
+          "rank": 22,
+          "term_name": "Nitric Oxide Biosynthetic Process (GO:0006809)",
+          "term": "Nitric Oxide Biosynthetic Process (GO:0006809)",
+          "overlap": "3/15",
+          "p_value": 0.0002052704678103308,
+          "z_score": 31.983870967741936,
+          "combined_score": 271.58087243371807,
+          "overlap_genes": [
+            "CYB5B",
+            "GCH1",
+            "SPR"
+          ],
+          "genes": [
+            "CYB5B",
+            "GCH1",
+            "SPR"
+          ],
+          "adjusted_p_value": 0.015377705911303215
+        },
+        {
+          "rank": 23,
+          "term_name": "Negative Regulation Of Cell Population Proliferation (GO:0008285)",
+          "term": "Negative Regulation Of Cell Population Proliferation (GO:0008285)",
+          "overlap": "11/379",
+          "p_value": 0.00021943143495843897,
+          "z_score": 3.9598861283643894,
+          "combined_score": 33.3599448358243,
+          "overlap_genes": [
+            "LYN",
+            "CDKN1C",
+            "BTG3",
+            "BMP2",
+            "IL6",
+            "BTG2",
+            "CDKN2B",
+            "BTG1",
+            "IRF1",
+            "HMOX1",
+            "SOD2"
+          ],
+          "genes": [
+            "LYN",
+            "CDKN1C",
+            "BTG3",
+            "BMP2",
+            "IL6",
+            "BTG2",
+            "CDKN2B",
+            "BTG1",
+            "IRF1",
+            "HMOX1",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.015377705911303215
+        },
+        {
+          "rank": 24,
+          "term_name": "Regulation Of Transcription By RNA Polymerase II (GO:0006357)",
+          "term": "Regulation Of Transcription By RNA Polymerase II (GO:0006357)",
+          "overlap": "31/2028",
+          "p_value": 0.00024319940320255033,
+          "z_score": 2.181204878183417,
+          "combined_score": 18.151177467816584,
+          "overlap_genes": [
+            "SHOX2",
+            "ONECUT1",
+            "CEBPG",
+            "HNRNPU",
+            "WIZ",
+            "DDX21",
+            "RXRB",
+            "DNAJB1",
+            "EPCAM",
+            "CREG1",
+            "HYAL2",
+            "MSX1",
+            "E2F5",
+            "NKX2-5",
+            "JUNB",
+            "CDC5L",
+            "FOS",
+            "SOD2",
+            "NFKBIA",
+            "NR4A1",
+            "BMP2",
+            "IL6",
+            "GAL",
+            "PSMC3",
+            "LHX2",
+            "IRF1",
+            "AGO2",
+            "CYP1A1",
+            "FOSB",
+            "SQSTM1",
+            "ATF3"
+          ],
+          "genes": [
+            "SHOX2",
+            "ONECUT1",
+            "CEBPG",
+            "HNRNPU",
+            "WIZ",
+            "DDX21",
+            "RXRB",
+            "DNAJB1",
+            "EPCAM",
+            "CREG1",
+            "HYAL2",
+            "MSX1",
+            "E2F5",
+            "NKX2-5",
+            "JUNB",
+            "CDC5L",
+            "FOS",
+            "SOD2",
+            "NFKBIA",
+            "NR4A1",
+            "BMP2",
+            "IL6",
+            "GAL",
+            "PSMC3",
+            "LHX2",
+            "IRF1",
+            "AGO2",
+            "CYP1A1",
+            "FOSB",
+            "SQSTM1",
+            "ATF3"
+          ],
+          "adjusted_p_value": 0.015377705911303215
+        },
+        {
+          "rank": 25,
+          "term_name": "DNA Damage Response (GO:0006974)",
+          "term": "DNA Damage Response (GO:0006974)",
+          "overlap": "11/384",
+          "p_value": 0.0002455422415224141,
+          "z_score": 3.9058014626762234,
+          "combined_score": 32.4651840918691,
+          "overlap_genes": [
+            "LYN",
+            "H2AX",
+            "BTG2",
+            "FEN1",
+            "BCL2L11",
+            "RFC4",
+            "PARP2",
+            "POLE3",
+            "PRKCD",
+            "BAK1",
+            "BID"
+          ],
+          "genes": [
+            "LYN",
+            "H2AX",
+            "BTG2",
+            "FEN1",
+            "BCL2L11",
+            "RFC4",
+            "PARP2",
+            "POLE3",
+            "PRKCD",
+            "BAK1",
+            "BID"
+          ],
+          "adjusted_p_value": 0.015377705911303215
+        },
+        {
+          "rank": 26,
+          "term_name": "Negative Regulation Of Mitochondrion Organization (GO:0010823)",
+          "term": "Negative Regulation Of Mitochondrion Organization (GO:0010823)",
+          "overlap": "4/39",
+          "p_value": 0.00024863440575195105,
+          "z_score": 14.699072356215213,
+          "combined_score": 121.99534775464724,
+          "overlap_genes": [
+            "TFRC",
+            "PPIF",
+            "BAK1",
+            "SLC25A4"
+          ],
+          "genes": [
+            "TFRC",
+            "PPIF",
+            "BAK1",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.015377705911303215
+        },
+        {
+          "rank": 27,
+          "term_name": "Nitric Oxide Metabolic Process (GO:0046209)",
+          "term": "Nitric Oxide Metabolic Process (GO:0046209)",
+          "overlap": "3/16",
+          "p_value": 0.0002511784994586732,
+          "z_score": 29.522084367245657,
+          "combined_score": 244.71879316878415,
+          "overlap_genes": [
+            "CYB5B",
+            "GCH1",
+            "SPR"
+          ],
+          "genes": [
+            "CYB5B",
+            "GCH1",
+            "SPR"
+          ],
+          "adjusted_p_value": 0.015377705911303215
+        },
+        {
+          "rank": 28,
+          "term_name": "DNA Replication (GO:0006260)",
+          "term": "DNA Replication (GO:0006260)",
+          "overlap": "5/73",
+          "p_value": 0.00028137138810725883,
+          "z_score": 9.50307574009996,
+          "combined_score": 77.69558015015285,
+          "overlap_genes": [
+            "FEN1",
+            "RFC4",
+            "POLG2",
+            "CDK2",
+            "POLE3"
+          ],
+          "genes": [
+            "FEN1",
+            "RFC4",
+            "POLG2",
+            "CDK2",
+            "POLE3"
+          ],
+          "adjusted_p_value": 0.01661096087647496
+        },
+        {
+          "rank": 29,
+          "term_name": "Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090199)",
+          "term": "Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090199)",
+          "overlap": "4/41",
+          "p_value": 0.00030239604127356234,
+          "z_score": 13.903123903123904,
+          "combined_score": 112.66776016812418,
+          "overlap_genes": [
+            "BCL2L11",
+            "PPIF",
+            "BAK1",
+            "BID"
+          ],
+          "genes": [
+            "BCL2L11",
+            "PPIF",
+            "BAK1",
+            "BID"
+          ],
+          "adjusted_p_value": 0.016708411037121944
+        },
+        {
+          "rank": 30,
+          "term_name": "Sulfur Amino Acid Metabolic Process (GO:0000096)",
+          "term": "Sulfur Amino Acid Metabolic Process (GO:0000096)",
+          "overlap": "3/17",
+          "p_value": 0.00030323794985702256,
+          "z_score": 27.411981566820277,
+          "combined_score": 222.06426386994713,
+          "overlap_genes": [
+            "TST",
+            "FMO1",
+            "CDO1"
+          ],
+          "genes": [
+            "TST",
+            "FMO1",
+            "CDO1"
+          ],
+          "adjusted_p_value": 0.016708411037121944
+        },
+        {
+          "rank": 31,
+          "term_name": "Negative Regulation Of Phosphorylation (GO:0042326)",
+          "term": "Negative Regulation Of Phosphorylation (GO:0042326)",
+          "overlap": "5/75",
+          "p_value": 0.00031924720464201697,
+          "z_score": 9.23062558356676,
+          "combined_score": 74.30233434330312,
+          "overlap_genes": [
+            "CDKN1C",
+            "LYN",
+            "CDKN2B",
+            "NTRK3",
+            "HNRNPU"
+          ],
+          "genes": [
+            "CDKN1C",
+            "LYN",
+            "CDKN2B",
+            "NTRK3",
+            "HNRNPU"
+          ],
+          "adjusted_p_value": 0.017023084815266258
+        },
+        {
+          "rank": 32,
+          "term_name": "Regulation Of Neurotransmitter Receptor Activity (GO:0099601)",
+          "term": "Regulation Of Neurotransmitter Receptor Activity (GO:0099601)",
+          "overlap": "4/42",
+          "p_value": 0.0003321852433163086,
+          "z_score": 13.536568694463432,
+          "combined_score": 108.42544864774445,
+          "overlap_genes": [
+            "DLG4",
+            "NPTX2",
+            "MAPK8IP2",
+            "NPTXR"
+          ],
+          "genes": [
+            "DLG4",
+            "NPTX2",
+            "MAPK8IP2",
+            "NPTXR"
+          ],
+          "adjusted_p_value": 0.017086403839693443
+        },
+        {
+          "rank": 33,
+          "term_name": "Positive Regulation Of Cell Projection Organization (GO:0031346)",
+          "term": "Positive Regulation Of Cell Projection Organization (GO:0031346)",
+          "overlap": "6/118",
+          "p_value": 0.00035157131371277495,
+          "z_score": 6.953712406015038,
+          "combined_score": 55.303556112930465,
+          "overlap_genes": [
+            "LYN",
+            "PTPRD",
+            "RET",
+            "DLG4",
+            "NTRK3",
+            "MARK2"
+          ],
+          "genes": [
+            "LYN",
+            "PTPRD",
+            "RET",
+            "DLG4",
+            "NTRK3",
+            "MARK2"
+          ],
+          "adjusted_p_value": 0.017086403839693443
+        },
+        {
+          "rank": 34,
+          "term_name": "Regulation Of Mitochondrial Membrane Permeability (GO:0046902)",
+          "term": "Regulation Of Mitochondrial Membrane Permeability (GO:0046902)",
+          "overlap": "3/18",
+          "p_value": 0.0003617810855349489,
+          "z_score": 25.583225806451612,
+          "combined_score": 202.73353777323413,
+          "overlap_genes": [
+            "PPIF",
+            "BAK1",
+            "SLC25A4"
+          ],
+          "genes": [
+            "PPIF",
+            "BAK1",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.017086403839693443
+        },
+        {
+          "rank": 35,
+          "term_name": "Cardiac Atrium Morphogenesis (GO:0003209)",
+          "term": "Cardiac Atrium Morphogenesis (GO:0003209)",
+          "overlap": "3/18",
+          "p_value": 0.0003617810855349489,
+          "z_score": 25.583225806451612,
+          "combined_score": 202.73353777323413,
+          "overlap_genes": [
+            "BMP2",
+            "SHOX2",
+            "NKX2-5"
+          ],
+          "genes": [
+            "BMP2",
+            "SHOX2",
+            "NKX2-5"
+          ],
+          "adjusted_p_value": 0.017086403839693443
+        },
+        {
+          "rank": 36,
+          "term_name": "Organonitrogen Compound Catabolic Process (GO:1901565)",
+          "term": "Organonitrogen Compound Catabolic Process (GO:1901565)",
+          "overlap": "5/78",
+          "p_value": 0.0003831489243947557,
+          "z_score": 8.8499418032053,
+          "combined_score": 69.62326040998119,
+          "overlap_genes": [
+            "TST",
+            "CASP3",
+            "PPT1",
+            "FMO1",
+            "SQSTM1"
+          ],
+          "genes": [
+            "TST",
+            "CASP3",
+            "PPT1",
+            "FMO1",
+            "SQSTM1"
+          ],
+          "adjusted_p_value": 0.017592921445125864
+        },
+        {
+          "rank": 37,
+          "term_name": "Release Of Cytochrome C From Mitochondria (GO:0001836)",
+          "term": "Release Of Cytochrome C From Mitochondria (GO:0001836)",
+          "overlap": "3/19",
+          "p_value": 0.00042713130158700556,
+          "z_score": 23.983064516129033,
+          "combined_score": 186.07066567796508,
+          "overlap_genes": [
+            "BAK1",
+            "SOD2",
+            "BID"
+          ],
+          "genes": [
+            "BAK1",
+            "SOD2",
+            "BID"
+          ],
+          "adjusted_p_value": 0.018140698825486225
+        },
+        {
+          "rank": 38,
+          "term_name": "Positive Regulation Of Protein Modification Process (GO:0031401)",
+          "term": "Positive Regulation Of Protein Modification Process (GO:0031401)",
+          "overlap": "8/225",
+          "p_value": 0.0004298033363811812,
+          "z_score": 4.8233486943164365,
+          "combined_score": 37.39148084026008,
+          "overlap_genes": [
+            "LYN",
+            "CCND3",
+            "BMP2",
+            "TFRC",
+            "NTRK3",
+            "PRKCD",
+            "FGF18",
+            "RASGRP1"
+          ],
+          "genes": [
+            "LYN",
+            "CCND3",
+            "BMP2",
+            "TFRC",
+            "NTRK3",
+            "PRKCD",
+            "FGF18",
+            "RASGRP1"
+          ],
+          "adjusted_p_value": 0.018140698825486225
+        },
+        {
+          "rank": 39,
+          "term_name": "Regulation Of Apoptotic Signaling Pathway (GO:2001233)",
+          "term": "Regulation Of Apoptotic Signaling Pathway (GO:2001233)",
+          "overlap": "4/45",
+          "p_value": 0.00043413502743149554,
+          "z_score": 12.544187519797276,
+          "combined_score": 97.11904348932094,
+          "overlap_genes": [
+            "TMBIM6",
+            "CTSV",
+            "MAPK8IP2",
+            "GRINA"
+          ],
+          "genes": [
+            "TMBIM6",
+            "CTSV",
+            "MAPK8IP2",
+            "GRINA"
+          ],
+          "adjusted_p_value": 0.018140698825486225
+        },
+        {
+          "rank": 40,
+          "term_name": "Organonitrogen Compound Biosynthetic Process (GO:1901566)",
+          "term": "Organonitrogen Compound Biosynthetic Process (GO:1901566)",
+          "overlap": "6/123",
+          "p_value": 0.0004389763781121893,
+          "z_score": 6.6548582995951415,
+          "combined_score": 51.44914177874271,
+          "overlap_genes": [
+            "ALAS1",
+            "CHKA",
+            "GCH1",
+            "FMO1",
+            "FURIN",
+            "CDO1"
+          ],
+          "genes": [
+            "ALAS1",
+            "CHKA",
+            "GCH1",
+            "FMO1",
+            "FURIN",
+            "CDO1"
+          ],
+          "adjusted_p_value": 0.018140698825486225
+        },
+        {
+          "rank": 41,
+          "term_name": "Enzyme-Linked Receptor Protein Signaling Pathway (GO:0007167)",
+          "term": "Enzyme-Linked Receptor Protein Signaling Pathway (GO:0007167)",
+          "overlap": "6/124",
+          "p_value": 0.0004583282841267932,
+          "z_score": 6.598126672613738,
+          "combined_score": 50.72590202991325,
+          "overlap_genes": [
+            "LYN",
+            "PTPRD",
+            "RET",
+            "NTRK3",
+            "TYRO3",
+            "IL6ST"
+          ],
+          "genes": [
+            "LYN",
+            "PTPRD",
+            "RET",
+            "NTRK3",
+            "TYRO3",
+            "IL6ST"
+          ],
+          "adjusted_p_value": 0.01838824458005263
+        },
+        {
+          "rank": 42,
+          "term_name": "Apoptotic Process (GO:0006915)",
+          "term": "Apoptotic Process (GO:0006915)",
+          "overlap": "8/228",
+          "p_value": 0.0004692411464723074,
+          "z_score": 4.756848484848485,
+          "combined_score": 36.458359797332,
+          "overlap_genes": [
+            "NFKBIA",
+            "BCL2L11",
+            "IRF1",
+            "CASP3",
+            "PRKCD",
+            "BAK1",
+            "BID",
+            "RHOB"
+          ],
+          "genes": [
+            "NFKBIA",
+            "BCL2L11",
+            "IRF1",
+            "CASP3",
+            "PRKCD",
+            "BAK1",
+            "BID",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.01838824458005263
+        },
+        {
+          "rank": 43,
+          "term_name": "Regulation Of Mitotic Cell Cycle (GO:0007346)",
+          "term": "Regulation Of Mitotic Cell Cycle (GO:0007346)",
+          "overlap": "6/125",
+          "p_value": 0.00047833909070917307,
+          "z_score": 6.54234851835471,
+          "combined_score": 50.01750193213424,
+          "overlap_genes": [
+            "CDKN1C",
+            "BTG3",
+            "BTG2",
+            "BTG1",
+            "HNRNPU",
+            "ASNS"
+          ],
+          "genes": [
+            "CDKN1C",
+            "BTG3",
+            "BTG2",
+            "BTG1",
+            "HNRNPU",
+            "ASNS"
+          ],
+          "adjusted_p_value": 0.01838824458005263
+        },
+        {
+          "rank": 44,
+          "term_name": "Regulation Of Kinase Activity (GO:0043549)",
+          "term": "Regulation Of Kinase Activity (GO:0043549)",
+          "overlap": "5/85",
+          "p_value": 0.000569546047179436,
+          "z_score": 8.072712418300654,
+          "combined_score": 60.30857793228805,
+          "overlap_genes": [
+            "CDKN1C",
+            "RET",
+            "NTRK3",
+            "TYRO3",
+            "HNRNPU"
+          ],
+          "genes": [
+            "CDKN1C",
+            "RET",
+            "NTRK3",
+            "TYRO3",
+            "HNRNPU"
+          ],
+          "adjusted_p_value": 0.021396809454263813
+        },
+        {
+          "rank": 45,
+          "term_name": "Erythrocyte Differentiation (GO:0030218)",
+          "term": "Erythrocyte Differentiation (GO:0030218)",
+          "overlap": "4/49",
+          "p_value": 0.0006024244817587122,
+          "z_score": 11.426839826839826,
+          "combined_score": 84.72485514896441,
+          "overlap_genes": [
+            "LYN",
+            "ALAS1",
+            "CASP3",
+            "CEBPG"
+          ],
+          "genes": [
+            "LYN",
+            "ALAS1",
+            "CASP3",
+            "CEBPG"
+          ],
+          "adjusted_p_value": 0.021939807277943268
+        },
+        {
+          "rank": 46,
+          "term_name": "Inflammatory Response To Wounding (GO:0090594)",
+          "term": "Inflammatory Response To Wounding (GO:0090594)",
+          "overlap": "2/5",
+          "p_value": 0.0006105451511103391,
+          "z_score": 84.78205128205128,
+          "combined_score": 627.4853833473186,
+          "overlap_genes": [
+            "IL6",
+            "HMOX1"
+          ],
+          "genes": [
+            "IL6",
+            "HMOX1"
+          ],
+          "adjusted_p_value": 0.021939807277943268
+        },
+        {
+          "rank": 47,
+          "term_name": "Cell Cycle G1/S Phase Transition (GO:0044843)",
+          "term": "Cell Cycle G1/S Phase Transition (GO:0044843)",
+          "overlap": "4/52",
+          "p_value": 0.0007557558807527487,
+          "z_score": 10.71103896103896,
+          "combined_score": 76.98872168739749,
+          "overlap_genes": [
+            "CCND3",
+            "CDC34",
+            "CCNE1",
+            "CDK2"
+          ],
+          "genes": [
+            "CCND3",
+            "CDC34",
+            "CCNE1",
+            "CDK2"
+          ],
+          "adjusted_p_value": 0.026580095125197736
+        },
+        {
+          "rank": 48,
+          "term_name": "Regulation Of Cyclin-Dependent Protein Kinase Activity (GO:1904029)",
+          "term": "Regulation Of Cyclin-Dependent Protein Kinase Activity (GO:1904029)",
+          "overlap": "4/53",
+          "p_value": 0.0008124687895098035,
+          "z_score": 10.491916247018288,
+          "combined_score": 74.65452769960247,
+          "overlap_genes": [
+            "CDKN1C",
+            "CCND3",
+            "CDKN2B",
+            "CCNE1"
+          ],
+          "genes": [
+            "CDKN1C",
+            "CCND3",
+            "CDKN2B",
+            "CCNE1"
+          ],
+          "adjusted_p_value": 0.0271577539543787
+        },
+        {
+          "rank": 49,
+          "term_name": "Mitochondrial Transport (GO:0006839)",
+          "term": "Mitochondrial Transport (GO:0006839)",
+          "overlap": "4/53",
+          "p_value": 0.0008124687895098035,
+          "z_score": 10.491916247018288,
+          "combined_score": 74.65452769960247,
+          "overlap_genes": [
+            "STARD3",
+            "PPIF",
+            "BAK1",
+            "SLC25A4"
+          ],
+          "genes": [
+            "STARD3",
+            "PPIF",
+            "BAK1",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.0271577539543787
+        },
+        {
+          "rank": 50,
+          "term_name": "Positive Regulation Of MAPK Cascade (GO:0043410)",
+          "term": "Positive Regulation Of MAPK Cascade (GO:0043410)",
+          "overlap": "9/310",
+          "p_value": 0.000821468661656948,
+          "z_score": 3.921358335748846,
+          "combined_score": 27.858963917452936,
+          "overlap_genes": [
+            "RET",
+            "BMP2",
+            "IL6",
+            "STK25",
+            "NTRK3",
+            "FGF18",
+            "ARRB2",
+            "RASGRP1",
+            "ICAM1"
+          ],
+          "genes": [
+            "RET",
+            "BMP2",
+            "IL6",
+            "STK25",
+            "NTRK3",
+            "FGF18",
+            "ARRB2",
+            "RASGRP1",
+            "ICAM1"
+          ],
+          "adjusted_p_value": 0.0271577539543787
+        },
+        {
+          "rank": 51,
+          "term_name": "Positive Regulation Of Cellular Component Biogenesis (GO:0044089)",
+          "term": "Positive Regulation Of Cellular Component Biogenesis (GO:0044089)",
+          "overlap": "5/93",
+          "p_value": 0.0008579409642049479,
+          "z_score": 7.335858585858586,
+          "combined_score": 51.79831603792183,
+          "overlap_genes": [
+            "BCL2L11",
+            "TFRC",
+            "CDK2",
+            "BAK1",
+            "BID"
+          ],
+          "genes": [
+            "BCL2L11",
+            "TFRC",
+            "CDK2",
+            "BAK1",
+            "BID"
+          ],
+          "adjusted_p_value": 0.02780738066334861
+        },
+        {
+          "rank": 52,
+          "term_name": "Sulfur Amino Acid Catabolic Process (GO:0000098)",
+          "term": "Sulfur Amino Acid Catabolic Process (GO:0000098)",
+          "overlap": "2/6",
+          "p_value": 0.0009110662414558737,
+          "z_score": 63.583333333333336,
+          "combined_score": 445.14023726569343,
+          "overlap_genes": [
+            "TST",
+            "FMO1"
+          ],
+          "genes": [
+            "TST",
+            "FMO1"
+          ],
+          "adjusted_p_value": 0.028414952775972818
+        },
+        {
+          "rank": 53,
+          "term_name": "Positive Regulation Of IRE1-mediated Unfolded Protein Response (GO:1903896)",
+          "term": "Positive Regulation Of IRE1-mediated Unfolded Protein Response (GO:1903896)",
+          "overlap": "2/6",
+          "p_value": 0.0009110662414558737,
+          "z_score": 63.583333333333336,
+          "combined_score": 445.14023726569343,
+          "overlap_genes": [
+            "BCL2L11",
+            "BAK1"
+          ],
+          "genes": [
+            "BCL2L11",
+            "BAK1"
+          ],
+          "adjusted_p_value": 0.028414952775972818
+        },
+        {
+          "rank": 54,
+          "term_name": "Cardiac Conduction System Development (GO:0003161)",
+          "term": "Cardiac Conduction System Development (GO:0003161)",
+          "overlap": "3/25",
+          "p_value": 0.0009792091806705909,
+          "z_score": 17.436950146627566,
+          "combined_score": 120.8165346005321,
+          "overlap_genes": [
+            "SHOX2",
+            "MSX1",
+            "NKX2-5"
+          ],
+          "genes": [
+            "SHOX2",
+            "MSX1",
+            "NKX2-5"
+          ],
+          "adjusted_p_value": 0.029757472569307518
+        },
+        {
+          "rank": 55,
+          "term_name": "Cellular Response To Transforming Growth Factor Beta Stimulus (GO:0071560)",
+          "term": "Cellular Response To Transforming Growth Factor Beta Stimulus (GO:0071560)",
+          "overlap": "5/96",
+          "p_value": 0.0009901155422334625,
+          "z_score": 7.092939739998563,
+          "combined_score": 49.066750595134245,
+          "overlap_genes": [
+            "HYAL2",
+            "TGFBRAP1",
+            "FURIN",
+            "ARRB2",
+            "FOS"
+          ],
+          "genes": [
+            "HYAL2",
+            "TGFBRAP1",
+            "FURIN",
+            "ARRB2",
+            "FOS"
+          ],
+          "adjusted_p_value": 0.029757472569307518
+        },
+        {
+          "rank": 56,
+          "term_name": "Response To Glucocorticoid (GO:0051384)",
+          "term": "Response To Glucocorticoid (GO:0051384)",
+          "overlap": "3/26",
+          "p_value": 0.0011005483203385424,
+          "z_score": 16.67798036465638,
+          "combined_score": 113.6095141472418,
+          "overlap_genes": [
+            "IL6",
+            "BCL2L11",
+            "HNRNPU"
+          ],
+          "genes": [
+            "IL6",
+            "BCL2L11",
+            "HNRNPU"
+          ],
+          "adjusted_p_value": 0.03248582809856448
+        },
+        {
+          "rank": 57,
+          "term_name": "Positive Regulation Of Mitochondrion Organization (GO:0010822)",
+          "term": "Positive Regulation Of Mitochondrion Organization (GO:0010822)",
+          "overlap": "4/58",
+          "p_value": 0.0011417660744577822,
+          "z_score": 9.518037518037518,
+          "combined_score": 64.4864081723951,
+          "overlap_genes": [
+            "BCL2L11",
+            "PPIF",
+            "BAK1",
+            "BID"
+          ],
+          "genes": [
+            "BCL2L11",
+            "PPIF",
+            "BAK1",
+            "BID"
+          ],
+          "adjusted_p_value": 0.03311121615927568
+        },
+        {
+          "rank": 58,
+          "term_name": "Cardiac Muscle Cell Differentiation (GO:0055007)",
+          "term": "Cardiac Muscle Cell Differentiation (GO:0055007)",
+          "overlap": "3/27",
+          "p_value": 0.0012309790650156921,
+          "z_score": 15.98225806451613,
+          "combined_score": 107.08025701485373,
+          "overlap_genes": [
+            "BMP2",
+            "SHOX2",
+            "NKX2-5"
+          ],
+          "genes": [
+            "BMP2",
+            "SHOX2",
+            "NKX2-5"
+          ],
+          "adjusted_p_value": 0.033741170229509655
+        },
+        {
+          "rank": 59,
+          "term_name": "Chaperone Cofactor-Dependent Protein Refolding (GO:0051085)",
+          "term": "Chaperone Cofactor-Dependent Protein Refolding (GO:0051085)",
+          "overlap": "3/27",
+          "p_value": 0.0012309790650156921,
+          "z_score": 15.98225806451613,
+          "combined_score": 107.08025701485373,
+          "overlap_genes": [
+            "DNAJB1",
+            "HSPA2",
+            "HSPA13"
+          ],
+          "genes": [
+            "DNAJB1",
+            "HSPA2",
+            "HSPA13"
+          ],
+          "adjusted_p_value": 0.033741170229509655
+        },
+        {
+          "rank": 60,
+          "term_name": "Cellular Response To Angiotensin (GO:1904385)",
+          "term": "Cellular Response To Angiotensin (GO:1904385)",
+          "overlap": "2/7",
+          "p_value": 0.0012688785397168886,
+          "z_score": 50.864102564102566,
+          "combined_score": 339.24432771676044,
+          "overlap_genes": [
+            "CA2",
+            "PRKCD"
+          ],
+          "genes": [
+            "CA2",
+            "PRKCD"
+          ],
+          "adjusted_p_value": 0.033741170229509655
+        },
+        {
+          "rank": 61,
+          "term_name": "Response To Hydroperoxide (GO:0033194)",
+          "term": "Response To Hydroperoxide (GO:0033194)",
+          "overlap": "2/7",
+          "p_value": 0.0012688785397168886,
+          "z_score": 50.864102564102566,
+          "combined_score": 339.24432771676044,
+          "overlap_genes": [
+            "GPX3",
+            "PRKCD"
+          ],
+          "genes": [
+            "GPX3",
+            "PRKCD"
+          ],
+          "adjusted_p_value": 0.033741170229509655
+        },
+        {
+          "rank": 62,
+          "term_name": "Taurine Metabolic Process (GO:0019530)",
+          "term": "Taurine Metabolic Process (GO:0019530)",
+          "overlap": "2/7",
+          "p_value": 0.0012688785397168886,
+          "z_score": 50.864102564102566,
+          "combined_score": 339.24432771676044,
+          "overlap_genes": [
+            "FMO1",
+            "CDO1"
+          ],
+          "genes": [
+            "FMO1",
+            "CDO1"
+          ],
+          "adjusted_p_value": 0.033741170229509655
+        },
+        {
+          "rank": 63,
+          "term_name": "Response To Retinoic Acid (GO:0032526)",
+          "term": "Response To Retinoic Acid (GO:0032526)",
+          "overlap": "4/60",
+          "p_value": 0.001296368987714325,
+          "z_score": 9.177179962894249,
+          "combined_score": 61.01161778421144,
+          "overlap_genes": [
+            "RET",
+            "RXRB",
+            "LYN",
+            "AQP3"
+          ],
+          "genes": [
+            "RET",
+            "RXRB",
+            "LYN",
+            "AQP3"
+          ],
+          "adjusted_p_value": 0.033741170229509655
+        },
+        {
+          "rank": 64,
+          "term_name": "Negative Regulation Of Signal Transduction (GO:0009968)",
+          "term": "Negative Regulation Of Signal Transduction (GO:0009968)",
+          "overlap": "8/267",
+          "p_value": 0.001306373197028807,
+          "z_score": 4.032535392535393,
+          "combined_score": 26.77805342421268,
+          "overlap_genes": [
+            "LYN",
+            "BMP2",
+            "MMP14",
+            "PRKCD",
+            "TYRO3",
+            "TMBIM6",
+            "MAPK8IP2",
+            "GRINA"
+          ],
+          "genes": [
+            "LYN",
+            "BMP2",
+            "MMP14",
+            "PRKCD",
+            "TYRO3",
+            "TMBIM6",
+            "MAPK8IP2",
+            "GRINA"
+          ],
+          "adjusted_p_value": 0.033741170229509655
+        },
+        {
+          "rank": 65,
+          "term_name": "Negative Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001243)",
+          "term": "Negative Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001243)",
+          "overlap": "4/61",
+          "p_value": 0.001378904047358053,
+          "z_score": 9.01572112098428,
+          "combined_score": 59.381743008211515,
+          "overlap_genes": [
+            "DNAJA1",
+            "PPIF",
+            "TMBIM6",
+            "SOD2"
+          ],
+          "genes": [
+            "DNAJA1",
+            "PPIF",
+            "TMBIM6",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.03506659061973633
+        },
+        {
+          "rank": 66,
+          "term_name": "Positive Regulation Of Vasculature Development (GO:1904018)",
+          "term": "Positive Regulation Of Vasculature Development (GO:1904018)",
+          "overlap": "5/104",
+          "p_value": 0.0014163939615609979,
+          "z_score": 6.517132105367399,
+          "combined_score": 42.75004761879069,
+          "overlap_genes": [
+            "BTG1",
+            "AGO2",
+            "FGF18",
+            "HMOX1",
+            "RHOB"
+          ],
+          "genes": [
+            "BTG1",
+            "AGO2",
+            "FGF18",
+            "HMOX1",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.03547423058273227
+        },
+        {
+          "rank": 67,
+          "term_name": "Regulation Of Neuron Apoptotic Process (GO:0043523)",
+          "term": "Regulation Of Neuron Apoptotic Process (GO:0043523)",
+          "overlap": "5/105",
+          "p_value": 0.0014778757027882068,
+          "z_score": 6.451633986928105,
+          "combined_score": 42.04626358784388,
+          "overlap_genes": [
+            "SIGMAR1",
+            "TYRO3",
+            "PPT1",
+            "IL6ST",
+            "SOD2"
+          ],
+          "genes": [
+            "SIGMAR1",
+            "TYRO3",
+            "PPT1",
+            "IL6ST",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.036051953002749916
+        },
+        {
+          "rank": 68,
+          "term_name": "Cellular Response To Oxygen-Containing Compound (GO:1901701)",
+          "term": "Cellular Response To Oxygen-Containing Compound (GO:1901701)",
+          "overlap": "10/406",
+          "p_value": 0.001483080946271624,
+          "z_score": 3.317977067977068,
+          "combined_score": 21.612087028574454,
+          "overlap_genes": [
+            "LYN",
+            "RET",
+            "IL6",
+            "DLG4",
+            "PRKCD",
+            "CDK2",
+            "PPIF",
+            "FOS",
+            "SQSTM1",
+            "CXCL2"
+          ],
+          "genes": [
+            "LYN",
+            "RET",
+            "IL6",
+            "DLG4",
+            "PRKCD",
+            "CDK2",
+            "PPIF",
+            "FOS",
+            "SQSTM1",
+            "CXCL2"
+          ],
+          "adjusted_p_value": 0.036051953002749916
+        },
+        {
+          "rank": 69,
+          "term_name": "Integrated Stress Response Signaling (GO:0140467)",
+          "term": "Integrated Stress Response Signaling (GO:0140467)",
+          "overlap": "3/29",
+          "p_value": 0.0015201068568565246,
+          "z_score": 14.75136476426799,
+          "combined_score": 95.7212319496962,
+          "overlap_genes": [
+            "CEBPG",
+            "FOS",
+            "JUNB"
+          ],
+          "genes": [
+            "CEBPG",
+            "FOS",
+            "JUNB"
+          ],
+          "adjusted_p_value": 0.03641647296208456
+        },
+        {
+          "rank": 70,
+          "term_name": "G1/S Transition Of Mitotic Cell Cycle (GO:0000082)",
+          "term": "G1/S Transition Of Mitotic Cell Cycle (GO:0000082)",
+          "overlap": "4/63",
+          "p_value": 0.001554852044714961,
+          "z_score": 8.709222980409422,
+          "combined_score": 56.31710075684168,
+          "overlap_genes": [
+            "CCND3",
+            "CDC34",
+            "CCNE1",
+            "CDK2"
+          ],
+          "genes": [
+            "CCND3",
+            "CDC34",
+            "CCNE1",
+            "CDK2"
+          ],
+          "adjusted_p_value": 0.036716720427340435
+        },
+        {
+          "rank": 71,
+          "term_name": "Positive Regulation Of Cell Population Proliferation (GO:0008284)",
+          "term": "Positive Regulation Of Cell Population Proliferation (GO:0008284)",
+          "overlap": "11/483",
+          "p_value": 0.0016210458974815524,
+          "z_score": 3.0708808947307737,
+          "combined_score": 19.729438497586898,
+          "overlap_genes": [
+            "LYN",
+            "BMP2",
+            "IL6",
+            "EPCAM",
+            "NTRK3",
+            "FGF18",
+            "CDK2",
+            "HNRNPU",
+            "HMOX1",
+            "IL6ST",
+            "NKX2-5"
+          ],
+          "genes": [
+            "LYN",
+            "BMP2",
+            "IL6",
+            "EPCAM",
+            "NTRK3",
+            "FGF18",
+            "CDK2",
+            "HNRNPU",
+            "HMOX1",
+            "IL6ST",
+            "NKX2-5"
+          ],
+          "adjusted_p_value": 0.03774068828925361
+        },
+        {
+          "rank": 72,
+          "term_name": "Formation Of Translation Preinitiation Complex (GO:0001731)",
+          "term": "Formation Of Translation Preinitiation Complex (GO:0001731)",
+          "overlap": "2/8",
+          "p_value": 0.0016830696407496527,
+          "z_score": 42.38461538461539,
+          "combined_score": 270.7163021628483,
+          "overlap_genes": [
+            "EIF2S3",
+            "EIF5"
+          ],
+          "genes": [
+            "EIF2S3",
+            "EIF5"
+          ],
+          "adjusted_p_value": 0.03864047383554411
+        },
+        {
+          "rank": 73,
+          "term_name": "Positive Regulation Of T Cell Proliferation (GO:0042102)",
+          "term": "Positive Regulation Of T Cell Proliferation (GO:0042102)",
+          "overlap": "4/65",
+          "p_value": 0.0017458489807711433,
+          "z_score": 8.422823078560784,
+          "combined_score": 53.48925857277807,
+          "overlap_genes": [
+            "IL6",
+            "TFRC",
+            "IGFBP2",
+            "IL6ST"
+          ],
+          "genes": [
+            "IL6",
+            "TFRC",
+            "IGFBP2",
+            "IL6ST"
+          ],
+          "adjusted_p_value": 0.03953271733170822
+        },
+        {
+          "rank": 74,
+          "term_name": "Response To Lipid (GO:0033993)",
+          "term": "Response To Lipid (GO:0033993)",
+          "overlap": "5/110",
+          "p_value": 0.0018151765109813056,
+          "z_score": 6.142857142857143,
+          "combined_score": 38.771088612125084,
+          "overlap_genes": [
+            "RXRB",
+            "ALAS1",
+            "GCH1",
+            "GPX3",
+            "AQP3"
+          ],
+          "genes": [
+            "RXRB",
+            "ALAS1",
+            "GCH1",
+            "GPX3",
+            "AQP3"
+          ],
+          "adjusted_p_value": 0.04054711854935268
+        },
+        {
+          "rank": 75,
+          "term_name": "Positive Regulation Of Extrinsic Apoptotic Signaling Pathway (GO:2001238)",
+          "term": "Positive Regulation Of Extrinsic Apoptotic Signaling Pathway (GO:2001238)",
+          "overlap": "3/31",
+          "p_value": 0.0018485010195439346,
+          "z_score": 13.6963133640553,
+          "combined_score": 86.19610772232683,
+          "overlap_genes": [
+            "RET",
+            "HYAL2",
+            "BID"
+          ],
+          "genes": [
+            "RET",
+            "HYAL2",
+            "BID"
+          ],
+          "adjusted_p_value": 0.04074096247074832
+        },
+        {
+          "rank": 76,
+          "term_name": "'De Novo' Post-Translational Protein Folding (GO:0051084)",
+          "term": "'De Novo' Post-Translational Protein Folding (GO:0051084)",
+          "overlap": "3/32",
+          "p_value": 0.002027987435204574,
+          "z_score": 13.223359288097887,
+          "combined_score": 81.9942345376336,
+          "overlap_genes": [
+            "DNAJB1",
+            "HSPA2",
+            "HSPA13"
+          ],
+          "genes": [
+            "DNAJB1",
+            "HSPA2",
+            "HSPA13"
+          ],
+          "adjusted_p_value": 0.04243371177712862
+        },
+        {
+          "rank": 77,
+          "term_name": "Regulation Of Natural Killer Cell Mediated Cytotoxicity (GO:0042269)",
+          "term": "Regulation Of Natural Killer Cell Mediated Cytotoxicity (GO:0042269)",
+          "overlap": "3/32",
+          "p_value": 0.002027987435204574,
+          "z_score": 13.223359288097887,
+          "combined_score": 81.9942345376336,
+          "overlap_genes": [
+            "ARRB2",
+            "HLA-F",
+            "RASGRP1"
+          ],
+          "genes": [
+            "ARRB2",
+            "HLA-F",
+            "RASGRP1"
+          ],
+          "adjusted_p_value": 0.04243371177712862
+        },
+        {
+          "rank": 78,
+          "term_name": "Cellular Nitrogen Compound Biosynthetic Process (GO:0044271)",
+          "term": "Cellular Nitrogen Compound Biosynthetic Process (GO:0044271)",
+          "overlap": "3/32",
+          "p_value": 0.002027987435204574,
+          "z_score": 13.223359288097887,
+          "combined_score": 81.9942345376336,
+          "overlap_genes": [
+            "CYB5B",
+            "SPR",
+            "GCH1"
+          ],
+          "genes": [
+            "CYB5B",
+            "SPR",
+            "GCH1"
+          ],
+          "adjusted_p_value": 0.04243371177712862
+        },
+        {
+          "rank": 79,
+          "term_name": "Mitochondrial Membrane Organization (GO:0007006)",
+          "term": "Mitochondrial Membrane Organization (GO:0007006)",
+          "overlap": "3/32",
+          "p_value": 0.002027987435204574,
+          "z_score": 13.223359288097887,
+          "combined_score": 81.9942345376336,
+          "overlap_genes": [
+            "PPIF",
+            "BAK1",
+            "SLC25A4"
+          ],
+          "genes": [
+            "PPIF",
+            "BAK1",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.04243371177712862
+        },
+        {
+          "rank": 80,
+          "term_name": "Amine Metabolic Process (GO:0009308)",
+          "term": "Amine Metabolic Process (GO:0009308)",
+          "overlap": "2/9",
+          "p_value": 0.0021527378072179896,
+          "z_score": 36.327838827838825,
+          "combined_score": 223.0897976455384,
+          "overlap_genes": [
+            "SULT1A1",
+            "MAOA"
+          ],
+          "genes": [
+            "SULT1A1",
+            "MAOA"
+          ],
+          "adjusted_p_value": 0.042812430511140816
+        },
+        {
+          "rank": 81,
+          "term_name": "Regulation Of Postsynaptic Neurotransmitter Receptor Activity (GO:0098962)",
+          "term": "Regulation Of Postsynaptic Neurotransmitter Receptor Activity (GO:0098962)",
+          "overlap": "2/9",
+          "p_value": 0.0021527378072179896,
+          "z_score": 36.327838827838825,
+          "combined_score": 223.0897976455384,
+          "overlap_genes": [
+            "NPTX2",
+            "NPTXR"
+          ],
+          "genes": [
+            "NPTX2",
+            "NPTXR"
+          ],
+          "adjusted_p_value": 0.042812430511140816
+        },
+        {
+          "rank": 82,
+          "term_name": "High-Density Lipoprotein Particle Assembly (GO:0034380)",
+          "term": "High-Density Lipoprotein Particle Assembly (GO:0034380)",
+          "overlap": "2/9",
+          "p_value": 0.0021527378072179896,
+          "z_score": 36.327838827838825,
+          "combined_score": 223.0897976455384,
+          "overlap_genes": [
+            "APOM",
+            "PRKACA"
+          ],
+          "genes": [
+            "APOM",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 0.042812430511140816
+        },
+        {
+          "rank": 83,
+          "term_name": "Negative Regulation Of Lipid Localization (GO:1905953)",
+          "term": "Negative Regulation Of Lipid Localization (GO:1905953)",
+          "overlap": "2/9",
+          "p_value": 0.0021527378072179896,
+          "z_score": 36.327838827838825,
+          "combined_score": 223.0897976455384,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6"
+          ],
+          "adjusted_p_value": 0.042812430511140816
+        },
+        {
+          "rank": 84,
+          "term_name": "DNA-templated DNA Replication (GO:0006261)",
+          "term": "DNA-templated DNA Replication (GO:0006261)",
+          "overlap": "4/69",
+          "p_value": 0.0021755863054663213,
+          "z_score": 7.902897102897103,
+          "combined_score": 48.4483715367673,
+          "overlap_genes": [
+            "RFC4",
+            "CDC34",
+            "POLG2",
+            "POLE3"
+          ],
+          "genes": [
+            "RFC4",
+            "CDC34",
+            "POLG2",
+            "POLE3"
+          ],
+          "adjusted_p_value": 0.042812430511140816
+        },
+        {
+          "rank": 85,
+          "term_name": "Cellular Response To Oxidative Stress (GO:0034599)",
+          "term": "Cellular Response To Oxidative Stress (GO:0034599)",
+          "overlap": "5/117",
+          "p_value": 0.0023778962584732905,
+          "z_score": 5.756886087768441,
+          "combined_score": 34.78045243496046,
+          "overlap_genes": [
+            "PRKCD",
+            "HMOX1",
+            "FOS",
+            "SOD2",
+            "SQSTM1"
+          ],
+          "genes": [
+            "PRKCD",
+            "HMOX1",
+            "FOS",
+            "SOD2",
+            "SQSTM1"
+          ],
+          "adjusted_p_value": 0.04624308841478057
+        },
+        {
+          "rank": 86,
+          "term_name": "Apoptotic Mitochondrial Changes (GO:0008637)",
+          "term": "Apoptotic Mitochondrial Changes (GO:0008637)",
+          "overlap": "3/34",
+          "p_value": 0.0024186058391658344,
+          "z_score": 12.368990634755463,
+          "combined_score": 74.51777574817723,
+          "overlap_genes": [
+            "BAK1",
+            "BID",
+            "SOD2"
+          ],
+          "genes": [
+            "BAK1",
+            "BID",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.04648785409466424
+        },
+        {
+          "rank": 87,
+          "term_name": "Regulation Of Protein Binding (GO:0043393)",
+          "term": "Regulation Of Protein Binding (GO:0043393)",
+          "overlap": "5/118",
+          "p_value": 0.0024675569647104635,
+          "z_score": 5.705650991960206,
+          "combined_score": 34.25973372736088,
+          "overlap_genes": [
+            "BMP2",
+            "PRKCD",
+            "TMBIM6",
+            "PRKACA",
+            "MARK2"
+          ],
+          "genes": [
+            "BMP2",
+            "PRKCD",
+            "TMBIM6",
+            "PRKACA",
+            "MARK2"
+          ],
+          "adjusted_p_value": 0.04688358232949881
+        },
+        {
+          "rank": 88,
+          "term_name": "Transforming Growth Factor Beta Receptor Signaling Pathway (GO:0007179)",
+          "term": "Transforming Growth Factor Beta Receptor Signaling Pathway (GO:0007179)",
+          "overlap": "4/72",
+          "p_value": 0.002542191287700779,
+          "z_score": 7.553093964858671,
+          "combined_score": 45.127688480388656,
+          "overlap_genes": [
+            "TGFBRAP1",
+            "FURIN",
+            "ARRB2",
+            "FOS"
+          ],
+          "genes": [
+            "TGFBRAP1",
+            "FURIN",
+            "ARRB2",
+            "FOS"
+          ],
+          "adjusted_p_value": 0.04701222900346049
+        },
+        {
+          "rank": 89,
+          "term_name": "Regulation Of Protein-Containing Complex Assembly (GO:0043254)",
+          "term": "Regulation Of Protein-Containing Complex Assembly (GO:0043254)",
+          "overlap": "5/119",
+          "p_value": 0.0025596494920214425,
+          "z_score": 5.65531475748194,
+          "combined_score": 33.75026781197114,
+          "overlap_genes": [
+            "BCL2L11",
+            "TFRC",
+            "TGFBRAP1",
+            "BAK1",
+            "BID"
+          ],
+          "genes": [
+            "BCL2L11",
+            "TFRC",
+            "TGFBRAP1",
+            "BAK1",
+            "BID"
+          ],
+          "adjusted_p_value": 0.04701222900346049
+        },
+        {
+          "rank": 90,
+          "term_name": "Positive Regulation Of Angiogenesis (GO:0045766)",
+          "term": "Positive Regulation Of Angiogenesis (GO:0045766)",
+          "overlap": "5/119",
+          "p_value": 0.0025596494920214425,
+          "z_score": 5.65531475748194,
+          "combined_score": 33.75026781197114,
+          "overlap_genes": [
+            "BTG1",
+            "AGO2",
+            "FGF18",
+            "HMOX1",
+            "RHOB"
+          ],
+          "genes": [
+            "BTG1",
+            "AGO2",
+            "FGF18",
+            "HMOX1",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.04701222900346049
+        },
+        {
+          "rank": 91,
+          "term_name": "Regulation Of Inclusion Body Assembly (GO:0090083)",
+          "term": "Regulation Of Inclusion Body Assembly (GO:0090083)",
+          "overlap": "2/10",
+          "p_value": 0.0026769918643785493,
+          "z_score": 31.78525641025641,
+          "combined_score": 188.26603021268724,
+          "overlap_genes": [
+            "DNAJB1",
+            "HSPA2"
+          ],
+          "genes": [
+            "DNAJB1",
+            "HSPA2"
+          ],
+          "adjusted_p_value": 0.04758137152492196
+        },
+        {
+          "rank": 92,
+          "term_name": "Negative Regulation Of Inclusion Body Assembly (GO:0090084)",
+          "term": "Negative Regulation Of Inclusion Body Assembly (GO:0090084)",
+          "overlap": "2/10",
+          "p_value": 0.0026769918643785493,
+          "z_score": 31.78525641025641,
+          "combined_score": 188.26603021268724,
+          "overlap_genes": [
+            "DNAJB1",
+            "HSPA2"
+          ],
+          "genes": [
+            "DNAJB1",
+            "HSPA2"
+          ],
+          "adjusted_p_value": 0.04758137152492196
+        },
+        {
+          "rank": 93,
+          "term_name": "Negative Regulation Of Mitochondrial Outer Membrane Permeabilization Involved In Apoptotic Signaling Pathway (GO:1901029)",
+          "term": "Negative Regulation Of Mitochondrial Outer Membrane Permeabilization Involved In Apoptotic Signaling Pathway (GO:1901029)",
+          "overlap": "2/10",
+          "p_value": 0.0026769918643785493,
+          "z_score": 31.78525641025641,
+          "combined_score": 188.26603021268724,
+          "overlap_genes": [
+            "BAK1",
+            "SLC25A4"
+          ],
+          "genes": [
+            "BAK1",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.04758137152492196
+        },
+        {
+          "rank": 94,
+          "term_name": "Negative Regulation Of Neuron Apoptotic Process (GO:0043524)",
+          "term": "Negative Regulation Of Neuron Apoptotic Process (GO:0043524)",
+          "overlap": "4/74",
+          "p_value": 0.002808877027406159,
+          "z_score": 7.336549165120593,
+          "combined_score": 43.102009989416736,
+          "overlap_genes": [
+            "TYRO3",
+            "PPT1",
+            "IL6ST",
+            "SOD2"
+          ],
+          "genes": [
+            "TYRO3",
+            "PPT1",
+            "IL6ST",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.04939440134364234
+        },
+        {
+          "rank": 95,
+          "term_name": "Receptor-Mediated Endocytosis (GO:0006898)",
+          "term": "Receptor-Mediated Endocytosis (GO:0006898)",
+          "overlap": "5/122",
+          "p_value": 0.0028508985064854627,
+          "z_score": 5.509468744762862,
+          "combined_score": 32.28615386992722,
+          "overlap_genes": [
+            "TFRC",
+            "PPT1",
+            "CLTB",
+            "AP2S1",
+            "ARRB2"
+          ],
+          "genes": [
+            "TFRC",
+            "PPT1",
+            "CLTB",
+            "AP2S1",
+            "ARRB2"
+          ],
+          "adjusted_p_value": 0.049605634012847045
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Epstein-Barr virus infection",
+          "term": "Epstein-Barr virus infection",
+          "overlap": "14/202",
+          "p_value": 7.829916429796114e-10,
+          "z_score": 10.163859338061465,
+          "combined_score": 213.1147769966616,
+          "overlap_genes": [
+            "LYN",
+            "TAP1",
+            "HLA-F",
+            "ICAM1",
+            "NFKBIA",
+            "CCND3",
+            "IL6",
+            "BCL2L11",
+            "PSMC3",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "BAK1",
+            "BID"
+          ],
+          "genes": [
+            "LYN",
+            "TAP1",
+            "HLA-F",
+            "ICAM1",
+            "NFKBIA",
+            "CCND3",
+            "IL6",
+            "BCL2L11",
+            "PSMC3",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "BAK1",
+            "BID"
+          ],
+          "adjusted_p_value": 2.0044586060278053e-07
+        },
+        {
+          "rank": 2,
+          "term_name": "Pathways in cancer",
+          "term": "Pathways in cancer",
+          "overlap": "19/531",
+          "p_value": 4.3038592133529346e-08,
+          "z_score": 5.16060589028777,
+          "combined_score": 87.52990674990876,
+          "overlap_genes": [
+            "RET",
+            "CDKN2B",
+            "FOS",
+            "RASGRP1",
+            "RXRB",
+            "NFKBIA",
+            "CCND3",
+            "BMP2",
+            "IL6",
+            "BCL2L11",
+            "CCNE1",
+            "CASP3",
+            "FGF18",
+            "CDK2",
+            "HMOX1",
+            "BAK1",
+            "IL6ST",
+            "PRKACA",
+            "BID"
+          ],
+          "genes": [
+            "RET",
+            "CDKN2B",
+            "FOS",
+            "RASGRP1",
+            "RXRB",
+            "NFKBIA",
+            "CCND3",
+            "BMP2",
+            "IL6",
+            "BCL2L11",
+            "CCNE1",
+            "CASP3",
+            "FGF18",
+            "CDK2",
+            "HMOX1",
+            "BAK1",
+            "IL6ST",
+            "PRKACA",
+            "BID"
+          ],
+          "adjusted_p_value": 5.508939793091756e-06
+        },
+        {
+          "rank": 3,
+          "term_name": "Lipid and atherosclerosis",
+          "term": "Lipid and atherosclerosis",
+          "overlap": "12/215",
+          "p_value": 1.456964588229631e-07,
+          "z_score": 7.951548687495783,
+          "combined_score": 125.17121544408285,
+          "overlap_genes": [
+            "RXRB",
+            "LYN",
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "CYP1A1",
+            "HSPA2",
+            "FOS",
+            "SOD2",
+            "BID",
+            "CXCL2",
+            "ICAM1"
+          ],
+          "genes": [
+            "RXRB",
+            "LYN",
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "CYP1A1",
+            "HSPA2",
+            "FOS",
+            "SOD2",
+            "BID",
+            "CXCL2",
+            "ICAM1"
+          ],
+          "adjusted_p_value": 9.110795656655966e-06
+        },
+        {
+          "rank": 4,
+          "term_name": "Measles",
+          "term": "Measles",
+          "overlap": "10/139",
+          "p_value": 1.582673088926543e-07,
+          "z_score": 10.325267127592708,
+          "combined_score": 161.68315562751488,
+          "overlap_genes": [
+            "NFKBIA",
+            "CCND3",
+            "IL6",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "HSPA2",
+            "FOS",
+            "BAK1",
+            "BID"
+          ],
+          "genes": [
+            "NFKBIA",
+            "CCND3",
+            "IL6",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "HSPA2",
+            "FOS",
+            "BAK1",
+            "BID"
+          ],
+          "adjusted_p_value": 9.110795656655966e-06
+        },
+        {
+          "rank": 5,
+          "term_name": "Human T-cell leukemia virus 1 infection",
+          "term": "Human T-cell leukemia virus 1 infection",
+          "overlap": "12/219",
+          "p_value": 1.7794522766906182e-07,
+          "z_score": 7.796307325789161,
+          "combined_score": 121.16857157381742,
+          "overlap_genes": [
+            "NFKBIA",
+            "CCND3",
+            "IL6",
+            "CDKN2B",
+            "CCNE1",
+            "CDK2",
+            "MSX1",
+            "FOS",
+            "HLA-F",
+            "PRKACA",
+            "SLC25A4",
+            "ICAM1"
+          ],
+          "genes": [
+            "NFKBIA",
+            "CCND3",
+            "IL6",
+            "CDKN2B",
+            "CCNE1",
+            "CDK2",
+            "MSX1",
+            "FOS",
+            "HLA-F",
+            "PRKACA",
+            "SLC25A4",
+            "ICAM1"
+          ],
+          "adjusted_p_value": 9.110795656655966e-06
+        },
+        {
+          "rank": 6,
+          "term_name": "TNF signaling pathway",
+          "term": "TNF signaling pathway",
+          "overlap": "9/112",
+          "p_value": 2.6172831890934253e-07,
+          "z_score": 11.575617384505115,
+          "combined_score": 175.439580417842,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6",
+            "MMP14",
+            "CASP3",
+            "IRF1",
+            "FOS",
+            "JUNB",
+            "CXCL2",
+            "ICAM1"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6",
+            "MMP14",
+            "CASP3",
+            "IRF1",
+            "FOS",
+            "JUNB",
+            "CXCL2",
+            "ICAM1"
+          ],
+          "adjusted_p_value": 1.1167074940131947e-05
+        },
+        {
+          "rank": 7,
+          "term_name": "Kaposi sarcoma-associated herpesvirus infection",
+          "term": "Kaposi sarcoma-associated herpesvirus infection",
+          "overlap": "11/193",
+          "p_value": 3.980013606073432e-07,
+          "z_score": 8.083277266950736,
+          "combined_score": 119.1217245992217,
+          "overlap_genes": [
+            "LYN",
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "FOS",
+            "BAK1",
+            "IL6ST",
+            "HLA-F",
+            "BID",
+            "CXCL2",
+            "ICAM1"
+          ],
+          "genes": [
+            "LYN",
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "FOS",
+            "BAK1",
+            "IL6ST",
+            "HLA-F",
+            "BID",
+            "CXCL2",
+            "ICAM1"
+          ],
+          "adjusted_p_value": 1.4555478330782837e-05
+        },
+        {
+          "rank": 8,
+          "term_name": "Viral carcinogenesis",
+          "term": "Viral carcinogenesis",
+          "overlap": "11/203",
+          "p_value": 6.579515381043967e-07,
+          "z_score": 7.6583758503401365,
+          "combined_score": 109.01035235430916,
+          "overlap_genes": [
+            "LYN",
+            "NFKBIA",
+            "CCND3",
+            "CDKN2B",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "BAK1",
+            "IL6ST",
+            "HLA-F",
+            "PRKACA"
+          ],
+          "genes": [
+            "LYN",
+            "NFKBIA",
+            "CCND3",
+            "CDKN2B",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "BAK1",
+            "IL6ST",
+            "HLA-F",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 2.1054449219340693e-05
+        },
+        {
+          "rank": 9,
+          "term_name": "Influenza A",
+          "term": "Influenza A",
+          "overlap": "10/172",
+          "p_value": 1.1379188643706794e-06,
+          "z_score": 8.208208208208209,
+          "combined_score": 112.34007815435956,
+          "overlap_genes": [
+            "NFKBIA",
+            "NXF1",
+            "DNAJB1",
+            "CCND3",
+            "IL6",
+            "CASP3",
+            "BAK1",
+            "BID",
+            "SLC25A4",
+            "ICAM1"
+          ],
+          "genes": [
+            "NFKBIA",
+            "NXF1",
+            "DNAJB1",
+            "CCND3",
+            "IL6",
+            "CASP3",
+            "BAK1",
+            "BID",
+            "SLC25A4",
+            "ICAM1"
+          ],
+          "adjusted_p_value": 3.23674699198771e-05
+        },
+        {
+          "rank": 10,
+          "term_name": "Apoptosis",
+          "term": "Apoptosis",
+          "overlap": "9/168",
+          "p_value": 1.945309978643367e-06,
+          "z_score": 8.950951203512137,
+          "combined_score": 117.70580694382735,
+          "overlap_genes": [
+            "NFKBIA",
+            "BCL2L11",
+            "PARP2",
+            "CASP3",
+            "CTSV",
+            "FOS",
+            "BAK1",
+            "BID",
+            "TUBA4A"
+          ],
+          "genes": [
+            "NFKBIA",
+            "BCL2L11",
+            "PARP2",
+            "CASP3",
+            "CTSV",
+            "FOS",
+            "BAK1",
+            "BID",
+            "TUBA4A"
+          ],
+          "adjusted_p_value": 4.97999354532702e-05
+        },
+        {
+          "rank": 11,
+          "term_name": "Cellular senescence",
+          "term": "Cellular senescence",
+          "overlap": "9/156",
+          "p_value": 4.227032015118633e-06,
+          "z_score": 8.092727023695383,
+          "combined_score": 100.13948886096449,
+          "overlap_genes": [
+            "CCND3",
+            "IL6",
+            "CDKN2B",
+            "CCNE1",
+            "CDK2",
+            "HLA-F",
+            "E2F5",
+            "SQSTM1",
+            "SLC25A4"
+          ],
+          "genes": [
+            "CCND3",
+            "IL6",
+            "CDKN2B",
+            "CCNE1",
+            "CDK2",
+            "HLA-F",
+            "E2F5",
+            "SQSTM1",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 9.837456326094273e-05
+        },
+        {
+          "rank": 12,
+          "term_name": "Small cell lung cancer",
+          "term": "Small cell lung cancer",
+          "overlap": "7/92",
+          "p_value": 8.389270661840509e-06,
+          "z_score": 10.775146084924035,
+          "combined_score": 125.94590888149276,
+          "overlap_genes": [
+            "RXRB",
+            "NFKBIA",
+            "CDKN2B",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "BAK1"
+          ],
+          "genes": [
+            "RXRB",
+            "NFKBIA",
+            "CDKN2B",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "BAK1"
+          ],
+          "adjusted_p_value": 0.0001789711074525975
+        },
+        {
+          "rank": 13,
+          "term_name": "Epithelial cell signaling in Helicobacter pylori infection",
+          "term": "Epithelial cell signaling in Helicobacter pylori infection",
+          "overlap": "6/70",
+          "p_value": 1.9091821882400357e-05,
+          "z_score": 12.19860197368421,
+          "combined_score": 132.55306465312998,
+          "overlap_genes": [
+            "LYN",
+            "NFKBIA",
+            "CASP3",
+            "CXCL2",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "genes": [
+            "LYN",
+            "NFKBIA",
+            "CASP3",
+            "CXCL2",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "adjusted_p_value": 0.0003759620309149609
+        },
+        {
+          "rank": 14,
+          "term_name": "Chemical carcinogenesis",
+          "term": "Chemical carcinogenesis",
+          "overlap": "10/281",
+          "p_value": 2.098364148003802e-05,
+          "z_score": 5.786911365513985,
+          "combined_score": 62.33526319918572,
+          "overlap_genes": [
+            "RXRB",
+            "SULT1A1",
+            "CCND3",
+            "NAT1",
+            "EPHX1",
+            "FGF18",
+            "CYP1A1",
+            "FOS",
+            "ARRB2",
+            "PRKACA"
+          ],
+          "genes": [
+            "RXRB",
+            "SULT1A1",
+            "CCND3",
+            "NAT1",
+            "EPHX1",
+            "FGF18",
+            "CYP1A1",
+            "FOS",
+            "ARRB2",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 0.000383700872777838
+        },
+        {
+          "rank": 15,
+          "term_name": "Huntington disease",
+          "term": "Huntington disease",
+          "overlap": "11/306",
+          "p_value": 3.292349880941329e-05,
+          "z_score": 4.958307390752911,
+          "combined_score": 51.17629660359783,
+          "overlap_genes": [
+            "PSMC3",
+            "DLG4",
+            "GPX3",
+            "CASP3",
+            "PPIF",
+            "AP2S1",
+            "CLTB",
+            "POLR2H",
+            "SOD2",
+            "SLC25A4",
+            "TUBA4A"
+          ],
+          "genes": [
+            "PSMC3",
+            "DLG4",
+            "GPX3",
+            "CASP3",
+            "PPIF",
+            "AP2S1",
+            "CLTB",
+            "POLR2H",
+            "SOD2",
+            "SLC25A4",
+            "TUBA4A"
+          ],
+          "adjusted_p_value": 0.0005618943796806535
+        },
+        {
+          "rank": 16,
+          "term_name": "Prion disease",
+          "term": "Prion disease",
+          "overlap": "10/273",
+          "p_value": 6.467422365524767e-05,
+          "z_score": 5.030058575685952,
+          "combined_score": 48.52068863348146,
+          "overlap_genes": [
+            "STIP1",
+            "IL6",
+            "PSMC3",
+            "CASP3",
+            "PRKCD",
+            "PPIF",
+            "HSPA2",
+            "PRKACA",
+            "SLC25A4",
+            "TUBA4A"
+          ],
+          "genes": [
+            "STIP1",
+            "IL6",
+            "PSMC3",
+            "CASP3",
+            "PRKCD",
+            "PPIF",
+            "HSPA2",
+            "PRKACA",
+            "SLC25A4",
+            "TUBA4A"
+          ],
+          "adjusted_p_value": 0.001007604350778896
+        },
+        {
+          "rank": 17,
+          "term_name": "Human papillomavirus infection",
+          "term": "Human papillomavirus infection",
+          "overlap": "11/331",
+          "p_value": 6.691122641891107e-05,
+          "z_score": 4.565093537414966,
+          "combined_score": 43.88033552362258,
+          "overlap_genes": [
+            "CCND3",
+            "COL2A1",
+            "CCNE1",
+            "IRF1",
+            "CASP3",
+            "CDK2",
+            "BAK1",
+            "HLA-F",
+            "PRKACA",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "genes": [
+            "CCND3",
+            "COL2A1",
+            "CCNE1",
+            "IRF1",
+            "CASP3",
+            "CDK2",
+            "BAK1",
+            "HLA-F",
+            "PRKACA",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "adjusted_p_value": 0.001007604350778896
+        },
+        {
+          "rank": 18,
+          "term_name": "Legionellosis",
+          "term": "Legionellosis",
+          "overlap": "5/57",
+          "p_value": 8.680932843961157e-05,
+          "z_score": 12.437154348919055,
+          "combined_score": 116.3097361565936,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "HSPA2",
+            "CXCL2"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "HSPA2",
+            "CXCL2"
+          ],
+          "adjusted_p_value": 0.0012346215600300312
+        },
+        {
+          "rank": 19,
+          "term_name": "Rheumatoid arthritis",
+          "term": "Rheumatoid arthritis",
+          "overlap": "6/93",
+          "p_value": 9.560581946640787e-05,
+          "z_score": 8.963248638838476,
+          "combined_score": 82.957347777343,
+          "overlap_genes": [
+            "IL6",
+            "FOS",
+            "CXCL2",
+            "ATP6V1C1",
+            "ICAM1",
+            "ATP6V1F"
+          ],
+          "genes": [
+            "IL6",
+            "FOS",
+            "CXCL2",
+            "ATP6V1C1",
+            "ICAM1",
+            "ATP6V1F"
+          ],
+          "adjusted_p_value": 0.0012881626201789692
+        },
+        {
+          "rank": 20,
+          "term_name": "IL-17 signaling pathway",
+          "term": "IL-17 signaling pathway",
+          "overlap": "6/94",
+          "p_value": 0.00010146486534217867,
+          "z_score": 8.860944976076555,
+          "combined_score": 81.48345985582296,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "FOSB",
+            "FOS",
+            "CXCL2"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "FOSB",
+            "FOS",
+            "CXCL2"
+          ],
+          "adjusted_p_value": 0.001298750276379887
+        },
+        {
+          "rank": 21,
+          "term_name": "Gastric cancer",
+          "term": "Gastric cancer",
+          "overlap": "7/149",
+          "p_value": 0.00018455293301947284,
+          "z_score": 6.431303050088611,
+          "combined_score": 55.293605406044755,
+          "overlap_genes": [
+            "RXRB",
+            "CDKN2B",
+            "ABCB1",
+            "CCNE1",
+            "CDK2",
+            "FGF18",
+            "BAK1"
+          ],
+          "genes": [
+            "RXRB",
+            "CDKN2B",
+            "ABCB1",
+            "CCNE1",
+            "CDK2",
+            "FGF18",
+            "BAK1"
+          ],
+          "adjusted_p_value": 0.0022497881358564307
+        },
+        {
+          "rank": 22,
+          "term_name": "p53 signaling pathway",
+          "term": "p53 signaling pathway",
+          "overlap": "5/73",
+          "p_value": 0.00028137138810725883,
+          "z_score": 9.50307574009996,
+          "combined_score": 77.69558015015285,
+          "overlap_genes": [
+            "CCND3",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "BID"
+          ],
+          "genes": [
+            "CCND3",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "BID"
+          ],
+          "adjusted_p_value": 0.0032741397888844666
+        },
+        {
+          "rank": 23,
+          "term_name": "Hepatitis B",
+          "term": "Hepatitis B",
+          "overlap": "7/162",
+          "p_value": 0.0003079249525486034,
+          "z_score": 5.888015381328776,
+          "combined_score": 47.60845785942656,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "FOS",
+            "BID"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6",
+            "CCNE1",
+            "CASP3",
+            "CDK2",
+            "FOS",
+            "BID"
+          ],
+          "adjusted_p_value": 0.0034273386022801076
+        },
+        {
+          "rank": 24,
+          "term_name": "Pertussis",
+          "term": "Pertussis",
+          "overlap": "5/76",
+          "p_value": 0.0003395734038058129,
+          "z_score": 9.100156494522691,
+          "combined_score": 72.69041589790886,
+          "overlap_genes": [
+            "IL6",
+            "CASP3",
+            "IRF1",
+            "C4BPB",
+            "FOS"
+          ],
+          "genes": [
+            "IL6",
+            "CASP3",
+            "IRF1",
+            "C4BPB",
+            "FOS"
+          ],
+          "adjusted_p_value": 0.0036221163072620043
+        },
+        {
+          "rank": 25,
+          "term_name": "Synaptic vesicle cycle",
+          "term": "Synaptic vesicle cycle",
+          "overlap": "5/78",
+          "p_value": 0.0003831489243947557,
+          "z_score": 8.8499418032053,
+          "combined_score": 69.62326040998119,
+          "overlap_genes": [
+            "CLTB",
+            "AP2S1",
+            "SLC6A12",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "genes": [
+            "CLTB",
+            "AP2S1",
+            "SLC6A12",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "adjusted_p_value": 0.003923444985802298
+        },
+        {
+          "rank": 26,
+          "term_name": "Pathways of neurodegeneration",
+          "term": "Pathways of neurodegeneration",
+          "overlap": "12/475",
+          "p_value": 0.000403746015419939,
+          "z_score": 3.440160951507441,
+          "combined_score": 26.883910251970317,
+          "overlap_genes": [
+            "IL6",
+            "PSMC3",
+            "DLG4",
+            "GPX3",
+            "CASP3",
+            "SIGMAR1",
+            "PPIF",
+            "BAK1",
+            "BID",
+            "SQSTM1",
+            "SLC25A4",
+            "TUBA4A"
+          ],
+          "genes": [
+            "IL6",
+            "PSMC3",
+            "DLG4",
+            "GPX3",
+            "CASP3",
+            "SIGMAR1",
+            "PPIF",
+            "BAK1",
+            "BID",
+            "SQSTM1",
+            "SLC25A4",
+            "TUBA4A"
+          ],
+          "adjusted_p_value": 0.003975345382596323
+        },
+        {
+          "rank": 27,
+          "term_name": "Human cytomegalovirus infection",
+          "term": "Human cytomegalovirus infection",
+          "overlap": "8/225",
+          "p_value": 0.0004298033363811812,
+          "z_score": 4.8233486943164365,
+          "combined_score": 37.39148084026008,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "TAP1",
+            "BAK1",
+            "HLA-F",
+            "PRKACA",
+            "BID"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "TAP1",
+            "BAK1",
+            "HLA-F",
+            "PRKACA",
+            "BID"
+          ],
+          "adjusted_p_value": 0.004075172374577125
+        },
+        {
+          "rank": 28,
+          "term_name": "Cell cycle",
+          "term": "Cell cycle",
+          "overlap": "6/124",
+          "p_value": 0.0004583282841267932,
+          "z_score": 6.598126672613738,
+          "combined_score": 50.72590202991325,
+          "overlap_genes": [
+            "CDKN1C",
+            "CCND3",
+            "CDKN2B",
+            "CCNE1",
+            "CDK2",
+            "E2F5"
+          ],
+          "genes": [
+            "CDKN1C",
+            "CCND3",
+            "CDKN2B",
+            "CCNE1",
+            "CDK2",
+            "E2F5"
+          ],
+          "adjusted_p_value": 0.004190430026302109
+        },
+        {
+          "rank": 29,
+          "term_name": "MAPK signaling pathway",
+          "term": "MAPK signaling pathway",
+          "overlap": "9/294",
+          "p_value": 0.0005635506752595315,
+          "z_score": 4.144895796538326,
+          "combined_score": 31.009015352079953,
+          "overlap_genes": [
+            "NR4A1",
+            "CASP3",
+            "FGF18",
+            "HSPA2",
+            "FOS",
+            "ARRB2",
+            "MAPK8IP2",
+            "PRKACA",
+            "RASGRP1"
+          ],
+          "genes": [
+            "NR4A1",
+            "CASP3",
+            "FGF18",
+            "HSPA2",
+            "FOS",
+            "ARRB2",
+            "MAPK8IP2",
+            "PRKACA",
+            "RASGRP1"
+          ],
+          "adjusted_p_value": 0.004974792167808277
+        },
+        {
+          "rank": 30,
+          "term_name": "Cocaine addiction",
+          "term": "Cocaine addiction",
+          "overlap": "4/49",
+          "p_value": 0.0006024244817587122,
+          "z_score": 11.426839826839826,
+          "combined_score": 84.72485514896441,
+          "overlap_genes": [
+            "MAOA",
+            "DLG4",
+            "FOSB",
+            "PRKACA"
+          ],
+          "genes": [
+            "MAOA",
+            "DLG4",
+            "FOSB",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 0.005140688911007677
+        },
+        {
+          "rank": 31,
+          "term_name": "Calcium signaling pathway",
+          "term": "Calcium signaling pathway",
+          "overlap": "8/240",
+          "p_value": 0.000657463406494653,
+          "z_score": 4.508045977011494,
+          "combined_score": 33.03100038017683,
+          "overlap_genes": [
+            "RET",
+            "HTR7",
+            "NTRK3",
+            "FGF18",
+            "PPIF",
+            "TACR3",
+            "PRKACA",
+            "SLC25A4"
+          ],
+          "genes": [
+            "RET",
+            "HTR7",
+            "NTRK3",
+            "FGF18",
+            "PPIF",
+            "TACR3",
+            "PRKACA",
+            "SLC25A4"
+          ],
+          "adjusted_p_value": 0.005429375227826811
+        },
+        {
+          "rank": 32,
+          "term_name": "Pathogenic Escherichia coli infection",
+          "term": "Pathogenic Escherichia coli infection",
+          "overlap": "7/197",
+          "p_value": 0.000985978937610378,
+          "z_score": 4.794841408156152,
+          "combined_score": 33.18929558135671,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "TMBIM6",
+            "FOS",
+            "BAK1",
+            "TUBA4A"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "TMBIM6",
+            "FOS",
+            "BAK1",
+            "TUBA4A"
+          ],
+          "adjusted_p_value": 0.007887831500883024
+        },
+        {
+          "rank": 33,
+          "term_name": "Folate biosynthesis",
+          "term": "Folate biosynthesis",
+          "overlap": "3/26",
+          "p_value": 0.0011005483203385424,
+          "z_score": 16.67798036465638,
+          "combined_score": 113.6095141472418,
+          "overlap_genes": [
+            "SPR",
+            "GCH1",
+            "GGH"
+          ],
+          "genes": [
+            "SPR",
+            "GCH1",
+            "GGH"
+          ],
+          "adjusted_p_value": 0.008537586969898996
+        },
+        {
+          "rank": 34,
+          "term_name": "Collecting duct acid secretion",
+          "term": "Collecting duct acid secretion",
+          "overlap": "3/27",
+          "p_value": 0.0012309790650156921,
+          "z_score": 15.98225806451613,
+          "combined_score": 107.08025701485373,
+          "overlap_genes": [
+            "CA2",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "genes": [
+            "CA2",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "adjusted_p_value": 0.009268548254235799
+        },
+        {
+          "rank": 35,
+          "term_name": "Viral myocarditis",
+          "term": "Viral myocarditis",
+          "overlap": "4/60",
+          "p_value": 0.001296368987714325,
+          "z_score": 9.177179962894249,
+          "combined_score": 61.01161778421144,
+          "overlap_genes": [
+            "CASP3",
+            "HLA-F",
+            "BID",
+            "ICAM1"
+          ],
+          "genes": [
+            "CASP3",
+            "HLA-F",
+            "BID",
+            "ICAM1"
+          ],
+          "adjusted_p_value": 0.009445215130234247
+        },
+        {
+          "rank": 36,
+          "term_name": "Phagosome",
+          "term": "Phagosome",
+          "overlap": "6/152",
+          "p_value": 0.001328233377689191,
+          "z_score": 5.325162220620043,
+          "combined_score": 35.27337135966393,
+          "overlap_genes": [
+            "TFRC",
+            "TAP1",
+            "HLA-F",
+            "TUBA4A",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "genes": [
+            "TFRC",
+            "TAP1",
+            "HLA-F",
+            "TUBA4A",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "adjusted_p_value": 0.009445215130234247
+        },
+        {
+          "rank": 37,
+          "term_name": "Human immunodeficiency virus 1 infection",
+          "term": "Human immunodeficiency virus 1 infection",
+          "overlap": "7/212",
+          "p_value": 0.0015057808229328486,
+          "z_score": 4.44060733322565,
+          "combined_score": 28.85703673144222,
+          "overlap_genes": [
+            "NFKBIA",
+            "CASP3",
+            "TAP1",
+            "FOS",
+            "BAK1",
+            "HLA-F",
+            "BID"
+          ],
+          "genes": [
+            "NFKBIA",
+            "CASP3",
+            "TAP1",
+            "FOS",
+            "BAK1",
+            "HLA-F",
+            "BID"
+          ],
+          "adjusted_p_value": 0.010383500364505851
+        },
+        {
+          "rank": 38,
+          "term_name": "Parathyroid hormone synthesis, secretion and action",
+          "term": "Parathyroid hormone synthesis, secretion and action",
+          "overlap": "5/106",
+          "p_value": 0.0015413008353563375,
+          "z_score": 6.387432860933152,
+          "combined_score": 41.35944869271555,
+          "overlap_genes": [
+            "RXRB",
+            "MMP14",
+            "ARRB2",
+            "FOS",
+            "PRKACA"
+          ],
+          "genes": [
+            "RXRB",
+            "MMP14",
+            "ARRB2",
+            "FOS",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 0.010383500364505851
+        },
+        {
+          "rank": 39,
+          "term_name": "Th17 cell differentiation",
+          "term": "Th17 cell differentiation",
+          "overlap": "5/107",
+          "p_value": 0.0016067063253079157,
+          "z_score": 6.324490580545944,
+          "combined_score": 40.68904626208888,
+          "overlap_genes": [
+            "NFKBIA",
+            "RXRB",
+            "IL6",
+            "FOS",
+            "IL6ST"
+          ],
+          "genes": [
+            "NFKBIA",
+            "RXRB",
+            "IL6",
+            "FOS",
+            "IL6ST"
+          ],
+          "adjusted_p_value": 0.010546585109713498
+        },
+        {
+          "rank": 40,
+          "term_name": "HIF-1 signaling pathway",
+          "term": "HIF-1 signaling pathway",
+          "overlap": "5/109",
+          "p_value": 0.0017436068875505324,
+          "z_score": 6.202237305178482,
+          "combined_score": 39.39536711565542,
+          "overlap_genes": [
+            "IL6",
+            "TFRC",
+            "HMOX1",
+            "ENO2",
+            "ALDOA"
+          ],
+          "genes": [
+            "IL6",
+            "TFRC",
+            "HMOX1",
+            "ENO2",
+            "ALDOA"
+          ],
+          "adjusted_p_value": 0.011159084080323407
+        },
+        {
+          "rank": 41,
+          "term_name": "Amphetamine addiction",
+          "term": "Amphetamine addiction",
+          "overlap": "4/69",
+          "p_value": 0.0021755863054663213,
+          "z_score": 7.902897102897103,
+          "combined_score": 48.4483715367673,
+          "overlap_genes": [
+            "MAOA",
+            "FOSB",
+            "FOS",
+            "PRKACA"
+          ],
+          "genes": [
+            "MAOA",
+            "FOSB",
+            "FOS",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 0.013518955042841766
+        },
+        {
+          "rank": 42,
+          "term_name": "Base excision repair",
+          "term": "Base excision repair",
+          "overlap": "3/33",
+          "p_value": 0.0022179535617162273,
+          "z_score": 12.781935483870967,
+          "combined_score": 78.11258485425438,
+          "overlap_genes": [
+            "FEN1",
+            "PARP2",
+            "POLE3"
+          ],
+          "genes": [
+            "FEN1",
+            "PARP2",
+            "POLE3"
+          ],
+          "adjusted_p_value": 0.013518955042841766
+        },
+        {
+          "rank": 43,
+          "term_name": "Amyotrophic lateral sclerosis",
+          "term": "Amyotrophic lateral sclerosis",
+          "overlap": "9/364",
+          "p_value": 0.0024774458570768565,
+          "z_score": 3.315682011532281,
+          "combined_score": 19.89583991721551,
+          "overlap_genes": [
+            "NXF1",
+            "PSMC3",
+            "GPX3",
+            "CASP3",
+            "SIGMAR1",
+            "BID",
+            "SQSTM1",
+            "TUBA4A",
+            "NUP58"
+          ],
+          "genes": [
+            "NXF1",
+            "PSMC3",
+            "GPX3",
+            "CASP3",
+            "SIGMAR1",
+            "BID",
+            "SQSTM1",
+            "TUBA4A",
+            "NUP58"
+          ],
+          "adjusted_p_value": 0.0147494451025971
+        },
+        {
+          "rank": 44,
+          "term_name": "DNA replication",
+          "term": "DNA replication",
+          "overlap": "3/36",
+          "p_value": 0.0028527607191383944,
+          "z_score": 11.618181818181819,
+          "combined_score": 68.07636551337548,
+          "overlap_genes": [
+            "FEN1",
+            "RFC4",
+            "POLE3"
+          ],
+          "genes": [
+            "FEN1",
+            "RFC4",
+            "POLE3"
+          ],
+          "adjusted_p_value": 0.016597880547714296
+        },
+        {
+          "rank": 45,
+          "term_name": "Alanine, aspartate and glutamate metabolism",
+          "term": "Alanine, aspartate and glutamate metabolism",
+          "overlap": "3/37",
+          "p_value": 0.0030866426588625046,
+          "z_score": 11.275901328273244,
+          "combined_score": 65.1822791553496,
+          "overlap_genes": [
+            "PPAT",
+            "ASNS",
+            "GLS"
+          ],
+          "genes": [
+            "PPAT",
+            "ASNS",
+            "GLS"
+          ],
+          "adjusted_p_value": 0.017177837405843503
+        },
+        {
+          "rank": 46,
+          "term_name": "Thyroid cancer",
+          "term": "Thyroid cancer",
+          "overlap": "3/37",
+          "p_value": 0.0030866426588625046,
+          "z_score": 11.275901328273244,
+          "combined_score": 65.1822791553496,
+          "overlap_genes": [
+            "RET",
+            "RXRB",
+            "BAK1"
+          ],
+          "genes": [
+            "RET",
+            "RXRB",
+            "BAK1"
+          ],
+          "adjusted_p_value": 0.017177837405843503
+        },
+        {
+          "rank": 47,
+          "term_name": "Osteoclast differentiation",
+          "term": "Osteoclast differentiation",
+          "overlap": "5/127",
+          "p_value": 0.0033885037092311805,
+          "z_score": 5.2823315118397085,
+          "combined_score": 30.0425570716466,
+          "overlap_genes": [
+            "NFKBIA",
+            "FOSB",
+            "FOS",
+            "JUNB",
+            "SQSTM1"
+          ],
+          "genes": [
+            "NFKBIA",
+            "FOSB",
+            "FOS",
+            "JUNB",
+            "SQSTM1"
+          ],
+          "adjusted_p_value": 0.018456530841769833
+        },
+        {
+          "rank": 48,
+          "term_name": "RNA degradation",
+          "term": "RNA degradation",
+          "overlap": "4/79",
+          "p_value": 0.0035580942521103716,
+          "z_score": 6.845714285714286,
+          "combined_score": 38.599766739854815,
+          "overlap_genes": [
+            "BTG3",
+            "BTG2",
+            "BTG1",
+            "ENO2"
+          ],
+          "genes": [
+            "BTG3",
+            "BTG2",
+            "BTG1",
+            "ENO2"
+          ],
+          "adjusted_p_value": 0.018963825525065085
+        },
+        {
+          "rank": 49,
+          "term_name": "Parkinson disease",
+          "term": "Parkinson disease",
+          "overlap": "7/249",
+          "p_value": 0.0037038721728642745,
+          "z_score": 3.7545837666247057,
+          "combined_score": 21.019573426329277,
+          "overlap_genes": [
+            "PSMC3",
+            "MAOA",
+            "CASP3",
+            "PPIF",
+            "PRKACA",
+            "SLC25A4",
+            "TUBA4A"
+          ],
+          "genes": [
+            "PSMC3",
+            "MAOA",
+            "CASP3",
+            "PPIF",
+            "PRKACA",
+            "SLC25A4",
+            "TUBA4A"
+          ],
+          "adjusted_p_value": 0.018963825525065085
+        },
+        {
+          "rank": 50,
+          "term_name": "Salmonella infection",
+          "term": "Salmonella infection",
+          "overlap": "7/249",
+          "p_value": 0.0037038721728642745,
+          "z_score": 3.7545837666247057,
+          "combined_score": 21.019573426329277,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "FOS",
+            "BAK1",
+            "TUBA4A",
+            "RHOB"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6",
+            "CASP3",
+            "FOS",
+            "BAK1",
+            "TUBA4A",
+            "RHOB"
+          ],
+          "adjusted_p_value": 0.018963825525065085
+        },
+        {
+          "rank": 51,
+          "term_name": "FoxO signaling pathway",
+          "term": "FoxO signaling pathway",
+          "overlap": "5/131",
+          "p_value": 0.003868300322214723,
+          "z_score": 5.113600995953937,
+          "combined_score": 28.4057470316678,
+          "overlap_genes": [
+            "IL6",
+            "CDKN2B",
+            "BCL2L11",
+            "CDK2",
+            "SOD2"
+          ],
+          "genes": [
+            "IL6",
+            "CDKN2B",
+            "BCL2L11",
+            "CDK2",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.019417350636999394
+        },
+        {
+          "rank": 52,
+          "term_name": "Chemokine signaling pathway",
+          "term": "Chemokine signaling pathway",
+          "overlap": "6/192",
+          "p_value": 0.004262445786051271,
+          "z_score": 4.171477079796265,
+          "combined_score": 22.767555459243304,
+          "overlap_genes": [
+            "LYN",
+            "NFKBIA",
+            "PRKCD",
+            "ARRB2",
+            "PRKACA",
+            "CXCL2"
+          ],
+          "genes": [
+            "LYN",
+            "NFKBIA",
+            "PRKCD",
+            "ARRB2",
+            "PRKACA",
+            "CXCL2"
+          ],
+          "adjusted_p_value": 0.02098434848517549
+        },
+        {
+          "rank": 53,
+          "term_name": "Estrogen signaling pathway",
+          "term": "Estrogen signaling pathway",
+          "overlap": "5/137",
+          "p_value": 0.004676538332775595,
+          "z_score": 4.879679144385027,
+          "combined_score": 26.1804404686981,
+          "overlap_genes": [
+            "PRKCD",
+            "HSPA2",
+            "FOS",
+            "PRKACA",
+            "FKBP4"
+          ],
+          "genes": [
+            "PRKCD",
+            "HSPA2",
+            "FOS",
+            "PRKACA",
+            "FKBP4"
+          ],
+          "adjusted_p_value": 0.022433504050346623
+        },
+        {
+          "rank": 54,
+          "term_name": "Porphyrin and chlorophyll metabolism",
+          "term": "Porphyrin and chlorophyll metabolism",
+          "overlap": "3/43",
+          "p_value": 0.004736139476382842,
+          "z_score": 9.581612903225807,
+          "combined_score": 51.28589860220944,
+          "overlap_genes": [
+            "ALAS1",
+            "UROD",
+            "HMOX1"
+          ],
+          "genes": [
+            "ALAS1",
+            "UROD",
+            "HMOX1"
+          ],
+          "adjusted_p_value": 0.022433504050346623
+        },
+        {
+          "rank": 55,
+          "term_name": "Colorectal cancer",
+          "term": "Colorectal cancer",
+          "overlap": "4/86",
+          "p_value": 0.004819698135816657,
+          "z_score": 6.259106746911625,
+          "combined_score": 33.39260977219563,
+          "overlap_genes": [
+            "BCL2L11",
+            "CASP3",
+            "FOS",
+            "BAK1"
+          ],
+          "genes": [
+            "BCL2L11",
+            "CASP3",
+            "FOS",
+            "BAK1"
+          ],
+          "adjusted_p_value": 0.022433504050346623
+        },
+        {
+          "rank": 56,
+          "term_name": "GABAergic synapse",
+          "term": "GABAergic synapse",
+          "overlap": "4/89",
+          "p_value": 0.005441766781096586,
+          "z_score": 6.037280366692132,
+          "combined_score": 31.476275808969277,
+          "overlap_genes": [
+            "PLCL1",
+            "SLC6A12",
+            "PRKACA",
+            "GLS"
+          ],
+          "genes": [
+            "PLCL1",
+            "SLC6A12",
+            "PRKACA",
+            "GLS"
+          ],
+          "adjusted_p_value": 0.02487664814215582
+        },
+        {
+          "rank": 57,
+          "term_name": "Bile secretion",
+          "term": "Bile secretion",
+          "overlap": "4/90",
+          "p_value": 0.005660482913891993,
+          "z_score": 5.966777408637873,
+          "combined_score": 30.87357455679767,
+          "overlap_genes": [
+            "ABCB1",
+            "CA2",
+            "EPHX1",
+            "PRKACA"
+          ],
+          "genes": [
+            "ABCB1",
+            "CA2",
+            "EPHX1",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 0.025422519753620178
+        },
+        {
+          "rank": 58,
+          "term_name": "Cysteine and methionine metabolism",
+          "term": "Cysteine and methionine metabolism",
+          "overlap": "3/50",
+          "p_value": 0.007225756114999549,
+          "z_score": 8.151681537405628,
+          "combined_score": 40.18863284587075,
+          "overlap_genes": [
+            "TST",
+            "AMD1",
+            "CDO1"
+          ],
+          "genes": [
+            "TST",
+            "AMD1",
+            "CDO1"
+          ],
+          "adjusted_p_value": 0.03083557734734283
+        },
+        {
+          "rank": 59,
+          "term_name": "Vibrio cholerae infection",
+          "term": "Vibrio cholerae infection",
+          "overlap": "3/50",
+          "p_value": 0.007225756114999549,
+          "z_score": 8.151681537405628,
+          "combined_score": 40.18863284587075,
+          "overlap_genes": [
+            "PRKACA",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "genes": [
+            "PRKACA",
+            "ATP6V1C1",
+            "ATP6V1F"
+          ],
+          "adjusted_p_value": 0.03083557734734283
+        },
+        {
+          "rank": 60,
+          "term_name": "PI3K-Akt signaling pathway",
+          "term": "PI3K-Akt signaling pathway",
+          "overlap": "8/354",
+          "p_value": 0.007227088440783476,
+          "z_score": 3.0051637764932564,
+          "combined_score": 14.815214087611183,
+          "overlap_genes": [
+            "NR4A1",
+            "CCND3",
+            "IL6",
+            "BCL2L11",
+            "COL2A1",
+            "CCNE1",
+            "FGF18",
+            "CDK2"
+          ],
+          "genes": [
+            "NR4A1",
+            "CCND3",
+            "IL6",
+            "BCL2L11",
+            "COL2A1",
+            "CCNE1",
+            "FGF18",
+            "CDK2"
+          ],
+          "adjusted_p_value": 0.03083557734734283
+        },
+        {
+          "rank": 61,
+          "term_name": "Cushing syndrome",
+          "term": "Cushing syndrome",
+          "overlap": "5/155",
+          "p_value": 0.00781386155168349,
+          "z_score": 4.290196078431372,
+          "combined_score": 20.815413586411132,
+          "overlap_genes": [
+            "NR4A1",
+            "CDKN2B",
+            "CCNE1",
+            "CDK2",
+            "PRKACA"
+          ],
+          "genes": [
+            "NR4A1",
+            "CDKN2B",
+            "CCNE1",
+            "CDK2",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 0.03226368640695119
+        },
+        {
+          "rank": 62,
+          "term_name": "Non-alcoholic fatty liver disease",
+          "term": "Non-alcoholic fatty liver disease",
+          "overlap": "5/155",
+          "p_value": 0.00781386155168349,
+          "z_score": 4.290196078431372,
+          "combined_score": 20.815413586411132,
+          "overlap_genes": [
+            "IL6",
+            "BCL2L11",
+            "CASP3",
+            "FOS",
+            "BID"
+          ],
+          "genes": [
+            "IL6",
+            "BCL2L11",
+            "CASP3",
+            "FOS",
+            "BID"
+          ],
+          "adjusted_p_value": 0.03226368640695119
+        },
+        {
+          "rank": 63,
+          "term_name": "AGE-RAGE signaling pathway in diabetic complications",
+          "term": "AGE-RAGE signaling pathway in diabetic complications",
+          "overlap": "4/100",
+          "p_value": 0.008176819501307596,
+          "z_score": 5.342532467532467,
+          "combined_score": 25.67862595978233,
+          "overlap_genes": [
+            "IL6",
+            "CASP3",
+            "PRKCD",
+            "ICAM1"
+          ],
+          "genes": [
+            "IL6",
+            "CASP3",
+            "PRKCD",
+            "ICAM1"
+          ],
+          "adjusted_p_value": 0.032938910671995225
+        },
+        {
+          "rank": 64,
+          "term_name": "Hepatitis C",
+          "term": "Hepatitis C",
+          "overlap": "5/157",
+          "p_value": 0.008234727667998806,
+          "z_score": 4.233316133470932,
+          "combined_score": 20.317356224990608,
+          "overlap_genes": [
+            "NFKBIA",
+            "CASP3",
+            "CDK2",
+            "BAK1",
+            "BID"
+          ],
+          "genes": [
+            "NFKBIA",
+            "CASP3",
+            "CDK2",
+            "BAK1",
+            "BID"
+          ],
+          "adjusted_p_value": 0.032938910671995225
+        },
+        {
+          "rank": 65,
+          "term_name": "Endocrine and other factor-regulated calcium reabsorption",
+          "term": "Endocrine and other factor-regulated calcium reabsorption",
+          "overlap": "3/53",
+          "p_value": 0.008489114340642982,
+          "z_score": 7.66141935483871,
+          "combined_score": 36.53708367317084,
+          "overlap_genes": [
+            "CLTB",
+            "AP2S1",
+            "PRKACA"
+          ],
+          "genes": [
+            "CLTB",
+            "AP2S1",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 0.033434050326224665
+        },
+        {
+          "rank": 66,
+          "term_name": "Amoebiasis",
+          "term": "Amoebiasis",
+          "overlap": "4/102",
+          "p_value": 0.008755134699731128,
+          "z_score": 5.232971110522131,
+          "combined_score": 24.794418536031127,
+          "overlap_genes": [
+            "IL6",
+            "CASP3",
+            "PRKACA",
+            "CXCL2"
+          ],
+          "genes": [
+            "IL6",
+            "CASP3",
+            "PRKACA",
+            "CXCL2"
+          ],
+          "adjusted_p_value": 0.033959310350472255
+        },
+        {
+          "rank": 67,
+          "term_name": "C-type lectin receptor signaling pathway",
+          "term": "C-type lectin receptor signaling pathway",
+          "overlap": "4/104",
+          "p_value": 0.009359564618247506,
+          "z_score": 5.127792207792208,
+          "combined_score": 23.953745484717516,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6",
+            "IRF1",
+            "PRKCD"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6",
+            "IRF1",
+            "PRKCD"
+          ],
+          "adjusted_p_value": 0.03523600797457885
+        },
+        {
+          "rank": 68,
+          "term_name": "NF-kappa B signaling pathway",
+          "term": "NF-kappa B signaling pathway",
+          "overlap": "4/104",
+          "p_value": 0.009359564618247506,
+          "z_score": 5.127792207792208,
+          "combined_score": 23.953745484717516,
+          "overlap_genes": [
+            "LYN",
+            "NFKBIA",
+            "CXCL2",
+            "ICAM1"
+          ],
+          "genes": [
+            "LYN",
+            "NFKBIA",
+            "CXCL2",
+            "ICAM1"
+          ],
+          "adjusted_p_value": 0.03523600797457885
+        },
+        {
+          "rank": 69,
+          "term_name": "Protein processing in endoplasmic reticulum",
+          "term": "Protein processing in endoplasmic reticulum",
+          "overlap": "5/171",
+          "p_value": 0.011629354546319847,
+          "z_score": 3.8735333490826047,
+          "combined_score": 17.25358061047115,
+          "overlap_genes": [
+            "DNAJA1",
+            "DNAJB1",
+            "RPN1",
+            "HSPA2",
+            "BAK1"
+          ],
+          "genes": [
+            "DNAJA1",
+            "DNAJB1",
+            "RPN1",
+            "HSPA2",
+            "BAK1"
+          ],
+          "adjusted_p_value": 0.043011978837037286
+        },
+        {
+          "rank": 70,
+          "term_name": "MicroRNAs in cancer",
+          "term": "MicroRNAs in cancer",
+          "overlap": "7/310",
+          "p_value": 0.011761087963252384,
+          "z_score": 2.989377745721592,
+          "combined_score": 13.281682242318466,
+          "overlap_genes": [
+            "BCL2L11",
+            "ABCB1",
+            "CCNE1",
+            "CASP3",
+            "HMOX1",
+            "BAK1",
+            "GLS"
+          ],
+          "genes": [
+            "BCL2L11",
+            "ABCB1",
+            "CCNE1",
+            "CASP3",
+            "HMOX1",
+            "BAK1",
+            "GLS"
+          ],
+          "adjusted_p_value": 0.043011978837037286
+        },
+        {
+          "rank": 71,
+          "term_name": "Toxoplasmosis",
+          "term": "Toxoplasmosis",
+          "overlap": "4/112",
+          "p_value": 0.012047066052499614,
+          "z_score": 4.746031746031746,
+          "combined_score": 20.97240166371176,
+          "overlap_genes": [
+            "NFKBIA",
+            "CASP3",
+            "PPIF",
+            "HSPA2"
+          ],
+          "genes": [
+            "NFKBIA",
+            "CASP3",
+            "PPIF",
+            "HSPA2"
+          ],
+          "adjusted_p_value": 0.04343730858366058
+        },
+        {
+          "rank": 72,
+          "term_name": "Serotonergic synapse",
+          "term": "Serotonergic synapse",
+          "overlap": "4/114",
+          "p_value": 0.012414195458890403,
+          "z_score": 4.702251876563803,
+          "combined_score": 20.637782224641512,
+          "overlap_genes": [
+            "HTR7",
+            "MAOA",
+            "CASP3",
+            "PRKACA"
+          ],
+          "genes": [
+            "HTR7",
+            "MAOA",
+            "CASP3",
+            "PRKACA"
+          ],
+          "adjusted_p_value": 0.044139361631610315
+        },
+        {
+          "rank": 73,
+          "term_name": "Cytosolic DNA-sensing pathway",
+          "term": "Cytosolic DNA-sensing pathway",
+          "overlap": "3/63",
+          "p_value": 0.013591299084543422,
+          "z_score": 6.381290322580645,
+          "combined_score": 27.42886268785891,
+          "overlap_genes": [
+            "NFKBIA",
+            "IL6",
+            "POLR2H"
+          ],
+          "genes": [
+            "NFKBIA",
+            "IL6",
+            "POLR2H"
+          ],
+          "adjusted_p_value": 0.047662637885522136
+        },
+        {
+          "rank": 74,
+          "term_name": "Proximal tubule bicarbonate reclamation",
+          "term": "Proximal tubule bicarbonate reclamation",
+          "overlap": "2/23",
+          "p_value": 0.014072697568895213,
+          "z_score": 12.1007326007326,
+          "combined_score": 51.59169974343487,
+          "overlap_genes": [
+            "CA2",
+            "GLS"
+          ],
+          "genes": [
+            "CA2",
+            "GLS"
+          ],
+          "adjusted_p_value": 0.04868392672482669
+        }
+      ]
+    },
+    "significant_terms_total": 169,
+    "execution_time": 2.11,
+    "dataframe": "     rank  ...                     library\n45     46  ...  GO_Biological_Process_2023\n51     52  ...  GO_Biological_Process_2023\n52     53  ...  GO_Biological_Process_2023\n59     60  ...  GO_Biological_Process_2023\n60     61  ...  GO_Biological_Process_2023\n..    ...  ...                         ...\n70     71  ...  GO_Biological_Process_2023\n23     24  ...  GO_Biological_Process_2023\n163    69  ...             KEGG_2021_Human\n154    60  ...             KEGG_2021_Human\n164    70  ...             KEGG_2021_Human\n\n[169 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "42305972",
+      "pmcid": "PMC13265314",
+      "doi": "10.3389/fmed.2026.1823921",
+      "url": "https://doi.org/10.3389/fmed.2026.1823921",
+      "title": "Ultraviolet radiation as a double-edged regulator of melanocyte function in vitiligo therapy and melanoma carcinogenesis.",
+      "abstract": "Vitiligo is a chronic autoimmune disorder characterized by selective melanocyte loss and progressive depigmentation. Narrowband ultraviolet B (NB-UVB) and excimer-based phototherapy are widely regarded as standard treatments in clinical practice and remain the most effective approaches for inducing repigmentation. However, excessive or uncontrolled ultraviolet radiation (UVR) exposure can impair skin barrier function, cause melanocyte dysfunction, and increase the risk of photoaging and carcinogenesis. This apparent paradox arises from the bidirectional biological effects of UVR: on the one hand, UVR activates melanocytes and promotes skin pigmentation through coordinated effects on melanocyte maturation, proliferation, and melanin synthesis, while on the other hand, UVR can induce oxidative stress, DNA damage, apoptosis, and genomic instability. Therefore, combination strategies incorporating JAK inhibitors, platelet-rich plasma, or cellular grafting techniques have been increasingly explored in clinical practice. In this review, we provide an integrated perspective on the dual effects of UVR on melanocyte biology, discuss emerging combination therapies for vitiligo, and highlight the mechanistic links between phototherapy, melanocyte homeostasis, and melanoma risk.",
+      "authors": "Fan HH, Chen YY, Geng Y, Yang YF, Xu H, Xiong YY, Zheng YW, Li YM.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "1823921",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-06-01",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    },
+    {
+      "pmid": "41982271",
+      "pmcid": "PMC13071024",
+      "doi": "10.2147/ijn.s600909",
+      "url": "https://doi.org/10.2147/ijn.s600909",
+      "title": "Exosome-Mediated Rewiring of Oxidative Stress-Inflammation-ECM Remodeling Axis Mitigates UVB-Triggered Skin Photoaging.",
+      "abstract": "Photoaging is a chronic and multifactorial form of skin aging primarily induced by ultraviolet (UV) radiation. It is characterized by oxidative stress, DNA damage, chronic inflammation, pigmentary alterations, and extracellular matrix (ECM) degradation, which ultimately lead to wrinkle formation, loss of elasticity, and uneven pigmentation. Exosomes, nanosized extracellular vesicles that mediate intercellular communication, have attracted growing attention in photoaging research. Emerging evidence suggests that exosomes may both contribute to photoaging and promote tissue repair by modulating cellular responses. However, despite the growing body of evidence, the field still lacks an integrated review that links exosome biogenesis and functional properties to the mechanisms of photoaging, their therapeutic potential, and the major translational barriers to clinical application. Therefore, this review aims to systematically summarize the biogenesis and biological properties of exosomes, clarify their mechanistic roles in photoaging, particularly in the regulation of oxidative stress, and evaluate their potential as therapeutic agents and delivery platforms for anti-photoaging and regenerative medicine. It further examines the effects of native exosomes derived from multiple cell sources, with a focus on stem cells, keratinocytes, and melanocytes. Finally, it outlines translational opportunities for exosome-based interventions in anti-photoaging and regenerative medicine, including engineered exosome mimetics and other nanomedicine-based strategies. It also highlights the key knowledge gaps and technical challenges that must be addressed to facilitate clinical translation. In conclusion, exosomes represent a promising yet still evolving strategy for the prevention and treatment of photoaging because of their dual roles in intercellular signaling and tissue regeneration. Nevertheless, further standardization of isolation, characterization, engineering, safety assessment, and regulatory evaluation is essential before their full clinical potential can be realized.",
+      "authors": "Yu F, Zhou J, Chen M, Liu Y, Qiu J, Chen J, Teng Y, Gou K, Tang Y, Xu Y, Wu Z, Zhang Z, Chen L.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 1,
+      "citation_count": 1,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "600909",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-04-08",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates DNA damage in UVB-triggered photoaging"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 35.0892596244812,
+  "phase": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Response To Hydrogen Peroxide (GO:0042542) -> genes: [IL6, STK25, PRKCD, PPIF, HMOX1, RHOB]\n- Positive Regulation Of Apoptotic Process (GO:0043065) -> genes: [DNAJA1, OLFM1, BMP2, IL6, BCL2L11, BTG1, CASP3, CTSV, BAK1, BID, SQSTM1, RHOB]\n- Negative Regulation Of Cell Cycle (GO:0045786) -> genes: [CDKN1C, BTG3, NR4A1, BTG2, BMP2, BTG1, RHOB]\n- Regulation Of Apoptotic Process (GO:0042981) -> genes: [TFRC, SIGMAR1, ASNS, RHOB, DNAJA1, OLFM1, BMP2, IL6, BCL2L11, CASP3, PPIF, PPT1, TMBIM6, BAK1, IL6ST, NKX2-5, BID, SQSTM1]\n- Positive Regulation Of DNA-templated Transcription (GO:0045893) -> genes: [RET, CDKN1C, ONECUT1, CEBPG, HNRNPU, DDX21, RXRB, EPCAM, HYAL2, NKX2-5, JUNB, KCNH2, CDC5L, FOS, NFKBIA, NR4A1, BMP2, IL6, GAL, PSMC3, LHX2, IRF1, AGO2, SQSTM1, ATF3]\n- Positive Regulation Of Transcription By RNA Polymerase II (GO:0045944) -> genes: [ONECUT1, CEBPG, HNRNPU, CDC5L, DDX21, FOS, RXRB, NFKBIA, NR4A1, BMP2, IL6, GAL, PSMC3, EPCAM, IRF1, HYAL2, AGO2, NKX2-5, SQSTM1, JUNB, ATF3]\n- Cellular Response To Reactive Oxygen Species (GO:0034614) -> genes: [IL6, PRKCD, PPIF, FOS, SQSTM1, RHOB]\n- Response To Unfolded Protein (GO:0006986) -> genes: [DNAJA1, DNAJB1, TMBIM6, BAK1, HSPA2]\n- Positive Regulation Of Programmed Cell Death (GO:0043068) -> genes: [DNAJA1, OLFM1, BMP2, IL6, BCL2L11, CASP3, BAK1, BID, SQSTM1, RHOB]\n- Negative Regulation Of Apoptotic Process (GO:0043066) -> genes: [TFRC, PRKCD, ASNS, MAPK8IP2, SOD2, DNAJA1, IL6, PPIF, PPT1, TYRO3, TMBIM6, IL6ST, NKX2-5, GRINA]\n- Regulation Of MAP Kinase Activity (GO:0043405) -> genes: [LYN, BMP2, HYAL2, NTRK3, PRKCD, FGF18, RASGRP1]\n- Regulation Of Platelet Aggregation (GO:0090330) -> genes: [LYN, IL6, PRKCD, IL6ST]\n- Positive Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090200) -> genes: [BCL2L11, PPIF, BAK1, BID]\n- Negative Regulation Of Apoptotic Signaling Pathway (GO:2001234) -> genes: [PPIF, TMBIM6, BAK1, MAPK8IP2, SLC25A4, GRINA]\n- Negative Regulation Of MAP Kinase Activity (GO:0043407) -> genes: [LYN, DNAJA1, BMP2, HYAL2, PRKCD]\n- Positive Regulation Of Phosphorylation (GO:0042327) -> genes: [LYN, RET, CCND3, BMP2, TFRC, NTRK3, FGF18, TYRO3, RASGRP1]\n- Negative Regulation Of Cellular Process (GO:0048523) -> genes: [LYN, BTG3, BTG2, CDKN2B, BTG1, SOD2, RHOB, NR4A1, BMP2, IL6, IRF1, HYAL2, PPT1, MSX1]\n- Regulation Of Cell Population Proliferation (GO:0042127) -> genes: [LYN, BTG3, BTG2, CDKN2B, BTG1, TFRC, NTRK3, SOD2, BMP2, IL6, EPCAM, IRF1, FGF18, CDK2, IL6ST, NKX2-5, JUNB]\n- Cellular Response To Hydrogen Peroxide (GO:0070301) -> genes: [IL6, PRKCD, PPIF, RHOB]\n- Negative Regulation Of Mitotic Cell Cycle (GO:0045930) -> genes: [CDKN1C, BTG3, BTG2, BTG1]\n- Response To Reactive Oxygen Species (GO:0000302) -> genes: [STK25, HYAL2, HMOX1, FOS, SQSTM1]\n- Nitric Oxide Biosynthetic Process (GO:0006809) -> genes: [CYB5B, GCH1, SPR]\n- Negative Regulation Of Cell Population Proliferation (GO:0008285) -> genes: [LYN, CDKN1C, BTG3, BMP2, IL6, BTG2, CDKN2B, BTG1, IRF1, HMOX1, SOD2]\n- Regulation Of Transcription By RNA Polymerase II (GO:0006357) -> genes: [SHOX2, ONECUT1, CEBPG, HNRNPU, WIZ, DDX21, RXRB, DNAJB1, EPCAM, CREG1, HYAL2, MSX1, E2F5, NKX2-5, JUNB, CDC5L, FOS, SOD2, NFKBIA, NR4A1, BMP2, IL6, GAL, PSMC3, LHX2, IRF1, AGO2, CYP1A1, FOSB, SQSTM1, ATF3]\n- DNA Damage Response (GO:0006974) -> genes: [LYN, H2AX, BTG2, FEN1, BCL2L11, RFC4, PARP2, POLE3, PRKCD, BAK1, BID]\n- Negative Regulation Of Mitochondrion Organization (GO:0010823) -> genes: [TFRC, PPIF, BAK1, SLC25A4]\n- Nitric Oxide Metabolic Process (GO:0046209) -> genes: [CYB5B, GCH1, SPR]\n- DNA Replication (GO:0006260) -> genes: [FEN1, RFC4, POLG2, CDK2, POLE3]\n- Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090199) -> genes: [BCL2L11, PPIF, BAK1, BID]\n- Sulfur Amino Acid Metabolic Process (GO:0000096) -> genes: [TST, FMO1, CDO1]\n- Negative Regulation Of Phosphorylation (GO:0042326) -> genes: [CDKN1C, LYN, CDKN2B, NTRK3, HNRNPU]\n- Regulation Of Neurotransmitter Receptor Activity (GO:0099601) -> genes: [DLG4, NPTX2, MAPK8IP2, NPTXR]\n- Positive Regulation Of Cell Projection Organization (GO:0031346) -> genes: [LYN, PTPRD, RET, DLG4, NTRK3, MARK2]\n- Regulation Of Mitochondrial Membrane Permeability (GO:0046902) -> genes: [PPIF, BAK1, SLC25A4]\n- Cardiac Atrium Morphogenesis (GO:0003209) -> genes: [BMP2, SHOX2, NKX2-5]\n- Organonitrogen Compound Catabolic Process (GO:1901565) -> genes: [TST, CASP3, PPT1, FMO1, SQSTM1]\n- Release Of Cytochrome C From Mitochondria (GO:0001836) -> genes: [BAK1, SOD2, BID]\n- Positive Regulation Of Protein Modification Process (GO:0031401) -> genes: [LYN, CCND3, BMP2, TFRC, NTRK3, PRKCD, FGF18, RASGRP1]\n- Regulation Of Apoptotic Signaling Pathway (GO:2001233) -> genes: [TMBIM6, CTSV, MAPK8IP2, GRINA]\n- Organonitrogen Compound Biosynthetic Process (GO:1901566) -> genes: [ALAS1, CHKA, GCH1, FMO1, FURIN, CDO1]\n- Enzyme-Linked Receptor Protein Signaling Pathway (GO:0007167) -> genes: [LYN, PTPRD, RET, NTRK3, TYRO3, IL6ST]\n- Apoptotic Process (GO:0006915) -> genes: [NFKBIA, BCL2L11, IRF1, CASP3, PRKCD, BAK1, BID, RHOB]\n- Regulation Of Mitotic Cell Cycle (GO:0007346) -> genes: [CDKN1C, BTG3, BTG2, BTG1, HNRNPU, ASNS]\n- Regulation Of Kinase Activity (GO:0043549) -> genes: [CDKN1C, RET, NTRK3, TYRO3, HNRNPU]\n- Erythrocyte Differentiation (GO:0030218) -> genes: [LYN, ALAS1, CASP3, CEBPG]\n- Inflammatory Response To Wounding (GO:0090594) -> genes: [IL6, HMOX1]\n- Cell Cycle G1/S Phase Transition (GO:0044843) -> genes: [CCND3, CDC34, CCNE1, CDK2]\n- Regulation Of Cyclin-Dependent Protein Kinase Activity (GO:1904029) -> genes: [CDKN1C, CCND3, CDKN2B, CCNE1]\n- Mitochondrial Transport (GO:0006839) -> genes: [STARD3, PPIF, BAK1, SLC25A4]\n- Positive Regulation Of MAPK Cascade (GO:0043410) -> genes: [RET, BMP2, IL6, STK25, NTRK3, FGF18, ARRB2, RASGRP1, ICAM1]\n- Positive Regulation Of Cellular Component Biogenesis (GO:0044089) -> genes: [BCL2L11, TFRC, CDK2, BAK1, BID]\n- Sulfur Amino Acid Catabolic Process (GO:0000098) -> genes: [TST, FMO1]\n- Positive Regulation Of IRE1-mediated Unfolded Protein Response (GO:1903896) -> genes: [BCL2L11, BAK1]\n- Cardiac Conduction System Development (GO:0003161) -> genes: [SHOX2, MSX1, NKX2-5]\n- Cellular Response To Transforming Growth Factor Beta Stimulus (GO:0071560) -> genes: [HYAL2, TGFBRAP1, FURIN, ARRB2, FOS]\n- Response To Glucocorticoid (GO:0051384) -> genes: [IL6, BCL2L11, HNRNPU]\n- Positive Regulation Of Mitochondrion Organization (GO:0010822) -> genes: [BCL2L11, PPIF, BAK1, BID]\n- Cardiac Muscle Cell Differentiation (GO:0055007) -> genes: [BMP2, SHOX2, NKX2-5]\n- Chaperone Cofactor-Dependent Protein Refolding (GO:0051085) -> genes: [DNAJB1, HSPA2, HSPA13]\n- Cellular Response To Angiotensin (GO:1904385) -> genes: [CA2, PRKCD]\n- Response To Hydroperoxide (GO:0033194) -> genes: [GPX3, PRKCD]\n- Taurine Metabolic Process (GO:0019530) -> genes: [FMO1, CDO1]\n- Response To Retinoic Acid (GO:0032526) -> genes: [RET, RXRB, LYN, AQP3]\n- Negative Regulation Of Signal Transduction (GO:0009968) -> genes: [LYN, BMP2, MMP14, PRKCD, TYRO3, TMBIM6, MAPK8IP2, GRINA]\n- Negative Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001243) -> genes: [DNAJA1, PPIF, TMBIM6, SOD2]\n- Positive Regulation Of Vasculature Development (GO:1904018) -> genes: [BTG1, AGO2, FGF18, HMOX1, RHOB]\n- Regulation Of Neuron Apoptotic Process (GO:0043523) -> genes: [SIGMAR1, TYRO3, PPT1, IL6ST, SOD2]\n- Cellular Response To Oxygen-Containing Compound (GO:1901701) -> genes: [LYN, RET, IL6, DLG4, PRKCD, CDK2, PPIF, FOS, SQSTM1, CXCL2]\n- Integrated Stress Response Signaling (GO:0140467) -> genes: [CEBPG, FOS, JUNB]\n- G1/S Transition Of Mitotic Cell Cycle (GO:0000082) -> genes: [CCND3, CDC34, CCNE1, CDK2]\n- Positive Regulation Of Cell Population Proliferation (GO:0008284) -> genes: [LYN, BMP2, IL6, EPCAM, NTRK3, FGF18, CDK2, HNRNPU, HMOX1, IL6ST, NKX2-5]\n- Formation Of Translation Preinitiation Complex (GO:0001731) -> genes: [EIF2S3, EIF5]\n- Positive Regulation Of T Cell Proliferation (GO:0042102) -> genes: [IL6, TFRC, IGFBP2, IL6ST]\n- Response To Lipid (GO:0033993) -> genes: [RXRB, ALAS1, GCH1, GPX3, AQP3]\n- Positive Regulation Of Extrinsic Apoptotic Signaling Pathway (GO:2001238) -> genes: [RET, HYAL2, BID]\n- 'De Novo' Post-Translational Protein Folding (GO:0051084) -> genes: [DNAJB1, HSPA2, HSPA13]\n- Regulation Of Natural Killer Cell Mediated Cytotoxicity (GO:0042269) -> genes: [ARRB2, HLA-F, RASGRP1]\n- Cellular Nitrogen Compound Biosynthetic Process (GO:0044271) -> genes: [CYB5B, SPR, GCH1]\n- Mitochondrial Membrane Organization (GO:0007006) -> genes: [PPIF, BAK1, SLC25A4]\n- Amine Metabolic Process (GO:0009308) -> genes: [SULT1A1, MAOA]\n- Regulation Of Postsynaptic Neurotransmitter Receptor Activity (GO:0098962) -> genes: [NPTX2, NPTXR]\n- High-Density Lipoprotein Particle Assembly (GO:0034380) -> genes: [APOM, PRKACA]\n- Negative Regulation Of Lipid Localization (GO:1905953) -> genes: [NFKBIA, IL6]\n- DNA-templated DNA Replication (GO:0006261) -> genes: [RFC4, CDC34, POLG2, POLE3]\n- Cellular Response To Oxidative Stress (GO:0034599) -> genes: [PRKCD, HMOX1, FOS, SOD2, SQSTM1]\n- Apoptotic Mitochondrial Changes (GO:0008637) -> genes: [BAK1, BID, SOD2]\n- Regulation Of Protein Binding (GO:0043393) -> genes: [BMP2, PRKCD, TMBIM6, PRKACA, MARK2]\n- Transforming Growth Factor Beta Receptor Signaling Pathway (GO:0007179) -> genes: [TGFBRAP1, FURIN, ARRB2, FOS]\n- Regulation Of Protein-Containing Complex Assembly (GO:0043254) -> genes: [BCL2L11, TFRC, TGFBRAP1, BAK1, BID]\n- Positive Regulation Of Angiogenesis (GO:0045766) -> genes: [BTG1, AGO2, FGF18, HMOX1, RHOB]\n- Regulation Of Inclusion Body Assembly (GO:0090083) -> genes: [DNAJB1, HSPA2]\n- Negative Regulation Of Inclusion Body Assembly (GO:0090084) -> genes: [DNAJB1, HSPA2]\n- Negative Regulation Of Mitochondrial Outer Membrane Permeabilization Involved In Apoptotic Signaling Pathway (GO:1901029) -> genes: [BAK1, SLC25A4]\n- Negative Regulation Of Neuron Apoptotic Process (GO:0043524) -> genes: [TYRO3, PPT1, IL6ST, SOD2]\n- Receptor-Mediated Endocytosis (GO:0006898) -> genes: [TFRC, PPT1, CLTB, AP2S1, ARRB2]\n\n[KEGG_2021_Human]\n- Epstein-Barr virus infection -> genes: [LYN, TAP1, HLA-F, ICAM1, NFKBIA, CCND3, IL6, BCL2L11, PSMC3, CCNE1, CASP3, CDK2, BAK1, BID]\n- Pathways in cancer -> genes: [RET, CDKN2B, FOS, RASGRP1, RXRB, NFKBIA, CCND3, BMP2, IL6, BCL2L11, CCNE1, CASP3, FGF18, CDK2, HMOX1, BAK1, IL6ST, PRKACA, BID]\n- Lipid and atherosclerosis -> genes: [RXRB, LYN, NFKBIA, IL6, CASP3, CYP1A1, HSPA2, FOS, SOD2, BID, CXCL2, ICAM1]\n- Measles -> genes: [NFKBIA, CCND3, IL6, CCNE1, CASP3, CDK2, HSPA2, FOS, BAK1, BID]\n- Human T-cell leukemia virus 1 infection -> genes: [NFKBIA, CCND3, IL6, CDKN2B, CCNE1, CDK2, MSX1, FOS, HLA-F, PRKACA, SLC25A4, ICAM1]\n- TNF signaling pathway -> genes: [NFKBIA, IL6, MMP14, CASP3, IRF1, FOS, JUNB, CXCL2, ICAM1]\n- Kaposi sarcoma-associated herpesvirus infection -> genes: [LYN, NFKBIA, IL6, CASP3, FOS, BAK1, IL6ST, HLA-F, BID, CXCL2, ICAM1]\n- Viral carcinogenesis -> genes: [LYN, NFKBIA, CCND3, CDKN2B, CCNE1, CASP3, CDK2, BAK1, IL6ST, HLA-F, PRKACA]\n- Influenza A -> genes: [NFKBIA, NXF1, DNAJB1, CCND3, IL6, CASP3, BAK1, BID, SLC25A4, ICAM1]\n- Apoptosis -> genes: [NFKBIA, BCL2L11, PARP2, CASP3, CTSV, FOS, BAK1, BID, TUBA4A]\n- Cellular senescence -> genes: [CCND3, IL6, CDKN2B, CCNE1, CDK2, HLA-F, E2F5, SQSTM1, SLC25A4]\n- Small cell lung cancer -> genes: [RXRB, NFKBIA, CDKN2B, CCNE1, CASP3, CDK2, BAK1]\n- Epithelial cell signaling in Helicobacter pylori infection -> genes: [LYN, NFKBIA, CASP3, CXCL2, ATP6V1C1, ATP6V1F]\n- Chemical carcinogenesis -> genes: [RXRB, SULT1A1, CCND3, NAT1, EPHX1, FGF18, CYP1A1, FOS, ARRB2, PRKACA]\n- Huntington disease -> genes: [PSMC3, DLG4, GPX3, CASP3, PPIF, AP2S1, CLTB, POLR2H, SOD2, SLC25A4, TUBA4A]\n- Prion disease -> genes: [STIP1, IL6, PSMC3, CASP3, PRKCD, PPIF, HSPA2, PRKACA, SLC25A4, TUBA4A]\n- Human papillomavirus infection -> genes: [CCND3, COL2A1, CCNE1, IRF1, CASP3, CDK2, BAK1, HLA-F, PRKACA, ATP6V1C1, ATP6V1F]\n- Legionellosis -> genes: [NFKBIA, IL6, CASP3, HSPA2, CXCL2]\n- Rheumatoid arthritis -> genes: [IL6, FOS, CXCL2, ATP6V1C1, ICAM1, ATP6V1F]\n- IL-17 signaling pathway -> genes: [NFKBIA, IL6, CASP3, FOSB, FOS, CXCL2]\n- Gastric cancer -> genes: [RXRB, CDKN2B, ABCB1, CCNE1, CDK2, FGF18, BAK1]\n- p53 signaling pathway -> genes: [CCND3, CCNE1, CASP3, CDK2, BID]\n- Hepatitis B -> genes: [NFKBIA, IL6, CCNE1, CASP3, CDK2, FOS, BID]\n- Pertussis -> genes: [IL6, CASP3, IRF1, C4BPB, FOS]\n- Synaptic vesicle cycle -> genes: [CLTB, AP2S1, SLC6A12, ATP6V1C1, ATP6V1F]\n- Pathways of neurodegeneration -> genes: [IL6, PSMC3, DLG4, GPX3, CASP3, SIGMAR1, PPIF, BAK1, BID, SQSTM1, SLC25A4, TUBA4A]\n- Human cytomegalovirus infection -> genes: [NFKBIA, IL6, CASP3, TAP1, BAK1, HLA-F, PRKACA, BID]\n- Cell cycle -> genes: [CDKN1C, CCND3, CDKN2B, CCNE1, CDK2, E2F5]\n- MAPK signaling pathway -> genes: [NR4A1, CASP3, FGF18, HSPA2, FOS, ARRB2, MAPK8IP2, PRKACA, RASGRP1]\n- Cocaine addiction -> genes: [MAOA, DLG4, FOSB, PRKACA]\n- Calcium signaling pathway -> genes: [RET, HTR7, NTRK3, FGF18, PPIF, TACR3, PRKACA, SLC25A4]\n- Pathogenic Escherichia coli infection -> genes: [NFKBIA, IL6, CASP3, TMBIM6, FOS, BAK1, TUBA4A]\n- Folate biosynthesis -> genes: [SPR, GCH1, GGH]\n- Collecting duct acid secretion -> genes: [CA2, ATP6V1C1, ATP6V1F]\n- Viral myocarditis -> genes: [CASP3, HLA-F, BID, ICAM1]\n- Phagosome -> genes: [TFRC, TAP1, HLA-F, TUBA4A, ATP6V1C1, ATP6V1F]\n- Human immunodeficiency virus 1 infection -> genes: [NFKBIA, CASP3, TAP1, FOS, BAK1, HLA-F, BID]\n- Parathyroid hormone synthesis, secretion and action -> genes: [RXRB, MMP14, ARRB2, FOS, PRKACA]\n- Th17 cell differentiation -> genes: [NFKBIA, RXRB, IL6, FOS, IL6ST]\n- HIF-1 signaling pathway -> genes: [IL6, TFRC, HMOX1, ENO2, ALDOA]\n- Amphetamine addiction -> genes: [MAOA, FOSB, FOS, PRKACA]\n- Base excision repair -> genes: [FEN1, PARP2, POLE3]\n- Amyotrophic lateral sclerosis -> genes: [NXF1, PSMC3, GPX3, CASP3, SIGMAR1, BID, SQSTM1, TUBA4A, NUP58]\n- DNA replication -> genes: [FEN1, RFC4, POLE3]\n- Alanine, aspartate and glutamate metabolism -> genes: [PPAT, ASNS, GLS]\n- Thyroid cancer -> genes: [RET, RXRB, BAK1]\n- Osteoclast differentiation -> genes: [NFKBIA, FOSB, FOS, JUNB, SQSTM1]\n- RNA degradation -> genes: [BTG3, BTG2, BTG1, ENO2]\n- Parkinson disease -> genes: [PSMC3, MAOA, CASP3, PPIF, PRKACA, SLC25A4, TUBA4A]\n- Salmonella infection -> genes: [NFKBIA, IL6, CASP3, FOS, BAK1, TUBA4A, RHOB]\n- FoxO signaling pathway -> genes: [IL6, CDKN2B, BCL2L11, CDK2, SOD2]\n- Chemokine signaling pathway -> genes: [LYN, NFKBIA, PRKCD, ARRB2, PRKACA, CXCL2]\n- Estrogen signaling pathway -> genes: [PRKCD, HSPA2, FOS, PRKACA, FKBP4]\n- Porphyrin and chlorophyll metabolism -> genes: [ALAS1, UROD, HMOX1]\n- Colorectal cancer -> genes: [BCL2L11, CASP3, FOS, BAK1]\n- GABAergic synapse -> genes: [PLCL1, SLC6A12, PRKACA, GLS]\n- Bile secretion -> genes: [ABCB1, CA2, EPHX1, PRKACA]\n- Cysteine and methionine metabolism -> genes: [TST, AMD1, CDO1]\n- Vibrio cholerae infection -> genes: [PRKACA, ATP6V1C1, ATP6V1F]\n- PI3K-Akt signaling pathway -> genes: [NR4A1, CCND3, IL6, BCL2L11, COL2A1, CCNE1, FGF18, CDK2]\n- Cushing syndrome -> genes: [NR4A1, CDKN2B, CCNE1, CDK2, PRKACA]\n- Non-alcoholic fatty liver disease -> genes: [IL6, BCL2L11, CASP3, FOS, BID]\n- AGE-RAGE signaling pathway in diabetic complications -> genes: [IL6, CASP3, PRKCD, ICAM1]\n- Hepatitis C -> genes: [NFKBIA, CASP3, CDK2, BAK1, BID]\n- Endocrine and other factor-regulated calcium reabsorption -> genes: [CLTB, AP2S1, PRKACA]\n- Amoebiasis -> genes: [IL6, CASP3, PRKACA, CXCL2]\n- C-type lectin receptor signaling pathway -> genes: [NFKBIA, IL6, IRF1, PRKCD]\n- NF-kappa B signaling pathway -> genes: [LYN, NFKBIA, CXCL2, ICAM1]\n- Protein processing in endoplasmic reticulum -> genes: [DNAJA1, DNAJB1, RPN1, HSPA2, BAK1]\n- MicroRNAs in cancer -> genes: [BCL2L11, ABCB1, CCNE1, CASP3, HMOX1, BAK1, GLS]\n- Toxoplasmosis -> genes: [NFKBIA, CASP3, PPIF, HSPA2]\n- Serotonergic synapse -> genes: [HTR7, MAOA, CASP3, PRKACA]\n- Cytosolic DNA-sensing pathway -> genes: [NFKBIA, IL6, POLR2H]\n- Proximal tubule bicarbonate reclamation -> genes: [CA2, GLS]\n\n=== ABSTRACTS ===\n[1] Ultraviolet radiation as a double-edged regulator of melanocyte function in vitiligo therapy and melanoma carcinogenesis.\nVitiligo is a chronic autoimmune disorder characterized by selective melanocyte loss and progressive depigmentation. Narrowband ultraviolet B (NB-UVB) and excimer-based phototherapy are widely regarded as standard treatments in clinical practice and remain the most effective approaches for inducing repigmentation. However, excessive or uncontrolled ultraviolet radiation (UVR) exposure can impair skin barrier function, cause melanocyte dysfunction, and increase the risk of photoaging and carcinogenesis. This apparent paradox arises from the bidirectional biological effects of UVR: on the one hand, UVR activates melanocytes and promotes skin pigmentation through coordinated effects on melanocyte maturation, proliferation, and melanin synthesis, while on the other hand, UVR can induce oxidative stress, DNA damage, apoptosis, and genomic instability. Therefore, combination strategies incorporating JAK inhibitors, platelet-rich plasma, or cellular grafting techniques have been increasingly explored in clinical practice. In this review, we provide an integrated perspective on the dual effects of UVR on melanocyte biology, discuss emerging combination therapies for vitiligo, and highlight the mechanistic links between phototherapy, melanocyte homeostasis, and melanoma risk.\n[2] Exosome-Mediated Rewiring of Oxidative Stress-Inflammation-ECM Remodeling Axis Mitigates UVB-Triggered Skin Photoaging.\nPhotoaging is a chronic and multifactorial form of skin aging primarily induced by ultraviolet (UV) radiation. It is characterized by oxidative stress, DNA damage, chronic inflammation, pigmentary alterations, and extracellular matrix (ECM) degradation, which ultimately lead to wrinkle formation, loss of elasticity, and uneven pigmentation. Exosomes, nanosized extracellular vesicles that mediate intercellular communication, have attracted growing attention in photoaging research. Emerging evidence suggests that exosomes may both contribute to photoaging and promote tissue repair by modulating cellular responses. However, despite the growing body of evidence, the field still lacks an integrated review that links exosome biogenesis and functional properties to the mechanisms of photoaging, their therapeutic potential, and the major translational barriers to clinical application. Therefore, this review aims to systematically summarize the biogenesis and biological properties of exosomes, clarify their mechanistic roles in photoaging, particularly in the regulation of oxidative stress, and evaluate their potential as therapeutic agents and delivery platforms for anti-photoaging and regenerative medicine. It further examines the effects of native exosomes derived from multiple cell sources, with a focus on stem cells, keratinocytes, and melanocytes. Finally, it outlines translational opportunities for exosome-based interventions in anti-photoaging and regenerative medicine, including engineered exosome mimetics and other nanomedicine-based strategies. It also highlights the key knowledge gaps and technical challenges that must be addressed to facilitate clinical translation. In conclusion, exosomes represent a promising yet still evolving strategy for the prevention and treatment of photoaging because of their dual roles in intercellular signaling and tissue regeneration. Nevertheless, further standardization of isolation, characterization, engineering, safety assessment, and regulatory evaluation is essential before their full clinical potential can be realized.",
+  "judge_claims": [
+    {
+      "claim": "H2AX is involved in detecting and repairing DNA lesions.",
+      "label": "GROUNDED",
+      "why": "H2AX appears in the DNA damage response term (GO:0006974) with genes including H2AX, supporting its role in detecting and repairing DNA lesions."
+    },
+    {
+      "claim": "FEN1 is involved in detecting and repairing DNA lesions.",
+      "label": "GROUNDED",
+      "why": "FEN1 appears in DNA damage response (GO:0006974), DNA replication (GO:0006260), Base excision repair, and DNA replication pathways, supporting its role in detecting and repairing DNA lesions."
+    },
+    {
+      "claim": "PARP2 is involved in detecting and repairing DNA lesions.",
+      "label": "GROUNDED",
+      "why": "PARP2 appears in DNA damage response (GO:0006974), Apoptosis pathway, and Base excision repair pathway, supporting its role in detecting and repairing DNA lesions."
+    },
+    {
+      "claim": "POLE3 is involved in detecting and repairing DNA lesions.",
+      "label": "GROUNDED",
+      "why": "POLE3 appears in DNA damage response (GO:0006974), DNA replication (GO:0006260), DNA-templated DNA replication, Base excision repair, and DNA replication pathways, supporting its role in DNA repair."
+    },
+    {
+      "claim": "CDKN1C is involved in cell cycle checkpoint activation.",
+      "label": "GROUNDED",
+      "why": "CDKN1C appears in Negative Regulation Of Cell Cycle (GO:0045786), Regulation Of Mitotic Cell Cycle (GO:0007346), and Cell cycle pathway, supporting its role in cell cycle checkpoint activation."
+    },
+    {
+      "claim": "CCNE1 is involved in cell cycle checkpoint activation.",
+      "label": "GROUNDED",
+      "why": "CCNE1 appears in Cell Cycle G1/S Phase Transition (GO:0044843), G1/S Transition Of Mitotic Cell Cycle (GO:0000082), and Cell cycle pathway, supporting its role in cell cycle checkpoint activation."
+    },
+    {
+      "claim": "CCND3 is involved in cell cycle checkpoint activation.",
+      "label": "GROUNDED",
+      "why": "CCND3 appears in Cell Cycle G1/S Phase Transition (GO:0044843), G1/S Transition Of Mitotic Cell Cycle (GO:0000082), and Cell cycle pathway, supporting its role in cell cycle checkpoint activation."
+    },
+    {
+      "claim": "CDK2 is involved in cell cycle checkpoint activation.",
+      "label": "GROUNDED",
+      "why": "CDK2 appears in Cell Cycle G1/S Phase Transition (GO:0044843), G1/S Transition Of Mitotic Cell Cycle (GO:0000082), and Cell cycle pathway, supporting its role in cell cycle checkpoint activation."
+    },
+    {
+      "claim": "The p53 signaling pathway is a central regulator of cell cycle arrest in response to DNA damage.",
+      "label": "GROUNDED",
+      "why": "The p53 signaling pathway is listed with genes CCND3, CCNE1, CASP3, CDK2, BID, which are involved in cell cycle regulation, supporting its role in cell cycle arrest in response to DNA damage."
+    },
+    {
+      "claim": "The p53 signaling pathway is a central regulator of apoptosis in response to DNA damage.",
+      "label": "GROUNDED",
+      "why": "The p53 signaling pathway is listed with genes including CASP3 and BID, which are apoptotic factors, supporting its role in regulating apoptosis in response to DNA damage."
+    },
+    {
+      "claim": "BAK1 is a pro-apoptotic factor.",
+      "label": "GROUNDED",
+      "why": "BAK1 appears in Positive Regulation Of Apoptotic Process (GO:0043065), Positive Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090200), and Apoptotic Process (GO:0006915), confirming it is a pro-apoptotic factor."
+    },
+    {
+      "claim": "BID is a pro-apoptotic factor.",
+      "label": "GROUNDED",
+      "why": "BID appears in Positive Regulation Of Apoptotic Process (GO:0043065), Positive Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090200), and Apoptotic Process (GO:0006915), confirming it is a pro-apoptotic factor."
+    },
+    {
+      "claim": "CASP3 is a pro-apoptotic factor.",
+      "label": "GROUNDED",
+      "why": "CASP3 appears in Positive Regulation Of Apoptotic Process (GO:0043065) and Apoptotic Process (GO:0006915), confirming it is a pro-apoptotic factor."
+    },
+    {
+      "claim": "BCL2L11 is a pro-apoptotic factor.",
+      "label": "GROUNDED",
+      "why": "BCL2L11 appears in Positive Regulation Of Apoptotic Process (GO:0043065), Positive Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090200), and Apoptotic Process (GO:0006915), confirming it is a pro-apoptotic factor."
+    },
+    {
+      "claim": "PPIF is a regulator of mitochondrial integrity.",
+      "label": "GROUNDED",
+      "why": "PPIF appears in Regulation Of Mitochondrial Membrane Permeability (GO:0046902), Mitochondrial Membrane Organization (GO:0007006), and Negative Regulation Of Mitochondrion Organization (GO:0010823), supporting its role as a regulator of mitochondrial integrity."
+    },
+    {
+      "claim": "SLC25A4 is a regulator of mitochondrial integrity.",
+      "label": "GROUNDED",
+      "why": "SLC25A4 appears in Regulation Of Mitochondrial Membrane Permeability (GO:0046902), Mitochondrial Membrane Organization (GO:0007006), and Negative Regulation Of Mitochondrion Organization (GO:0010823), supporting its role as a regulator of mitochondrial integrity."
+    },
+    {
+      "claim": "PPIF is linked to release of cytochrome C from mitochondria.",
+      "label": "GROUNDED",
+      "why": "PPIF appears in Positive Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090200) and Regulation Of Release Of Cytochrome C From Mitochondria (GO:0090199), confirming its link to cytochrome C release."
+    },
+    {
+      "claim": "SLC25A4 is linked to release of cytochrome C from mitochondria.",
+      "label": "BACKGROUND",
+      "why": "SLC25A4 does not appear in the cytochrome C release terms, though it is involved in mitochondrial membrane permeability. This is a well-established mitochondrial function not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PPIF is linked to regulation of mitochondrial membrane permeability.",
+      "label": "GROUNDED",
+      "why": "PPIF appears in Regulation Of Mitochondrial Membrane Permeability (GO:0046902), directly supporting this claim."
+    },
+    {
+      "claim": "SLC25A4 is linked to regulation of mitochondrial membrane permeability.",
+      "label": "GROUNDED",
+      "why": "SLC25A4 appears in Regulation Of Mitochondrial Membrane Permeability (GO:0046902), directly supporting this claim."
+    },
+    {
+      "claim": "A mitochondrial-dependent apoptotic pathway is activated in response to UV damage.",
+      "label": "BACKGROUND",
+      "why": "While the evidence shows mitochondrial apoptotic pathways exist (with BAK1, BID, BCL2L11, PPIF), the specific activation in response to UV damage is not explicitly stated in the evidence, though it is well-established biology."
+    },
+    {
+      "claim": "UV radiation induces reactive oxygen species.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states 'UVR can induce oxidative stress' and the evidence includes Response To Reactive Oxygen Species and Cellular Response To Reactive Oxygen Species terms, supporting that UV induces ROS."
+    },
+    {
+      "claim": "UV radiation leads to oxidative stress.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states 'UVR can induce oxidative stress' and Abstract 2 mentions 'oxidative stress' as a characteristic of photoaging induced by UV radiation."
+    },
+    {
+      "claim": "SOD2 is involved in antioxidant defense.",
+      "label": "GROUNDED",
+      "why": "SOD2 appears in Response To Hydrogen Peroxide (GO:0042542), Cellular Response To Reactive Oxygen Species (GO:0034614), and Cellular Response To Oxidative Stress (GO:0034599), supporting its role in antioxidant defense."
+    },
+    {
+      "claim": "HMOX1 is involved in antioxidant defense.",
+      "label": "GROUNDED",
+      "why": "HMOX1 appears in Response To Hydrogen Peroxide (GO:0042542), Response To Reactive Oxygen Species (GO:0000302), and Cellular Response To Oxidative Stress (GO:0034599), supporting its role in antioxidant defense."
+    },
+    {
+      "claim": "GPX3 is involved in antioxidant defense.",
+      "label": "GROUNDED",
+      "why": "GPX3 appears in Response To Hydroperoxide (GO:0033194), supporting its role in antioxidant defense."
+    },
+    {
+      "claim": "The TNF signaling pathway is associated with tissue damage following UV exposure.",
+      "label": "BACKGROUND",
+      "why": "While TNF signaling pathway is listed in the evidence with genes including IL6, CASP3, and inflammatory markers, the specific association with tissue damage following UV exposure is not explicitly stated, though it is well-established biology."
+    },
+    {
+      "claim": "The TNF signaling pathway is associated with immune responses following UV exposure.",
+      "label": "BACKGROUND",
+      "why": "While TNF signaling pathway is listed with immune-related genes, the specific association with immune responses following UV exposure is not explicitly stated in the evidence, though it is well-established biology."
+    },
+    {
+      "claim": "The NF-kappa B signaling pathway is associated with tissue damage following UV exposure.",
+      "label": "BACKGROUND",
+      "why": "While NF-kappa B signaling pathway is listed in the evidence, the specific association with tissue damage following UV exposure is not explicitly stated, though it is well-established biology."
+    },
+    {
+      "claim": "The NF-kappa B signaling pathway is associated with immune responses following UV exposure.",
+      "label": "BACKGROUND",
+      "why": "While NF-kappa B signaling pathway is listed with immune-related genes (NFKBIA, IL6, CXCL2, ICAM1), the specific association with immune responses following UV exposure is not explicitly stated, though it is well-established biology."
+    },
+    {
+      "claim": "UV exposure can lead to oxidative stress.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 explicitly states that photoaging is 'characterized by oxidative stress' and Abstract 1 states 'UVR can induce oxidative stress'."
+    },
+    {
+      "claim": "UV exposure can lead to chronic inflammation.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 explicitly states that photoaging is 'characterized by...chronic inflammation' induced by UV radiation."
+    },
+    {
+      "claim": "DNAJA1 is involved in protein quality control mechanisms.",
+      "label": "GROUNDED",
+      "why": "DNAJA1 appears in Response To Unfolded Protein (GO:0006986), Chaperone Cofactor-Dependent Protein Refolding (GO:0051085), and Protein processing in endoplasmic reticulum pathway, supporting its role in protein quality control."
+    },
+    {
+      "claim": "DNAJB1 is involved in protein quality control mechanisms.",
+      "label": "GROUNDED",
+      "why": "DNAJB1 appears in Response To Unfolded Protein (GO:0006986), Chaperone Cofactor-Dependent Protein Refolding (GO:0051085), 'De Novo' Post-Translational Protein Folding (GO:0051084), and Protein processing in endoplasmic reticulum pathway, supporting its role in protein quality control."
+    },
+    {
+      "claim": "HSPA2 is involved in protein quality control mechanisms.",
+      "label": "GROUNDED",
+      "why": "HSPA2 appears in Response To Unfolded Protein (GO:0006986), Chaperone Cofactor-Dependent Protein Refolding (GO:0051085), and 'De Novo' Post-Translational Protein Folding (GO:0051084), supporting its role in protein quality control."
+    },
+    {
+      "claim": "HSPA13 is involved in protein quality control mechanisms.",
+      "label": "GROUNDED",
+      "why": "HSPA13 appears in Chaperone Cofactor-Dependent Protein Refolding (GO:0051085) and 'De Novo' Post-Translational Protein Folding (GO:0051084), supporting its role in protein quality control."
+    },
+    {
+      "claim": "UV radiation induces protein damage.",
+      "label": "BACKGROUND",
+      "why": "While protein quality control mechanisms are present in the evidence, the specific induction of protein damage by UV radiation is not explicitly stated, though it is well-established biology."
+    },
+    {
+      "claim": "UV radiation induces protein aggregation.",
+      "label": "BACKGROUND",
+      "why": "While protein quality control and aggregation regulation mechanisms are present in the evidence (Regulation Of Inclusion Body Assembly), the specific induction of protein aggregation by UV radiation is not explicitly stated, though it is well-established biology."
+    },
+    {
+      "claim": "UVR can induce oxidative stress.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states 'UVR can induce oxidative stress'."
+    },
+    {
+      "claim": "UVR can induce DNA damage.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states 'UVR can induce...DNA damage' and Abstract 2 mentions 'DNA damage' as a characteristic of photoaging induced by UV radiation."
+    },
+    {
+      "claim": "UVR can induce apoptosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states 'UVR can induce...apoptosis'."
+    }
+  ],
+  "summary": {
+    "n_claims": 41,
+    "n_scored": 41,
+    "grounded_rate": 0.805,
+    "hallucination_rate": 0.0,
+    "grounded": 33,
+    "background": 8,
+    "unsupported": 0
+  }
+}

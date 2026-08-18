@@ -1,0 +1,1583 @@
+{
+  "gene_set": "Cholesterol_Homeostasis",
+  "context": "Cholesterol Homeostasis",
+  "genes": [
+    "FDPS",
+    "CYP51A1",
+    "IDI1",
+    "FDFT1",
+    "DHCR7",
+    "SQLE",
+    "HMGCS1",
+    "NSDHL",
+    "LSS",
+    "MVD",
+    "LDLR",
+    "TM7SF2",
+    "ALDOC",
+    "EBP",
+    "SCD",
+    "PMVK",
+    "MVK",
+    "LPL",
+    "SC5D",
+    "FADS2",
+    "HMGCR",
+    "HSD17B7",
+    "ANXA13",
+    "SREBF2",
+    "PCYT2",
+    "ACSS2",
+    "ATF3",
+    "ADH4",
+    "ETHE1",
+    "ECH1",
+    "CBS",
+    "GUSB",
+    "FASN",
+    "LGALS3",
+    "ATF5",
+    "ANXA5",
+    "TP53INP1",
+    "CHKA",
+    "GSTM2",
+    "ACAT2",
+    "AVPR1A",
+    "PLSCR1",
+    "CLU",
+    "ERRFI1",
+    "TRIB3",
+    "CXCL16",
+    "TNFRSF12A",
+    "ACTG1",
+    "JAG1",
+    "LGMN",
+    "FBXO6",
+    "GPX8",
+    "PNRC1",
+    "ANTXR2",
+    "MAL2",
+    "CD9",
+    "PPARG",
+    "GLDC",
+    "STX5",
+    "STARD4",
+    "CTNNB1",
+    "TMEM97",
+    "NIBAN1",
+    "PDK3",
+    "PLAUR",
+    "SEMA3B",
+    "GNAI1",
+    "ABCA2",
+    "ATXN2",
+    "NFIL3",
+    "ALCAM",
+    "FABP5",
+    "S100A11",
+    "CPEB2"
+  ],
+  "n_genes": 74,
+  "query": "Analyze this gene set (biological context: Cholesterol Homeostasis) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: FDPS, CYP51A1, IDI1, FDFT1, DHCR7, SQLE, HMGCS1, NSDHL, LSS, MVD, LDLR, TM7SF2, ALDOC, EBP, SCD, PMVK, MVK, LPL, SC5D, FADS2, HMGCR, HSD17B7, ANXA13, SREBF2, PCYT2, ACSS2, ATF3, ADH4, ETHE1, ECH1, CBS, GUSB, FASN, LGALS3, ATF5, ANXA5, TP53INP1, CHKA, GSTM2, ACAT2, AVPR1A, PLSCR1, CLU, ERRFI1, TRIB3, CXCL16, TNFRSF12A, ACTG1, JAG1, LGMN, FBXO6, GPX8, PNRC1, ANTXR2, MAL2, CD9, PPARG, GLDC, STX5, STARD4, CTNNB1, TMEM97, NIBAN1, PDK3, PLAUR, SEMA3B, GNAI1, ABCA2, ATXN2, NFIL3, ALCAM, FABP5, S100A11, CPEB2",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 45,
+  "n_papers": 3,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 3,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 3,
+    "cited_pmids": [
+      "40762538",
+      "42307015",
+      "42337263"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "This gene set is highly indicative of robust activation of **cholesterol biosynthesis and metabolism**, with strong enrichment in both GO Biological Processes and KEGG pathways related to sterol and terpenoid synthesis, as well as cholesterol transport and regulation.\n\n## Detailed Analysis\n\nThe enrichment analysis revealed a predominant role for cholesterol and steroid biosynthesis. The most significant terms from GO_Biological_Process_2023 include \"Cholesterol Biosynthetic Process\" (p=3.53e-23), \"Sterol Biosynthetic Process\" (p=1.26e-22), and \"Cholesterol Metabolic Process\" (p=3.82e-17). Similarly, the top KEGG_2021_Human pathways are \"Steroid biosynthesis\" (p=7.14e-18) and \"Terpenoid backbone biosynthesis\" (p=5.69e-13).\n\nKey genes driving these enrichments are central to the mevalonate pathway, which is the committed step in cholesterol synthesis:\n*   **HMGCR** (HMG-CoA Reductase) is the rate-limiting enzyme.\n*   **MVK** (Mevalonate Kinase), **PMVK** (Phosphomevalonate Kinase), **MVD** (Mevalonate Diphosphate Decarboxylase) are involved in early steps.\n*   **IDI1** (Isopentenyl-diphosphate Delta-isomerase 1) converts isopentenyl pyrophosphate to dimethylallyl pyrophosphate.\n*   **FDPS** (Farnesyl Diphosphate Synthase), **FDFT1** (Farnesyl Diphosphate Farnesyltransferase 1, also known as Squalene Synthase), and **SQLE** (Squalene Epoxidase) catalyze subsequent steps leading to squalene.\n*   **LSS** (Lanosterol Synthase), **CYP51A1** (Lanosterol Demethylase), **NSDHL** (NAD(P) Dependent Sterol Dehydrogenase-Like), **TM7SF2** (Transmembrane 7 Superfamily Member 2), **EBP** (Emopamil Binding Protein), **DHCR7** (7-Dehydrocholesterol Reductase), and **SC5D** (Sterol-C5-Desaturase) are involved in the post-squalene modifications and cholesterol formation.\n\nBeyond biosynthesis, terms related to cholesterol transport and regulation, such as \"Cellular Response To Low-Density Lipoprotein Particle Stimulus\", \"Cholesterol Import\", \"Regulation Of Cholesterol Efflux\", \"Cholesterol Transport\", \"Regulation Of Cholesterol Storage\", and \"Intracellular Cholesterol Transport\" are also significantly enriched. Genes like **LDLR** (Low-Density Lipoprotein Receptor), **SREBF2** (Sterol Regulatory Element Binding Transcription Factor 2), **ABCA2** (ATP Binding Cassette Subfamily A Member 2), and **STARD4** (StAR-Related Lipid Transfer Domain Containing 4) are key components in these processes, indicating that not only is cholesterol being produced, but its handling and trafficking are also actively modulated. The presence of **PPARG** (Peroxisome Proliferator Activated Receptor Gamma) and enrichment of \"PPAR signaling pathway\" further support a broad regulation of lipid metabolism, as PPARs are critical nuclear receptors controlling gene expression in lipid homeostasis.\n\nLiterature search confirms the direct relevance of these genes and pathways to cholesterol homeostasis. Specifically, SREBF2 plays a crucial role in regulating cholesterol biosynthesis and uptake via LDLR. For example, fluoxetine has been shown to disrupt cholesterol metabolism by activating SREBF2, leading to increased cholesterol biosynthesis and LDL uptake in endothelial cells (Oliveira et al., 2026). Additionally, diabetes can induce corneal endothelial dysfunction by inhibiting SREBF2/SQLE-dependent cholesterol biosynthesis (Ren et al., 2025). The involvement of HMGCR in cholesterol biosynthesis is also highlighted in studies such as those investigating calpain-4 knockdown in alcohol-related liver disease, which suggested reduced HMGCR activity suppressed cholesterol biosynthesis (Kitano et al., 2026).\n\nOverall, the gene set strongly points to a biological state characterized by active and tightly regulated cholesterol production, import, efflux, and storage, consistent with the provided context of \"Cholesterol Homeostasis.\"\n\n### References\n*   Kitano N, Li J, Taborski S, et al. Calpain-4 Knockdown Modulates Cholesterol Metabolism and LXRα Nuclear Localization in Experimental Alcohol-Related Liver Disease. (2026) PMID:42307015\n*   Oliveira F, Papa C, Hagemann T, et al. Fluoxetine disrupts cholesterol metabolism in endothelial cells via SREBP2 activation. (2026) PMID:42337263\n*   Ren Z, Li Z, Dou S, et al. Effects of Cholesterol Metabolism on Corneal Endothelial Dysfunction in Patients With Type 1 Diabetes. (2025) PMID:40762538",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human', 'genes': 'FDPS, CYP51A1, IDI1, FDFT1, DHCR7, SQLE, HMGCS1, NSDHL, LSS, MVD, LDLR, TM7SF2, ALDOC, EBP, SCD, PMVK, MVK, LPL, SC5D, FADS2, HMGCR, HSD17B7, ANXA13, SREBF2, PCYT2, ACSS2, ATF3, ADH4, ETHE1, ECH1, CBS, GUSB, FASN, LGALS3, ATF5, ANXA5, TP53INP1, CHKA, GSTM2, ACAT2, AVPR1A, PLSCR1, CLU, ERRFI1, TRIB3, CXCL16, TNFRSF12A, ACTG1, JAG1, LGMN, FBXO6, GPX8, PNRC1, ANTXR2, MAL2, CD9, PPARG, GLDC, STX5, STARD4, CTNNB1, TMEM97, NIBAN1, PDK3, PLAUR, SEMA3B, GNAI1, ABCA2, ATXN2, NFIL3, ALCAM, FABP5, S100A11, CPEB2'}",
+    "Tool: search_literature | Args: {'sort_by': 'relevance', 'query': '\"cholesterol biosynthesis\" HMGCR SREBF2 LDLR', 'max_results': 5}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Cholesterol Homeostasis) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: FDPS, CYP51A1, IDI1, FDFT1, DHCR7, SQLE, HMGCS1, NSDHL, "
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given a gene list, and my task is to really dig in and understand its biological implications, especially within the specific context of cholesterol homeostasis. My expertise allows me to immediately recognize the need for a robust, data-driven approach.\n\nFirst, I'm going to kick things off with a thorough enrichment analysis. I'll utilize the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries; these are the best starting points for understanding the functional categories and pathways that are significantly over-represented in the given gene list. The output of this will be crucial.\n\nNext, I need to focus my interpretation. I'll sift through the enriched terms, paying laser-sharp attention to any that hint at a connection to cholesterol homeostasis. I'm going to look at the overall picture, and identify the most relevant enriched terms.\n\nThen comes the literature search. I can’t just pull papers at random; my query for `search_literature` needs to be sharp and specific. I’ll craft a query based on the most promising enrichment results, all while keeping cholesterol homeostasis as the central focus. I'm limiting the search to at most five papers, but I'll make sure they’re the *right* ones.\n\nFinally, I'll bring it all together. I'll synthesize the enrichment findings with the evidence I find in the literature. This will allow me to provide a concise, insightful biological interpretation. I'll highlight the key pathways and genes that are most relevant to cholesterol homeostasis and, critically, cite the papers that back up my conclusions. This will be a succinct, yet definitive, statement.\n\nSo, let's start with running that enrichment analysis. I have a lot of work to do!",
+      "action": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023,KEGG_2021_Human, genes=FDPS, CYP51A1, IDI1, FDFT1, DHCR7, SQLE, HMGCS1, N...",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "cd5761b6-9419-4a52-acc3-5b14bc49cbc6",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 74 | Total significant terms: 45"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "## Summary\n\nThe provided gene set is strongly and significantly enriched for pathways involved in **cholesterol biosynthesis, sterol metabolism, and the broader regulation of cholesterol homeostasis**. Key processes such as the *de novo* synthesis of cholesterol, transport, and cellular response to lipoprotein stimuli are highly represented. The analysis highlights a coordinated upregulation or involvement of genes critical for these functions, suggesting a robust perturbation or active state of"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Interpretation of the Enrichment Analysis Findings**\n\nAlright, let's break this down. The enrichment analysis is screaming \"cholesterol biosynthesis\" at me, no two ways about it. The results are incredibly consistent with the context of cholesterol homeostasis. I'm seeing significant enrichment across the board for terms like \"Cholesterol Biosynthetic Process,\" \"Sterol Biosynthetic Process,\" \"Steroid biosynthesis,\" and \"Terpenoid backbone biosynthesis.\" That's a strong signal, especially with those low p-values.\n\nLooking at the GO terms specifically, it’s all making perfect sense. \"Cholesterol Biosynthetic Process (GO:0006695)\" is a standout, and the inclusion of those key genes like *HMGCR*, *CYP51A1*, *LSS*, and others, is exactly what I'd expect to see. The fact that terms related to cholesterol *metabolism*, *transport*, *efflux*, and *storage* also show up confirms that this isn't just about the synthesis itself, but the entire homeostatic loop. The presence of \"Cellular Response To Low-Density Lipoprotein Particle Stimulus\" involving *LDLR* and *SREBF2* is also extremely relevant, particularly in terms of cholesterol regulation. Then there's the KEGG pathway analysis confirming the significance of the \"PPAR signaling pathway\" and \"AMPK signaling pathway\", which are all critical players in lipid and cholesterol metabolism.\n\nSo, where do I go from here? Time to pull up the literature and validate these findings. I need to use `search_literature` to build a solid case. I'm thinking a focused query is best. I should go with something along the lines of \"cholesterol biosynthesis\" or \"sterol metabolism\" and throw in some key genes to bring the focus down to the core process. I will try something like \"cholesterol biosynthesis HMGCR SREBF2 LDLR\" to capture the core aspect and some of the major regulatory players. I will limit the results to the top 5 to keep it focused.",
+      "action": "search_literature",
+      "args": "sort_by=relevance, query=\"cholesterol biosynthesis\" HMGCR SREBF2 LDLR, max_results=5",
+      "tool_name": "search_literature",
+      "tool_call_id": "68eba1aa-f41c-45c6-9d54-57aa7ff675e3",
+      "observation": "=== LITERATURE SEARCH: '\"cholesterol biosynthesis\" HMGCR SREBF2 LDLR' === | Found 3 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "This gene set is highly indicative of robust activation of **cholesterol biosynthesis and metabolism**, with strong enrichment in both GO Biological Processes and KEGG pathways related to sterol and terpenoid synthesis, as well as cholesterol transport and regulation.\n\n## Detailed Analysis\n\nThe enrichment analysis revealed a predominant role for cholesterol and steroid biosynthesis. The most significant terms from GO_Biological_Process_2023 include \"Cholesterol Biosynthetic Process\" (p=3.53e-23)"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023,KEGG_2021_Human, genes=FDPS, CYP51A1, IDI1, FDFT1, DHCR7, SQLE, HMGCS1, N...",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given a gene list, and my task is to really dig in and understand its biological implications, especially within the specific context of cholesterol homeostasis. My expertise allows me to immediately recognize the need for a robust, data-driven approach.\n\nFirst, I'm going to kick things off with a thorough enrichment analysis. I'll utilize the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries; these are the best starting points for understanding the functional categories and pathways that are significantly over-represented in the given gene list. The output of this will be crucial.\n\nNext, I need to focus my interpretation. I'll sift through the enriched terms, paying laser-sharp attention to any that hint at a connection to cholesterol homeostasis. I'm going to look at the overall picture, and identify the most relevant enriched terms.\n\nThen comes the literature search. I can’t just pull papers at random; my query for `search_literature` needs to be sharp and specific. I’ll craft a query based on the most promising enrichment results, all while keeping cholesterol homeostasis as the central focus. I'm limiting the search to at most five papers, but I'll make sure they’re the *right* ones.\n\nFinally, I'll bring it all together. I'll synthesize the enrichment findings with the evidence I find in the literature. This will allow me to provide a concise, insightful biological interpretation. I'll highlight the key pathways and genes that are most relevant to cholesterol homeostasis and, critically, cite the papers that back up my conclusions. This will be a succinct, yet definitive, statement.\n\nSo, let's start with running that enrichment analysis. I have a lot of work to do!",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 74 | Total significant terms: 45"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "sort_by=relevance, query=\"cholesterol biosynthesis\" HMGCR SREBF2 LDLR, max_results=5",
+      "thought": "**My Interpretation of the Enrichment Analysis Findings**\n\nAlright, let's break this down. The enrichment analysis is screaming \"cholesterol biosynthesis\" at me, no two ways about it. The results are incredibly consistent with the context of cholesterol homeostasis. I'm seeing significant enrichment across the board for terms like \"Cholesterol Biosynthetic Process,\" \"Sterol Biosynthetic Process,\" \"Steroid biosynthesis,\" and \"Terpenoid backbone biosynthesis.\" That's a strong signal, especially with those low p-values.\n\nLooking at the GO terms specifically, it’s all making perfect sense. \"Cholesterol Biosynthetic Process (GO:0006695)\" is a standout, and the inclusion of those key genes like *HMGCR*, *CYP51A1*, *LSS*, and others, is exactly what I'd expect to see. The fact that terms related to cholesterol *metabolism*, *transport*, *efflux*, and *storage* also show up confirms that this isn't just about the synthesis itself, but the entire homeostatic loop. The presence of \"Cellular Response To Low-Density Lipoprotein Particle Stimulus\" involving *LDLR* and *SREBF2* is also extremely relevant, particularly in terms of cholesterol regulation. Then there's the KEGG pathway analysis confirming the significance of the \"PPAR signaling pathway\" and \"AMPK signaling pathway\", which are all critical players in lipid and cholesterol metabolism.\n\nSo, where do I go from here? Time to pull up the literature and validate these findings. I need to use `search_literature` to build a solid case. I'm thinking a focused query is best. I should go with something along the lines of \"cholesterol biosynthesis\" or \"sterol metabolism\" and throw in some key genes to bring the focus down to the core process. I will try something like \"cholesterol biosynthesis HMGCR SREBF2 LDLR\" to capture the core aspect and some of the major regulatory players. I will limit the results to the top 5 to keep it focused.",
+      "observation": "=== LITERATURE SEARCH: '\"cholesterol biosynthesis\" HMGCR SREBF2 LDLR' === | Found 3 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "FDPS",
+      "CYP51A1",
+      "IDI1",
+      "FDFT1",
+      "DHCR7",
+      "SQLE",
+      "HMGCS1",
+      "NSDHL",
+      "LSS",
+      "MVD",
+      "LDLR",
+      "TM7SF2",
+      "ALDOC",
+      "EBP",
+      "SCD",
+      "PMVK",
+      "MVK",
+      "LPL",
+      "SC5D",
+      "FADS2",
+      "HMGCR",
+      "HSD17B7",
+      "ANXA13",
+      "SREBF2",
+      "PCYT2",
+      "ACSS2",
+      "ATF3",
+      "ADH4",
+      "ETHE1",
+      "ECH1",
+      "CBS",
+      "GUSB",
+      "FASN",
+      "LGALS3",
+      "ATF5",
+      "ANXA5",
+      "TP53INP1",
+      "CHKA",
+      "GSTM2",
+      "ACAT2",
+      "AVPR1A",
+      "PLSCR1",
+      "CLU",
+      "ERRFI1",
+      "TRIB3",
+      "CXCL16",
+      "TNFRSF12A",
+      "ACTG1",
+      "JAG1",
+      "LGMN",
+      "FBXO6",
+      "GPX8",
+      "PNRC1",
+      "ANTXR2",
+      "MAL2",
+      "CD9",
+      "PPARG",
+      "GLDC",
+      "STX5",
+      "STARD4",
+      "CTNNB1",
+      "TMEM97",
+      "NIBAN1",
+      "PDK3",
+      "PLAUR",
+      "SEMA3B",
+      "GNAI1",
+      "ABCA2",
+      "ATXN2",
+      "NFIL3",
+      "ALCAM",
+      "FABP5",
+      "S100A11",
+      "CPEB2"
+    ],
+    "gene_count": 74,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Cholesterol Biosynthetic Process (GO:0006695)",
+          "term": "Cholesterol Biosynthetic Process (GO:0006695)",
+          "overlap": "13/25",
+          "p_value": 4.007529194355605e-26,
+          "z_score": 353.6639344262295,
+          "combined_score": 20681.92649341373,
+          "overlap_genes": [
+            "MVK",
+            "HMGCS1",
+            "CYP51A1",
+            "HMGCR",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "NSDHL",
+            "PMVK",
+            "SC5D",
+            "MVD",
+            "DHCR7",
+            "FDFT1"
+          ],
+          "genes": [
+            "MVK",
+            "HMGCS1",
+            "CYP51A1",
+            "HMGCR",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "NSDHL",
+            "PMVK",
+            "SC5D",
+            "MVD",
+            "DHCR7",
+            "FDFT1"
+          ],
+          "adjusted_p_value": 3.526625691032932e-23
+        },
+        {
+          "rank": 2,
+          "term_name": "Sterol Biosynthetic Process (GO:0016126)",
+          "term": "Sterol Biosynthetic Process (GO:0016126)",
+          "overlap": "13/28",
+          "p_value": 2.8612564362295178e-25,
+          "z_score": 282.8885245901639,
+          "combined_score": 15986.982864033684,
+          "overlap_genes": [
+            "MVK",
+            "HMGCS1",
+            "CYP51A1",
+            "HMGCR",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "SQLE",
+            "NSDHL",
+            "PMVK",
+            "MVD",
+            "DHCR7",
+            "FDFT1"
+          ],
+          "genes": [
+            "MVK",
+            "HMGCS1",
+            "CYP51A1",
+            "HMGCR",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "SQLE",
+            "NSDHL",
+            "PMVK",
+            "MVD",
+            "DHCR7",
+            "FDFT1"
+          ],
+          "adjusted_p_value": 1.2589528319409877e-22
+        },
+        {
+          "rank": 3,
+          "term_name": "Secondary Alcohol Biosynthetic Process (GO:1902653)",
+          "term": "Secondary Alcohol Biosynthetic Process (GO:1902653)",
+          "overlap": "12/24",
+          "p_value": 6.717745186614128e-24,
+          "z_score": 321.19354838709677,
+          "combined_score": 17138.01720185384,
+          "overlap_genes": [
+            "NSDHL",
+            "MVK",
+            "HMGCS1",
+            "CYP51A1",
+            "PMVK",
+            "MVD",
+            "HMGCR",
+            "DHCR7",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "FDFT1"
+          ],
+          "genes": [
+            "NSDHL",
+            "MVK",
+            "HMGCS1",
+            "CYP51A1",
+            "PMVK",
+            "MVD",
+            "HMGCR",
+            "DHCR7",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "FDFT1"
+          ],
+          "adjusted_p_value": 1.9705385880734776e-21
+        },
+        {
+          "rank": 4,
+          "term_name": "Cholesterol Metabolic Process (GO:0008203)",
+          "term": "Cholesterol Metabolic Process (GO:0008203)",
+          "overlap": "13/67",
+          "p_value": 1.7365995063745525e-19,
+          "z_score": 78.42622950819673,
+          "combined_score": 3387.792570196649,
+          "overlap_genes": [
+            "MVK",
+            "HMGCS1",
+            "CYP51A1",
+            "HMGCR",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "SQLE",
+            "NSDHL",
+            "PMVK",
+            "MVD",
+            "DHCR7",
+            "FDFT1"
+          ],
+          "genes": [
+            "MVK",
+            "HMGCS1",
+            "CYP51A1",
+            "HMGCR",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "SQLE",
+            "NSDHL",
+            "PMVK",
+            "MVD",
+            "DHCR7",
+            "FDFT1"
+          ],
+          "adjusted_p_value": 3.820518914024015e-17
+        },
+        {
+          "rank": 5,
+          "term_name": "Lipid Biosynthetic Process (GO:0008610)",
+          "term": "Lipid Biosynthetic Process (GO:0008610)",
+          "overlap": "9/71",
+          "p_value": 4.8713214960254266e-12,
+          "z_score": 44.36129032258064,
+          "combined_score": 1155.5076238824272,
+          "overlap_genes": [
+            "PCYT2",
+            "ACSS2",
+            "MVK",
+            "FASN",
+            "CYP51A1",
+            "MVD",
+            "HMGCR",
+            "LSS",
+            "FDFT1"
+          ],
+          "genes": [
+            "PCYT2",
+            "ACSS2",
+            "MVK",
+            "FASN",
+            "CYP51A1",
+            "MVD",
+            "HMGCR",
+            "LSS",
+            "FDFT1"
+          ],
+          "adjusted_p_value": 8.573525833004751e-10
+        },
+        {
+          "rank": 6,
+          "term_name": "acetyl-CoA Metabolic Process (GO:0006084)",
+          "term": "acetyl-CoA Metabolic Process (GO:0006084)",
+          "overlap": "5/16",
+          "p_value": 2.5571536279599987e-09,
+          "z_score": 131.1923583662714,
+          "combined_score": 2595.5582983007594,
+          "overlap_genes": [
+            "ACSS2",
+            "MVK",
+            "HMGCS1",
+            "PMVK",
+            "MVD"
+          ],
+          "genes": [
+            "ACSS2",
+            "MVK",
+            "HMGCS1",
+            "PMVK",
+            "MVD"
+          ],
+          "adjusted_p_value": 3.7504919876746645e-07
+        },
+        {
+          "rank": 7,
+          "term_name": "Isoprenoid Biosynthetic Process (GO:0008299)",
+          "term": "Isoprenoid Biosynthetic Process (GO:0008299)",
+          "overlap": "4/8",
+          "p_value": 1.1948498966442317e-08,
+          "z_score": 284.6,
+          "combined_score": 5191.861086078547,
+          "overlap_genes": [
+            "IDI1",
+            "MVK",
+            "MVD",
+            "HMGCR"
+          ],
+          "genes": [
+            "IDI1",
+            "MVK",
+            "MVD",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 1.502097012924177e-06
+        },
+        {
+          "rank": 8,
+          "term_name": "Steroid Biosynthetic Process (GO:0006694)",
+          "term": "Steroid Biosynthetic Process (GO:0006694)",
+          "overlap": "6/50",
+          "p_value": 2.9144225280044185e-08,
+          "z_score": 39.87032085561497,
+          "combined_score": 691.7902978875419,
+          "overlap_genes": [
+            "SQLE",
+            "PMVK",
+            "CYP51A1",
+            "HMGCR",
+            "LSS",
+            "FDFT1"
+          ],
+          "genes": [
+            "SQLE",
+            "PMVK",
+            "CYP51A1",
+            "HMGCR",
+            "LSS",
+            "FDFT1"
+          ],
+          "adjusted_p_value": 3.2058647808048603e-06
+        },
+        {
+          "rank": 9,
+          "term_name": "Cellular Response To Low-Density Lipoprotein Particle Stimulus (GO:0071404)",
+          "term": "Cellular Response To Low-Density Lipoprotein Particle Stimulus (GO:0071404)",
+          "overlap": "4/22",
+          "p_value": 1.2006647664036195e-06,
+          "z_score": 63.2,
+          "combined_score": 861.582543537359,
+          "overlap_genes": [
+            "CD9",
+            "PPARG",
+            "LDLR",
+            "SREBF2"
+          ],
+          "genes": [
+            "CD9",
+            "PPARG",
+            "LDLR",
+            "SREBF2"
+          ],
+          "adjusted_p_value": 0.00011739833271502058
+        },
+        {
+          "rank": 10,
+          "term_name": "Isoprenoid Metabolic Process (GO:0006720)",
+          "term": "Isoprenoid Metabolic Process (GO:0006720)",
+          "overlap": "3/8",
+          "p_value": 2.6867514215729277e-06,
+          "z_score": 168.34647887323945,
+          "combined_score": 2159.410207103829,
+          "overlap_genes": [
+            "MVK",
+            "MVD",
+            "HMGCR"
+          ],
+          "genes": [
+            "MVK",
+            "MVD",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.00022540604168220325
+        },
+        {
+          "rank": 11,
+          "term_name": "Sterol Metabolic Process (GO:0016125)",
+          "term": "Sterol Metabolic Process (GO:0016125)",
+          "overlap": "5/60",
+          "p_value": 2.817575521027541e-06,
+          "z_score": 26.180500658761527,
+          "combined_score": 334.5772107825006,
+          "overlap_genes": [
+            "SQLE",
+            "NSDHL",
+            "PMVK",
+            "CYP51A1",
+            "HMGCR"
+          ],
+          "genes": [
+            "SQLE",
+            "NSDHL",
+            "PMVK",
+            "CYP51A1",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.00022540604168220325
+        },
+        {
+          "rank": 12,
+          "term_name": "Regulation Of Amyloid-Beta Clearance (GO:1900221)",
+          "term": "Regulation Of Amyloid-Beta Clearance (GO:1900221)",
+          "overlap": "3/15",
+          "p_value": 2.1427114163872624e-05,
+          "z_score": 70.11971830985915,
+          "combined_score": 753.84681346562,
+          "overlap_genes": [
+            "CYP51A1",
+            "HMGCR",
+            "CLU"
+          ],
+          "genes": [
+            "CYP51A1",
+            "HMGCR",
+            "CLU"
+          ],
+          "adjusted_p_value": 0.001571321705350659
+        },
+        {
+          "rank": 13,
+          "term_name": "Response To Fatty Acid (GO:0070542)",
+          "term": "Response To Fatty Acid (GO:0070542)",
+          "overlap": "3/19",
+          "p_value": 4.514979768815621e-05,
+          "z_score": 52.57922535211268,
+          "combined_score": 526.0827410692776,
+          "overlap_genes": [
+            "GLDC",
+            "SCD",
+            "PDK3"
+          ],
+          "genes": [
+            "GLDC",
+            "SCD",
+            "PDK3"
+          ],
+          "adjusted_p_value": 0.0030562939973521126
+        },
+        {
+          "rank": 14,
+          "term_name": "Phospholipid Biosynthetic Process (GO:0008654)",
+          "term": "Phospholipid Biosynthetic Process (GO:0008654)",
+          "overlap": "3/27",
+          "p_value": 0.00013342065307354783,
+          "z_score": 35.0387323943662,
+          "combined_score": 312.61569711645774,
+          "overlap_genes": [
+            "IDI1",
+            "FDPS",
+            "PCYT2"
+          ],
+          "genes": [
+            "IDI1",
+            "FDPS",
+            "PCYT2"
+          ],
+          "adjusted_p_value": 0.007866127325224515
+        },
+        {
+          "rank": 15,
+          "term_name": "Cholesterol Import (GO:0070508)",
+          "term": "Cholesterol Import (GO:0070508)",
+          "overlap": "2/5",
+          "p_value": 0.0001340817157708724,
+          "z_score": 184.47222222222223,
+          "combined_score": 1644.9500813633047,
+          "overlap_genes": [
+            "STARD4",
+            "LDLR"
+          ],
+          "genes": [
+            "STARD4",
+            "LDLR"
+          ],
+          "adjusted_p_value": 0.007866127325224515
+        },
+        {
+          "rank": 16,
+          "term_name": "Organic Cyclic Compound Biosynthetic Process (GO:1901362)",
+          "term": "Organic Cyclic Compound Biosynthetic Process (GO:1901362)",
+          "overlap": "3/29",
+          "p_value": 0.00016579002364062602,
+          "z_score": 32.34019501625136,
+          "combined_score": 281.5145572809918,
+          "overlap_genes": [
+            "CYP51A1",
+            "LSS",
+            "FDFT1"
+          ],
+          "genes": [
+            "CYP51A1",
+            "LSS",
+            "FDFT1"
+          ],
+          "adjusted_p_value": 0.00911845130023443
+        },
+        {
+          "rank": 17,
+          "term_name": "Regulation Of Cholesterol Efflux (GO:0010874)",
+          "term": "Regulation Of Cholesterol Efflux (GO:0010874)",
+          "overlap": "3/32",
+          "p_value": 0.0002232603561645472,
+          "z_score": 28.990286546867413,
+          "combined_score": 243.72632391084213,
+          "overlap_genes": [
+            "ABCA2",
+            "PPARG",
+            "SREBF2"
+          ],
+          "genes": [
+            "ABCA2",
+            "PPARG",
+            "SREBF2"
+          ],
+          "adjusted_p_value": 0.01155700667204715
+        },
+        {
+          "rank": 18,
+          "term_name": "Peroxisome Proliferator Activated Receptor Signaling Pathway (GO:0035357)",
+          "term": "Peroxisome Proliferator Activated Receptor Signaling Pathway (GO:0035357)",
+          "overlap": "2/7",
+          "p_value": 0.0002802244447482213,
+          "z_score": 110.67222222222222,
+          "combined_score": 905.2898894159164,
+          "overlap_genes": [
+            "PDK3",
+            "PPARG"
+          ],
+          "genes": [
+            "PDK3",
+            "PPARG"
+          ],
+          "adjusted_p_value": 0.012978816388338671
+        },
+        {
+          "rank": 19,
+          "term_name": "Ethanol Oxidation (GO:0006069)",
+          "term": "Ethanol Oxidation (GO:0006069)",
+          "overlap": "2/7",
+          "p_value": 0.0002802244447482213,
+          "z_score": 110.67222222222222,
+          "combined_score": 905.2898894159164,
+          "overlap_genes": [
+            "ADH4",
+            "ACSS2"
+          ],
+          "genes": [
+            "ADH4",
+            "ACSS2"
+          ],
+          "adjusted_p_value": 0.012978816388338671
+        },
+        {
+          "rank": 20,
+          "term_name": "Steroid Metabolic Process (GO:0008202)",
+          "term": "Steroid Metabolic Process (GO:0008202)",
+          "overlap": "4/92",
+          "p_value": 0.0003772029521117721,
+          "z_score": 12.881818181818181,
+          "combined_score": 101.5438583206158,
+          "overlap_genes": [
+            "CYP51A1",
+            "LSS",
+            "FDFT1",
+            "LGMN"
+          ],
+          "genes": [
+            "CYP51A1",
+            "LSS",
+            "FDFT1",
+            "LGMN"
+          ],
+          "adjusted_p_value": 0.016596929892917972
+        },
+        {
+          "rank": 21,
+          "term_name": "Positive Regulation Of Cellular Biosynthetic Process (GO:0031328)",
+          "term": "Positive Regulation Of Cellular Biosynthetic Process (GO:0031328)",
+          "overlap": "5/174",
+          "p_value": 0.00046674751004841474,
+          "z_score": 8.471400394477318,
+          "combined_score": 64.97328691000331,
+          "overlap_genes": [
+            "NIBAN1",
+            "STARD4",
+            "CTNNB1",
+            "CLU",
+            "LDLR"
+          ],
+          "genes": [
+            "NIBAN1",
+            "STARD4",
+            "CTNNB1",
+            "CLU",
+            "LDLR"
+          ],
+          "adjusted_p_value": 0.017031700608575433
+        },
+        {
+          "rank": 22,
+          "term_name": "Phosphatidylethanolamine Biosynthetic Process (GO:0006646)",
+          "term": "Phosphatidylethanolamine Biosynthetic Process (GO:0006646)",
+          "overlap": "2/9",
+          "p_value": 0.0004780866757893366,
+          "z_score": 79.0436507936508,
+          "combined_score": 604.3455041138966,
+          "overlap_genes": [
+            "PCYT2",
+            "CHKA"
+          ],
+          "genes": [
+            "PCYT2",
+            "CHKA"
+          ],
+          "adjusted_p_value": 0.017031700608575433
+        },
+        {
+          "rank": 23,
+          "term_name": "Cellular Response To Purine-Containing Compound (GO:0071415)",
+          "term": "Cellular Response To Purine-Containing Compound (GO:0071415)",
+          "overlap": "2/9",
+          "p_value": 0.0004780866757893366,
+          "z_score": 79.0436507936508,
+          "combined_score": 604.3455041138966,
+          "overlap_genes": [
+            "GSTM2",
+            "CLU"
+          ],
+          "genes": [
+            "GSTM2",
+            "CLU"
+          ],
+          "adjusted_p_value": 0.017031700608575433
+        },
+        {
+          "rank": 24,
+          "term_name": "Serine Family Amino Acid Catabolic Process (GO:0009071)",
+          "term": "Serine Family Amino Acid Catabolic Process (GO:0009071)",
+          "overlap": "2/9",
+          "p_value": 0.0004780866757893366,
+          "z_score": 79.0436507936508,
+          "combined_score": 604.3455041138966,
+          "overlap_genes": [
+            "CBS",
+            "GLDC"
+          ],
+          "genes": [
+            "CBS",
+            "GLDC"
+          ],
+          "adjusted_p_value": 0.017031700608575433
+        },
+        {
+          "rank": 25,
+          "term_name": "Regulation Of Cell Population Proliferation (GO:0042127)",
+          "term": "Regulation Of Cell Population Proliferation (GO:0042127)",
+          "overlap": "10/766",
+          "p_value": 0.0005013994821923301,
+          "z_score": 3.9620535714285716,
+          "combined_score": 30.104108579936792,
+          "overlap_genes": [
+            "SQLE",
+            "JAG1",
+            "TP53INP1",
+            "CTNNB1",
+            "MVD",
+            "AVPR1A",
+            "ATF5",
+            "CLU",
+            "S100A11",
+            "LGMN"
+          ],
+          "genes": [
+            "SQLE",
+            "JAG1",
+            "TP53INP1",
+            "CTNNB1",
+            "MVD",
+            "AVPR1A",
+            "ATF5",
+            "CLU",
+            "S100A11",
+            "LGMN"
+          ],
+          "adjusted_p_value": 0.017031700608575433
+        },
+        {
+          "rank": 26,
+          "term_name": "Organic Hydroxy Compound Biosynthetic Process (GO:1901617)",
+          "term": "Organic Hydroxy Compound Biosynthetic Process (GO:1901617)",
+          "overlap": "3/42",
+          "p_value": 0.000503209336162456,
+          "z_score": 21.546045503791984,
+          "combined_score": 163.63153520862127,
+          "overlap_genes": [
+            "SQLE",
+            "PMVK",
+            "HMGCR"
+          ],
+          "genes": [
+            "SQLE",
+            "PMVK",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.017031700608575433
+        },
+        {
+          "rank": 27,
+          "term_name": "Positive Regulation Of Cholesterol Metabolic Process (GO:0090205)",
+          "term": "Positive Regulation Of Cholesterol Metabolic Process (GO:0090205)",
+          "overlap": "2/10",
+          "p_value": 0.0005961775138681929,
+          "z_score": 69.15972222222223,
+          "combined_score": 513.5090074723809,
+          "overlap_genes": [
+            "STARD4",
+            "SREBF2"
+          ],
+          "genes": [
+            "STARD4",
+            "SREBF2"
+          ],
+          "adjusted_p_value": 0.019430970822370733
+        },
+        {
+          "rank": 28,
+          "term_name": "Lipid Transport (GO:0006869)",
+          "term": "Lipid Transport (GO:0006869)",
+          "overlap": "4/108",
+          "p_value": 0.0006919568981219764,
+          "z_score": 10.891208791208792,
+          "combined_score": 79.24429238367301,
+          "overlap_genes": [
+            "ABCA2",
+            "CHKA",
+            "FABP5",
+            "LDLR"
+          ],
+          "genes": [
+            "ABCA2",
+            "CHKA",
+            "FABP5",
+            "LDLR"
+          ],
+          "adjusted_p_value": 0.021747216798119258
+        },
+        {
+          "rank": 29,
+          "term_name": "Negative Regulation Of Amyloid Fibril Formation (GO:1905907)",
+          "term": "Negative Regulation Of Amyloid Fibril Formation (GO:1905907)",
+          "overlap": "2/11",
+          "p_value": 0.0007269171181885319,
+          "z_score": 61.47222222222222,
+          "combined_score": 444.2411910549423,
+          "overlap_genes": [
+            "CLU",
+            "LDLR"
+          ],
+          "genes": [
+            "CLU",
+            "LDLR"
+          ],
+          "adjusted_p_value": 0.02205817462089338
+        },
+        {
+          "rank": 30,
+          "term_name": "Cholesterol Transport (GO:0030301)",
+          "term": "Cholesterol Transport (GO:0030301)",
+          "overlap": "3/51",
+          "p_value": 0.0008913217677148334,
+          "z_score": 17.49823943661972,
+          "combined_score": 122.88672453869479,
+          "overlap_genes": [
+            "STARD4",
+            "CLU",
+            "LDLR"
+          ],
+          "genes": [
+            "STARD4",
+            "CLU",
+            "LDLR"
+          ],
+          "adjusted_p_value": 0.026145438519635113
+        },
+        {
+          "rank": 31,
+          "term_name": "Regulation Of Cholesterol Storage (GO:0010885)",
+          "term": "Regulation Of Cholesterol Storage (GO:0010885)",
+          "overlap": "2/14",
+          "p_value": 0.0011941043543106373,
+          "z_score": 46.09722222222222,
+          "combined_score": 310.2508484154788,
+          "overlap_genes": [
+            "PPARG",
+            "SREBF2"
+          ],
+          "genes": [
+            "PPARG",
+            "SREBF2"
+          ],
+          "adjusted_p_value": 0.032837869743542525
+        },
+        {
+          "rank": 32,
+          "term_name": "Ethanol Metabolic Process (GO:0006067)",
+          "term": "Ethanol Metabolic Process (GO:0006067)",
+          "overlap": "2/14",
+          "p_value": 0.0011941043543106373,
+          "z_score": 46.09722222222222,
+          "combined_score": 310.2508484154788,
+          "overlap_genes": [
+            "ADH4",
+            "ACSS2"
+          ],
+          "genes": [
+            "ADH4",
+            "ACSS2"
+          ],
+          "adjusted_p_value": 0.032837869743542525
+        },
+        {
+          "rank": 33,
+          "term_name": "Response To Organic Cyclic Compound (GO:0014070)",
+          "term": "Response To Organic Cyclic Compound (GO:0014070)",
+          "overlap": "3/58",
+          "p_value": 0.0012964105391455364,
+          "z_score": 15.265813060179257,
+          "combined_score": 101.48950603726216,
+          "overlap_genes": [
+            "GLDC",
+            "CTNNB1",
+            "CLU"
+          ],
+          "genes": [
+            "GLDC",
+            "CTNNB1",
+            "CLU"
+          ],
+          "adjusted_p_value": 0.03457094771054764
+        },
+        {
+          "rank": 34,
+          "term_name": "Regulation Of Amyloid Fibril Formation (GO:1905906)",
+          "term": "Regulation Of Amyloid Fibril Formation (GO:1905906)",
+          "overlap": "2/15",
+          "p_value": 0.001374517316576951,
+          "z_score": 42.5491452991453,
+          "combined_score": 280.3840881601199,
+          "overlap_genes": [
+            "CLU",
+            "LDLR"
+          ],
+          "genes": [
+            "CLU",
+            "LDLR"
+          ],
+          "adjusted_p_value": 0.03557574231140344
+        },
+        {
+          "rank": 35,
+          "term_name": "Epithelial Cell Differentiation (GO:0030855)",
+          "term": "Epithelial Cell Differentiation (GO:0030855)",
+          "overlap": "4/132",
+          "p_value": 0.0014594809059801184,
+          "z_score": 8.838392857142857,
+          "combined_score": 57.71182802128102,
+          "overlap_genes": [
+            "LGALS3",
+            "JAG1",
+            "ALDOC",
+            "PPARG"
+          ],
+          "genes": [
+            "LGALS3",
+            "JAG1",
+            "ALDOC",
+            "PPARG"
+          ],
+          "adjusted_p_value": 0.03669551992178583
+        },
+        {
+          "rank": 36,
+          "term_name": "Intracellular Cholesterol Transport (GO:0032367)",
+          "term": "Intracellular Cholesterol Transport (GO:0032367)",
+          "overlap": "2/16",
+          "p_value": 0.001567120651291163,
+          "z_score": 39.507936507936506,
+          "combined_score": 255.1626133360455,
+          "overlap_genes": [
+            "STARD4",
+            "LDLR"
+          ],
+          "genes": [
+            "STARD4",
+            "LDLR"
+          ],
+          "adjusted_p_value": 0.03830739369822842
+        },
+        {
+          "rank": 37,
+          "term_name": "Negative Regulation Of ERBB Signaling Pathway (GO:1901185)",
+          "term": "Negative Regulation Of ERBB Signaling Pathway (GO:1901185)",
+          "overlap": "2/18",
+          "p_value": 0.0019885380825574606,
+          "z_score": 34.56597222222222,
+          "combined_score": 215.01263688059672,
+          "overlap_genes": [
+            "ERRFI1",
+            "LGMN"
+          ],
+          "genes": [
+            "ERRFI1",
+            "LGMN"
+          ],
+          "adjusted_p_value": 0.04729495980136663
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Steroid biosynthesis",
+          "term": "Steroid biosynthesis",
+          "overlap": "10/20",
+          "p_value": 4.574445228320837e-20,
+          "z_score": 311.1875,
+          "combined_score": 13857.557912834096,
+          "overlap_genes": [
+            "SQLE",
+            "EBP",
+            "NSDHL",
+            "CYP51A1",
+            "SC5D",
+            "DHCR7",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "FDFT1"
+          ],
+          "genes": [
+            "SQLE",
+            "EBP",
+            "NSDHL",
+            "CYP51A1",
+            "SC5D",
+            "DHCR7",
+            "HSD17B7",
+            "LSS",
+            "TM7SF2",
+            "FDFT1"
+          ],
+          "adjusted_p_value": 7.136134556180507e-18
+        },
+        {
+          "rank": 2,
+          "term_name": "Terpenoid backbone biosynthesis",
+          "term": "Terpenoid backbone biosynthesis",
+          "overlap": "8/22",
+          "p_value": 7.291096874634556e-15,
+          "z_score": 172.39826839826839,
+          "combined_score": 5611.929533982267,
+          "overlap_genes": [
+            "FDPS",
+            "IDI1",
+            "MVK",
+            "HMGCS1",
+            "PMVK",
+            "MVD",
+            "HMGCR",
+            "ACAT2"
+          ],
+          "genes": [
+            "FDPS",
+            "IDI1",
+            "MVK",
+            "HMGCS1",
+            "PMVK",
+            "MVD",
+            "HMGCR",
+            "ACAT2"
+          ],
+          "adjusted_p_value": 5.687055562214954e-13
+        },
+        {
+          "rank": 3,
+          "term_name": "PPAR signaling pathway",
+          "term": "PPAR signaling pathway",
+          "overlap": "6/74",
+          "p_value": 3.1680142641539683e-07,
+          "z_score": 25.767301038062282,
+          "combined_score": 385.60741974015264,
+          "overlap_genes": [
+            "FADS2",
+            "HMGCS1",
+            "FABP5",
+            "SCD",
+            "LPL",
+            "PPARG"
+          ],
+          "genes": [
+            "FADS2",
+            "HMGCS1",
+            "FABP5",
+            "SCD",
+            "LPL",
+            "PPARG"
+          ],
+          "adjusted_p_value": 1.6473674173600636e-05
+        },
+        {
+          "rank": 4,
+          "term_name": "Glyoxylate and dicarboxylate metabolism",
+          "term": "Glyoxylate and dicarboxylate metabolism",
+          "overlap": "3/30",
+          "p_value": 0.00018372253598191246,
+          "z_score": 31.140845070422536,
+          "combined_score": 267.87616185965635,
+          "overlap_genes": [
+            "ACSS2",
+            "GLDC",
+            "ACAT2"
+          ],
+          "genes": [
+            "ACSS2",
+            "GLDC",
+            "ACAT2"
+          ],
+          "adjusted_p_value": 0.007165178903294586
+        },
+        {
+          "rank": 5,
+          "term_name": "Synthesis and degradation of ketone bodies",
+          "term": "Synthesis and degradation of ketone bodies",
+          "overlap": "2/10",
+          "p_value": 0.0005961775138681929,
+          "z_score": 69.15972222222223,
+          "combined_score": 513.5090074723809,
+          "overlap_genes": [
+            "HMGCS1",
+            "ACAT2"
+          ],
+          "genes": [
+            "HMGCS1",
+            "ACAT2"
+          ],
+          "adjusted_p_value": 0.0182364977650169
+        },
+        {
+          "rank": 6,
+          "term_name": "Pyruvate metabolism",
+          "term": "Pyruvate metabolism",
+          "overlap": "3/47",
+          "p_value": 0.0007014037601929577,
+          "z_score": 19.09282970550576,
+          "combined_score": 138.66027927312084,
+          "overlap_genes": [
+            "ADH4",
+            "ACSS2",
+            "ACAT2"
+          ],
+          "genes": [
+            "ADH4",
+            "ACSS2",
+            "ACAT2"
+          ],
+          "adjusted_p_value": 0.0182364977650169
+        },
+        {
+          "rank": 7,
+          "term_name": "AMPK signaling pathway",
+          "term": "AMPK signaling pathway",
+          "overlap": "4/120",
+          "p_value": 0.0010258569854447433,
+          "z_score": 9.758620689655173,
+          "combined_score": 67.16104213297217,
+          "overlap_genes": [
+            "SCD",
+            "FASN",
+            "PPARG",
+            "HMGCR"
+          ],
+          "genes": [
+            "SCD",
+            "FASN",
+            "PPARG",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.022861955675625708
+        },
+        {
+          "rank": 8,
+          "term_name": "Glycolysis / Gluconeogenesis",
+          "term": "Glycolysis / Gluconeogenesis",
+          "overlap": "3/67",
+          "p_value": 0.0019653960760864383,
+          "z_score": 13.113116197183098,
+          "combined_score": 81.72174644713759,
+          "overlap_genes": [
+            "ADH4",
+            "ACSS2",
+            "ALDOC"
+          ],
+          "genes": [
+            "ADH4",
+            "ACSS2",
+            "ALDOC"
+          ],
+          "adjusted_p_value": 0.03832522348368555
+        }
+      ]
+    },
+    "significant_terms_total": 45,
+    "execution_time": 1.75,
+    "dataframe": "    rank  ...                     library\n0      1  ...  GO_Biological_Process_2023\n2      3  ...  GO_Biological_Process_2023\n1      2  ...  GO_Biological_Process_2023\n37     1  ...             KEGG_2021_Human\n38     2  ...             KEGG_2021_Human\n6      7  ...  GO_Biological_Process_2023\n3      4  ...  GO_Biological_Process_2023\n5      6  ...  GO_Biological_Process_2023\n9     10  ...  GO_Biological_Process_2023\n14    15  ...  GO_Biological_Process_2023\n4      5  ...  GO_Biological_Process_2023\n18    19  ...  GO_Biological_Process_2023\n17    18  ...  GO_Biological_Process_2023\n8      9  ...  GO_Biological_Process_2023\n11    12  ...  GO_Biological_Process_2023\n7      8  ...  GO_Biological_Process_2023\n23    24  ...  GO_Biological_Process_2023\n21    22  ...  GO_Biological_Process_2023\n22    23  ...  GO_Biological_Process_2023\n12    13  ...  GO_Biological_Process_2023\n26    27  ...  GO_Biological_Process_2023\n41     5  ...             KEGG_2021_Human\n28    29  ...  GO_Biological_Process_2023\n39     3  ...             KEGG_2021_Human\n10    11  ...  GO_Biological_Process_2023\n13    14  ...  GO_Biological_Process_2023\n30    31  ...  GO_Biological_Process_2023\n31    32  ...  GO_Biological_Process_2023\n15    16  ...  GO_Biological_Process_2023\n33    34  ...  GO_Biological_Process_2023\n40     4  ...             KEGG_2021_Human\n35    36  ...  GO_Biological_Process_2023\n16    17  ...  GO_Biological_Process_2023\n36    37  ...  GO_Biological_Process_2023\n25    26  ...  GO_Biological_Process_2023\n42     6  ...             KEGG_2021_Human\n29    30  ...  GO_Biological_Process_2023\n19    20  ...  GO_Biological_Process_2023\n32    33  ...  GO_Biological_Process_2023\n44     8  ...             KEGG_2021_Human\n27    28  ...  GO_Biological_Process_2023\n43     7  ...             KEGG_2021_Human\n20    21  ...  GO_Biological_Process_2023\n34    35  ...  GO_Biological_Process_2023\n24    25  ...  GO_Biological_Process_2023\n\n[45 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "42307015",
+      "pmcid": "PMC13273926",
+      "doi": "10.1111/acer.70356",
+      "url": "https://doi.org/10.1111/acer.70356",
+      "title": "Calpain-4 Knockdown Modulates Cholesterol Metabolism and LXRα Nuclear Localization in Experimental Alcohol-Related Liver Disease.",
+      "abstract": "<h4>Background</h4>Ethanol affects lipid metabolism through multiple pathways, leading to fatty liver development in most alcohol-related liver disease (ALD) patients. Recent studies have highlighted the role of calpain, a calcium-dependent protease, in liver inflammation and fibrosis. Calpain activity is regulated by its essential subunit, Capns1 (calpain-4), which stabilizes and modulates the activity of its catalytic isoforms, calpain-1 and calpain-2. This study investigated calpain's impact on lipid metabolism in ALD.<h4>Methods</h4>Six-week-old C57Bl6/J mice were injected with rAAV8 vectors encoding Capns1 shRNA or control vectors. After 4 weeks, mice underwent a 10-day period of ad libitum ethanol consumption, followed by a single gavaged ethanol administration on day 11.<h4>Results</h4>Capns1 knockdown attenuated ethanol-induced microvesicular steatosis. Hepatic triglyceride and free fatty acid levels were not significantly altered, whereas cholesterol levels were significantly reduced in the ethanol group with Capns1 knockdown. Cpt1a expression increased significantly in the ethanol group with Capns1 knockdown. Western blot analysis revealed increased Cleaved-3-hydroxy-3-methyl-glutaryl-coenzyme A reductase (HMGCR) to Pro-HMGCR ratio in Capns1-knockdown mice, suggesting reduced HMGCR activity and suppressed cholesterol biosynthesis. LXRα expression was mainly increased in the cytoplasm in the ethanol group, and following Capns1 knockdown, it was relocalized to the nucleus via its activation. In addition, RNA sequencing analysis indicated that Capns1 knockdown contributes to the reprogramming of ethanol-induced disruptions in metabolic pathways, primarily those involving cholesterol metabolism.<h4>Conclusion</h4>Further investigation into the relationship between Capns1 and cholesterol biosynthesis proteins may provide insights into using calpain inhibitors as a therapeutic approach for alcohol-related liver disease.",
+      "authors": "Kitano N, Li J, Taborski S, Vanderpuye CM, Muddasani P, Chaudhary S, Liu JJ, Liu S, Beier JI, Argemi J, Bataller R, Arteel GE.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "e70356",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2026-06-01",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    },
+    {
+      "pmid": "42337263",
+      "pmcid": "PMC13291327",
+      "doi": "10.1038/s41398-026-04197-x",
+      "url": "https://doi.org/10.1038/s41398-026-04197-x",
+      "title": "Fluoxetine disrupts cholesterol metabolism in endothelial cells via SREBP2 activation.",
+      "abstract": "Fluoxetine is a selective serotonin reuptake inhibitor (SSRI) commonly prescribed for the treatment of depressive disorders. Recent clinical reports and studies in animal models have suggested that fluoxetine increases the risk of cardiovascular diseases, but the underlying mechanisms remain unknown. Here, we uncover that fluoxetine disrupts lipid and cholesterol metabolism in primary human endothelial cells (ECs). Fluoxetine triggered an upregulation of cholesterol metabolism genes, leading to the accumulation of lipid droplets in ECs. We find higher levels of cholesterol esters, ceramides, sphingolipids and fatty acids in ECs treated with fluoxetine. The disruption of lipid homeostasis was driven by increased cholesterol biosynthesis, as well as low-density lipoprotein (LDL) uptake and transcytosis via the LDL receptor. Fluoxetine accumulated in ECs in the endoplasmic reticulum (ER), caused ER expansion and reduced protein translation, without inducing ER stress markers. Mechanistically, fluoxetine activated the SREBP2 transcription factor in an INSIG-dependent manner. SREBP2 inhibition attenuated the fluoxetine-mediated upregulation of the LDL receptor and lipid accumulation. Our findings reveal that fluoxetine reprograms lipid metabolism and leads to endothelial dysfunction.",
+      "authors": "Oliveira F, Papa C, Hagemann T, Schipper R, Geier F, Röxe T, Zulfqar F, Prönnecke C, Schmidt L, Stryhanyuk H, Hoffmann A, Kyselova A, Karantanou C, Buckley Y, Farhan MA, Rodríguez-Aguilera JR, Ambreen S, Yao H, Arif A, Martin HNG, Ebert T, Klöting N, Blüher M, Shahzad K, Boeckel JN, Hagberg CE, Chakaroun R, Bibli SI, Sheikh BN.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "318",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2026-06-23",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates [topic]"
+    },
+    {
+      "pmid": "40762538",
+      "pmcid": "PMC12338372",
+      "doi": "10.1167/iovs.66.11.9",
+      "url": "https://doi.org/10.1167/iovs.66.11.9",
+      "title": "Effects of Cholesterol Metabolism on Corneal Endothelial Dysfunction in Patients With Type 1 Diabetes.",
+      "abstract": "<h4>Purpose</h4>Corneal endothelial dysfunction (CED) in patients with diabetes increases the risk of blindness following intraocular surgery. This study aimed to reveal how diabetes induces CED from the perspective of cholesterol metabolism.<h4>Methods</h4>Streptozotocin-induced type 1 diabetic mice and high glucose-cultured B4G12 cells were used as in vivo and in vitro models of diabetes, respectively. Human and mouse corneal endothelium samples were sent for single-cell RNA (scRNA-seq) and RNA sequencing (RNA-seq), respectively. Expression of genes related to cholesterol metabolism and function in corneal endothelial cells (CECs) was detected via RT-qPCR, Western blotting, and immunofluorescence staining. The cholesterol content was detected via filipin. The relationship between cholesterol metabolism and functional genes in CECs was confirmed by SREBF2/SQLE knockdown and cholesterol intervention. The protective effect of cholesterol in vivo was confirmed by anterior segment photography, optical coherence tomography, and Alizarin red staining in the anterior chamber of a model of diabetic mice.<h4>Results</h4>Diabetes disrupted the morphology of CECs and promoted corneal edema after intraocular surgery. High glucose conditions downregulated cholesterol biosynthesis and functional genes in CECs. The si-SREBF2, si-SQLE, and cholesterol depletion significantly impaired CEC function. The si-SREBF2 downregulated SQLE, whereas si-SQLE did not significantly affect SREBF2. Supplementation with cholesterol relieved the effect of high glucose on functional gene expression in CECs. Moreover, supplementation with cholesterol relieved corneal edema, reduced corneal thickness, and alleviated shape changes of the anterior chamber in diabetic mice.<h4>Conclusions</h4>Diabetes induced CED by inhibiting SREBF2/SQLE-dependent cholesterol biosynthesis, suggesting cholesterol supplementation protects CECs from damage caused by intraocular surgery in patients with diabetes.",
+      "authors": "Ren Z, Li Z, Dou S, Zhao H, Xie L.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2025,
+      "pub_year": 2025,
+      "citations": 2,
+      "citation_count": 2,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "9",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2025-08-01",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 27.557979106903076,
+  "phase": 2,
+  "rep": 4,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Cholesterol Biosynthetic Process (GO:0006695) -> genes: [MVK, HMGCS1, CYP51A1, HMGCR, HSD17B7, LSS, TM7SF2, NSDHL, PMVK, SC5D, MVD, DHCR7, FDFT1]\n- Sterol Biosynthetic Process (GO:0016126) -> genes: [MVK, HMGCS1, CYP51A1, HMGCR, HSD17B7, LSS, TM7SF2, SQLE, NSDHL, PMVK, MVD, DHCR7, FDFT1]\n- Secondary Alcohol Biosynthetic Process (GO:1902653) -> genes: [NSDHL, MVK, HMGCS1, CYP51A1, PMVK, MVD, HMGCR, DHCR7, HSD17B7, LSS, TM7SF2, FDFT1]\n- Cholesterol Metabolic Process (GO:0008203) -> genes: [MVK, HMGCS1, CYP51A1, HMGCR, HSD17B7, LSS, TM7SF2, SQLE, NSDHL, PMVK, MVD, DHCR7, FDFT1]\n- Lipid Biosynthetic Process (GO:0008610) -> genes: [PCYT2, ACSS2, MVK, FASN, CYP51A1, MVD, HMGCR, LSS, FDFT1]\n- acetyl-CoA Metabolic Process (GO:0006084) -> genes: [ACSS2, MVK, HMGCS1, PMVK, MVD]\n- Isoprenoid Biosynthetic Process (GO:0008299) -> genes: [IDI1, MVK, MVD, HMGCR]\n- Steroid Biosynthetic Process (GO:0006694) -> genes: [SQLE, PMVK, CYP51A1, HMGCR, LSS, FDFT1]\n- Cellular Response To Low-Density Lipoprotein Particle Stimulus (GO:0071404) -> genes: [CD9, PPARG, LDLR, SREBF2]\n- Isoprenoid Metabolic Process (GO:0006720) -> genes: [MVK, MVD, HMGCR]\n- Sterol Metabolic Process (GO:0016125) -> genes: [SQLE, NSDHL, PMVK, CYP51A1, HMGCR]\n- Regulation Of Amyloid-Beta Clearance (GO:1900221) -> genes: [CYP51A1, HMGCR, CLU]\n- Response To Fatty Acid (GO:0070542) -> genes: [GLDC, SCD, PDK3]\n- Phospholipid Biosynthetic Process (GO:0008654) -> genes: [IDI1, FDPS, PCYT2]\n- Cholesterol Import (GO:0070508) -> genes: [STARD4, LDLR]\n- Organic Cyclic Compound Biosynthetic Process (GO:1901362) -> genes: [CYP51A1, LSS, FDFT1]\n- Regulation Of Cholesterol Efflux (GO:0010874) -> genes: [ABCA2, PPARG, SREBF2]\n- Peroxisome Proliferator Activated Receptor Signaling Pathway (GO:0035357) -> genes: [PDK3, PPARG]\n- Ethanol Oxidation (GO:0006069) -> genes: [ADH4, ACSS2]\n- Steroid Metabolic Process (GO:0008202) -> genes: [CYP51A1, LSS, FDFT1, LGMN]\n- Positive Regulation Of Cellular Biosynthetic Process (GO:0031328) -> genes: [NIBAN1, STARD4, CTNNB1, CLU, LDLR]\n- Phosphatidylethanolamine Biosynthetic Process (GO:0006646) -> genes: [PCYT2, CHKA]\n- Cellular Response To Purine-Containing Compound (GO:0071415) -> genes: [GSTM2, CLU]\n- Serine Family Amino Acid Catabolic Process (GO:0009071) -> genes: [CBS, GLDC]\n- Regulation Of Cell Population Proliferation (GO:0042127) -> genes: [SQLE, JAG1, TP53INP1, CTNNB1, MVD, AVPR1A, ATF5, CLU, S100A11, LGMN]\n- Organic Hydroxy Compound Biosynthetic Process (GO:1901617) -> genes: [SQLE, PMVK, HMGCR]\n- Positive Regulation Of Cholesterol Metabolic Process (GO:0090205) -> genes: [STARD4, SREBF2]\n- Lipid Transport (GO:0006869) -> genes: [ABCA2, CHKA, FABP5, LDLR]\n- Negative Regulation Of Amyloid Fibril Formation (GO:1905907) -> genes: [CLU, LDLR]\n- Cholesterol Transport (GO:0030301) -> genes: [STARD4, CLU, LDLR]\n- Regulation Of Cholesterol Storage (GO:0010885) -> genes: [PPARG, SREBF2]\n- Ethanol Metabolic Process (GO:0006067) -> genes: [ADH4, ACSS2]\n- Response To Organic Cyclic Compound (GO:0014070) -> genes: [GLDC, CTNNB1, CLU]\n- Regulation Of Amyloid Fibril Formation (GO:1905906) -> genes: [CLU, LDLR]\n- Epithelial Cell Differentiation (GO:0030855) -> genes: [LGALS3, JAG1, ALDOC, PPARG]\n- Intracellular Cholesterol Transport (GO:0032367) -> genes: [STARD4, LDLR]\n- Negative Regulation Of ERBB Signaling Pathway (GO:1901185) -> genes: [ERRFI1, LGMN]\n\n[KEGG_2021_Human]\n- Steroid biosynthesis -> genes: [SQLE, EBP, NSDHL, CYP51A1, SC5D, DHCR7, HSD17B7, LSS, TM7SF2, FDFT1]\n- Terpenoid backbone biosynthesis -> genes: [FDPS, IDI1, MVK, HMGCS1, PMVK, MVD, HMGCR, ACAT2]\n- PPAR signaling pathway -> genes: [FADS2, HMGCS1, FABP5, SCD, LPL, PPARG]\n- Glyoxylate and dicarboxylate metabolism -> genes: [ACSS2, GLDC, ACAT2]\n- Synthesis and degradation of ketone bodies -> genes: [HMGCS1, ACAT2]\n- Pyruvate metabolism -> genes: [ADH4, ACSS2, ACAT2]\n- AMPK signaling pathway -> genes: [SCD, FASN, PPARG, HMGCR]\n- Glycolysis / Gluconeogenesis -> genes: [ADH4, ACSS2, ALDOC]\n\n=== ABSTRACTS ===\n[1] Calpain-4 Knockdown Modulates Cholesterol Metabolism and LXRα Nuclear Localization in Experimental Alcohol-Related Liver Disease.\n<h4>Background</h4>Ethanol affects lipid metabolism through multiple pathways, leading to fatty liver development in most alcohol-related liver disease (ALD) patients. Recent studies have highlighted the role of calpain, a calcium-dependent protease, in liver inflammation and fibrosis. Calpain activity is regulated by its essential subunit, Capns1 (calpain-4), which stabilizes and modulates the activity of its catalytic isoforms, calpain-1 and calpain-2. This study investigated calpain's impact on lipid metabolism in ALD.<h4>Methods</h4>Six-week-old C57Bl6/J mice were injected with rAAV8 vectors encoding Capns1 shRNA or control vectors. After 4 weeks, mice underwent a 10-day period of ad libitum ethanol consumption, followed by a single gavaged ethanol administration on day 11.<h4>Results</h4>Capns1 knockdown attenuated ethanol-induced microvesicular steatosis. Hepatic triglyceride and free fatty acid levels were not significantly altered, whereas cholesterol levels were significantly reduced in the ethanol group with Capns1 knockdown. Cpt1a expression increased significantly in the ethanol group with Capns1 knockdown. Western blot analysis revealed increased Cleaved-3-hydroxy-3-methyl-glutaryl-coenzyme A reductase (HMGCR) to Pro-HMGCR ratio in Capns1-knockdown mice, suggesting reduced HMGCR activity and suppressed cholesterol biosynthesis. LXRα expression was mainly increased in the cytoplasm in the ethanol group, and following Capns1 knockdown, it was relocalized to the nucleus via its activation. In addition, RNA sequencing analysis indicated that Capns1 knockdown contributes to the reprogramming of ethanol-induced disruptions in metabolic pathways, primarily those involving cholesterol metabolism.<h4>Conclusion</h4>Further investigation into the relationship between Capns1 and cholesterol biosynthesis proteins may provide insights into using calpain inhibitors as a therapeutic approach for alcohol-related liver disease.\n[2] Fluoxetine disrupts cholesterol metabolism in endothelial cells via SREBP2 activation.\nFluoxetine is a selective serotonin reuptake inhibitor (SSRI) commonly prescribed for the treatment of depressive disorders. Recent clinical reports and studies in animal models have suggested that fluoxetine increases the risk of cardiovascular diseases, but the underlying mechanisms remain unknown. Here, we uncover that fluoxetine disrupts lipid and cholesterol metabolism in primary human endothelial cells (ECs). Fluoxetine triggered an upregulation of cholesterol metabolism genes, leading to the accumulation of lipid droplets in ECs. We find higher levels of cholesterol esters, ceramides, sphingolipids and fatty acids in ECs treated with fluoxetine. The disruption of lipid homeostasis was driven by increased cholesterol biosynthesis, as well as low-density lipoprotein (LDL) uptake and transcytosis via the LDL receptor. Fluoxetine accumulated in ECs in the endoplasmic reticulum (ER), caused ER expansion and reduced protein translation, without inducing ER stress markers. Mechanistically, fluoxetine activated the SREBP2 transcription factor in an INSIG-dependent manner. SREBP2 inhibition attenuated the fluoxetine-mediated upregulation of the LDL receptor and lipid accumulation. Our findings reveal that fluoxetine reprograms lipid metabolism and leads to endothelial dysfunction.\n[3] Effects of Cholesterol Metabolism on Corneal Endothelial Dysfunction in Patients With Type 1 Diabetes.\n<h4>Purpose</h4>Corneal endothelial dysfunction (CED) in patients with diabetes increases the risk of blindness following intraocular surgery. This study aimed to reveal how diabetes induces CED from the perspective of cholesterol metabolism.<h4>Methods</h4>Streptozotocin-induced type 1 diabetic mice and high glucose-cultured B4G12 cells were used as in vivo and in vitro models of diabetes, respectively. Human and mouse corneal endothelium samples were sent for single-cell RNA (scRNA-seq) and RNA sequencing (RNA-seq), respectively. Expression of genes related to cholesterol metabolism and function in corneal endothelial cells (CECs) was detected via RT-qPCR, Western blotting, and immunofluorescence staining. The cholesterol content was detected via filipin. The relationship between cholesterol metabolism and functional genes in CECs was confirmed by SREBF2/SQLE knockdown and cholesterol intervention. The protective effect of cholesterol in vivo was confirmed by anterior segment photography, optical coherence tomography, and Alizarin red staining in the anterior chamber of a model of diabetic mice.<h4>Results</h4>Diabetes disrupted the morphology of CECs and promoted corneal edema after intraocular surgery. High glucose conditions downregulated cholesterol biosynthesis and functional genes in CECs. The si-SREBF2, si-SQLE, and cholesterol depletion significantly impaired CEC function. The si-SREBF2 downregulated SQLE, whereas si-SQLE did not significantly affect SREBF2. Supplementation with cholesterol relieved the effect of high glucose on functional gene expression in CECs. Moreover, supplementation with cholesterol relieved corneal edema, reduced corneal thickness, and alleviated shape changes of the anterior chamber in diabetic mice.<h4>Conclusions</h4>Diabetes induced CED by inhibiting SREBF2/SQLE-dependent cholesterol biosynthesis, suggesting cholesterol supplementation protects CECs from damage caused by intraocular surgery in patients with diabetes.",
+  "judge_claims": [
+    {
+      "claim": "HMGCR is the rate-limiting enzyme in the mevalonate pathway.",
+      "label": "BACKGROUND",
+      "why": "HMGCR's role as the rate-limiting enzyme in the mevalonate pathway is well-established textbook biology, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "MVK is involved in early steps of the mevalonate pathway.",
+      "label": "GROUNDED",
+      "why": "MVK appears in multiple mevalonate/isoprenoid pathway terms including 'Terpenoid backbone biosynthesis' and 'Isoprenoid Biosynthetic Process', confirming its role in early steps."
+    },
+    {
+      "claim": "PMVK is involved in early steps of the mevalonate pathway.",
+      "label": "GROUNDED",
+      "why": "PMVK appears in multiple mevalonate/isoprenoid pathway terms including 'Terpenoid backbone biosynthesis' and 'acetyl-CoA Metabolic Process', confirming its role in early steps."
+    },
+    {
+      "claim": "MVD is involved in early steps of the mevalonate pathway.",
+      "label": "GROUNDED",
+      "why": "MVD appears in multiple mevalonate/isoprenoid pathway terms including 'Terpenoid backbone biosynthesis' and 'Isoprenoid Biosynthetic Process', confirming its role in early steps."
+    },
+    {
+      "claim": "IDI1 converts isopentenyl pyrophosphate to dimethylallyl pyrophosphate.",
+      "label": "BACKGROUND",
+      "why": "IDI1's function as an isomerase converting IPP to DMAPP is well-established biochemistry, though the specific reaction is not detailed in the evidence."
+    },
+    {
+      "claim": "FDPS catalyzes steps leading to squalene in cholesterol synthesis.",
+      "label": "GROUNDED",
+      "why": "FDPS appears in 'Terpenoid backbone biosynthesis' and 'Phospholipid Biosynthetic Process', consistent with its role in steps leading to squalene."
+    },
+    {
+      "claim": "FDFT1 catalyzes steps leading to squalene in cholesterol synthesis.",
+      "label": "GROUNDED",
+      "why": "FDFT1 appears in 'Steroid Biosynthetic Process', 'Organic Cyclic Compound Biosynthetic Process', and 'Steroid biosynthesis', consistent with catalyzing steps leading to squalene."
+    },
+    {
+      "claim": "FDFT1 is also known as Squalene Synthase.",
+      "label": "BACKGROUND",
+      "why": "The alternative name 'Squalene Synthase' for FDFT1 is standard nomenclature but not stated in the evidence."
+    },
+    {
+      "claim": "SQLE catalyzes steps leading to squalene in cholesterol synthesis.",
+      "label": "UNSUPPORTED",
+      "why": "SQLE (squalene epoxidase) catalyzes the step AFTER squalene formation (epoxidation of squalene), not steps leading to squalene."
+    },
+    {
+      "claim": "LSS is involved in post-squalene modifications and cholesterol formation.",
+      "label": "GROUNDED",
+      "why": "LSS appears in 'Steroid Biosynthetic Process', 'Organic Cyclic Compound Biosynthetic Process', and 'Steroid biosynthesis', consistent with post-squalene modifications."
+    },
+    {
+      "claim": "CYP51A1 is involved in post-squalene modifications and cholesterol formation.",
+      "label": "GROUNDED",
+      "why": "CYP51A1 appears in 'Cholesterol Biosynthetic Process', 'Steroid biosynthesis', and 'Regulation Of Amyloid-Beta Clearance', consistent with post-squalene modifications."
+    },
+    {
+      "claim": "CYP51A1 is a lanosterol demethylase.",
+      "label": "BACKGROUND",
+      "why": "CYP51A1's specific function as lanosterol 14α-demethylase is well-established but not explicitly stated in the evidence."
+    },
+    {
+      "claim": "NSDHL is involved in post-squalene modifications and cholesterol formation.",
+      "label": "GROUNDED",
+      "why": "NSDHL appears in 'Cholesterol Biosynthetic Process', 'Sterol Biosynthetic Process', and 'Steroid biosynthesis', consistent with post-squalene modifications."
+    },
+    {
+      "claim": "TM7SF2 is involved in post-squalene modifications and cholesterol formation.",
+      "label": "GROUNDED",
+      "why": "TM7SF2 appears in 'Cholesterol Biosynthetic Process', 'Sterol Biosynthetic Process', and 'Steroid biosynthesis', consistent with post-squalene modifications."
+    },
+    {
+      "claim": "EBP is involved in post-squalene modifications and cholesterol formation.",
+      "label": "GROUNDED",
+      "why": "EBP appears in 'Steroid biosynthesis' term, consistent with post-squalene modifications."
+    },
+    {
+      "claim": "DHCR7 is involved in post-squalene modifications and cholesterol formation.",
+      "label": "GROUNDED",
+      "why": "DHCR7 appears in 'Cholesterol Biosynthetic Process', 'Sterol Biosynthetic Process', and 'Steroid biosynthesis', consistent with post-squalene modifications."
+    },
+    {
+      "claim": "SC5D is involved in post-squalene modifications and cholesterol formation.",
+      "label": "GROUNDED",
+      "why": "SC5D appears in 'Cholesterol Biosynthetic Process' and 'Steroid biosynthesis', consistent with post-squalene modifications."
+    },
+    {
+      "claim": "LDLR is a key component in cholesterol transport processes.",
+      "label": "GROUNDED",
+      "why": "LDLR appears in 'Cholesterol Import', 'Cholesterol Transport', 'Intracellular Cholesterol Transport', and 'Lipid Transport' terms."
+    },
+    {
+      "claim": "SREBF2 is a key component in cholesterol transport and regulation processes.",
+      "label": "GROUNDED",
+      "why": "SREBF2 appears in 'Regulation Of Cholesterol Efflux', 'Positive Regulation Of Cholesterol Metabolic Process', and 'Regulation Of Cholesterol Storage', confirming its regulatory role."
+    },
+    {
+      "claim": "ABCA2 is a key component in cholesterol transport and regulation processes.",
+      "label": "GROUNDED",
+      "why": "ABCA2 appears in 'Regulation Of Cholesterol Efflux' and 'Lipid Transport' terms."
+    },
+    {
+      "claim": "STARD4 is a key component in cholesterol transport and regulation processes.",
+      "label": "GROUNDED",
+      "why": "STARD4 appears in 'Cholesterol Import', 'Cholesterol Transport', 'Intracellular Cholesterol Transport', and 'Positive Regulation Of Cholesterol Metabolic Process' terms."
+    },
+    {
+      "claim": "PPARG is a critical nuclear receptor controlling gene expression in lipid homeostasis.",
+      "label": "GROUNDED",
+      "why": "PPARG appears in 'PPAR signaling pathway', 'Peroxisome Proliferator Activated Receptor Signaling Pathway', and multiple lipid metabolism terms."
+    },
+    {
+      "claim": "PPARs are critical nuclear receptors controlling gene expression in lipid homeostasis.",
+      "label": "BACKGROUND",
+      "why": "The general statement about PPARs as a family is textbook biology, though only PPARG is specifically mentioned in the evidence."
+    },
+    {
+      "claim": "SREBF2 regulates cholesterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "SREBF2 appears in 'Positive Regulation Of Cholesterol Metabolic Process' and 'Regulation Of Cholesterol Storage', consistent with regulating cholesterol biosynthesis."
+    },
+    {
+      "claim": "SREBF2 regulates cholesterol uptake via LDLR.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states 'SREBP2 inhibition attenuated the fluoxetine-mediated upregulation of the LDL receptor', confirming SREBF2 regulates LDLR."
+    },
+    {
+      "claim": "Fluoxetine disrupts cholesterol metabolism by activating SREBF2.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 explicitly states 'fluoxetine activated the SREBP2 transcription factor' and 'Fluoxetine disrupts cholesterol metabolism'."
+    },
+    {
+      "claim": "Fluoxetine activation of SREBF2 leads to increased cholesterol biosynthesis in endothelial cells.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states fluoxetine activated SREBP2 and 'The disruption of lipid homeostasis was driven by increased cholesterol biosynthesis'."
+    },
+    {
+      "claim": "Fluoxetine activation of SREBF2 leads to increased LDL uptake in endothelial cells.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states fluoxetine activated SREBP2 and led to 'low-density lipoprotein (LDL) uptake and transcytosis via the LDL receptor'."
+    },
+    {
+      "claim": "Diabetes induces corneal endothelial dysfunction by inhibiting SREBF2-dependent cholesterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states 'Diabetes induced CED by inhibiting SREBF2/SQLE-dependent cholesterol biosynthesis'."
+    },
+    {
+      "claim": "Diabetes induces corneal endothelial dysfunction by inhibiting SQLE-dependent cholesterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states 'Diabetes induced CED by inhibiting SREBF2/SQLE-dependent cholesterol biosynthesis'."
+    },
+    {
+      "claim": "Calpain-4 knockdown in alcohol-related liver disease reduces HMGCR activity.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states 'Western blot analysis revealed increased Cleaved-3-hydroxy-3-methyl-glutaryl-coenzyme A reductase (HMGCR) to Pro-HMGCR ratio in Capns1-knockdown mice, suggesting reduced HMGCR activity'."
+    },
+    {
+      "claim": "Reduced HMGCR activity suppresses cholesterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states 'reduced HMGCR activity and suppressed cholesterol biosynthesis'."
+    },
+    {
+      "claim": "The mevalonate pathway is the committed step in cholesterol synthesis.",
+      "label": "BACKGROUND",
+      "why": "The mevalonate pathway being the committed step in cholesterol synthesis is textbook biology, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "LSS is lanosterol synthase.",
+      "label": "BACKGROUND",
+      "why": "LSS as lanosterol synthase is standard nomenclature but not explicitly stated in the evidence."
+    },
+    {
+      "claim": "DHCR7 is 7-dehydrocholesterol reductase.",
+      "label": "BACKGROUND",
+      "why": "DHCR7 as 7-dehydrocholesterol reductase is standard nomenclature but not explicitly stated in the evidence."
+    },
+    {
+      "claim": "SC5D is sterol-C5-desaturase.",
+      "label": "BACKGROUND",
+      "why": "SC5D as sterol-C5-desaturase is standard nomenclature but not explicitly stated in the evidence."
+    }
+  ],
+  "summary": {
+    "n_claims": 36,
+    "n_scored": 36,
+    "grounded_rate": 0.722,
+    "hallucination_rate": 0.028,
+    "grounded": 26,
+    "background": 9,
+    "unsupported": 1
+  }
+}

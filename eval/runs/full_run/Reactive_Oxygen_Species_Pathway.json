@@ -1,0 +1,2099 @@
+{
+  "gene_set": "Reactive_Oxygen_Species_Pathway",
+  "context": "Reactive Oxygen Species Pathway",
+  "genes": [
+    "GSR",
+    "PRDX2",
+    "TXNRD1",
+    "SOD1",
+    "GCLC",
+    "CAT",
+    "GPX4",
+    "MPO",
+    "PRDX1",
+    "PRDX6",
+    "GCLM",
+    "TXN",
+    "SOD2",
+    "PRDX4",
+    "SELENOS",
+    "PDLIM1",
+    "TXNRD2",
+    "LAMTOR5",
+    "G6PD",
+    "MSRA",
+    "MBP",
+    "SRXN1",
+    "NQO1",
+    "OXSR1",
+    "GLRX2",
+    "HMOX2",
+    "FES",
+    "PFKP",
+    "NDUFB4",
+    "GPX3",
+    "SCAF4",
+    "CDKN2D",
+    "MGST1",
+    "ABCC1",
+    "FTL",
+    "ATOX1",
+    "STK25",
+    "EGLN2",
+    "ERCC2",
+    "SBNO2",
+    "JUNB",
+    "PTPA",
+    "LSP1",
+    "NDUFA6",
+    "HHEX",
+    "GLRX",
+    "NDUFS2",
+    "PRNP",
+    "IPCEF1"
+  ],
+  "n_genes": 49,
+  "query": "Analyze this gene set (biological context: Reactive Oxygen Species Pathway) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: GSR, PRDX2, TXNRD1, SOD1, GCLC, CAT, GPX4, MPO, PRDX1, PRDX6, GCLM, TXN, SOD2, PRDX4, SELENOS, PDLIM1, TXNRD2, LAMTOR5, G6PD, MSRA, MBP, SRXN1, NQO1, OXSR1, GLRX2, HMOX2, FES, PFKP, NDUFB4, GPX3, SCAF4, CDKN2D, MGST1, ABCC1, FTL, ATOX1, STK25, EGLN2, ERCC2, SBNO2, JUNB, PTPA, LSP1, NDUFA6, HHEX, GLRX, NDUFS2, PRNP, IPCEF1",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 63,
+  "n_papers": 5,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 5,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 5,
+    "cited_pmids": [
+      "42056310",
+      "42530249",
+      "42561509"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "The analysis of the provided gene set reveals a strong enrichment of pathways and biological processes central to the Reactive Oxygen Species (ROS) pathway, antioxidant defense, and redox regulation. A significant theme is the coordinated cellular response to oxidative stress, involving detoxification of harmful ROS and regulation of cell death processes like ferroptosis.\n\n## Detailed Analysis\n\n### Enrichment Analysis Summary\n\n**GO Biological Process 2023** terms show prominent enrichment for direct responses to ROS, including:\n*   **Hydrogen Peroxide Catabolic Process (GO:0042744)**: Involving genes like PRDX2, PRDX4, GPX3, PRDX1, CAT, MPO, which are crucial enzymes for detoxifying hydrogen peroxide.\n*   **Removal Of Superoxide Radicals (GO:0019430)** and **Cellular Response To Superoxide (GO:0071451)**: Highlight the roles of NQO1, PRDX2, PRDX1, SOD2, and SOD1 in neutralizing superoxide.\n*   **Cellular Response To Oxidative Stress (GO:0034599)** and **Response To Reactive Oxygen Species (GO:0000302)**: These broader terms encompass a significant portion of the input genes, underscoring a global cellular effort to combat oxidative damage.\n*   **Glutathione Biosynthetic Process (GO:0006750)**: Involving GCLC and GCLM, the rate-limiting enzymes for glutathione synthesis, indicating a strong emphasis on maintaining glutathione levels, a key antioxidant.\n\n**KEGG 2021 Human** pathways further reinforce these findings:\n*   **Glutathione metabolism**: This is the top enriched KEGG pathway, including key genes like G6PD, GCLC, GPX4, GPX3, GSR, MGST1, GCLM, and PRDX6. This pathway is critical for maintaining cellular redox balance and detoxifying xenobiotics and endogenous harmful compounds.\n*   **Ferroptosis**: Enriched with genes like PRNP, GCLC, GPX4, GCLM, and FTL. Ferroptosis is an iron-dependent form of regulated cell death driven by lipid peroxidation, which is intimately linked to oxidative stress and the depletion of glutathione.\n*   **Peroxisome**: Contains PRDX1, CAT, SOD2, SOD1, reflecting the organelle's role in breaking down fatty acids and detoxifying ROS.\n*   **Selenocompound metabolism**: Enriched with TXNRD2 and TXNRD1, which are critical for selenoprotein function, including the glutathione peroxidases that reduce hydroperoxides.\n\n### Biological Interpretation in Reactive Oxygen Species Pathway Context\n\nThe gene set provided clearly delineates a robust and multifaceted cellular system for managing reactive oxygen species. The most highly enriched terms directly reflect the core mechanisms of antioxidant defense. Genes such as *SOD1* and *SOD2* (superoxide dismutases) convert superoxide radicals to hydrogen peroxide, while *CAT* (catalase) and the *PRDX* (peroxiredoxin) and *GPX* (glutathione peroxidase) families (e.g., *PRDX1, PRDX2, PRDX4, PRDX6, GPX3, GPX4*) further detoxify hydrogen peroxide into water.\n\nA critical component of this defense is **glutathione metabolism**, highlighted by the enrichment of *GCLC*, *GCLM* (involved in glutathione synthesis), and *GSR* (glutathione reductase), which maintains glutathione in its reduced, active form. This is crucial as glutathione is a primary substrate for glutathione peroxidases, linking glutathione metabolism directly to the detoxification of hydroperoxides and protection against **ferroptosis**. The strong enrichment of ferroptosis-related genes indicates that the cells are not only combating oxidative stress but also potentially undergoing or resisting this specific form of cell death, which is characterized by iron-dependent lipid peroxidation when antioxidant systems, particularly the glutathione-GPX4 axis, fail.\n\nOther enriched terms, such as \"Cellular Response To Chemical Stress\" and \"Negative Regulation Of Apoptotic Process,\" indicate broader stress response and cell survival mechanisms that are often activated in conjunction with antioxidant pathways to mitigate cellular damage and maintain homeostasis. The involvement of mitochondrial components (e.g., NDUFA6, NDUFB4, NDUFS2 in \"Mitochondrial Electron Transport, NADH To Ubiquinone\" and \"Oxidative Phosphorylation\") highlights that mitochondria are a major source of ROS and are also critical targets and responders in oxidative stress.\n\n### Supporting Literature Evidence\n\nLiterature evidence strongly supports the tight interplay between oxidative stress, glutathione metabolism, and ferroptosis:\n\n*   Studies show that oxidative stress-induced disruption of glutathione metabolism can trigger ferroptosis. For instance, Zhang et al. (2026, PMID: 42561509) directly investigated how oxidative stress-induced glutathione metabolism disruption triggers ferroptosis.\n*   The Keap1/Nrf2/GPX4 signaling pathway, which regulates glutathione metabolism, is crucial in inhibiting ferroptosis under oxidative stress conditions, as demonstrated by Wang et al. (2026, PMID: 42056310).\n*   Microsomal glutathione S-transferase 1 (MGST1), one of the genes in the provided list, plays a role in glutathione metabolism and suppresses ferroptosis by regulating GPX4 (Huo et al., 2026, PMID: 42530249).\n\nThe genes in your list are thus centrally involved in a coordinated effort to prevent and respond to oxidative damage, with glutathione metabolism acting as a linchpin for antioxidant capacity and a critical regulator of ferroptosis.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human', 'genes': 'GSR, PRDX2, TXNRD1, SOD1, GCLC, CAT, GPX4, MPO, PRDX1, PRDX6, GCLM, TXN, SOD2, PRDX4, SELENOS, PDLIM1, TXNRD2, LAMTOR5, G6PD, MSRA, MBP, SRXN1, NQO1, OXSR1, GLRX2, HMOX2, FES, PFKP, NDUFB4, GPX3, SCAF4, CDKN2D, MGST1, ABCC1, FTL, ATOX1, STK25, EGLN2, ERCC2, SBNO2, JUNB, PTPA, LSP1, NDUFA6, HHEX, GLRX, NDUFS2, PRNP, IPCEF1'}",
+    "Tool: search_literature | Args: {'max_results': 5, 'query': '\"oxidative stress\" AND \"glutathione metabolism\" AND \"ferroptosis\"', 'sort_by': 'relevance'}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Reactive Oxygen Species Pathway) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: GSR, PRDX2, TXNRD1, SOD1, GCLC, CAT, GPX4, MPO, "
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Analysis of the Reactive Oxygen Species Pathway Data**\n\nOkay, so I've been given a gene list and the biological context of the Reactive Oxygen Species (ROS) pathway. My task is to rigorously analyze this data and provide a concise, evidence-based interpretation. Here’s how I'm thinking of approaching this:\n\nFirst, the enrichment analysis. My initial thought is to run the `run_enrichment_analysis` function using the gene list provided, and specifying the GO Biological Process 2023 and KEGG 2021 Human libraries. This will provide a solid foundation. After all, the function is there for a reason! It'll identify over-represented pathways and processes within the gene set. This will be the backbone of my understanding.\n\nOnce I have those results, I'll need to interpret them in the specific context of ROS. That's the crucial step. I'll need to critically evaluate the enriched terms, prioritizing those that seem most directly relevant to oxidative stress, antioxidant defense, damage repair, or any aspect of the ROS pathway itself. It's about seeing what aspects are highlighted in this particular dataset.\n\nThen, to solidify my interpretation, I'll need some external evidence. I’m thinking of using the `search_literature` function. I'll need to formulate specific and targeted search queries based on the enriched terms and, critically, the ROS context. I'll need to be clever and strategic here; specific combinations of keywords will be key. Ideally, I'm looking for a maximum of five high-quality papers that lend support to my interpretation.\n\nFinally, the output will be a concise biological interpretation, firmly anchored in the enriched terms, but most importantly, substantiated by the retrieved literature. I'll only cite the papers I find, ensuring the interpretation is completely supported by these specific references. The goal is to provide a clear, concise, and fully supported understanding of what the enrichment analysis reveals about this gene set and the ROS pathway.",
+      "action": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023,KEGG_2021_Human, genes=GSR, PRDX2, TXNRD1, SOD1, GCLC, CAT, GPX4, MPO, PR...",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "e1a487e2-d335-492a-b42b-c09d606947e5",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 49 | Total significant terms: 63"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "## Summary\n\nThe gene set provided shows highly significant enrichment for biological processes and pathways directly involved in the detoxification and cellular response to Reactive Oxygen Species (ROS). Key enriched GO terms highlight the catabolism of hydrogen peroxide, removal of superoxide radicals, and general cellular responses to oxidative and chemical stress. KEGG pathways further underscore the importance of glutathione metabolism and its role in antioxidant defense, as well as the regu"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Interpretation of the Enrichment Analysis Findings**\n\nAlright, let's break this down. The enrichment analysis has yielded a robust signal, screaming \"Reactive Oxygen Species\" at me. The Gene Ontology (GO) terms are practically shouting it: \"Hydrogen Peroxide Catabolic Process,\" \"Removal of Superoxide Radicals,\" all the way down to \"Response to Reactive Oxygen Species.\" No surprises there; the context clearly aligns. The overlap of genes like *PRDX2*, *GPX3*, *CAT*, and *SOD2* immediately confirms my suspicion – these are the key players in the ROS detoxification game.\n\nLooking at the KEGG pathways, it's even clearer. \"Glutathione metabolism\" is a direct, expected hit – glutathione's a major antioxidant. \"Ferroptosis\" grabs my attention; we're talking iron-dependent lipid peroxidation, a cell death pathway triggered by, you guessed it, overwhelming oxidative stress or faulty antioxidants. The mention of *GPX4* within that Ferroptosis term is significant; that's a central regulator. \"Peroxisome\" is also spot on, with its arsenal of *CAT* and *SOD* enzymes. And \"Selenocompound metabolism\" is relevant as many antioxidant enzymes are selenoenzymes, like GPx and TXNRD.\n\nNow, here's where it gets interesting. The presence of those disease-related terms – neurodegeneration (Huntington, ALS, Parkinson's) and cancer pathways – really hammers home the point that dysregulation in these ROS pathways is a major contributor to pathogenesis. This isn't just a basic biological process; it has real, tangible disease implications.\n\nOkay, so I have the key findings. Now, I need to formulate a refined search query for `search_literature`. I need to focus the search specifically on the most relevant terms in the context of ROS.",
+      "action": "search_literature",
+      "args": "max_results=5, query=\"oxidative stress\" AND \"glutathione metabolism\" AN..., sort_by=relevance",
+      "tool_name": "search_literature",
+      "tool_call_id": "b499b4ac-6fe2-40a4-94d9-e31ff1539a4e",
+      "observation": "=== LITERATURE SEARCH: '\"oxidative stress\" AND \"glutathione metabolism\" AND \"ferroptosis\"' === | Found 5 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "The analysis of the provided gene set reveals a strong enrichment of pathways and biological processes central to the Reactive Oxygen Species (ROS) pathway, antioxidant defense, and redox regulation. A significant theme is the coordinated cellular response to oxidative stress, involving detoxification of harmful ROS and regulation of cell death processes like ferroptosis.\n\n## Detailed Analysis\n\n### Enrichment Analysis Summary\n\n**GO Biological Process 2023** terms show prominent enrichment for di"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023,KEGG_2021_Human, genes=GSR, PRDX2, TXNRD1, SOD1, GCLC, CAT, GPX4, MPO, PR...",
+      "thought": "**My Analysis of the Reactive Oxygen Species Pathway Data**\n\nOkay, so I've been given a gene list and the biological context of the Reactive Oxygen Species (ROS) pathway. My task is to rigorously analyze this data and provide a concise, evidence-based interpretation. Here’s how I'm thinking of approaching this:\n\nFirst, the enrichment analysis. My initial thought is to run the `run_enrichment_analysis` function using the gene list provided, and specifying the GO Biological Process 2023 and KEGG 2021 Human libraries. This will provide a solid foundation. After all, the function is there for a reason! It'll identify over-represented pathways and processes within the gene set. This will be the backbone of my understanding.\n\nOnce I have those results, I'll need to interpret them in the specific context of ROS. That's the crucial step. I'll need to critically evaluate the enriched terms, prioritizing those that seem most directly relevant to oxidative stress, antioxidant defense, damage repair, or any aspect of the ROS pathway itself. It's about seeing what aspects are highlighted in this particular dataset.\n\nThen, to solidify my interpretation, I'll need some external evidence. I’m thinking of using the `search_literature` function. I'll need to formulate specific and targeted search queries based on the enriched terms and, critically, the ROS context. I'll need to be clever and strategic here; specific combinations of keywords will be key. Ideally, I'm looking for a maximum of five high-quality papers that lend support to my interpretation.\n\nFinally, the output will be a concise biological interpretation, firmly anchored in the enriched terms, but most importantly, substantiated by the retrieved literature. I'll only cite the papers I find, ensuring the interpretation is completely supported by these specific references. The goal is to provide a clear, concise, and fully supported understanding of what the enrichment analysis reveals about this gene set and the ROS pathway.",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 49 | Total significant terms: 63"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "max_results=5, query=\"oxidative stress\" AND \"glutathione metabolism\" AN..., sort_by=relevance",
+      "thought": "**My Interpretation of the Enrichment Analysis Findings**\n\nAlright, let's break this down. The enrichment analysis has yielded a robust signal, screaming \"Reactive Oxygen Species\" at me. The Gene Ontology (GO) terms are practically shouting it: \"Hydrogen Peroxide Catabolic Process,\" \"Removal of Superoxide Radicals,\" all the way down to \"Response to Reactive Oxygen Species.\" No surprises there; the context clearly aligns. The overlap of genes like *PRDX2*, *GPX3*, *CAT*, and *SOD2* immediately confirms my suspicion – these are the key players in the ROS detoxification game.\n\nLooking at the KEGG pathways, it's even clearer. \"Glutathione metabolism\" is a direct, expected hit – glutathione's a major antioxidant. \"Ferroptosis\" grabs my attention; we're talking iron-dependent lipid peroxidation, a cell death pathway triggered by, you guessed it, overwhelming oxidative stress or faulty antioxidants. The mention of *GPX4* within that Ferroptosis term is significant; that's a central regulator. \"Peroxisome\" is also spot on, with its arsenal of *CAT* and *SOD* enzymes. And \"Selenocompound metabolism\" is relevant as many antioxidant enzymes are selenoenzymes, like GPx and TXNRD.\n\nNow, here's where it gets interesting. The presence of those disease-related terms – neurodegeneration (Huntington, ALS, Parkinson's) and cancer pathways – really hammers home the point that dysregulation in these ROS pathways is a major contributor to pathogenesis. This isn't just a basic biological process; it has real, tangible disease implications.\n\nOkay, so I have the key findings. Now, I need to formulate a refined search query for `search_literature`. I need to focus the search specifically on the most relevant terms in the context of ROS.",
+      "observation": "=== LITERATURE SEARCH: '\"oxidative stress\" AND \"glutathione metabolism\" AND \"ferroptosis\"' === | Found 5 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "GSR",
+      "PRDX2",
+      "TXNRD1",
+      "SOD1",
+      "GCLC",
+      "CAT",
+      "GPX4",
+      "MPO",
+      "PRDX1",
+      "PRDX6",
+      "GCLM",
+      "TXN",
+      "SOD2",
+      "PRDX4",
+      "SELENOS",
+      "PDLIM1",
+      "TXNRD2",
+      "LAMTOR5",
+      "G6PD",
+      "MSRA",
+      "MBP",
+      "SRXN1",
+      "NQO1",
+      "OXSR1",
+      "GLRX2",
+      "HMOX2",
+      "FES",
+      "PFKP",
+      "NDUFB4",
+      "GPX3",
+      "SCAF4",
+      "CDKN2D",
+      "MGST1",
+      "ABCC1",
+      "FTL",
+      "ATOX1",
+      "STK25",
+      "EGLN2",
+      "ERCC2",
+      "SBNO2",
+      "JUNB",
+      "PTPA",
+      "LSP1",
+      "NDUFA6",
+      "HHEX",
+      "GLRX",
+      "NDUFS2",
+      "PRNP",
+      "IPCEF1"
+    ],
+    "gene_count": 49,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Hydrogen Peroxide Catabolic Process (GO:0042744)",
+          "term": "Hydrogen Peroxide Catabolic Process (GO:0042744)",
+          "overlap": "6/20",
+          "p_value": 5.9447031139914096e-12,
+          "z_score": 198.7076411960133,
+          "combined_score": 5136.298542089705,
+          "overlap_genes": [
+            "PRDX2",
+            "PRDX4",
+            "GPX3",
+            "PRDX1",
+            "CAT",
+            "MPO"
+          ],
+          "genes": [
+            "PRDX2",
+            "PRDX4",
+            "GPX3",
+            "PRDX1",
+            "CAT",
+            "MPO"
+          ],
+          "adjusted_p_value": 3.5192642434829143e-09
+        },
+        {
+          "rank": 2,
+          "term_name": "Removal Of Superoxide Radicals (GO:0019430)",
+          "term": "Removal Of Superoxide Radicals (GO:0019430)",
+          "overlap": "5/10",
+          "p_value": 1.7859144426889158e-11,
+          "z_score": 453.3181818181818,
+          "combined_score": 11218.947491523997,
+          "overlap_genes": [
+            "NQO1",
+            "PRDX2",
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "NQO1",
+            "PRDX2",
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 5.28630675035919e-09
+        },
+        {
+          "rank": 3,
+          "term_name": "Cellular Response To Superoxide (GO:0071451)",
+          "term": "Cellular Response To Superoxide (GO:0071451)",
+          "overlap": "5/11",
+          "p_value": 3.268218494098011e-11,
+          "z_score": 377.7462121212121,
+          "combined_score": 9120.376691019472,
+          "overlap_genes": [
+            "NQO1",
+            "PRDX2",
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "NQO1",
+            "PRDX2",
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 6.410684538784799e-09
+        },
+        {
+          "rank": 4,
+          "term_name": "Cellular Response To Chemical Stress (GO:0062197)",
+          "term": "Cellular Response To Chemical Stress (GO:0062197)",
+          "overlap": "8/89",
+          "p_value": 4.3315436072870264e-11,
+          "z_score": 47.86510087323096,
+          "combined_score": 1142.1815465130837,
+          "overlap_genes": [
+            "NQO1",
+            "MSRA",
+            "PRDX2",
+            "G6PD",
+            "SELENOS",
+            "SRXN1",
+            "GSR",
+            "SOD2"
+          ],
+          "genes": [
+            "NQO1",
+            "MSRA",
+            "PRDX2",
+            "G6PD",
+            "SELENOS",
+            "SRXN1",
+            "GSR",
+            "SOD2"
+          ],
+          "adjusted_p_value": 6.410684538784799e-09
+        },
+        {
+          "rank": 5,
+          "term_name": "Cellular Response To Oxidative Stress (GO:0034599)",
+          "term": "Cellular Response To Oxidative Stress (GO:0034599)",
+          "overlap": "8/117",
+          "p_value": 3.973818835344069e-10,
+          "z_score": 35.51935556052808,
+          "combined_score": 768.8563526399773,
+          "overlap_genes": [
+            "NQO1",
+            "MSRA",
+            "PRDX2",
+            "G6PD",
+            "SELENOS",
+            "SRXN1",
+            "GSR",
+            "SOD2"
+          ],
+          "genes": [
+            "NQO1",
+            "MSRA",
+            "PRDX2",
+            "G6PD",
+            "SELENOS",
+            "SRXN1",
+            "GSR",
+            "SOD2"
+          ],
+          "adjusted_p_value": 4.7050015010473783e-08
+        },
+        {
+          "rank": 6,
+          "term_name": "Superoxide Metabolic Process (GO:0006801)",
+          "term": "Superoxide Metabolic Process (GO:0006801)",
+          "overlap": "5/34",
+          "p_value": 1.8872849945415944e-08,
+          "z_score": 78.06426332288402,
+          "combined_score": 1388.415191754558,
+          "overlap_genes": [
+            "PRDX2",
+            "NQO1",
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "PRDX2",
+            "NQO1",
+            "PRDX1",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 1.8621211946143733e-06
+        },
+        {
+          "rank": 7,
+          "term_name": "Response To Reactive Oxygen Species (GO:0000302)",
+          "term": "Response To Reactive Oxygen Species (GO:0000302)",
+          "overlap": "5/66",
+          "p_value": 5.716194135427964e-07,
+          "z_score": 37.05290611028316,
+          "combined_score": 532.6278341878854,
+          "overlap_genes": [
+            "TXNRD2",
+            "STK25",
+            "CAT",
+            "GLRX2",
+            "SOD1"
+          ],
+          "genes": [
+            "TXNRD2",
+            "STK25",
+            "CAT",
+            "GLRX2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 4.834267040247649e-05
+        },
+        {
+          "rank": 8,
+          "term_name": "Negative Regulation Of Apoptotic Process (GO:0043066)",
+          "term": "Negative Regulation Of Apoptotic Process (GO:0043066)",
+          "overlap": "9/482",
+          "p_value": 2.2202612428737886e-06,
+          "z_score": 9.265433403805497,
+          "combined_score": 120.61635293788702,
+          "overlap_genes": [
+            "CDKN2D",
+            "PRDX2",
+            "GCLC",
+            "CAT",
+            "OXSR1",
+            "SOD2",
+            "MPO",
+            "SOD1",
+            "LAMTOR5"
+          ],
+          "genes": [
+            "CDKN2D",
+            "PRDX2",
+            "GCLC",
+            "CAT",
+            "OXSR1",
+            "SOD2",
+            "MPO",
+            "SOD1",
+            "LAMTOR5"
+          ],
+          "adjusted_p_value": 0.00016429933197266035
+        },
+        {
+          "rank": 9,
+          "term_name": "Response To Hydrogen Peroxide (GO:0042542)",
+          "term": "Response To Hydrogen Peroxide (GO:0042542)",
+          "overlap": "4/46",
+          "p_value": 4.8095682667036645e-06,
+          "z_score": 42.13544973544973,
+          "combined_score": 515.9445047871499,
+          "overlap_genes": [
+            "STK25",
+            "CAT",
+            "GLRX2",
+            "SOD1"
+          ],
+          "genes": [
+            "STK25",
+            "CAT",
+            "GLRX2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.00031636271265428546
+        },
+        {
+          "rank": 10,
+          "term_name": "Mitochondrial Electron Transport, NADH To Ubiquinone (GO:0006120)",
+          "term": "Mitochondrial Electron Transport, NADH To Ubiquinone (GO:0006120)",
+          "overlap": "3/34",
+          "p_value": 7.839024559988971e-05,
+          "z_score": 41.90743338008415,
+          "combined_score": 396.18495704728207,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.004640702539513471
+        },
+        {
+          "rank": 11,
+          "term_name": "Glutathione Biosynthetic Process (GO:0006750)",
+          "term": "Glutathione Biosynthetic Process (GO:0006750)",
+          "overlap": "2/6",
+          "p_value": 8.764936747808933e-05,
+          "z_score": 212.20212765957447,
+          "combined_score": 1982.4275367535533,
+          "overlap_genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "adjusted_p_value": 0.004717129595184444
+        },
+        {
+          "rank": 12,
+          "term_name": "Nonribosomal Peptide Biosynthetic Process (GO:0019184)",
+          "term": "Nonribosomal Peptide Biosynthetic Process (GO:0019184)",
+          "overlap": "2/7",
+          "p_value": 0.0001225173273092752,
+          "z_score": 169.7531914893617,
+          "combined_score": 1529.0108074408631,
+          "overlap_genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "adjusted_p_value": 0.005770444198304807
+        },
+        {
+          "rank": 13,
+          "term_name": "Regulation Of Neuron Apoptotic Process (GO:0043523)",
+          "term": "Regulation Of Neuron Apoptotic Process (GO:0043523)",
+          "overlap": "4/105",
+          "p_value": 0.00012671583543574745,
+          "z_score": 17.46974697469747,
+          "combined_score": 156.76588371447994,
+          "overlap_genes": [
+            "PRNP",
+            "EGLN2",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "PRNP",
+            "EGLN2",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.005770444198304807
+        },
+        {
+          "rank": 14,
+          "term_name": "Response To Vitamin D (GO:0033280)",
+          "term": "Response To Vitamin D (GO:0033280)",
+          "overlap": "2/8",
+          "p_value": 0.0001631010776661564,
+          "z_score": 141.45390070921985,
+          "combined_score": 1233.639334007275,
+          "overlap_genes": [
+            "CDKN2D",
+            "FES"
+          ],
+          "genes": [
+            "CDKN2D",
+            "FES"
+          ],
+          "adjusted_p_value": 0.006896845569883185
+        },
+        {
+          "rank": 15,
+          "term_name": "Myelin Maintenance (GO:0043217)",
+          "term": "Myelin Maintenance (GO:0043217)",
+          "overlap": "2/9",
+          "p_value": 0.00020937355557931883,
+          "z_score": 121.24012158054711,
+          "combined_score": 1027.0724207395506,
+          "overlap_genes": [
+            "PRDX6",
+            "SOD1"
+          ],
+          "genes": [
+            "PRDX6",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.008263276326863784
+        },
+        {
+          "rank": 16,
+          "term_name": "Blood Circulation (GO:0008015)",
+          "term": "Blood Circulation (GO:0008015)",
+          "overlap": "3/50",
+          "p_value": 0.0002497855682645102,
+          "z_score": 27.618871415356153,
+          "combined_score": 229.09599013803128,
+          "overlap_genes": [
+            "GCLC",
+            "GCLM",
+            "SOD1"
+          ],
+          "genes": [
+            "GCLC",
+            "GCLM",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.008791444460795788
+        },
+        {
+          "rank": 17,
+          "term_name": "Regulation Of Apoptotic Process (GO:0042981)",
+          "term": "Regulation Of Apoptotic Process (GO:0042981)",
+          "overlap": "8/705",
+          "p_value": 0.00028743492040313054,
+          "z_score": 5.3900689365573715,
+          "combined_score": 43.95339307395414,
+          "overlap_genes": [
+            "PTPA",
+            "PRDX2",
+            "GCLC",
+            "EGLN2",
+            "CAT",
+            "OXSR1",
+            "MPO",
+            "SOD1"
+          ],
+          "genes": [
+            "PTPA",
+            "PRDX2",
+            "GCLC",
+            "EGLN2",
+            "CAT",
+            "OXSR1",
+            "MPO",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.008791444460795788
+        },
+        {
+          "rank": 18,
+          "term_name": "NADH Dehydrogenase Complex Assembly (GO:0010257)",
+          "term": "NADH Dehydrogenase Complex Assembly (GO:0010257)",
+          "overlap": "3/53",
+          "p_value": 0.0002970082588106685,
+          "z_score": 25.957826086956523,
+          "combined_score": 210.82298991065082,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.008791444460795788
+        },
+        {
+          "rank": 19,
+          "term_name": "Proton Motive Force-Driven Mitochondrial ATP Synthesis (GO:0042776)",
+          "term": "Proton Motive Force-Driven Mitochondrial ATP Synthesis (GO:0042776)",
+          "overlap": "3/53",
+          "p_value": 0.0002970082588106685,
+          "z_score": 25.957826086956523,
+          "combined_score": 210.82298991065082,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.008791444460795788
+        },
+        {
+          "rank": 20,
+          "term_name": "Mitochondrial Respiratory Chain Complex I Assembly (GO:0032981)",
+          "term": "Mitochondrial Respiratory Chain Complex I Assembly (GO:0032981)",
+          "overlap": "3/53",
+          "p_value": 0.0002970082588106685,
+          "z_score": 25.957826086956523,
+          "combined_score": 210.82298991065082,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.008791444460795788
+        },
+        {
+          "rank": 21,
+          "term_name": "Negative Regulation Of Programmed Cell Death (GO:0043069)",
+          "term": "Negative Regulation Of Programmed Cell Death (GO:0043069)",
+          "overlap": "6/381",
+          "p_value": 0.00032171278095272527,
+          "z_score": 7.284093023255814,
+          "combined_score": 58.57759364106231,
+          "overlap_genes": [
+            "PRDX2",
+            "GCLC",
+            "GPX4",
+            "CAT",
+            "OXSR1",
+            "MPO"
+          ],
+          "genes": [
+            "PRDX2",
+            "GCLC",
+            "GPX4",
+            "CAT",
+            "OXSR1",
+            "MPO"
+          ],
+          "adjusted_p_value": 0.009069236491619684
+        },
+        {
+          "rank": 22,
+          "term_name": "Vascular Process In Circulatory System (GO:0003018)",
+          "term": "Vascular Process In Circulatory System (GO:0003018)",
+          "overlap": "2/12",
+          "p_value": 0.0003820541066945404,
+          "z_score": 84.85531914893618,
+          "combined_score": 667.8069762796268,
+          "overlap_genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "adjusted_p_value": 0.00942400129846533
+        },
+        {
+          "rank": 23,
+          "term_name": "Regulation Of Tube Diameter (GO:0035296)",
+          "term": "Regulation Of Tube Diameter (GO:0035296)",
+          "overlap": "2/12",
+          "p_value": 0.0003820541066945404,
+          "z_score": 84.85531914893618,
+          "combined_score": 667.8069762796268,
+          "overlap_genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "adjusted_p_value": 0.00942400129846533
+        },
+        {
+          "rank": 24,
+          "term_name": "Myelination In Peripheral Nervous System (GO:0022011)",
+          "term": "Myelination In Peripheral Nervous System (GO:0022011)",
+          "overlap": "2/12",
+          "p_value": 0.0003820541066945404,
+          "z_score": 84.85531914893618,
+          "combined_score": 667.8069762796268,
+          "overlap_genes": [
+            "PRDX6",
+            "SOD1"
+          ],
+          "genes": [
+            "PRDX6",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.00942400129846533
+        },
+        {
+          "rank": 25,
+          "term_name": "Aerobic Respiration (GO:0009060)",
+          "term": "Aerobic Respiration (GO:0009060)",
+          "overlap": "3/59",
+          "p_value": 0.00040793755585084526,
+          "z_score": 23.169642857142858,
+          "combined_score": 180.82507833829405,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.009659961322548016
+        },
+        {
+          "rank": 26,
+          "term_name": "Proton Motive Force-Driven ATP Synthesis (GO:0015986)",
+          "term": "Proton Motive Force-Driven ATP Synthesis (GO:0015986)",
+          "overlap": "3/60",
+          "p_value": 0.0004286704614008092,
+          "z_score": 22.762013729977117,
+          "combined_score": 176.51536687385337,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.009760496659587656
+        },
+        {
+          "rank": 27,
+          "term_name": "Negative Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001243)",
+          "term": "Negative Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001243)",
+          "overlap": "3/61",
+          "p_value": 0.0004500688229191515,
+          "z_score": 22.368440779610197,
+          "combined_score": 172.3736662291266,
+          "overlap_genes": [
+            "CDKN2D",
+            "SELENOS",
+            "SOD2"
+          ],
+          "genes": [
+            "CDKN2D",
+            "SELENOS",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.00986817567289399
+        },
+        {
+          "rank": 28,
+          "term_name": "Oxidative Phosphorylation (GO:0006119)",
+          "term": "Oxidative Phosphorylation (GO:0006119)",
+          "overlap": "3/63",
+          "p_value": 0.0004948973554784981,
+          "z_score": 21.620652173913044,
+          "combined_score": 164.55824688237502,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.010463544087259673
+        },
+        {
+          "rank": 29,
+          "term_name": "Vasodilation (GO:0042311)",
+          "term": "Vasodilation (GO:0042311)",
+          "overlap": "2/15",
+          "p_value": 0.0006049677843536496,
+          "z_score": 65.26350245499182,
+          "combined_score": 483.6244393301046,
+          "overlap_genes": [
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.012219409290584942
+        },
+        {
+          "rank": 30,
+          "term_name": "Aerobic Electron Transport Chain (GO:0019646)",
+          "term": "Aerobic Electron Transport Chain (GO:0019646)",
+          "overlap": "3/68",
+          "p_value": 0.0006192268221580207,
+          "z_score": 19.952508361204014,
+          "combined_score": 147.38995579964336,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.012219409290584942
+        },
+        {
+          "rank": 31,
+          "term_name": "Mitochondrial ATP Synthesis Coupled Electron Transport (GO:0042775)",
+          "term": "Mitochondrial ATP Synthesis Coupled Electron Transport (GO:0042775)",
+          "overlap": "3/70",
+          "p_value": 0.0006740407741845105,
+          "z_score": 19.35496430889033,
+          "combined_score": 141.33420656712474,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.012872004461846137
+        },
+        {
+          "rank": 32,
+          "term_name": "Sulfur Amino Acid Metabolic Process (GO:0000096)",
+          "term": "Sulfur Amino Acid Metabolic Process (GO:0000096)",
+          "overlap": "2/17",
+          "p_value": 0.0007811304131328766,
+          "z_score": 56.55602836879433,
+          "combined_score": 404.645286854624,
+          "overlap_genes": [
+            "MSRA",
+            "GCLC"
+          ],
+          "genes": [
+            "MSRA",
+            "GCLC"
+          ],
+          "adjusted_p_value": 0.014450912642958218
+        },
+        {
+          "rank": 33,
+          "term_name": "Regulation Of Oxidative Stress-Induced Intrinsic Apoptotic Signaling Pathway (GO:1902175)",
+          "term": "Regulation Of Oxidative Stress-Induced Intrinsic Apoptotic Signaling Pathway (GO:1902175)",
+          "overlap": "2/18",
+          "p_value": 0.0008773987974909651,
+          "z_score": 53.0186170212766,
+          "combined_score": 373.1741306231756,
+          "overlap_genes": [
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.01574000267014095
+        },
+        {
+          "rank": 34,
+          "term_name": "Negative Regulation Of Protein Modification Process (GO:0031400)",
+          "term": "Negative Regulation Of Protein Modification Process (GO:0031400)",
+          "overlap": "3/78",
+          "p_value": 0.0009239817749668942,
+          "z_score": 17.283478260869565,
+          "combined_score": 120.75652065518827,
+          "overlap_genes": [
+            "PTPA",
+            "PRNP",
+            "G6PD"
+          ],
+          "genes": [
+            "PTPA",
+            "PRNP",
+            "G6PD"
+          ],
+          "adjusted_p_value": 0.016088153258247098
+        },
+        {
+          "rank": 35,
+          "term_name": "Glutamate Metabolic Process (GO:0006536)",
+          "term": "Glutamate Metabolic Process (GO:0006536)",
+          "overlap": "2/20",
+          "p_value": 0.00108617897822587,
+          "z_score": 47.12293144208038,
+          "combined_score": 321.61821357029646,
+          "overlap_genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "adjusted_p_value": 0.01837194157456329
+        },
+        {
+          "rank": 36,
+          "term_name": "Cellular Respiration (GO:0045333)",
+          "term": "Cellular Respiration (GO:0045333)",
+          "overlap": "3/85",
+          "p_value": 0.0011852880325503546,
+          "z_score": 15.802492046659596,
+          "combined_score": 106.4735484379968,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.019491403201939164
+        },
+        {
+          "rank": 37,
+          "term_name": "Mitochondrial Respiratory Chain Complex Assembly (GO:0033108)",
+          "term": "Mitochondrial Respiratory Chain Complex Assembly (GO:0033108)",
+          "overlap": "3/90",
+          "p_value": 0.001397777981705794,
+          "z_score": 14.890554722638681,
+          "combined_score": 97.87370214736724,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.022364447707292703
+        },
+        {
+          "rank": 38,
+          "term_name": "Negative Regulation Of Oxidative Stress-Induced Cell Death (GO:1903202)",
+          "term": "Negative Regulation Of Oxidative Stress-Induced Cell Death (GO:1903202)",
+          "overlap": "2/23",
+          "p_value": 0.0014395683109597462,
+          "z_score": 40.38500506585613,
+          "combined_score": 264.25572654159276,
+          "overlap_genes": [
+            "TXN",
+            "SOD2"
+          ],
+          "genes": [
+            "TXN",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.02242695894968868
+        },
+        {
+          "rank": 39,
+          "term_name": "Cellular Response To Lipid (GO:0071396)",
+          "term": "Cellular Response To Lipid (GO:0071396)",
+          "overlap": "4/228",
+          "p_value": 0.002332124435766168,
+          "z_score": 7.828174603174603,
+          "combined_score": 47.44637566797378,
+          "overlap_genes": [
+            "SBNO2",
+            "SELENOS",
+            "FES",
+            "MGST1"
+          ],
+          "genes": [
+            "SBNO2",
+            "SELENOS",
+            "FES",
+            "MGST1"
+          ],
+          "adjusted_p_value": 0.035400452973681315
+        },
+        {
+          "rank": 40,
+          "term_name": "Glutamine Family Amino Acid Metabolic Process (GO:0009064)",
+          "term": "Glutamine Family Amino Acid Metabolic Process (GO:0009064)",
+          "overlap": "2/31",
+          "p_value": 0.002613000983112837,
+          "z_score": 29.23257520176082,
+          "combined_score": 173.85360581456808,
+          "overlap_genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "adjusted_p_value": 0.03867241455006999
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Glutathione metabolism",
+          "term": "Glutathione metabolism",
+          "overlap": "8/57",
+          "p_value": 1.0743729531842476e-12,
+          "z_score": 79.25136884021902,
+          "combined_score": 2184.1109752251327,
+          "overlap_genes": [
+            "G6PD",
+            "GCLC",
+            "GPX4",
+            "GPX3",
+            "GSR",
+            "MGST1",
+            "GCLM",
+            "PRDX6"
+          ],
+          "genes": [
+            "G6PD",
+            "GCLC",
+            "GPX4",
+            "GPX3",
+            "GSR",
+            "MGST1",
+            "GCLM",
+            "PRDX6"
+          ],
+          "adjusted_p_value": 7.305736081652883e-11
+        },
+        {
+          "rank": 2,
+          "term_name": "Ferroptosis",
+          "term": "Ferroptosis",
+          "overlap": "5/41",
+          "p_value": 5.018041660405475e-08,
+          "z_score": 62.86300505050505,
+          "combined_score": 1056.5788206834306,
+          "overlap_genes": [
+            "PRNP",
+            "GCLC",
+            "GPX4",
+            "GCLM",
+            "FTL"
+          ],
+          "genes": [
+            "PRNP",
+            "GCLC",
+            "GPX4",
+            "GCLM",
+            "FTL"
+          ],
+          "adjusted_p_value": 1.7061341645378614e-06
+        },
+        {
+          "rank": 3,
+          "term_name": "Diabetic cardiomyopathy",
+          "term": "Diabetic cardiomyopathy",
+          "overlap": "6/203",
+          "p_value": 9.872139578232794e-06,
+          "z_score": 13.991736512808405,
+          "combined_score": 161.2658720787217,
+          "overlap_genes": [
+            "PTPA",
+            "G6PD",
+            "NDUFA6",
+            "NDUFB4",
+            "GSR",
+            "NDUFS2"
+          ],
+          "genes": [
+            "PTPA",
+            "G6PD",
+            "NDUFA6",
+            "NDUFB4",
+            "GSR",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.00022376849710661003
+        },
+        {
+          "rank": 4,
+          "term_name": "Peroxisome",
+          "term": "Peroxisome",
+          "overlap": "4/82",
+          "p_value": 4.8319898665675556e-05,
+          "z_score": 22.647293447293446,
+          "combined_score": 225.06126302897326,
+          "overlap_genes": [
+            "PRDX1",
+            "CAT",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "PRDX1",
+            "CAT",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.0008214382773164844
+        },
+        {
+          "rank": 5,
+          "term_name": "Huntington disease",
+          "term": "Huntington disease",
+          "overlap": "6/306",
+          "p_value": 9.820765976385878e-05,
+          "z_score": 9.14,
+          "combined_score": 84.34781678395164,
+          "overlap_genes": [
+            "NDUFA6",
+            "GPX3",
+            "NDUFB4",
+            "NDUFS2",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "NDUFA6",
+            "GPX3",
+            "NDUFB4",
+            "NDUFS2",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.0013356241727884794
+        },
+        {
+          "rank": 6,
+          "term_name": "Pathways of neurodegeneration",
+          "term": "Pathways of neurodegeneration",
+          "overlap": "7/475",
+          "p_value": 0.00014780692133837807,
+          "z_score": 6.938390313390314,
+          "combined_score": 61.19385302894854,
+          "overlap_genes": [
+            "PRNP",
+            "NDUFA6",
+            "GPX3",
+            "NDUFB4",
+            "CAT",
+            "NDUFS2",
+            "SOD1"
+          ],
+          "genes": [
+            "PRNP",
+            "NDUFA6",
+            "GPX3",
+            "NDUFB4",
+            "CAT",
+            "NDUFS2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.0016751451085016181
+        },
+        {
+          "rank": 7,
+          "term_name": "Amyotrophic lateral sclerosis",
+          "term": "Amyotrophic lateral sclerosis",
+          "overlap": "6/364",
+          "p_value": 0.00025197085411545665,
+          "z_score": 7.636611666883201,
+          "combined_score": 63.278469718395044,
+          "overlap_genes": [
+            "NDUFA6",
+            "GPX3",
+            "NDUFB4",
+            "CAT",
+            "NDUFS2",
+            "SOD1"
+          ],
+          "genes": [
+            "NDUFA6",
+            "GPX3",
+            "NDUFB4",
+            "CAT",
+            "NDUFS2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.00244771686855015
+        },
+        {
+          "rank": 8,
+          "term_name": "Mineral absorption",
+          "term": "Mineral absorption",
+          "overlap": "3/60",
+          "p_value": 0.0004286704614008092,
+          "z_score": 22.762013729977117,
+          "combined_score": 176.51536687385337,
+          "overlap_genes": [
+            "ATOX1",
+            "HMOX2",
+            "FTL"
+          ],
+          "genes": [
+            "ATOX1",
+            "HMOX2",
+            "FTL"
+          ],
+          "adjusted_p_value": 0.003643698921906878
+        },
+        {
+          "rank": 9,
+          "term_name": "Prion disease",
+          "term": "Prion disease",
+          "overlap": "5/273",
+          "p_value": 0.0005332239765470021,
+          "z_score": 8.34591248303935,
+          "combined_score": 62.89954532479079,
+          "overlap_genes": [
+            "PRNP",
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2",
+            "SOD1"
+          ],
+          "genes": [
+            "PRNP",
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.004028803378355127
+        },
+        {
+          "rank": 10,
+          "term_name": "Hepatocellular carcinoma",
+          "term": "Hepatocellular carcinoma",
+          "overlap": "4/168",
+          "p_value": 0.0007581024132207066,
+          "z_score": 10.724661246612467,
+          "combined_score": 77.05338862976036,
+          "overlap_genes": [
+            "NQO1",
+            "TXNRD2",
+            "TXNRD1",
+            "MGST1"
+          ],
+          "genes": [
+            "NQO1",
+            "TXNRD2",
+            "TXNRD1",
+            "MGST1"
+          ],
+          "adjusted_p_value": 0.004828806190275965
+        },
+        {
+          "rank": 11,
+          "term_name": "Selenocompound metabolism",
+          "term": "Selenocompound metabolism",
+          "overlap": "2/17",
+          "p_value": 0.0007811304131328766,
+          "z_score": 56.55602836879433,
+          "combined_score": 404.645286854624,
+          "overlap_genes": [
+            "TXNRD2",
+            "TXNRD1"
+          ],
+          "genes": [
+            "TXNRD2",
+            "TXNRD1"
+          ],
+          "adjusted_p_value": 0.004828806190275965
+        },
+        {
+          "rank": 12,
+          "term_name": "Longevity regulating pathway",
+          "term": "Longevity regulating pathway",
+          "overlap": "3/151",
+          "p_value": 0.002001297258475488,
+          "z_score": 13.077733860342557,
+          "combined_score": 81.26451090679205,
+          "overlap_genes": [
+            "CAT",
+            "SOD2",
+            "SOD1"
+          ],
+          "genes": [
+            "CAT",
+            "SOD2",
+            "SOD1"
+          ],
+          "adjusted_p_value": 0.011340684464694432
+        },
+        {
+          "rank": 13,
+          "term_name": "Pentose phosphate pathway",
+          "term": "Pentose phosphate pathway",
+          "overlap": "2/30",
+          "p_value": 0.0024482381777960827,
+          "z_score": 30.278115501519757,
+          "combined_score": 182.0437366477304,
+          "overlap_genes": [
+            "G6PD",
+            "PFKP"
+          ],
+          "genes": [
+            "G6PD",
+            "PFKP"
+          ],
+          "adjusted_p_value": 0.012806168930010279
+        },
+        {
+          "rank": 14,
+          "term_name": "Parkinson disease",
+          "term": "Parkinson disease",
+          "overlap": "4/249",
+          "p_value": 0.003202563627659477,
+          "z_score": 7.149569160997732,
+          "combined_score": 41.06572148768784,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2",
+            "TXN"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2",
+            "TXN"
+          ],
+          "adjusted_p_value": 0.015555309048631746
+        },
+        {
+          "rank": 15,
+          "term_name": "FoxO signaling pathway",
+          "term": "FoxO signaling pathway",
+          "overlap": "3/131",
+          "p_value": 0.0040610885141995285,
+          "z_score": 10.100033967391305,
+          "combined_score": 55.61385980179671,
+          "overlap_genes": [
+            "CDKN2D",
+            "CAT",
+            "SOD2"
+          ],
+          "genes": [
+            "CDKN2D",
+            "CAT",
+            "SOD2"
+          ],
+          "adjusted_p_value": 0.01800692105714087
+        },
+        {
+          "rank": 16,
+          "term_name": "Oxidative phosphorylation",
+          "term": "Oxidative phosphorylation",
+          "overlap": "3/133",
+          "p_value": 0.0042369226016802045,
+          "z_score": 9.943645484949833,
+          "combined_score": 54.33126429412569,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.01800692105714087
+        },
+        {
+          "rank": 17,
+          "term_name": "Fluid shear stress and atherosclerosis",
+          "term": "Fluid shear stress and atherosclerosis",
+          "overlap": "3/139",
+          "p_value": 0.0047919944754590115,
+          "z_score": 9.50207800511509,
+          "combined_score": 50.74877965238215,
+          "overlap_genes": [
+            "NQO1",
+            "MGST1",
+            "TXN"
+          ],
+          "genes": [
+            "NQO1",
+            "MGST1",
+            "TXN"
+          ],
+          "adjusted_p_value": 0.019167977901836046
+        },
+        {
+          "rank": 18,
+          "term_name": "Retrograde endocannabinoid signaling",
+          "term": "Retrograde endocannabinoid signaling",
+          "overlap": "3/148",
+          "p_value": 0.005703747307598253,
+          "z_score": 8.90824587706147,
+          "combined_score": 46.02562730154512,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.02154748982870451
+        },
+        {
+          "rank": 19,
+          "term_name": "Non-alcoholic fatty liver disease",
+          "term": "Non-alcoholic fatty liver disease",
+          "overlap": "3/155",
+          "p_value": 0.006480153064499196,
+          "z_score": 8.4949942791762,
+          "combined_score": 42.80637087353994,
+          "overlap_genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "genes": [
+            "NDUFA6",
+            "NDUFB4",
+            "NDUFS2"
+          ],
+          "adjusted_p_value": 0.022721849903254102
+        },
+        {
+          "rank": 20,
+          "term_name": "Cysteine and methionine metabolism",
+          "term": "Cysteine and methionine metabolism",
+          "overlap": "2/50",
+          "p_value": 0.006682897030368853,
+          "z_score": 17.64450354609929,
+          "combined_score": 88.36726791367238,
+          "overlap_genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "genes": [
+            "GCLC",
+            "GCLM"
+          ],
+          "adjusted_p_value": 0.022721849903254102
+        },
+        {
+          "rank": 21,
+          "term_name": "Pathways in cancer",
+          "term": "Pathways in cancer",
+          "overlap": "5/531",
+          "p_value": 0.00944041151458335,
+          "z_score": 4.196552022122364,
+          "combined_score": 19.56749689141194,
+          "overlap_genes": [
+            "NQO1",
+            "EGLN2",
+            "TXNRD2",
+            "TXNRD1",
+            "MGST1"
+          ],
+          "genes": [
+            "NQO1",
+            "EGLN2",
+            "TXNRD2",
+            "TXNRD1",
+            "MGST1"
+          ],
+          "adjusted_p_value": 0.0305689515710318
+        },
+        {
+          "rank": 22,
+          "term_name": "Central carbon metabolism in cancer",
+          "term": "Central carbon metabolism in cancer",
+          "overlap": "2/70",
+          "p_value": 0.012771842039635313,
+          "z_score": 12.442428035043804,
+          "combined_score": 54.25536138345729,
+          "overlap_genes": [
+            "G6PD",
+            "PFKP"
+          ],
+          "genes": [
+            "G6PD",
+            "PFKP"
+          ],
+          "adjusted_p_value": 0.03947660266796369
+        },
+        {
+          "rank": 23,
+          "term_name": "Thyroid hormone synthesis",
+          "term": "Thyroid hormone synthesis",
+          "overlap": "2/75",
+          "p_value": 0.014562409831506182,
+          "z_score": 11.587292334596327,
+          "combined_score": 49.006271499764715,
+          "overlap_genes": [
+            "GPX3",
+            "GSR"
+          ],
+          "genes": [
+            "GPX3",
+            "GSR"
+          ],
+          "adjusted_p_value": 0.0430540812409748
+        }
+      ]
+    },
+    "significant_terms_total": 63,
+    "execution_time": 1.62,
+    "dataframe": "    rank  ...                     library\n1      2  ...  GO_Biological_Process_2023\n2      3  ...  GO_Biological_Process_2023\n0      1  ...  GO_Biological_Process_2023\n40     1  ...             KEGG_2021_Human\n10    11  ...  GO_Biological_Process_2023\n..   ...  ...                         ...\n57    18  ...             KEGG_2021_Human\n16    17  ...  GO_Biological_Process_2023\n58    19  ...             KEGG_2021_Human\n53    14  ...             KEGG_2021_Human\n60    21  ...             KEGG_2021_Human\n\n[63 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "42561509",
+      "pmcid": "",
+      "doi": "10.1016/j.phymed.2026.158672",
+      "url": "https://doi.org/10.1016/j.phymed.2026.158672",
+      "title": "Loki Zupa alleviates type 2-high acute asthma airway inflammation by regulating the glutathione metabolism-ferroptosis axis. ",
+      "abstract": "Oxidative stress-induced disruption of glutathione metabolism triggers ferroptosis in airway epithelial cells, thereby exacerbating type 2-high acute asthma. Loki Zupa (LKZP) is a classic Uyghur formula used for asthma with confirmed anti-inflammatory and antioxidant effects, but its mechanism via the glutathione-ferroptosis axis remains unclear. This study aimed to characterize LKZP's efficacy against type 2-high acute asthma and to elucidate its mechanism, focusing on the glutathione metabolism-ferroptosis axis. An OVA-induced type 2-high acute asthma mouse model was established to evaluate the anti-inflammatory and antioxidant effects of LKZP. UHPLCHRMS was used to identify its active components, and network pharmacology combined with proteomics and metabolomics was applied to predict the underlying mechanisms. An RSL3-induced ferroptosis cell model was employed to verify LKZP's protective effects on cell viability, glutathione (GSH) and malondialdehyde (MDA) levels, as well as the expression of ferroptosis-related proteins. Molecular docking and surface plasmon resonance (SPR) assay were performed to collectively evaluated the binding affinity between Linarin (an active component of LKZP) and GSTM1/GSTM2. LKZP significantly alleviated airway inflammation and oxidative stress injury in asthmatic mice. Its anti-asthmatic effect was linked to the glutathione metabolism-ferroptosis axis. In vivo and in vitro experiments confirmed that LKZP restored glutathione metabolic homeostasis, scavenged excessive reactive oxygen species (ROS), reduced iron overload and lipid peroxidation, and inhibited ferroptosis in lung tissue and airway epithelial cells. Molecular docking and molecular dynamics simulation predicted stable binding of Linarin to GSTM1 and GSTM2. SPR analysis further confirmed these interactions and demonstrated a higher binding affinity of Linarin toward GSTM1 than GSTM2. LKZP alleviated airway inflammation and oxidative stress in type 2-high acute asthma by regulating the glutathione metabolism-ferroptosis axis, providing novel mechanistic insights for its asthma therapy.",
+      "authors": "Zhang H, Tang W, Wang N, Chen M, Yalikun M, Weng Q, Yang K, Chen W, Yang F, He J, Zheng Q, Wei Y, Gao Z, Dong J, Wang S.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "158672",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-07-30",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates oxidative stress, glutathione metabolism, and ferroptosis"
+    },
+    {
+      "pmid": "42471866",
+      "pmcid": "",
+      "doi": "10.1016/j.jot.2026.101174",
+      "url": "https://doi.org/10.1016/j.jot.2026.101174",
+      "title": "Cysteine metabolism dysregulation promotes ferroptosis in osteoarthritis: Insights from multi-species bioinformatics and experimental validation.",
+      "abstract": "<h4>Objective</h4>Osteoarthritis (OA) was traditionally viewed as a mechanically driven disorder. However, emerging evidence implicated metabolic dysregulation in its pathogenesis. This study investigated the novel interaction among cysteine metabolism, ferroptosis, and OA progression, while evaluating the therapeutic efficacy of L-cysteine supplementation.<h4>Methods</h4>Integrated transcriptomic analyses of murine (GSE112641), rat (GSE118559), and human (GSE114007) OA cartilage datasets identified conserved metabolic perturbations. Proteomic and metabolomic profiling of human OA cartilage validated pathway-level dysregulation. Mechanistic validation employed IL-1β-stimulated inflammatory chondrocytes under cysteine-depleted conditions, with parallel assessment of ferroptosis markers, including expression of GPX4, SLC7A11 and TFRC, glutathione metabolism, iron accumulation, and lipid peroxidation. Therapeutic potential was further tested in a surgery-induced OA murine model receiving L-cysteine administration.<h4>Results</h4>Cross-species analysis revealed cysteine/glutathione metabolism as the most consistently dysregulated pathway in OA. Multi-omics profiling demonstrated dysregulation of cysteine/glutathione metabolism and ferroptosis in OA. <i>In vitro</i> cysteine deprivation triggered ferroptosis hallmarks in inflammatory chondrocytes, including viability reduction, malondialdehyde (MDA) increase, and glutathione depletion. L-cysteine supplementation reversed these effects, restoring viability and normalizing redox balance. The <i>in vivo</i> study results further demonstrated that L-cysteine supplementation reduces cartilage degeneration severity by protecting against ferroptosis and lipid peroxidation.<h4>Conclusion</h4>This study establishes cysteine metabolism as a master regulator of ferroptosis in OA pathogenesis. The mechanistic chain from cysteine depletion to glutathione collapse, iron overload, and lipid peroxidation explains chondrocyte loss patterns observed clinically. L-cysteine supplementation emerges as a dual-action therapy, simultaneously addressing oxidative stress and ferroptosis.<h4>Translational potential</h4>This study underscores the translational potential of L-cysteine supplementation as a novel therapy for OA. By targeting the dysregulated cysteine/glutathione metabolism and its role in ferroptosis, L-cysteine presents a dual-action approach to mitigate cartilage degeneration. Future clinical trials should evaluate its efficacy and safety in diverse patient populations, focusing on both clinical outcomes and metabolic markers. This research paves the way for a redefined management strategy for OA as a metabolically driven disorder.",
+      "authors": "Zheng L, Yang Z, Chen S, Cai G, Hou N, Lin W, Cheung CHP, Zhou H, Chen J, Wang Y, Chen H, Wang Y, Tortorella MD, Zhu J, Feng L, Li G.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "101174",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-07-10",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but focuses on cysteine metabolism and ferroptosis, with indirect links to oxidative stress and glutathione."
+    },
+    {
+      "pmid": "42056310",
+      "pmcid": "",
+      "doi": "10.1038/s41598-026-46788-0",
+      "url": "https://doi.org/10.1038/s41598-026-46788-0",
+      "title": "SAC regulates glutathione metabolism via the Keap1/Nrf2/GPX4 signaling pathway to inhibit ferroptosis and alleviate ulcerative colitis.",
+      "abstract": "This study aims to investigate the molecular mechanism by which sulfurized garlic (SAC) inhibits ferroptosis through targeting Keap1/Nrf2/GPX4 signaling pathway, thereby restoring intestinal epithelial cell barrier function and alleviating ulcerative colitis (UC). Oxidative stress was induced in cells using H₂O₂ and detected by DCFH-DA. CETSA and Western blotting were employed to assess SAC-target protein binding and antioxidant capacity using DPPH and total antioxidant assays. In vivo, C57BL/6 mice were divided into control, DSS, and SAC groups. DAI was scored based on weight loss, stool consistency, and bleeding. Histology (H&E), IHC (MUC2 and Nrf2), ROS (ELISA), gene expression (qRT-PCR), and protein levels (Western blotting) were analyzed in colon tissues. Serum metabolite profiles were assessed by UHPLC-QTOF-MS for differential metabolite identification and KEGG pathway enrichment. SAC can effectively alleviate UC, which is based on SAC elevating the expression of antioxidant enzymes like GPX4 and NQO1, while reducing ROS and MDA levels. Molecular docking and CETSA analyses revealed that SAC interacts with Keap1 and GPX4 proteins, activating the Keap1/Nrf2/GPX4 pathway. Metabolomics enrichment indicated that SAC modulates the glutathione metabolism pathway by regulating GSH levels, thereby influencing GPX4 stability and activity. SAC can regulate glutathione metabolism through Keap1/Nrf2/GPX4 signaling pathway, inhibit ferroptosis, alleviate intestinal epithelial cell damage, and repair intestinal barrier function.",
+      "authors": "Wang X, Guo S, Zhu J, Hu X, Dai W.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "19992",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-04-29",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates glutathione metabolism via GPX4 signaling pathway to inhibit ferroptosis, induced by oxidative stress."
+    },
+    {
+      "pmid": "42530249",
+      "pmcid": "",
+      "doi": "10.31083/fbl50880",
+      "url": "https://doi.org/10.31083/fbl50880",
+      "title": "MGST1 Suppresses Ferroptosis in Nucleus Pulposus Cells and Attenuates Intervertebral Disc Degeneration by Regulating GPX4.",
+      "abstract": "<h4>Background</h4>Intervertebral disc degeneration (IDD) is a major pathological contributor to low back pain, and its progression is closely associated with oxidative stress and cell death. Ferroptosis is a form of programmed cell death characterized by iron-dependent lipid peroxidation, which has recently been confirmed to participate in IDD progression. Microsomal glutathione S-transferase 1 (MGST1) plays an important role in glutathione metabolism and cellular antioxidant defense, but its function in IDD remains unclear. This study aimed to investigate the expression profile of MGST1 in IDD and to elucidate its molecular mechanism in delaying degeneration by regulating ferroptosis.<h4>Methods</h4>Differentially expressed ferroptosis-related genes associated with intervertebral disc degeneration were screened through bioinformatics analysis. MGST1 expression changes were validated using a needle puncture-induced rat IDD model and a degenerated nucleus pulposus (NP) cell model. MGST1 knockdown and overexpression strategies were employed to evaluate its effects on the extracellular matrix metabolism, apoptosis, and senescence of nucleus pulposus cells. Further examinations of ferroptosis-related indicators were conducted, including levels of lipid peroxidation, reactive oxygen species generation, intracellular Fe<sup>2+</sup> content, and changes in mitochondrial membrane potential. For <i>in vivo</i> experiments, the therapeutic effect of MGST1 overexpression was assessed by intradiscal injection of an MGST1-overexpressing lentivirus into the rat intervertebral disc degeneration model.<h4>Results</h4>Bioinformatics analysis indicated that MGST1 is a key candidate gene in IDD. MGST1 expression was consistently upregulated with increasing degeneration severity in rat disc tissues and degenerated NP cells. Knockdown of MGST1 significantly promoted extracellular matrix degradation and increased apoptosis and senescence levels in NP cells, while MGST1 overexpression markedly improved these changes. Mechanistic studies revealed that MGST1 deficiency significantly enhanced ferroptosis characteristics in NP cells, including accumulation of lipid peroxides and ROS, increased Fe<sup>2+</sup> content, and decreased mitochondrial membrane potential. In vivo experiments demonstrated that MGST1 overexpression significantly alleviated the degree of IDD in rats.<h4>Conclusion</h4>MGST1 exhibits compensatory upregulation during the progression of intervertebral disc degeneration and delays its progression by inhibiting ferroptosis in nucleus pulposus cells. This study reveals a novel mechanism by which MGST1 regulates ferroptosis in IDD and provides a potential molecular target for the prevention and treatment of IDD.",
+      "authors": "Huo Z, Li D, Kuang Y, Xu B.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "50880",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-07-01",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates oxidative stress, glutathione metabolism (MGST1), and ferroptosis in a specific context."
+    },
+    {
+      "pmid": "42193211",
+      "pmcid": "PMC13203482",
+      "doi": "10.3390/antiox15050589",
+      "url": "https://doi.org/10.3390/antiox15050589",
+      "title": "Tacrolimus Inhibits Hepatic Ferroptosis Through Modulating SIRT7-Dependent NRF2 Activation in Diabetes.",
+      "abstract": "Hepatic lipotoxicity in type 2 diabetes promotes oxidative stress and ferroptosis, driving progressive liver injury, for which effective targeted therapies remain lacking. Here, we identify tacrolimus (TAC), a clinically established immunosuppressant, as an unexpected suppressor of hepatic ferroptosis in db/db diabetic mice. TAC administration markedly alleviated liver injury, fibrosis, and inflammation, accompanied by reduced oxidative stress and ferroptosis signatures. Transcriptomic profiling revealed enrichment of glutathione metabolism pathways in livers of TAC-treated db/db diabetic mice. Mechanistically, TAC inhibited ferroptosis in primary hepatocytes by activating the NRF2 pathway, increasing NRF2 protein abundance and its nuclear translocation in an SIRT7 deacetylase activity-dependent manner. Together, these findings uncover a previously unrecognized role of TAC in repressing ferroptosis through the SIRT7-NRF2 axis, highlighting ferroptosis modulation by TAC as a potential therapeutic strategy for diabetic liver diseases.",
+      "authors": "Wang S, Liu W, Cui F, Guo X, Li J.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "589",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2026-05-06",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but focuses on NRF2 activation and ferroptosis, with oxidative stress as a contributing factor, but only indirect mention of glutathione metabolism."
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 26.45915150642395,
+  "phase": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Hydrogen Peroxide Catabolic Process (GO:0042744) -> genes: [PRDX2, PRDX4, GPX3, PRDX1, CAT, MPO]\n- Removal Of Superoxide Radicals (GO:0019430) -> genes: [NQO1, PRDX2, PRDX1, SOD2, SOD1]\n- Cellular Response To Superoxide (GO:0071451) -> genes: [NQO1, PRDX2, PRDX1, SOD2, SOD1]\n- Cellular Response To Chemical Stress (GO:0062197) -> genes: [NQO1, MSRA, PRDX2, G6PD, SELENOS, SRXN1, GSR, SOD2]\n- Cellular Response To Oxidative Stress (GO:0034599) -> genes: [NQO1, MSRA, PRDX2, G6PD, SELENOS, SRXN1, GSR, SOD2]\n- Superoxide Metabolic Process (GO:0006801) -> genes: [PRDX2, NQO1, PRDX1, SOD2, SOD1]\n- Response To Reactive Oxygen Species (GO:0000302) -> genes: [TXNRD2, STK25, CAT, GLRX2, SOD1]\n- Negative Regulation Of Apoptotic Process (GO:0043066) -> genes: [CDKN2D, PRDX2, GCLC, CAT, OXSR1, SOD2, MPO, SOD1, LAMTOR5]\n- Response To Hydrogen Peroxide (GO:0042542) -> genes: [STK25, CAT, GLRX2, SOD1]\n- Mitochondrial Electron Transport, NADH To Ubiquinone (GO:0006120) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Glutathione Biosynthetic Process (GO:0006750) -> genes: [GCLC, GCLM]\n- Nonribosomal Peptide Biosynthetic Process (GO:0019184) -> genes: [GCLC, GCLM]\n- Regulation Of Neuron Apoptotic Process (GO:0043523) -> genes: [PRNP, EGLN2, SOD2, SOD1]\n- Response To Vitamin D (GO:0033280) -> genes: [CDKN2D, FES]\n- Myelin Maintenance (GO:0043217) -> genes: [PRDX6, SOD1]\n- Blood Circulation (GO:0008015) -> genes: [GCLC, GCLM, SOD1]\n- Regulation Of Apoptotic Process (GO:0042981) -> genes: [PTPA, PRDX2, GCLC, EGLN2, CAT, OXSR1, MPO, SOD1]\n- NADH Dehydrogenase Complex Assembly (GO:0010257) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Proton Motive Force-Driven Mitochondrial ATP Synthesis (GO:0042776) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Mitochondrial Respiratory Chain Complex I Assembly (GO:0032981) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Negative Regulation Of Programmed Cell Death (GO:0043069) -> genes: [PRDX2, GCLC, GPX4, CAT, OXSR1, MPO]\n- Vascular Process In Circulatory System (GO:0003018) -> genes: [GCLC, GCLM]\n- Regulation Of Tube Diameter (GO:0035296) -> genes: [GCLC, GCLM]\n- Myelination In Peripheral Nervous System (GO:0022011) -> genes: [PRDX6, SOD1]\n- Aerobic Respiration (GO:0009060) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Proton Motive Force-Driven ATP Synthesis (GO:0015986) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Negative Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001243) -> genes: [CDKN2D, SELENOS, SOD2]\n- Oxidative Phosphorylation (GO:0006119) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Vasodilation (GO:0042311) -> genes: [SOD2, SOD1]\n- Aerobic Electron Transport Chain (GO:0019646) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Mitochondrial ATP Synthesis Coupled Electron Transport (GO:0042775) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Sulfur Amino Acid Metabolic Process (GO:0000096) -> genes: [MSRA, GCLC]\n- Regulation Of Oxidative Stress-Induced Intrinsic Apoptotic Signaling Pathway (GO:1902175) -> genes: [SOD2, SOD1]\n- Negative Regulation Of Protein Modification Process (GO:0031400) -> genes: [PTPA, PRNP, G6PD]\n- Glutamate Metabolic Process (GO:0006536) -> genes: [GCLC, GCLM]\n- Cellular Respiration (GO:0045333) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Mitochondrial Respiratory Chain Complex Assembly (GO:0033108) -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Negative Regulation Of Oxidative Stress-Induced Cell Death (GO:1903202) -> genes: [TXN, SOD2]\n- Cellular Response To Lipid (GO:0071396) -> genes: [SBNO2, SELENOS, FES, MGST1]\n- Glutamine Family Amino Acid Metabolic Process (GO:0009064) -> genes: [GCLC, GCLM]\n\n[KEGG_2021_Human]\n- Glutathione metabolism -> genes: [G6PD, GCLC, GPX4, GPX3, GSR, MGST1, GCLM, PRDX6]\n- Ferroptosis -> genes: [PRNP, GCLC, GPX4, GCLM, FTL]\n- Diabetic cardiomyopathy -> genes: [PTPA, G6PD, NDUFA6, NDUFB4, GSR, NDUFS2]\n- Peroxisome -> genes: [PRDX1, CAT, SOD2, SOD1]\n- Huntington disease -> genes: [NDUFA6, GPX3, NDUFB4, NDUFS2, SOD2, SOD1]\n- Pathways of neurodegeneration -> genes: [PRNP, NDUFA6, GPX3, NDUFB4, CAT, NDUFS2, SOD1]\n- Amyotrophic lateral sclerosis -> genes: [NDUFA6, GPX3, NDUFB4, CAT, NDUFS2, SOD1]\n- Mineral absorption -> genes: [ATOX1, HMOX2, FTL]\n- Prion disease -> genes: [PRNP, NDUFA6, NDUFB4, NDUFS2, SOD1]\n- Hepatocellular carcinoma -> genes: [NQO1, TXNRD2, TXNRD1, MGST1]\n- Selenocompound metabolism -> genes: [TXNRD2, TXNRD1]\n- Longevity regulating pathway -> genes: [CAT, SOD2, SOD1]\n- Pentose phosphate pathway -> genes: [G6PD, PFKP]\n- Parkinson disease -> genes: [NDUFA6, NDUFB4, NDUFS2, TXN]\n- FoxO signaling pathway -> genes: [CDKN2D, CAT, SOD2]\n- Oxidative phosphorylation -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Fluid shear stress and atherosclerosis -> genes: [NQO1, MGST1, TXN]\n- Retrograde endocannabinoid signaling -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Non-alcoholic fatty liver disease -> genes: [NDUFA6, NDUFB4, NDUFS2]\n- Cysteine and methionine metabolism -> genes: [GCLC, GCLM]\n- Pathways in cancer -> genes: [NQO1, EGLN2, TXNRD2, TXNRD1, MGST1]\n- Central carbon metabolism in cancer -> genes: [G6PD, PFKP]\n- Thyroid hormone synthesis -> genes: [GPX3, GSR]\n\n=== ABSTRACTS ===\n[1] Loki Zupa alleviates type 2-high acute asthma airway inflammation by regulating the glutathione metabolism-ferroptosis axis. \nOxidative stress-induced disruption of glutathione metabolism triggers ferroptosis in airway epithelial cells, thereby exacerbating type 2-high acute asthma. Loki Zupa (LKZP) is a classic Uyghur formula used for asthma with confirmed anti-inflammatory and antioxidant effects, but its mechanism via the glutathione-ferroptosis axis remains unclear. This study aimed to characterize LKZP's efficacy against type 2-high acute asthma and to elucidate its mechanism, focusing on the glutathione metabolism-ferroptosis axis. An OVA-induced type 2-high acute asthma mouse model was established to evaluate the anti-inflammatory and antioxidant effects of LKZP. UHPLCHRMS was used to identify its active components, and network pharmacology combined with proteomics and metabolomics was applied to predict the underlying mechanisms. An RSL3-induced ferroptosis cell model was employed to verify LKZP's protective effects on cell viability, glutathione (GSH) and malondialdehyde (MDA) levels, as well as the expression of ferroptosis-related proteins. Molecular docking and surface plasmon resonance (SPR) assay were performed to collectively evaluated the binding affinity between Linarin (an active component of LKZP) and GSTM1/GSTM2. LKZP significantly alleviated airway inflammation and oxidative stress injury in asthmatic mice. Its anti-asthmatic effect was linked to the glutathione metabolism-ferroptosis axis. In vivo and in vitro experiments confirmed that LKZP restored glutathione metabolic homeostasis, scavenged excessive reactive oxygen species (ROS), reduced iron overload and lipid peroxidation, and inhibited ferroptosis in lung tissue and airway epithelial cells. Molecular docking and molecular dynamics simulation predicted stable binding of Linarin to GSTM1 and GSTM2. SPR analysis further confirmed these interactions and demonstrated a higher binding affinity of Linarin toward GSTM1 than GSTM2. LKZP alleviated airway inflammation and oxidative stress in type 2-high acute asthma by regulating the glutathione metabolism-ferroptosis axis, providing novel mechanistic insights for its asthma therapy.\n[2] Cysteine metabolism dysregulation promotes ferroptosis in osteoarthritis: Insights from multi-species bioinformatics and experimental validation.\n<h4>Objective</h4>Osteoarthritis (OA) was traditionally viewed as a mechanically driven disorder. However, emerging evidence implicated metabolic dysregulation in its pathogenesis. This study investigated the novel interaction among cysteine metabolism, ferroptosis, and OA progression, while evaluating the therapeutic efficacy of L-cysteine supplementation.<h4>Methods</h4>Integrated transcriptomic analyses of murine (GSE112641), rat (GSE118559), and human (GSE114007) OA cartilage datasets identified conserved metabolic perturbations. Proteomic and metabolomic profiling of human OA cartilage validated pathway-level dysregulation. Mechanistic validation employed IL-1β-stimulated inflammatory chondrocytes under cysteine-depleted conditions, with parallel assessment of ferroptosis markers, including expression of GPX4, SLC7A11 and TFRC, glutathione metabolism, iron accumulation, and lipid peroxidation. Therapeutic potential was further tested in a surgery-induced OA murine model receiving L-cysteine administration.<h4>Results</h4>Cross-species analysis revealed cysteine/glutathione metabolism as the most consistently dysregulated pathway in OA. Multi-omics profiling demonstrated dysregulation of cysteine/glutathione metabolism and ferroptosis in OA. <i>In vitro</i> cysteine deprivation triggered ferroptosis hallmarks in inflammatory chondrocytes, including viability reduction, malondialdehyde (MDA) increase, and glutathione depletion. L-cysteine supplementation reversed these effects, restoring viability and normalizing redox balance. The <i>in vivo</i> study results further demonstrated that L-cysteine supplementation reduces cartilage degeneration severity by protecting against ferroptosis and lipid peroxidation.<h4>Conclusion</h4>This study establishes cysteine metabolism as a master regulator of ferroptosis in OA pathogenesis. The mechanistic chain from cysteine depletion to glutathione collapse, iron overload, and lipid peroxidation explains chondrocyte loss patterns observed clinically. L-cysteine supplementation emerges as a dual-action therapy, simultaneously addressing oxidative stress and ferroptosis.<h4>Translational potential</h4>This study underscores the translational potential of L-cysteine supplementation as a novel therapy for OA. By targeting the dysregulated cysteine/glutathione metabolism and its role in ferroptosis, L-cysteine presents a dual-action approach to mitigate cartilage degeneration. Future clinical trials should evaluate its efficacy and safety in diverse patient populations, focusing on both clinical outcomes and metabolic markers. This research paves the way for a redefined management strategy for OA as a metabolically driven disorder.\n[3] SAC regulates glutathione metabolism via the Keap1/Nrf2/GPX4 signaling pathway to inhibit ferroptosis and alleviate ulcerative colitis.\nThis study aims to investigate the molecular mechanism by which sulfurized garlic (SAC) inhibits ferroptosis through targeting Keap1/Nrf2/GPX4 signaling pathway, thereby restoring intestinal epithelial cell barrier function and alleviating ulcerative colitis (UC). Oxidative stress was induced in cells using H₂O₂ and detected by DCFH-DA. CETSA and Western blotting were employed to assess SAC-target protein binding and antioxidant capacity using DPPH and total antioxidant assays. In vivo, C57BL/6 mice were divided into control, DSS, and SAC groups. DAI was scored based on weight loss, stool consistency, and bleeding. Histology (H&E), IHC (MUC2 and Nrf2), ROS (ELISA), gene expression (qRT-PCR), and protein levels (Western blotting) were analyzed in colon tissues. Serum metabolite profiles were assessed by UHPLC-QTOF-MS for differential metabolite identification and KEGG pathway enrichment. SAC can effectively alleviate UC, which is based on SAC elevating the expression of antioxidant enzymes like GPX4 and NQO1, while reducing ROS and MDA levels. Molecular docking and CETSA analyses revealed that SAC interacts with Keap1 and GPX4 proteins, activating the Keap1/Nrf2/GPX4 pathway. Metabolomics enrichment indicated that SAC modulates the glutathione metabolism pathway by regulating GSH levels, thereby influencing GPX4 stability and activity. SAC can regulate glutathione metabolism through Keap1/Nrf2/GPX4 signaling pathway, inhibit ferroptosis, alleviate intestinal epithelial cell damage, and repair intestinal barrier function.\n[4] MGST1 Suppresses Ferroptosis in Nucleus Pulposus Cells and Attenuates Intervertebral Disc Degeneration by Regulating GPX4.\n<h4>Background</h4>Intervertebral disc degeneration (IDD) is a major pathological contributor to low back pain, and its progression is closely associated with oxidative stress and cell death. Ferroptosis is a form of programmed cell death characterized by iron-dependent lipid peroxidation, which has recently been confirmed to participate in IDD progression. Microsomal glutathione S-transferase 1 (MGST1) plays an important role in glutathione metabolism and cellular antioxidant defense, but its function in IDD remains unclear. This study aimed to investigate the expression profile of MGST1 in IDD and to elucidate its molecular mechanism in delaying degeneration by regulating ferroptosis.<h4>Methods</h4>Differentially expressed ferroptosis-related genes associated with intervertebral disc degeneration were screened through bioinformatics analysis. MGST1 expression changes were validated using a needle puncture-induced rat IDD model and a degenerated nucleus pulposus (NP) cell model. MGST1 knockdown and overexpression strategies were employed to evaluate its effects on the extracellular matrix metabolism, apoptosis, and senescence of nucleus pulposus cells. Further examinations of ferroptosis-related indicators were conducted, including levels of lipid peroxidation, reactive oxygen species generation, intracellular Fe<sup>2+</sup> content, and changes in mitochondrial membrane potential. For <i>in vivo</i> experiments, the therapeutic effect of MGST1 overexpression was assessed by intradiscal injection of an MGST1-overexpressing lentivirus into the rat intervertebral disc degeneration model.<h4>Results</h4>Bioinformatics analysis indicated that MGST1 is a key candidate gene in IDD. MGST1 expression was consistently upregulated with increasing degeneration severity in rat disc tissues and degenerated NP cells. Knockdown of MGST1 significantly promoted extracellular matrix degradation and increased apoptosis and senescence levels in NP cells, while MGST1 overexpression markedly improved these changes. Mechanistic studies revealed that MGST1 deficiency significantly enhanced ferroptosis characteristics in NP cells, including accumulation of lipid peroxides and ROS, increased Fe<sup>2+</sup> content, and decreased mitochondrial membrane potential. In vivo experiments demonstrated that MGST1 overexpression significantly alleviated the degree of IDD in rats.<h4>Conclusion</h4>MGST1 exhibits compensatory upregulation during the progression of intervertebral disc degeneration and delays its progression by inhibiting ferroptosis in nucleus pulposus cells. This study reveals a novel mechanism by which MGST1 regulates ferroptosis in IDD and provides a potential molecular target for the prevention and treatment of IDD.\n[5] Tacrolimus Inhibits Hepatic Ferroptosis Through Modulating SIRT7-Dependent NRF2 Activation in Diabetes.\nHepatic lipotoxicity in type 2 diabetes promotes oxidative stress and ferroptosis, driving progressive liver injury, for which effective targeted therapies remain lacking. Here, we identify tacrolimus (TAC), a clinically established immunosuppressant, as an unexpected suppressor of hepatic ferroptosis in db/db diabetic mice. TAC administration markedly alleviated liver injury, fibrosis, and inflammation, accompanied by reduced oxidative stress and ferroptosis signatures. Transcriptomic profiling revealed enrichment of glutathione metabolism pathways in livers of TAC-treated db/db diabetic mice. Mechanistically, TAC inhibited ferroptosis in primary hepatocytes by activating the NRF2 pathway, increasing NRF2 protein abundance and its nuclear translocation in an SIRT7 deacetylase activity-dependent manner. Together, these findings uncover a previously unrecognized role of TAC in repressing ferroptosis through the SIRT7-NRF2 axis, highlighting ferroptosis modulation by TAC as a potential therapeutic strategy for diabetic liver diseases.",
+  "judge_claims": [
+    {
+      "claim": "PRDX2 is an enzyme that detoxifies hydrogen peroxide.",
+      "label": "GROUNDED",
+      "why": "PRDX2 appears in the 'Hydrogen Peroxide Catabolic Process' term, confirming its role in detoxifying hydrogen peroxide."
+    },
+    {
+      "claim": "PRDX4 is an enzyme that detoxifies hydrogen peroxide.",
+      "label": "GROUNDED",
+      "why": "PRDX4 appears in the 'Hydrogen Peroxide Catabolic Process' term, confirming its role in detoxifying hydrogen peroxide."
+    },
+    {
+      "claim": "GPX3 is an enzyme that detoxifies hydrogen peroxide.",
+      "label": "GROUNDED",
+      "why": "GPX3 appears in the 'Hydrogen Peroxide Catabolic Process' term, confirming its role in detoxifying hydrogen peroxide."
+    },
+    {
+      "claim": "PRDX1 is an enzyme that detoxifies hydrogen peroxide.",
+      "label": "GROUNDED",
+      "why": "PRDX1 appears in the 'Hydrogen Peroxide Catabolic Process' term, confirming its role in detoxifying hydrogen peroxide."
+    },
+    {
+      "claim": "CAT is an enzyme that detoxifies hydrogen peroxide.",
+      "label": "GROUNDED",
+      "why": "CAT appears in the 'Hydrogen Peroxide Catabolic Process' term, confirming its role in detoxifying hydrogen peroxide."
+    },
+    {
+      "claim": "MPO is an enzyme that detoxifies hydrogen peroxide.",
+      "label": "UNSUPPORTED",
+      "why": "MPO (myeloperoxidase) produces hydrogen peroxide and hypochlorous acid rather than detoxifying hydrogen peroxide; it is a pro-oxidant enzyme, not an antioxidant."
+    },
+    {
+      "claim": "NQO1 neutralizes superoxide radicals.",
+      "label": "GROUNDED",
+      "why": "NQO1 appears in the 'Removal Of Superoxide Radicals' term, confirming its role in neutralizing superoxide radicals."
+    },
+    {
+      "claim": "PRDX2 neutralizes superoxide radicals.",
+      "label": "GROUNDED",
+      "why": "PRDX2 appears in the 'Removal Of Superoxide Radicals' term, confirming its role in neutralizing superoxide radicals."
+    },
+    {
+      "claim": "PRDX1 neutralizes superoxide radicals.",
+      "label": "GROUNDED",
+      "why": "PRDX1 appears in the 'Removal Of Superoxide Radicals' term, confirming its role in neutralizing superoxide radicals."
+    },
+    {
+      "claim": "SOD2 neutralizes superoxide radicals.",
+      "label": "GROUNDED",
+      "why": "SOD2 appears in the 'Removal Of Superoxide Radicals' term, confirming its role in neutralizing superoxide radicals."
+    },
+    {
+      "claim": "SOD1 neutralizes superoxide radicals.",
+      "label": "GROUNDED",
+      "why": "SOD1 appears in the 'Removal Of Superoxide Radicals' term, confirming its role in neutralizing superoxide radicals."
+    },
+    {
+      "claim": "GCLC is a rate-limiting enzyme for glutathione synthesis.",
+      "label": "GROUNDED",
+      "why": "GCLC appears in the 'Glutathione Biosynthetic Process' term, and abstract 2 states 'cysteine depletion to glutathione collapse' indicating GCLC's rate-limiting role."
+    },
+    {
+      "claim": "GCLM is a rate-limiting enzyme for glutathione synthesis.",
+      "label": "GROUNDED",
+      "why": "GCLM appears in the 'Glutathione Biosynthetic Process' term, and abstract 2 states 'cysteine depletion to glutathione collapse' indicating GCLM's rate-limiting role."
+    },
+    {
+      "claim": "G6PD is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "G6PD appears in the 'Glutathione metabolism' KEGG term, confirming its involvement in glutathione metabolism."
+    },
+    {
+      "claim": "GCLC is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GCLC appears in the 'Glutathione metabolism' KEGG term, confirming its involvement in glutathione metabolism."
+    },
+    {
+      "claim": "GPX4 is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GPX4 appears in the 'Glutathione metabolism' KEGG term, confirming its involvement in glutathione metabolism."
+    },
+    {
+      "claim": "GPX3 is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GPX3 appears in the 'Glutathione metabolism' KEGG term, confirming its involvement in glutathione metabolism."
+    },
+    {
+      "claim": "GSR is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GSR appears in the 'Glutathione metabolism' KEGG term, confirming its involvement in glutathione metabolism."
+    },
+    {
+      "claim": "MGST1 is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "MGST1 appears in the 'Glutathione metabolism' KEGG term, confirming its involvement in glutathione metabolism."
+    },
+    {
+      "claim": "GCLM is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GCLM appears in the 'Glutathione metabolism' KEGG term, confirming its involvement in glutathione metabolism."
+    },
+    {
+      "claim": "PRDX6 is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "PRDX6 appears in the 'Glutathione metabolism' KEGG term, confirming its involvement in glutathione metabolism."
+    },
+    {
+      "claim": "Glutathione metabolism is critical for maintaining cellular redox balance.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about glutathione's role in cellular redox homeostasis, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Glutathione metabolism is critical for detoxifying xenobiotics.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about glutathione's role in xenobiotic detoxification, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Glutathione metabolism is critical for detoxifying endogenous harmful compounds.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about glutathione's role in detoxifying endogenous harmful compounds, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PRNP is involved in ferroptosis.",
+      "label": "GROUNDED",
+      "why": "PRNP appears in the 'Ferroptosis' KEGG term, confirming its involvement in ferroptosis."
+    },
+    {
+      "claim": "GCLC is involved in ferroptosis.",
+      "label": "GROUNDED",
+      "why": "GCLC appears in the 'Ferroptosis' KEGG term, confirming its involvement in ferroptosis."
+    },
+    {
+      "claim": "GPX4 is involved in ferroptosis.",
+      "label": "GROUNDED",
+      "why": "GPX4 appears in the 'Ferroptosis' KEGG term, confirming its involvement in ferroptosis."
+    },
+    {
+      "claim": "GCLM is involved in ferroptosis.",
+      "label": "GROUNDED",
+      "why": "GCLM appears in the 'Ferroptosis' KEGG term, confirming its involvement in ferroptosis."
+    },
+    {
+      "claim": "FTL is involved in ferroptosis.",
+      "label": "GROUNDED",
+      "why": "FTL appears in the 'Ferroptosis' KEGG term, confirming its involvement in ferroptosis."
+    },
+    {
+      "claim": "Ferroptosis is an iron-dependent form of regulated cell death.",
+      "label": "GROUNDED",
+      "why": "Abstract 4 explicitly states 'Ferroptosis is a form of programmed cell death characterized by iron-dependent lipid peroxidation.'"
+    },
+    {
+      "claim": "Ferroptosis is driven by lipid peroxidation.",
+      "label": "GROUNDED",
+      "why": "Abstract 4 explicitly states 'Ferroptosis is a form of programmed cell death characterized by iron-dependent lipid peroxidation.'"
+    },
+    {
+      "claim": "Ferroptosis is linked to oxidative stress.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states 'Oxidative stress-induced disruption of glutathione metabolism triggers ferroptosis,' linking ferroptosis to oxidative stress."
+    },
+    {
+      "claim": "Ferroptosis is linked to the depletion of glutathione.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states 'The mechanistic chain from cysteine depletion to glutathione collapse...explains chondrocyte loss patterns' and links this to ferroptosis."
+    },
+    {
+      "claim": "PRDX1 is involved in peroxisomal function.",
+      "label": "GROUNDED",
+      "why": "PRDX1 appears in the 'Peroxisome' KEGG term, confirming its involvement in peroxisomal function."
+    },
+    {
+      "claim": "CAT is involved in peroxisomal function.",
+      "label": "GROUNDED",
+      "why": "CAT appears in the 'Peroxisome' KEGG term, confirming its involvement in peroxisomal function."
+    },
+    {
+      "claim": "SOD2 is involved in peroxisomal function.",
+      "label": "GROUNDED",
+      "why": "SOD2 appears in the 'Peroxisome' KEGG term, confirming its involvement in peroxisomal function."
+    },
+    {
+      "claim": "SOD1 is involved in peroxisomal function.",
+      "label": "GROUNDED",
+      "why": "SOD1 appears in the 'Peroxisome' KEGG term, confirming its involvement in peroxisomal function."
+    },
+    {
+      "claim": "Peroxisomes break down fatty acids.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about peroxisomal function in fatty acid beta-oxidation, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Peroxisomes detoxify ROS.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about peroxisomal function in ROS detoxification, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "TXNRD2 is critical for selenoprotein function.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about thioredoxin reductases and selenoproteins, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "TXNRD1 is critical for selenoprotein function.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about thioredoxin reductases and selenoproteins, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "TXNRD2 is involved in selenocompound metabolism.",
+      "label": "GROUNDED",
+      "why": "TXNRD2 appears in the 'Selenocompound metabolism' KEGG term, confirming its involvement in selenocompound metabolism."
+    },
+    {
+      "claim": "TXNRD1 is involved in selenocompound metabolism.",
+      "label": "GROUNDED",
+      "why": "TXNRD1 appears in the 'Selenocompound metabolism' KEGG term, confirming its involvement in selenocompound metabolism."
+    },
+    {
+      "claim": "Selenoproteins include glutathione peroxidases that reduce hydroperoxides.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about selenoproteins including glutathione peroxidases, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "SOD1 is a superoxide dismutase.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about SOD1 being a superoxide dismutase, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "SOD2 is a superoxide dismutase.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about SOD2 being a superoxide dismutase, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Superoxide dismutases convert superoxide radicals to hydrogen peroxide.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about the enzymatic function of superoxide dismutases, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "CAT is catalase.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about CAT being catalase, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Catalase detoxifies hydrogen peroxide into water.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about catalase function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PRDX1 is a peroxiredoxin that detoxifies hydrogen peroxide into water.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about peroxiredoxin function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PRDX2 is a peroxiredoxin that detoxifies hydrogen peroxide into water.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about peroxiredoxin function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PRDX4 is a peroxiredoxin that detoxifies hydrogen peroxide into water.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about peroxiredoxin function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "PRDX6 is a peroxiredoxin that detoxifies hydrogen peroxide into water.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about peroxiredoxin function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "GPX3 is a glutathione peroxidase that detoxifies hydrogen peroxide into water.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about glutathione peroxidase function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "GPX4 is a glutathione peroxidase that detoxifies hydrogen peroxide into water.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about glutathione peroxidase function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "GSR is glutathione reductase.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about GSR being glutathione reductase, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Glutathione reductase maintains glutathione in its reduced, active form.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about glutathione reductase function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Glutathione is a primary substrate for glutathione peroxidases.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about glutathione as a substrate for glutathione peroxidases, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Glutathione peroxidases detoxify hydroperoxides.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about glutathione peroxidase function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "The glutathione-GPX4 axis protects against ferroptosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states 'L-cysteine supplementation emerges as a dual-action therapy, simultaneously addressing oxidative stress and ferroptosis' and discusses the glutathione-GPX4 axis protecting against ferroptosis."
+    },
+    {
+      "claim": "Ferroptosis is characterized by iron-dependent lipid peroxidation when the glutathione-GPX4 axis fails.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states 'The mechanistic chain from cysteine depletion to glutathione collapse, iron overload, and lipid peroxidation' and abstract 4 defines ferroptosis as 'iron-dependent lipid peroxidation.'"
+    },
+    {
+      "claim": "NDUFA6 is involved in mitochondrial electron transport from NADH to ubiquinone.",
+      "label": "GROUNDED",
+      "why": "NDUFA6 appears in the 'Mitochondrial Electron Transport, NADH To Ubiquinone' term, confirming its involvement in this process."
+    },
+    {
+      "claim": "NDUFB4 is involved in mitochondrial electron transport from NADH to ubiquinone.",
+      "label": "GROUNDED",
+      "why": "NDUFB4 appears in the 'Mitochondrial Electron Transport, NADH To Ubiquinone' term, confirming its involvement in this process."
+    },
+    {
+      "claim": "NDUFS2 is involved in mitochondrial electron transport from NADH to ubiquinone.",
+      "label": "GROUNDED",
+      "why": "NDUFS2 appears in the 'Mitochondrial Electron Transport, NADH To Ubiquinone' term, confirming its involvement in this process."
+    },
+    {
+      "claim": "NDUFA6 is involved in oxidative phosphorylation.",
+      "label": "GROUNDED",
+      "why": "NDUFA6 appears in the 'Oxidative Phosphorylation' term, confirming its involvement in oxidative phosphorylation."
+    },
+    {
+      "claim": "NDUFB4 is involved in oxidative phosphorylation.",
+      "label": "GROUNDED",
+      "why": "NDUFB4 appears in the 'Oxidative Phosphorylation' term, confirming its involvement in oxidative phosphorylation."
+    },
+    {
+      "claim": "NDUFS2 is involved in oxidative phosphorylation.",
+      "label": "GROUNDED",
+      "why": "NDUFS2 appears in the 'Oxidative Phosphorylation' term, confirming its involvement in oxidative phosphorylation."
+    },
+    {
+      "claim": "Mitochondria are a major source of ROS.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about mitochondria as a major source of ROS, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Mitochondria are critical targets of oxidative stress.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about mitochondria as targets of oxidative stress, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Mitochondria are critical responders to oxidative stress.",
+      "label": "BACKGROUND",
+      "why": "This is a well-established textbook fact about mitochondria responding to oxidative stress, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Oxidative stress-induced disruption of glutathione metabolism can trigger ferroptosis.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states 'Oxidative stress-induced disruption of glutathione metabolism triggers ferroptosis in airway epithelial cells.'"
+    },
+    {
+      "claim": "The Keap1/Nrf2/GPX4 signaling pathway regulates glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states 'SAC regulates glutathione metabolism via the Keap1/Nrf2/GPX4 signaling pathway' and abstract 3 title confirms this pathway regulates glutathione metabolism."
+    },
+    {
+      "claim": "The Keap1/Nrf2/GPX4 signaling pathway inhibits ferroptosis under oxidative stress conditions.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states 'SAC regulates glutathione metabolism via the Keap1/Nrf2/GPX4 signaling pathway to inhibit ferroptosis' under oxidative stress conditions."
+    },
+    {
+      "claim": "MGST1 is microsomal glutathione S-transferase 1.",
+      "label": "GROUNDED",
+      "why": "Abstract 4 explicitly states 'Microsomal glutathione S-transferase 1 (MGST1)' in the background section."
+    },
+    {
+      "claim": "MGST1 suppresses ferroptosis by regulating GPX4.",
+      "label": "GROUNDED",
+      "why": "Abstract 4 title states 'MGST1 Suppresses Ferroptosis in Nucleus Pulposus Cells...by Regulating GPX4' and the abstract confirms this mechanism."
+    }
+  ],
+  "summary": {
+    "n_claims": 75,
+    "n_scored": 75,
+    "grounded_rate": 0.64,
+    "hallucination_rate": 0.013,
+    "grounded": 48,
+    "background": 26,
+    "unsupported": 1
+  }
+}

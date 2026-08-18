@@ -1,0 +1,433 @@
+================================================================================
+HOW THE ENRICH.AI EVALUATION CODE WORKS
+================================================================================
+A technical walkthrough of every script in eval/, what it reads, what it writes,
+and why it is built the way it is. Written for someone who has to re-run, extend,
+or defend this benchmark.
+
+Last updated: 2026-08-09
+
+--------------------------------------------------------------------------------
+0. THE SHAPE OF THE BENCHMARK
+--------------------------------------------------------------------------------
+The thing under test is Enrich.AI's agentic interpretation loop: given a gene set,
+a ReAct agent decides which tools to call (enrichment libraries, literature search),
+reads the results, and writes a prose biological interpretation.
+
+We measure three different things, and they are genuinely different questions:
+
+  (1) EVIDENCE FAITHFULNESS - does the interpretation assert things that its OWN
+      retrieved evidence does not support?  (RAGAS-style; judge sees only what the
+      tool retrieved)
+  (2) FACTUAL CORRECTNESS   - are the claims actually true, judged against external
+      curated databases the tool never saw?  (the headline number)
+  (3) RELIABILITY           - does any of this hold still across repeat runs?
+
+A single number cannot answer all three. (1) can be perfect while (2) is bad (the
+model faithfully repeats a wrong enrichment result). (2) can be good while (1) is
+bad (the model states true biology it never retrieved). Both can look fine while
+(3) shows the per-set numbers are noise.
+
+Two separate LLM roles, deliberately from different model families:
+  TOOL UNDER TEST : Gemini 2.5 Flash (the app's deployed free default)
+  JUDGE/VERIFIER  : Claude Sonnet 4.5 @ temperature 0 (never the same family as
+                    the system being graded, so shared blind spots don't cancel out)
+
+--------------------------------------------------------------------------------
+1. FILE MAP
+--------------------------------------------------------------------------------
+Directory layout. Scripts live at eval/ root; everything they touch is in one of
+four folders, so a path constant tells you immediately what kind of thing it is.
+
+  eval/*.py          the pipeline
+  eval/*.txt         the three documents
+  eval/data/         inputs and caches (never written by a judging step)
+  eval/runs/         raw per-run records - the primary evidence
+  eval/results/      everything derived - what you cite
+  eval/logs/         console output, kept for provenance
+  old/               superseded; nothing current reads it
+
+DATA PREP
+  fetch_msigdb.py .......... downloads the MSigDB HALLMARK collection (50 sets)
+  data/msigdb_sets.json .... the 50 gene sets, {set_name: [genes]}
+
+SHARED LIBRARY
+  evalkit.py ............... every constant and prompt the pipeline shares.
+                             Single source of truth - nothing is duplicated.
+                             Also defines DATA / RUNS / RESULTS so no script
+                             hardcodes a folder name twice.
+
+PHASE 1 - GENERATE (free, Gemini)
+  phase1_run.py ............ runs all 50 sets through the real agent
+                             -> runs/full_run/{SET}.json  (one file per set)
+
+PHASE 2 - JUDGE (paid, Sonnet, Batch API)
+  phase2_judge.py .......... decompose interpretations into atomic claims, then
+                             label each claim against retrieved evidence
+                             -> writes judge_claims back into the run file
+                             -> results/summary.json
+
+PHASE 3 - RELIABILITY (free, Gemini)
+  phase3_reps.py ........... re-runs 10 stratified sets 5x
+                             -> runs/reps/{SET}__rep{N}.json
+                             -> results/summary_reps.json
+
+DATABASE VERIFICATION (paid, Sonnet, Batch API)
+  verify_claims.py ......... pulls UniProt/NCBI/GO records next to claims for
+                             MANUAL review -> results/verify_*.csv
+  verify_db.py ............. the HEADLINE metric: automated claim-vs-database
+                             comparison -> results/verify_db_headline.csv
+  verify_multigene.py ...... fixes verify_db.py's first-gene-only limitation
+                             -> results/verify_db_headline_v2.csv (SUPERSEDES v1)
+  recheck_incorrect.py ..... adjudicates each "incorrect" verdict as a genuine
+                             biological error vs a strictness artifact
+                             -> results/recheck_incorrect.csv
+
+REPORTING AND AUDIT (free)
+  make_figure_reproducibility.py .. builds the manuscript figure from runs/reps/
+                             -> results/figure_reproducibility.{pdf,png,_data.csv}
+  compare_judge_versions.py ....... proves whether a re-judge changed labels, and
+                             in which direction. See section 8.
+
+  data/_gene_records.json .. cache of every fetched UniProt/NCBI/GO record.
+                             Delete it and the fetch takes ~30 min; keep it and
+                             every verification step is reproducible offline.
+
+--------------------------------------------------------------------------------
+2. evalkit.py - THE SHARED CONTRACT
+--------------------------------------------------------------------------------
+Everything that could silently drift between phases lives here exactly once.
+
+  QUERY               The single pinned prompt sent to the agent for every set.
+                      Contains {context} - the human-readable set name - because
+                      without it the agent has to guess the biology from a bare
+                      gene list, which is not how a user would ever use the tool.
+                      It also mandates a literature search and, critically,
+                      "cite only papers you actually retrieved from the search
+                      results" - added after we caught fabricated citations.
+
+  ADJ_P_CUTOFF = 0.05 Significance threshold for an enrichment term to enter the
+                      evidence bundle.
+
+  MAX_TERMS_PER_LIB = None
+  MAX_ABSTRACT_CHARS = None
+                      Both caps were REMOVED on purpose. If the judge only sees a
+                      truncated slice of the evidence, then "this claim is absent
+                      from the evidence" is an artifact of truncation rather than
+                      a finding. Absence is only meaningful when the judge sees
+                      everything the tool saw. This single change was the largest
+                      correctness fix in the whole project.
+
+  build_evidence()    Assembles what the judge sees: every significant enrichment
+                      term with its full gene list, plus every retrieved paper
+                      with its untruncated abstract.
+
+  DECOMPOSE_PROMPT    Splits an interpretation into atomic, self-contained,
+                      verifiable claims. No cap on claim count (a cap would make
+                      the denominator depend on interpretation length). Filters
+                      out pure p-value recitation, which is arithmetic, not a
+                      biological assertion.
+
+  JUDGE_PROMPT        Labels each claim into three buckets:
+                        GROUNDED    - explicitly supported by the retrieved
+                                      evidence. For "GENE does FUNCTION", the
+                                      gene must appear in a matching term's list.
+                        BACKGROUND  - true, established biology, but NOT present
+                                      in what was retrieved.
+                        UNSUPPORTED - contradicted by the evidence, or wrong.
+                      The BACKGROUND bucket is the methodological extension over
+                      stock RAGAS, which is binary. Without it, every correct
+                      statement of textbook biology that the tool didn't happen
+                      to retrieve counts as a hallucination, which is wrong.
+
+  tally()             Counts labels. Claims the judge failed to score are SKIPPED
+                      rather than defaulted, so parse failures shrink the
+                      denominator instead of silently inflating one bucket.
+
+  audit_citations()   Deterministic regex scan for citations in the final text
+                      that do not correspond to a paper actually retrieved.
+                      Went through four rounds of false-positive fixes (quoted GO
+                      terms, quoted abstract excerpts, quoted search queries all
+                      looked like citations). Has its own regression suite.
+
+  classify_error()    Distinguishes a TRANSIENT API failure (retry) from a FATAL
+                      one - quota exhausted, credit gone, bad auth (stop cleanly
+                      and resume later). Without this, an overnight run either
+                      dies on the first blip or burns the whole quota retrying a
+                      permanent failure.
+
+--------------------------------------------------------------------------------
+3. phase1_run.py - GENERATING THE RUNS
+--------------------------------------------------------------------------------
+  python eval\phase1_run.py                # all 50 sets
+  python eval\phase1_run.py --limit 3      # smoke test
+  python eval\phase1_run.py --reaudit      # re-run citation audit, no API calls
+  python eval\phase1_run.py --reguard      # re-apply citation guard, no API calls
+
+For each set it constructs the pinned QUERY, runs the real ReasoningEngine (the
+same code path the Streamlit app uses - not a reimplementation), and saves:
+
+    gene_set, genes, query, interpretation, reasoning trace, tools_used
+    (with each call's arguments), full tool outputs, n_evidence_terms, n_papers,
+    citation_audit, valid, empty_response
+
+Robustness policy:
+  * SAVE-AS-YOU-GO - one file per set, written immediately. A crash at set 47
+    never costs the first 46.
+  * RESUME - existing files are skipped, so re-running continues where it stopped.
+  * 3 attempts with 10s/30s backoff for transient errors; a fatal error stops the
+    run cleanly with a resume message rather than thrashing.
+
+Two failure flags matter downstream:
+  valid=False        -> the agent produced an interpretation WITHOUT calling any
+                        tool. Excluded from the faithfulness aggregate (there is
+                        no retrieved evidence to be faithful to) but still saved
+                        and reported as its own rate.
+  empty_response     -> the agent returned no interpretation at all. Forced
+                        valid=False and reported separately.
+
+--------------------------------------------------------------------------------
+4. phase2_judge.py - DECOMPOSE AND LABEL
+--------------------------------------------------------------------------------
+  python eval\phase2_judge.py --estimate            # free token/cost preflight
+  python eval\phase2_judge.py                       # decompose + judge
+  python eval\phase2_judge.py --dir eval/runs/reps  # same, for the replicates
+  python eval\phase2_judge.py --decompose-batch ID  # recover a paid batch
+  python eval\phase2_judge.py --judge-batch ID      # recover a paid batch
+  python eval\phase2_judge.py --summary-only        # rebuild summary.json, free
+
+STEP A - decompose each interpretation into atomic claims (Sonnet, temp 0).
+STEP B - for each claim, show the judge the FULL evidence bundle and get a label.
+
+Both steps go through the Anthropic Message Batches API: 50% cheaper, and results
+arrive out of order, so every request carries a custom_id.
+
+  cid(path) uses the FILE STEM, not the gene set name. This matters: replicates
+  are {SET}__rep{N}.json, so keying on gene_set alone produces duplicate
+  custom_ids and the API rejects the entire batch at submission.
+
+--summary-only and the two --*-batch flags exist because a crash AFTER submission
+would otherwise mean paying twice. Results are retrievable for 29 days.
+
+Output: judge_claims written back into each run's JSON (claim, label, why), plus
+summary.json with per-set and aggregate counts.
+
+--------------------------------------------------------------------------------
+5. phase3_reps.py - RELIABILITY
+--------------------------------------------------------------------------------
+  python eval\phase3_reps.py --reps 5
+
+10 gene sets, stratified across the Hallmark collection, run 5 times each with
+the identical pinned query. Rep 1 is copied from full_run/ so all five live
+together. Same save-as-you-go and quota policy as phase 1.
+
+This measures WITHIN-SET variance: how much does one set's score move when
+nothing changes but the run? It is the check that tells you whether a per-set
+number can be reported at all.
+
+--------------------------------------------------------------------------------
+6. THE DATABASE VERIFICATION LAYER
+--------------------------------------------------------------------------------
+Phase 2 answers "is this claim supported by what the tool retrieved". It cannot
+answer "is this claim TRUE" - a GROUNDED claim can still be biologically wrong,
+and we measured that it sometimes is. So the headline number is computed against
+external curated databases the tool never had access to.
+
+Ground truth sources, in order of preference:
+  UniProt   - the FUNCTION comment. A real, quotable, human-curated sentence.
+  NCBI Gene - the RefSeq summary, via MyGene.info.
+  GO        - annotated terms WITH their evidence codes (IDA, IEA, ISS, NAS...).
+              A GO annotation is a gene->term link with no sentence, so the term
+              and its evidence code are recorded rather than a fabricated sentence.
+
+6a. verify_claims.py - MANUAL review export
+    Pulls the records alongside the claims and writes a CSV a human can
+    adjudicate by hand. Used for the spot-checks that found the judge's flaws.
+
+6b. verify_db.py - THE HEADLINE METRIC
+    python eval\verify_db.py --fetch      # free: build _gene_records.json
+    python eval\verify_db.py --estimate   # free: price the batch
+    python eval\verify_db.py --run        # submit, collect, write CSV + stats
+
+    Design decisions that matter:
+    * THE VERIFIER IS FORBIDDEN ITS OWN KNOWLEDGE. The prompt says "Judge each
+      claim USING ONLY THE RECORD ABOVE. Do not use your own knowledge of
+      biology - if the record does not settle the question, the answer is
+      uncertain." The tool under test is an LLM; using an LLM's recall as ground
+      truth would share its blind spots. Sonnet performs only the COMPARISON.
+    * EVERY VERDICT MUST QUOTE THE SOURCE VERBATIM. This makes every single
+      verdict hand-checkable, and lets us mechanically verify that the quote
+      really appears in the record (it does, for 99.5% - 2,060 of 2,071).
+    * BATCHED BY GENE - one record sent once with all claims about it (~2.8
+      claims/gene), roughly halving token cost versus per-claim requests.
+    * Genes with no retrievable record, and claims naming no gene at all, are
+      forced to "uncertain" WITHOUT an API call. They are never guessed at.
+
+    Three labels: correct / incorrect / uncertain.
+    Rate = incorrect / (correct + incorrect). Uncertain is EXCLUDED, not counted
+    as either - a claim the database cannot settle is not evidence of accuracy or
+    of hallucination. 95% Wilson score interval (not normal approximation, which
+    misbehaves at small proportions).
+
+6c. verify_multigene.py - FIXING FIRST-GENE-ONLY
+    verify_db.py assigned each claim to genes_in(claim)[0]. A claim naming several
+    genes ("CCR1, CCR2, CCR5 and CXCR3 are highly expressed") was therefore checked
+    against ONE record. This script re-verifies every multi-gene claim against ALL
+    named genes, one record per gene.
+
+    The model produces PER-GENE verdicts only. The aggregation rule is applied in
+    CODE, so it is auditable and can be varied without re-paying:
+      incorrect  if ANY named gene's record contradicts the claim
+      correct    if >=1 gene supports it and NONE contradicts
+      uncertain  if no gene supports and none contradicts
+    A silent record is uninformative, not a failure. Requiring positive support
+    from every gene would re-import the absence-as-contradiction bias. The
+    stricter "all-must-support" variant is computed and reported alongside.
+
+6d. recheck_incorrect.py - SEPARATING REAL ERRORS FROM STRICTNESS
+    The literal instruction in 6b makes the verifier flag claims that are not
+    actually false. Two recurring patterns:
+      ABSENCE     - the record simply doesn't mention it, and silence was read as
+                    contradiction (PAX6/beta-cell identity: UniProt mentions only
+                    alpha cells, so a well-established beta-cell role reads as
+                    "contradicted" merely because it is unstated).
+      TERMINOLOGY - same biology, imprecise wording (MAML1 called "a transcription
+                    factor in the Notch pathway" vs the record's "transcriptional
+                    coactivator for NOTCH").
+    Each incorrect verdict is re-audited into GENUINE / ABSENCE / TERMINOLOGY,
+    with verbatim evidence required for GENUINE and TERMINOLOGY, and an explicit
+    "record does not mention ..." statement required for ABSENCE.
+
+    This yields TWO honest numbers rather than one contestable one:
+      UPPER BOUND  = all flags counted        (strict, conservative)
+      CORRECTED    = GENUINE flags only       (what a biologist would call an error)
+    Both are reported. Neither is presented alone.
+
+--------------------------------------------------------------------------------
+7. CITATION FABRICATION - PROMPT PLUS DETERMINISTIC GUARD
+--------------------------------------------------------------------------------
+Early runs invented PMIDs and whole "Author et al. (Year)" bibliographies for
+papers that were never retrieved. Two independent defences, both in the SHIPPED
+app rather than only in the eval:
+
+  1. A CITATIONS section in the agent's system prompt plus the explicit clause in
+     the pinned query.
+  2. verify_citations() in reasoning_engine.py - a deterministic post-generation
+     guard that strips any citation not backed by a retrieved paper. Regex-based,
+     no LLM involved, so it cannot itself hallucinate. With zero retrieved papers
+     it drops bibliography-style lines wholesale.
+
+audit_citations() in evalkit.py then measures what got through. Because the guard
+runs in the app, the reported 0% is the rate for the system as users experience
+it, not for the raw model.
+
+--------------------------------------------------------------------------------
+8. THE JUDGE-VERSION AUDIT - AND WHY compare_judge_versions.py EXISTS
+--------------------------------------------------------------------------------
+A benchmark that evolves while it runs can silently end up with results scored by
+two different judges. That happened here, and catching it is worth documenting
+because the same trap is easy to fall into again.
+
+WHAT WENT WRONG. The 50-set run and the replicate runs were judged at different
+times, and the judge prompt was edited in between. Nothing in the output files
+records which prompt version produced a label, and eval/ is not under version
+control, so there was no diff to consult.
+
+WHAT MADE IT DETECTABLE. Three things, all of which are worth preserving:
+  * Every run record stores the exact query, the full tool outputs and the claims,
+    so a record can be re-judged later on IDENTICAL inputs.
+  * The decomposition is submitted as its own Batch API job whose id is printed to
+    the log. Re-supplying that id with --decompose-batch replays the SAME claims at
+    no charge, so a re-judge changes exactly one variable: the judge.
+  * phase2_judge.py SKIPS records that already carry judge_claims (load_records,
+    line ~78). That is what protects finished work from being silently rescored -
+    but it also means "these two files agree" can simply mean "one was never
+    re-judged". Do not read agreement as evidence without checking that.
+
+HOW TO TELL DRIFT FROM NOISE. compare_judge_versions.py compares two copies of the
+same records claim by claim and reports both the agreement rate AND the direction
+of the disagreements. This is the important part:
+
+    random judge noise moves labels SYMMETRICALLY between buckets
+    a criterion or evidence change moves them ONE WAY
+
+Measured here: the replicates disagreed with the final judge on 7.8% of 3,791
+claims, but 69 claims left UNSUPPORTED against only 17 entering it - a 4:1
+asymmetry that noise cannot produce. They were re-judged. By contrast, eight sets
+from the 50-set run, re-judged a second time on identical claims, agreed 98.0%
+(865/883) with ZERO net directional movement - ordinary temperature-0 variation,
+so the primary run needed no correction.
+
+That 98.0% is also the honest reproducibility figure for the final judge, and it
+supersedes an earlier 91.5% measured on a pre-final version.
+
+THE LESSON, stated plainly for anyone extending this: if you change evalkit.py's
+JUDGE_PROMPT or anything build_evidence() feeds it, every previously judged record
+is now on an older version. Either re-judge everything with --force and the stored
+decompose batch id, or record which version produced which labels. Agreement alone
+does not prove sameness; direction of disagreement is the diagnostic.
+
+--------------------------------------------------------------------------------
+9. REPRODUCING THE WHOLE THING
+--------------------------------------------------------------------------------
+    .\load_env.ps1                                   # loads GOOGLE/GROQ/ANTHROPIC keys
+    python eval\fetch_msigdb.py                      # free
+    python eval\phase1_run.py                        # free, ~2h, resumable
+    python eval\phase2_judge.py --estimate           # free preflight
+    python eval\phase2_judge.py                      # paid
+    python eval\phase3_reps.py --reps 5              # free
+    python eval\phase2_judge.py --dir eval/runs/reps # paid
+    python eval\verify_db.py --fetch                 # free, ~30 min
+    python eval\verify_db.py --run                   # paid
+    python eval\verify_multigene.py --fetch          # free
+    python eval\verify_multigene.py --run            # paid
+    python eval\recheck_incorrect.py --run           # paid
+    python eval\make_figure_reproducibility.py       # free
+    python eval\compare_judge_versions.py            # free, audit only
+
+Every paid step has a free --estimate that uses the count_tokens endpoint, and
+every paid step is recoverable from its batch id without paying twice (Anthropic
+retains batch results for 29 days). Total cost of the reported run: $13.81.
+
+Keys live in .env (gitignored). .env.example documents the required names. No key
+is ever written into a result file, a log, or a committed file.
+
+--------------------------------------------------------------------------------
+10. KNOWN LIMITATIONS OF THE CODE
+--------------------------------------------------------------------------------
+* Gene symbol extraction is a regex with a stop-list. It misses genes written in
+  non-canonical form (TIMP-1, BAK, STING, FXR resolve to nothing), which sends
+  ~256 claims to "uncertain" that could in principle have been checked. This
+  loses coverage; it does not produce wrong verdicts.
+* GO annotations are capped at the top 20 per gene and NCBI summaries at 1500
+  characters inside _gene_records.json. A relevant annotation past the cutoff
+  reads as absence.
+* Evidence codes are recorded but not weighted. A verdict resting on an [IEA]
+  (electronic, uncurated) or [NAS] (non-traceable) annotation carries the same
+  weight as one resting on [IDA] (direct assay). This should be weighted in
+  future work.
+* The verifier is a single Sonnet call per gene at temperature 0. Measured label
+  reproducibility on identical inputs is 98.0% (865/883 claims, section 8), so
+  about 2% of individual verdicts would move on a re-run, with no directional
+  bias. Aggregate rates are far more stable than individual labels.
+* 11 of 2,071 verifier quotes (0.5%) are paraphrases rather than verbatim copies
+  despite the instruction. Every one was on a "correct" verdict; all 86
+  "incorrect" verdicts had their quote mechanically confirmed present in the
+  record, so the reported numerator rests only on checked quotes.
+* THE SUMMARY JSON KEYS ARE MISNAMED. In summary.json, summary_reps.json and
+  summary__consistency.json the keys "hallucination_rate_mean" / "_sd" hold the
+  UNSUPPORTED fraction, i.e. evidence faithfulness - NOT the database-verified
+  error rate. The name is a leftover from before the two measurements were
+  separated. Anything reading those files must not treat that key as the headline
+  rate; the headline lives in results/final_rates.json.
+* Gene symbol extraction is regex plus a stop-list, so a token that looks like a
+  symbol but is not one (JAK-STAT, ABC, MOMP) reaches the resolver and returns
+  nothing. That costs coverage, not correctness - such claims become "uncertain".
+* verify_multigene.py only re-checks claims where at least TWO named genes have a
+  database record; a claim naming a gene plus a non-gene token is left on the
+  single-gene path, which is the correct behaviour but means the "345 multi-gene
+  claims" headline reduces to 88 actually re-verified.
+* The aggregation rule for multi-gene claims is applied in CODE, not by the model,
+  precisely so it can be changed and recomputed without re-paying. Both the
+  primary rule and the stricter "all-must-support" variant are reported.
+================================================================================

@@ -1,0 +1,19 @@
+rmdir /s /q .venv
+
+py -3.10 -m venv .venv
+.venv\Scripts\activate.bat
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+pip install langchain-anthropic langchain-groq
+pip install langchain-groq
+
+# API keys live in .env at the repo root (gitignored) - NEVER paste real keys in this file.
+# Load them into the session first:
+#   PowerShell:  .\load_env.ps1
+#   cmd.exe:     for /f "usebackq tokens=1,* delims==" %a in (".env") do @set %a=%b
+#
+# Needed by the eval scripts:
+#   GOOGLE_API_KEY     - run_eval.py, check_literature.py, run_variance.py
+#   ANTHROPIC_API_KEY  - score.py (judge)
+#   GROQ_API_KEY       - decompose.py, run_variance.py (judge)

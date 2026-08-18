@@ -1,0 +1,42 @@
+{
+  "batch_id": "msgbatch_018pE1rhimRGg8g1Pso86Ws7",
+  "cost": 0.4133445,
+  "before": {
+    "correct": 1936,
+    "incorrect": 85,
+    "uncertain": 2716,
+    "n_scored": 2021,
+    "rate": 0.042058386937159825,
+    "ci_low": 0.034141229077813404,
+    "ci_high": 0.05171319034936549
+  },
+  "after_any_contradiction": {
+    "correct": 1961,
+    "incorrect": 86,
+    "uncertain": 2690,
+    "n_scored": 2047,
+    "rate": 0.04201270151441133,
+    "ci_low": 0.03414550868064686,
+    "ci_high": 0.05159568166774475
+  },
+  "after_all_must_support": {
+    "correct": 1935,
+    "incorrect": 86,
+    "uncertain": 2716,
+    "n_scored": 2021,
+    "rate": 0.0425531914893617,
+    "ci_low": 0.03458641898643969,
+    "ci_high": 0.05225573202428628
+  },
+  "changes": {
+    "uncertain->uncertain": 18,
+    "uncertain->incorrect": 2,
+    "correct->correct": 31,
+    "uncertain->correct": 29,
+    "correct->uncertain": 4,
+    "incorrect->incorrect": 1,
+    "incorrect->uncertain": 1,
+    "correct->incorrect": 1,
+    "incorrect->correct": 1
+  }
+}

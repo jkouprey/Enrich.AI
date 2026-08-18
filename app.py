@@ -22,13 +22,13 @@ import json
 import html
 import re
 from collections import defaultdict
-import google.generativeai as genai
 from PIL import Image
 
 from reasoning_engine import create_reasoning_engine
+from llm_factory import get_llm, get_utility_llm, complete_text
 from config import CONFIG
 from tool_registry import get_available_enrichr_libraries
-from visualizer import Visualizer, get_gemini_interpretation, add_pdf_download_button
+from visualizer import Visualizer, get_llm_interpretation, add_pdf_download_button, export_figure_to_pdf
 
 # Configure logging
 logging.basicConfig(level=getattr(logging, CONFIG["logging"]["level"], "INFO"))
@@ -227,6 +227,20 @@ def apply_fancy_styling():
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
         }}
 
+        /* Centre every Plotly figure and keep it centred as the container grows.
+           Figures render at a fixed pixel width (use_container_width=False), so without
+           this they hug the left edge.
+           `safe center` is deliberate: plain `center` overflows in BOTH directions when the
+           figure is wider than its container, making the left edge unreachable - which reads
+           as the plot escaping the dialog. `safe` falls back to start alignment in exactly
+           that case, so it centres when it fits and stays scrollable when it does not. */
+        [data-testid="stPlotlyChart"], .stPlotlyChart {{
+            display: flex !important;
+            justify-content: safe center !important;
+            width: 100% !important;
+            overflow-x: auto !important;
+        }}
+
         /* Main area buttons */
         .stButton > button {{
             color: {text_primary} !important;
@@ -307,6 +321,42 @@ def apply_fancy_styling():
         /* Expander container */
         [data-testid="stSidebar"] div[data-testid="stExpander"] {{
             background-color: {bg_card} !important;
+        }}
+
+        /* ===== Tables + download buttons: follow theme (fixes Windows light-theme leak in dark mode) ===== */
+        [data-testid="stDataFrame"] {{
+            background-color: {bg_card} !important;
+        }}
+
+        /* Table header - slightly lighter than cells */
+        [data-testid="stDataFrame"] [role="columnheader"],
+        [data-testid="stDataFrame"] thead th {{
+            background-color: {bg_card_hover} !important;
+            color: {text_primary} !important;
+        }}
+
+      /* Download-as-CSV button - unhovered follows theme */
+        [data-testid="stDownloadButton"] > button {{
+            background-color: {bg_card} !important;
+            color: {text_primary} !important;
+            border: 1px solid {border_color} !important;
+        }}
+        /* Download button - hover (kept so hovering still works) */
+        [data-testid="stDownloadButton"] > button:hover {{
+            background-color: {bg_card_hover} !important;
+            border-color: #3b82f6 !important;
+            color: {text_primary} !important;
+        }}
+
+        /* Dataframe hover toolbar */
+        [data-testid="stElementToolbar"] {{
+            background-color: {bg_card} !important;
+        }}
+        [data-testid="stElementToolbar"] button {{
+            color: {text_primary} !important;
+        }}
+        [data-testid="stElementToolbar"] button:hover {{
+            background-color: {bg_card_hover} !important;
         }}
 
         /* Expander header (closed state) - follows theme */
@@ -1220,8 +1270,15 @@ def init_session_state():
     defaults = {
         "api_key": os.environ.get("GOOGLE_API_KEY", ""),
         "api_key_valid": None,
+        # LLM selection: "free" = embedded key, "byok" = user's own key
+        "llm_mode": "free",
+        "free_model_label": (CONFIG.get("free_models") or [{}])[0].get("label", ""),
+        "byok_provider": CONFIG.get("default_provider", "gemini"),
+        "byok_model": None,
+        "byok_keys": {},  # {provider: user's api key} - kept per provider
+        "llm_signature": None,
         "reasoning_engine": None,
-        "gemini_model": None,
+        "utility_llm": None,
         "visualizer": None,
         "current_page": "chat",
         "chat_sessions": [],
@@ -1250,43 +1307,116 @@ def init_session_state():
             st.session_state[key] = value
 
 
-def validate_api_key(api_key: str) -> bool:
-    """Check if API key is valid by pinging the model"""
+def validate_api_key(api_key: str, provider: str = "gemini", model: str = None) -> bool:
+    """Check if an API key is valid by pinging the provider through the LLM factory"""
     if not api_key or len(api_key) < 10:
         return False
     try:
-        genai.configure(api_key=api_key)
-        model_name = CONFIG.get("gemini", {}).get("model_name", "gemini-2.5-flash")
-        model = genai.GenerativeModel(model_name)
-        response = model.generate_content("Hi", generation_config={"max_output_tokens": 5})
+        llm = get_llm(provider=provider, model=model, api_key=api_key)
+        llm.invoke("Hi")
         return True
     except Exception as e:
-        logger.warning(f"API key validation failed: {e}")
+        logger.warning(f"API key validation failed for {provider}: {e}")
         return False
 
 
-def get_gemini_model():
-    """Get or create the Gemini model instance.
+# --- LLM selection helpers -----------------------------------------------------
 
-    Uses the same model as the ReAct agent (CONFIG model_name).
-    Used for: visualization interpretations, plot descriptions,
-    response summaries, community naming.
+def get_embedded_key(provider: str) -> str:
+    """Deployment-provided key for a provider: st.secrets first, then environment.
+
+    This is what makes the tool free to use - no user key required.
     """
-    if st.session_state.gemini_model is None and st.session_state.api_key:
+    for name in CONFIG.get("providers", {}).get(provider, {}).get("api_key_env", []):
         try:
-            genai.configure(api_key=st.session_state.api_key)
-            model_name = CONFIG.get("gemini", {}).get("model_name", "gemini-2.5-flash")
-            st.session_state.gemini_model = genai.GenerativeModel(model_name)
+            if name in st.secrets:
+                return str(st.secrets[name])
+        except Exception:
+            pass
+        if os.environ.get(name):
+            return os.environ[name]
+    return ""
+
+
+def get_free_choice() -> dict:
+    """The currently selected entry from CONFIG['free_models']."""
+    free_models = CONFIG.get("free_models") or []
+    if not free_models:
+        return {}
+    label = st.session_state.get("free_model_label")
+    for entry in free_models:
+        if entry.get("label") == label:
+            return entry
+    return free_models[0]
+
+
+def get_active_llm_choice():
+    """Return (provider, model, api_key) for the reasoning agent.
+
+    A valid bring-your-own key wins; otherwise fall back to the free default.
+    """
+    if st.session_state.get("llm_mode") == "byok":
+        provider = st.session_state.get("byok_provider") or CONFIG.get("default_provider", "gemini")
+        user_key = ((st.session_state.get("byok_keys") or {}).get(provider) or "").strip()
+        if user_key:
+            provider_cfg = CONFIG.get("providers", {}).get(provider, {})
+            model = st.session_state.get("byok_model") or provider_cfg.get("default_model")
+            return provider, model, user_key
+
+    free = get_free_choice()
+    provider = free.get("provider", CONFIG.get("default_provider", "gemini"))
+    model = free.get("model") or CONFIG.get("providers", {}).get(provider, {}).get("default_model")
+    return provider, model, get_embedded_key(provider)
+
+
+def reset_llm_clients():
+    """Drop cached clients so the next query rebuilds them with the new selection."""
+    st.session_state.reasoning_engine = None
+    st.session_state.utility_llm = None
+    st.session_state.visualizer = None
+    st.session_state.llm_signature = None
+
+
+def get_utility_client(max_tokens: int = None):
+    """Get or create the LLM client for the non-agent features.
+
+    Runs on the SAME provider/model/key as the agent, so a bring-your-own-key
+    user is fully on their own key. Used for: visualization interpretations,
+    plot descriptions, response summaries.
+    """
+    provider, model, api_key = get_active_llm_choice()
+    if not api_key:
+        return None
+
+    # A custom token budget (e.g. summaries) gets its own short-lived client
+    if max_tokens:
+        try:
+            return get_utility_llm(provider=provider, model=model, api_key=api_key,
+                                   max_tokens=max_tokens)
         except Exception as e:
-            logger.warning(f"Failed to create Gemini model: {e}")
-    return st.session_state.gemini_model
+            logger.warning(f"Failed to create {provider} utility client: {e}")
+            return None
+
+    if st.session_state.utility_llm is None:
+        try:
+            st.session_state.utility_llm = get_utility_llm(
+                provider=provider, model=model, api_key=api_key
+            )
+        except Exception as e:
+            logger.warning(f"Failed to create {provider} utility client: {e}")
+    return st.session_state.utility_llm
+
+
+def get_utility_model_id() -> str:
+    """provider:model string - used as a cache key for cached interpretations."""
+    provider, model, _ = get_active_llm_choice()
+    return f"{provider}:{model}"
 
 
 def get_visualizer():
     """Get or create visualizer"""
     if st.session_state.visualizer is None:
-        gemini = get_gemini_model()
-        st.session_state.visualizer = Visualizer(gemini_model=gemini)
+        st.session_state.visualizer = Visualizer(llm=get_utility_client())
     return st.session_state.visualizer
 
 
@@ -1415,31 +1545,124 @@ def render_sidebar():
         # Configuration - centered header
         st.markdown("<h5 style='text-align: center;'>⚙️ Configuration</h5>", unsafe_allow_html=True)
 
-        api_key = st.text_input("Gemini API Key", value=st.session_state.api_key,
-                                type="password", key="api_key_input", placeholder="Enter API key...")
-
-        if api_key != st.session_state.api_key:
-            st.session_state.api_key = api_key
+        # NOTE: these widgets deliberately pass no index=/value= parameter. Streamlit
+        # derives a keyed widget's identity from its parameters, so recomputing
+        # index= each run orphans the stored state and the selection fails to stick.
+        # Instead the widget's own session_state entry is seeded once and owns the value.
+        mode_options = ["Free", "Use my own key"]
+        if st.session_state.get("llm_mode_radio") not in mode_options:
+            st.session_state.llm_mode_radio = (
+                mode_options[0] if st.session_state.llm_mode == "free" else mode_options[1]
+            )
+        mode_label = st.radio(
+            "Model source",
+            options=mode_options,
+            horizontal=True,
+            key="llm_mode_radio",
+            label_visibility="collapsed",
+        )
+        selected_mode = "free" if mode_label == "Free" else "byok"
+        if selected_mode != st.session_state.llm_mode:
+            st.session_state.llm_mode = selected_mode
             st.session_state.api_key_valid = None
-            st.session_state.reasoning_engine = None
-            st.session_state.gemini_model = None
-            st.session_state.visualizer = None
+            reset_llm_clients()
 
-        # Center the check button
-        col1, col2, col3 = st.columns([1, 2, 1])
-        with col2:
-            if st.button("Check", key="check_api", use_container_width=True):
-                if api_key:
-                    with st.spinner("..."):
-                        st.session_state.api_key_valid = validate_api_key(api_key)
-                    st.rerun()
+        providers_cfg = CONFIG.get("providers", {})
 
-        if st.session_state.api_key_valid is True:
-            st.markdown('<p class="api-valid" style="text-align: center;">✓ API key is valid</p>',
-                        unsafe_allow_html=True)
-        elif st.session_state.api_key_valid is False:
-            st.markdown('<p class="api-invalid" style="text-align: center;">✗ Invalid API key</p>',
-                        unsafe_allow_html=True)
+        if st.session_state.llm_mode == "free":
+            # --- FREE: models verified to drive the agent, no user key needed ---
+            free_models = CONFIG.get("free_models") or []
+            free_labels = [m.get("label", m.get("model", "")) for m in free_models]
+
+            if free_labels:
+                if st.session_state.get("free_model_select") not in free_labels:
+                    current = st.session_state.free_model_label
+                    st.session_state.free_model_select = current if current in free_labels else free_labels[0]
+                chosen = st.selectbox("Free model", free_labels, key="free_model_select")
+                if chosen != st.session_state.free_model_label:
+                    st.session_state.free_model_label = chosen
+                    reset_llm_clients()
+
+            free_provider = get_free_choice().get("provider", "gemini")
+            if get_embedded_key(free_provider):
+                st.markdown('<p class="api-valid" style="text-align: center;">✓ Free to use — no API key needed</p>',
+                            unsafe_allow_html=True)
+            else:
+                st.markdown('<p class="api-invalid" style="text-align: center;">✗ No free key configured</p>',
+                            unsafe_allow_html=True)
+                st.caption("Set the provider key in the environment or .streamlit/secrets.toml, "
+                           "or switch to \"Use my own key\".")
+
+        else:
+            # --- BYO KEY: pick a provider, supply a key, pick a model ---
+            provider_keys = list(providers_cfg.keys())
+            provider_labels = [providers_cfg[p].get("label", p) for p in provider_keys]
+
+            if st.session_state.get("byok_provider_select") not in provider_labels:
+                current_provider = st.session_state.byok_provider
+                st.session_state.byok_provider_select = providers_cfg.get(
+                    current_provider, {}).get("label", provider_labels[0])
+            chosen_label = st.selectbox("Provider", provider_labels, key="byok_provider_select")
+            provider = provider_keys[provider_labels.index(chosen_label)]
+
+            if provider != st.session_state.byok_provider:
+                st.session_state.byok_provider = provider
+                st.session_state.byok_model = providers_cfg[provider].get("default_model")
+                st.session_state.api_key_valid = None
+                reset_llm_clients()
+
+            # Widget keys are scoped per provider so switching provider never
+            # carries over the previous provider's key or an invalid model.
+            stored_key = st.session_state.byok_keys.get(provider, "")
+            key_widget = f"byok_key_input_{provider}"
+            if key_widget not in st.session_state:
+                st.session_state[key_widget] = stored_key
+            user_key = st.text_input(
+                f"{providers_cfg[provider].get('label', provider)} API Key",
+                type="password", key=key_widget, placeholder="Enter API key...",
+            )
+            if user_key != stored_key:
+                st.session_state.byok_keys[provider] = user_key
+                st.session_state.api_key_valid = None
+                reset_llm_clients()
+
+            models = providers_cfg[provider].get("models", [])
+            if models:
+                model_widget = f"byok_model_select_{provider}"
+                if st.session_state.get(model_widget) not in models:
+                    current_model = st.session_state.byok_model
+                    st.session_state[model_widget] = (
+                        current_model if current_model in models
+                        else providers_cfg[provider].get("default_model", models[0])
+                    )
+                chosen_model = st.selectbox("Model", models, key=model_widget)
+                if chosen_model != st.session_state.byok_model:
+                    st.session_state.byok_model = chosen_model
+                    st.session_state.api_key_valid = None
+                    reset_llm_clients()
+
+            # Center the check button
+            col1, col2, col3 = st.columns([1, 2, 1])
+            with col2:
+                if st.button("Check", key="check_api", use_container_width=True):
+                    if st.session_state.byok_keys.get(provider):
+                        with st.spinner("..."):
+                            st.session_state.api_key_valid = validate_api_key(
+                                st.session_state.byok_keys[provider],
+                                provider=provider,
+                                model=st.session_state.byok_model,
+                            )
+                        st.rerun()
+
+            if st.session_state.api_key_valid is True:
+                st.markdown('<p class="api-valid" style="text-align: center;">✓ API key is valid</p>',
+                            unsafe_allow_html=True)
+            elif st.session_state.api_key_valid is False:
+                st.markdown('<p class="api-invalid" style="text-align: center;">✗ Invalid API key</p>',
+                            unsafe_allow_html=True)
+
+            if not st.session_state.byok_keys.get(provider):
+                st.caption("No key entered — the free model will be used.")
 
         # Enrichr Libraries
         with st.expander("📚 Enrichr Libraries", expanded=False):
@@ -1726,13 +1949,19 @@ DIALOG_FUNCTIONS = {
 
 def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
     """Render Bar/Bubble dialog with term selection and deselect all"""
+    # Clear any figure deferred by a previous dialog: if this plot fails to render we
+    # must show no PDF button rather than the previous plot's one.
+    st.session_state.pop("_pending_pdf", None)
     # Add marker for wide dialog CSS
     st.markdown("<span class='wide-dialog'></span>", unsafe_allow_html=True)
 
     visualizer = get_visualizer()
 
     # Get all available terms sorted by significance
-    all_terms = df.nsmallest(100, 'adjusted_p_value')['term'].tolist()
+    # No 100-term cap: every significant term is selectable. Ordered by adjusted
+    # p-value; _term_selector() presents them alphabetically and returns them in this
+    # p-value order for the plot.
+    all_terms = df.sort_values('adjusted_p_value')['term'].tolist()
 
     # Get unique libraries for color-by-library option
     libraries = df['library'].unique().tolist() if 'library' in df.columns else []
@@ -1742,7 +1971,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
     has_z_score = 'z_score' in df.columns
 
     # Parameters in SLIDING EXPANDER
-    with st.expander("Parameters", expanded=True):
+    with st.expander("Parameters", expanded=False):
         # Row 1: Number of terms, X-axis, Color by
         col1, col2, col3 = st.columns(3)
         with col1:
@@ -1775,42 +2004,12 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
         with col2:
             width = st.slider("Width (px)", 200, 1500, 800, step=50, key=f"dlg_{plot_id}_w")
         with col3:
-            height = st.slider("Height (px)", 200, 1500, 550, step=50, key=f"dlg_{plot_id}_h")
+            height = st.slider("Height (px)", 200, 1500, 450, step=50, key=f"dlg_{plot_id}_h")
         with col4:
             font_size = st.slider("Font size", 8, 16, 11, key=f"dlg_{plot_id}_fs")
 
         # Track n_terms changes to auto-update selection
-        prev_n_key = f"prev_n_terms_{plot_id}"
-        if prev_n_key not in st.session_state:
-            st.session_state[prev_n_key] = n_terms
-
-        # If n_terms slider changed, update the term selection
-        if st.session_state[prev_n_key] != n_terms:
-            st.session_state[f"selected_terms_{plot_id}"] = all_terms[:n_terms]
-            st.session_state[prev_n_key] = n_terms
-
-        # Term selection with deselect all
-        st.markdown("##### Select Terms to Include")
-        col_sel, col_desel = st.columns([4, 1])
-        with col_desel:
-            if st.button("Deselect All", key=f"desel_{plot_id}"):
-                st.session_state[f"selected_terms_{plot_id}"] = []
-                st.rerun()
-
-        # Initialize selected terms if not exists (use n_terms from slider)
-        if f"selected_terms_{plot_id}" not in st.session_state:
-            st.session_state[f"selected_terms_{plot_id}"] = all_terms[:n_terms]
-
-        # Use key directly without default to avoid double-click issue
-        selected_terms = st.multiselect(
-            "Terms",
-            options=all_terms,
-            default=st.session_state.get(f"selected_terms_{plot_id}", all_terms[:n_terms]),
-            key=f"terms_select_{plot_id}",
-            label_visibility="collapsed"
-        )
-        # Update session state after selection
-        st.session_state[f"selected_terms_{plot_id}"] = selected_terms
+        selected_terms = _term_selector(plot_id, df, n_terms)
 
     if not selected_terms:
         st.warning("Please select at least one term")
@@ -1952,7 +2151,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
             margin=dict(l=left_margin, r=80, t=40, b=60)
         )
         st.plotly_chart(fig, use_container_width=False, key=f"pc_bar_{width}_{height}_{font_size}_{palette}_{color_by}_{x_axis}_{len(selected_terms)}")
-        add_pdf_download_button(fig, "bar_plot.pdf", "dlg_pdf_bar", width=width, height=height)
+        _defer_pdf_button(fig, "bar_plot.pdf", "dlg_pdf_bar", width=width, height=height)
 
     else:  # bubble
         # Handle duplicate term names by appending library
@@ -2064,14 +2263,90 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
             )]
         )
         st.plotly_chart(fig, use_container_width=False, key=f"pc_bub_{width}_{height}_{font_size}_{palette}_{color_by}_{x_axis}_{len(selected_terms)}")
-        add_pdf_download_button(fig, "bubble_chart.pdf", "dlg_pdf_bubble", width=width, height=height)
+        _defer_pdf_button(fig, "bubble_chart.pdf", "dlg_pdf_bubble", width=width, height=height)
 
-    st.markdown("---")
+    _render_plot_actions(plot_id, plot_df)
 
-    # AI Interpretation as a BUTTON
-    if st.button("🤖 Generate AI Interpretation", key=f"ai_interp_{plot_id}"):
+
+def _term_selector(plot_id: str, df: pd.DataFrame, n_terms: int):
+    """Library filter + term picker, shared by every plot dialog.
+
+    Three deliberate behaviours:
+      * OPTIONS are alphabetical (easy to find a term); the RETURN value is ordered by
+        adjusted p-value, which is the order the plots expect.
+      * No `default=` on the multiselect. Passing both `default` and `key` while also
+        writing a shadow session_state entry AFTER the widget made a keyed widget's stored
+        state get discarded on the next rerun - that is why the first click did nothing.
+        The widget key is now the single source of truth, seeded once.
+      * No 100-term cap: every significant term is offered.
+    """
+    tkey = f"terms_select_{plot_id}"
+    prev_key = f"prev_n_terms_{plot_id}"
+
+    # --- library filter (only worth showing when more than one library is present) ---
+    if "library" in df.columns:
+        libs = sorted({str(x) for x in df["library"].dropna().unique()})
+        if len(libs) > 1:
+            lkey = f"lib_filter_{plot_id}"
+            if lkey not in st.session_state:
+                st.session_state[lkey] = libs
+            st.multiselect("Libraries", options=libs, key=lkey,
+                           help="Restrict the term list below to these libraries")
+            chosen_libs = st.session_state.get(lkey) or libs
+            df = df[df["library"].astype(str).isin(chosen_libs)]
+
+    terms_by_p = df.sort_values("adjusted_p_value")["term"].tolist()
+    options = sorted(terms_by_p, key=str.lower)
+    valid = set(options)
+
+    # the n_terms slider reseeds the selection (also handles first render)
+    if st.session_state.get(prev_key) != n_terms:
+        st.session_state[tkey] = terms_by_p[:n_terms]
+        st.session_state[prev_key] = n_terms
+
+    st.markdown("##### Select Terms to Include")
+    col_sel, col_desel = st.columns([4, 1])
+    with col_desel:
+        if st.button("Deselect All", key=f"desel_{plot_id}"):
+            st.session_state[tkey] = []
+            st.rerun()
+
+    # a stored term that is no longer offered (library filter changed) would raise
+    st.session_state[tkey] = [t for t in st.session_state.get(tkey, []) if t in valid]
+
+    st.multiselect("Terms", options=options, key=tkey, label_visibility="collapsed")
+    picked = set(st.session_state.get(tkey) or [])
+    return [t for t in terms_by_p if t in picked]      # p-value order for the plot
+
+
+def _defer_pdf_button(fig, filename: str, key: str, width: int = None, height: int = None):
+    """Stash the PDF-download args so the caller can put it beside the AI button."""
+    st.session_state["_pending_pdf"] = (fig, filename, key, width, height)
+
+
+def _render_plot_actions(plot_id: str, df_for_interp):
+    """PDF download + AI interpretation on one row, equal width, directly under the plot."""
+    pending = st.session_state.pop("_pending_pdf", None)
+    col_pdf, _spacer, col_ai = st.columns([1.3, 5.4, 1.3])   # AI button pushed to the right
+    with col_pdf:
+        if pending:
+            # rendered here rather than via add_pdf_download_button() so this row controls
+            # both button widths without changing that helper's signature
+            _fig, _name, _key, _w, _h = pending
+            _pdf = export_figure_to_pdf(_fig, _name,
+                                        width=_w or _fig.layout.width or 1200,
+                                        height=_h or _fig.layout.height or 800)
+            if _pdf:
+                st.download_button("📄 Download as PDF", data=_pdf, file_name=_name,
+                                   mime="application/pdf", key=_key, use_container_width=True)
+            else:
+                st.caption("PDF export needs `kaleido`")
+    with col_ai:
+        clicked = st.button("🤖 AI Interpretation", key=f"ai_interp_{plot_id}",
+                            use_container_width=True)
+    if clicked:
         with st.spinner("Generating interpretation..."):
-            interpretation = get_visualizer().get_plot_interpretation(plot_id, plot_df)
+            interpretation = get_visualizer().get_plot_interpretation(plot_id, df_for_interp)
         st.info(interpretation)
 
 
@@ -2083,7 +2358,10 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
     visualizer = get_visualizer()
 
     # Get all available terms sorted by significance
-    all_terms = df.nsmallest(100, 'adjusted_p_value')['term'].tolist()
+    # No 100-term cap: every significant term is selectable. Ordered by adjusted
+    # p-value; _term_selector() presents them alphabetically and returns them in this
+    # p-value order for the plot.
+    all_terms = df.sort_values('adjusted_p_value')['term'].tolist()
 
     # Get all genes if available
     all_genes = set()
@@ -2098,7 +2376,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
     selected_terms = None
     selected_genes = None
 
-    with st.expander("Parameters", expanded=True):
+    with st.expander("Parameters", expanded=False):
         if plot_id == "dendrogram":
             # Row 1: Number of terms, Method, Width, Height, Font Size
             col1, col2, col3, col4, col5 = st.columns(5)
@@ -2109,37 +2387,13 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
             with col3:
                 params["width"] = st.slider("Width (px)", 200, 1500, 800, step=50, key="dlg_den_w")
             with col4:
-                params["height"] = st.slider("Height (px)", 200, 1500, 600, step=50, key="dlg_den_h")
+                params["height"] = st.slider("Height (px)", 200, 1500, 480, step=50, key="dlg_den_h")
             with col5:
                 params["font_size"] = st.slider("Font size", 8, 16, 10, key="dlg_den_fs")
 
             # Track n_terms changes to auto-update selection
             n_terms = params["n_terms"]
-            prev_n_key = "prev_n_terms_dendrogram"
-            if prev_n_key not in st.session_state:
-                st.session_state[prev_n_key] = n_terms
-
-            # If n_terms slider changed, update the term selection
-            if st.session_state[prev_n_key] != n_terms:
-                st.session_state["selected_terms_dendrogram"] = all_terms[:n_terms]
-                st.session_state[prev_n_key] = n_terms
-
-            st.markdown("##### Select Terms to Include")
-            col_sel, col_desel = st.columns([4, 1])
-            with col_desel:
-                if st.button("Deselect All", key="desel_dendrogram"):
-                    st.session_state["selected_terms_dendrogram"] = []
-                    st.rerun()
-
-            if "selected_terms_dendrogram" not in st.session_state:
-                st.session_state["selected_terms_dendrogram"] = all_terms[:n_terms]
-
-            selected_terms = st.multiselect(
-                "Terms", options=all_terms,
-                default=st.session_state.get("selected_terms_dendrogram", all_terms[:n_terms]),
-                key="terms_select_dendrogram", label_visibility="collapsed"
-            )
-            st.session_state["selected_terms_dendrogram"] = selected_terms
+            selected_terms = _term_selector("dendrogram", df, n_terms)
 
         elif plot_id == "similarity":
             # Row 1: Number of terms, Clusters, Width, Height, Font Size
@@ -2151,37 +2405,13 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
             with col3:
                 params["width"] = st.slider("Width (px)", 200, 1500, 1100, step=50, key="dlg_sim_w")
             with col4:
-                params["height"] = st.slider("Height (px)", 200, 1500, 800, step=50, key="dlg_sim_h")
+                params["height"] = st.slider("Height (px)", 200, 1500, 480, step=50, key="dlg_sim_h")
             with col5:
                 params["font_size"] = st.slider("Font size", 8, 16, 12, key="dlg_sim_fs")
 
             # Track n_terms changes to auto-update selection
             n_terms = params["n_terms"]
-            prev_n_key = "prev_n_terms_similarity"
-            if prev_n_key not in st.session_state:
-                st.session_state[prev_n_key] = n_terms
-
-            # If n_terms slider changed, update the term selection
-            if st.session_state[prev_n_key] != n_terms:
-                st.session_state["selected_terms_similarity"] = all_terms[:n_terms]
-                st.session_state[prev_n_key] = n_terms
-
-            st.markdown("##### Select Terms to Include")
-            col_sel, col_desel = st.columns([4, 1])
-            with col_desel:
-                if st.button("Deselect All", key="desel_similarity"):
-                    st.session_state["selected_terms_similarity"] = []
-                    st.rerun()
-
-            if "selected_terms_similarity" not in st.session_state:
-                st.session_state["selected_terms_similarity"] = all_terms[:n_terms]
-
-            selected_terms = st.multiselect(
-                "Terms", options=all_terms,
-                default=st.session_state.get("selected_terms_similarity", all_terms[:n_terms]),
-                key="terms_select_similarity", label_visibility="collapsed"
-            )
-            st.session_state["selected_terms_similarity"] = selected_terms
+            selected_terms = _term_selector("similarity", df, n_terms)
 
         elif plot_id == "upset":
             # Row 1: Number of terms, Width, Height, Font Size
@@ -2191,7 +2421,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
             with col2:
                 params["width"] = st.slider("Width (px)", 200, 1500, 900, step=50, key="dlg_ups_w")
             with col3:
-                params["height"] = st.slider("Height (px)", 200, 1500, 700, step=50, key="dlg_ups_h")
+                params["height"] = st.slider("Height (px)", 200, 1500, 520, step=50, key="dlg_ups_h")
             with col4:
                 params["font_size"] = st.slider("Font size", 8, 16, 10, key="dlg_ups_fs")
 
@@ -2204,31 +2434,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
 
             # Track n_terms changes to auto-update selection
             n_terms = params["n_terms"]
-            prev_n_key = "prev_n_terms_upset"
-            if prev_n_key not in st.session_state:
-                st.session_state[prev_n_key] = n_terms
-
-            # If n_terms slider changed, update the term selection
-            if st.session_state[prev_n_key] != n_terms:
-                st.session_state["selected_terms_upset"] = all_terms[:n_terms]
-                st.session_state[prev_n_key] = n_terms
-
-            st.markdown("##### Select Terms to Include")
-            col_sel, col_desel = st.columns([4, 1])
-            with col_desel:
-                if st.button("Deselect All", key="desel_upset"):
-                    st.session_state["selected_terms_upset"] = []
-                    st.rerun()
-
-            if "selected_terms_upset" not in st.session_state:
-                st.session_state["selected_terms_upset"] = all_terms[:n_terms]
-
-            selected_terms = st.multiselect(
-                "Terms", options=all_terms,
-                default=st.session_state.get("selected_terms_upset", all_terms[:n_terms]),
-                key="terms_select_upset", label_visibility="collapsed"
-            )
-            st.session_state["selected_terms_upset"] = selected_terms
+            selected_terms = _term_selector("upset", df, n_terms)
 
         elif plot_id == "cnetplot":
             # Row 1: Number of terms, Width, Height, Clusters, Font Size
@@ -2238,7 +2444,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
             with col2:
                 params["width"] = st.slider("Width (px)", 200, 1500, 1000, step=50, key="dlg_cnet_w")
             with col3:
-                params["height"] = st.slider("Height (px)", 200, 1500, 800, step=50, key="dlg_cnet_h")
+                params["height"] = st.slider("Height (px)", 200, 1500, 560, step=50, key="dlg_cnet_h")
             with col4:
                 params["n_clusters"] = st.slider("Clusters", 2, 10, 5, key="dlg_cnet_c")
             with col5:
@@ -2246,31 +2452,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
 
             # Track n_terms changes to auto-update selection
             n_terms = params["n_terms"]
-            prev_n_key = "prev_n_terms_cnetplot"
-            if prev_n_key not in st.session_state:
-                st.session_state[prev_n_key] = n_terms
-
-            # If n_terms slider changed, update the term selection
-            if st.session_state[prev_n_key] != n_terms:
-                st.session_state["selected_terms_cnetplot"] = all_terms[:n_terms]
-                st.session_state[prev_n_key] = n_terms
-
-            st.markdown("##### Select Terms to Include")
-            col_sel, col_desel = st.columns([4, 1])
-            with col_desel:
-                if st.button("Deselect All Terms", key="desel_cnet_terms"):
-                    st.session_state["selected_terms_cnetplot"] = []
-                    st.rerun()
-
-            if "selected_terms_cnetplot" not in st.session_state:
-                st.session_state["selected_terms_cnetplot"] = all_terms[:n_terms]
-
-            selected_terms = st.multiselect(
-                "Terms", options=all_terms,
-                default=st.session_state.get("selected_terms_cnetplot", all_terms[:n_terms]),
-                key="terms_select_cnetplot", label_visibility="collapsed"
-            )
-            st.session_state["selected_terms_cnetplot"] = selected_terms
+            selected_terms = _term_selector("cnetplot", df, n_terms)
 
             # Gene selection
             default_n_genes = min(50, len(all_genes))
@@ -2303,17 +2485,14 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
     # Render the actual plot
     _render_full_plot(plot_id, df, params, visualizer)
 
-    st.markdown("---")
-
-    # AI Interpretation as a BUTTON
-    if st.button("🤖 Generate AI Interpretation", key=f"ai_interp_{plot_id}"):
-        with st.spinner("Generating interpretation..."):
-            interpretation = get_visualizer().get_plot_interpretation(plot_id, df)
-        st.info(interpretation)
+    _render_plot_actions(plot_id, df)
 
 
 def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
     """Render the full plot with selected terms and params"""
+    # Clear any figure deferred by a previous dialog: if this plot fails to render we
+    # must show no PDF button rather than the previous plot's one.
+    st.session_state.pop("_pending_pdf", None)
 
     # Compute a hash of current params to use as plotly_chart key (forces re-render on param change)
     _params_hash = hashlib.md5(str(sorted((k, str(v)[:50]) for k, v in params.items() if k != "selected_terms")).encode()).hexdigest()[:8]
@@ -2331,7 +2510,7 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
         if visualizer and len(plot_df) >= 3:
             method = params.get("method", "ward")
             width = params.get("width", 800)
-            height = params.get("height", 600)
+            height = params.get("height", 480)
             font_size = params.get("font_size", 10)
             result = visualizer.render_dendrogram_with_clusters(plot_df, n_terms=len(plot_df), method=method,
                                                                 font_size=font_size)
@@ -2342,15 +2521,17 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                     paper_bgcolor='white', plot_bgcolor='white',
                     font=dict(size=font_size, color='black'),
                     xaxis=dict(tickfont=dict(color='black', size=font_size), title_font=dict(color='black')),
-                    yaxis=dict(tickfont=dict(color='black', size=font_size), title_font=dict(color='black')),
-                    margin=dict(l=10, r=10, t=30, b=30)
+                    yaxis=dict(tickfont=dict(color='black', size=font_size), title_font=dict(color='black'))
+                    # margin intentionally NOT set: the renderer reserves r=120 for the
+                    # cluster labels and t=50/b=60 for the axes. Forcing 10/30 clipped them,
+                    # on screen and in the exported PDF.
                 )
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
-                add_pdf_download_button(fig, "dendrogram.pdf", "dlg_pdf_dend", width=width, height=height)
+                _defer_pdf_button(fig, "dendrogram.pdf", "dlg_pdf_dend", width=width, height=height)
 
     elif plot_id == "upset":
         if visualizer and len(plot_df) >= 2:
-            height = params.get("height", 700)
+            height = params.get("height", 520)
             width = params.get("width", 900)
             font_size = params.get("font_size", 10)
             bar_color = params.get("bar_color", "#1a1a2e")
@@ -2364,19 +2545,20 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                 fig.update_layout(
                     height=height, width=width,
                     paper_bgcolor='white', plot_bgcolor='white',
-                    font=dict(color='black', size=font_size),
-                    margin=dict(l=10, r=10, t=30, b=30)
+                    font=dict(color='black', size=font_size)
+                    # margin intentionally NOT set: the renderer reserves l=180 for the term
+                    # names. Forcing l=10 cut every name off, on screen and in the PDF.
                 )
                 # Update all subplots' axes
                 fig.update_xaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 fig.update_yaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
-                add_pdf_download_button(fig, "upset_plot.pdf", "dlg_pdf_upset", width=width, height=height)
+                _defer_pdf_button(fig, "upset_plot.pdf", "dlg_pdf_upset", width=width, height=height)
 
     elif plot_id == "similarity":
         if visualizer and len(plot_df) >= 3:
             clusters = params.get("n_clusters", 8)
-            height = params.get("height", 800)
+            height = params.get("height", 480)
             width = params.get("width", 1100)
             font_size = params.get("font_size", 12)
             result = visualizer.render_similarity_clusters_with_data(plot_df, n_terms=len(plot_df), n_clusters=clusters,
@@ -2384,21 +2566,19 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                                                                      word_font_size=font_size)
             if result and result[0]:
                 fig = result[0]
+                # Keep the renderer's own margins: render_similarity_clusters sizes its
+                # word packing from them, so overriding here desynchronises the two.
                 fig.update_layout(
                     paper_bgcolor='white', plot_bgcolor='white',
-                    font=dict(color='black', size=font_size),
-                    margin=dict(l=10, r=10, t=30, b=30)
+                    font=dict(color='black', size=font_size)
                 )
-                fig.update_xaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
-                fig.update_yaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
-                fig.update_coloraxes(colorbar_tickfont=dict(color='black'), colorbar_title_font=dict(color='black'))
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
-                add_pdf_download_button(fig, "similarity.pdf", "dlg_pdf_sim", width=width, height=height)
+                _defer_pdf_button(fig, "similarity.pdf", "dlg_pdf_sim", width=width, height=height)
 
     elif plot_id == "cnetplot":
         if visualizer and len(plot_df) >= 2:
             clusters = params.get("n_clusters", 5)
-            height = params.get("height", 800)
+            height = params.get("height", 560)
             width = params.get("width", 1000)
             font_size = params.get("font_size", 10)
             selected_genes = params.get("selected_genes")
@@ -2417,14 +2597,14 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                 fig.update_xaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 fig.update_yaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
-                add_pdf_download_button(fig, "cnetplot.pdf", "dlg_pdf_cnet", width=width, height=height)
+                _defer_pdf_button(fig, "cnetplot.pdf", "dlg_pdf_cnet", width=width, height=height)
 
 def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
     """
     Create the FULL-SIZE figure for thumbnail conversion.
     Uses white/light theme for clean thumbnail appearance.
     """
-    # Create lightweight Visualizer without gemini_model - plot rendering doesn't need AI.
+    # Create lightweight Visualizer without an LLM - plot rendering doesn't need AI.
     # Avoids unhashable session_state access when called from @st.cache_data context.
     visualizer = Visualizer()
 
@@ -2561,6 +2741,22 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
 
     return None
 
+def _style_df(df):
+    """Apply theme-aware colors to a dataframe (dark/light)."""
+    is_dark = st.session_state.get("dark_mode", True)
+    if is_dark:
+        _bg, _fg, _hdr_bg, _border = "#1a1f2e", "#f1f5f9", "#0f1420", "#3a4358"
+    else:
+        _bg, _fg, _hdr_bg, _border = "#ffffff", "#1e293b", "#e2e8f0", "#cbd5e1"
+    _line = "#64748b" if is_dark else "#cbd5e1"
+    return df.style.set_properties(
+        **{"background-color": _bg, "color": _fg, "border": f"1px solid {_line}"}
+    ).set_table_styles([
+        {"selector": "th", "props": [
+            ("background-color", _hdr_bg), ("color", _fg), ("border", f"1px solid {_line}")
+        ]},
+        {"selector": "td", "props": [("border", f"1px solid {_line}")]},
+    ])
 
 def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_idx: int = None):
     """Render enrichment results with Enrichr-style layout"""
@@ -2672,7 +2868,7 @@ def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_i
     div[data-testid="column"] button p,
     div[data-testid="column"] .stButton button p,
     .stButton button p {
-        background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #22d3ee 100%) !important;
+        background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 50%, #67e8f9 100%) !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
         background-clip: text !important;
@@ -2826,8 +3022,7 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
     if 'genes' in display_df.columns:
         cols.append('genes')
 
-    st.dataframe(display_df[cols], use_container_width=True, hide_index=True, height=400)
-
+    st.dataframe(_style_df(display_df[cols]), use_container_width=True, hide_index=True, height=400)
     csv = display_df.to_csv(index=False)
     st.download_button("Download as CSV", csv, "enrichment_results.csv", "text/csv",
                        key=f"dl_enrich_{hash(str(display_df.shape)) % 100000}{key_suffix}")
@@ -2838,7 +3033,7 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
     st.markdown("##### 🤖 Detailed AI Interpretations")
 
     visualizer = get_visualizer()
-    if visualizer and visualizer.gemini_model:
+    if visualizer and visualizer.llm:
         # Overall interpretation
         with st.expander("📊 Overall Biological Interpretation", expanded=True):
             top_terms = df.nsmallest(15, 'adjusted_p_value')['term'].tolist()
@@ -2849,7 +3044,8 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
 4. Suggested follow-up analyses"""
 
             data = {"top_terms": top_terms, "libraries": df['library'].unique().tolist()}
-            interp = get_gemini_interpretation(visualizer.gemini_model, prompt, json.dumps(data))
+            interp = get_llm_interpretation(visualizer.llm, prompt, json.dumps(data),
+                                            get_utility_model_id())
             st.markdown(interp)
 
 
@@ -2952,7 +3148,6 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
                 if isinstance(enrichment_df, list):
                     enrichment_df = pd.DataFrame(enrichment_df)
                 if not enrichment_df.empty:
-                    st.markdown("### 📊 Enrichment Analysis Results")
                     render_enrichment_results(enrichment_df, envelope, msg_idx=message_idx)
 
             # Database results
@@ -3211,8 +3406,9 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
 
 def generate_response_summary(content: str, envelope: Dict) -> str:
     """Generate a comprehensive AI summary from the full response and envelope data"""
-    gemini = get_gemini_model()
-    if not gemini:
+    summary_max_tokens = CONFIG.get("gemini", {}).get("summary_max_tokens", 8192)
+    llm = get_utility_client(max_tokens=summary_max_tokens)
+    if not llm:
         # Fallback: extract more content
         lines = content.split('\n')
         summary_lines = []
@@ -3291,9 +3487,7 @@ PARAGRAPH 3: Biological interpretation and implications:
 
 Write as flowing prose. NO bullet points, NO headers. Be specific - mention actual pathway names, GO terms, p-values where relevant. This is the MAIN content users will see."""
 
-        summary_max_tokens = CONFIG.get("gemini", {}).get("summary_max_tokens", 8192)
-        response = gemini.generate_content(prompt, generation_config={"max_output_tokens": summary_max_tokens})
-        return response.text if hasattr(response, 'text') else content[:800]
+        return complete_text(llm, prompt) or content[:800]
     except Exception as e:
         logger.error(f"Summary generation failed: {e}")
         # Fallback - extract more content
@@ -3387,7 +3581,7 @@ def _render_single_gene_card(gene_info):
                             else:
                                 go_table_data.append({"Term": str(t)})
                         if go_table_data:
-                            st.dataframe(pd.DataFrame(go_table_data), use_container_width=True, hide_index=True)
+                            st.dataframe(_style_df(pd.DataFrame(go_table_data)), use_container_width=True, hide_index=True)
                     else:
                         st.caption(f"No {label} terms found")
 
@@ -3410,7 +3604,7 @@ def _render_single_gene_card(gene_info):
                         else:
                             kegg_data.append({"Pathway": str(p)})
                     if kegg_data:
-                        st.dataframe(pd.DataFrame(kegg_data), use_container_width=True, hide_index=True)
+                        st.dataframe(_style_df(pd.DataFrame(kegg_data)), use_container_width=True, hide_index=True)
                 else:
                     st.caption("No KEGG pathways found")
 
@@ -3423,7 +3617,7 @@ def _render_single_gene_card(gene_info):
                         else:
                             reactome_data.append({"Pathway": str(p)})
                     if reactome_data:
-                        st.dataframe(pd.DataFrame(reactome_data), use_container_width=True, hide_index=True)
+                        st.dataframe(_style_df(pd.DataFrame(reactome_data)), use_container_width=True, hide_index=True)
                 else:
                     st.caption("No Reactome pathways found")
 
@@ -3440,14 +3634,14 @@ def _add_relevance_scores(papers: List[Dict], query: str) -> List[Dict]:
 
     for p in papers:
         if not p.get("specificity"):
-            # Map from reasoning_engine's field name
+            # Map from reasoning_engine's field name. An unscored paper defaults to LOW,
+            # not Medium: scoring failures must not masquerade as relevant results. The
+            # relevance gate in reasoning_engine.keep_relevant_papers() drops these
+            # already, so seeing one here means scoring failed to parse.
             rating = p.get("relevance_rating", "")
-            if rating:
-                p["specificity"] = rating
-            else:
-                p["specificity"] = "Medium"
+            p["specificity"] = rating if rating else "Low"
             if not p.get("relevance_details"):
-                p["relevance_details"] = ""
+                p["relevance_details"] = "" if rating else "not scored - treated as low relevance"
 
     return papers
 
@@ -3520,7 +3714,7 @@ def render_literature_card(papers: List[Dict], query: str = "", card_key: str = 
     if table_data:
         table_df = pd.DataFrame(table_data)
         st.dataframe(
-            table_df,
+            _style_df(table_df),
             use_container_width=True,
             hide_index=True,
             column_config={
@@ -3631,7 +3825,8 @@ def render_database_card(db_results, msg_idx: int = None):
                     display_cols.append("description_short")
 
                 if display_cols:
-                    st.dataframe(results_df[display_cols].head(100), use_container_width=True, hide_index=True)
+                    st.dataframe(_style_df(results_df[display_cols].head(100)), use_container_width=True,
+                                 hide_index=True)
 
                     # Download button
                     db_csv = results_df.to_csv(index=False)
@@ -3674,7 +3869,7 @@ def render_followup_suggestions(envelope: Dict, msg_idx: int = None):
     cols = st.columns(len(suggestions[:3]))
     for col, sugg in zip(cols, suggestions[:3]):
         with col:
-            if st.button(sugg[:30], key=f"fw_{hash(sugg)}{_ks}", use_container_width=True):
+            if st.button(sugg, key=f"fw_{hash(sugg)}{_ks}", use_container_width=True):
                 st.session_state.pending_query = sugg
                 st.rerun()
 
@@ -4074,15 +4269,19 @@ def render_overview_page():
     # ── 5. HOW TO USE ──
     st.markdown("### How to Use Enrich.AI")
 
-    st.markdown("#### Getting a Gemini API Key")
+    st.markdown("#### Using Your Own API Key (optional)")
     st.markdown(
-        "To use Enrich.AI, you need a free Google Gemini API key. "
-        "Get one here: **[Google AI Studio — Get API Key](https://aistudio.google.com/app/apikey)**"
+        "Enrich.AI is free to use — no API key required. "
+        "If you would rather run it on your own account or a different model, switch the sidebar to "
+        "**Use my own key**, pick a provider, and paste your key. "
+        "Keys: **[Google AI Studio](https://aistudio.google.com/app/apikey)** · "
+        "**[OpenAI](https://platform.openai.com/api-keys)** · "
+        "**[Groq](https://console.groq.com/keys)**"
     )
 
     st.markdown("#### Quick Start")
     st.markdown("""
-    1. **Enter your Gemini API key** in the sidebar and verify it shows a green checkmark
+    1. **Just start typing** — the free model is selected by default, no API key needed
     2. **Write anything in the chat** — Enrich.AI understands natural language queries about biology
     3. **For enrichment analysis:**
        - Libraries can be selected from the **Enrichr Libraries** button in the sidebar, or specified manually in chat
@@ -4170,12 +4369,13 @@ def render_overview_page():
 
     st.markdown("#### API Key Configuration")
     st.markdown("""
-There are two ways to provide your Gemini API key:
+Enrich.AI ships with an embedded key, so it runs free out of the box. To use your own key instead:
 
-**In the UI** — Enter it in the sidebar text field after launching. 
-This is the easiest approach and requires no configuration files.
+**In the UI** — Switch the sidebar to **Use my own key**, choose a provider
+(Gemini, OpenAI or Groq), paste your key and pick a model. No configuration files needed.
 
-**As an environment variable** — Set it before launching:
+**As an environment variable** — Set it before launching
+(`GOOGLE_API_KEY`, `OPENAI_API_KEY` or `GROQ_API_KEY`):
 """)
     st.html("""
     <div style="background: #000000; border: 1px solid #1e293b; border-radius: 10px;
@@ -4570,21 +4770,33 @@ def render_library_browser():
 # ===============================================================================
 
 def handle_user_query(query: str):
-    if not st.session_state.api_key:
-        st.error("Please enter your Gemini API key.")
+    provider, model, api_key = get_active_llm_choice()
+
+    if not api_key:
+        if st.session_state.get("llm_mode") == "byok":
+            st.error("Please enter your API key in the sidebar, or switch to the free model.")
+        else:
+            st.error("No free API key is configured. Add your own key in the sidebar.")
         return None
 
-    if st.session_state.reasoning_engine is None:
-        os.environ["GOOGLE_API_KEY"] = st.session_state.api_key
+    # Rebuild the engine whenever the provider/model/key selection changes
+    signature = (provider, model, api_key)
+    if st.session_state.reasoning_engine is None or st.session_state.llm_signature != signature:
         try:
-            st.session_state.reasoning_engine = create_reasoning_engine()
+            st.session_state.reasoning_engine = create_reasoning_engine(
+                provider=provider, model_name=model, api_key=api_key
+            )
+            st.session_state.llm_signature = signature
         except Exception as e:
             st.error(f"Failed to initialize: {e}")
             return None
 
     try:
-        result = st.session_state.reasoning_engine.run(query,
-                                                       selected_libraries=st.session_state.selected_libraries or None)
+        result = st.session_state.reasoning_engine.run(
+            query,
+            selected_libraries=st.session_state.selected_libraries or None,
+            progress_callback=st.session_state.get("_progress_cb"),
+        )
         envelope = result.get("envelope", {})
         return {"content": envelope.get("final_text", "I processed your request."), "envelope": envelope}
     except Exception as e:
@@ -4637,8 +4849,13 @@ def render_chat_interface():
         with st.chat_message("user", avatar=_get_user_avatar()):
             st.markdown(query)
 
-        with st.spinner("🔄 Analyzing..."):
+        with st.status("🔄 Analyzing...", expanded=True) as status:
+            def _cb(msg):
+                status.write(msg)
+            st.session_state["_progress_cb"] = _cb
             result = handle_user_query(query)
+            st.session_state["_progress_cb"] = None
+            status.update(label="✓ Analysis complete", state="complete", expanded=False)
 
         st.session_state.processing = False
 

@@ -1,0 +1,7 @@
+{
+  "n_scored": 2047,
+  "correct": 1961,
+  "upper_bound_k": 86,
+  "manual_genuine_k": 54,
+  "auto_genuine_k": 14
+}

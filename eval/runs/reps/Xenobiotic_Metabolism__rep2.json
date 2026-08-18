@@ -1,0 +1,3877 @@
+{
+  "gene_set": "Xenobiotic_Metabolism",
+  "context": "Xenobiotic Metabolism",
+  "genes": [
+    "CYP1A1",
+    "FAH",
+    "DCXR",
+    "CYP1A2",
+    "GSTA3",
+    "CYP2J2",
+    "CYP27A1",
+    "ADH1C",
+    "UGDH",
+    "ASL",
+    "NQO1",
+    "ALAS1",
+    "GSTM4",
+    "CYP2C18",
+    "PTS",
+    "CYB5A",
+    "ACOX2",
+    "EPHX1",
+    "LCAT",
+    "SLC35D1",
+    "GSS",
+    "FMO3",
+    "IDH1",
+    "AKR1C3",
+    "SLC22A1",
+    "GSTO1",
+    "ARG1",
+    "CDO1",
+    "FMO1",
+    "ALDH9A1",
+    "POR",
+    "NDRG2",
+    "UPB1",
+    "ECH1",
+    "PTGES",
+    "PDK4",
+    "AHCY",
+    "COMT",
+    "AOX1",
+    "CFB",
+    "DDAH2",
+    "HGFAC",
+    "F11",
+    "CYP26A1",
+    "MCCC2",
+    "SERPINA6",
+    "GNMT",
+    "BLVRB",
+    "HACL1",
+    "MAOA",
+    "KYNU",
+    "DHPS",
+    "SERPINE1",
+    "SLC6A12",
+    "GCH1",
+    "DHRS7",
+    "PAPSS2",
+    "ALDH2",
+    "HSD11B1",
+    "SLC35B1",
+    "KARS1",
+    "CA2",
+    "LPIN2",
+    "CAT",
+    "CYP2S1",
+    "RAP1GAP",
+    "FBP1",
+    "RBP4",
+    "GCKR",
+    "CDA",
+    "MTHFD1",
+    "ADH7",
+    "DHRS1",
+    "VNN1",
+    "CNDP2",
+    "SLC6A6",
+    "FETUB",
+    "CROT",
+    "GAD1",
+    "AKR1C2",
+    "TKFC",
+    "IGF1",
+    "SSR3",
+    "GABARAPL1",
+    "TMBIM6",
+    "CD36",
+    "CES1",
+    "SHMT2",
+    "TMEM176B",
+    "GSTT2",
+    "PLG",
+    "HMOX1",
+    "SPINT2",
+    "ALDH3A1",
+    "GSR",
+    "ABHD6",
+    "XDH",
+    "PPARD",
+    "ELOVL5",
+    "CYP4F2",
+    "RETSAT",
+    "CYFIP2",
+    "PINK1",
+    "GCLC",
+    "ESR1",
+    "PMM1",
+    "TDO2",
+    "MT2A",
+    "ATP2A2",
+    "DDT",
+    "FABP1",
+    "ACP2",
+    "ABCD2",
+    "G6PC",
+    "DDC",
+    "ACOX3",
+    "SAR1B",
+    "FBLN1",
+    "ADH5",
+    "CRP",
+    "ABCC2",
+    "ETS2",
+    "NPC1",
+    "CASP6",
+    "BPHL",
+    "IL1R1",
+    "ENTPD5",
+    "TNFRSF1A",
+    "IGFBP4",
+    "PYCR1",
+    "CSAD",
+    "VTN",
+    "ID2",
+    "ETFDH",
+    "HRG",
+    "TYR",
+    "UPP1",
+    "BCAR1",
+    "CBR1",
+    "APOE",
+    "SLC12A4",
+    "TMEM97",
+    "SLC46A3",
+    "PTGDS",
+    "MPP2",
+    "PTGR1",
+    "AQP9",
+    "EPHA2",
+    "PSMB10",
+    "FAS",
+    "ACOX1",
+    "GART",
+    "HPRT1",
+    "PGD",
+    "ABCC3",
+    "SMOX",
+    "TTPA",
+    "HES6",
+    "GCNT2",
+    "MAN1A1",
+    "IGFBP1",
+    "ITIH4",
+    "PROS1",
+    "TPST1",
+    "LEAP2",
+    "NFS1",
+    "PGRMC1",
+    "CYP17A1",
+    "ARPP19",
+    "SERTAD1",
+    "ARG2",
+    "HNF4A",
+    "REG1A",
+    "CCL25",
+    "PEMT",
+    "ACO2",
+    "LONP1",
+    "NMT1",
+    "PTGES3",
+    "F10",
+    "TAT",
+    "MARCHF6",
+    "JUP",
+    "ACP1",
+    "MBL2",
+    "TGFB2",
+    "ENPEP",
+    "HSD17B2",
+    "ANGPTL3",
+    "PC",
+    "PDLIM5",
+    "CYP2E1",
+    "BCAT1",
+    "ATOH8",
+    "SLC1A5",
+    "IRF8",
+    "NINJ1",
+    "AP4B1",
+    "ACSM1",
+    "ITIH1"
+  ],
+  "n_genes": 200,
+  "query": "Analyze this gene set (biological context: Xenobiotic Metabolism) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: CYP1A1, FAH, DCXR, CYP1A2, GSTA3, CYP2J2, CYP27A1, ADH1C, UGDH, ASL, NQO1, ALAS1, GSTM4, CYP2C18, PTS, CYB5A, ACOX2, EPHX1, LCAT, SLC35D1, GSS, FMO3, IDH1, AKR1C3, SLC22A1, GSTO1, ARG1, CDO1, FMO1, ALDH9A1, POR, NDRG2, UPB1, ECH1, PTGES, PDK4, AHCY, COMT, AOX1, CFB, DDAH2, HGFAC, F11, CYP26A1, MCCC2, SERPINA6, GNMT, BLVRB, HACL1, MAOA, KYNU, DHPS, SERPINE1, SLC6A12, GCH1, DHRS7, PAPSS2, ALDH2, HSD11B1, SLC35B1, KARS1, CA2, LPIN2, CAT, CYP2S1, RAP1GAP, FBP1, RBP4, GCKR, CDA, MTHFD1, ADH7, DHRS1, VNN1, CNDP2, SLC6A6, FETUB, CROT, GAD1, AKR1C2, TKFC, IGF1, SSR3, GABARAPL1, TMBIM6, CD36, CES1, SHMT2, TMEM176B, GSTT2, PLG, HMOX1, SPINT2, ALDH3A1, GSR, ABHD6, XDH, PPARD, ELOVL5, CYP4F2, RETSAT, CYFIP2, PINK1, GCLC, ESR1, PMM1, TDO2, MT2A, ATP2A2, DDT, FABP1, ACP2, ABCD2, G6PC, DDC, ACOX3, SAR1B, FBLN1, ADH5, CRP, ABCC2, ETS2, NPC1, CASP6, BPHL, IL1R1, ENTPD5, TNFRSF1A, IGFBP4, PYCR1, CSAD, VTN, ID2, ETFDH, HRG, TYR, UPP1, BCAR1, CBR1, APOE, SLC12A4, TMEM97, SLC46A3, PTGDS, MPP2, PTGR1, AQP9, EPHA2, PSMB10, FAS, ACOX1, GART, HPRT1, PGD, ABCC3, SMOX, TTPA, HES6, GCNT2, MAN1A1, IGFBP1, ITIH4, PROS1, TPST1, LEAP2, NFS1, PGRMC1, CYP17A1, ARPP19, SERTAD1, ARG2, HNF4A, REG1A, CCL25, PEMT, ACO2, LONP1, NMT1, PTGES3, F10, TAT, MARCHF6, JUP, ACP1, MBL2, TGFB2, ENPEP, HSD17B2, ANGPTL3, PC, PDLIM5, CYP2E1, BCAT1, ATOH8, SLC1A5, IRF8, NINJ1, AP4B1, ACSM1, ITIH1",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 99,
+  "n_papers": 3,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 3,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 3,
+    "cited_pmids": [
+      "41498561",
+      "42091236",
+      "42375970"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "This gene set is highly enriched for pathways central to xenobiotic metabolism, reflecting the organism's robust mechanisms for processing and detoxifying foreign compounds, as well as endogenous metabolites. The presence of numerous cytochrome P450 (CYP) enzymes, glutathione S-transferases (GSTs), and other oxidoreductases points to a comprehensive system for biotransformation.\n\n## Detailed Analysis\n\n### Enrichment Analysis (GO_Biological_Process_2023 & KEGG_2021_Human)\n\nThe enrichment analysis strongly highlights the primary role of this gene set in metabolic processes, particularly those involving xenobiotics and various endogenous lipids.\n\n**Key findings directly related to Xenobiotic Metabolism:**\n\n*   **KEGG_2021_Human: Drug metabolism (p=1.14e-17)** and **Metabolism of xenobiotics by cytochrome P450 (p=1.07e-13)** are the most significant terms, directly confirming the xenobiotic metabolism context. These terms include key genes like *GSTM4, CDA, ADH1C, MAOA, GSTO1, GSTT2, FMO1, FMO3, ADH7, UPB1, ADH5, ALDH3A1, GSTA3, CYP1A2, AOX1, CYP2E1, HPRT1, UPP1, XDH, CES1, CBR1, EPHX1, HSD11B1, CYP2S1, CYP1A1*. The high number of overlapping genes, especially CYPs and GSTs, underscores their coordinated action in detoxification.\n*   **GO_Biological_Process_2023: Epoxygenase P450 Pathway (p=1.86e-06)** further emphasizes the role of CYPs in metabolizing various compounds, including arachidonic acid and other lipids.\n*   **KEGG_2021_Human: Glutathione metabolism (p=1.55e-07)** is highly significant, with genes such as *GSTM4, GCLC, GSTO1, GSTA3, GSS, IDH1, GSR, GSTT2, PGD*. Glutathione (GSH) plays a critical role in Phase II detoxification, conjugating with xenobiotics or their metabolites to facilitate excretion. The co-enrichment of CYP and GST pathways indicates a complete Phase I (functionalization) and Phase II (conjugation) detoxification system.\n\n**Other relevant metabolic pathways that often intersect with xenobiotic metabolism:**\n\n*   **Lipid Metabolism:** Numerous terms relate to fatty acid, arachidonic acid, steroid, monocarboxylic acid, and cholesterol metabolism (e.g., GO:0019369, GO:0006631, GO:0008202, KEGG: Arachidonic acid metabolism, KEGG: Cholesterol metabolism). Many CYP enzymes are involved in both xenobiotic and endogenous lipid metabolism. For instance, several CYPs (e.g., *CYP2J2, CYP4F2, CYP1A1, CYP1A2, CYP2E1*) are found in arachidonic acid metabolism and fatty acid metabolic processes.\n*   **Amino Acid Metabolism:** Pathways like Tyrosine metabolism (KEGG), Tryptophan metabolism (KEGG), beta-Alanine metabolism (KEGG), Arginine and proline metabolism (KEGG), and Sulfur Amino Acid Metabolic Process (GO) are enriched. These pathways can be affected by or contribute to the synthesis of substrates/cofactors for xenobiotic processing. For example, some ALDHs (*ALDH3A1, ALDH2, ALDH9A1*) are involved in both xenobiotic detoxification and amino acid metabolism.\n*   **Peroxisome (KEGG_2021_Human, p=2.25e-07):** This term is significant and includes genes such as *ABCD2, ACOX2, ACOX1, IDH1, ECH1, CAT, HACL1, CROT, ACOX3, XDH*. Peroxisomes are crucial organelles involved in the beta-oxidation of very long-chain fatty acids and other metabolic processes, often linked to the breakdown of various organic compounds, some of which can be xenobiotic-derived.\n*   **Chemical Carcinogenesis (KEGG_2021_Human, p=2.72e-06):** The overlap with this pathway, including *GSTM4, CBR1, GSTO1, PTGES3, EPHX1, AKR1C2, GSTT2, ESR1, CYP2C18, HSD11B1, GSTA3, CYP1A2, CYP1A1, CYP2E1*, underscores that the same enzymes involved in detoxification can, under certain conditions, bioactivate procarcinogens.\n\n### Literature Support\n\nThe literature search for \"xenobiotic metabolism\" AND \"cytochrome P450\" AND \"glutathione\" provided direct evidence supporting the interpretation:\n\n1.  **Biotransformation and detoxification enzyme (CYP1A2, CYP2E1, and GST) activities in vital organs of rats using liver extracts of *Crocodylus siamensis*.** Sahabantherngsin T, Srisuporn P, Tulayakul P. (2026) PMID:42375970\n    This paper highlights that cytochrome P450 isoforms (CYP1A2, CYP2E1) and glutathione-S-transferase (GST) are key detoxification enzymes in xenobiotic metabolism and organ protection. This directly validates the prominent role of these gene families in the provided list.\n\n2.  **Exploring the components of hepatotoxicity induced by *Senecio scandens* Buch.-Ham. based on integrated network toxicology, metabolomics, and *in vivo* experiments.** Yang S, Wang H, Gong B, Tan R, Liu Y, Wu T, Jiang Y, Rao Q, Li W, Yu J, Lin C, Jin Y, Zhang S. (2026) PMID:42091236\n    This study demonstrates that specific pyrrolizidine alkaloids (PAs) induce hepatotoxicity, and metabolomic profiling shows alterations in glutathione metabolism and enrichment of xenobiotic metabolism by cytochrome P450. This reinforces the interconnectedness of CYP and glutathione pathways in processing toxic compounds.\n\n3.  **Mechanisms of the marine yeast *Debaryomyces hansenii* for protection against reactive oxygen species produced during benzo(a)pyrene biotransformation.** Padilla-Garfias F, Araiza-Villanueva MG, Calahorra M, Sánchez NS, Peña A. (2026) PMID:41498561\n    This paper shows that biotransformation of polycyclic aromatic hydrocarbons (PAHs) involves cytochrome P450 (CYP), epoxide hydrolase (EH), and glutathione S-transferase (GST) enzymes, which are typically associated with xenobiotic metabolism. It also notes the activation of antioxidant defenses, including the glutathione redox system, linking xenobiotic metabolism with oxidative stress response.\n\nThe literature consistently supports the interpretation that the enriched gene set is strongly involved in xenobiotic metabolism, primarily through the actions of Cytochrome P450 enzymes and Glutathione S-transferases, often in conjunction with other metabolic and antioxidant pathways. The presence of these genes indicates a robust system for handling diverse chemical challenges.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human', 'genes': 'CYP1A1, FAH, DCXR, CYP1A2, GSTA3, CYP2J2, CYP27A1, ADH1C, UGDH, ASL, NQO1, ALAS1, GSTM4, CYP2C18, PTS, CYB5A, ACOX2, EPHX1, LCAT, SLC35D1, GSS, FMO3, IDH1, AKR1C3, SLC22A1, GSTO1, ARG1, CDO1, FMO1, ALDH9A1, POR, NDRG2, UPB1, ECH1, PTGES, PDK4, AHCY, COMT, AOX1, CFB, DDAH2, HGFAC, F11, CYP26A1, MCCC2, SERPINA6, GNMT, BLVRB, HACL1, MAOA, KYNU, DHPS, SERPINE1, SLC6A12, GCH1, DHRS7, PAPSS2, ALDH2, HSD11B1, SLC35B1, KARS1, CA2, LPIN2, CAT, CYP2S1, RAP1GAP, FBP1, RBP4, GCKR, CDA, MTHFD1, ADH7, DHRS1, VNN1, CNDP2, SLC6A6, FETUB, CROT, GAD1, AKR1C2, TKFC, IGF1, SSR3, GABARAPL1, TMBIM6, CD36, CES1, SHMT2, TMEM176B, GSTT2, PLG, HMOX1, SPINT2, ALDH3A1, GSR, ABHD6, XDH, PPARD, ELOVL5, CYP4F2, RETSAT, CYFIP2, PINK1, GCLC, ESR1, PMM1, TDO2, MT2A, ATP2A2, DDT, FABP1, ACP2, ABCD2, G6PC, DDC, ACOX3, SAR1B, FBLN1, ADH5, CRP, ABCC2, ETS2, NPC1, CASP6, BPHL, IL1R1, ENTPD5, TNFRSF1A, IGFBP4, PYCR1, CSAD, VTN, ID2, ETFDH, HRG, TYR, UPP1, BCAR1, CBR1, APOE, SLC12A4, TMEM97, SLC46A3, PTGDS, MPP2, PTGR1, AQP9, EPHA2, PSMB10, FAS, ACOX1, GART, HPRT1, PGD, ABCC3, SMOX, TTPA, HES6, GCNT2, MAN1A1, IGFBP1, ITIH4, PROS1, TPST1, LEAP2, NFS1, PGRMC1, CYP17A1, ARPP19, SERTAD1, ARG2, HNF4A, REG1A, CCL25, PEMT, ACO2, LONP1, NMT1, PTGES3, F10, TAT, MARCHF6, JUP, ACP1, MBL2, TGFB2, ENPEP, HSD17B2, ANGPTL3, PC, PDLIM5, CYP2E1, BCAT1, ATOH8, SLC1A5, IRF8, NINJ1, AP4B1, ACSM1, ITIH1', 'top_n': 50}",
+    "Tool: search_literature | Args: {'query': '\"xenobiotic metabolism\" AND \"cytochrome P450\" AND \"glutathione\"', 'max_results': 5}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Xenobiotic Metabolism) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: CYP1A1, FAH, DCXR, CYP1A2, GSTA3, CYP2J2, CYP27A1, ADH1C, "
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**Analyzing a Gene List in the Context of Xenobiotic Metabolism**\n\nOkay, so I have a gene list, and my focus is understanding its role within Xenobiotic Metabolism. My plan is pretty straightforward. First, I need to run an enrichment analysis using `run_enrichment_analysis`. I'll use the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries to get a comprehensive view. That should give me a good starting point by highlighting any over-represented biological processes and pathways.\n\nNext, I'll dive into interpreting those enriched terms. The critical part here is keeping a sharp eye out for anything directly related to, or even tangentially connected to, Xenobiotic Metabolism. I'll need to weed out the noise and focus on the relevant hits. Once I have a good grasp of the most pertinent results, I'll need some solid backing.\n\nTo solidify my interpretations, I'll use `search_literature` to find supporting evidence. I'll limit the search to five papers; I want to be concise and focused here. It’s important to find the core supporting information, not to overload the information with extraneous material. Then I'll weave these cited papers into my final, concise interpretation, providing context and supporting my conclusions. It should be a pretty tight analysis, but should be a solid one. Let's get started.",
+      "action": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023,KEGG_2021_Human, genes=CYP1A1, FAH, DCXR, CYP1A2, GSTA3, CYP2J2, CYP27A1,..., top_n=50",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "7203b6d0-5b62-4b0f-82df-d29152d4fda6",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 200 | Total significant terms: 99"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "## Biological Interpretation of Gene Set in Xenobiotic Metabolism\n\nThis gene set exhibits a strong and coherent enrichment for pathways related to the metabolism of xenobiotics, as well as endogenous lipid and steroid metabolism, reflecting the promiscuous nature of enzymes involved in detoxification. The most significant terms directly highlight the role of these genes in processing foreign compounds and maintaining cellular homeostasis.\n\n### Summary\n\nThe analysis of the provided gene list reve"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Analysis of Xenobiotic Metabolism Enrichment Results**\n\nOkay, the enrichment analysis is complete, and now I need to zero in on the relevant terms, specifically those connected to \"Xenobiotic Metabolism.\" First, I'll leverage the `search_literature` function to find supporting papers once I've got a good handle on what the analysis is telling me.\n\nLooking at the `KEGG_2021_Human` library, the results are quite promising. The top hits are incredibly pertinent: \"Drug metabolism\" with a p-value of 1.14e-17 and \"Metabolism of xenobiotics by cytochrome P450\" with a p-value of 1.07e-13. That's a strong signal.\n\nBeyond those top hits, several other terms jump out as being potentially important. \"Glutathione metabolism\" is critical for detoxification pathways, so that's definitely a key player. \"Peroxisome\" also looks interesting, since fatty acid oxidation can be indirectly linked to xenobiotic metabolism, in particular with lipophilic xenobiotics. The amino acid metabolisms of \"Tyrosine and Tryptophan\" seem significant since xenobiotic stress or detoxification processes might alter those. \"Chemical carcinogenesis\" is also relevant, since many xenobiotic compounds can be activated through various metabolic pathways, leading to carcinogenesis. I also see that \"Fatty acid degradation/metabolism\" is highlighted. That makes sense, as many xenobiotics are lipophilic and consequently interact with lipid metabolism. Furthermore, the link between \"Steroid hormone biosynthesis/metabolism\" and the crucial involvement of P450s is noteworthy, especially given that xenobiotics can often interfere with this pathway. And finally, I must not forget to include \"ABC transporters,\" since they're heavily involved in the efflux of xenobiotics and their metabolites.\n\nNow, shifting to the `GO_Biological_Process_2023` library, the picture expands further. The abundance of terms related to lipid metabolism is striking: \"Arachidonic Acid Metabolic Process, Fatty Acid Metabolic Process, Steroid Metabolic Process, Monocarboxylic Acid Metabolic Process, Long-Chain Fatty Acid Metabolic Process, Fatty Acid Oxidation, Fatty Acid Beta-Oxidation, Unsaturated Fatty Acid Metabolic Process, Very Long-Chain Fatty Acid Metabolic Process, Fatty Acid Catabolic Process, Monocarboxylic Acid Catabolic Process, Fatty Acid Biosynthetic Process, Long-Chain Fatty Acid Biosynthetic Process.\" All these suggest an extensive interplay with xenobiotic processing, considering the high number of lipophilic xenobiotics and the potential for fatty acid conjugation. And, directly relevant is the \"Epoxygenase P450 Pathway\" term, as P450s are central to xenobiotic metabolism.",
+      "action": "search_literature",
+      "args": "query=\"xenobiotic metabolism\" AND \"cytochrome P450\" AND ..., max_results=5",
+      "tool_name": "search_literature",
+      "tool_call_id": "da5e5be5-eb03-47d8-96fb-9ecb7978f457",
+      "observation": "=== LITERATURE SEARCH: '\"xenobiotic metabolism\" AND \"cytochrome P450\" AND \"glutathione\"' === | Found 3 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "This gene set is highly enriched for pathways central to xenobiotic metabolism, reflecting the organism's robust mechanisms for processing and detoxifying foreign compounds, as well as endogenous metabolites. The presence of numerous cytochrome P450 (CYP) enzymes, glutathione S-transferases (GSTs), and other oxidoreductases points to a comprehensive system for biotransformation.\n\n## Detailed Analysis\n\n### Enrichment Analysis (GO_Biological_Process_2023 & KEGG_2021_Human)\n\nThe enrichment analysis"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023,KEGG_2021_Human, genes=CYP1A1, FAH, DCXR, CYP1A2, GSTA3, CYP2J2, CYP27A1,..., top_n=50",
+      "thought": "**Analyzing a Gene List in the Context of Xenobiotic Metabolism**\n\nOkay, so I have a gene list, and my focus is understanding its role within Xenobiotic Metabolism. My plan is pretty straightforward. First, I need to run an enrichment analysis using `run_enrichment_analysis`. I'll use the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries to get a comprehensive view. That should give me a good starting point by highlighting any over-represented biological processes and pathways.\n\nNext, I'll dive into interpreting those enriched terms. The critical part here is keeping a sharp eye out for anything directly related to, or even tangentially connected to, Xenobiotic Metabolism. I'll need to weed out the noise and focus on the relevant hits. Once I have a good grasp of the most pertinent results, I'll need some solid backing.\n\nTo solidify my interpretations, I'll use `search_literature` to find supporting evidence. I'll limit the search to five papers; I want to be concise and focused here. It’s important to find the core supporting information, not to overload the information with extraneous material. Then I'll weave these cited papers into my final, concise interpretation, providing context and supporting my conclusions. It should be a pretty tight analysis, but should be a solid one. Let's get started.",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 200 | Total significant terms: 99"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "query=\"xenobiotic metabolism\" AND \"cytochrome P450\" AND ..., max_results=5",
+      "thought": "**My Analysis of Xenobiotic Metabolism Enrichment Results**\n\nOkay, the enrichment analysis is complete, and now I need to zero in on the relevant terms, specifically those connected to \"Xenobiotic Metabolism.\" First, I'll leverage the `search_literature` function to find supporting papers once I've got a good handle on what the analysis is telling me.\n\nLooking at the `KEGG_2021_Human` library, the results are quite promising. The top hits are incredibly pertinent: \"Drug metabolism\" with a p-value of 1.14e-17 and \"Metabolism of xenobiotics by cytochrome P450\" with a p-value of 1.07e-13. That's a strong signal.\n\nBeyond those top hits, several other terms jump out as being potentially important. \"Glutathione metabolism\" is critical for detoxification pathways, so that's definitely a key player. \"Peroxisome\" also looks interesting, since fatty acid oxidation can be indirectly linked to xenobiotic metabolism, in particular with lipophilic xenobiotics. The amino acid metabolisms of \"Tyrosine and Tryptophan\" seem significant since xenobiotic stress or detoxification processes might alter those. \"Chemical carcinogenesis\" is also relevant, since many xenobiotic compounds can be activated through various metabolic pathways, leading to carcinogenesis. I also see that \"Fatty acid degradation/metabolism\" is highlighted. That makes sense, as many xenobiotics are lipophilic and consequently interact with lipid metabolism. Furthermore, the link between \"Steroid hormone biosynthesis/metabolism\" and the crucial involvement of P450s is noteworthy, especially given that xenobiotics can often interfere with this pathway. And finally, I must not forget to include \"ABC transporters,\" since they're heavily involved in the efflux of xenobiotics and their metabolites.\n\nNow, shifting to the `GO_Biological_Process_2023` library, the picture expands further. The abundance of terms related to lipid metabolism is striking: \"Arachidonic Acid Metabolic Process, Fatty Acid Metabolic Process, Steroid Metabolic Process, Monocarboxylic Acid Metabolic Process, Long-Chain Fatty Acid Metabolic Process, Fatty Acid Oxidation, Fatty Acid Beta-Oxidation, Unsaturated Fatty Acid Metabolic Process, Very Long-Chain Fatty Acid Metabolic Process, Fatty Acid Catabolic Process, Monocarboxylic Acid Catabolic Process, Fatty Acid Biosynthetic Process, Long-Chain Fatty Acid Biosynthetic Process.\" All these suggest an extensive interplay with xenobiotic processing, considering the high number of lipophilic xenobiotics and the potential for fatty acid conjugation. And, directly relevant is the \"Epoxygenase P450 Pathway\" term, as P450s are central to xenobiotic metabolism.",
+      "observation": "=== LITERATURE SEARCH: '\"xenobiotic metabolism\" AND \"cytochrome P450\" AND \"glutathione\"' === | Found 3 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "CYP1A1",
+      "FAH",
+      "DCXR",
+      "CYP1A2",
+      "GSTA3",
+      "CYP2J2",
+      "CYP27A1",
+      "ADH1C",
+      "UGDH",
+      "ASL",
+      "NQO1",
+      "ALAS1",
+      "GSTM4",
+      "CYP2C18",
+      "PTS",
+      "CYB5A",
+      "ACOX2",
+      "EPHX1",
+      "LCAT",
+      "SLC35D1",
+      "GSS",
+      "FMO3",
+      "IDH1",
+      "AKR1C3",
+      "SLC22A1",
+      "GSTO1",
+      "ARG1",
+      "CDO1",
+      "FMO1",
+      "ALDH9A1",
+      "POR",
+      "NDRG2",
+      "UPB1",
+      "ECH1",
+      "PTGES",
+      "PDK4",
+      "AHCY",
+      "COMT",
+      "AOX1",
+      "CFB",
+      "DDAH2",
+      "HGFAC",
+      "F11",
+      "CYP26A1",
+      "MCCC2",
+      "SERPINA6",
+      "GNMT",
+      "BLVRB",
+      "HACL1",
+      "MAOA",
+      "KYNU",
+      "DHPS",
+      "SERPINE1",
+      "SLC6A12",
+      "GCH1",
+      "DHRS7",
+      "PAPSS2",
+      "ALDH2",
+      "HSD11B1",
+      "SLC35B1",
+      "KARS1",
+      "CA2",
+      "LPIN2",
+      "CAT",
+      "CYP2S1",
+      "RAP1GAP",
+      "FBP1",
+      "RBP4",
+      "GCKR",
+      "CDA",
+      "MTHFD1",
+      "ADH7",
+      "DHRS1",
+      "VNN1",
+      "CNDP2",
+      "SLC6A6",
+      "FETUB",
+      "CROT",
+      "GAD1",
+      "AKR1C2",
+      "TKFC",
+      "IGF1",
+      "SSR3",
+      "GABARAPL1",
+      "TMBIM6",
+      "CD36",
+      "CES1",
+      "SHMT2",
+      "TMEM176B",
+      "GSTT2",
+      "PLG",
+      "HMOX1",
+      "SPINT2",
+      "ALDH3A1",
+      "GSR",
+      "ABHD6",
+      "XDH",
+      "PPARD",
+      "ELOVL5",
+      "CYP4F2",
+      "RETSAT",
+      "CYFIP2",
+      "PINK1",
+      "GCLC",
+      "ESR1",
+      "PMM1",
+      "TDO2",
+      "MT2A",
+      "ATP2A2",
+      "DDT",
+      "FABP1",
+      "ACP2",
+      "ABCD2",
+      "G6PC",
+      "DDC",
+      "ACOX3",
+      "SAR1B",
+      "FBLN1",
+      "ADH5",
+      "CRP",
+      "ABCC2",
+      "ETS2",
+      "NPC1",
+      "CASP6",
+      "BPHL",
+      "IL1R1",
+      "ENTPD5",
+      "TNFRSF1A",
+      "IGFBP4",
+      "PYCR1",
+      "CSAD",
+      "VTN",
+      "ID2",
+      "ETFDH",
+      "HRG",
+      "TYR",
+      "UPP1",
+      "BCAR1",
+      "CBR1",
+      "APOE",
+      "SLC12A4",
+      "TMEM97",
+      "SLC46A3",
+      "PTGDS",
+      "MPP2",
+      "PTGR1",
+      "AQP9",
+      "EPHA2",
+      "PSMB10",
+      "FAS",
+      "ACOX1",
+      "GART",
+      "HPRT1",
+      "PGD",
+      "ABCC3",
+      "SMOX",
+      "TTPA",
+      "HES6",
+      "GCNT2",
+      "MAN1A1",
+      "IGFBP1",
+      "ITIH4",
+      "PROS1",
+      "TPST1",
+      "LEAP2",
+      "NFS1",
+      "PGRMC1",
+      "CYP17A1",
+      "ARPP19",
+      "SERTAD1",
+      "ARG2",
+      "HNF4A",
+      "REG1A",
+      "CCL25",
+      "PEMT",
+      "ACO2",
+      "LONP1",
+      "NMT1",
+      "PTGES3",
+      "F10",
+      "TAT",
+      "MARCHF6",
+      "JUP",
+      "ACP1",
+      "MBL2",
+      "TGFB2",
+      "ENPEP",
+      "HSD17B2",
+      "ANGPTL3",
+      "PC",
+      "PDLIM5",
+      "CYP2E1",
+      "BCAT1",
+      "ATOH8",
+      "SLC1A5",
+      "IRF8",
+      "NINJ1",
+      "AP4B1",
+      "ACSM1",
+      "ITIH1"
+    ],
+    "gene_count": 200,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Arachidonic Acid Metabolic Process (GO:0019369)",
+          "term": "Arachidonic Acid Metabolic Process (GO:0019369)",
+          "overlap": "13/52",
+          "p_value": 3.0439029934796614e-15,
+          "z_score": 35.224598930481285,
+          "combined_score": 1177.404615880063,
+          "overlap_genes": [
+            "CYP2J2",
+            "CBR1",
+            "CYP4F2",
+            "PTGES3",
+            "EPHX1",
+            "AKR1C3",
+            "ABHD6",
+            "CYP2C18",
+            "CYP2S1",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1",
+            "PTGDS"
+          ],
+          "genes": [
+            "CYP2J2",
+            "CBR1",
+            "CYP4F2",
+            "PTGES3",
+            "EPHX1",
+            "AKR1C3",
+            "ABHD6",
+            "CYP2C18",
+            "CYP2S1",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1",
+            "PTGDS"
+          ],
+          "adjusted_p_value": 4.85502527460006e-12
+        },
+        {
+          "rank": 2,
+          "term_name": "Fatty Acid Metabolic Process (GO:0006631)",
+          "term": "Fatty Acid Metabolic Process (GO:0006631)",
+          "overlap": "15/122",
+          "p_value": 1.4206208369262658e-12,
+          "z_score": 14.922707754483456,
+          "combined_score": 407.09038013594227,
+          "overlap_genes": [
+            "CYP2J2",
+            "ABCD2",
+            "ACSM1",
+            "CYP4F2",
+            "CROT",
+            "ACOX2",
+            "ACOX1",
+            "CYP1A1",
+            "ANGPTL3",
+            "HACL1",
+            "CYP2E1",
+            "CD36",
+            "LPIN2",
+            "CES1",
+            "PPARD"
+          ],
+          "genes": [
+            "CYP2J2",
+            "ABCD2",
+            "ACSM1",
+            "CYP4F2",
+            "CROT",
+            "ACOX2",
+            "ACOX1",
+            "CYP1A1",
+            "ANGPTL3",
+            "HACL1",
+            "CYP2E1",
+            "CD36",
+            "LPIN2",
+            "CES1",
+            "PPARD"
+          ],
+          "adjusted_p_value": 1.132945117448697e-09
+        },
+        {
+          "rank": 3,
+          "term_name": "Steroid Metabolic Process (GO:0008202)",
+          "term": "Steroid Metabolic Process (GO:0008202)",
+          "overlap": "12/92",
+          "p_value": 1.294203725868922e-10,
+          "z_score": 15.73404255319149,
+          "combined_score": 358.23197765589185,
+          "overlap_genes": [
+            "CYP27A1",
+            "HSD11B1",
+            "CBR1",
+            "CYP26A1",
+            "NPC1",
+            "HSD17B2",
+            "CYP1A2",
+            "AKR1C3",
+            "CYP1A1",
+            "AKR1C2",
+            "CYP2E1",
+            "CYP17A1"
+          ],
+          "genes": [
+            "CYP27A1",
+            "HSD11B1",
+            "CBR1",
+            "CYP26A1",
+            "NPC1",
+            "HSD17B2",
+            "CYP1A2",
+            "AKR1C3",
+            "CYP1A1",
+            "AKR1C2",
+            "CYP2E1",
+            "CYP17A1"
+          ],
+          "adjusted_p_value": 6.880849809203101e-08
+        },
+        {
+          "rank": 4,
+          "term_name": "Monocarboxylic Acid Metabolic Process (GO:0032787)",
+          "term": "Monocarboxylic Acid Metabolic Process (GO:0032787)",
+          "overlap": "12/97",
+          "p_value": 2.4343809258661436e-10,
+          "z_score": 14.804755944931165,
+          "combined_score": 327.7204233457464,
+          "overlap_genes": [
+            "CYP2J2",
+            "VNN1",
+            "NPC1",
+            "ACSM1",
+            "KYNU",
+            "CYP1A2",
+            "CYP1A1",
+            "ANGPTL3",
+            "HACL1",
+            "IGF1",
+            "CROT",
+            "CD36"
+          ],
+          "genes": [
+            "CYP2J2",
+            "VNN1",
+            "NPC1",
+            "ACSM1",
+            "KYNU",
+            "CYP1A2",
+            "CYP1A1",
+            "ANGPTL3",
+            "HACL1",
+            "IGF1",
+            "CROT",
+            "CD36"
+          ],
+          "adjusted_p_value": 9.707093941891248e-08
+        },
+        {
+          "rank": 5,
+          "term_name": "Long-Chain Fatty Acid Metabolic Process (GO:0001676)",
+          "term": "Long-Chain Fatty Acid Metabolic Process (GO:0001676)",
+          "overlap": "11/78",
+          "p_value": 3.290531113441141e-10,
+          "z_score": 17.141514648977335,
+          "combined_score": 374.2815774069095,
+          "overlap_genes": [
+            "CYP2J2",
+            "GSTM4",
+            "ELOVL5",
+            "CYP4F2",
+            "EPHX1",
+            "CYP1A2",
+            "CYP1A1",
+            "ABHD6",
+            "HACL1",
+            "CYP2E1",
+            "PTGR1"
+          ],
+          "genes": [
+            "CYP2J2",
+            "GSTM4",
+            "ELOVL5",
+            "CYP4F2",
+            "EPHX1",
+            "CYP1A2",
+            "CYP1A1",
+            "ABHD6",
+            "HACL1",
+            "CYP2E1",
+            "PTGR1"
+          ],
+          "adjusted_p_value": 1.049679425187724e-07
+        },
+        {
+          "rank": 6,
+          "term_name": "Prostaglandin Metabolic Process (GO:0006693)",
+          "term": "Prostaglandin Metabolic Process (GO:0006693)",
+          "overlap": "8/30",
+          "p_value": 4.211613180358958e-10,
+          "z_score": 37.458333333333336,
+          "combined_score": 808.6506939370622,
+          "overlap_genes": [
+            "PTGES3",
+            "CYP2S1",
+            "AKR1C3",
+            "AKR1C2",
+            "PTGDS",
+            "PTGR1",
+            "CES1",
+            "PTGES"
+          ],
+          "genes": [
+            "PTGES3",
+            "CYP2S1",
+            "AKR1C3",
+            "AKR1C2",
+            "PTGDS",
+            "PTGR1",
+            "CES1",
+            "PTGES"
+          ],
+          "adjusted_p_value": 1.1195871704454228e-07
+        },
+        {
+          "rank": 7,
+          "term_name": "Fatty Acid Oxidation (GO:0019395)",
+          "term": "Fatty Acid Oxidation (GO:0019395)",
+          "overlap": "9/52",
+          "p_value": 2.1183907293530495e-09,
+          "z_score": 21.650188725191768,
+          "combined_score": 432.4107569220204,
+          "overlap_genes": [
+            "ABCD2",
+            "ACOX1",
+            "ACSM1",
+            "CYP4F2",
+            "HACL1",
+            "CROT",
+            "ADH7",
+            "ADH5",
+            "PPARD"
+          ],
+          "genes": [
+            "ABCD2",
+            "ACOX1",
+            "ACSM1",
+            "CYP4F2",
+            "HACL1",
+            "CROT",
+            "ADH7",
+            "ADH5",
+            "PPARD"
+          ],
+          "adjusted_p_value": 4.826904590454449e-07
+        },
+        {
+          "rank": 8,
+          "term_name": "Prostanoid Metabolic Process (GO:0006692)",
+          "term": "Prostanoid Metabolic Process (GO:0006692)",
+          "overlap": "6/16",
+          "p_value": 6.833645208374978e-09,
+          "z_score": 61.20618556701031,
+          "combined_score": 1150.7624425026124,
+          "overlap_genes": [
+            "CYP2S1",
+            "AKR1C3",
+            "AKR1C2",
+            "PTGR1",
+            "CES1",
+            "PTGES"
+          ],
+          "genes": [
+            "CYP2S1",
+            "AKR1C3",
+            "AKR1C2",
+            "PTGR1",
+            "CES1",
+            "PTGES"
+          ],
+          "adjusted_p_value": 1.3624580134197613e-06
+        },
+        {
+          "rank": 9,
+          "term_name": "Epoxygenase P450 Pathway (GO:0019373)",
+          "term": "Epoxygenase P450 Pathway (GO:0019373)",
+          "overlap": "6/17",
+          "p_value": 1.0473448502048175e-08,
+          "z_score": 55.63917525773196,
+          "combined_score": 1022.3377135407721,
+          "overlap_genes": [
+            "CYP2J2",
+            "CYP4F2",
+            "CYP2S1",
+            "CYP1A2",
+            "CYP2E1",
+            "CYP2C18"
+          ],
+          "genes": [
+            "CYP2J2",
+            "CYP4F2",
+            "CYP2S1",
+            "CYP1A2",
+            "CYP2E1",
+            "CYP2C18"
+          ],
+          "adjusted_p_value": 1.8561278178629823e-06
+        },
+        {
+          "rank": 10,
+          "term_name": "Taurine Metabolic Process (GO:0019530)",
+          "term": "Taurine Metabolic Process (GO:0019530)",
+          "overlap": "4/7",
+          "p_value": 3.317359540687939e-07,
+          "z_score": 134.6734693877551,
+          "combined_score": 2009.18359177183,
+          "overlap_genes": [
+            "FMO1",
+            "FMO3",
+            "CDO1",
+            "CSAD"
+          ],
+          "genes": [
+            "FMO1",
+            "FMO3",
+            "CDO1",
+            "CSAD"
+          ],
+          "adjusted_p_value": 5.291188467397263e-05
+        },
+        {
+          "rank": 11,
+          "term_name": "Secondary Alcohol Metabolic Process (GO:1902652)",
+          "term": "Secondary Alcohol Metabolic Process (GO:1902652)",
+          "overlap": "7/47",
+          "p_value": 4.034703193451753e-07,
+          "z_score": 17.917098445595855,
+          "combined_score": 263.7963592880561,
+          "overlap_genes": [
+            "CYP27A1",
+            "IDH1",
+            "ANGPTL3",
+            "LCAT",
+            "APOE",
+            "CES1",
+            "PPARD"
+          ],
+          "genes": [
+            "CYP27A1",
+            "IDH1",
+            "ANGPTL3",
+            "LCAT",
+            "APOE",
+            "CES1",
+            "PPARD"
+          ],
+          "adjusted_p_value": 5.850319630505041e-05
+        },
+        {
+          "rank": 12,
+          "term_name": "Organonitrogen Compound Biosynthetic Process (GO:1901566)",
+          "term": "Organonitrogen Compound Biosynthetic Process (GO:1901566)",
+          "overlap": "10/123",
+          "p_value": 4.493906546579007e-07,
+          "z_score": 9.16953889147648,
+          "combined_score": 134.01623363623213,
+          "overlap_genes": [
+            "ALAS1",
+            "GCH1",
+            "ELOVL5",
+            "LCAT",
+            "FMO1",
+            "APOE",
+            "FMO3",
+            "CSAD",
+            "BCAT1",
+            "CDO1"
+          ],
+          "genes": [
+            "ALAS1",
+            "GCH1",
+            "ELOVL5",
+            "LCAT",
+            "FMO1",
+            "APOE",
+            "FMO3",
+            "CSAD",
+            "BCAT1",
+            "CDO1"
+          ],
+          "adjusted_p_value": 5.973150784827929e-05
+        },
+        {
+          "rank": 13,
+          "term_name": "Fatty Acid Beta-Oxidation (GO:0006635)",
+          "term": "Fatty Acid Beta-Oxidation (GO:0006635)",
+          "overlap": "7/49",
+          "p_value": 5.418489290315612e-07,
+          "z_score": 17.06217616580311,
+          "combined_score": 246.1778312950879,
+          "overlap_genes": [
+            "ABCD2",
+            "ACOX2",
+            "ACOX1",
+            "ETFDH",
+            "CROT",
+            "ACOX3",
+            "PPARD"
+          ],
+          "genes": [
+            "ABCD2",
+            "ACOX2",
+            "ACOX1",
+            "ETFDH",
+            "CROT",
+            "ACOX3",
+            "PPARD"
+          ],
+          "adjusted_p_value": 6.64806955234877e-05
+        },
+        {
+          "rank": 14,
+          "term_name": "Cholesterol Homeostasis (GO:0042632)",
+          "term": "Cholesterol Homeostasis (GO:0042632)",
+          "overlap": "8/72",
+          "p_value": 6.01519758075776e-07,
+          "z_score": 12.848958333333334,
+          "combined_score": 184.0459923030108,
+          "overlap_genes": [
+            "NPC1",
+            "ACSM1",
+            "HNF4A",
+            "ANGPTL3",
+            "LCAT",
+            "TMEM97",
+            "APOE",
+            "CES1"
+          ],
+          "genes": [
+            "NPC1",
+            "ACSM1",
+            "HNF4A",
+            "ANGPTL3",
+            "LCAT",
+            "TMEM97",
+            "APOE",
+            "CES1"
+          ],
+          "adjusted_p_value": 6.853028672363305e-05
+        },
+        {
+          "rank": 15,
+          "term_name": "Sterol Homeostasis (GO:0055092)",
+          "term": "Sterol Homeostasis (GO:0055092)",
+          "overlap": "8/73",
+          "p_value": 6.698120734942796e-07,
+          "z_score": 12.650641025641026,
+          "combined_score": 179.84491143075044,
+          "overlap_genes": [
+            "NPC1",
+            "ACSM1",
+            "HNF4A",
+            "ANGPTL3",
+            "LCAT",
+            "TMEM97",
+            "APOE",
+            "CES1"
+          ],
+          "genes": [
+            "NPC1",
+            "ACSM1",
+            "HNF4A",
+            "ANGPTL3",
+            "LCAT",
+            "TMEM97",
+            "APOE",
+            "CES1"
+          ],
+          "adjusted_p_value": 7.12233504815584e-05
+        },
+        {
+          "rank": 16,
+          "term_name": "Sterol Metabolic Process (GO:0016125)",
+          "term": "Sterol Metabolic Process (GO:0016125)",
+          "overlap": "7/60",
+          "p_value": 2.2200904251466413e-06,
+          "z_score": 13.513442174210578,
+          "combined_score": 175.91748523818214,
+          "overlap_genes": [
+            "CYP27A1",
+            "CYP26A1",
+            "ANGPTL3",
+            "LCAT",
+            "APOE",
+            "CES1",
+            "PPARD"
+          ],
+          "genes": [
+            "CYP27A1",
+            "CYP26A1",
+            "ANGPTL3",
+            "LCAT",
+            "APOE",
+            "CES1",
+            "PPARD"
+          ],
+          "adjusted_p_value": 0.00022131526425680581
+        },
+        {
+          "rank": 17,
+          "term_name": "Fatty Acid Beta-Oxidation Using acyl-CoA Oxidase (GO:0033540)",
+          "term": "Fatty Acid Beta-Oxidation Using acyl-CoA Oxidase (GO:0033540)",
+          "overlap": "4/11",
+          "p_value": 3.031048397200008e-06,
+          "z_score": 57.70553935860058,
+          "combined_score": 733.2413213987782,
+          "overlap_genes": [
+            "ACOX2",
+            "ACOX1",
+            "ACOX3",
+            "CROT"
+          ],
+          "genes": [
+            "ACOX2",
+            "ACOX1",
+            "ACOX3",
+            "CROT"
+          ],
+          "adjusted_p_value": 0.00028438365844317724
+        },
+        {
+          "rank": 18,
+          "term_name": "Serine Family Amino Acid Metabolic Process (GO:0009069)",
+          "term": "Serine Family Amino Acid Metabolic Process (GO:0009069)",
+          "overlap": "4/14",
+          "p_value": 8.98018633910456e-06,
+          "z_score": 40.38775510204081,
+          "combined_score": 469.32550127312595,
+          "overlap_genes": [
+            "GCLC",
+            "MTHFD1",
+            "SHMT2",
+            "CDO1"
+          ],
+          "genes": [
+            "GCLC",
+            "MTHFD1",
+            "SHMT2",
+            "CDO1"
+          ],
+          "adjusted_p_value": 0.0007612669801302948
+        },
+        {
+          "rank": 19,
+          "term_name": "Unsaturated Fatty Acid Metabolic Process (GO:0033559)",
+          "term": "Unsaturated Fatty Acid Metabolic Process (GO:0033559)",
+          "overlap": "6/49",
+          "p_value": 9.068384089326396e-06,
+          "z_score": 14.210261328218653,
+          "combined_score": 164.99131524160097,
+          "overlap_genes": [
+            "CYP2J2",
+            "ELOVL5",
+            "CYP4F2",
+            "EPHX1",
+            "ABHD6",
+            "PTGR1"
+          ],
+          "genes": [
+            "CYP2J2",
+            "ELOVL5",
+            "CYP4F2",
+            "EPHX1",
+            "ABHD6",
+            "PTGR1"
+          ],
+          "adjusted_p_value": 0.0007612669801302948
+        },
+        {
+          "rank": 20,
+          "term_name": "Negative Regulation Of Blood Coagulation (GO:0030195)",
+          "term": "Negative Regulation Of Blood Coagulation (GO:0030195)",
+          "overlap": "5/30",
+          "p_value": 1.105992394212401e-05,
+          "z_score": 20.28205128205128,
+          "combined_score": 231.46246946256952,
+          "overlap_genes": [
+            "VTN",
+            "SERPINE1",
+            "F11",
+            "PLG",
+            "APOE"
+          ],
+          "genes": [
+            "VTN",
+            "SERPINE1",
+            "F11",
+            "PLG",
+            "APOE"
+          ],
+          "adjusted_p_value": 0.0008820289343843898
+        },
+        {
+          "rank": 21,
+          "term_name": "Nitric Oxide Biosynthetic Process (GO:0006809)",
+          "term": "Nitric Oxide Biosynthetic Process (GO:0006809)",
+          "overlap": "4/15",
+          "p_value": 1.2150001455530943e-05,
+          "z_score": 36.714285714285715,
+          "combined_score": 415.53894085341443,
+          "overlap_genes": [
+            "NQO1",
+            "ARG2",
+            "GCH1",
+            "DDAH2"
+          ],
+          "genes": [
+            "NQO1",
+            "ARG2",
+            "GCH1",
+            "DDAH2"
+          ],
+          "adjusted_p_value": 0.0009228215391224692
+        },
+        {
+          "rank": 22,
+          "term_name": "Icosanoid Metabolic Process (GO:0006690)",
+          "term": "Icosanoid Metabolic Process (GO:0006690)",
+          "overlap": "6/52",
+          "p_value": 1.2877666742868353e-05,
+          "z_score": 13.281488121918422,
+          "combined_score": 149.54976885226935,
+          "overlap_genes": [
+            "CYP2J2",
+            "CYP4F2",
+            "CYP2S1",
+            "EPHX1",
+            "ABHD6",
+            "PTGR1"
+          ],
+          "genes": [
+            "CYP2J2",
+            "CYP4F2",
+            "CYP2S1",
+            "EPHX1",
+            "ABHD6",
+            "PTGR1"
+          ],
+          "adjusted_p_value": 0.0009336308388579556
+        },
+        {
+          "rank": 23,
+          "term_name": "Protein Homotetramerization (GO:0051289)",
+          "term": "Protein Homotetramerization (GO:0051289)",
+          "overlap": "6/53",
+          "p_value": 1.4401635277172379e-05,
+          "z_score": 12.998245229216934,
+          "combined_score": 144.90663187900708,
+          "overlap_genes": [
+            "TDO2",
+            "SHMT2",
+            "HPRT1",
+            "UPB1",
+            "ALDH9A1",
+            "GNMT"
+          ],
+          "genes": [
+            "TDO2",
+            "SHMT2",
+            "HPRT1",
+            "UPB1",
+            "ALDH9A1",
+            "GNMT"
+          ],
+          "adjusted_p_value": 0.0009860426136016893
+        },
+        {
+          "rank": 24,
+          "term_name": "Very Long-Chain Fatty Acid Metabolic Process (GO:0000038)",
+          "term": "Very Long-Chain Fatty Acid Metabolic Process (GO:0000038)",
+          "overlap": "5/32",
+          "p_value": 1.5377155419858243e-05,
+          "z_score": 18.77777777777778,
+          "combined_score": 208.10711759419502,
+          "overlap_genes": [
+            "ABCD2",
+            "ACOX2",
+            "ELOVL5",
+            "ACOX1",
+            "CYP4F2"
+          ],
+          "genes": [
+            "ABCD2",
+            "ACOX2",
+            "ELOVL5",
+            "ACOX1",
+            "CYP4F2"
+          ],
+          "adjusted_p_value": 0.0009860426136016893
+        },
+        {
+          "rank": 25,
+          "term_name": "Regulation Of Fibrinolysis (GO:0051917)",
+          "term": "Regulation Of Fibrinolysis (GO:0051917)",
+          "overlap": "4/16",
+          "p_value": 1.6073421914510297e-05,
+          "z_score": 33.6530612244898,
+          "combined_score": 371.4740483715657,
+          "overlap_genes": [
+            "VTN",
+            "F11",
+            "SERPINE1",
+            "PLG"
+          ],
+          "genes": [
+            "VTN",
+            "F11",
+            "SERPINE1",
+            "PLG"
+          ],
+          "adjusted_p_value": 0.0009860426136016893
+        },
+        {
+          "rank": 26,
+          "term_name": "Nitric Oxide Metabolic Process (GO:0046209)",
+          "term": "Nitric Oxide Metabolic Process (GO:0046209)",
+          "overlap": "4/16",
+          "p_value": 1.6073421914510297e-05,
+          "z_score": 33.6530612244898,
+          "combined_score": 371.4740483715657,
+          "overlap_genes": [
+            "NQO1",
+            "ARG2",
+            "GCH1",
+            "DDAH2"
+          ],
+          "genes": [
+            "NQO1",
+            "ARG2",
+            "GCH1",
+            "DDAH2"
+          ],
+          "adjusted_p_value": 0.0009860426136016893
+        },
+        {
+          "rank": 27,
+          "term_name": "Carboxylic Acid Metabolic Process (GO:0019752)",
+          "term": "Carboxylic Acid Metabolic Process (GO:0019752)",
+          "overlap": "5/33",
+          "p_value": 1.7976601477623105e-05,
+          "z_score": 18.106227106227106,
+          "combined_score": 197.83659620108142,
+          "overlap_genes": [
+            "CYP2J2",
+            "GSTO1",
+            "CYP4F2",
+            "CYP2S1",
+            "CYP1A2"
+          ],
+          "genes": [
+            "CYP2J2",
+            "GSTO1",
+            "CYP4F2",
+            "CYP2S1",
+            "CYP1A2"
+          ],
+          "adjusted_p_value": 0.0010619510872892169
+        },
+        {
+          "rank": 28,
+          "term_name": "Sulfur Amino Acid Metabolic Process (GO:0000096)",
+          "term": "Sulfur Amino Acid Metabolic Process (GO:0000096)",
+          "overlap": "4/17",
+          "p_value": 2.0854898756677612e-05,
+          "z_score": 31.062794348508636,
+          "combined_score": 334.7923648041761,
+          "overlap_genes": [
+            "GCLC",
+            "MTHFD1",
+            "FMO1",
+            "CDO1"
+          ],
+          "genes": [
+            "GCLC",
+            "MTHFD1",
+            "FMO1",
+            "CDO1"
+          ],
+          "adjusted_p_value": 0.0011087854505633596
+        },
+        {
+          "rank": 29,
+          "term_name": "Prostaglandin Biosynthetic Process (GO:0001516)",
+          "term": "Prostaglandin Biosynthetic Process (GO:0001516)",
+          "overlap": "4/17",
+          "p_value": 2.0854898756677612e-05,
+          "z_score": 31.062794348508636,
+          "combined_score": 334.7923648041761,
+          "overlap_genes": [
+            "CBR1",
+            "PTGES3",
+            "PTGDS",
+            "PTGES"
+          ],
+          "genes": [
+            "CBR1",
+            "PTGES3",
+            "PTGDS",
+            "PTGES"
+          ],
+          "adjusted_p_value": 0.0011087854505633596
+        },
+        {
+          "rank": 30,
+          "term_name": "Purine-Containing Compound Biosynthetic Process (GO:0072522)",
+          "term": "Purine-Containing Compound Biosynthetic Process (GO:0072522)",
+          "overlap": "4/17",
+          "p_value": 2.0854898756677612e-05,
+          "z_score": 31.062794348508636,
+          "combined_score": 334.7923648041761,
+          "overlap_genes": [
+            "MTHFD1",
+            "SHMT2",
+            "HPRT1",
+            "GART"
+          ],
+          "genes": [
+            "MTHFD1",
+            "SHMT2",
+            "HPRT1",
+            "GART"
+          ],
+          "adjusted_p_value": 0.0011087854505633596
+        },
+        {
+          "rank": 31,
+          "term_name": "Fatty Acid Catabolic Process (GO:0009062)",
+          "term": "Fatty Acid Catabolic Process (GO:0009062)",
+          "overlap": "6/61",
+          "p_value": 3.2596478724807664e-05,
+          "z_score": 11.103092783505154,
+          "combined_score": 114.70945231270328,
+          "overlap_genes": [
+            "ABCD2",
+            "ACOX1",
+            "HACL1",
+            "CROT",
+            "LPIN2",
+            "PPARD"
+          ],
+          "genes": [
+            "ABCD2",
+            "ACOX1",
+            "HACL1",
+            "CROT",
+            "LPIN2",
+            "PPARD"
+          ],
+          "adjusted_p_value": 0.0016178633001965672
+        },
+        {
+          "rank": 32,
+          "term_name": "Dopamine Metabolic Process (GO:0042417)",
+          "term": "Dopamine Metabolic Process (GO:0042417)",
+          "overlap": "4/19",
+          "p_value": 3.343535939158139e-05,
+          "z_score": 26.918367346938776,
+          "combined_score": 277.4179092680899,
+          "overlap_genes": [
+            "TGFB2",
+            "GCH1",
+            "MAOA",
+            "COMT"
+          ],
+          "genes": [
+            "TGFB2",
+            "GCH1",
+            "MAOA",
+            "COMT"
+          ],
+          "adjusted_p_value": 0.0016178633001965672
+        },
+        {
+          "rank": 33,
+          "term_name": "Benzene-Containing Compound Metabolic Process (GO:0042537)",
+          "term": "Benzene-Containing Compound Metabolic Process (GO:0042537)",
+          "overlap": "3/7",
+          "p_value": 3.3473033797170354e-05,
+          "z_score": 75.36548223350253,
+          "combined_score": 776.6239908457204,
+          "overlap_genes": [
+            "ACSM1",
+            "KYNU",
+            "CYP2E1"
+          ],
+          "genes": [
+            "ACSM1",
+            "KYNU",
+            "CYP2E1"
+          ],
+          "adjusted_p_value": 0.0016178633001965672
+        },
+        {
+          "rank": 34,
+          "term_name": "Fatty Acid Transport (GO:0015908)",
+          "term": "Fatty Acid Transport (GO:0015908)",
+          "overlap": "5/38",
+          "p_value": 3.65078559882961e-05,
+          "z_score": 15.35897435897436,
+          "combined_score": 156.9377402487027,
+          "overlap_genes": [
+            "FABP1",
+            "SLC22A1",
+            "APOE",
+            "CD36",
+            "PPARD"
+          ],
+          "genes": [
+            "FABP1",
+            "SLC22A1",
+            "APOE",
+            "CD36",
+            "PPARD"
+          ],
+          "adjusted_p_value": 0.0017126479500391848
+        },
+        {
+          "rank": 35,
+          "term_name": "Monocarboxylic Acid Catabolic Process (GO:0072329)",
+          "term": "Monocarboxylic Acid Catabolic Process (GO:0072329)",
+          "overlap": "4/20",
+          "p_value": 4.146798801190002e-05,
+          "z_score": 25.23469387755102,
+          "combined_score": 254.6329194525256,
+          "overlap_genes": [
+            "CYP26A1",
+            "ACOX1",
+            "LPIN2",
+            "PPARD"
+          ],
+          "genes": [
+            "CYP26A1",
+            "ACOX1",
+            "LPIN2",
+            "PPARD"
+          ],
+          "adjusted_p_value": 0.001889755453685158
+        },
+        {
+          "rank": 36,
+          "term_name": "Fatty Acid Biosynthetic Process (GO:0006633)",
+          "term": "Fatty Acid Biosynthetic Process (GO:0006633)",
+          "overlap": "6/65",
+          "p_value": 4.6909610793144606e-05,
+          "z_score": 10.348243928009785,
+          "combined_score": 103.14392734407447,
+          "overlap_genes": [
+            "GSTM4",
+            "ELOVL5",
+            "ACSM1",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1"
+          ],
+          "genes": [
+            "GSTM4",
+            "ELOVL5",
+            "ACSM1",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1"
+          ],
+          "adjusted_p_value": 0.0020322802351479354
+        },
+        {
+          "rank": 37,
+          "term_name": "Protein Homooligomerization (GO:0051260)",
+          "term": "Protein Homooligomerization (GO:0051260)",
+          "overlap": "8/129",
+          "p_value": 4.7143804827883143e-05,
+          "z_score": 6.776515151515151,
+          "combined_score": 67.50973076961658,
+          "overlap_genes": [
+            "TDO2",
+            "SHMT2",
+            "NINJ1",
+            "HPRT1",
+            "SLC1A5",
+            "UPB1",
+            "ALDH9A1",
+            "GNMT"
+          ],
+          "genes": [
+            "TDO2",
+            "SHMT2",
+            "NINJ1",
+            "HPRT1",
+            "SLC1A5",
+            "UPB1",
+            "ALDH9A1",
+            "GNMT"
+          ],
+          "adjusted_p_value": 0.0020322802351479354
+        },
+        {
+          "rank": 38,
+          "term_name": "Purine Nucleotide Biosynthetic Process (GO:0006164)",
+          "term": "Purine Nucleotide Biosynthetic Process (GO:0006164)",
+          "overlap": "4/21",
+          "p_value": 5.082545165940558e-05,
+          "z_score": 23.74909963985594,
+          "combined_score": 234.8100391955592,
+          "overlap_genes": [
+            "MTHFD1",
+            "KYNU",
+            "HPRT1",
+            "GART"
+          ],
+          "genes": [
+            "MTHFD1",
+            "KYNU",
+            "HPRT1",
+            "GART"
+          ],
+          "adjusted_p_value": 0.0021198387014716488
+        },
+        {
+          "rank": 39,
+          "term_name": "Cyclooxygenase Pathway (GO:0019371)",
+          "term": "Cyclooxygenase Pathway (GO:0019371)",
+          "overlap": "3/8",
+          "p_value": 5.3162099096467675e-05,
+          "z_score": 60.28934010152284,
+          "combined_score": 593.3776232841345,
+          "overlap_genes": [
+            "CBR1",
+            "PTGES3",
+            "PTGDS"
+          ],
+          "genes": [
+            "CBR1",
+            "PTGES3",
+            "PTGDS"
+          ],
+          "adjusted_p_value": 0.0021198387014716488
+        },
+        {
+          "rank": 40,
+          "term_name": "Vitamin K Metabolic Process (GO:0042373)",
+          "term": "Vitamin K Metabolic Process (GO:0042373)",
+          "overlap": "3/8",
+          "p_value": 5.3162099096467675e-05,
+          "z_score": 60.28934010152284,
+          "combined_score": 593.3776232841345,
+          "overlap_genes": [
+            "CBR1",
+            "NQO1",
+            "CYP4F2"
+          ],
+          "genes": [
+            "CBR1",
+            "NQO1",
+            "CYP4F2"
+          ],
+          "adjusted_p_value": 0.0021198387014716488
+        },
+        {
+          "rank": 41,
+          "term_name": "Cholesterol Metabolic Process (GO:0008203)",
+          "term": "Cholesterol Metabolic Process (GO:0008203)",
+          "overlap": "6/67",
+          "p_value": 5.574512874237732e-05,
+          "z_score": 10.00794321446679,
+          "combined_score": 98.02500684839791,
+          "overlap_genes": [
+            "CYP27A1",
+            "ANGPTL3",
+            "LCAT",
+            "APOE",
+            "CES1",
+            "PPARD"
+          ],
+          "genes": [
+            "CYP27A1",
+            "ANGPTL3",
+            "LCAT",
+            "APOE",
+            "CES1",
+            "PPARD"
+          ],
+          "adjusted_p_value": 0.002168621471807118
+        },
+        {
+          "rank": 42,
+          "term_name": "Cellular Lipid Catabolic Process (GO:0044242)",
+          "term": "Cellular Lipid Catabolic Process (GO:0044242)",
+          "overlap": "4/23",
+          "p_value": 7.4029424621569e-05,
+          "z_score": 21.247046186895812,
+          "combined_score": 202.0816743097091,
+          "overlap_genes": [
+            "ACOX1",
+            "ANGPTL3",
+            "LPIN2",
+            "PPARD"
+          ],
+          "genes": [
+            "ACOX1",
+            "ANGPTL3",
+            "LPIN2",
+            "PPARD"
+          ],
+          "adjusted_p_value": 0.0028113555302714892
+        },
+        {
+          "rank": 43,
+          "term_name": "Ornithine Metabolic Process (GO:0006591)",
+          "term": "Ornithine Metabolic Process (GO:0006591)",
+          "overlap": "3/9",
+          "p_value": 7.91555905106562e-05,
+          "z_score": 50.23857868020305,
+          "combined_score": 474.45791686900793,
+          "overlap_genes": [
+            "ARG2",
+            "ARG1",
+            "HNF4A"
+          ],
+          "genes": [
+            "ARG2",
+            "ARG1",
+            "HNF4A"
+          ],
+          "adjusted_p_value": 0.0029361201596394566
+        },
+        {
+          "rank": 44,
+          "term_name": "Acylglycerol Homeostasis (GO:0055090)",
+          "term": "Acylglycerol Homeostasis (GO:0055090)",
+          "overlap": "4/24",
+          "p_value": 8.814271911404375e-05,
+          "z_score": 20.183673469387756,
+          "combined_score": 188.4459421090328,
+          "overlap_genes": [
+            "GCKR",
+            "HNF4A",
+            "ANGPTL3",
+            "APOE"
+          ],
+          "genes": [
+            "GCKR",
+            "HNF4A",
+            "ANGPTL3",
+            "APOE"
+          ],
+          "adjusted_p_value": 0.0031241697108199953
+        },
+        {
+          "rank": 45,
+          "term_name": "Fat-Soluble Vitamin Metabolic Process (GO:0006775)",
+          "term": "Fat-Soluble Vitamin Metabolic Process (GO:0006775)",
+          "overlap": "4/24",
+          "p_value": 8.814271911404375e-05,
+          "z_score": 20.183673469387756,
+          "combined_score": 188.4459421090328,
+          "overlap_genes": [
+            "CBR1",
+            "NQO1",
+            "CYP4F2",
+            "CYP1A1"
+          ],
+          "genes": [
+            "CBR1",
+            "NQO1",
+            "CYP4F2",
+            "CYP1A1"
+          ],
+          "adjusted_p_value": 0.0031241697108199953
+        },
+        {
+          "rank": 46,
+          "term_name": "Protein Tetramerization (GO:0051262)",
+          "term": "Protein Tetramerization (GO:0051262)",
+          "overlap": "6/73",
+          "p_value": 9.0483142653988e-05,
+          "z_score": 9.108939836897985,
+          "combined_score": 84.80739062557714,
+          "overlap_genes": [
+            "TDO2",
+            "SHMT2",
+            "HPRT1",
+            "UPB1",
+            "ALDH9A1",
+            "GNMT"
+          ],
+          "genes": [
+            "TDO2",
+            "SHMT2",
+            "HPRT1",
+            "UPB1",
+            "ALDH9A1",
+            "GNMT"
+          ],
+          "adjusted_p_value": 0.003137404620285018
+        },
+        {
+          "rank": 47,
+          "term_name": "Long-Chain Fatty Acid Biosynthetic Process (GO:0042759)",
+          "term": "Long-Chain Fatty Acid Biosynthetic Process (GO:0042759)",
+          "overlap": "4/25",
+          "p_value": 0.00010411396073230691,
+          "z_score": 19.221574344023324,
+          "combined_score": 176.26230732641343,
+          "overlap_genes": [
+            "GSTM4",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1"
+          ],
+          "genes": [
+            "GSTM4",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1"
+          ],
+          "adjusted_p_value": 0.0035332290929367986
+        },
+        {
+          "rank": 48,
+          "term_name": "Lipid Transport (GO:0006869)",
+          "term": "Lipid Transport (GO:0006869)",
+          "overlap": "7/108",
+          "p_value": 0.00010701408354868131,
+          "z_score": 7.073975273174986,
+          "combined_score": 64.67417341341343,
+          "overlap_genes": [
+            "ABCC3",
+            "FABP1",
+            "ABCC2",
+            "TTPA",
+            "APOE",
+            "CD36",
+            "PPARD"
+          ],
+          "genes": [
+            "ABCC3",
+            "FABP1",
+            "ABCC2",
+            "TTPA",
+            "APOE",
+            "CD36",
+            "PPARD"
+          ],
+          "adjusted_p_value": 0.0035559888179197223
+        },
+        {
+          "rank": 49,
+          "term_name": "Heme Catabolic Process (GO:0042167)",
+          "term": "Heme Catabolic Process (GO:0042167)",
+          "overlap": "3/10",
+          "p_value": 0.00011224655254723089,
+          "z_score": 43.059463379260336,
+          "combined_score": 391.61775629527256,
+          "overlap_genes": [
+            "ABCC2",
+            "BLVRB",
+            "HMOX1"
+          ],
+          "genes": [
+            "ABCC2",
+            "BLVRB",
+            "HMOX1"
+          ],
+          "adjusted_p_value": 0.0035806650262566655
+        },
+        {
+          "rank": 50,
+          "term_name": "Negative Regulation Of Hemostasis (GO:1900047)",
+          "term": "Negative Regulation Of Hemostasis (GO:1900047)",
+          "overlap": "3/10",
+          "p_value": 0.00011224655254723089,
+          "z_score": 43.059463379260336,
+          "combined_score": 391.61775629527256,
+          "overlap_genes": [
+            "VTN",
+            "SERPINE1",
+            "APOE"
+          ],
+          "genes": [
+            "VTN",
+            "SERPINE1",
+            "APOE"
+          ],
+          "adjusted_p_value": 0.0035806650262566655
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Drug metabolism",
+          "term": "Drug metabolism",
+          "overlap": "20/151",
+          "p_value": 5.187771544928537e-20,
+          "z_score": 24.88888888888889,
+          "combined_score": 1105.2010076721297,
+          "overlap_genes": [
+            "GSTM4",
+            "CDA",
+            "ADH1C",
+            "MAOA",
+            "GSTO1",
+            "GSTT2",
+            "FMO1",
+            "FMO3",
+            "ADH7",
+            "UPB1",
+            "ADH5",
+            "ALDH3A1",
+            "GSTA3",
+            "CYP1A2",
+            "AOX1",
+            "CYP2E1",
+            "HPRT1",
+            "UPP1",
+            "XDH",
+            "CES1"
+          ],
+          "genes": [
+            "GSTM4",
+            "CDA",
+            "ADH1C",
+            "MAOA",
+            "GSTO1",
+            "GSTT2",
+            "FMO1",
+            "FMO3",
+            "ADH7",
+            "UPB1",
+            "ADH5",
+            "ALDH3A1",
+            "GSTA3",
+            "CYP1A2",
+            "AOX1",
+            "CYP2E1",
+            "HPRT1",
+            "UPP1",
+            "XDH",
+            "CES1"
+          ],
+          "adjusted_p_value": 1.1361219683393496e-17
+        },
+        {
+          "rank": 2,
+          "term_name": "Metabolism of xenobiotics by cytochrome P450",
+          "term": "Metabolism of xenobiotics by cytochrome P450",
+          "overlap": "15/77",
+          "p_value": 9.78890538228777e-16,
+          "z_score": 26.237040319007534,
+          "combined_score": 906.7550479693818,
+          "overlap_genes": [
+            "GSTM4",
+            "CBR1",
+            "ADH1C",
+            "GSTO1",
+            "EPHX1",
+            "GSTT2",
+            "ADH7",
+            "ADH5",
+            "HSD11B1",
+            "ALDH3A1",
+            "GSTA3",
+            "CYP2S1",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1"
+          ],
+          "genes": [
+            "GSTM4",
+            "CBR1",
+            "ADH1C",
+            "GSTO1",
+            "EPHX1",
+            "GSTT2",
+            "ADH7",
+            "ADH5",
+            "HSD11B1",
+            "ALDH3A1",
+            "GSTA3",
+            "CYP2S1",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1"
+          ],
+          "adjusted_p_value": 1.0718851393605108e-13
+        },
+        {
+          "rank": 3,
+          "term_name": "Tyrosine metabolism",
+          "term": "Tyrosine metabolism",
+          "overlap": "11/36",
+          "p_value": 3.6614669981915174e-14,
+          "z_score": 46.03703703703704,
+          "combined_score": 1424.3089250974242,
+          "overlap_genes": [
+            "ALDH3A1",
+            "DDC",
+            "ADH1C",
+            "MAOA",
+            "TAT",
+            "AOX1",
+            "ADH7",
+            "COMT",
+            "FAH",
+            "TYR",
+            "ADH5"
+          ],
+          "genes": [
+            "ALDH3A1",
+            "DDC",
+            "ADH1C",
+            "MAOA",
+            "TAT",
+            "AOX1",
+            "ADH7",
+            "COMT",
+            "FAH",
+            "TYR",
+            "ADH5"
+          ],
+          "adjusted_p_value": 2.6728709086798075e-12
+        },
+        {
+          "rank": 4,
+          "term_name": "Tryptophan metabolism",
+          "term": "Tryptophan metabolism",
+          "overlap": "10/42",
+          "p_value": 8.886510963712234e-12,
+          "z_score": 32.51315789473684,
+          "combined_score": 827.3456370485211,
+          "overlap_genes": [
+            "DDC",
+            "ALDH2",
+            "TDO2",
+            "MAOA",
+            "KYNU",
+            "CAT",
+            "CYP1A2",
+            "CYP1A1",
+            "AOX1",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "DDC",
+            "ALDH2",
+            "TDO2",
+            "MAOA",
+            "KYNU",
+            "CAT",
+            "CYP1A2",
+            "CYP1A1",
+            "AOX1",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 4.361563164774165e-10
+        },
+        {
+          "rank": 5,
+          "term_name": "beta-Alanine metabolism",
+          "term": "beta-Alanine metabolism",
+          "overlap": "9/30",
+          "p_value": 9.957906768890788e-12,
+          "z_score": 44.380703066566944,
+          "combined_score": 1124.2810052778748,
+          "overlap_genes": [
+            "ALDH3A1",
+            "ALDH2",
+            "SMOX",
+            "ACOX1",
+            "GAD1",
+            "ACOX3",
+            "UPB1",
+            "CNDP2",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ALDH3A1",
+            "ALDH2",
+            "SMOX",
+            "ACOX1",
+            "GAD1",
+            "ACOX3",
+            "UPB1",
+            "CNDP2",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 4.361563164774165e-10
+        },
+        {
+          "rank": 6,
+          "term_name": "Retinol metabolism",
+          "term": "Retinol metabolism",
+          "overlap": "10/68",
+          "p_value": 1.4018282858224876e-09,
+          "z_score": 17.91470054446461,
+          "combined_score": 365.19992253654686,
+          "overlap_genes": [
+            "CYP26A1",
+            "ADH1C",
+            "RETSAT",
+            "CYP2S1",
+            "CYP1A2",
+            "CYP1A1",
+            "AOX1",
+            "ADH7",
+            "CYP2C18",
+            "ADH5"
+          ],
+          "genes": [
+            "CYP26A1",
+            "ADH1C",
+            "RETSAT",
+            "CYP2S1",
+            "CYP1A2",
+            "CYP1A1",
+            "AOX1",
+            "ADH7",
+            "CYP2C18",
+            "ADH5"
+          ],
+          "adjusted_p_value": 5.1166732432520796e-08
+        },
+        {
+          "rank": 7,
+          "term_name": "Glutathione metabolism",
+          "term": "Glutathione metabolism",
+          "overlap": "9/57",
+          "p_value": 4.961708651912372e-09,
+          "z_score": 19.39005235602094,
+          "combined_score": 370.7671899534008,
+          "overlap_genes": [
+            "GSTM4",
+            "GCLC",
+            "GSTO1",
+            "GSTA3",
+            "GSS",
+            "IDH1",
+            "GSR",
+            "GSTT2",
+            "PGD"
+          ],
+          "genes": [
+            "GSTM4",
+            "GCLC",
+            "GSTO1",
+            "GSTA3",
+            "GSS",
+            "IDH1",
+            "GSR",
+            "GSTT2",
+            "PGD"
+          ],
+          "adjusted_p_value": 1.5523059925268705e-07
+        },
+        {
+          "rank": 8,
+          "term_name": "Peroxisome",
+          "term": "Peroxisome",
+          "overlap": "10/82",
+          "p_value": 9.136768393592952e-09,
+          "z_score": 14.421052631578947,
+          "combined_score": 266.9475151744599,
+          "overlap_genes": [
+            "ABCD2",
+            "ACOX2",
+            "ACOX1",
+            "IDH1",
+            "ECH1",
+            "CAT",
+            "HACL1",
+            "CROT",
+            "ACOX3",
+            "XDH"
+          ],
+          "genes": [
+            "ABCD2",
+            "ACOX2",
+            "ACOX1",
+            "IDH1",
+            "ECH1",
+            "CAT",
+            "HACL1",
+            "CROT",
+            "ACOX3",
+            "XDH"
+          ],
+          "adjusted_p_value": 2.2484884650078618e-07
+        },
+        {
+          "rank": 9,
+          "term_name": "Steroid hormone biosynthesis",
+          "term": "Steroid hormone biosynthesis",
+          "overlap": "9/61",
+          "p_value": 9.24036355482683e-09,
+          "z_score": 17.89488521949255,
+          "combined_score": 331.0497326266656,
+          "overlap_genes": [
+            "HSD11B1",
+            "HSD17B2",
+            "CYP1A2",
+            "AKR1C3",
+            "CYP1A1",
+            "AKR1C2",
+            "CYP2E1",
+            "COMT",
+            "CYP17A1"
+          ],
+          "genes": [
+            "HSD11B1",
+            "HSD17B2",
+            "CYP1A2",
+            "AKR1C3",
+            "CYP1A1",
+            "AKR1C2",
+            "CYP2E1",
+            "COMT",
+            "CYP17A1"
+          ],
+          "adjusted_p_value": 2.2484884650078618e-07
+        },
+        {
+          "rank": 10,
+          "term_name": "Arginine and proline metabolism",
+          "term": "Arginine and proline metabolism",
+          "overlap": "8/50",
+          "p_value": 3.255912350095e-08,
+          "z_score": 19.601190476190474,
+          "combined_score": 337.92860508469624,
+          "overlap_genes": [
+            "ARG2",
+            "ALDH2",
+            "ARG1",
+            "MAOA",
+            "SMOX",
+            "PYCR1",
+            "CNDP2",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ARG2",
+            "ALDH2",
+            "ARG1",
+            "MAOA",
+            "SMOX",
+            "PYCR1",
+            "CNDP2",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 7.13044804670805e-07
+        },
+        {
+          "rank": 11,
+          "term_name": "Chemical carcinogenesis",
+          "term": "Chemical carcinogenesis",
+          "overlap": "14/281",
+          "p_value": 1.3659307934067758e-07,
+          "z_score": 6.548387096774194,
+          "combined_score": 103.50550611677085,
+          "overlap_genes": [
+            "GSTM4",
+            "CBR1",
+            "GSTO1",
+            "PTGES3",
+            "EPHX1",
+            "AKR1C2",
+            "GSTT2",
+            "ESR1",
+            "CYP2C18",
+            "HSD11B1",
+            "GSTA3",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1"
+          ],
+          "genes": [
+            "GSTM4",
+            "CBR1",
+            "GSTO1",
+            "PTGES3",
+            "EPHX1",
+            "AKR1C2",
+            "GSTT2",
+            "ESR1",
+            "CYP2C18",
+            "HSD11B1",
+            "GSTA3",
+            "CYP1A2",
+            "CYP1A1",
+            "CYP2E1"
+          ],
+          "adjusted_p_value": 2.7194440341462174e-06
+        },
+        {
+          "rank": 12,
+          "term_name": "Arachidonic acid metabolism",
+          "term": "Arachidonic acid metabolism",
+          "overlap": "8/61",
+          "p_value": 1.6256948864629975e-07,
+          "z_score": 15.52437106918239,
+          "combined_score": 242.67945717444763,
+          "overlap_genes": [
+            "CYP2J2",
+            "CBR1",
+            "CYP4F2",
+            "PTGES3",
+            "AKR1C3",
+            "CYP2E1",
+            "PTGDS",
+            "PTGES"
+          ],
+          "genes": [
+            "CYP2J2",
+            "CBR1",
+            "CYP4F2",
+            "PTGES3",
+            "AKR1C3",
+            "CYP2E1",
+            "PTGDS",
+            "PTGES"
+          ],
+          "adjusted_p_value": 2.9668931677949703e-06
+        },
+        {
+          "rank": 13,
+          "term_name": "Fatty acid degradation",
+          "term": "Fatty acid degradation",
+          "overlap": "7/43",
+          "p_value": 2.1383547493779542e-07,
+          "z_score": 19.911917098445596,
+          "combined_score": 305.80839613375537,
+          "overlap_genes": [
+            "ADH1C",
+            "ALDH2",
+            "ACOX1",
+            "ACOX3",
+            "ADH7",
+            "ADH5",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ADH1C",
+            "ALDH2",
+            "ACOX1",
+            "ACOX3",
+            "ADH7",
+            "ADH5",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 3.602305308567477e-06
+        },
+        {
+          "rank": 14,
+          "term_name": "Complement and coagulation cascades",
+          "term": "Complement and coagulation cascades",
+          "overlap": "8/85",
+          "p_value": 2.164686588593588e-06,
+          "z_score": 10.672619047619047,
+          "combined_score": 139.2054779808665,
+          "overlap_genes": [
+            "VTN",
+            "F10",
+            "PROS1",
+            "SERPINE1",
+            "F11",
+            "PLG",
+            "CFB",
+            "MBL2"
+          ],
+          "genes": [
+            "VTN",
+            "F10",
+            "PROS1",
+            "SERPINE1",
+            "F11",
+            "PLG",
+            "CFB",
+            "MBL2"
+          ],
+          "adjusted_p_value": 3.18432962724805e-05
+        },
+        {
+          "rank": 15,
+          "term_name": "Histidine metabolism",
+          "term": "Histidine metabolism",
+          "overlap": "5/22",
+          "p_value": 2.1810476898959246e-06,
+          "z_score": 29.838612368024133,
+          "combined_score": 388.9673545532963,
+          "overlap_genes": [
+            "ALDH3A1",
+            "ALDH2",
+            "MAOA",
+            "CNDP2",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ALDH3A1",
+            "ALDH2",
+            "MAOA",
+            "CNDP2",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 3.18432962724805e-05
+        },
+        {
+          "rank": 16,
+          "term_name": "Glycolysis / Gluconeogenesis",
+          "term": "Glycolysis / Gluconeogenesis",
+          "overlap": "7/67",
+          "p_value": 4.71250182122711e-06,
+          "z_score": 11.932642487046632,
+          "combined_score": 146.35733988559016,
+          "overlap_genes": [
+            "ALDH3A1",
+            "ALDH2",
+            "ADH1C",
+            "ADH7",
+            "FBP1",
+            "ADH5",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "ALDH3A1",
+            "ALDH2",
+            "ADH1C",
+            "ADH7",
+            "FBP1",
+            "ADH5",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 6.450236867804606e-05
+        },
+        {
+          "rank": 17,
+          "term_name": "Pyruvate metabolism",
+          "term": "Pyruvate metabolism",
+          "overlap": "6/47",
+          "p_value": 7.079811421809596e-06,
+          "z_score": 14.904953482524515,
+          "combined_score": 176.74686266062798,
+          "overlap_genes": [
+            "PC",
+            "ADH1C",
+            "ALDH2",
+            "ADH7",
+            "ADH5",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "PC",
+            "ADH1C",
+            "ALDH2",
+            "ADH7",
+            "ADH5",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 9.120462949272362e-05
+        },
+        {
+          "rank": 18,
+          "term_name": "PPAR signaling pathway",
+          "term": "PPAR signaling pathway",
+          "overlap": "7/74",
+          "p_value": 9.19294246285574e-06,
+          "z_score": 10.682159152424406,
+          "combined_score": 123.88179542501636,
+          "overlap_genes": [
+            "CYP27A1",
+            "FABP1",
+            "ACOX2",
+            "ACOX1",
+            "CD36",
+            "ACOX3",
+            "PPARD"
+          ],
+          "genes": [
+            "CYP27A1",
+            "FABP1",
+            "ACOX2",
+            "ACOX1",
+            "CD36",
+            "ACOX3",
+            "PPARD"
+          ],
+          "adjusted_p_value": 0.00011184746663141149
+        },
+        {
+          "rank": 19,
+          "term_name": "Cholesterol metabolism",
+          "term": "Cholesterol metabolism",
+          "overlap": "6/50",
+          "p_value": 1.0219798089852524e-05,
+          "z_score": 13.88659793814433,
+          "combined_score": 159.57344828850043,
+          "overlap_genes": [
+            "CYP27A1",
+            "NPC1",
+            "ANGPTL3",
+            "LCAT",
+            "CD36",
+            "APOE"
+          ],
+          "genes": [
+            "CYP27A1",
+            "NPC1",
+            "ANGPTL3",
+            "LCAT",
+            "CD36",
+            "APOE"
+          ],
+          "adjusted_p_value": 0.00011190678908388513
+        },
+        {
+          "rank": 20,
+          "term_name": "Cysteine and methionine metabolism",
+          "term": "Cysteine and methionine metabolism",
+          "overlap": "6/50",
+          "p_value": 1.0219798089852524e-05,
+          "z_score": 13.88659793814433,
+          "combined_score": 159.57344828850043,
+          "overlap_genes": [
+            "GCLC",
+            "AHCY",
+            "TAT",
+            "GSS",
+            "BCAT1",
+            "CDO1"
+          ],
+          "genes": [
+            "GCLC",
+            "AHCY",
+            "TAT",
+            "GSS",
+            "BCAT1",
+            "CDO1"
+          ],
+          "adjusted_p_value": 0.00011190678908388513
+        },
+        {
+          "rank": 21,
+          "term_name": "Ovarian steroidogenesis",
+          "term": "Ovarian steroidogenesis",
+          "overlap": "6/51",
+          "p_value": 1.1486707663805796e-05,
+          "z_score": 13.577319587628866,
+          "combined_score": 154.4327783623843,
+          "overlap_genes": [
+            "CYP2J2",
+            "HSD17B2",
+            "AKR1C3",
+            "CYP1A1",
+            "IGF1",
+            "CYP17A1"
+          ],
+          "genes": [
+            "CYP2J2",
+            "HSD17B2",
+            "AKR1C3",
+            "CYP1A1",
+            "IGF1",
+            "CYP17A1"
+          ],
+          "adjusted_p_value": 0.0001197899513511176
+        },
+        {
+          "rank": 22,
+          "term_name": "Phenylalanine metabolism",
+          "term": "Phenylalanine metabolism",
+          "overlap": "4/17",
+          "p_value": 2.0854898756677612e-05,
+          "z_score": 31.062794348508636,
+          "combined_score": 334.7923648041761,
+          "overlap_genes": [
+            "ALDH3A1",
+            "DDC",
+            "MAOA",
+            "TAT"
+          ],
+          "genes": [
+            "ALDH3A1",
+            "DDC",
+            "MAOA",
+            "TAT"
+          ],
+          "adjusted_p_value": 0.0002076010376232908
+        },
+        {
+          "rank": 23,
+          "term_name": "Pantothenate and CoA biosynthesis",
+          "term": "Pantothenate and CoA biosynthesis",
+          "overlap": "4/21",
+          "p_value": 5.082545165940558e-05,
+          "z_score": 23.74909963985594,
+          "combined_score": 234.8100391955592,
+          "overlap_genes": [
+            "VNN1",
+            "ALDH2",
+            "BCAT1",
+            "UPB1"
+          ],
+          "genes": [
+            "VNN1",
+            "ALDH2",
+            "BCAT1",
+            "UPB1"
+          ],
+          "adjusted_p_value": 0.00048394669188738356
+        },
+        {
+          "rank": 24,
+          "term_name": "Riboflavin metabolism",
+          "term": "Riboflavin metabolism",
+          "overlap": "3/8",
+          "p_value": 5.3162099096467675e-05,
+          "z_score": 60.28934010152284,
+          "combined_score": 593.3776232841345,
+          "overlap_genes": [
+            "BLVRB",
+            "ACP2",
+            "ACP1"
+          ],
+          "genes": [
+            "BLVRB",
+            "ACP2",
+            "ACP1"
+          ],
+          "adjusted_p_value": 0.00048510415425526756
+        },
+        {
+          "rank": 25,
+          "term_name": "Fluid shear stress and atherosclerosis",
+          "term": "Fluid shear stress and atherosclerosis",
+          "overlap": "8/139",
+          "p_value": 7.998107884785131e-05,
+          "z_score": 6.256043256997455,
+          "combined_score": 59.01776330762988,
+          "overlap_genes": [
+            "GSTM4",
+            "NQO1",
+            "IL1R1",
+            "GSTO1",
+            "GSTA3",
+            "GSTT2",
+            "HMOX1",
+            "TNFRSF1A"
+          ],
+          "genes": [
+            "GSTM4",
+            "NQO1",
+            "IL1R1",
+            "GSTO1",
+            "GSTA3",
+            "GSTT2",
+            "HMOX1",
+            "TNFRSF1A"
+          ],
+          "adjusted_p_value": 0.0007006342507071775
+        },
+        {
+          "rank": 26,
+          "term_name": "Valine, leucine and isoleucine degradation",
+          "term": "Valine, leucine and isoleucine degradation",
+          "overlap": "5/48",
+          "p_value": 0.00011485363419992406,
+          "z_score": 11.781156827668456,
+          "combined_score": 106.87691096820599,
+          "overlap_genes": [
+            "MCCC2",
+            "ALDH2",
+            "AOX1",
+            "BCAT1",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "MCCC2",
+            "ALDH2",
+            "AOX1",
+            "BCAT1",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.0009674209957608988
+        },
+        {
+          "rank": 27,
+          "term_name": "Folate biosynthesis",
+          "term": "Folate biosynthesis",
+          "overlap": "4/26",
+          "p_value": 0.00012208503690954434,
+          "z_score": 18.346938775510203,
+          "combined_score": 165.32046257631316,
+          "overlap_genes": [
+            "CBR1",
+            "GCH1",
+            "AKR1C3",
+            "PTS"
+          ],
+          "genes": [
+            "CBR1",
+            "GCH1",
+            "AKR1C3",
+            "PTS"
+          ],
+          "adjusted_p_value": 0.0009902452993774153
+        },
+        {
+          "rank": 28,
+          "term_name": "Taurine and hypotaurine metabolism",
+          "term": "Taurine and hypotaurine metabolism",
+          "overlap": "3/11",
+          "p_value": 0.00015320271943439296,
+          "z_score": 37.6751269035533,
+          "combined_score": 330.92884130781977,
+          "overlap_genes": [
+            "GAD1",
+            "CDO1",
+            "CSAD"
+          ],
+          "genes": [
+            "GAD1",
+            "CDO1",
+            "CSAD"
+          ],
+          "adjusted_p_value": 0.0011982641270047163
+        },
+        {
+          "rank": 29,
+          "term_name": "Bile secretion",
+          "term": "Bile secretion",
+          "overlap": "6/90",
+          "p_value": 0.00028757958825608007,
+          "z_score": 7.25920471281296,
+          "combined_score": 59.19163440674612,
+          "overlap_genes": [
+            "ABCC3",
+            "ABCC2",
+            "CA2",
+            "AQP9",
+            "SLC22A1",
+            "EPHX1"
+          ],
+          "genes": [
+            "ABCC3",
+            "ABCC2",
+            "CA2",
+            "AQP9",
+            "SLC22A1",
+            "EPHX1"
+          ],
+          "adjusted_p_value": 0.002171721718209708
+        },
+        {
+          "rank": 30,
+          "term_name": "Glycine, serine and threonine metabolism",
+          "term": "Glycine, serine and threonine metabolism",
+          "overlap": "4/40",
+          "p_value": 0.0006690615196291692,
+          "z_score": 11.204081632653061,
+          "combined_score": 81.89774214112175,
+          "overlap_genes": [
+            "ALAS1",
+            "MAOA",
+            "SHMT2",
+            "GNMT"
+          ],
+          "genes": [
+            "ALAS1",
+            "MAOA",
+            "SHMT2",
+            "GNMT"
+          ],
+          "adjusted_p_value": 0.004884149093292935
+        },
+        {
+          "rank": 31,
+          "term_name": "One carbon pool by folate",
+          "term": "One carbon pool by folate",
+          "overlap": "3/20",
+          "p_value": 0.0009905301969888136,
+          "z_score": 17.721409375933113,
+          "combined_score": 122.58377707877821,
+          "overlap_genes": [
+            "MTHFD1",
+            "SHMT2",
+            "GART"
+          ],
+          "genes": [
+            "MTHFD1",
+            "SHMT2",
+            "GART"
+          ],
+          "adjusted_p_value": 0.006997616552920974
+        },
+        {
+          "rank": 32,
+          "term_name": "Arginine biosynthesis",
+          "term": "Arginine biosynthesis",
+          "overlap": "3/22",
+          "p_value": 0.0013185462203513692,
+          "z_score": 15.854394870424793,
+          "combined_score": 105.13406751270358,
+          "overlap_genes": [
+            "ARG2",
+            "ARG1",
+            "ASL"
+          ],
+          "genes": [
+            "ARG2",
+            "ARG1",
+            "ASL"
+          ],
+          "adjusted_p_value": 0.009023800695529683
+        },
+        {
+          "rank": 33,
+          "term_name": "Caffeine metabolism",
+          "term": "Caffeine metabolism",
+          "overlap": "2/6",
+          "p_value": 0.0014535707837741265,
+          "z_score": 49.98989898989899,
+          "combined_score": 326.6206097208578,
+          "overlap_genes": [
+            "CYP1A2",
+            "XDH"
+          ],
+          "genes": [
+            "CYP1A2",
+            "XDH"
+          ],
+          "adjusted_p_value": 0.009646424292319204
+        },
+        {
+          "rank": 34,
+          "term_name": "Hepatocellular carcinoma",
+          "term": "Hepatocellular carcinoma",
+          "overlap": "7/168",
+          "p_value": 0.0015342652219323038,
+          "z_score": 4.42419463843208,
+          "combined_score": 28.66747034750049,
+          "overlap_genes": [
+            "GSTM4",
+            "NQO1",
+            "TGFB2",
+            "GSTO1",
+            "GSTA3",
+            "GSTT2",
+            "HMOX1"
+          ],
+          "genes": [
+            "GSTM4",
+            "NQO1",
+            "TGFB2",
+            "GSTO1",
+            "GSTA3",
+            "GSTT2",
+            "HMOX1"
+          ],
+          "adjusted_p_value": 0.009882473047152193
+        },
+        {
+          "rank": 35,
+          "term_name": "Pyrimidine metabolism",
+          "term": "Pyrimidine metabolism",
+          "overlap": "4/56",
+          "p_value": 0.002374631427088841,
+          "z_score": 7.750392464678179,
+          "combined_score": 46.83494770645078,
+          "overlap_genes": [
+            "CDA",
+            "ENTPD5",
+            "UPP1",
+            "UPB1"
+          ],
+          "genes": [
+            "CDA",
+            "ENTPD5",
+            "UPP1",
+            "UPB1"
+          ],
+          "adjusted_p_value": 0.014685810983436232
+        },
+        {
+          "rank": 36,
+          "term_name": "Biosynthesis of unsaturated fatty acids",
+          "term": "Biosynthesis of unsaturated fatty acids",
+          "overlap": "3/27",
+          "p_value": 0.002414105915085408,
+          "z_score": 12.548223350253807,
+          "combined_score": 75.62094298941223,
+          "overlap_genes": [
+            "ELOVL5",
+            "ACOX1",
+            "ACOX3"
+          ],
+          "genes": [
+            "ELOVL5",
+            "ACOX1",
+            "ACOX3"
+          ],
+          "adjusted_p_value": 0.014685810983436232
+        },
+        {
+          "rank": 37,
+          "term_name": "Linoleic acid metabolism",
+          "term": "Linoleic acid metabolism",
+          "overlap": "3/29",
+          "p_value": 0.0029718848603480213,
+          "z_score": 11.581803982819212,
+          "combined_score": 67.38940857682955,
+          "overlap_genes": [
+            "CYP2J2",
+            "CYP1A2",
+            "CYP2E1"
+          ],
+          "genes": [
+            "CYP2J2",
+            "CYP1A2",
+            "CYP2E1"
+          ],
+          "adjusted_p_value": 0.017509289521862915
+        },
+        {
+          "rank": 38,
+          "term_name": "Glycerolipid metabolism",
+          "term": "Glycerolipid metabolism",
+          "overlap": "4/61",
+          "p_value": 0.003245825065519956,
+          "z_score": 7.0687432867884,
+          "combined_score": 40.50662547348915,
+          "overlap_genes": [
+            "TKFC",
+            "ALDH2",
+            "LPIN2",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "TKFC",
+            "ALDH2",
+            "LPIN2",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.017509289521862915
+        },
+        {
+          "rank": 39,
+          "term_name": "Ascorbate and aldarate metabolism",
+          "term": "Ascorbate and aldarate metabolism",
+          "overlap": "3/30",
+          "p_value": 0.0032779948419926,
+          "z_score": 11.152284263959391,
+          "combined_score": 63.79690278522437,
+          "overlap_genes": [
+            "UGDH",
+            "ALDH2",
+            "ALDH9A1"
+          ],
+          "genes": [
+            "UGDH",
+            "ALDH2",
+            "ALDH9A1"
+          ],
+          "adjusted_p_value": 0.017509289521862915
+        },
+        {
+          "rank": 40,
+          "term_name": "Citrate cycle (TCA cycle)",
+          "term": "Citrate cycle (TCA cycle)",
+          "overlap": "3/30",
+          "p_value": 0.0032779948419926,
+          "z_score": 11.152284263959391,
+          "combined_score": 63.79690278522437,
+          "overlap_genes": [
+            "PC",
+            "IDH1",
+            "ACO2"
+          ],
+          "genes": [
+            "PC",
+            "IDH1",
+            "ACO2"
+          ],
+          "adjusted_p_value": 0.017509289521862915
+        },
+        {
+          "rank": 41,
+          "term_name": "Glyoxylate and dicarboxylate metabolism",
+          "term": "Glyoxylate and dicarboxylate metabolism",
+          "overlap": "3/30",
+          "p_value": 0.0032779948419926,
+          "z_score": 11.152284263959391,
+          "combined_score": 63.79690278522437,
+          "overlap_genes": [
+            "SHMT2",
+            "CAT",
+            "ACO2"
+          ],
+          "genes": [
+            "SHMT2",
+            "CAT",
+            "ACO2"
+          ],
+          "adjusted_p_value": 0.017509289521862915
+        },
+        {
+          "rank": 42,
+          "term_name": "Fructose and mannose metabolism",
+          "term": "Fructose and mannose metabolism",
+          "overlap": "3/33",
+          "p_value": 0.004309453893401118,
+          "z_score": 10.035532994923859,
+          "combined_score": 54.6629871343117,
+          "overlap_genes": [
+            "TKFC",
+            "PMM1",
+            "FBP1"
+          ],
+          "genes": [
+            "TKFC",
+            "PMM1",
+            "FBP1"
+          ],
+          "adjusted_p_value": 0.022470723872734404
+        },
+        {
+          "rank": 43,
+          "term_name": "Ubiquinone and other terpenoid-quinone biosynthesis",
+          "term": "Ubiquinone and other terpenoid-quinone biosynthesis",
+          "overlap": "2/11",
+          "p_value": 0.0051570205394645754,
+          "z_score": 22.21212121212121,
+          "combined_score": 117.00004466783103,
+          "overlap_genes": [
+            "NQO1",
+            "TAT"
+          ],
+          "genes": [
+            "NQO1",
+            "TAT"
+          ],
+          "adjusted_p_value": 0.026264825538203303
+        },
+        {
+          "rank": 44,
+          "term_name": "Pathways in cancer",
+          "term": "Pathways in cancer",
+          "overlap": "12/531",
+          "p_value": 0.007349995876394276,
+          "z_score": 2.3712950436600666,
+          "combined_score": 11.650304219909376,
+          "overlap_genes": [
+            "GSTM4",
+            "NQO1",
+            "TGFB2",
+            "JUP",
+            "GSTO1",
+            "GSTA3",
+            "HMOX1",
+            "FAS",
+            "GSTT2",
+            "IGF1",
+            "ESR1",
+            "PPARD"
+          ],
+          "genes": [
+            "GSTM4",
+            "NQO1",
+            "TGFB2",
+            "JUP",
+            "GSTO1",
+            "GSTA3",
+            "HMOX1",
+            "FAS",
+            "GSTT2",
+            "IGF1",
+            "ESR1",
+            "PPARD"
+          ],
+          "adjusted_p_value": 0.036582934021144244
+        },
+        {
+          "rank": 45,
+          "term_name": "Ferroptosis",
+          "term": "Ferroptosis",
+          "overlap": "3/41",
+          "p_value": 0.007942343574308956,
+          "z_score": 7.919583222014427,
+          "combined_score": 38.29551599382337,
+          "overlap_genes": [
+            "GCLC",
+            "GSS",
+            "HMOX1"
+          ],
+          "genes": [
+            "GCLC",
+            "GSS",
+            "HMOX1"
+          ],
+          "adjusted_p_value": 0.03865273872830358
+        },
+        {
+          "rank": 46,
+          "term_name": "Porphyrin and chlorophyll metabolism",
+          "term": "Porphyrin and chlorophyll metabolism",
+          "overlap": "3/43",
+          "p_value": 0.009061882822613368,
+          "z_score": 7.522842639593908,
+          "combined_score": 35.3850321555175,
+          "overlap_genes": [
+            "ALAS1",
+            "HMOX1",
+            "BLVRB"
+          ],
+          "genes": [
+            "ALAS1",
+            "HMOX1",
+            "BLVRB"
+          ],
+          "adjusted_p_value": 0.04314244213374625
+        },
+        {
+          "rank": 47,
+          "term_name": "Thiamine metabolism",
+          "term": "Thiamine metabolism",
+          "overlap": "2/15",
+          "p_value": 0.009590008493683598,
+          "z_score": 15.374514374514375,
+          "combined_score": 71.44588341233826,
+          "overlap_genes": [
+            "NFS1",
+            "ACP1"
+          ],
+          "genes": [
+            "NFS1",
+            "ACP1"
+          ],
+          "adjusted_p_value": 0.044002637915059366
+        },
+        {
+          "rank": 48,
+          "term_name": "Purine metabolism",
+          "term": "Purine metabolism",
+          "overlap": "5/129",
+          "p_value": 0.009644413789602053,
+          "z_score": 4.0686517783291976,
+          "combined_score": 18.8841443972766,
+          "overlap_genes": [
+            "ENTPD5",
+            "HPRT1",
+            "GART",
+            "XDH",
+            "PAPSS2"
+          ],
+          "genes": [
+            "ENTPD5",
+            "HPRT1",
+            "GART",
+            "XDH",
+            "PAPSS2"
+          ],
+          "adjusted_p_value": 0.044002637915059366
+        },
+        {
+          "rank": 49,
+          "term_name": "ABC transporters",
+          "term": "ABC transporters",
+          "overlap": "3/45",
+          "p_value": 0.010269125320643951,
+          "z_score": 7.163886874546773,
+          "combined_score": 32.800668633723014,
+          "overlap_genes": [
+            "ABCC3",
+            "ABCD2",
+            "ABCC2"
+          ],
+          "genes": [
+            "ABCC3",
+            "ABCD2",
+            "ABCC2"
+          ],
+          "adjusted_p_value": 0.04589670296369439
+        }
+      ]
+    },
+    "significant_terms_total": 99,
+    "execution_time": 3.88,
+    "dataframe": "    rank  ...                     library\n9     10  ...  GO_Biological_Process_2023\n52     3  ...             KEGG_2021_Human\n0      1  ...  GO_Biological_Process_2023\n7      8  ...  GO_Biological_Process_2023\n54     5  ...             KEGG_2021_Human\n..   ...  ...                         ...\n95    46  ...             KEGG_2021_Human\n98    49  ...             KEGG_2021_Human\n83    34  ...             KEGG_2021_Human\n97    48  ...             KEGG_2021_Human\n93    44  ...             KEGG_2021_Human\n\n[99 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "42375970",
+      "pmcid": "",
+      "doi": "10.5455/ovj.2026.v16.i4.17",
+      "url": "https://doi.org/10.5455/ovj.2026.v16.i4.17",
+      "title": "Biotransformation and detoxification enzyme (CYP1A2, CYP2E1, and GST) activities in vital organs of rats using liver extracts of &lt;i&gt;Crocodylus siamensis&lt;/i&gt;.",
+      "abstract": "<h4>Background</h4>Detoxification enzymes, including cytochrome P450 isoforms (CYP1A2 and CYP2E1) and glutathione-S-transferase (GST), play key roles in xenobiotic metabolism and organ protection. Although crocodile-derived bioactive compounds have gained biomedical interest, the <i>in vivo</i> effects of <i>Crocodylus siamensis</i> liver extract on mammalian detoxification pathways remain largely unexplored.<h4>Aim</h4>To evaluate the effects of oral administration of <i>C. siamensis</i> liver extract on phase I (CYP1A2, CYP2E1) and phase II GST detoxification enzyme activities, kinetic parameters (V<sub>max</sub>, K<sub>m</sub>, catalytic efficiency), and selected blood biochemical profiles in rat liver and kidneys.<h4>Methods</h4>Male Wistar rats (<i>n</i> = 5) were orally administered freeze-dried <i>C. siamensis</i> liver extract at 0, 50, 100, 200, 400, or 800 mg/kg for 7 days. Liver and kidney tissues were collected for microsomal and cytosolic fractionation. Enzyme activities were quantified using specific substrates (3-cyano-7-ethoxy coumarin for CYP1A2, 7-methoxy-4-trifluoromethylcoumarin for CYP2E1, and 1-chloro-2,4-dinitrobenzene for GST), and kinetic parameters were calculated by Michaelis-Menten modelling. Serum albumin, total protein, cholesterol, and glucose were analyzed using automated clinical assays. Data were assessed by one-way analysis of variance with Tukey's post hoc test for variables that met parametric assumptions, whereas non-parametric data were analyzed using the Kruskal-Wallis test.<h4>Results</h4>Crocodile liver extract produced dose-dependent and tissue-specific modulation of detoxification enzymes. Hepatic CYP1A2 showed a biphasic response, with catalytic efficiency increasing markedly at 400-800 mg/kg. Hepatic CYP2E1 activity increased toward 400 mg/kg before stabilizing. In the kidneys, CYP1A2, CYP2E1, and GST activities were consistently elevated, with GST showing the strongest induction; V<sub>max</sub> increased from 0.16 to 0.59 µmol/minute/mg at 800 mg/kg. Several groups exhibited enhanced catalytic efficiency despite reduced V<sub>max</sub>, indicating improved substrate affinity. Blood analyses showed increased serum albumin and total protein, while cholesterol and glucose were reduced, suggesting metabolic benefits associated with liver-related biochemical changes.<h4>Conclusion</h4>Oral supplementation with <i>C. siamensis</i> liver extract modulates phase I and phase II detoxification pathways in rats, with pronounced induction in renal tissues and high-dose enhancement in hepatic enzymes. These findings provide the first <i>in vivo</i> evidence that reptile-derived liver extract can enhance xenobiotic metabolism and support metabolic homeostasis, highlighting its potential as a natural bioactive supplement in veterinary applications.",
+      "authors": "Sahabantherngsin T, Srisuporn P, Tulayakul P.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "2164-2179",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-04-30",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    },
+    {
+      "pmid": "42091236",
+      "pmcid": "",
+      "doi": "10.1080/00498254.2026.2668400",
+      "url": "https://doi.org/10.1080/00498254.2026.2668400",
+      "title": "Exploring the components of hepatotoxicity induced by &lt;i&gt;Senecio scandens&lt;/i&gt; Buch.-Ham. based on integrated network toxicology, metabolomics, and &lt;i&gt;in vivo&lt;/i&gt; experiments.",
+      "abstract": "<h4>Background</h4>1. <i>Senecio scandens</i> Buch.-Ham. (SBH) is widely used in traditional Chinese medicine, yet its clinical application is constrained by hepatotoxic pyrrolizidine alkaloids (PAs). The relative toxic contributions of individual PAs in SBH and their <i>in vivo</i> metabolic consequences remain unclear.<h4>Purpose</h4>2. This study sought to elucidate PAs-related hepatotoxicity of SBH by integrating network toxicology, LC-MS/MS fingerprinting, <i>in vivo</i> toxicity evaluation, and liver metabolomics.<h4>Methods</h4>3. Network toxicology and molecular docking were used to prioritise hepatotoxic PAs and their putative targets. LC-MS/MS fingerprints of major PAs in 12 SBH samples were established. Spectrum-toxicity correlation analysis and untargeted metabolomics were used to assess hepatotoxicity-related associations and SPL-induced metabolic perturbations.<h4>Results</h4>4. SPL, senecionine, adonifoline, and senkirkine were prioritised as candidate hepatotoxic PAs, with CYP3A4/CYP2C9 and DNA adduct-related pathways highlighted as potentially relevant toxicological nodes. Considerable regional variation in PAs levels was observed across SBH samples. Acute SBH exposure caused marked liver injury, and spectrum-toxicity modelling indicated that SPL showed the strongest association with hepatotoxicity among the detected PAs. Metabolomic profiling further showed that SPL exposure was associated with alterations in lipid and bile acid metabolism, glutathione metabolism, and the pentose phosphate pathway, together with enrichment of xenobiotic metabolism by cytochrome P450 and chemical carcinogenesis-DNA adduct pathways.<h4>Conclusion</h4>5. SPL is closely associated with SBH-induced hepatotoxicity and produces a metabolic signature consistent with canonical PAs bioactivation. Although SPL appears to be the most influential PAs among those detected, definitive comparisons of toxic potency require further validation using equimolar pure-compound exposure models.",
+      "authors": "Yang S, Wang H, Gong B, Tan R, Liu Y, Wu T, Jiang Y, Rao Q, Li W, Yu J, Lin C, Jin Y, Zhang S.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "401-413",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-05-14",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates [topic]"
+    },
+    {
+      "pmid": "41498561",
+      "pmcid": "PMC12915302",
+      "doi": "10.1128/aem.02314-25",
+      "url": "https://doi.org/10.1128/aem.02314-25",
+      "title": "Mechanisms of the marine yeast &lt;i&gt;Debaryomyces hansenii&lt;/i&gt; for protection against reactive oxygen species produced during benzo(a)pyrene biotransformation.",
+      "abstract": "Polycyclic aromatic hydrocarbons (PAHs), such as benzo(a)pyrene (BaP), are persistent environmental pollutants recognized for their high toxicity and resistance to microbial degradation. The marine yeast <i>Debaryomyces hansenii</i> has emerged as a compelling candidate due to its ability to thrive under a variety of stressful conditions. This study presents a molecular and biochemical analysis of the responses of <i>D. hansenii</i> to BaP exposure, providing insights into the detoxification and antioxidant mechanisms. In this study, we explored BaP removal from the medium and characterized the associated molecular and biochemical responses induced by this compound. Our findings demonstrate that <i>D. hansenii</i> can grow in BaP concentrations up to 100 ppm without compromising cell viability and is capable of biotransforming nearly 70% of the compound within 6 days. This process involved cytochrome P450 (CYP), epoxide hydrolase (EH), and glutathione S-transferase (GST), enzymes typically associated with xenobiotic metabolism. BaP exposure resulted in pronounced oxidative stress, evidenced by elevated ROS levels, lipid peroxidation, and protein carbonylation. However, <i>D. hansenii</i> activated a robust antioxidant defense, including superoxide dismutase (SOD), catalase (CAT), glutathione peroxidase (GPx), and regulation of the glutathione redox system. Altogether, these results show that <i>D. hansenii</i> maintains redox homeostasis during BaP biotransformation through a coordinated enzymatic network that links xenobiotic metabolism with antioxidant protection, thereby expanding mechanistic understanding and providing a basis for future studies under environmentally relevant conditions.IMPORTANCEUnderstanding how marine yeasts respond to polycyclic aromatic hydrocarbons (PAHs) is important for advancing our knowledge of stress adaptation and xenobiotic biotransformation in extremophilic microorganisms. <i>Debaryomyces hansenii</i> is a suitable model organism because it naturally tolerates high salinity, oxidative conditions, and nutrient limitation. By characterizing its responses to benzo(a)pyrene (BaP), we can gain insight into how eukaryotic microbes activate biotransformation pathways and antioxidant defenses under chemical stress. This insight contributes to a broader comprehension of cellular strategies for coping with toxic contaminants and provides the basis for future applied research.",
+      "authors": "Padilla-Garfias F, Araiza-Villanueva MG, Calahorra M, Sánchez NS, Peña A.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "e0231425",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2026-01-07",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates [topic]"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 39.754281759262085,
+  "phase": 2,
+  "rep": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Arachidonic Acid Metabolic Process (GO:0019369) -> genes: [CYP2J2, CBR1, CYP4F2, PTGES3, EPHX1, AKR1C3, ABHD6, CYP2C18, CYP2S1, CYP1A2, CYP1A1, CYP2E1, PTGDS]\n- Fatty Acid Metabolic Process (GO:0006631) -> genes: [CYP2J2, ABCD2, ACSM1, CYP4F2, CROT, ACOX2, ACOX1, CYP1A1, ANGPTL3, HACL1, CYP2E1, CD36, LPIN2, CES1, PPARD]\n- Steroid Metabolic Process (GO:0008202) -> genes: [CYP27A1, HSD11B1, CBR1, CYP26A1, NPC1, HSD17B2, CYP1A2, AKR1C3, CYP1A1, AKR1C2, CYP2E1, CYP17A1]\n- Monocarboxylic Acid Metabolic Process (GO:0032787) -> genes: [CYP2J2, VNN1, NPC1, ACSM1, KYNU, CYP1A2, CYP1A1, ANGPTL3, HACL1, IGF1, CROT, CD36]\n- Long-Chain Fatty Acid Metabolic Process (GO:0001676) -> genes: [CYP2J2, GSTM4, ELOVL5, CYP4F2, EPHX1, CYP1A2, CYP1A1, ABHD6, HACL1, CYP2E1, PTGR1]\n- Prostaglandin Metabolic Process (GO:0006693) -> genes: [PTGES3, CYP2S1, AKR1C3, AKR1C2, PTGDS, PTGR1, CES1, PTGES]\n- Fatty Acid Oxidation (GO:0019395) -> genes: [ABCD2, ACOX1, ACSM1, CYP4F2, HACL1, CROT, ADH7, ADH5, PPARD]\n- Prostanoid Metabolic Process (GO:0006692) -> genes: [CYP2S1, AKR1C3, AKR1C2, PTGR1, CES1, PTGES]\n- Epoxygenase P450 Pathway (GO:0019373) -> genes: [CYP2J2, CYP4F2, CYP2S1, CYP1A2, CYP2E1, CYP2C18]\n- Taurine Metabolic Process (GO:0019530) -> genes: [FMO1, FMO3, CDO1, CSAD]\n- Secondary Alcohol Metabolic Process (GO:1902652) -> genes: [CYP27A1, IDH1, ANGPTL3, LCAT, APOE, CES1, PPARD]\n- Organonitrogen Compound Biosynthetic Process (GO:1901566) -> genes: [ALAS1, GCH1, ELOVL5, LCAT, FMO1, APOE, FMO3, CSAD, BCAT1, CDO1]\n- Fatty Acid Beta-Oxidation (GO:0006635) -> genes: [ABCD2, ACOX2, ACOX1, ETFDH, CROT, ACOX3, PPARD]\n- Cholesterol Homeostasis (GO:0042632) -> genes: [NPC1, ACSM1, HNF4A, ANGPTL3, LCAT, TMEM97, APOE, CES1]\n- Sterol Homeostasis (GO:0055092) -> genes: [NPC1, ACSM1, HNF4A, ANGPTL3, LCAT, TMEM97, APOE, CES1]\n- Sterol Metabolic Process (GO:0016125) -> genes: [CYP27A1, CYP26A1, ANGPTL3, LCAT, APOE, CES1, PPARD]\n- Fatty Acid Beta-Oxidation Using acyl-CoA Oxidase (GO:0033540) -> genes: [ACOX2, ACOX1, ACOX3, CROT]\n- Serine Family Amino Acid Metabolic Process (GO:0009069) -> genes: [GCLC, MTHFD1, SHMT2, CDO1]\n- Unsaturated Fatty Acid Metabolic Process (GO:0033559) -> genes: [CYP2J2, ELOVL5, CYP4F2, EPHX1, ABHD6, PTGR1]\n- Negative Regulation Of Blood Coagulation (GO:0030195) -> genes: [VTN, SERPINE1, F11, PLG, APOE]\n- Nitric Oxide Biosynthetic Process (GO:0006809) -> genes: [NQO1, ARG2, GCH1, DDAH2]\n- Icosanoid Metabolic Process (GO:0006690) -> genes: [CYP2J2, CYP4F2, CYP2S1, EPHX1, ABHD6, PTGR1]\n- Protein Homotetramerization (GO:0051289) -> genes: [TDO2, SHMT2, HPRT1, UPB1, ALDH9A1, GNMT]\n- Very Long-Chain Fatty Acid Metabolic Process (GO:0000038) -> genes: [ABCD2, ACOX2, ELOVL5, ACOX1, CYP4F2]\n- Regulation Of Fibrinolysis (GO:0051917) -> genes: [VTN, F11, SERPINE1, PLG]\n- Nitric Oxide Metabolic Process (GO:0046209) -> genes: [NQO1, ARG2, GCH1, DDAH2]\n- Carboxylic Acid Metabolic Process (GO:0019752) -> genes: [CYP2J2, GSTO1, CYP4F2, CYP2S1, CYP1A2]\n- Sulfur Amino Acid Metabolic Process (GO:0000096) -> genes: [GCLC, MTHFD1, FMO1, CDO1]\n- Prostaglandin Biosynthetic Process (GO:0001516) -> genes: [CBR1, PTGES3, PTGDS, PTGES]\n- Purine-Containing Compound Biosynthetic Process (GO:0072522) -> genes: [MTHFD1, SHMT2, HPRT1, GART]\n- Fatty Acid Catabolic Process (GO:0009062) -> genes: [ABCD2, ACOX1, HACL1, CROT, LPIN2, PPARD]\n- Dopamine Metabolic Process (GO:0042417) -> genes: [TGFB2, GCH1, MAOA, COMT]\n- Benzene-Containing Compound Metabolic Process (GO:0042537) -> genes: [ACSM1, KYNU, CYP2E1]\n- Fatty Acid Transport (GO:0015908) -> genes: [FABP1, SLC22A1, APOE, CD36, PPARD]\n- Monocarboxylic Acid Catabolic Process (GO:0072329) -> genes: [CYP26A1, ACOX1, LPIN2, PPARD]\n- Fatty Acid Biosynthetic Process (GO:0006633) -> genes: [GSTM4, ELOVL5, ACSM1, CYP1A2, CYP1A1, CYP2E1]\n- Protein Homooligomerization (GO:0051260) -> genes: [TDO2, SHMT2, NINJ1, HPRT1, SLC1A5, UPB1, ALDH9A1, GNMT]\n- Purine Nucleotide Biosynthetic Process (GO:0006164) -> genes: [MTHFD1, KYNU, HPRT1, GART]\n- Cyclooxygenase Pathway (GO:0019371) -> genes: [CBR1, PTGES3, PTGDS]\n- Vitamin K Metabolic Process (GO:0042373) -> genes: [CBR1, NQO1, CYP4F2]\n- Cholesterol Metabolic Process (GO:0008203) -> genes: [CYP27A1, ANGPTL3, LCAT, APOE, CES1, PPARD]\n- Cellular Lipid Catabolic Process (GO:0044242) -> genes: [ACOX1, ANGPTL3, LPIN2, PPARD]\n- Ornithine Metabolic Process (GO:0006591) -> genes: [ARG2, ARG1, HNF4A]\n- Acylglycerol Homeostasis (GO:0055090) -> genes: [GCKR, HNF4A, ANGPTL3, APOE]\n- Fat-Soluble Vitamin Metabolic Process (GO:0006775) -> genes: [CBR1, NQO1, CYP4F2, CYP1A1]\n- Protein Tetramerization (GO:0051262) -> genes: [TDO2, SHMT2, HPRT1, UPB1, ALDH9A1, GNMT]\n- Long-Chain Fatty Acid Biosynthetic Process (GO:0042759) -> genes: [GSTM4, CYP1A2, CYP1A1, CYP2E1]\n- Lipid Transport (GO:0006869) -> genes: [ABCC3, FABP1, ABCC2, TTPA, APOE, CD36, PPARD]\n- Heme Catabolic Process (GO:0042167) -> genes: [ABCC2, BLVRB, HMOX1]\n- Negative Regulation Of Hemostasis (GO:1900047) -> genes: [VTN, SERPINE1, APOE]\n\n[KEGG_2021_Human]\n- Drug metabolism -> genes: [GSTM4, CDA, ADH1C, MAOA, GSTO1, GSTT2, FMO1, FMO3, ADH7, UPB1, ADH5, ALDH3A1, GSTA3, CYP1A2, AOX1, CYP2E1, HPRT1, UPP1, XDH, CES1]\n- Metabolism of xenobiotics by cytochrome P450 -> genes: [GSTM4, CBR1, ADH1C, GSTO1, EPHX1, GSTT2, ADH7, ADH5, HSD11B1, ALDH3A1, GSTA3, CYP2S1, CYP1A2, CYP1A1, CYP2E1]\n- Tyrosine metabolism -> genes: [ALDH3A1, DDC, ADH1C, MAOA, TAT, AOX1, ADH7, COMT, FAH, TYR, ADH5]\n- Tryptophan metabolism -> genes: [DDC, ALDH2, TDO2, MAOA, KYNU, CAT, CYP1A2, CYP1A1, AOX1, ALDH9A1]\n- beta-Alanine metabolism -> genes: [ALDH3A1, ALDH2, SMOX, ACOX1, GAD1, ACOX3, UPB1, CNDP2, ALDH9A1]\n- Retinol metabolism -> genes: [CYP26A1, ADH1C, RETSAT, CYP2S1, CYP1A2, CYP1A1, AOX1, ADH7, CYP2C18, ADH5]\n- Glutathione metabolism -> genes: [GSTM4, GCLC, GSTO1, GSTA3, GSS, IDH1, GSR, GSTT2, PGD]\n- Peroxisome -> genes: [ABCD2, ACOX2, ACOX1, IDH1, ECH1, CAT, HACL1, CROT, ACOX3, XDH]\n- Steroid hormone biosynthesis -> genes: [HSD11B1, HSD17B2, CYP1A2, AKR1C3, CYP1A1, AKR1C2, CYP2E1, COMT, CYP17A1]\n- Arginine and proline metabolism -> genes: [ARG2, ALDH2, ARG1, MAOA, SMOX, PYCR1, CNDP2, ALDH9A1]\n- Chemical carcinogenesis -> genes: [GSTM4, CBR1, GSTO1, PTGES3, EPHX1, AKR1C2, GSTT2, ESR1, CYP2C18, HSD11B1, GSTA3, CYP1A2, CYP1A1, CYP2E1]\n- Arachidonic acid metabolism -> genes: [CYP2J2, CBR1, CYP4F2, PTGES3, AKR1C3, CYP2E1, PTGDS, PTGES]\n- Fatty acid degradation -> genes: [ADH1C, ALDH2, ACOX1, ACOX3, ADH7, ADH5, ALDH9A1]\n- Complement and coagulation cascades -> genes: [VTN, F10, PROS1, SERPINE1, F11, PLG, CFB, MBL2]\n- Histidine metabolism -> genes: [ALDH3A1, ALDH2, MAOA, CNDP2, ALDH9A1]\n- Glycolysis / Gluconeogenesis -> genes: [ALDH3A1, ALDH2, ADH1C, ADH7, FBP1, ADH5, ALDH9A1]\n- Pyruvate metabolism -> genes: [PC, ADH1C, ALDH2, ADH7, ADH5, ALDH9A1]\n- PPAR signaling pathway -> genes: [CYP27A1, FABP1, ACOX2, ACOX1, CD36, ACOX3, PPARD]\n- Cholesterol metabolism -> genes: [CYP27A1, NPC1, ANGPTL3, LCAT, CD36, APOE]\n- Cysteine and methionine metabolism -> genes: [GCLC, AHCY, TAT, GSS, BCAT1, CDO1]\n- Ovarian steroidogenesis -> genes: [CYP2J2, HSD17B2, AKR1C3, CYP1A1, IGF1, CYP17A1]\n- Phenylalanine metabolism -> genes: [ALDH3A1, DDC, MAOA, TAT]\n- Pantothenate and CoA biosynthesis -> genes: [VNN1, ALDH2, BCAT1, UPB1]\n- Riboflavin metabolism -> genes: [BLVRB, ACP2, ACP1]\n- Fluid shear stress and atherosclerosis -> genes: [GSTM4, NQO1, IL1R1, GSTO1, GSTA3, GSTT2, HMOX1, TNFRSF1A]\n- Valine, leucine and isoleucine degradation -> genes: [MCCC2, ALDH2, AOX1, BCAT1, ALDH9A1]\n- Folate biosynthesis -> genes: [CBR1, GCH1, AKR1C3, PTS]\n- Taurine and hypotaurine metabolism -> genes: [GAD1, CDO1, CSAD]\n- Bile secretion -> genes: [ABCC3, ABCC2, CA2, AQP9, SLC22A1, EPHX1]\n- Glycine, serine and threonine metabolism -> genes: [ALAS1, MAOA, SHMT2, GNMT]\n- One carbon pool by folate -> genes: [MTHFD1, SHMT2, GART]\n- Arginine biosynthesis -> genes: [ARG2, ARG1, ASL]\n- Caffeine metabolism -> genes: [CYP1A2, XDH]\n- Hepatocellular carcinoma -> genes: [GSTM4, NQO1, TGFB2, GSTO1, GSTA3, GSTT2, HMOX1]\n- Pyrimidine metabolism -> genes: [CDA, ENTPD5, UPP1, UPB1]\n- Biosynthesis of unsaturated fatty acids -> genes: [ELOVL5, ACOX1, ACOX3]\n- Linoleic acid metabolism -> genes: [CYP2J2, CYP1A2, CYP2E1]\n- Glycerolipid metabolism -> genes: [TKFC, ALDH2, LPIN2, ALDH9A1]\n- Ascorbate and aldarate metabolism -> genes: [UGDH, ALDH2, ALDH9A1]\n- Citrate cycle (TCA cycle) -> genes: [PC, IDH1, ACO2]\n- Glyoxylate and dicarboxylate metabolism -> genes: [SHMT2, CAT, ACO2]\n- Fructose and mannose metabolism -> genes: [TKFC, PMM1, FBP1]\n- Ubiquinone and other terpenoid-quinone biosynthesis -> genes: [NQO1, TAT]\n- Pathways in cancer -> genes: [GSTM4, NQO1, TGFB2, JUP, GSTO1, GSTA3, HMOX1, FAS, GSTT2, IGF1, ESR1, PPARD]\n- Ferroptosis -> genes: [GCLC, GSS, HMOX1]\n- Porphyrin and chlorophyll metabolism -> genes: [ALAS1, HMOX1, BLVRB]\n- Thiamine metabolism -> genes: [NFS1, ACP1]\n- Purine metabolism -> genes: [ENTPD5, HPRT1, GART, XDH, PAPSS2]\n- ABC transporters -> genes: [ABCC3, ABCD2, ABCC2]\n\n=== ABSTRACTS ===\n[1] Biotransformation and detoxification enzyme (CYP1A2, CYP2E1, and GST) activities in vital organs of rats using liver extracts of &lt;i&gt;Crocodylus siamensis&lt;/i&gt;.\n<h4>Background</h4>Detoxification enzymes, including cytochrome P450 isoforms (CYP1A2 and CYP2E1) and glutathione-S-transferase (GST), play key roles in xenobiotic metabolism and organ protection. Although crocodile-derived bioactive compounds have gained biomedical interest, the <i>in vivo</i> effects of <i>Crocodylus siamensis</i> liver extract on mammalian detoxification pathways remain largely unexplored.<h4>Aim</h4>To evaluate the effects of oral administration of <i>C. siamensis</i> liver extract on phase I (CYP1A2, CYP2E1) and phase II GST detoxification enzyme activities, kinetic parameters (V<sub>max</sub>, K<sub>m</sub>, catalytic efficiency), and selected blood biochemical profiles in rat liver and kidneys.<h4>Methods</h4>Male Wistar rats (<i>n</i> = 5) were orally administered freeze-dried <i>C. siamensis</i> liver extract at 0, 50, 100, 200, 400, or 800 mg/kg for 7 days. Liver and kidney tissues were collected for microsomal and cytosolic fractionation. Enzyme activities were quantified using specific substrates (3-cyano-7-ethoxy coumarin for CYP1A2, 7-methoxy-4-trifluoromethylcoumarin for CYP2E1, and 1-chloro-2,4-dinitrobenzene for GST), and kinetic parameters were calculated by Michaelis-Menten modelling. Serum albumin, total protein, cholesterol, and glucose were analyzed using automated clinical assays. Data were assessed by one-way analysis of variance with Tukey's post hoc test for variables that met parametric assumptions, whereas non-parametric data were analyzed using the Kruskal-Wallis test.<h4>Results</h4>Crocodile liver extract produced dose-dependent and tissue-specific modulation of detoxification enzymes. Hepatic CYP1A2 showed a biphasic response, with catalytic efficiency increasing markedly at 400-800 mg/kg. Hepatic CYP2E1 activity increased toward 400 mg/kg before stabilizing. In the kidneys, CYP1A2, CYP2E1, and GST activities were consistently elevated, with GST showing the strongest induction; V<sub>max</sub> increased from 0.16 to 0.59 µmol/minute/mg at 800 mg/kg. Several groups exhibited enhanced catalytic efficiency despite reduced V<sub>max</sub>, indicating improved substrate affinity. Blood analyses showed increased serum albumin and total protein, while cholesterol and glucose were reduced, suggesting metabolic benefits associated with liver-related biochemical changes.<h4>Conclusion</h4>Oral supplementation with <i>C. siamensis</i> liver extract modulates phase I and phase II detoxification pathways in rats, with pronounced induction in renal tissues and high-dose enhancement in hepatic enzymes. These findings provide the first <i>in vivo</i> evidence that reptile-derived liver extract can enhance xenobiotic metabolism and support metabolic homeostasis, highlighting its potential as a natural bioactive supplement in veterinary applications.\n[2] Exploring the components of hepatotoxicity induced by &lt;i&gt;Senecio scandens&lt;/i&gt; Buch.-Ham. based on integrated network toxicology, metabolomics, and &lt;i&gt;in vivo&lt;/i&gt; experiments.\n<h4>Background</h4>1. <i>Senecio scandens</i> Buch.-Ham. (SBH) is widely used in traditional Chinese medicine, yet its clinical application is constrained by hepatotoxic pyrrolizidine alkaloids (PAs). The relative toxic contributions of individual PAs in SBH and their <i>in vivo</i> metabolic consequences remain unclear.<h4>Purpose</h4>2. This study sought to elucidate PAs-related hepatotoxicity of SBH by integrating network toxicology, LC-MS/MS fingerprinting, <i>in vivo</i> toxicity evaluation, and liver metabolomics.<h4>Methods</h4>3. Network toxicology and molecular docking were used to prioritise hepatotoxic PAs and their putative targets. LC-MS/MS fingerprints of major PAs in 12 SBH samples were established. Spectrum-toxicity correlation analysis and untargeted metabolomics were used to assess hepatotoxicity-related associations and SPL-induced metabolic perturbations.<h4>Results</h4>4. SPL, senecionine, adonifoline, and senkirkine were prioritised as candidate hepatotoxic PAs, with CYP3A4/CYP2C9 and DNA adduct-related pathways highlighted as potentially relevant toxicological nodes. Considerable regional variation in PAs levels was observed across SBH samples. Acute SBH exposure caused marked liver injury, and spectrum-toxicity modelling indicated that SPL showed the strongest association with hepatotoxicity among the detected PAs. Metabolomic profiling further showed that SPL exposure was associated with alterations in lipid and bile acid metabolism, glutathione metabolism, and the pentose phosphate pathway, together with enrichment of xenobiotic metabolism by cytochrome P450 and chemical carcinogenesis-DNA adduct pathways.<h4>Conclusion</h4>5. SPL is closely associated with SBH-induced hepatotoxicity and produces a metabolic signature consistent with canonical PAs bioactivation. Although SPL appears to be the most influential PAs among those detected, definitive comparisons of toxic potency require further validation using equimolar pure-compound exposure models.\n[3] Mechanisms of the marine yeast &lt;i&gt;Debaryomyces hansenii&lt;/i&gt; for protection against reactive oxygen species produced during benzo(a)pyrene biotransformation.\nPolycyclic aromatic hydrocarbons (PAHs), such as benzo(a)pyrene (BaP), are persistent environmental pollutants recognized for their high toxicity and resistance to microbial degradation. The marine yeast <i>Debaryomyces hansenii</i> has emerged as a compelling candidate due to its ability to thrive under a variety of stressful conditions. This study presents a molecular and biochemical analysis of the responses of <i>D. hansenii</i> to BaP exposure, providing insights into the detoxification and antioxidant mechanisms. In this study, we explored BaP removal from the medium and characterized the associated molecular and biochemical responses induced by this compound. Our findings demonstrate that <i>D. hansenii</i> can grow in BaP concentrations up to 100 ppm without compromising cell viability and is capable of biotransforming nearly 70% of the compound within 6 days. This process involved cytochrome P450 (CYP), epoxide hydrolase (EH), and glutathione S-transferase (GST), enzymes typically associated with xenobiotic metabolism. BaP exposure resulted in pronounced oxidative stress, evidenced by elevated ROS levels, lipid peroxidation, and protein carbonylation. However, <i>D. hansenii</i> activated a robust antioxidant defense, including superoxide dismutase (SOD), catalase (CAT), glutathione peroxidase (GPx), and regulation of the glutathione redox system. Altogether, these results show that <i>D. hansenii</i> maintains redox homeostasis during BaP biotransformation through a coordinated enzymatic network that links xenobiotic metabolism with antioxidant protection, thereby expanding mechanistic understanding and providing a basis for future studies under environmentally relevant conditions.IMPORTANCEUnderstanding how marine yeasts respond to polycyclic aromatic hydrocarbons (PAHs) is important for advancing our knowledge of stress adaptation and xenobiotic biotransformation in extremophilic microorganisms. <i>Debaryomyces hansenii</i> is a suitable model organism because it naturally tolerates high salinity, oxidative conditions, and nutrient limitation. By characterizing its responses to benzo(a)pyrene (BaP), we can gain insight into how eukaryotic microbes activate biotransformation pathways and antioxidant defenses under chemical stress. This insight contributes to a broader comprehension of cellular strategies for coping with toxic contaminants and provides the basis for future applied research.",
+  "judge_claims": [
+    {
+      "claim": "This gene set is highly enriched for pathways central to xenobiotic metabolism.",
+      "label": "GROUNDED",
+      "why": "The evidence shows multiple enriched terms for drug metabolism and xenobiotics metabolism by cytochrome P450, with extensive gene lists supporting this claim."
+    },
+    {
+      "claim": "Cytochrome P450 (CYP) enzymes are part of a comprehensive system for biotransformation.",
+      "label": "GROUNDED",
+      "why": "Multiple CYP enzymes (CYP2J2, CYP4F2, CYP1A2, CYP1A1, CYP2E1, etc.) appear in biotransformation-related terms and abstracts confirm their role in xenobiotic metabolism."
+    },
+    {
+      "claim": "Glutathione S-transferases (GSTs) are part of a comprehensive system for biotransformation.",
+      "label": "GROUNDED",
+      "why": "Multiple GST genes (GSTM4, GSTO1, GSTT2, GSTA3) appear in drug metabolism and xenobiotic metabolism terms, and abstracts confirm their biotransformation role."
+    },
+    {
+      "claim": "Oxidoreductases are part of a comprehensive system for biotransformation.",
+      "label": "BACKGROUND",
+      "why": "Oxidoreductases are well-established components of biotransformation systems, though this specific claim is not explicitly stated in the evidence."
+    },
+    {
+      "claim": "GSTM4 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "GSTM4 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "CDA is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "CDA appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "ADH1C is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "ADH1C appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "MAOA is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "MAOA appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "GSTO1 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "GSTO1 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "GSTT2 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "GSTT2 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "FMO1 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "FMO1 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "FMO3 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "FMO3 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "ADH7 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "ADH7 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "UPB1 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "UPB1 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "ADH5 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "ADH5 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "ALDH3A1 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "ALDH3A1 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "GSTA3 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "GSTA3 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "CYP1A2 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "CYP1A2 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "AOX1 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "AOX1 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "CYP2E1 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "CYP2E1 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "HPRT1 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "HPRT1 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "UPP1 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "UPP1 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "XDH is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "XDH appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "CES1 is a key gene in drug metabolism.",
+      "label": "GROUNDED",
+      "why": "CES1 appears in the Drug metabolism term gene list."
+    },
+    {
+      "claim": "CBR1 is a key gene in drug metabolism.",
+      "label": "BACKGROUND",
+      "why": "CBR1 appears in metabolism of xenobiotics by cytochrome P450 but not in the drug metabolism term, though it is a known drug metabolism enzyme."
+    },
+    {
+      "claim": "EPHX1 is a key gene in drug metabolism.",
+      "label": "BACKGROUND",
+      "why": "EPHX1 appears in metabolism of xenobiotics by cytochrome P450 but not in the drug metabolism term, though it is a known drug metabolism enzyme."
+    },
+    {
+      "claim": "HSD11B1 is a key gene in drug metabolism.",
+      "label": "BACKGROUND",
+      "why": "HSD11B1 appears in metabolism of xenobiotics by cytochrome P450 but not in the drug metabolism term, though it is a known drug metabolism enzyme."
+    },
+    {
+      "claim": "CYP2S1 is a key gene in drug metabolism.",
+      "label": "BACKGROUND",
+      "why": "CYP2S1 appears in metabolism of xenobiotics by cytochrome P450 but not in the drug metabolism term, though it is a known drug metabolism enzyme."
+    },
+    {
+      "claim": "CYP1A1 is a key gene in drug metabolism.",
+      "label": "BACKGROUND",
+      "why": "CYP1A1 appears in metabolism of xenobiotics by cytochrome P450 but not in the drug metabolism term, though it is a known drug metabolism enzyme."
+    },
+    {
+      "claim": "GSTM4 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "GSTM4 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "CDA is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "CDA does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "ADH1C is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "ADH1C appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "MAOA is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "MAOA does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "GSTO1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "GSTO1 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "GSTT2 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "GSTT2 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "FMO1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "FMO1 does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "FMO3 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "FMO3 does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "ADH7 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "ADH7 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "UPB1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "UPB1 does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "ADH5 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "ADH5 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "ALDH3A1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "ALDH3A1 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "GSTA3 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "GSTA3 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "CYP1A2 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "CYP1A2 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "AOX1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "AOX1 does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "CYP2E1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "CYP2E1 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "HPRT1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "HPRT1 does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "UPP1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "UPP1 does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "XDH is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "XDH does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "CES1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "UNSUPPORTED",
+      "why": "CES1 does not appear in the Metabolism of xenobiotics by cytochrome P450 term gene list, only in drug metabolism."
+    },
+    {
+      "claim": "CBR1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "CBR1 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "EPHX1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "EPHX1 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "HSD11B1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "HSD11B1 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "CYP2S1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "CYP2S1 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "CYP1A1 is a key gene in metabolism of xenobiotics by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "CYP1A1 appears in the Metabolism of xenobiotics by cytochrome P450 term gene list."
+    },
+    {
+      "claim": "CYP enzymes and GSTs act in a coordinated manner in detoxification.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states that BaP biotransformation involved CYP, EH, and GST enzymes in a coordinated manner for detoxification."
+    },
+    {
+      "claim": "CYP enzymes metabolize arachidonic acid.",
+      "label": "GROUNDED",
+      "why": "Multiple CYP enzymes (CYP2J2, CYP4F2, CYP1A2, CYP1A1, CYP2E1) appear in the Arachidonic Acid Metabolic Process term."
+    },
+    {
+      "claim": "CYP enzymes metabolize lipids.",
+      "label": "GROUNDED",
+      "why": "Multiple CYP enzymes appear in Fatty Acid Metabolic Process and related lipid metabolism terms."
+    },
+    {
+      "claim": "GSTM4 is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GSTM4 appears in the Glutathione metabolism term gene list."
+    },
+    {
+      "claim": "GCLC is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GCLC appears in the Glutathione metabolism term gene list."
+    },
+    {
+      "claim": "GSTO1 is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GSTO1 appears in the Glutathione metabolism term gene list."
+    },
+    {
+      "claim": "GSTA3 is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GSTA3 appears in the Glutathione metabolism term gene list."
+    },
+    {
+      "claim": "GSS is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GSS appears in the Glutathione metabolism term gene list."
+    },
+    {
+      "claim": "IDH1 is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "IDH1 appears in the Glutathione metabolism term gene list."
+    },
+    {
+      "claim": "GSR is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GSR appears in the Glutathione metabolism term gene list."
+    },
+    {
+      "claim": "GSTT2 is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "GSTT2 appears in the Glutathione metabolism term gene list."
+    },
+    {
+      "claim": "PGD is involved in glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "PGD appears in the Glutathione metabolism term gene list."
+    },
+    {
+      "claim": "Glutathione (GSH) plays a critical role in Phase II detoxification.",
+      "label": "BACKGROUND",
+      "why": "This is well-established textbook biology about glutathione's role in Phase II detoxification, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Glutathione conjugates with xenobiotics to facilitate excretion.",
+      "label": "BACKGROUND",
+      "why": "This is well-established textbook biology about glutathione conjugation, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Glutathione conjugates with xenobiotic metabolites to facilitate excretion.",
+      "label": "BACKGROUND",
+      "why": "This is well-established textbook biology about glutathione conjugation with metabolites, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "CYP pathways are part of Phase I detoxification involving functionalization.",
+      "label": "BACKGROUND",
+      "why": "This is well-established textbook biology about Phase I detoxification, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "GST pathways are part of Phase II detoxification involving conjugation.",
+      "label": "BACKGROUND",
+      "why": "This is well-established textbook biology about Phase II detoxification, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Many CYP enzymes are involved in both xenobiotic and endogenous lipid metabolism.",
+      "label": "GROUNDED",
+      "why": "The evidence shows CYP enzymes in both xenobiotic metabolism and endogenous lipid metabolism terms (arachidonic acid, fatty acid metabolism)."
+    },
+    {
+      "claim": "CYP2J2 is involved in arachidonic acid metabolism.",
+      "label": "GROUNDED",
+      "why": "CYP2J2 appears in the Arachidonic acid metabolism term gene list."
+    },
+    {
+      "claim": "CYP4F2 is involved in arachidonic acid metabolism.",
+      "label": "GROUNDED",
+      "why": "CYP4F2 appears in the Arachidonic acid metabolism term gene list."
+    },
+    {
+      "claim": "CYP1A1 is involved in arachidonic acid metabolism.",
+      "label": "GROUNDED",
+      "why": "CYP1A1 appears in the Arachidonic Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "CYP1A2 is involved in arachidonic acid metabolism.",
+      "label": "GROUNDED",
+      "why": "CYP1A2 appears in the Arachidonic Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "CYP2E1 is involved in arachidonic acid metabolism.",
+      "label": "GROUNDED",
+      "why": "CYP2E1 appears in the Arachidonic acid metabolism term gene list."
+    },
+    {
+      "claim": "CYP2J2 is involved in fatty acid metabolic processes.",
+      "label": "GROUNDED",
+      "why": "CYP2J2 appears in the Fatty Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "CYP4F2 is involved in fatty acid metabolic processes.",
+      "label": "GROUNDED",
+      "why": "CYP4F2 appears in the Fatty Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "CYP1A1 is involved in fatty acid metabolic processes.",
+      "label": "GROUNDED",
+      "why": "CYP1A1 appears in the Fatty Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "CYP1A2 is involved in fatty acid metabolic processes.",
+      "label": "GROUNDED",
+      "why": "CYP1A2 appears in the Fatty Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "CYP2E1 is involved in fatty acid metabolic processes.",
+      "label": "GROUNDED",
+      "why": "CYP2E1 appears in the Fatty Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "Amino acid metabolism pathways can be affected by xenobiotic processing.",
+      "label": "BACKGROUND",
+      "why": "This is a general biological principle not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Amino acid metabolism pathways can contribute to the synthesis of substrates for xenobiotic processing.",
+      "label": "BACKGROUND",
+      "why": "This is well-established biology about amino acid metabolism providing substrates for conjugation reactions, though not explicitly stated."
+    },
+    {
+      "claim": "Amino acid metabolism pathways can contribute to the synthesis of cofactors for xenobiotic processing.",
+      "label": "BACKGROUND",
+      "why": "This is well-established biology about amino acid metabolism providing cofactors, though not explicitly stated."
+    },
+    {
+      "claim": "ALDH3A1 is involved in xenobiotic detoxification.",
+      "label": "GROUNDED",
+      "why": "ALDH3A1 appears in Drug metabolism and Metabolism of xenobiotics by cytochrome P450 terms."
+    },
+    {
+      "claim": "ALDH2 is involved in xenobiotic detoxification.",
+      "label": "GROUNDED",
+      "why": "ALDH2 appears in multiple metabolism terms including Tyrosine metabolism, Tryptophan metabolism, and others related to detoxification."
+    },
+    {
+      "claim": "ALDH9A1 is involved in xenobiotic detoxification.",
+      "label": "GROUNDED",
+      "why": "ALDH9A1 appears in multiple metabolism terms including beta-Alanine metabolism and Tyrosine metabolism."
+    },
+    {
+      "claim": "ALDH3A1 is involved in amino acid metabolism.",
+      "label": "GROUNDED",
+      "why": "ALDH3A1 appears in Tyrosine metabolism, Histidine metabolism, and Phenylalanine metabolism terms."
+    },
+    {
+      "claim": "ALDH2 is involved in amino acid metabolism.",
+      "label": "GROUNDED",
+      "why": "ALDH2 appears in Tyrosine metabolism, Tryptophan metabolism, Histidine metabolism, and other amino acid metabolism terms."
+    },
+    {
+      "claim": "ALDH9A1 is involved in amino acid metabolism.",
+      "label": "GROUNDED",
+      "why": "ALDH9A1 appears in Tyrosine metabolism, Tryptophan metabolism, beta-Alanine metabolism, and other amino acid metabolism terms."
+    },
+    {
+      "claim": "ABCD2 is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "ABCD2 appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "ACOX2 is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "ACOX2 appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "ACOX1 is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "ACOX1 appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "IDH1 is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "IDH1 appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "ECH1 is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "ECH1 appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "CAT is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "CAT appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "HACL1 is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "HACL1 appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "CROT is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "CROT appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "ACOX3 is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "ACOX3 appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "XDH is involved in peroxisomal processes.",
+      "label": "GROUNDED",
+      "why": "XDH appears in the Peroxisome term gene list."
+    },
+    {
+      "claim": "Peroxisomes are involved in the beta-oxidation of very long-chain fatty acids.",
+      "label": "BACKGROUND",
+      "why": "This is well-established textbook biology about peroxisomal function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Peroxisomes are involved in the breakdown of various organic compounds.",
+      "label": "BACKGROUND",
+      "why": "This is well-established textbook biology about peroxisomal function, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Peroxisomes are involved in the breakdown of xenobiotic-derived compounds.",
+      "label": "BACKGROUND",
+      "why": "This is well-established biology about peroxisomal function in xenobiotic metabolism, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "GSTM4 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "GSTM4 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "CBR1 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "CBR1 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "GSTO1 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "GSTO1 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "PTGES3 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "PTGES3 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "EPHX1 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "EPHX1 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "AKR1C2 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "AKR1C2 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "GSTT2 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "GSTT2 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "ESR1 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "ESR1 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "CYP2C18 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "CYP2C18 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "HSD11B1 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "HSD11B1 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "GSTA3 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "GSTA3 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "CYP1A2 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "CYP1A2 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "CYP1A1 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "CYP1A1 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "CYP2E1 is involved in chemical carcinogenesis pathways.",
+      "label": "GROUNDED",
+      "why": "CYP2E1 appears in the Chemical carcinogenesis term gene list."
+    },
+    {
+      "claim": "Enzymes involved in detoxification can bioactivate procarcinogens under certain conditions.",
+      "label": "BACKGROUND",
+      "why": "This is well-established biology about bioactivation of procarcinogens by detoxification enzymes, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "CYP1A2 is a key detoxification enzyme in xenobiotic metabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly identifies CYP1A2 as a key detoxification enzyme in xenobiotic metabolism."
+    },
+    {
+      "claim": "CYP2E1 is a key detoxification enzyme in xenobiotic metabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly identifies CYP2E1 as a key detoxification enzyme in xenobiotic metabolism."
+    },
+    {
+      "claim": "Glutathione-S-transferase (GST) is a key detoxification enzyme in xenobiotic metabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly identifies GST as a key detoxification enzyme in xenobiotic metabolism."
+    },
+    {
+      "claim": "CYP1A2 is involved in organ protection.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states that detoxification enzymes including CYP1A2 play key roles in organ protection."
+    },
+    {
+      "claim": "CYP2E1 is involved in organ protection.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states that detoxification enzymes including CYP2E1 play key roles in organ protection."
+    },
+    {
+      "claim": "Glutathione-S-transferase (GST) is involved in organ protection.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states that detoxification enzymes including GST play key roles in organ protection."
+    },
+    {
+      "claim": "Pyrrolizidine alkaloids (PAs) induce hepatotoxicity.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states that SBH clinical application is constrained by hepatotoxic pyrrolizidine alkaloids (PAs)."
+    },
+    {
+      "claim": "Pyrrolizidine alkaloids alter glutathione metabolism.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states that SPL exposure was associated with alterations in glutathione metabolism."
+    },
+    {
+      "claim": "Pyrrolizidine alkaloids cause enrichment of xenobiotic metabolism by cytochrome P450.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states that SPL exposure showed enrichment of xenobiotic metabolism by cytochrome P450 pathways."
+    },
+    {
+      "claim": "CYP pathways and glutathione pathways are interconnected in processing toxic compounds.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 shows PAs alter both glutathione metabolism and CYP pathways, and abstract 3 shows coordinated enzymatic networks linking xenobiotic metabolism with antioxidant protection."
+    },
+    {
+      "claim": "Biotransformation of polycyclic aromatic hydrocarbons (PAHs) involves cytochrome P450 (CYP).",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states that BaP biotransformation involved cytochrome P450 (CYP)."
+    },
+    {
+      "claim": "Biotransformation of polycyclic aromatic hydrocarbons (PAHs) involves epoxide hydrolase (EH).",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states that BaP biotransformation involved epoxide hydrolase (EH)."
+    },
+    {
+      "claim": "Biotransformation of polycyclic aromatic hydrocarbons (PAHs) involves glutathione S-transferase (GST).",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states that BaP biotransformation involved glutathione S-transferase (GST)."
+    },
+    {
+      "claim": "Biotransformation of polycyclic aromatic hydrocarbons activates antioxidant defenses including the glutathione redox system.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states that D. hansenii activated antioxidant defense including regulation of the glutathione redox system during BaP biotransformation."
+    },
+    {
+      "claim": "Xenobiotic metabolism is linked with oxidative stress response.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states that xenobiotic metabolism is linked with antioxidant protection through a coordinated enzymatic network, and abstract 2 shows oxidative stress pathways enriched with xenobiotic metabolism."
+    }
+  ],
+  "summary": {
+    "n_claims": 134,
+    "n_scored": 134,
+    "grounded_rate": 0.791,
+    "hallucination_rate": 0.075,
+    "grounded": 106,
+    "background": 18,
+    "unsupported": 10
+  }
+}

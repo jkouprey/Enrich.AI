@@ -14,6 +14,7 @@ from scipy.cluster.hierarchy import linkage, dendrogram, fcluster, leaves_list
 from typing import Dict, List, Optional, Tuple
 
 from config import CONFIG
+from llm_factory import complete_text
 
 logger = logging.getLogger(__name__)
 
@@ -43,7 +44,10 @@ def export_figure_to_pdf(fig: go.Figure, filename: str = "plot.pdf", width: int 
     """
     try:
         # Try to use kaleido for PDF export
-        pdf_bytes = fig.to_image(format="pdf", width=width, height=height, scale=2)
+        # PDF is a VECTOR format: scale does not improve quality, it only multiplies the
+        # page. scale=2 produced a ~23x10in page, so viewers/printers cropped the edges
+        # and the file no longer matched the screen. 1:1 keeps the page = figure size.
+        pdf_bytes = fig.to_image(format="pdf", width=width, height=height)
         return pdf_bytes
     except Exception as e:
         logger.warning(f"PDF export failed: {e}")
@@ -92,27 +96,21 @@ def add_pdf_download_button(fig: go.Figure, filename: str, key: str, width: int 
 
 
 @st.cache_data
-def get_gemini_interpretation(_gemini_model, prompt: str, payload_json: str) -> str:
-    """Get Gemini interpretation with caching"""
-    if not _gemini_model:
-        return "Gemini model not available."
+def get_llm_interpretation(_llm, prompt: str, payload_json: str, model_id: str = "") -> str:
+    """Get an LLM interpretation with caching.
 
-    gemini_config = CONFIG.get("gemini", {})
-    gen_config = {
-        "temperature": gemini_config.get("temperature", 0.4),
-        "max_output_tokens": gemini_config.get("max_output_tokens", 4096),
-    }
+    model_id is part of the cache key on purpose: _llm is excluded from hashing
+    (leading underscore), so without it a provider/model switch would keep
+    serving the previous model's interpretation.
+    """
+    if not _llm:
+        return "LLM not available."
 
     try:
-        response = _gemini_model.generate_content(
-            f"{prompt}\n\nDATA (JSON):\n{payload_json}",
-            generation_config=gen_config
-        )
-        if hasattr(response, 'text'):
-            return response.text
-        return "Could not generate interpretation."
+        return complete_text(_llm, f"{prompt}\n\nDATA (JSON):\n{payload_json}") or \
+            "Could not generate interpretation."
     except Exception as e:
-        logger.error(f"Gemini interpretation failed: {e}")
+        logger.error(f"Interpretation failed: {e}")
         return f"Interpretation failed: {str(e)}"
 
 
@@ -121,8 +119,10 @@ def get_gemini_interpretation(_gemini_model, prompt: str, payload_json: str) -> 
 class Visualizer:
     """Enhanced visualizer with improved memory and error handling"""
 
-    def __init__(self, gemini_model=None):
-        self.gemini_model = gemini_model
+    def __init__(self, llm=None):
+        # LangChain chat client from llm_factory (any provider), or None for
+        # plot-only rendering which needs no AI.
+        self.llm = llm
         # Color palettes
         self.COLOR_PALETTES = {
             "Viridis": px.colors.sequential.Viridis,
@@ -150,8 +150,8 @@ class Visualizer:
 
     def get_plot_interpretation(self, plot_type: str, df: pd.DataFrame) -> str:
         """Generate AI interpretation for a specific plot type."""
-        if not self.gemini_model:
-            return "Enable Gemini API for interpretation."
+        if not self.llm:
+            return "Enable an API key for interpretation."
 
         top_terms = (
             df.nsmallest(8, 'adjusted_p_value')['term'].tolist()
@@ -166,15 +166,8 @@ For these enrichment results with top terms: {top_terms[:5]}
 
 Provide 2-3 sentences explaining what this plot reveals about this specific data."""
 
-        gemini_config = CONFIG.get("gemini", {})
-        gen_config = {
-            "temperature": gemini_config.get("temperature", 0.4),
-            "max_output_tokens": gemini_config.get("max_output_tokens", 4096),
-        }
-
         try:
-            response = self.gemini_model.generate_content(prompt, generation_config=gen_config)
-            return response.text if hasattr(response, 'text') else "Interpretation unavailable."
+            return complete_text(self.llm, prompt) or "Interpretation unavailable."
         except Exception:
             return "Interpretation unavailable."
 
@@ -794,365 +787,270 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
     # FIXED SIMILARITY CLUSTERS - SimplifyEnrichment style with word clouds
     # ========================================================================
 
+    # --- word-cloud geometry helpers (used only by render_similarity_clusters) ---
+    # Plotly exposes no text-measurement API, so word packing is driven by an estimate of
+    # bold sans-serif glyph width. It deliberately OVER-estimates: a word that under-runs
+    # its slot looks fine, a word that over-runs collides with its neighbour.
+    _SIM_CHAR_W = 0.67      # glyph width as a fraction of font size
+    _SIM_LINE_H = 1.32      # line height as a fraction of font size
+    _SIM_WORD_GAP = 0.42    # gap before a word, as a fraction of THAT word's font size
+
+    @staticmethod
+    def _sim_segments(clusters_ordered):
+        """[(cluster_id, first_row, last_row), ...] - contiguous blocks only, so every
+        colour band maps to exactly one word box and one connector."""
+        segs, start = [], 0
+        for i in range(1, len(clusters_ordered) + 1):
+            if i == len(clusters_ordered) or clusters_ordered[i] != clusters_ordered[start]:
+                segs.append((clusters_ordered[start], start, i - 1))
+                start = i
+        return segs
+
+    @staticmethod
+    def _sim_slots(segments, n, gap=0.45, min_h=2.0):
+        """Proportional, gapped, NON-OVERLAPPING vertical slots for the word boxes.
+
+        The previous implementation used max(cluster_height * 0.7, 3.0); that 3.0 floor
+        made a small cluster's box taller than its own span, so neighbouring boxes
+        overlapped and one cluster's words were drawn on top of another cluster's box -
+        which is what made word colours look mismatched with the cluster bar.
+        """
+        k = len(segments)
+        sizes = [max(1, e - s + 1) for _, s, e in segments]
+        avail = (n - 1) - gap * (k - 1)
+        h = [max(min_h, avail * s / sum(sizes)) for s in sizes]
+        if sum(h) > avail:
+            f = avail / sum(h)
+            h = [x * f for x in h]
+        y = ((n - 1) - (sum(h) + gap * (k - 1))) / 2
+        out = []
+        for hi in h:
+            out.append((y, y + hi))
+            y += hi + gap
+        return out
+
+    def _sim_pack_words(self, words, box_w_px, box_h_px, base_font, pad=0.90):
+        """Flow words into centred rows inside a box, shrinking until the block fits.
+
+        Returns [(cx_frac, cy_frac, word, font_px, span)] as 0..1 fractions of the box.
+        No overlap is possible by construction: a row never exceeds the usable width and
+        rows are stacked by their own heights.
+        """
+        if not words:
+            return []
+        fmax, fmin = words[0][1], words[-1][1]
+        spans = [(f - fmin) / max(1, fmax - fmin) for _, f in words]
+        usable_w, usable_h = box_w_px * pad, box_h_px * pad
+        pool = list(zip([w for w, _ in words], spans))
+
+        while pool:
+            scale = 1.0
+            for _ in range(14):
+                sizes = [max(7.0, (base_font + 6 * sp) * scale) for _, sp in pool]
+                widths = [self._SIM_CHAR_W * s * len(w) for (w, _), s in zip(pool, sizes)]
+                if max(widths) > usable_w:
+                    scale *= 0.85
+                    continue
+                gaps = [self._SIM_WORD_GAP * s for s in sizes]
+                rows, cur, cur_w = [], [], 0.0
+                for i, wpx in enumerate(widths):
+                    add = wpx if not cur else wpx + gaps[i]
+                    if cur and cur_w + add > usable_w:
+                        rows.append(cur); cur, cur_w = [i], wpx
+                    else:
+                        cur.append(i); cur_w += add
+                if cur:
+                    rows.append(cur)
+                row_h = [self._SIM_LINE_H * max(sizes[i] for i in r) for r in rows]
+                if sum(row_h) <= usable_h:
+                    out, y = [], (box_h_px - sum(row_h)) / 2
+                    for r, rh in zip(rows, row_h):
+                        rw = sum(widths[i] for i in r) + sum(gaps[i] for i in r[1:])
+                        x = (box_w_px - rw) / 2
+                        for k, i in enumerate(r):
+                            if k:
+                                x += gaps[i]
+                            out.append(((x + widths[i] / 2) / box_w_px,
+                                        (y + rh / 2) / box_h_px,
+                                        pool[i][0], sizes[i], pool[i][1]))
+                            x += widths[i]
+                        y += rh
+                    return out
+                scale *= 0.86
+            pool = pool[:-1]        # cannot fit even shrunk - drop the rarest word
+        return []
+
     def render_similarity_clusters(self, df: pd.DataFrame, n_terms: int = 50, n_clusters: int = 8,
                                    width: int = 1200, height: int = 650,
                                    word_font_size: int = 12,
-                                   heatmap_palette: str = "Reds") -> go.Figure:
+                                   heatmap_palette: str = "Reds",
+                                   max_words: int = 12,
+                                   lock_view: bool = True) -> Optional[go.Figure]:
         """
-        FIXED Similarity Clusters (SimplifyEnrichment style):
-        - Smaller heatmap on left
-        - Colored cluster bar
-        - Linking shapes to word cloud boxes
-        - Word cloud boxes with grey background and sized keywords
+        Similarity Clusters (SimplifyEnrichment style) on ONE shared coordinate system.
 
-        Parameters:
-        -----------
-        word_font_size : int
-            Base font size for keywords inside word cloud boxes (default 12)
-        heatmap_palette : str
-            Color palette for the similarity heatmap (default "Reds")
-            Options: "Viridis", "Reds", "Blues", "Greens", "YlOrRd", "RdBu", "Plasma", etc.
+        The heatmap, cluster colour bar, connectors, word boxes, the words themselves AND
+        the similarity legend are all drawn on the single x/y axis pair, so they move as a
+        rigid unit and cannot drift apart.
+
+        Previous implementation used three axis pairs (x/y, x2/y2, x3/y3). The heatmap
+        autoranged from its trace data while x2/y2 and x3/y3 set BOTH `range` and
+        `autorange` - `autorange` wins, and those axes carried no traces (shapes and
+        annotations do not drive autorange), so they fell back to an arbitrary scale
+        unrelated to the heatmap. Any resize or autoscale pulled the panels apart and
+        broke the connectors.
+
+        Parameters
+        ----------
+        word_font_size : int   base font size for keywords (scaled up by frequency)
+        heatmap_palette : str  "Reds", "Viridis", "Blues", "YlOrRd", ...
+        max_words : int        maximum keywords per cluster box; the packer will use fewer
+                               if they do not fit
+        lock_view : bool       True disables zoom/pan. Plotly font sizes are in PIXELS with
+                               no data-unit option, so zooming out shrinks the boxes while
+                               the words stay put and they collide. Locking the view is the
+                               only way to keep the packing valid without custom JS.
         """
+        from plotly.colors import sample_colorscale
+
         sim_matrix, terms, df_top = self._compute_term_similarity_matrix(df, n_terms)
-
         if len(terms) < 3:
             return None
 
-        # Cluster terms
         dist = 1 - sim_matrix
         np.fill_diagonal(dist, 0)
         dist = (dist + dist.T) / 2
-        condensed = squareform(dist, checks=False)
-        condensed = np.nan_to_num(condensed, nan=0.5)
-        condensed = np.clip(condensed, 0, 1)
+        condensed = np.clip(np.nan_to_num(squareform(dist, checks=False), nan=0.5), 0, 1)
 
         Z = linkage(condensed, method='ward')
         clusters = fcluster(Z, n_clusters, criterion='maxclust')
         order = leaves_list(Z)
 
-        # Reorder matrix and data
-        sim_ordered = sim_matrix[order][:, order]
-        terms_ordered = [terms[i] for i in order]
-        clusters_ordered = [clusters[i] for i in order]
+        sim_ord = sim_matrix[order][:, order]
+        terms_ord = [terms[i] for i in order]
+        clus_ord = [clusters[i] for i in order]
+        n = len(terms_ord)
 
-        # Muted colors for clusters
         muted_colors = [
             '#c44e52', '#55a868', '#4c72b0', '#8172b3', '#ccb974',
             '#64b5cd', '#dd8452', '#da8bc3', '#8c8c8c', '#937860',
             '#6acc64', '#d65f5f', '#6b8ba4', '#a079bf', '#b5a14a'
         ]
 
-        # Group terms by cluster with their indices
-        cluster_term_map = {}
-        for i, (term, c) in enumerate(zip(terms_ordered, clusters_ordered)):
-            if c not in cluster_term_map:
-                cluster_term_map[c] = {'terms': [], 'indices': [], 'pvalues': [], 'original_indices': []}
-            cluster_term_map[c]['terms'].append(term)
-            cluster_term_map[c]['indices'].append(i)
-            cluster_term_map[c]['original_indices'].append(i)  # Keep original for colorbar/trapezoid
-            # Get p-value for this term
-            pval = df_top[df_top['term'] == term]['adjusted_p_value'].values
-            cluster_term_map[c]['pvalues'].append(pval[0] if len(pval) > 0 else 1.0)
-
-        # Store original cluster boundaries BEFORE filtering
-        cluster_boundaries = {}
-        for c, data in cluster_term_map.items():
-            cluster_boundaries[c] = {
-                'y_min': min(data['original_indices']) - 0.5,
-                'y_max': max(data['original_indices']) + 0.5
-            }
-
-        # LIMIT CLUSTERS TO TOP 10 TERMS BY P-VALUE (for word cloud only)
-        for c in cluster_term_map:
-            data = cluster_term_map[c]
-            if len(data['terms']) > 10:
-                # Sort by p-value and keep top 10
-                sorted_indices = np.argsort(data['pvalues'])[:10]
-                data['terms'] = [data['terms'][i] for i in sorted_indices]
-                data['indices'] = [data['indices'][i] for i in sorted_indices]
-                data['pvalues'] = [data['pvalues'][i] for i in sorted_indices]
-
-        n = len(terms_ordered)
-
-        # Create figure with custom domain layout
-        fig = go.Figure()
-
-        # Define layout regions (in paper coordinates 0-1)
-        heatmap_left = 0.0
-        heatmap_right = 0.35  # Smaller heatmap
-        colorbar_left = 0.36
-        colorbar_right = 0.38
-        wordcloud_left = 0.35
-        wordcloud_right = 0.98
-
-        # === HEATMAP ===
-        hover_text = [
-            [f"{terms_ordered[i][:30]}<br>{terms_ordered[j][:30]}<br>Similarity: {sim_ordered[i, j]:.3f}"
-             for j in range(n)] for i in range(n)]
-
-        fig.add_trace(
-            go.Heatmap(
-                z=sim_ordered,
-                x=list(range(n)),
-                y=list(range(n)),
-                colorscale=heatmap_palette,
-                showscale=True,
-                colorbar=dict(
-                    title=dict(text='Similarity', font=dict(size=12, color='black')),
-                    x=1.02,
-                    len=0.3,
-                    y=0.85,
-                    thickness=10,
-                    tickfont=dict(color='black', size=10)
-                ),
-                hovertemplate='%{text}<extra></extra>',
-                text=hover_text,
-                xaxis='x',
-                yaxis='y'
-            )
-        )
-
-        # Add cluster boundary lines on heatmap
-        prev_cluster = clusters_ordered[0]
-        for i, c in enumerate(clusters_ordered):
-            if c != prev_cluster:
-                fig.add_shape(
-                    type='line',
-                    x0=-0.5, x1=n - 0.5,
-                    y0=i - 0.5, y1=i - 0.5,
-                    line=dict(color='black', width=1),
-                    xref='x', yref='y'
-                )
-                fig.add_shape(
-                    type='line',
-                    x0=i - 0.5, x1=i - 0.5,
-                    y0=-0.5, y1=n - 0.5,
-                    line=dict(color='black', width=1),
-                    xref='x', yref='y'
-                )
-                prev_cluster = c
-
-        # === CLUSTER COLOR BAR (right of heatmap) ===
-        for c, data in cluster_term_map.items():
-            color = muted_colors[(c - 1) % len(muted_colors)]
-
-            # Use ORIGINAL cluster boundaries (before top-10 filtering)
-            y_min = cluster_boundaries[c]['y_min']
-            y_max = cluster_boundaries[c]['y_max']
-
-            # Colored rectangle for this cluster
-            fig.add_shape(
-                type='rect',
-                x0=0, x1=1,
-                y0=y_min, y1=y_max,
-                fillcolor=color,
-                line=dict(color=color, width=0),
-                xref='x2', yref='y2'
-            )
-
-        # === WORD CLOUD BOXES WITH LINKS (SimplifyEnrichment style) ===
-        # Sort clusters by their vertical position for better layout
-        sorted_clusters = sorted(cluster_term_map.items(), key=lambda x: np.mean(x[1]['indices']))
-
-        def hex_to_rgb(hex_color):
-            """Convert hex to RGB tuple"""
+        def _rgb(hex_color):
             h = hex_color.lstrip('#')
             return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
 
-        def darken_color(hex_color, factor):
-            """Darken a color by factor (0=black, 1=original)"""
-            r, g, b = hex_to_rgb(hex_color)
-            new_r = int(r * factor)
-            new_g = int(g * factor)
-            new_b = int(b * factor)
-            return f'rgb({new_r},{new_g},{new_b})'
+        def _shade(hex_color, factor):
+            r, g, b = _rgb(hex_color)
+            return f'rgb({int(r * factor)},{int(g * factor)},{int(b * factor)})'
 
-        for c, data in sorted_clusters:
-            color = muted_colors[(c - 1) % len(muted_colors)]
+        segments = self._sim_segments(clus_ord)
+        slots = self._sim_slots(segments, n)
 
-            # Use ORIGINAL cluster boundaries (before top-10 filtering)
-            y_min_idx = cluster_boundaries[c]['y_min'] + 0.5  # Convert back from -0.5 adjustment
-            y_max_idx = cluster_boundaries[c]['y_max'] - 0.5  # Convert back from +0.5 adjustment
-            y_center = (y_min_idx + y_max_idx) / 2
-            cluster_height = y_max_idx - y_min_idx + 1
+        # --- geometry, in heatmap-column units so proportions hold for any n ---
+        HM0, HM1 = -0.5, n - 0.5
+        BAR0, BAR1 = n * 1.03, n * 1.08
+        CON0, CON1 = n * 1.08, n * 1.34
+        BOX0, BOX1 = n * 1.34, n * 1.94
+        CB0, CB1 = n * 2.00, n * 2.05
+        X_MAX = n * 2.28
 
-            # Word cloud box position - bigger, positioned right
-            box_y_center = y_center
-            box_height = max(cluster_height * 0.7, 3.0)  # Even bigger boxes
-            box_y_min = box_y_center - box_height / 2
-            box_y_max = box_y_center + box_height / 2
+        # data units -> pixels, so text packing is decided in the unit fonts use
+        px_x = max(1.0, (width - 38)) / (X_MAX - HM0)
+        px_y = max(1.0, (height - 88)) / max(1, n)
 
-            # Box x position - a bit more to the right
-            box_x_start = 0.12
-            box_x_end = 0.52
+        fig = go.Figure()
 
-            # Extract keywords with frequencies
-            all_words = {}
-            for term in data['terms']:
-                words = self._tokenize_term(term)
-                for word in words:
-                    if len(word) > 2:
-                        all_words[word] = all_words.get(word, 0) + 1
+        fig.add_trace(go.Heatmap(
+            z=sim_ord, x=list(range(n)), y=list(range(n)),
+            colorscale=heatmap_palette, zmin=0, zmax=1,
+            showscale=False,          # the legend is drawn in data space below
+            xaxis='x', yaxis='y',
+            text=[[f"{terms_ord[i][:40]}<br>{terms_ord[j][:40]}<br>Similarity: {sim_ord[i, j]:.3f}"
+                   for j in range(n)] for i in range(n)],
+            hovertemplate='%{text}<extra></extra>',
+        ))
 
-            sorted_words = sorted(all_words.items(), key=lambda x: x[1], reverse=True)[:5]
+        for _, s, e in segments[:-1]:
+            fig.add_shape(type='line', xref='x', yref='y', x0=HM0, x1=HM1,
+                          y0=e + 0.5, y1=e + 0.5, line=dict(color='black', width=1))
+            fig.add_shape(type='line', xref='x', yref='y', y0=HM0, y1=HM1,
+                          x0=e + 0.5, x1=e + 0.5, line=dict(color='black', width=1))
 
-            if not sorted_words:
-                continue
+        for (cid, s, e), (by0, by1) in zip(segments, slots):
+            color = muted_colors[(cid - 1) % len(muted_colors)]
+            band0, band1 = s - 0.5, e + 0.5
+            r, g, b = _rgb(color)
 
-            max_freq = sorted_words[0][1] if sorted_words else 1
-            min_freq = sorted_words[-1][1] if sorted_words else 1
+            fig.add_shape(type='rect', xref='x', yref='y', layer='above',
+                          x0=BAR0, x1=BAR1, y0=band0, y1=band1,
+                          fillcolor=color, line=dict(width=0))
+            fig.add_shape(type='path', xref='x', yref='y', layer='below',
+                          path=(f"M {CON0},{band0} L {CON1},{by0} "
+                                f"L {CON1},{by1} L {CON0},{band1} Z"),
+                          fillcolor='rgba(0,0,0,0.06)', line=dict(color='#BBBBBB', width=1))
+            fig.add_shape(type='rect', xref='x', yref='y', layer='below',
+                          x0=BOX0, x1=BOX1, y0=by0, y1=by1,
+                          fillcolor=f'rgba({r},{g},{b},0.10)',
+                          line=dict(color=color, width=1.4))
 
-            # Draw grey background box
-            fig.add_shape(
-                type='rect',
-                x0=box_x_start, x1=box_x_end,
-                y0=box_y_min, y1=box_y_max,
-                fillcolor='#DDDDDD',
-                line=dict(color='#AAAAAA', width=1),
-                xref='x3', yref='y3'
-            )
+            freq = {}
+            for term in [terms_ord[i] for i in range(s, e + 1)]:
+                for w in self._tokenize_term(term):
+                    freq[w] = freq.get(w, 0) + 1
+            words = sorted(freq.items(), key=lambda kv: -kv[1])[:max_words]
 
-            # Draw connecting trapezoid - starts MORE TO THE RIGHT and matches cluster height exactly
-            # Left side (near heatmap): full cluster height
-            # Right side (at box): tapered to small point
-            trap_x_left = 0.08  # More to the right to avoid overlapping colorbar
-            trap_x_right = box_x_start  # Connect to box edge
+            for fx, fy, word, fpx, span in self._sim_pack_words(
+                    words, (BOX1 - BOX0) * px_x, (by1 - by0) * px_y, word_font_size):
+                fig.add_annotation(
+                    xref='x', yref='y',
+                    x=BOX0 + fx * (BOX1 - BOX0), y=by0 + fy * (by1 - by0),
+                    text=f"<b>{word}</b>", showarrow=False,
+                    font=dict(size=fpx, color=_shade(color, 0.55 + 0.45 * span)),
+                    xanchor='center', yanchor='middle')
 
-            # Left side matches ORIGINAL cluster height exactly
-            trap_y_left_min = cluster_boundaries[c]['y_min']
-            trap_y_left_max = cluster_boundaries[c]['y_max']
+        # --- similarity legend, drawn in DATA space so it travels with everything ---
+        # Plotly's built-in colorbar= is positioned in PAPER coordinates and is therefore
+        # structurally incapable of moving with the data, which is why it used to stay put.
+        steps = 28
+        cb_top, cb_bot = n * 0.30, n * 0.70
+        try:
+            cols = sample_colorscale(heatmap_palette, [i / (steps - 1) for i in range(steps)])
+        except Exception:
+            cols = sample_colorscale('Reds', [i / (steps - 1) for i in range(steps)])
+        for i, col in enumerate(cols):
+            y0 = cb_bot - (i / steps) * (cb_bot - cb_top)
+            y1 = cb_bot - ((i + 1) / steps) * (cb_bot - cb_top)
+            fig.add_shape(type='rect', xref='x', yref='y', layer='above',
+                          x0=CB0, x1=CB1, y0=y0, y1=y1, fillcolor=col, line=dict(width=0))
+        fig.add_shape(type='rect', xref='x', yref='y', layer='above',
+                      x0=CB0, x1=CB1, y0=cb_top, y1=cb_bot,
+                      fillcolor='rgba(0,0,0,0)', line=dict(color='#888888', width=1))
+        fig.add_annotation(xref='x', yref='y', x=(CB0 + CB1) / 2, y=cb_top - n * 0.045,
+                           text="Similarity", showarrow=False, xanchor='center',
+                           yanchor='bottom', font=dict(size=11, color='black'))
+        for frac, lab in ((0.0, '1.0'), (0.5, '0.5'), (1.0, '0.0')):
+            fig.add_annotation(xref='x', yref='y', x=CB1 + n * 0.012,
+                               y=cb_top + frac * (cb_bot - cb_top),
+                               text=lab, showarrow=False, xanchor='left', yanchor='middle',
+                               font=dict(size=9, color='black'))
 
-            # Right side tapered to center
-            taper_factor = 0.15
-            trap_half_height = cluster_height * taper_factor / 2
-            trap_y_right_min = y_center - trap_half_height
-            trap_y_right_max = y_center + trap_half_height
-
-            link_path = f"M {trap_x_left},{trap_y_left_min} L {trap_x_right},{trap_y_right_min} L {trap_x_right},{trap_y_right_max} L {trap_x_left},{trap_y_left_max} Z"
-            fig.add_shape(
-                type='path',
-                path=link_path,
-                fillcolor='#DDDDDD',
-                line=dict(color='#AAAAAA', width=1),
-                xref='x3', yref='y3'
-            )
-
-            # Add colored line at the LEFT edge of trapezoid - matches ORIGINAL cluster height exactly
-            fig.add_shape(
-                type='line',
-                x0=trap_x_left, x1=trap_x_left,
-                y0=cluster_boundaries[c]['y_min'], y1=cluster_boundaries[c]['y_max'],
-                line=dict(color=color, width=4),
-                xref='x3', yref='y3'
-            )
-
-            # Add words inside the box with varying sizes AND colors
-            n_words = len(sorted_words)
-            if n_words > 0:
-                # Arrange words in compact layout
-                rows_needed = min(n_words, 3)
-                y_spacing = (box_y_max - box_y_min) / (rows_needed + 1)
-
-                word_idx = 0
-                for row in range(rows_needed):
-                    # Alternate between 1 and 2 words per row
-                    words_in_row = 2 if row % 2 == 0 and word_idx + 1 < n_words else 1
-
-                    for col in range(words_in_row):
-                        if word_idx >= n_words:
-                            break
-
-                        word, freq = sorted_words[word_idx]
-                        word_idx += 1
-
-                        # Position within smaller box
-                        box_center_x = (box_x_start + box_x_end) / 2
-                        box_width = box_x_end - box_x_start
-                        if words_in_row == 1:
-                            word_x = box_center_x
-                        else:
-                            word_x = box_center_x - box_width * 0.22 if col == 0 else box_center_x + box_width * 0.22
-
-                        word_y = box_y_max - (row + 1) * y_spacing
-
-                        # Calculate darkness factor (0.4-1.0 range)
-                        # Highest freq = 1.0 (full cluster color), lowest = 0.4 (darker version)
-                        if max_freq > min_freq:
-                            darkness = 0.4 + 0.6 * ((freq - min_freq) / (max_freq - min_freq))
-                        else:
-                            darkness = 1.0
-
-                        # Font size based on frequency (scaled from word_font_size parameter)
-                        # Range: word_font_size to word_font_size + 6
-                        font_size_offset = int(6 * ((freq - min_freq) / max(1, max_freq - min_freq)))
-                        font_size = word_font_size + font_size_offset
-
-                        # Color: use cluster color directly, darken for less frequent
-                        word_color = darken_color(color, darkness)
-
-                        fig.add_annotation(
-                            x=word_x,
-                            y=word_y,
-                            xref='x3',
-                            yref='y3',
-                            text=f"<b>{word}</b>",
-                            showarrow=False,
-                            font=dict(size=font_size, color=word_color),
-                            xanchor='center',
-                            yanchor='middle'
-                        )
-
-        # Layout with multiple axes
         fig.update_layout(
-            title=dict(
-                text=f"Semantic Similarity Clustering ({n} terms, {n_clusters} clusters)",
-                font=dict(color='black', size=16),
-                x=0.5
-            ),
-            height=height,
-            width=width,
-            plot_bgcolor='white',
-            paper_bgcolor='white',
-            font=dict(color='black'),
-            showlegend=False,
-            margin=dict(t=60, b=30, l=20, r=20),  # Reduced bottom margin
-
-            # Heatmap axis (left)
-            xaxis=dict(
-                domain=[heatmap_left, heatmap_right],
-                showticklabels=False, showgrid=False, zeroline=False
-            ),
-            yaxis=dict(
-                domain=[0.05, 0.95],
-                showticklabels=False, showgrid=False, zeroline=False,
-                autorange='reversed'
-            ),
-
-            # Color bar axis (thin strip)
-            xaxis2=dict(
-                domain=[colorbar_left, colorbar_right],
-                showticklabels=False, showgrid=False, zeroline=False,
-                range=[0, 1], anchor='y2'
-            ),
-            yaxis2=dict(
-                domain=[0.05, 0.95],
-                showticklabels=False, showgrid=False, zeroline=False,
-                range=[-0.5, n - 0.5], autorange='reversed', anchor='x2'
-            ),
-
-            # Word cloud panel axis
-            xaxis3=dict(
-                domain=[wordcloud_left, wordcloud_right],
-                showticklabels=False, showgrid=False, zeroline=False,
-                range=[0, 1], anchor='y3'
-            ),
-            yaxis3=dict(
-                domain=[0.05, 0.95],
-                showticklabels=False, showgrid=False, zeroline=False,
-                range=[-0.5, n - 0.5], autorange='reversed', anchor='x3'
-            )
+            title=dict(text=f"Semantic Similarity Clustering ({n} terms, {len(segments)} clusters)",
+                       font=dict(color='black', size=16), x=0.5, xanchor='center'),
+            height=height, width=width,
+            plot_bgcolor='white', paper_bgcolor='white',
+            font=dict(color='black'), showlegend=False,
+            margin=dict(t=60, b=28, l=18, r=20),
+            dragmode=(False if lock_view else 'pan'),
+            xaxis=dict(domain=[0, 1], range=[HM0, X_MAX], autorange=False,
+                       fixedrange=lock_view, showticklabels=False, showgrid=False,
+                       zeroline=False, constrain='domain'),
+            yaxis=dict(domain=[0, 1], range=[n - 0.5, -0.5], autorange=False,
+                       fixedrange=lock_view, showticklabels=False, showgrid=False,
+                       zeroline=False, constrain='domain'),
         )
-
         return fig
 
     def render_similarity_clusters_with_data(self, df: pd.DataFrame, n_terms: int = 50, n_clusters: int = 8,

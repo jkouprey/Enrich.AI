@@ -1,0 +1,2962 @@
+{
+  "gene_set": "Interferon_Gamma_Response",
+  "context": "Interferon Gamma Response",
+  "genes": [
+    "STAT1",
+    "ISG15",
+    "IFIT1",
+    "MX1",
+    "IFIT3",
+    "IFI35",
+    "IRF7",
+    "IFIT2",
+    "OAS2",
+    "TAP1",
+    "EIF2AK2",
+    "RSAD2",
+    "MX2",
+    "IRF1",
+    "OAS3",
+    "TNFSF10",
+    "IRF9",
+    "CXCL10",
+    "IFI44",
+    "BST2",
+    "XAF1",
+    "SP110",
+    "OASL",
+    "PSMB8",
+    "IFI44L",
+    "IFITM3",
+    "DDX60",
+    "LGALS3BP",
+    "GBP4",
+    "IRF8",
+    "PSMB9",
+    "PML",
+    "IFIH1",
+    "UBE2L6",
+    "IFI27",
+    "ADAR",
+    "LY6E",
+    "STAT2",
+    "CXCL9",
+    "IL10RA",
+    "PLA2G4A",
+    "TRIM21",
+    "USP18",
+    "PTGS2",
+    "EPSTI1",
+    "C1S",
+    "DDX58",
+    "IL15",
+    "NLRC5",
+    "NMI",
+    "IDO1",
+    "PSMB10",
+    "CXCL11",
+    "ITGB7",
+    "SAMHD1",
+    "HERC6",
+    "CMPK2",
+    "SAMD9L",
+    "RTP4",
+    "PTPN2",
+    "PARP14",
+    "TNFAIP2",
+    "IFITM2",
+    "PLSCR1",
+    "SOCS1",
+    "CASP1",
+    "ICAM1",
+    "WARS1",
+    "PSME1",
+    "ISG20",
+    "IRF2",
+    "TRIM14",
+    "FCGR1A",
+    "MARCHF1",
+    "SOCS3",
+    "JAK2",
+    "HLA-DMA",
+    "PARP12",
+    "TNFAIP6",
+    "TRIM26",
+    "VCAM1",
+    "CD274",
+    "CIITA",
+    "NAMPT",
+    "SELP",
+    "GPR18",
+    "FPR1",
+    "HELZ2",
+    "PSME2",
+    "SERPING1",
+    "CCL5",
+    "RNF31",
+    "SOD2",
+    "TRIM25",
+    "LAP3",
+    "PSMA3",
+    "RNF213",
+    "PELI1",
+    "CFB",
+    "CD86",
+    "TXNIP",
+    "HLA-DQA1",
+    "GCH1",
+    "PNP",
+    "CCL7",
+    "PTPN6",
+    "SPPL2A",
+    "IL4R",
+    "PNPT1",
+    "DHX58",
+    "BTG1",
+    "CASP8",
+    "IFI30",
+    "CCL2",
+    "FGL2",
+    "CASP7",
+    "SECTM1",
+    "IL15RA",
+    "CD40",
+    "TRAFD1",
+    "HLA-DRB1",
+    "GBP6",
+    "LCP2",
+    "HLA-G",
+    "MT2A",
+    "RIPK1",
+    "KLRK1",
+    "UPP1",
+    "PSMB2",
+    "TDRD7",
+    "HIF1A",
+    "EIF4E3",
+    "VAMP8",
+    "PFKP",
+    "CD38",
+    "ZBP1",
+    "BANK1",
+    "TOR1B",
+    "RBCK1",
+    "PDE4B",
+    "MVP",
+    "IL7",
+    "BPGM",
+    "CMTR1",
+    "AUTS2",
+    "B2M",
+    "RIPK2",
+    "CD69",
+    "MYD88",
+    "PSMA2",
+    "PIM1",
+    "NOD1",
+    "CFH",
+    "TAPBP",
+    "SLC25A28",
+    "PTPN1",
+    "TNFAIP3",
+    "SSPN",
+    "NUP93",
+    "MTHFD2",
+    "CDKN1A",
+    "IRF4",
+    "NFKB1",
+    "BATF2",
+    "HLA-B",
+    "LATS2",
+    "IRF5",
+    "SLAMF7",
+    "ISOC1",
+    "P2RY14",
+    "STAT3",
+    "NCOA3",
+    "HLA-A",
+    "IL6",
+    "GZMA",
+    "IFNAR2",
+    "CD74",
+    "RAPGEF6",
+    "CASP4",
+    "FAS",
+    "OGFR",
+    "ARL4A",
+    "SRI",
+    "LYSMD2",
+    "CSF2RB",
+    "ST3GAL5",
+    "C1R",
+    "CASP3",
+    "CMKLR1",
+    "NFKBIA",
+    "METTL7B",
+    "ST8SIA4",
+    "XCL1",
+    "IL2RB",
+    "VAMP5",
+    "IL18BP",
+    "ZNFX1",
+    "ARID5B",
+    "APOL6",
+    "STAT4"
+  ],
+  "n_genes": 200,
+  "query": "Analyze this gene set (biological context: Interferon Gamma Response) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: STAT1, ISG15, IFIT1, MX1, IFIT3, IFI35, IRF7, IFIT2, OAS2, TAP1, EIF2AK2, RSAD2, MX2, IRF1, OAS3, TNFSF10, IRF9, CXCL10, IFI44, BST2, XAF1, SP110, OASL, PSMB8, IFI44L, IFITM3, DDX60, LGALS3BP, GBP4, IRF8, PSMB9, PML, IFIH1, UBE2L6, IFI27, ADAR, LY6E, STAT2, CXCL9, IL10RA, PLA2G4A, TRIM21, USP18, PTGS2, EPSTI1, C1S, DDX58, IL15, NLRC5, NMI, IDO1, PSMB10, CXCL11, ITGB7, SAMHD1, HERC6, CMPK2, SAMD9L, RTP4, PTPN2, PARP14, TNFAIP2, IFITM2, PLSCR1, SOCS1, CASP1, ICAM1, WARS1, PSME1, ISG20, IRF2, TRIM14, FCGR1A, MARCHF1, SOCS3, JAK2, HLA-DMA, PARP12, TNFAIP6, TRIM26, VCAM1, CD274, CIITA, NAMPT, SELP, GPR18, FPR1, HELZ2, PSME2, SERPING1, CCL5, RNF31, SOD2, TRIM25, LAP3, PSMA3, RNF213, PELI1, CFB, CD86, TXNIP, HLA-DQA1, GCH1, PNP, CCL7, PTPN6, SPPL2A, IL4R, PNPT1, DHX58, BTG1, CASP8, IFI30, CCL2, FGL2, CASP7, SECTM1, IL15RA, CD40, TRAFD1, HLA-DRB1, GBP6, LCP2, HLA-G, MT2A, RIPK1, KLRK1, UPP1, PSMB2, TDRD7, HIF1A, EIF4E3, VAMP8, PFKP, CD38, ZBP1, BANK1, TOR1B, RBCK1, PDE4B, MVP, IL7, BPGM, CMTR1, AUTS2, B2M, RIPK2, CD69, MYD88, PSMA2, PIM1, NOD1, CFH, TAPBP, SLC25A28, PTPN1, TNFAIP3, SSPN, NUP93, MTHFD2, CDKN1A, IRF4, NFKB1, BATF2, HLA-B, LATS2, IRF5, SLAMF7, ISOC1, P2RY14, STAT3, NCOA3, HLA-A, IL6, GZMA, IFNAR2, CD74, RAPGEF6, CASP4, FAS, OGFR, ARL4A, SRI, LYSMD2, CSF2RB, ST3GAL5, C1R, CASP3, CMKLR1, NFKBIA, METTL7B, ST8SIA4, XCL1, IL2RB, VAMP5, IL18BP, ZNFX1, ARID5B, APOL6, STAT4",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 20,
+  "n_papers": 3,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 3,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 3,
+    "cited_pmids": [
+      "41359111",
+      "41438753",
+      "41987273"
+    ],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "## Summary\nThe gene set provided is strongly enriched for pathways related to the Interferon Gamma Response, indicating a robust antiviral and immunomodulatory cellular state. Key pathways include \"Defense Response To Virus,\" \"Response To Type II Interferon,\" and \"JAK-STAT signaling pathway,\" which are central to interferon-mediated immunity. The literature search further supports the role of the JAK-STAT pathway in antiviral defense and its broader implications in immune regulation.\n\n## Detailed Analysis\n\nThe enrichment analysis of your gene list using GO_Biological_Process_2023 and KEGG_2021_Human libraries reveals a highly significant activation of interferon-gamma response pathways, a cornerstone of host defense against various pathogens, especially viruses.\n\n### GO_Biological_Process_2023\nThe top enriched GO terms clearly point towards an active antiviral state:\n*   **Defense Response To Virus (GO:0051607)** and **Negative Regulation Of Viral Process (GO:0048525)**, along with **Negative Regulation Of Viral Genome Replication (GO:0045071)** and **Regulation Of Viral Genome Replication (GO:0045069)**, are the most significant terms. This indicates that the gene set is heavily involved in directly combating viral infections and controlling viral proliferation. Key genes involved in these processes include **STAT1, MX1, MX2, IFIT1, IFIT3, IFIH1, OASL, OAS2, OAS3, ISG15, RSAD2, BST2, PLSCR1, ZNFX1**, all known interferon-stimulated genes (ISGs) with direct antiviral functions.\n*   **Response To Type II Interferon (GO:0034341)** is highly relevant, explicitly linking the observed gene expression to interferon-gamma (Type II interferon) signaling. This is consistent with the provided biological context. Genes like **STAT1, GBP4, GBP6, CIITA, CD74, IFITM3, IFITM2, CXCL10, CCL5, CCL7** are crucial mediators of interferon-gamma's effects, involved in antigen presentation, immune cell recruitment, and antiviral effector functions.\n*   Terms like **Response To Cytokine (GO:0034097)**, **Cellular Response To Cytokine Stimulus (GO:0071345)**, **Cytokine-Mediated Signaling Pathway (GO:0019221)**, and **Positive Regulation Of Cytokine Production (GO:0001819)** highlight a broader immune activation involving various cytokines beyond interferons, suggesting a complex inflammatory and immune response. Genes such as **STAT1, STAT2, STAT3, JAK2, NFKB1, NFKBIA, IL6, IL7, CCL2, CCL5, CXCL9, CXCL10, CXCL11, CD40, CD86, VCAM1** are central to cytokine signaling and immune cell communication.\n\n### KEGG_2021_Human\nThe KEGG pathways further reinforce the viral response and immune signaling themes:\n*   Several viral infection pathways are highly enriched, including **Influenza A, Epstein-Barr virus infection, Measles, Hepatitis C, Coronavirus disease, Herpes simplex virus 1 infection, and Kaposi sarcoma-associated herpesvirus infection**. This strong signal for multiple viral infections indicates a general host antiviral response rather than a specific infection. The overlapping genes (e.g., **STAT1, STAT2, MX1, MX2, IFIT1, IFIH1, OAS2, OAS3, EIF2AK2, IRF7, IRF9, NFKB1, JAK2, TAP1, HLA-A, HLA-B, HLA-DRB1, CIITA, BST2**) are common components of the innate immune response to diverse viruses.\n*   The **JAK-STAT signaling pathway** is a top hit, which is expected given the \"Interferon Gamma Response\" context. This pathway is the primary signaling cascade for interferons, leading to the transcription of ISGs. Genes like **STAT1, STAT2, STAT3, JAK2, IFNAR2, PTPN2, PTPN6, SOCS1, SOCS3** are direct participants and regulators of this pathway.\n*   **NOD-like receptor signaling pathway** and **TNF signaling pathway** are also prominent. These pathways are crucial for detecting pathogen-associated molecular patterns (PAMPs) and danger-associated molecular patterns (DAMPs) and initiating inflammatory responses, often acting in concert with interferon signaling. Genes such as **NOD1, RIPK1, RIPK2, NFKB1, TNFAIP3, CASP1, CASP3, CASP8, IL6, TNFSF10, PTGS2** are involved in these innate immune and inflammatory cascades.\n\n### Literature Support\n\nThe literature search for \"Interferon Gamma Response 'JAK-STAT pathway' antiviral\" provided relevant background information that supports and contextualizes the enrichment results.\n\n*   **\"Interferon signaling pathways in health and disease.\"** by Wen C, et al. (2025) (PMID:41359111) directly investigates interferon signaling, including the canonical JAK-STAT pathway and its role in antiviral activities. This paper provides a comprehensive overview that aligns with the prominent enrichment of \"Defense Response To Virus\" and \"JAK-STAT signaling pathway\" in our gene set.\n*   **\"JAK/STAT signaling in liver disease: a therapeutic target or a context-dependent double-edged sword?\"** by Wang T, et al. (2026) (PMID:41987273) and **\"JAK/STAT in human diseases: a common axis in immunodeficiencies and hematological disorders.\"** by Djidjik R, et al. (2025) (PMID:41438753) offer broader contexts for JAK-STAT pathway involvement in disease, including antiviral defense. While more general, they reinforce the critical and multifaceted role of this pathway in immune responses, underscoring the biological relevance of its enrichment in our analysis.\n\n### Biological Interpretation\nThe gene list strongly reflects an active and broad interferon-gamma response, characterized by robust antiviral defense mechanisms, significant cytokine-mediated signaling, and activation of innate immune pathways. The presence of numerous interferon-stimulated genes (ISGs) like **STAT1, MX1, IFIT1, OAS2, IRF7, ISG15**, and the strong enrichment of the **JAK-STAT signaling pathway**, are direct evidence of this. The concurrent enrichment of pathways related to various viral infections in KEGG suggests a general antiviral state rather than a response to a single specific virus. The involvement of NOD-like receptor and TNF signaling pathways further indicates a coordinated innate immune response, where pattern recognition receptors detect pathogens and trigger inflammatory and antiviral cascades in conjunction with interferon signaling. The overall picture is a cell or tissue in a heightened state of alert, actively fighting or preparing to fight viral threats, and coordinating a complex immune response.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'genes': 'STAT1, ISG15, IFIT1, MX1, IFIT3, IFI35, IRF7, IFIT2, OAS2, TAP1, EIF2AK2, RSAD2, MX2, IRF1, OAS3, TNFSF10, IRF9, CXCL10, IFI44, BST2, XAF1, SP110, OASL, PSMB8, IFI44L, IFITM3, DDX60, LGALS3BP, GBP4, IRF8, PSMB9, PML, IFIH1, UBE2L6, IFI27, ADAR, LY6E, STAT2, CXCL9, IL10RA, PLA2G4A, TRIM21, USP18, PTGS2, EPSTI1, C1S, DDX58, IL15, NLRC5, NMI, IDO1, PSMB10, CXCL11, ITGB7, SAMHD1, HERC6, CMPK2, SAMD9L, RTP4, PTPN2, PARP14, TNFAIP2, IFITM2, PLSCR1, SOCS1, CASP1, ICAM1, WARS1, PSME1, ISG20, IRF2, TRIM14, FCGR1A, MARCHF1, SOCS3, JAK2, HLA-DMA, PARP12, TNFAIP6, TRIM26, VCAM1, CD274, CIITA, NAMPT, SELP, GPR18, FPR1, HELZ2, PSME2, SERPING1, CCL5, RNF31, SOD2, TRIM25, LAP3, PSMA3, RNF213, PELI1, CFB, CD86, TXNIP, HLA-DQA1, GCH1, PNP, CCL7, PTPN6, SPPL2A, IL4R, PNPT1, DHX58, BTG1, CASP8, IFI30, CCL2, FGL2, CASP7, SECTM1, IL15RA, CD40, TRAFD1, HLA-DRB1, GBP6, LCP2, HLA-G, MT2A, RIPK1, KLRK1, UPP1, PSMB2, TDRD7, HIF1A, EIF4E3, VAMP8, PFKP, CD38, ZBP1, BANK1, TOR1B, RBCK1, PDE4B, MVP, IL7, BPGM, CMTR1, AUTS2, B2M, RIPK2, CD69, MYD88, PSMA2, PIM1, NOD1, CFH, TAPBP, SLC25A28, PTPN1, TNFAIP3, SSPN, NUP93, MTHFD2, CDKN1A, IRF4, NFKB1, BATF2, HLA-B, LATS2, IRF5, SLAMF7, ISOC1, P2RY14, STAT3, NCOA3, HLA-A, IL6, GZMA, IFNAR2, CD74, RAPGEF6, CASP4, FAS, OGFR, ARL4A, SRI, LYSMD2, CSF2RB, ST3GAL5, C1R, CASP3, CMKLR1, NFKBIA, METTL7B, ST8SIA4, XCL1, IL2RB, VAMP5, IL18BP, ZNFX1, ARID5B, APOL6, STAT4', 'top_n': 10, 'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human'}",
+    "Tool: search_literature | Args: {'max_results': 5, 'query': 'Interferon Gamma Response \"JAK-STAT pathway\" antiviral'}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Interferon Gamma Response) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: STAT1, ISG15, IFIT1, MX1, IFIT3, IFI35, IRF7, IFIT2, O"
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Approach to Unraveling the Interferon Gamma Response**\n\nOkay, so I've got this gene list, and the goal is to extract its biological meaning, specifically focusing on the Interferon Gamma Response. My expert intuition tells me this is going to involve a multi-pronged approach. First, I need to get a clear picture of what pathways and processes this gene set is involved in. I'll kick things off with enrichment analysis using `run_enrichment_analysis`. I'll run this against both the GO Biological Process 2023 and KEGG 2021 Human libraries. This will give me a solid foundation of significantly enriched terms.\n\nNext, the enrichment results will direct my literature search. Using those key terms or genes that stand out, I'll formulate precise queries for the `search_literature` function. I will need to be very precise in my search terms to avoid noise. The focus will be to find relevant papers that will put the enrichment findings into a contextual frame.\n\nFinally, the most crucial part: the biological interpretation. I'll synthesize the enrichment results and the literature findings to build a cohesive narrative. The goal is to prioritize the terms that are most relevant to the Interferon Gamma Response. I need to explain the significance of these terms in the context of the interferon response. And, of course, I'll only cite the papers pulled using the `search_literature` tool, maintaining scholarly rigor. I believe with this systematic approach, I will provide a robust and insightful analysis. Let's get to work!",
+      "action": "run_enrichment_analysis",
+      "args": "genes=STAT1, ISG15, IFIT1, MX1, IFIT3, IFI35, IRF7, IFIT..., top_n=10, libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "67dc0053-ef88-4074-8610-c7146118520a",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 200 | Total significant terms: 20"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "This gene set shows a highly significant enrichment for genes involved in the Interferon Gamma (IFN-γ) response, consistent with the provided biological context. The analysis clearly points to a robust antiviral and immune-modulatory transcriptional program.\n\n## Detailed Analysis\n\n### Enrichment Analysis Interpretation\n\nThe enrichment analysis using `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries reveals a dominant theme of antiviral defense and cytokine signaling, which is characte"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Analysis of the Interferon Gamma Response**\n\nOkay, so the user gave me a gene list and flagged \"Interferon Gamma Response\" as the biological area of interest. I ran the enrichment analysis using the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries, and the results are pretty clear – it's definitely an interferon gamma response. The enrichment is really strong, with a lot of highly significant terms popping up that are all about viral defense, cytokine signaling, and specific viral infections. Honestly, the `Response To Type II Interferon` (GO:0034341) term is a slam dunk given the context! And the `JAK-STAT signaling pathway` is also really prominent, which is exactly what I'd expect to see, since that's the canonical path for interferon gamma signaling.\n\nNow, the real work begins: putting together a meaningful interpretation. I need to zero in on the terms that are most relevant to the interferon gamma context and this specific response. I'm thinking I'll focus on the terms directly linked to interferon gamma itself and those related to viral responses, as they’re the most enriched and obviously the most relevant to the question.\n\nThe next step is finding some supporting literature. I'll construct a query with the key enriched terms and genes to find relevant papers. I'm going to include phrases like \"Interferon Gamma Response,\" \"JAK-STAT pathway,\" and \"viral defense.\" I might also throw in some of the top overlapping genes like STAT1, IRF7, MX1, and ISG15 to narrow down the search. I want to find papers that discuss the overall interferon gamma response and how it works. That should give me a solid foundation for the biological interpretation.",
+      "action": "search_literature",
+      "args": "max_results=5, query=Interferon Gamma Response \"JAK-STAT pathway\" antiv...",
+      "tool_name": "search_literature",
+      "tool_call_id": "800e4e40-f586-44c2-8ff7-30beb64197ae",
+      "observation": "=== LITERATURE SEARCH: 'Interferon Gamma Response \"JAK-STAT pathway\" antiviral' === | Found 3 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "## Summary\nThe gene set provided is strongly enriched for pathways related to the Interferon Gamma Response, indicating a robust antiviral and immunomodulatory cellular state. Key pathways include \"Defense Response To Virus,\" \"Response To Type II Interferon,\" and \"JAK-STAT signaling pathway,\" which are central to interferon-mediated immunity. The literature search further supports the role of the JAK-STAT pathway in antiviral defense and its broader implications in immune regulation.\n\n## Detaile"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "genes=STAT1, ISG15, IFIT1, MX1, IFIT3, IFI35, IRF7, IFIT..., top_n=10, libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "thought": "**My Approach to Unraveling the Interferon Gamma Response**\n\nOkay, so I've got this gene list, and the goal is to extract its biological meaning, specifically focusing on the Interferon Gamma Response. My expert intuition tells me this is going to involve a multi-pronged approach. First, I need to get a clear picture of what pathways and processes this gene set is involved in. I'll kick things off with enrichment analysis using `run_enrichment_analysis`. I'll run this against both the GO Biological Process 2023 and KEGG 2021 Human libraries. This will give me a solid foundation of significantly enriched terms.\n\nNext, the enrichment results will direct my literature search. Using those key terms or genes that stand out, I'll formulate precise queries for the `search_literature` function. I will need to be very precise in my search terms to avoid noise. The focus will be to find relevant papers that will put the enrichment findings into a contextual frame.\n\nFinally, the most crucial part: the biological interpretation. I'll synthesize the enrichment results and the literature findings to build a cohesive narrative. The goal is to prioritize the terms that are most relevant to the Interferon Gamma Response. I need to explain the significance of these terms in the context of the interferon response. And, of course, I'll only cite the papers pulled using the `search_literature` tool, maintaining scholarly rigor. I believe with this systematic approach, I will provide a robust and insightful analysis. Let's get to work!",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 200 | Total significant terms: 20"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "max_results=5, query=Interferon Gamma Response \"JAK-STAT pathway\" antiv...",
+      "thought": "**My Analysis of the Interferon Gamma Response**\n\nOkay, so the user gave me a gene list and flagged \"Interferon Gamma Response\" as the biological area of interest. I ran the enrichment analysis using the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries, and the results are pretty clear – it's definitely an interferon gamma response. The enrichment is really strong, with a lot of highly significant terms popping up that are all about viral defense, cytokine signaling, and specific viral infections. Honestly, the `Response To Type II Interferon` (GO:0034341) term is a slam dunk given the context! And the `JAK-STAT signaling pathway` is also really prominent, which is exactly what I'd expect to see, since that's the canonical path for interferon gamma signaling.\n\nNow, the real work begins: putting together a meaningful interpretation. I need to zero in on the terms that are most relevant to the interferon gamma context and this specific response. I'm thinking I'll focus on the terms directly linked to interferon gamma itself and those related to viral responses, as they’re the most enriched and obviously the most relevant to the question.\n\nThe next step is finding some supporting literature. I'll construct a query with the key enriched terms and genes to find relevant papers. I'm going to include phrases like \"Interferon Gamma Response,\" \"JAK-STAT pathway,\" and \"viral defense.\" I might also throw in some of the top overlapping genes like STAT1, IRF7, MX1, and ISG15 to narrow down the search. I want to find papers that discuss the overall interferon gamma response and how it works. That should give me a solid foundation for the biological interpretation.",
+      "observation": "=== LITERATURE SEARCH: 'Interferon Gamma Response \"JAK-STAT pathway\" antiviral' === | Found 3 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "STAT1",
+      "ISG15",
+      "IFIT1",
+      "MX1",
+      "IFIT3",
+      "IFI35",
+      "IRF7",
+      "IFIT2",
+      "OAS2",
+      "TAP1",
+      "EIF2AK2",
+      "RSAD2",
+      "MX2",
+      "IRF1",
+      "OAS3",
+      "TNFSF10",
+      "IRF9",
+      "CXCL10",
+      "IFI44",
+      "BST2",
+      "XAF1",
+      "SP110",
+      "OASL",
+      "PSMB8",
+      "IFI44L",
+      "IFITM3",
+      "DDX60",
+      "LGALS3BP",
+      "GBP4",
+      "IRF8",
+      "PSMB9",
+      "PML",
+      "IFIH1",
+      "UBE2L6",
+      "IFI27",
+      "ADAR",
+      "LY6E",
+      "STAT2",
+      "CXCL9",
+      "IL10RA",
+      "PLA2G4A",
+      "TRIM21",
+      "USP18",
+      "PTGS2",
+      "EPSTI1",
+      "C1S",
+      "DDX58",
+      "IL15",
+      "NLRC5",
+      "NMI",
+      "IDO1",
+      "PSMB10",
+      "CXCL11",
+      "ITGB7",
+      "SAMHD1",
+      "HERC6",
+      "CMPK2",
+      "SAMD9L",
+      "RTP4",
+      "PTPN2",
+      "PARP14",
+      "TNFAIP2",
+      "IFITM2",
+      "PLSCR1",
+      "SOCS1",
+      "CASP1",
+      "ICAM1",
+      "WARS1",
+      "PSME1",
+      "ISG20",
+      "IRF2",
+      "TRIM14",
+      "FCGR1A",
+      "MARCHF1",
+      "SOCS3",
+      "JAK2",
+      "HLA-DMA",
+      "PARP12",
+      "TNFAIP6",
+      "TRIM26",
+      "VCAM1",
+      "CD274",
+      "CIITA",
+      "NAMPT",
+      "SELP",
+      "GPR18",
+      "FPR1",
+      "HELZ2",
+      "PSME2",
+      "SERPING1",
+      "CCL5",
+      "RNF31",
+      "SOD2",
+      "TRIM25",
+      "LAP3",
+      "PSMA3",
+      "RNF213",
+      "PELI1",
+      "CFB",
+      "CD86",
+      "TXNIP",
+      "HLA-DQA1",
+      "GCH1",
+      "PNP",
+      "CCL7",
+      "PTPN6",
+      "SPPL2A",
+      "IL4R",
+      "PNPT1",
+      "DHX58",
+      "BTG1",
+      "CASP8",
+      "IFI30",
+      "CCL2",
+      "FGL2",
+      "CASP7",
+      "SECTM1",
+      "IL15RA",
+      "CD40",
+      "TRAFD1",
+      "HLA-DRB1",
+      "GBP6",
+      "LCP2",
+      "HLA-G",
+      "MT2A",
+      "RIPK1",
+      "KLRK1",
+      "UPP1",
+      "PSMB2",
+      "TDRD7",
+      "HIF1A",
+      "EIF4E3",
+      "VAMP8",
+      "PFKP",
+      "CD38",
+      "ZBP1",
+      "BANK1",
+      "TOR1B",
+      "RBCK1",
+      "PDE4B",
+      "MVP",
+      "IL7",
+      "BPGM",
+      "CMTR1",
+      "AUTS2",
+      "B2M",
+      "RIPK2",
+      "CD69",
+      "MYD88",
+      "PSMA2",
+      "PIM1",
+      "NOD1",
+      "CFH",
+      "TAPBP",
+      "SLC25A28",
+      "PTPN1",
+      "TNFAIP3",
+      "SSPN",
+      "NUP93",
+      "MTHFD2",
+      "CDKN1A",
+      "IRF4",
+      "NFKB1",
+      "BATF2",
+      "HLA-B",
+      "LATS2",
+      "IRF5",
+      "SLAMF7",
+      "ISOC1",
+      "P2RY14",
+      "STAT3",
+      "NCOA3",
+      "HLA-A",
+      "IL6",
+      "GZMA",
+      "IFNAR2",
+      "CD74",
+      "RAPGEF6",
+      "CASP4",
+      "FAS",
+      "OGFR",
+      "ARL4A",
+      "SRI",
+      "LYSMD2",
+      "CSF2RB",
+      "ST3GAL5",
+      "C1R",
+      "CASP3",
+      "CMKLR1",
+      "NFKBIA",
+      "METTL7B",
+      "ST8SIA4",
+      "XCL1",
+      "IL2RB",
+      "VAMP5",
+      "IL18BP",
+      "ZNFX1",
+      "ARID5B",
+      "APOL6",
+      "STAT4"
+    ],
+    "gene_count": 200,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Defense Response To Virus (GO:0051607)",
+          "term": "Defense Response To Virus (GO:0051607)",
+          "overlap": "41/189",
+          "p_value": 2.359272590782326e-43,
+          "z_score": 34.239843617202105,
+          "combined_score": 3360.7367160956924,
+          "overlap_genes": [
+            "IFITM3",
+            "RTP4",
+            "CD40",
+            "IFITM2",
+            "NLRC5",
+            "IFIT1",
+            "DDX60",
+            "SAMHD1",
+            "USP18",
+            "IFI44L",
+            "IFIT3",
+            "IFIT2",
+            "OASL",
+            "IFIH1",
+            "DHX58",
+            "CASP1",
+            "TRIM25",
+            "TRIM26",
+            "TRIM21",
+            "IFNAR2",
+            "RSAD2",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "PML",
+            "BST2",
+            "ISG20",
+            "CXCL10",
+            "IL6",
+            "PLSCR1",
+            "ZNFX1",
+            "IFI27",
+            "OAS2",
+            "IRF1",
+            "OAS3",
+            "IRF2",
+            "IRF7",
+            "MYD88"
+          ],
+          "genes": [
+            "IFITM3",
+            "RTP4",
+            "CD40",
+            "IFITM2",
+            "NLRC5",
+            "IFIT1",
+            "DDX60",
+            "SAMHD1",
+            "USP18",
+            "IFI44L",
+            "IFIT3",
+            "IFIT2",
+            "OASL",
+            "IFIH1",
+            "DHX58",
+            "CASP1",
+            "TRIM25",
+            "TRIM26",
+            "TRIM21",
+            "IFNAR2",
+            "RSAD2",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "PML",
+            "BST2",
+            "ISG20",
+            "CXCL10",
+            "IL6",
+            "PLSCR1",
+            "ZNFX1",
+            "IFI27",
+            "OAS2",
+            "IRF1",
+            "OAS3",
+            "IRF2",
+            "IRF7",
+            "MYD88"
+          ],
+          "adjusted_p_value": 3.847973595565974e-40
+        },
+        {
+          "rank": 2,
+          "term_name": "Defense Response To Symbiont (GO:0140546)",
+          "term": "Defense Response To Symbiont (GO:0140546)",
+          "overlap": "34/148",
+          "p_value": 7.042998118032355e-37,
+          "z_score": 35.36905516804058,
+          "combined_score": 2944.2479933626983,
+          "overlap_genes": [
+            "IFITM3",
+            "RTP4",
+            "CD40",
+            "IFITM2",
+            "NLRC5",
+            "IFIT1",
+            "DDX60",
+            "SAMHD1",
+            "IFI44L",
+            "IFIT3",
+            "IFIT2",
+            "OASL",
+            "IFIH1",
+            "CASP1",
+            "IFNAR2",
+            "RSAD2",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "BST2",
+            "ISG20",
+            "IL6",
+            "PLSCR1",
+            "ZNFX1",
+            "IFI27",
+            "OAS2",
+            "IRF1",
+            "OAS3",
+            "IRF2",
+            "IRF7",
+            "MYD88"
+          ],
+          "genes": [
+            "IFITM3",
+            "RTP4",
+            "CD40",
+            "IFITM2",
+            "NLRC5",
+            "IFIT1",
+            "DDX60",
+            "SAMHD1",
+            "IFI44L",
+            "IFIT3",
+            "IFIT2",
+            "OASL",
+            "IFIH1",
+            "CASP1",
+            "IFNAR2",
+            "RSAD2",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "BST2",
+            "ISG20",
+            "IL6",
+            "PLSCR1",
+            "ZNFX1",
+            "IFI27",
+            "OAS2",
+            "IRF1",
+            "OAS3",
+            "IRF2",
+            "IRF7",
+            "MYD88"
+          ],
+          "adjusted_p_value": 5.743564965255385e-34
+        },
+        {
+          "rank": 3,
+          "term_name": "Response To Cytokine (GO:0034097)",
+          "term": "Response To Cytokine (GO:0034097)",
+          "overlap": "26/125",
+          "p_value": 4.025386218074525e-27,
+          "z_score": 29.735632183908045,
+          "combined_score": 1807.2477700339937,
+          "overlap_genes": [
+            "IFITM3",
+            "CD274",
+            "CD40",
+            "CIITA",
+            "IFITM2",
+            "ADAR",
+            "CASP8",
+            "CASP3",
+            "RIPK1",
+            "JAK2",
+            "TRIM21",
+            "IFNAR2",
+            "CD74",
+            "GCH1",
+            "STAT1",
+            "MX2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "NFKB1",
+            "PML",
+            "BST2",
+            "SELP",
+            "PLSCR1",
+            "XAF1",
+            "MYD88"
+          ],
+          "genes": [
+            "IFITM3",
+            "CD274",
+            "CD40",
+            "CIITA",
+            "IFITM2",
+            "ADAR",
+            "CASP8",
+            "CASP3",
+            "RIPK1",
+            "JAK2",
+            "TRIM21",
+            "IFNAR2",
+            "CD74",
+            "GCH1",
+            "STAT1",
+            "MX2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "NFKB1",
+            "PML",
+            "BST2",
+            "SELP",
+            "PLSCR1",
+            "XAF1",
+            "MYD88"
+          ],
+          "adjusted_p_value": 2.1884683072265163e-24
+        },
+        {
+          "rank": 4,
+          "term_name": "Negative Regulation Of Viral Process (GO:0048525)",
+          "term": "Negative Regulation Of Viral Process (GO:0048525)",
+          "overlap": "19/61",
+          "p_value": 8.605881629917404e-24,
+          "z_score": 49.3820047355959,
+          "combined_score": 2622.6583385552262,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM2",
+            "RSAD2",
+            "STAT1",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "IFIT1",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "ZNFX1",
+            "OAS2",
+            "OAS3",
+            "CCL5",
+            "TRIM14",
+            "TRIM21"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM2",
+            "RSAD2",
+            "STAT1",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "IFIT1",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "ZNFX1",
+            "OAS2",
+            "OAS3",
+            "CCL5",
+            "TRIM14",
+            "TRIM21"
+          ],
+          "adjusted_p_value": 3.509048234598822e-21
+        },
+        {
+          "rank": 5,
+          "term_name": "Cellular Response To Cytokine Stimulus (GO:0071345)",
+          "term": "Cellular Response To Cytokine Stimulus (GO:0071345)",
+          "overlap": "31/308",
+          "p_value": 3.1616932075357456e-22,
+          "z_score": 12.928310512037255,
+          "combined_score": 640.0258934793525,
+          "overlap_genes": [
+            "CD40",
+            "IFITM2",
+            "CSF2RB",
+            "IFIT1",
+            "HIF1A",
+            "MT2A",
+            "SOCS1",
+            "CCL7",
+            "CCL5",
+            "STAT4",
+            "CASP1",
+            "CCL2",
+            "RIPK1",
+            "JAK2",
+            "GBP4",
+            "GBP6",
+            "IFNAR2",
+            "PNPT1",
+            "IL4R",
+            "STAT1",
+            "STAT3",
+            "NFKB1",
+            "NFKBIA",
+            "IL6",
+            "IL7",
+            "IRF1",
+            "IL2RB",
+            "XCL1",
+            "IRF8",
+            "PTPN6",
+            "IRF5"
+          ],
+          "genes": [
+            "CD40",
+            "IFITM2",
+            "CSF2RB",
+            "IFIT1",
+            "HIF1A",
+            "MT2A",
+            "SOCS1",
+            "CCL7",
+            "CCL5",
+            "STAT4",
+            "CASP1",
+            "CCL2",
+            "RIPK1",
+            "JAK2",
+            "GBP4",
+            "GBP6",
+            "IFNAR2",
+            "PNPT1",
+            "IL4R",
+            "STAT1",
+            "STAT3",
+            "NFKB1",
+            "NFKBIA",
+            "IL6",
+            "IL7",
+            "IRF1",
+            "IL2RB",
+            "XCL1",
+            "IRF8",
+            "PTPN6",
+            "IRF5"
+          ],
+          "adjusted_p_value": 1.0313443242981602e-19
+        },
+        {
+          "rank": 6,
+          "term_name": "Negative Regulation Of Viral Genome Replication (GO:0045071)",
+          "term": "Negative Regulation Of Viral Genome Replication (GO:0045071)",
+          "overlap": "16/53",
+          "p_value": 5.838304894580842e-20,
+          "z_score": 46.44653349001175,
+          "combined_score": 2056.989768075206,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "IFIT1",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "ZNFX1",
+            "OAS2",
+            "OAS3",
+            "CCL5"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "IFIT1",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "ZNFX1",
+            "OAS2",
+            "OAS3",
+            "CCL5"
+          ],
+          "adjusted_p_value": 1.4173370851401238e-17
+        },
+        {
+          "rank": 7,
+          "term_name": "Cytokine-Mediated Signaling Pathway (GO:0019221)",
+          "term": "Cytokine-Mediated Signaling Pathway (GO:0019221)",
+          "overlap": "27/257",
+          "p_value": 6.082991781717269e-20,
+          "z_score": 13.279467202814777,
+          "combined_score": 587.5660310091457,
+          "overlap_genes": [
+            "CXCL9",
+            "CSF2RB",
+            "OASL",
+            "SOCS1",
+            "CCL7",
+            "CCL5",
+            "STAT4",
+            "CCL2",
+            "RIPK1",
+            "JAK2",
+            "IL15RA",
+            "IL4R",
+            "IL15",
+            "STAT1",
+            "MX1",
+            "STAT3",
+            "NFKBIA",
+            "CXCL10",
+            "CXCL11",
+            "IL6",
+            "IL7",
+            "OAS2",
+            "IL2RB",
+            "XCL1",
+            "PTPN6",
+            "IRF5",
+            "MYD88"
+          ],
+          "genes": [
+            "CXCL9",
+            "CSF2RB",
+            "OASL",
+            "SOCS1",
+            "CCL7",
+            "CCL5",
+            "STAT4",
+            "CCL2",
+            "RIPK1",
+            "JAK2",
+            "IL15RA",
+            "IL4R",
+            "IL15",
+            "STAT1",
+            "MX1",
+            "STAT3",
+            "NFKBIA",
+            "CXCL10",
+            "CXCL11",
+            "IL6",
+            "IL7",
+            "OAS2",
+            "IL2RB",
+            "XCL1",
+            "PTPN6",
+            "IRF5",
+            "MYD88"
+          ],
+          "adjusted_p_value": 1.4173370851401238e-17
+        },
+        {
+          "rank": 8,
+          "term_name": "Positive Regulation Of Cytokine Production (GO:0001819)",
+          "term": "Positive Regulation Of Cytokine Production (GO:0001819)",
+          "overlap": "29/320",
+          "p_value": 1.4454216429116327e-19,
+          "z_score": 11.369566528003858,
+          "combined_score": 493.2199331094836,
+          "overlap_genes": [
+            "CD86",
+            "CD274",
+            "CD40",
+            "NOD1",
+            "PTGS2",
+            "HIF1A",
+            "IFIH1",
+            "PNP",
+            "DHX58",
+            "PDE4B",
+            "CASP1",
+            "RIPK1",
+            "JAK2",
+            "CD74",
+            "IL15",
+            "RIPK2",
+            "STAT3",
+            "EIF2AK2",
+            "ISG15",
+            "HLA-A",
+            "HLA-G",
+            "IL6",
+            "IL7",
+            "IRF4",
+            "IRF1",
+            "IRF7",
+            "XCL1",
+            "IRF5",
+            "MYD88"
+          ],
+          "genes": [
+            "CD86",
+            "CD274",
+            "CD40",
+            "NOD1",
+            "PTGS2",
+            "HIF1A",
+            "IFIH1",
+            "PNP",
+            "DHX58",
+            "PDE4B",
+            "CASP1",
+            "RIPK1",
+            "JAK2",
+            "CD74",
+            "IL15",
+            "RIPK2",
+            "STAT3",
+            "EIF2AK2",
+            "ISG15",
+            "HLA-A",
+            "HLA-G",
+            "IL6",
+            "IL7",
+            "IRF4",
+            "IRF1",
+            "IRF7",
+            "XCL1",
+            "IRF5",
+            "MYD88"
+          ],
+          "adjusted_p_value": 2.946853374486091e-17
+        },
+        {
+          "rank": 9,
+          "term_name": "Response To Type II Interferon (GO:0034341)",
+          "term": "Response To Type II Interferon (GO:0034341)",
+          "overlap": "17/80",
+          "p_value": 2.933758310119566e-18,
+          "z_score": 29.10304449648712,
+          "combined_score": 1174.8971056341265,
+          "overlap_genes": [
+            "IFITM3",
+            "GBP6",
+            "CD74",
+            "CD40",
+            "CIITA",
+            "IFITM2",
+            "GCH1",
+            "STAT1",
+            "BST2",
+            "CCL7",
+            "CCL5",
+            "CASP1",
+            "IRF8",
+            "XCL1",
+            "CCL2",
+            "TRIM21",
+            "GBP4"
+          ],
+          "genes": [
+            "IFITM3",
+            "GBP6",
+            "CD74",
+            "CD40",
+            "CIITA",
+            "IFITM2",
+            "GCH1",
+            "STAT1",
+            "BST2",
+            "CCL7",
+            "CCL5",
+            "CASP1",
+            "IRF8",
+            "XCL1",
+            "CCL2",
+            "TRIM21",
+            "GBP4"
+          ],
+          "adjusted_p_value": 5.316622004227792e-16
+        },
+        {
+          "rank": 10,
+          "term_name": "Regulation Of Viral Genome Replication (GO:0045069)",
+          "term": "Regulation Of Viral Genome Replication (GO:0045069)",
+          "overlap": "16/67",
+          "p_value": 3.913095573697602e-18,
+          "z_score": 33.672634271099746,
+          "combined_score": 1349.6733592439202,
+          "overlap_genes": [
+            "IFITM3",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "IFIT1",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "ZNFX1",
+            "OAS2",
+            "OAS3",
+            "CCL5"
+          ],
+          "genes": [
+            "IFITM3",
+            "IFITM2",
+            "RSAD2",
+            "MX1",
+            "EIF2AK2",
+            "ISG15",
+            "IFIT1",
+            "OASL",
+            "IFIH1",
+            "BST2",
+            "ISG20",
+            "PLSCR1",
+            "ZNFX1",
+            "OAS2",
+            "OAS3",
+            "CCL5"
+          ],
+          "adjusted_p_value": 6.382258880700788e-16
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Influenza A",
+          "term": "Influenza A",
+          "overlap": "35/172",
+          "p_value": 5.911342812378856e-36,
+          "z_score": 30.44481309444813,
+          "combined_score": 2469.56725359019,
+          "overlap_genes": [
+            "CIITA",
+            "ADAR",
+            "ICAM1",
+            "IFIH1",
+            "SOCS3",
+            "HLA-DMA",
+            "CASP8",
+            "CASP3",
+            "CCL5",
+            "TNFSF10",
+            "CASP1",
+            "TRIM25",
+            "CCL2",
+            "JAK2",
+            "HLA-DQA1",
+            "IFNAR2",
+            "RSAD2",
+            "DDX58",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "NFKB1",
+            "PML",
+            "NFKBIA",
+            "CXCL10",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "IRF7",
+            "FAS",
+            "HLA-DRB1",
+            "MYD88",
+            "IRF9"
+          ],
+          "genes": [
+            "CIITA",
+            "ADAR",
+            "ICAM1",
+            "IFIH1",
+            "SOCS3",
+            "HLA-DMA",
+            "CASP8",
+            "CASP3",
+            "CCL5",
+            "TNFSF10",
+            "CASP1",
+            "TRIM25",
+            "CCL2",
+            "JAK2",
+            "HLA-DQA1",
+            "IFNAR2",
+            "RSAD2",
+            "DDX58",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "EIF2AK2",
+            "NFKB1",
+            "PML",
+            "NFKBIA",
+            "CXCL10",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "IRF7",
+            "FAS",
+            "HLA-DRB1",
+            "MYD88",
+            "IRF9"
+          ],
+          "adjusted_p_value": 1.152711848413877e-33
+        },
+        {
+          "rank": 2,
+          "term_name": "Epstein-Barr virus infection",
+          "term": "Epstein-Barr virus infection",
+          "overlap": "33/202",
+          "p_value": 1.3562084249179061e-30,
+          "z_score": 22.953725684725224,
+          "combined_score": 1578.5933608460714,
+          "overlap_genes": [
+            "CD40",
+            "CDKN1A",
+            "TNFAIP3",
+            "ICAM1",
+            "HLA-DMA",
+            "CASP8",
+            "CASP3",
+            "RIPK1",
+            "B2M",
+            "HLA-DQA1",
+            "IFNAR2",
+            "STAT1",
+            "DDX58",
+            "STAT2",
+            "STAT3",
+            "HLA-B",
+            "TAP1",
+            "EIF2AK2",
+            "ISG15",
+            "HLA-A",
+            "HLA-G",
+            "NFKB1",
+            "TAPBP",
+            "NFKBIA",
+            "CXCL10",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "IRF7",
+            "FAS",
+            "HLA-DRB1",
+            "MYD88",
+            "IRF9"
+          ],
+          "genes": [
+            "CD40",
+            "CDKN1A",
+            "TNFAIP3",
+            "ICAM1",
+            "HLA-DMA",
+            "CASP8",
+            "CASP3",
+            "RIPK1",
+            "B2M",
+            "HLA-DQA1",
+            "IFNAR2",
+            "STAT1",
+            "DDX58",
+            "STAT2",
+            "STAT3",
+            "HLA-B",
+            "TAP1",
+            "EIF2AK2",
+            "ISG15",
+            "HLA-A",
+            "HLA-G",
+            "NFKB1",
+            "TAPBP",
+            "NFKBIA",
+            "CXCL10",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "IRF7",
+            "FAS",
+            "HLA-DRB1",
+            "MYD88",
+            "IRF9"
+          ],
+          "adjusted_p_value": 1.3223032142949585e-28
+        },
+        {
+          "rank": 3,
+          "term_name": "Measles",
+          "term": "Measles",
+          "overlap": "23/139",
+          "p_value": 1.1047674541913799e-21,
+          "z_score": 22.05006818624586,
+          "combined_score": 1064.0183688604702,
+          "overlap_genes": [
+            "IFNAR2",
+            "DDX58",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "STAT3",
+            "EIF2AK2",
+            "TNFAIP3",
+            "ADAR",
+            "NFKB1",
+            "NFKBIA",
+            "IFIH1",
+            "IL6",
+            "CASP8",
+            "OAS2",
+            "CASP3",
+            "OAS3",
+            "IL2RB",
+            "IRF7",
+            "FAS",
+            "MYD88",
+            "IRF9"
+          ],
+          "genes": [
+            "IFNAR2",
+            "DDX58",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "STAT3",
+            "EIF2AK2",
+            "TNFAIP3",
+            "ADAR",
+            "NFKB1",
+            "NFKBIA",
+            "IFIH1",
+            "IL6",
+            "CASP8",
+            "OAS2",
+            "CASP3",
+            "OAS3",
+            "IL2RB",
+            "IRF7",
+            "FAS",
+            "MYD88",
+            "IRF9"
+          ],
+          "adjusted_p_value": 7.18098845224397e-20
+        },
+        {
+          "rank": 4,
+          "term_name": "NOD-like receptor signaling pathway",
+          "term": "NOD-like receptor signaling pathway",
+          "overlap": "25/181",
+          "p_value": 1.7706995432980926e-21,
+          "z_score": 17.98901098901099,
+          "combined_score": 859.5673337710635,
+          "overlap_genes": [
+            "RNF31",
+            "TNFAIP3",
+            "NOD1",
+            "CASP8",
+            "CCL5",
+            "NAMPT",
+            "CASP4",
+            "CASP1",
+            "CCL2",
+            "RIPK1",
+            "GBP4",
+            "IFNAR2",
+            "RIPK2",
+            "STAT1",
+            "STAT2",
+            "NFKB1",
+            "NFKBIA",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "IRF7",
+            "TXNIP",
+            "RBCK1",
+            "MYD88",
+            "IRF9"
+          ],
+          "genes": [
+            "RNF31",
+            "TNFAIP3",
+            "NOD1",
+            "CASP8",
+            "CCL5",
+            "NAMPT",
+            "CASP4",
+            "CASP1",
+            "CCL2",
+            "RIPK1",
+            "GBP4",
+            "IFNAR2",
+            "RIPK2",
+            "STAT1",
+            "STAT2",
+            "NFKB1",
+            "NFKBIA",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "IRF7",
+            "TXNIP",
+            "RBCK1",
+            "MYD88",
+            "IRF9"
+          ],
+          "adjusted_p_value": 8.632160273578201e-20
+        },
+        {
+          "rank": 5,
+          "term_name": "Hepatitis C",
+          "term": "Hepatitis C",
+          "overlap": "23/157",
+          "p_value": 1.9669708941491363e-20,
+          "z_score": 19.070663630997554,
+          "combined_score": 865.3353121277528,
+          "overlap_genes": [
+            "IFNAR2",
+            "CDKN1A",
+            "RSAD2",
+            "DDX58",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "STAT3",
+            "EIF2AK2",
+            "IFIT1",
+            "NFKB1",
+            "NFKBIA",
+            "SOCS3",
+            "CXCL10",
+            "CASP8",
+            "OAS2",
+            "CASP3",
+            "OAS3",
+            "IRF7",
+            "FAS",
+            "RIPK1",
+            "IRF9"
+          ],
+          "genes": [
+            "IFNAR2",
+            "CDKN1A",
+            "RSAD2",
+            "DDX58",
+            "STAT1",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "STAT3",
+            "EIF2AK2",
+            "IFIT1",
+            "NFKB1",
+            "NFKBIA",
+            "SOCS3",
+            "CXCL10",
+            "CASP8",
+            "OAS2",
+            "CASP3",
+            "OAS3",
+            "IRF7",
+            "FAS",
+            "RIPK1",
+            "IRF9"
+          ],
+          "adjusted_p_value": 7.6711864871816315e-19
+        },
+        {
+          "rank": 6,
+          "term_name": "Coronavirus disease",
+          "term": "Coronavirus disease",
+          "overlap": "25/232",
+          "p_value": 8.455803362706961e-19,
+          "z_score": 13.521739130434783,
+          "combined_score": 562.6972188404046,
+          "overlap_genes": [
+            "C1S",
+            "C1R",
+            "ADAR",
+            "IFIH1",
+            "CASP1",
+            "CCL2",
+            "IFNAR2",
+            "STAT1",
+            "DDX58",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "STAT3",
+            "EIF2AK2",
+            "ISG15",
+            "NFKB1",
+            "SELP",
+            "NFKBIA",
+            "CXCL10",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "CFB",
+            "MYD88",
+            "IRF9"
+          ],
+          "genes": [
+            "C1S",
+            "C1R",
+            "ADAR",
+            "IFIH1",
+            "CASP1",
+            "CCL2",
+            "IFNAR2",
+            "STAT1",
+            "DDX58",
+            "MX2",
+            "STAT2",
+            "MX1",
+            "STAT3",
+            "EIF2AK2",
+            "ISG15",
+            "NFKB1",
+            "SELP",
+            "NFKBIA",
+            "CXCL10",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "CFB",
+            "MYD88",
+            "IRF9"
+          ],
+          "adjusted_p_value": 2.7481360928797622e-17
+        },
+        {
+          "rank": 7,
+          "term_name": "Herpes simplex virus 1 infection",
+          "term": "Herpes simplex virus 1 infection",
+          "overlap": "33/498",
+          "p_value": 5.4203571773376135e-18,
+          "z_score": 8.216534672590303,
+          "combined_score": 326.6595922387049,
+          "overlap_genes": [
+            "IFIH1",
+            "SOCS3",
+            "HLA-DMA",
+            "CASP8",
+            "CASP3",
+            "CCL5",
+            "CCL2",
+            "JAK2",
+            "B2M",
+            "HLA-DQA1",
+            "IFNAR2",
+            "CD74",
+            "STAT1",
+            "DDX58",
+            "STAT2",
+            "HLA-B",
+            "TAP1",
+            "EIF2AK2",
+            "HLA-A",
+            "HLA-G",
+            "PML",
+            "NFKB1",
+            "TAPBP",
+            "BST2",
+            "NFKBIA",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "IRF7",
+            "FAS",
+            "HLA-DRB1",
+            "MYD88",
+            "IRF9"
+          ],
+          "genes": [
+            "IFIH1",
+            "SOCS3",
+            "HLA-DMA",
+            "CASP8",
+            "CASP3",
+            "CCL5",
+            "CCL2",
+            "JAK2",
+            "B2M",
+            "HLA-DQA1",
+            "IFNAR2",
+            "CD74",
+            "STAT1",
+            "DDX58",
+            "STAT2",
+            "HLA-B",
+            "TAP1",
+            "EIF2AK2",
+            "HLA-A",
+            "HLA-G",
+            "PML",
+            "NFKB1",
+            "TAPBP",
+            "BST2",
+            "NFKBIA",
+            "IL6",
+            "OAS2",
+            "OAS3",
+            "IRF7",
+            "FAS",
+            "HLA-DRB1",
+            "MYD88",
+            "IRF9"
+          ],
+          "adjusted_p_value": 1.5099566422583353e-16
+        },
+        {
+          "rank": 8,
+          "term_name": "JAK-STAT signaling pathway",
+          "term": "JAK-STAT signaling pathway",
+          "overlap": "21/162",
+          "p_value": 1.2820162047994195e-17,
+          "z_score": 16.357185308451207,
+          "combined_score": 636.2211069747484,
+          "overlap_genes": [
+            "IFNAR2",
+            "IL15RA",
+            "CDKN1A",
+            "IL4R",
+            "IL15",
+            "STAT1",
+            "IL10RA",
+            "STAT2",
+            "STAT3",
+            "CSF2RB",
+            "SOCS3",
+            "IL6",
+            "SOCS1",
+            "IL7",
+            "IL2RB",
+            "PIM1",
+            "STAT4",
+            "PTPN6",
+            "JAK2",
+            "IRF9",
+            "PTPN2"
+          ],
+          "genes": [
+            "IFNAR2",
+            "IL15RA",
+            "CDKN1A",
+            "IL4R",
+            "IL15",
+            "STAT1",
+            "IL10RA",
+            "STAT2",
+            "STAT3",
+            "CSF2RB",
+            "SOCS3",
+            "IL6",
+            "SOCS1",
+            "IL7",
+            "IL2RB",
+            "PIM1",
+            "STAT4",
+            "PTPN6",
+            "JAK2",
+            "IRF9",
+            "PTPN2"
+          ],
+          "adjusted_p_value": 3.124914499198585e-16
+        },
+        {
+          "rank": 9,
+          "term_name": "Kaposi sarcoma-associated herpesvirus infection",
+          "term": "Kaposi sarcoma-associated herpesvirus infection",
+          "overlap": "22/193",
+          "p_value": 3.451656794277075e-17,
+          "z_score": 14.187463039621525,
+          "combined_score": 537.7770950961439,
+          "overlap_genes": [
+            "CD86",
+            "IFNAR2",
+            "CDKN1A",
+            "STAT1",
+            "STAT2",
+            "STAT3",
+            "HLA-B",
+            "EIF2AK2",
+            "HLA-A",
+            "PTGS2",
+            "HLA-G",
+            "HIF1A",
+            "NFKB1",
+            "ICAM1",
+            "NFKBIA",
+            "IL6",
+            "CASP8",
+            "CASP3",
+            "IRF7",
+            "FAS",
+            "JAK2",
+            "IRF9"
+          ],
+          "genes": [
+            "CD86",
+            "IFNAR2",
+            "CDKN1A",
+            "STAT1",
+            "STAT2",
+            "STAT3",
+            "HLA-B",
+            "EIF2AK2",
+            "HLA-A",
+            "PTGS2",
+            "HLA-G",
+            "HIF1A",
+            "NFKB1",
+            "ICAM1",
+            "NFKBIA",
+            "IL6",
+            "CASP8",
+            "CASP3",
+            "IRF7",
+            "FAS",
+            "JAK2",
+            "IRF9"
+          ],
+          "adjusted_p_value": 7.478589720933663e-16
+        },
+        {
+          "rank": 10,
+          "term_name": "TNF signaling pathway",
+          "term": "TNF signaling pathway",
+          "overlap": "18/112",
+          "p_value": 5.744289511045575e-17,
+          "z_score": 20.733458031330372,
+          "combined_score": 775.3430130574902,
+          "overlap_genes": [
+            "VCAM1",
+            "IL15",
+            "TNFAIP3",
+            "PTGS2",
+            "NFKB1",
+            "ICAM1",
+            "NFKBIA",
+            "SOCS3",
+            "CXCL10",
+            "IL6",
+            "CASP7",
+            "CASP8",
+            "CASP3",
+            "IRF1",
+            "CCL5",
+            "CCL2",
+            "FAS",
+            "RIPK1"
+          ],
+          "genes": [
+            "VCAM1",
+            "IL15",
+            "TNFAIP3",
+            "PTGS2",
+            "NFKB1",
+            "ICAM1",
+            "NFKBIA",
+            "SOCS3",
+            "CXCL10",
+            "IL6",
+            "CASP7",
+            "CASP8",
+            "CASP3",
+            "IRF1",
+            "CCL5",
+            "CCL2",
+            "FAS",
+            "RIPK1"
+          ],
+          "adjusted_p_value": 1.120136454653887e-15
+        }
+      ]
+    },
+    "significant_terms_total": 20,
+    "execution_time": 2.08,
+    "dataframe": "    rank  ...                     library\n0      1  ...  GO_Biological_Process_2023\n1      2  ...  GO_Biological_Process_2023\n3      4  ...  GO_Biological_Process_2023\n10     1  ...             KEGG_2021_Human\n5      6  ...  GO_Biological_Process_2023\n2      3  ...  GO_Biological_Process_2023\n11     2  ...             KEGG_2021_Human\n9     10  ...  GO_Biological_Process_2023\n8      9  ...  GO_Biological_Process_2023\n12     3  ...             KEGG_2021_Human\n14     5  ...             KEGG_2021_Human\n13     4  ...             KEGG_2021_Human\n19    10  ...             KEGG_2021_Human\n4      5  ...  GO_Biological_Process_2023\n17     8  ...             KEGG_2021_Human\n6      7  ...  GO_Biological_Process_2023\n15     6  ...             KEGG_2021_Human\n18     9  ...             KEGG_2021_Human\n7      8  ...  GO_Biological_Process_2023\n16     7  ...             KEGG_2021_Human\n\n[20 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "41987273",
+      "pmcid": "PMC13217973",
+      "doi": "10.1186/s12967-026-08135-9",
+      "url": "https://doi.org/10.1186/s12967-026-08135-9",
+      "title": "JAK/STAT signaling in liver disease: a therapeutic target or a context-dependent double-edged sword?",
+      "abstract": "BACKGROUND: Liver disease remains a major global health burden, and effective targeted therapies are still lacking for many conditions, particularly chronic inflammatory, fibrotic, and malignant liver diseases. The JAK/STAT signaling pathway has emerged as a central regulator of cytokine signaling in the liver and is increasingly considered a potential therapeutic target. However, its biological effects are highly context-dependent. MAIN BODY: In this review, we address a central question: is the JAK/STAT pathway a practical therapeutic target in liver disease, or does its context-dependent biology limit direct clinical translation? We summarize how JAK/STAT signaling regulates antiviral defense, immune tolerance, macrophage polarization, hepatic stellate cell activation, fibrogenesis, and tumor-promoting inflammation across viral hepatitis, autoimmune liver disease, NAFLD/NASH, liver fibrosis, cirrhosis, and hepatocellular carcinoma. Importantly, the evidence indicates that JAK/STAT signaling is not uniformly pathogenic. Its effects vary according to disease stage, upstream cytokine milieu, canonical versus non-canonical activation, and, critically, cell type-specific responses in hepatocytes, immune cells, hepatic stellate cells, and tumor-associated cells. CONCLUSION: This review examines the molecular mechanisms of this signaling pathway in various liver pathologies, summarizes the current research into regulating these signals as a potential treatment for chronic liver disease. Rather than broad pathway inhibition, future strategies should focus on cell-specific, disease-stage-specific, and function-selective modulation to suppress pathogenic inflammation and fibrosis while preserving antiviral immunity and tissue-repair programs. This framework may better support precision medicine approaches for chronic liver disease and liver cancer.",
+      "authors": "Wang T, Li L, Lu J.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "709",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-04-15",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    },
+    {
+      "pmid": "41359111",
+      "pmcid": "PMC12686292",
+      "doi": "10.1186/s43556-025-00381-5",
+      "url": "https://doi.org/10.1186/s43556-025-00381-5",
+      "title": "Interferon signaling pathways in health and disease.",
+      "abstract": "Interferons (IFNs) are a family of cytokines that orchestrate a wide range of antiviral, immunoregulatory, and antitumor activities. This review provides a comprehensive overview of the molecular mechanisms underlying IFN signaling, including both canonical JAK (janus kinases)-STAT (signal transducers and activators of transcription) pathways and non-canonical branches such as MAPK (mitogen-activated protein kinase) and PI3K (phosphoinositide 3-kinase)-AKT (protein kinase B)-mTOR (mechanistic target of rapamycin). The intricate interplay between these signaling modules and transcriptional, epigenetic, and post-transcriptional regulators is essential for maintaining immune homeostasis and tailoring context-dependent immune responses. Under physiological conditions, IFNs are essential for host defense, driving antiviral gene expression, activating innate immune cells, and shaping adaptive immune responses, including T and B cells. Conversely, dysregulation of IFN signaling contributes to the development of autoimmune diseases, neuroinflammation, cardiovascular disorders, and cancer. Tumor cells can exploit IFN-induced suppressive molecules to evade immune attack. The currently emerging therapeutic strategies of IFN signaling have evolved into a dual strategy: replacement therapy in immunodeficient states, and pathway inhibition in autoimmune conditions. Additionally, IFN-based combination therapies with immune checkpoint blockade and radiotherapy have demonstrated synergistic potential but require precise control of dosing and timing to avoid immune exhaustion. Advances in single-cell transcriptomics, proteomics, and metabolomics are providing novel insights into IFN heterogeneity, enabling the development of personalized IFN-based treatments. This review highlights the clinical implications and emerging strategies to harness or restrain IFN signaling for therapeutic benefit.",
+      "authors": "Wen C, Lan Q, Wang Y, Ni Y, Wong AST, Liu D.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2025,
+      "pub_year": 2025,
+      "citations": 5,
+      "citation_count": 5,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "135",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2025-12-08",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates [topic]"
+    },
+    {
+      "pmid": "41438753",
+      "pmcid": "PMC12719510",
+      "doi": "10.3389/fimmu.2025.1669688",
+      "url": "https://doi.org/10.3389/fimmu.2025.1669688",
+      "title": "JAK/STAT in human diseases: a common axis in immunodeficiencies and hematological disorders.",
+      "abstract": "The JAK-STAT signaling pathway (Janus Kinase-Signal Transducer and Activator of Transcription) is a crucial molecular cascade that regulates immune responses, cell proliferation, and hematopoiesis. Germline or somatic mutations affecting this pathway leads to a wide range of pathologies, from severe immunodeficiencies to inflammatory and autoimmune diseases, as well as hematologic malignancies. Loss-of-function mutations impair cytokine signaling and primarily result in immunodeficiency, while gain-of-function mutations cause excessive pathway activation, promoting autoimmune diseases and myeloproliferative syndromes. Advances in our understanding of the JAK-STAT pathway and its involvement in various diseases have opened new perspectives in precision medicine and targeted therapies including JAK inhibitors (JAKi), gene therapy, and hematopoietic stem cell transplantation (HSCT). A detailed understanding of specific mutations and their effects on intracellular signaling allows for the refinement of therapeutic strategies and optimization of patient management. In this review, we examined the biology of the JAK-STAT pathway, highlighted the key pathogenic mutations and their clinical consequences, and described the laboratory and diagnostic approaches used to investigate this pathway.",
+      "authors": "Djidjik R, Lamara Mahammed L, Berkani LM, Allam I, Benmoussa AH, Gharnaout M, Belaid B.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2025,
+      "pub_year": 2025,
+      "citations": 1,
+      "citation_count": 1,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "1669688",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": true,
+      "first_publication_date": "2025-12-08",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 37.57337164878845,
+  "phase": 2,
+  "rep": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Defense Response To Virus (GO:0051607) -> genes: [IFITM3, RTP4, CD40, IFITM2, NLRC5, IFIT1, DDX60, SAMHD1, USP18, IFI44L, IFIT3, IFIT2, OASL, IFIH1, DHX58, CASP1, TRIM25, TRIM26, TRIM21, IFNAR2, RSAD2, STAT1, MX2, STAT2, MX1, EIF2AK2, ISG15, PML, BST2, ISG20, CXCL10, IL6, PLSCR1, ZNFX1, IFI27, OAS2, IRF1, OAS3, IRF2, IRF7, MYD88]\n- Defense Response To Symbiont (GO:0140546) -> genes: [IFITM3, RTP4, CD40, IFITM2, NLRC5, IFIT1, DDX60, SAMHD1, IFI44L, IFIT3, IFIT2, OASL, IFIH1, CASP1, IFNAR2, RSAD2, STAT1, MX2, STAT2, MX1, EIF2AK2, ISG15, BST2, ISG20, IL6, PLSCR1, ZNFX1, IFI27, OAS2, IRF1, OAS3, IRF2, IRF7, MYD88]\n- Response To Cytokine (GO:0034097) -> genes: [IFITM3, CD274, CD40, CIITA, IFITM2, ADAR, CASP8, CASP3, RIPK1, JAK2, TRIM21, IFNAR2, CD74, GCH1, STAT1, MX2, MX1, EIF2AK2, ISG15, NFKB1, PML, BST2, SELP, PLSCR1, XAF1, MYD88]\n- Negative Regulation Of Viral Process (GO:0048525) -> genes: [IFITM3, IFITM2, RSAD2, STAT1, MX1, EIF2AK2, ISG15, IFIT1, OASL, IFIH1, BST2, ISG20, PLSCR1, ZNFX1, OAS2, OAS3, CCL5, TRIM14, TRIM21]\n- Cellular Response To Cytokine Stimulus (GO:0071345) -> genes: [CD40, IFITM2, CSF2RB, IFIT1, HIF1A, MT2A, SOCS1, CCL7, CCL5, STAT4, CASP1, CCL2, RIPK1, JAK2, GBP4, GBP6, IFNAR2, PNPT1, IL4R, STAT1, STAT3, NFKB1, NFKBIA, IL6, IL7, IRF1, IL2RB, XCL1, IRF8, PTPN6, IRF5]\n- Negative Regulation Of Viral Genome Replication (GO:0045071) -> genes: [IFITM3, IFITM2, RSAD2, MX1, EIF2AK2, ISG15, IFIT1, OASL, IFIH1, BST2, ISG20, PLSCR1, ZNFX1, OAS2, OAS3, CCL5]\n- Cytokine-Mediated Signaling Pathway (GO:0019221) -> genes: [CXCL9, CSF2RB, OASL, SOCS1, CCL7, CCL5, STAT4, CCL2, RIPK1, JAK2, IL15RA, IL4R, IL15, STAT1, MX1, STAT3, NFKBIA, CXCL10, CXCL11, IL6, IL7, OAS2, IL2RB, XCL1, PTPN6, IRF5, MYD88]\n- Positive Regulation Of Cytokine Production (GO:0001819) -> genes: [CD86, CD274, CD40, NOD1, PTGS2, HIF1A, IFIH1, PNP, DHX58, PDE4B, CASP1, RIPK1, JAK2, CD74, IL15, RIPK2, STAT3, EIF2AK2, ISG15, HLA-A, HLA-G, IL6, IL7, IRF4, IRF1, IRF7, XCL1, IRF5, MYD88]\n- Response To Type II Interferon (GO:0034341) -> genes: [IFITM3, GBP6, CD74, CD40, CIITA, IFITM2, GCH1, STAT1, BST2, CCL7, CCL5, CASP1, IRF8, XCL1, CCL2, TRIM21, GBP4]\n- Regulation Of Viral Genome Replication (GO:0045069) -> genes: [IFITM3, IFITM2, RSAD2, MX1, EIF2AK2, ISG15, IFIT1, OASL, IFIH1, BST2, ISG20, PLSCR1, ZNFX1, OAS2, OAS3, CCL5]\n\n[KEGG_2021_Human]\n- Influenza A -> genes: [CIITA, ADAR, ICAM1, IFIH1, SOCS3, HLA-DMA, CASP8, CASP3, CCL5, TNFSF10, CASP1, TRIM25, CCL2, JAK2, HLA-DQA1, IFNAR2, RSAD2, DDX58, STAT1, MX2, STAT2, MX1, EIF2AK2, NFKB1, PML, NFKBIA, CXCL10, IL6, OAS2, OAS3, IRF7, FAS, HLA-DRB1, MYD88, IRF9]\n- Epstein-Barr virus infection -> genes: [CD40, CDKN1A, TNFAIP3, ICAM1, HLA-DMA, CASP8, CASP3, RIPK1, B2M, HLA-DQA1, IFNAR2, STAT1, DDX58, STAT2, STAT3, HLA-B, TAP1, EIF2AK2, ISG15, HLA-A, HLA-G, NFKB1, TAPBP, NFKBIA, CXCL10, IL6, OAS2, OAS3, IRF7, FAS, HLA-DRB1, MYD88, IRF9]\n- Measles -> genes: [IFNAR2, DDX58, STAT1, MX2, STAT2, MX1, STAT3, EIF2AK2, TNFAIP3, ADAR, NFKB1, NFKBIA, IFIH1, IL6, CASP8, OAS2, CASP3, OAS3, IL2RB, IRF7, FAS, MYD88, IRF9]\n- NOD-like receptor signaling pathway -> genes: [RNF31, TNFAIP3, NOD1, CASP8, CCL5, NAMPT, CASP4, CASP1, CCL2, RIPK1, GBP4, IFNAR2, RIPK2, STAT1, STAT2, NFKB1, NFKBIA, IL6, OAS2, OAS3, IRF7, TXNIP, RBCK1, MYD88, IRF9]\n- Hepatitis C -> genes: [IFNAR2, CDKN1A, RSAD2, DDX58, STAT1, MX2, STAT2, MX1, STAT3, EIF2AK2, IFIT1, NFKB1, NFKBIA, SOCS3, CXCL10, CASP8, OAS2, CASP3, OAS3, IRF7, FAS, RIPK1, IRF9]\n- Coronavirus disease -> genes: [C1S, C1R, ADAR, IFIH1, CASP1, CCL2, IFNAR2, STAT1, DDX58, MX2, STAT2, MX1, STAT3, EIF2AK2, ISG15, NFKB1, SELP, NFKBIA, CXCL10, IL6, OAS2, OAS3, CFB, MYD88, IRF9]\n- Herpes simplex virus 1 infection -> genes: [IFIH1, SOCS3, HLA-DMA, CASP8, CASP3, CCL5, CCL2, JAK2, B2M, HLA-DQA1, IFNAR2, CD74, STAT1, DDX58, STAT2, HLA-B, TAP1, EIF2AK2, HLA-A, HLA-G, PML, NFKB1, TAPBP, BST2, NFKBIA, IL6, OAS2, OAS3, IRF7, FAS, HLA-DRB1, MYD88, IRF9]\n- JAK-STAT signaling pathway -> genes: [IFNAR2, IL15RA, CDKN1A, IL4R, IL15, STAT1, IL10RA, STAT2, STAT3, CSF2RB, SOCS3, IL6, SOCS1, IL7, IL2RB, PIM1, STAT4, PTPN6, JAK2, IRF9, PTPN2]\n- Kaposi sarcoma-associated herpesvirus infection -> genes: [CD86, IFNAR2, CDKN1A, STAT1, STAT2, STAT3, HLA-B, EIF2AK2, HLA-A, PTGS2, HLA-G, HIF1A, NFKB1, ICAM1, NFKBIA, IL6, CASP8, CASP3, IRF7, FAS, JAK2, IRF9]\n- TNF signaling pathway -> genes: [VCAM1, IL15, TNFAIP3, PTGS2, NFKB1, ICAM1, NFKBIA, SOCS3, CXCL10, IL6, CASP7, CASP8, CASP3, IRF1, CCL5, CCL2, FAS, RIPK1]\n\n=== ABSTRACTS ===\n[1] JAK/STAT signaling in liver disease: a therapeutic target or a context-dependent double-edged sword?\nBACKGROUND: Liver disease remains a major global health burden, and effective targeted therapies are still lacking for many conditions, particularly chronic inflammatory, fibrotic, and malignant liver diseases. The JAK/STAT signaling pathway has emerged as a central regulator of cytokine signaling in the liver and is increasingly considered a potential therapeutic target. However, its biological effects are highly context-dependent. MAIN BODY: In this review, we address a central question: is the JAK/STAT pathway a practical therapeutic target in liver disease, or does its context-dependent biology limit direct clinical translation? We summarize how JAK/STAT signaling regulates antiviral defense, immune tolerance, macrophage polarization, hepatic stellate cell activation, fibrogenesis, and tumor-promoting inflammation across viral hepatitis, autoimmune liver disease, NAFLD/NASH, liver fibrosis, cirrhosis, and hepatocellular carcinoma. Importantly, the evidence indicates that JAK/STAT signaling is not uniformly pathogenic. Its effects vary according to disease stage, upstream cytokine milieu, canonical versus non-canonical activation, and, critically, cell type-specific responses in hepatocytes, immune cells, hepatic stellate cells, and tumor-associated cells. CONCLUSION: This review examines the molecular mechanisms of this signaling pathway in various liver pathologies, summarizes the current research into regulating these signals as a potential treatment for chronic liver disease. Rather than broad pathway inhibition, future strategies should focus on cell-specific, disease-stage-specific, and function-selective modulation to suppress pathogenic inflammation and fibrosis while preserving antiviral immunity and tissue-repair programs. This framework may better support precision medicine approaches for chronic liver disease and liver cancer.\n[2] Interferon signaling pathways in health and disease.\nInterferons (IFNs) are a family of cytokines that orchestrate a wide range of antiviral, immunoregulatory, and antitumor activities. This review provides a comprehensive overview of the molecular mechanisms underlying IFN signaling, including both canonical JAK (janus kinases)-STAT (signal transducers and activators of transcription) pathways and non-canonical branches such as MAPK (mitogen-activated protein kinase) and PI3K (phosphoinositide 3-kinase)-AKT (protein kinase B)-mTOR (mechanistic target of rapamycin). The intricate interplay between these signaling modules and transcriptional, epigenetic, and post-transcriptional regulators is essential for maintaining immune homeostasis and tailoring context-dependent immune responses. Under physiological conditions, IFNs are essential for host defense, driving antiviral gene expression, activating innate immune cells, and shaping adaptive immune responses, including T and B cells. Conversely, dysregulation of IFN signaling contributes to the development of autoimmune diseases, neuroinflammation, cardiovascular disorders, and cancer. Tumor cells can exploit IFN-induced suppressive molecules to evade immune attack. The currently emerging therapeutic strategies of IFN signaling have evolved into a dual strategy: replacement therapy in immunodeficient states, and pathway inhibition in autoimmune conditions. Additionally, IFN-based combination therapies with immune checkpoint blockade and radiotherapy have demonstrated synergistic potential but require precise control of dosing and timing to avoid immune exhaustion. Advances in single-cell transcriptomics, proteomics, and metabolomics are providing novel insights into IFN heterogeneity, enabling the development of personalized IFN-based treatments. This review highlights the clinical implications and emerging strategies to harness or restrain IFN signaling for therapeutic benefit.\n[3] JAK/STAT in human diseases: a common axis in immunodeficiencies and hematological disorders.\nThe JAK-STAT signaling pathway (Janus Kinase-Signal Transducer and Activator of Transcription) is a crucial molecular cascade that regulates immune responses, cell proliferation, and hematopoiesis. Germline or somatic mutations affecting this pathway leads to a wide range of pathologies, from severe immunodeficiencies to inflammatory and autoimmune diseases, as well as hematologic malignancies. Loss-of-function mutations impair cytokine signaling and primarily result in immunodeficiency, while gain-of-function mutations cause excessive pathway activation, promoting autoimmune diseases and myeloproliferative syndromes. Advances in our understanding of the JAK-STAT pathway and its involvement in various diseases have opened new perspectives in precision medicine and targeted therapies including JAK inhibitors (JAKi), gene therapy, and hematopoietic stem cell transplantation (HSCT). A detailed understanding of specific mutations and their effects on intracellular signaling allows for the refinement of therapeutic strategies and optimization of patient management. In this review, we examined the biology of the JAK-STAT pathway, highlighted the key pathogenic mutations and their clinical consequences, and described the laboratory and diagnostic approaches used to investigate this pathway.",
+  "judge_claims": [
+    {
+      "claim": "The Interferon Gamma Response involves antiviral cellular activity.",
+      "label": "BACKGROUND",
+      "why": "Interferon gamma's role in antiviral activity is well-established textbook biology, though not explicitly detailed in the evidence."
+    },
+    {
+      "claim": "The Interferon Gamma Response involves immunomodulatory cellular activity.",
+      "label": "BACKGROUND",
+      "why": "Interferon gamma's immunomodulatory role is well-established textbook biology, though not explicitly detailed in the evidence."
+    },
+    {
+      "claim": "Defense Response To Virus is central to interferon-mediated immunity.",
+      "label": "GROUNDED",
+      "why": "Defense Response To Virus (GO:0051607) is listed as an enriched term with extensive antiviral genes, and abstract 2 discusses IFN orchestrating antiviral activities."
+    },
+    {
+      "claim": "Response To Type II Interferon is central to interferon-mediated immunity.",
+      "label": "GROUNDED",
+      "why": "Response To Type II Interferon (GO:0034341) is listed as an enriched term, and abstract 2 discusses IFN signaling in immune homeostasis and defense."
+    },
+    {
+      "claim": "The JAK-STAT signaling pathway is central to interferon-mediated immunity.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states 'JAK-STAT pathways' are canonical IFN signaling mechanisms, and abstract 1 discusses JAK/STAT as central regulator of cytokine signaling."
+    },
+    {
+      "claim": "The JAK-STAT pathway plays a role in antiviral defense.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states JAK/STAT signaling regulates antiviral defense, and abstract 2 discusses IFN driving antiviral gene expression via JAK-STAT."
+    },
+    {
+      "claim": "The JAK-STAT pathway has implications in immune regulation.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states JAK/STAT signaling regulates immune tolerance and macrophage polarization, and abstract 2 discusses immunoregulatory activities."
+    },
+    {
+      "claim": "Interferon-gamma response pathways are a cornerstone of host defense against pathogens.",
+      "label": "BACKGROUND",
+      "why": "General role of interferon-gamma in host defense against pathogens is textbook biology, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Interferon-gamma response pathways are a cornerstone of host defense against viruses.",
+      "label": "BACKGROUND",
+      "why": "General role of interferon-gamma in antiviral defense is textbook biology, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "STAT1 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "STAT1 appears in Defense Response To Virus and Negative Regulation Of Viral Process terms, indicating antiviral functions."
+    },
+    {
+      "claim": "MX1 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "MX1 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "MX2 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "MX2 appears in Defense Response To Virus and Negative Regulation Of Viral Process terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "IFIT1 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "IFIT1 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "IFIT3 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "IFIT3 appears in Defense Response To Virus and Defense Response To Symbiont terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "IFIH1 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "IFIH1 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "OASL is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "OASL appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "OAS2 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "OAS2 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "OAS3 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "OAS3 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "ISG15 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "ISG15 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "RSAD2 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "RSAD2 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "BST2 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "BST2 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "PLSCR1 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "PLSCR1 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "ZNFX1 is an interferon-stimulated gene with direct antiviral functions.",
+      "label": "GROUNDED",
+      "why": "ZNFX1 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication terms, indicating direct antiviral functions."
+    },
+    {
+      "claim": "STAT1 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "STAT1 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Hepatitis C, etc.)."
+    },
+    {
+      "claim": "MX1 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "MX1 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Measles, Hepatitis C)."
+    },
+    {
+      "claim": "MX2 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "MX2 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Measles, Hepatitis C)."
+    },
+    {
+      "claim": "IFIT1 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "IFIT1 appears in Defense Response To Virus and Hepatitis C pathway."
+    },
+    {
+      "claim": "IFIT3 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "IFIT3 appears in Defense Response To Virus and Defense Response To Symbiont terms."
+    },
+    {
+      "claim": "IFIH1 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "IFIH1 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Measles, Coronavirus disease)."
+    },
+    {
+      "claim": "OASL is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "OASL appears in Defense Response To Virus and Cytokine-Mediated Signaling Pathway terms."
+    },
+    {
+      "claim": "OAS2 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "OAS2 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Epstein-Barr virus, etc.)."
+    },
+    {
+      "claim": "OAS3 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "OAS3 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Epstein-Barr virus, etc.)."
+    },
+    {
+      "claim": "ISG15 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "ISG15 appears in Defense Response To Virus and multiple viral infection pathways (Epstein-Barr virus, Coronavirus disease)."
+    },
+    {
+      "claim": "RSAD2 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "RSAD2 appears in Defense Response To Virus and Hepatitis C pathway."
+    },
+    {
+      "claim": "BST2 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "BST2 appears in Defense Response To Virus and Response To Type II Interferon terms."
+    },
+    {
+      "claim": "PLSCR1 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "PLSCR1 appears in Defense Response To Virus and Defense Response To Symbiont terms."
+    },
+    {
+      "claim": "ZNFX1 is involved in combating viral infections.",
+      "label": "GROUNDED",
+      "why": "ZNFX1 appears in Defense Response To Virus and Defense Response To Symbiont terms."
+    },
+    {
+      "claim": "STAT1 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "STAT1 appears in Negative Regulation Of Viral Process and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "MX1 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "MX1 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "MX2 is involved in controlling viral proliferation.",
+      "label": "BACKGROUND",
+      "why": "MX2's role in controlling viral proliferation is well-established, though not explicitly stated in viral genome replication terms."
+    },
+    {
+      "claim": "IFIT1 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "IFIT1 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "IFIT3 is involved in controlling viral proliferation.",
+      "label": "BACKGROUND",
+      "why": "IFIT3's role in controlling viral proliferation is well-established, though not explicitly stated in viral genome replication terms."
+    },
+    {
+      "claim": "IFIH1 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "IFIH1 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "OASL is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "OASL appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "OAS2 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "OAS2 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "OAS3 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "OAS3 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "ISG15 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "ISG15 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "RSAD2 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "RSAD2 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "BST2 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "BST2 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "PLSCR1 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "PLSCR1 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "ZNFX1 is involved in controlling viral proliferation.",
+      "label": "GROUNDED",
+      "why": "ZNFX1 appears in Negative Regulation Of Viral Genome Replication and Regulation Of Viral Genome Replication terms."
+    },
+    {
+      "claim": "STAT1 is a mediator of interferon-gamma effects.",
+      "label": "GROUNDED",
+      "why": "STAT1 appears in Response To Type II Interferon (GO:0034341), which is interferon-gamma signaling."
+    },
+    {
+      "claim": "GBP4 is a mediator of interferon-gamma effects.",
+      "label": "GROUNDED",
+      "why": "GBP4 appears in Response To Type II Interferon (GO:0034341), which is interferon-gamma signaling."
+    },
+    {
+      "claim": "GBP6 is a mediator of interferon-gamma effects.",
+      "label": "GROUNDED",
+      "why": "GBP6 appears in Response To Type II Interferon (GO:0034341), which is interferon-gamma signaling."
+    },
+    {
+      "claim": "CIITA is a mediator of interferon-gamma effects.",
+      "label": "GROUNDED",
+      "why": "CIITA appears in Response To Type II Interferon (GO:0034341), which is interferon-gamma signaling."
+    },
+    {
+      "claim": "CD74 is a mediator of interferon-gamma effects.",
+      "label": "GROUNDED",
+      "why": "CD74 appears in Response To Type II Interferon (GO:0034341), which is interferon-gamma signaling."
+    },
+    {
+      "claim": "IFITM3 is a mediator of interferon-gamma effects.",
+      "label": "GROUNDED",
+      "why": "IFITM3 appears in Response To Type II Interferon (GO:0034341), which is interferon-gamma signaling."
+    },
+    {
+      "claim": "IFITM2 is a mediator of interferon-gamma effects.",
+      "label": "GROUNDED",
+      "why": "IFITM2 appears in Response To Type II Interferon (GO:0034341), which is interferon-gamma signaling."
+    },
+    {
+      "claim": "CXCL10 is a mediator of interferon-gamma effects.",
+      "label": "BACKGROUND",
+      "why": "CXCL10 is a well-known interferon-gamma-induced chemokine, though not listed in the Response To Type II Interferon term."
+    },
+    {
+      "claim": "CCL5 is a mediator of interferon-gamma effects.",
+      "label": "GROUNDED",
+      "why": "CCL5 appears in Response To Type II Interferon (GO:0034341), which is interferon-gamma signaling."
+    },
+    {
+      "claim": "CCL7 is a mediator of interferon-gamma effects.",
+      "label": "GROUNDED",
+      "why": "CCL7 appears in Response To Type II Interferon (GO:0034341), which is interferon-gamma signaling."
+    },
+    {
+      "claim": "STAT1 is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "STAT1's role in antigen presentation is well-established through MHC regulation, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "GBP4 is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "GBP4's role in antigen presentation is not well-established; GBPs are primarily known for antimicrobial functions."
+    },
+    {
+      "claim": "GBP6 is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "GBP6's role in antigen presentation is not well-established; GBPs are primarily known for antimicrobial functions."
+    },
+    {
+      "claim": "CIITA is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "CIITA is the master regulator of MHC class II expression, a well-established textbook fact not explicitly stated in the evidence."
+    },
+    {
+      "claim": "CD74 is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "CD74 is the invariant chain for MHC class II, involved in antigen presentation, a well-established textbook fact."
+    },
+    {
+      "claim": "IFITM3 is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "IFITM3 is primarily an antiviral restriction factor, not directly involved in antigen presentation."
+    },
+    {
+      "claim": "IFITM2 is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "IFITM2 is primarily an antiviral restriction factor, not directly involved in antigen presentation."
+    },
+    {
+      "claim": "CXCL10 is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "CXCL10 is a chemokine for immune cell recruitment, not directly involved in antigen presentation."
+    },
+    {
+      "claim": "CCL5 is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "CCL5 is a chemokine for immune cell recruitment, not directly involved in antigen presentation."
+    },
+    {
+      "claim": "CCL7 is involved in antigen presentation.",
+      "label": "BACKGROUND",
+      "why": "CCL7 is a chemokine for immune cell recruitment, not directly involved in antigen presentation."
+    },
+    {
+      "claim": "STAT1 is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "STAT1's role in immune cell recruitment is indirect through chemokine induction, not explicitly stated in the evidence."
+    },
+    {
+      "claim": "GBP4 is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "GBP4's role in immune cell recruitment is not well-established in the literature."
+    },
+    {
+      "claim": "GBP6 is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "GBP6's role in immune cell recruitment is not well-established in the literature."
+    },
+    {
+      "claim": "CIITA is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "CIITA's role in immune cell recruitment is indirect through MHC expression, not a primary function."
+    },
+    {
+      "claim": "CD74 is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "CD74's role in immune cell recruitment is not a primary function; it is mainly involved in MHC class II trafficking."
+    },
+    {
+      "claim": "IFITM3 is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "IFITM3's role in immune cell recruitment is not well-established; it is primarily an antiviral restriction factor."
+    },
+    {
+      "claim": "IFITM2 is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "IFITM2's role in immune cell recruitment is not well-established; it is primarily an antiviral restriction factor."
+    },
+    {
+      "claim": "CXCL10 is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "CXCL10 is a well-known chemokine for T cell and NK cell recruitment, a textbook fact not explicitly stated in the evidence."
+    },
+    {
+      "claim": "CCL5 is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "CCL5 is a well-known chemokine for T cell and other leukocyte recruitment, a textbook fact not explicitly stated in the evidence."
+    },
+    {
+      "claim": "CCL7 is involved in immune cell recruitment.",
+      "label": "BACKGROUND",
+      "why": "CCL7 is a chemokine involved in monocyte recruitment, a textbook fact not explicitly stated in the evidence."
+    },
+    {
+      "claim": "STAT1 is involved in antiviral effector functions.",
+      "label": "GROUNDED",
+      "why": "STAT1 appears in Defense Response To Virus and Negative Regulation Of Viral Process, indicating antiviral effector functions."
+    },
+    {
+      "claim": "GBP4 is involved in antiviral effector functions.",
+      "label": "GROUNDED",
+      "why": "GBP4 appears in Response To Type II Interferon and Cellular Response To Cytokine Stimulus, indicating antiviral effector functions."
+    },
+    {
+      "claim": "GBP6 is involved in antiviral effector functions.",
+      "label": "GROUNDED",
+      "why": "GBP6 appears in Response To Type II Interferon and Cellular Response To Cytokine Stimulus, indicating antiviral effector functions."
+    },
+    {
+      "claim": "CIITA is involved in antiviral effector functions.",
+      "label": "BACKGROUND",
+      "why": "CIITA's role in antiviral effector functions is indirect through MHC class II regulation, not a direct antiviral effector."
+    },
+    {
+      "claim": "CD74 is involved in antiviral effector functions.",
+      "label": "BACKGROUND",
+      "why": "CD74's role in antiviral effector functions is indirect through antigen presentation, not a direct antiviral effector."
+    },
+    {
+      "claim": "IFITM3 is involved in antiviral effector functions.",
+      "label": "GROUNDED",
+      "why": "IFITM3 appears in Defense Response To Virus and Negative Regulation Of Viral Process, indicating antiviral effector functions."
+    },
+    {
+      "claim": "IFITM2 is involved in antiviral effector functions.",
+      "label": "GROUNDED",
+      "why": "IFITM2 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication, indicating antiviral effector functions."
+    },
+    {
+      "claim": "CXCL10 is involved in antiviral effector functions.",
+      "label": "GROUNDED",
+      "why": "CXCL10 appears in Defense Response To Virus, indicating involvement in antiviral effector functions."
+    },
+    {
+      "claim": "CCL5 is involved in antiviral effector functions.",
+      "label": "GROUNDED",
+      "why": "CCL5 appears in Defense Response To Virus and Negative Regulation Of Viral Genome Replication, indicating antiviral effector functions."
+    },
+    {
+      "claim": "CCL7 is involved in antiviral effector functions.",
+      "label": "BACKGROUND",
+      "why": "CCL7's role in antiviral effector functions is indirect through immune cell recruitment, not a direct antiviral effector."
+    },
+    {
+      "claim": "STAT1 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "STAT1 appears in Cytokine-Mediated Signaling Pathway and Response To Cytokine terms."
+    },
+    {
+      "claim": "STAT2 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "STAT2 appears in Cytokine-Mediated Signaling Pathway term."
+    },
+    {
+      "claim": "STAT3 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "STAT3 appears in Cytokine-Mediated Signaling Pathway and Response To Cytokine terms."
+    },
+    {
+      "claim": "JAK2 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "JAK2 appears in Cytokine-Mediated Signaling Pathway and Cellular Response To Cytokine Stimulus terms."
+    },
+    {
+      "claim": "NFKB1 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "NFKB1 appears in Response To Cytokine term."
+    },
+    {
+      "claim": "NFKBIA is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "NFKBIA appears in Cytokine-Mediated Signaling Pathway term."
+    },
+    {
+      "claim": "IL6 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "IL6 appears in Cytokine-Mediated Signaling Pathway and Response To Cytokine terms."
+    },
+    {
+      "claim": "IL7 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "IL7 appears in Cytokine-Mediated Signaling Pathway and Cellular Response To Cytokine Stimulus terms."
+    },
+    {
+      "claim": "CCL2 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "CCL2 appears in Cytokine-Mediated Signaling Pathway and Cellular Response To Cytokine Stimulus terms."
+    },
+    {
+      "claim": "CCL5 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "CCL5 appears in Cytokine-Mediated Signaling Pathway and Cellular Response To Cytokine Stimulus terms."
+    },
+    {
+      "claim": "CXCL9 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "CXCL9 appears in Cytokine-Mediated Signaling Pathway term."
+    },
+    {
+      "claim": "CXCL10 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "CXCL10 appears in Cytokine-Mediated Signaling Pathway term."
+    },
+    {
+      "claim": "CXCL11 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "CXCL11 appears in Cytokine-Mediated Signaling Pathway term."
+    },
+    {
+      "claim": "CD40 is central to cytokine signaling.",
+      "label": "GROUNDED",
+      "why": "CD40 appears in Cellular Response To Cytokine Stimulus term."
+    },
+    {
+      "claim": "CD86 is central to cytokine signaling.",
+      "label": "BACKGROUND",
+      "why": "CD86 is a costimulatory molecule involved in T cell activation, not central to cytokine signaling per se."
+    },
+    {
+      "claim": "VCAM1 is central to cytokine signaling.",
+      "label": "BACKGROUND",
+      "why": "VCAM1 is an adhesion molecule, not central to cytokine signaling per se."
+    },
+    {
+      "claim": "STAT1 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "STAT1's role in immune cell communication through cytokine signaling is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "STAT2 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "STAT2's role in immune cell communication through cytokine signaling is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "STAT3 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "STAT3's role in immune cell communication through cytokine signaling is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "JAK2 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "JAK2's role in immune cell communication through cytokine signaling is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "NFKB1 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "NFKB1's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "NFKBIA is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "NFKBIA's role in immune cell communication is as an inhibitor of NFKB, textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "IL6 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "IL6's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "IL7 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "IL7's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "CCL2 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "CCL2's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "CCL5 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "CCL5's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "CXCL9 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "CXCL9's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "CXCL10 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "CXCL10's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "CXCL11 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "CXCL11's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "CD40 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "CD40's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "CD86 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "CD86's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "VCAM1 is central to immune cell communication.",
+      "label": "BACKGROUND",
+      "why": "VCAM1's role in immune cell communication is textbook biology, though 'central' is a strong claim."
+    },
+    {
+      "claim": "STAT1 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "STAT1 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Hepatitis C, etc.)."
+    },
+    {
+      "claim": "STAT2 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "STAT2 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Measles, etc.)."
+    },
+    {
+      "claim": "MX1 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "MX1 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Measles, etc.)."
+    },
+    {
+      "claim": "MX2 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "MX2 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Hepatitis C, etc.)."
+    },
+    {
+      "claim": "IFIT1 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "IFIT1 appears in Defense Response To Virus and Hepatitis C pathway."
+    },
+    {
+      "claim": "IFIH1 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "IFIH1 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Measles, etc.)."
+    },
+    {
+      "claim": "OAS2 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "OAS2 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Epstein-Barr virus, etc.)."
+    },
+    {
+      "claim": "OAS3 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "OAS3 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Epstein-Barr virus, etc.)."
+    },
+    {
+      "claim": "EIF2AK2 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "EIF2AK2 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Measles, etc.)."
+    },
+    {
+      "claim": "IRF7 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "IRF7 appears in Defense Response To Virus and multiple viral infection pathways (Influenza A, Epstein-Barr virus, etc.)."
+    },
+    {
+      "claim": "IRF9 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "IRF9 appears in multiple viral infection pathways (Influenza A, Epstein-Barr virus, Measles, etc.)."
+    },
+    {
+      "claim": "NFKB1 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "NFKB1 appears in Response To Cytokine and multiple viral infection pathways (Influenza A, Measles, etc.)."
+    },
+    {
+      "claim": "JAK2 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "JAK2 appears in Cellular Response To Cytokine Stimulus and multiple viral infection pathways (Influenza A, Herpes simplex virus 1)."
+    },
+    {
+      "claim": "TAP1 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "TAP1 appears in Epstein-Barr virus infection and Herpes simplex virus 1 infection pathways."
+    },
+    {
+      "claim": "HLA-A is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "HLA-A appears in Epstein-Barr virus infection, Herpes simplex virus 1 infection, and Kaposi sarcoma-associated herpesvirus infection pathways."
+    },
+    {
+      "claim": "HLA-B is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "HLA-B appears in Epstein-Barr virus infection, Herpes simplex virus 1 infection, and Kaposi sarcoma-associated herpesvirus infection pathways."
+    },
+    {
+      "claim": "HLA-DRB1 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "HLA-DRB1 appears in Epstein-Barr virus infection and Herpes simplex virus 1 infection pathways."
+    },
+    {
+      "claim": "CIITA is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "CIITA appears in Influenza A and Response To Type II Interferon terms."
+    },
+    {
+      "claim": "BST2 is a component of the innate immune response to viruses.",
+      "label": "GROUNDED",
+      "why": "BST2 appears in Defense Response To Virus and multiple viral infection pathways (Epstein-Barr virus, Herpes simplex virus 1)."
+    },
+    {
+      "claim": "The JAK-STAT signaling pathway is the primary signaling cascade for interferons.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 states 'canonical JAK-STAT pathways' are the primary IFN signaling mechanisms."
+    },
+    {
+      "claim": "The JAK-STAT signaling pathway leads to the transcription of interferon-stimulated genes.",
+      "label": "GROUNDED",
+      "why": "Abstract 2 discusses IFN signaling via JAK-STAT leading to 'driving antiviral gene expression' and ISGs."
+    },
+    {
+      "claim": "STAT1 is a direct participant in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "STAT1 appears in JAK-STAT signaling pathway term and abstract 3 discusses STAT proteins in the pathway."
+    },
+    {
+      "claim": "STAT2 is a direct participant in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "STAT2 appears in JAK-STAT signaling pathway term and abstract 3 discusses STAT proteins in the pathway."
+    },
+    {
+      "claim": "STAT3 is a direct participant in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "STAT3 appears in JAK-STAT signaling pathway term and abstract 3 discusses STAT proteins in the pathway."
+    },
+    {
+      "claim": "JAK2 is a direct participant in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "JAK2 appears in JAK-STAT signaling pathway term and abstract 3 discusses JAK proteins in the pathway."
+    },
+    {
+      "claim": "IFNAR2 is a direct participant in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "IFNAR2 appears in JAK-STAT signaling pathway term as a receptor component."
+    },
+    {
+      "claim": "PTPN2 is a direct participant in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "PTPN2 appears in JAK-STAT signaling pathway term."
+    },
+    {
+      "claim": "PTPN6 is a direct participant in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "PTPN6 appears in JAK-STAT signaling pathway term."
+    },
+    {
+      "claim": "SOCS1 is a direct participant in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "SOCS1 appears in JAK-STAT signaling pathway term."
+    },
+    {
+      "claim": "SOCS3 is a direct participant in the JAK-STAT signaling pathway.",
+      "label": "GROUNDED",
+      "why": "SOCS3 appears in JAK-STAT signaling pathway term."
+    },
+    {
+      "claim": "STAT1 is a regulator of the JAK-STAT signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "STAT1 is a transcription factor activated by the pathway, not typically described as a 'regulator' of the pathway itself."
+    },
+    {
+      "claim": "STAT2 is a regulator of the JAK-STAT signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "STAT2 is a transcription factor activated by the pathway, not typically described as a 'regulator' of the pathway itself."
+    },
+    {
+      "claim": "STAT3 is a regulator of the JAK-STAT signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "STAT3 is a transcription factor activated by the pathway, not typically described as a 'regulator' of the pathway itself."
+    },
+    {
+      "claim": "JAK2 is a regulator of the JAK-STAT signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "JAK2 is a kinase that activates the pathway, not typically described as a 'regulator' of the pathway itself."
+    },
+    {
+      "claim": "IFNAR2 is a regulator of the JAK-STAT signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "IFNAR2 is a receptor that initiates the pathway, not typically described as a 'regulator' of the pathway itself."
+    },
+    {
+      "claim": "PTPN2 is a regulator of the JAK-STAT signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "PTPN2 is a phosphatase that negatively regulates JAK-STAT signaling, a well-established textbook fact."
+    },
+    {
+      "claim": "PTPN6 is a regulator of the JAK-STAT signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "PTPN6 is a phosphatase that negatively regulates JAK-STAT signaling, a well-established textbook fact."
+    },
+    {
+      "claim": "SOCS1 is a regulator of the JAK-STAT signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "SOCS1 is a negative regulator of JAK-STAT signaling, a well-established textbook fact."
+    },
+    {
+      "claim": "SOCS3 is a regulator of the JAK-STAT signaling pathway.",
+      "label": "BACKGROUND",
+      "why": "SOCS3 is a negative regulator of JAK-STAT signaling, a well-established textbook fact."
+    },
+    {
+      "claim": "The NOD-like receptor signaling pathway is crucial for detecting pathogen-associated molecular patterns.",
+      "label": "BACKGROUND",
+      "why": "NOD-like receptors detecting PAMPs is well-established textbook immunology, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "The NOD-like receptor signaling pathway is crucial for detecting danger-associated molecular patterns.",
+      "label": "BACKGROUND",
+      "why": "NOD-like receptors detecting DAMPs is well-established textbook immunology, though not explicitly stated in the evidence."
+    },
+    {
+      "claim": "The NOD-like receptor signaling pathway initiates inflammatory responses.",
+      "label": "GROUNDED",
+      "why": "NOD-like receptor signaling pathway term is listed, and abstract 1 discusses inflammatory responses in liver disease context."
+    },
+    {
+      "claim": "The NOD-like receptor signaling pathway acts in concert with interferon signaling.",
+      "label": "GROUNDED",
+      "why": "NOD-like receptor signaling pathway includes IFNAR2, STAT1, STAT2, IRF7, IRF9, indicating connection with interferon signaling."
+    },
+    {
+      "claim": "The TNF signaling pathway is crucial for detecting pathogen-associated molecular patterns.",
+      "label": "BACKGROUND",
+      "why": "TNF signaling does not directly detect PAMPs; it is a cytokine signaling pathway downstream of pattern recognition."
+    },
+    {
+      "claim": "The TNF signaling pathway is crucial for detecting danger-associated molecular patterns.",
+      "label": "BACKGROUND",
+      "why": "TNF signaling does not directly detect DAMPs; it is a cytokine signaling pathway downstream of pattern recognition."
+    },
+    {
+      "claim": "The TNF signaling pathway initiates inflammatory responses.",
+      "label": "GROUNDED",
+      "why": "TNF signaling pathway term is listed, and abstract 1 discusses inflammatory responses."
+    },
+    {
+      "claim": "The TNF signaling pathway acts in concert with interferon signaling.",
+      "label": "GROUNDED",
+      "why": "TNF signaling pathway includes CXCL10, IRF1, indicating connection with interferon signaling."
+    },
+    {
+      "claim": "NOD1 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "NOD1 appears in NOD-like receptor signaling pathway term."
+    },
+    {
+      "claim": "RIPK1 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "RIPK1 appears in NOD-like receptor signaling pathway and TNF signaling pathway terms."
+    },
+    {
+      "claim": "RIPK2 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "RIPK2 appears in NOD-like receptor signaling pathway term."
+    },
+    {
+      "claim": "NFKB1 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "NFKB1 appears in NOD-like receptor signaling pathway and TNF signaling pathway terms."
+    },
+    {
+      "claim": "TNFAIP3 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "TNFAIP3 appears in NOD-like receptor signaling pathway and TNF signaling pathway terms."
+    },
+    {
+      "claim": "CASP1 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "CASP1 appears in NOD-like receptor signaling pathway term."
+    },
+    {
+      "claim": "CASP3 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "CASP3 appears in TNF signaling pathway term."
+    },
+    {
+      "claim": "CASP8 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "CASP8 appears in TNF signaling pathway term."
+    },
+    {
+      "claim": "IL6 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "IL6 appears in NOD-like receptor signaling pathway and TNF signaling pathway terms."
+    },
+    {
+      "claim": "TNFSF10 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "TNFSF10 appears in TNF signaling pathway term."
+    },
+    {
+      "claim": "PTGS2 is involved in innate immune cascades.",
+      "label": "GROUNDED",
+      "why": "PTGS2 appears in Positive Regulation Of Cytokine Production and TNF signaling pathway terms."
+    },
+    {
+      "claim": "NOD1 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "NOD1 appears in NOD-like receptor signaling pathway term, which is an inflammatory pathway."
+    },
+    {
+      "claim": "RIPK1 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "RIPK1 appears in NOD-like receptor signaling pathway and TNF signaling pathway terms, both inflammatory pathways."
+    },
+    {
+      "claim": "RIPK2 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "RIPK2 appears in NOD-like receptor signaling pathway term, which is an inflammatory pathway."
+    },
+    {
+      "claim": "NFKB1 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "NFKB1 appears in NOD-like receptor signaling pathway and TNF signaling pathway terms, both inflammatory pathways."
+    },
+    {
+      "claim": "TNFAIP3 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "TNFAIP3 appears in NOD-like receptor signaling pathway and TNF signaling pathway terms, both inflammatory pathways."
+    },
+    {
+      "claim": "CASP1 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "CASP1 appears in NOD-like receptor signaling pathway term and Positive Regulation Of Cytokine Production, indicating inflammatory role."
+    },
+    {
+      "claim": "CASP3 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "CASP3 appears in TNF signaling pathway term, which is an inflammatory pathway."
+    },
+    {
+      "claim": "CASP8 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "CASP8 appears in TNF signaling pathway term, which is an inflammatory pathway."
+    },
+    {
+      "claim": "IL6 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "IL6 appears in NOD-like receptor signaling pathway and TNF signaling pathway terms, both inflammatory pathways."
+    },
+    {
+      "claim": "TNFSF10 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "TNFSF10 appears in TNF signaling pathway term, which is an inflammatory pathway."
+    },
+    {
+      "claim": "PTGS2 is involved in inflammatory cascades.",
+      "label": "GROUNDED",
+      "why": "PTGS2 appears in TNF signaling pathway term, which is an inflammatory pathway."
+    },
+    {
+      "claim": "The JAK-STAT pathway has a role in antiviral activities.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states JAK/STAT signaling regulates antiviral defense, and abstract 2 discusses IFN antiviral activities via JAK-STAT."
+    },
+    {
+      "claim": "The JAK-STAT pathway is involved in antiviral defense.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 explicitly states JAK/STAT signaling regulates antiviral defense."
+    },
+    {
+      "claim": "The JAK-STAT pathway has a critical role in immune responses.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states JAK/STAT signaling regulates immune responses, and abstract 3 discusses its role in immune regulation."
+    },
+    {
+      "claim": "The JAK-STAT pathway has a multifaceted role in immune responses.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 discusses JAK/STAT's context-dependent roles in immune tolerance, inflammation, and antiviral defense, indicating multifaceted roles."
+    },
+    {
+      "claim": "STAT1 is an interferon-stimulated gene.",
+      "label": "BACKGROUND",
+      "why": "STAT1 is induced by interferons and is itself an ISG, a well-established textbook fact."
+    },
+    {
+      "claim": "MX1 is an interferon-stimulated gene.",
+      "label": "BACKGROUND",
+      "why": "MX1 is a classic interferon-stimulated gene, a well-established textbook fact."
+    },
+    {
+      "claim": "IFIT1 is an interferon-stimulated gene.",
+      "label": "BACKGROUND",
+      "why": "IFIT1 is a classic interferon-stimulated gene, a well-established textbook fact."
+    },
+    {
+      "claim": "OAS2 is an interferon-stimulated gene.",
+      "label": "BACKGROUND",
+      "why": "OAS2 is a classic interferon-stimulated gene, a well-established textbook fact."
+    },
+    {
+      "claim": "IRF7 is an interferon-stimulated gene.",
+      "label": "BACKGROUND",
+      "why": "IRF7 is an interferon-stimulated gene and also a transcription factor for IFN genes, a well-established textbook fact."
+    },
+    {
+      "claim": "ISG15 is an interferon-stimulated gene.",
+      "label": "BACKGROUND",
+      "why": "ISG15 is a classic interferon-stimulated gene, a well-established textbook fact."
+    },
+    {
+      "claim": "NOD-like receptor signaling pathways are part of innate immune responses.",
+      "label": "GROUNDED",
+      "why": "NOD-like receptor signaling pathway term is listed, and these receptors are part of innate immunity."
+    },
+    {
+      "claim": "TNF signaling pathways are part of innate immune responses.",
+      "label": "GROUNDED",
+      "why": "TNF signaling pathway term is listed, and TNF is a key innate immune cytokine."
+    },
+    {
+      "claim": "Pattern recognition receptors detect pathogens and trigger inflammatory cascades.",
+      "label": "BACKGROUND",
+      "why": "Pattern recognition receptors detecting pathogens and triggering inflammation is fundamental textbook immunology."
+    },
+    {
+      "claim": "Pattern recognition receptors detect pathogens and trigger antiviral cascades.",
+      "label": "BACKGROUND",
+      "why": "Pattern recognition receptors detecting pathogens and triggering antiviral responses is fundamental textbook immunology."
+    },
+    {
+      "claim": "Pattern recognition receptors trigger cascades in conjunction with interferon signaling.",
+      "label": "GROUNDED",
+      "why": "NOD-like receptor signaling pathway includes IFNAR2, STAT1, STAT2, IRF7, IRF9, indicating conjunction with interferon signaling."
+    }
+  ],
+  "summary": {
+    "n_claims": 207,
+    "n_scored": 207,
+    "grounded_rate": 0.667,
+    "hallucination_rate": 0.0,
+    "grounded": 138,
+    "background": 69,
+    "unsupported": 0
+  }
+}

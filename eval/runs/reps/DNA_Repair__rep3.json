@@ -1,0 +1,4863 @@
+{
+  "gene_set": "DNA_Repair",
+  "context": "DNA Repair",
+  "genes": [
+    "POLR2H",
+    "POLR2A",
+    "POLR2G",
+    "POLR2E",
+    "POLR2J",
+    "POLR2F",
+    "POLR2C",
+    "POLR2K",
+    "GTF2H3",
+    "POLR2D",
+    "ERCC3",
+    "DDB2",
+    "POLR1C",
+    "XPC",
+    "PCNA",
+    "POLR2I",
+    "SUPT4H1",
+    "POLD3",
+    "POLR3GL",
+    "POLR3C",
+    "GTF2B",
+    "POLR1D",
+    "NCBP2",
+    "NELFE",
+    "GTF2F1",
+    "ERCC5",
+    "LIG1",
+    "ERCC1",
+    "ERCC4",
+    "POLD4",
+    "NELFB",
+    "RFC2",
+    "ELL",
+    "TAF10",
+    "RRM2B",
+    "SUPT5H",
+    "RPA3",
+    "SNAPC5",
+    "SSRP1",
+    "RFC3",
+    "RPA2",
+    "ELOA",
+    "TAF12",
+    "NELFCD",
+    "TAF13",
+    "TAF6",
+    "TAF9",
+    "GTF2A2",
+    "VPS37D",
+    "NME1",
+    "RNMT",
+    "ERCC2",
+    "POLE4",
+    "VPS37B",
+    "NT5C3A",
+    "SNAPC4",
+    "AAAS",
+    "ZNRD1",
+    "RFC4",
+    "ITPA",
+    "POM121",
+    "BRF2",
+    "RFC5",
+    "SAC3D1",
+    "CLP1",
+    "NME4",
+    "PRIM1",
+    "VPS28",
+    "TSG101",
+    "USP11",
+    "TAF1C",
+    "TARBP2",
+    "POLH",
+    "CETN2",
+    "POLD1",
+    "CANT1",
+    "PDE4B",
+    "DGCR8",
+    "RAD51",
+    "SURF1",
+    "PNP",
+    "ADA",
+    "NME3",
+    "GTF3C5",
+    "NT5C",
+    "AK1",
+    "GTF2H1",
+    "HCLS1",
+    "APRT",
+    "ERCC8",
+    "IMPDH2",
+    "POLB",
+    "SDCBP",
+    "SF3A3",
+    "DAD1",
+    "UPF3B",
+    "GUK1",
+    "TP53",
+    "ADRM1",
+    "SEC61A1",
+    "POLA2",
+    "FEN1",
+    "ZNF707",
+    "NUDT9",
+    "PDE6G",
+    "TYMS",
+    "BCAP31",
+    "DDB1",
+    "NFX1",
+    "RAD52",
+    "ADCY6",
+    "ARL6IP1",
+    "DGUOK",
+    "POLL",
+    "SMAD5",
+    "MPG",
+    "DUT",
+    "POLA1",
+    "AGO4",
+    "RALA",
+    "ZWINT",
+    "BCAM",
+    "TK2",
+    "CSTF3",
+    "GTF2H5",
+    "HPRT1",
+    "BOLA2",
+    "GPX4",
+    "MPC2",
+    "CDA",
+    "ALYREF",
+    "MRPL40",
+    "NPR2",
+    "REV3L",
+    "EDF1",
+    "GSDME",
+    "TMED2",
+    "STX3",
+    "RAE1",
+    "UMPS",
+    "EIF1B",
+    "AK3",
+    "NUDT21",
+    "RBX1",
+    "SRSF6",
+    "GMPR2",
+    "DCTN4",
+    "COX17",
+    "CMPK2",
+    "CCNO"
+  ],
+  "n_genes": 150,
+  "query": "Analyze this gene set (biological context: DNA Repair) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: POLR2H, POLR2A, POLR2G, POLR2E, POLR2J, POLR2F, POLR2C, POLR2K, GTF2H3, POLR2D, ERCC3, DDB2, POLR1C, XPC, PCNA, POLR2I, SUPT4H1, POLD3, POLR3GL, POLR3C, GTF2B, POLR1D, NCBP2, NELFE, GTF2F1, ERCC5, LIG1, ERCC1, ERCC4, POLD4, NELFB, RFC2, ELL, TAF10, RRM2B, SUPT5H, RPA3, SNAPC5, SSRP1, RFC3, RPA2, ELOA, TAF12, NELFCD, TAF13, TAF6, TAF9, GTF2A2, VPS37D, NME1, RNMT, ERCC2, POLE4, VPS37B, NT5C3A, SNAPC4, AAAS, ZNRD1, RFC4, ITPA, POM121, BRF2, RFC5, SAC3D1, CLP1, NME4, PRIM1, VPS28, TSG101, USP11, TAF1C, TARBP2, POLH, CETN2, POLD1, CANT1, PDE4B, DGCR8, RAD51, SURF1, PNP, ADA, NME3, GTF3C5, NT5C, AK1, GTF2H1, HCLS1, APRT, ERCC8, IMPDH2, POLB, SDCBP, SF3A3, DAD1, UPF3B, GUK1, TP53, ADRM1, SEC61A1, POLA2, FEN1, ZNF707, NUDT9, PDE6G, TYMS, BCAP31, DDB1, NFX1, RAD52, ADCY6, ARL6IP1, DGUOK, POLL, SMAD5, MPG, DUT, POLA1, AGO4, RALA, ZWINT, BCAM, TK2, CSTF3, GTF2H5, HPRT1, BOLA2, GPX4, MPC2, CDA, ALYREF, MRPL40, NPR2, REV3L, EDF1, GSDME, TMED2, STX3, RAE1, UMPS, EIF1B, AK3, NUDT21, RBX1, SRSF6, GMPR2, DCTN4, COX17, CMPK2, CCNO",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 143,
+  "n_papers": 2,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 2,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 2,
+    "cited_pmids": [],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "### Summary\n\nThe gene set provided is highly enriched in pathways related to DNA repair, DNA replication, and RNA polymerase-mediated transcription, with a strong emphasis on **Transcription-Coupled Nucleotide Excision Repair (TC-NER)**. This suggests that the gene set represents a complex interplay between the cellular machinery responsible for transcribing genetic information and the mechanisms that safeguard its integrity, particularly in response to DNA damage that impedes transcription. Key processes identified include nucleotide excision repair, base excision repair, mismatch repair, homologous recombination, and non-homologous end-joining, indicating a comprehensive involvement in various DNA repair mechanisms.\n\n### Detailed Analysis\n\nThe enrichment analysis using GO_Biological_Process_2023 and KEGG_2021_Human libraries provides a clear picture of the biological functions represented by the gene set.\n\n**Dominant DNA Repair Pathways:**\nMultiple DNA repair pathways are highly significant:\n*   **Nucleotide Excision Repair (NER):** This is the most prominent pathway, appearing as the top term in KEGG_2021_Human (p=9.11e-42) and a very strong hit in GO_Biological_Process_2023 (GO:0006289, p=2.70e-28). NER is a crucial pathway for removing bulky DNA lesions, such as those caused by UV radiation, which aligns with the enriched \"Response To UV\" (GO:0009411) and \"UV-damage Excision Repair\" (GO:0070914) terms. Key genes involved in NER identified in the overlap include *XPC*, *DDB1*, *DDB2*, and several *ERCC* genes (*ERCC1, ERCC2, ERCC3, ERCC4, ERCC5, ERCC8*).\n*   **Transcription-Coupled Nucleotide Excision Repair (TC-NER):** This specialized sub-pathway of NER, which deals with DNA damage that stalls RNA polymerase during transcription, is explicitly enriched (GO:0006283, p=5.86e-06). This term directly links the identified transcription machinery with DNA repair, providing a central theme for interpretation. The literature search also strongly supports this connection, highlighting how stalled RNA polymerase II (RNAPII) triggers TCR (van der Meer PJ, Luijsterburg MS. 2025, Mevissen TE et al. 2024).\n*   **DNA Replication (GO:0006260, p=2.43e-17; KEGG DNA replication, p=1.36e-23):** The presence of genes involved in DNA replication, such as *PCNA*, *POLD1, POLD3, POLD4* (DNA polymerase delta subunits), *POLA1, POLA2* (DNA polymerase alpha subunits), and *RFC* genes (*RFC2, RFC3, RFC4, RFC5*), indicates that the cellular response to DNA damage also involves the machinery for DNA synthesis, which is critical for gap-filling during repair and for maintaining genomic stability during replication.\n*   **Base Excision Repair (BER):** This pathway is also significantly enriched (GO:0006284, p=3.51e-10; KEGG Base excision repair, p=5.97e-13), with genes like *POLB*, *FEN1*, and *LIG1* playing roles in removing damaged or modified bases.\n*   **Mismatch Repair (MMR):** KEGG's Mismatch repair (p=1.02e-16) is a strong hit, involving several *RFC* genes, *PCNA*, and *POLD* genes, which are also critical for correcting errors that occur during DNA replication.\n*   **Double-Strand Break Repair (DSBR):** Both Homologous Recombination (KEGG, p=2.97e-07; GO:0000724, p=4.84e-06) and Non-homologous End-Joining (KEGG, p=3.30e-02; GO:0006303, p=1.46e-05) are represented, with genes like *RAD51* and *RAD52* (for homologous recombination) and *FEN1*, *POLL* (for non-homologous end-joining).\n\n**Interconnected Transcription Processes:**\nA significant portion of the gene list is dedicated to transcription, particularly by RNA Polymerase II:\n*   **Transcription By RNA Polymerase II (GO:0006366, p=8.64e-33):** This is the most significant GO term, with numerous RNA Polymerase II subunits (*POLR2A, POLR2C, POLR2D, POLR2E, POLR2F, POLR2G, POLR2H, POLR2I, POLR2J, POLR2K*) and basal transcription factors (*GTF2A2, GTF2B, GTF2F1, GTF2H1, GTF2H3, GTF2H5, TAF6, TAF9, TAF10, TAF12, TAF13*) being present.\n*   **RNA Polymerase (KEGG, p=8.19e-21):** Reinforces the central role of RNA polymerase complexes.\n*   The strong co-enrichment of \"Transcription By RNA Polymerase II\" and \"Nucleotide Excision Repair,\" along with \"Transcription-Coupled Nucleotide-Excision Repair,\" strongly suggests that the DNA repair activities are particularly engaged when transcription is ongoing or stalled due to DNA damage.\n\n**Other Notable Enriched Terms:**\n*   **Purine and Pyrimidine Metabolism (KEGG Purine metabolism, p=1.36e-23; KEGG Pyrimidine metabolism, p=1.02e-16):** The enrichment of these metabolic pathways (e.g., involving *HPRT1, RRM2B, TYMS, UMPS, CDA*) indicates active nucleotide synthesis and catabolism, which are essential for providing the building blocks for DNA repair and replication.\n*   **DNA Damage Response (GO:0006974, p=1.37e-14):** This general term for cellular responses to DNA damage integrates many of the specific repair pathways.\n*   **Cell Cycle Regulation:** Terms like \"Regulation Of Cell Cycle Phase Transition\" (GO:1901987) and \"Regulation Of Mitotic Cell Cycle\" (GO:0007346) are also enriched, which is expected as DNA repair mechanisms are tightly coupled with cell cycle checkpoints to ensure genomic integrity before cell division.\n\n**Biological Interpretation in the Context of DNA Repair:**\n\nThe gene list overwhelmingly points to a highly active and integrated system for maintaining genome stability, primarily through DNA repair and replication, with a significant link to transcription. The high enrichment of **Transcription-Coupled Nucleotide Excision Repair** strongly suggests that many of these genes are involved in detecting and repairing DNA lesions that interfere with RNA Polymerase II activity. This is a critical process, as unrepaired lesions can lead to mutations or cell death.\n\nThe identified genes represent core components across multiple repair pathways (NER, BER, MMR, HR, NHEJ), highlighting a robust and redundant defense system against various types of DNA damage. The prominent role of RNA polymerase and basal transcription factors in this set suggests that the cell is actively transcribing, and a substantial part of its DNA repair machinery is dedicated to resolving conflicts arising from transcription encountering damaged DNA. This could imply a cellular state under genotoxic stress, or a tissue with high transcriptional activity where efficient TC-NER is paramount for cell survival and function.\n\nThe literature retrieved provides direct evidence that RNA Polymerase II stalling on DNA lesions is a trigger for transcription-coupled DNA repair, detailing the assembly and function of the TC-NER complex and identifying key factors within this process. This contextualizes many of the highly enriched terms and underscores the biological relevance of the gene set to this specialized and critical DNA repair mechanism.\n\n**Conclusion:**\nThe gene set describes a comprehensive and highly active network for safeguarding genomic integrity, prominently featuring the **Transcription-Coupled Nucleotide Excision Repair** pathway. This indicates a cellular focus on repairing DNA damage, especially that which occurs during active gene transcription, suggesting a response to DNA damage or a continuously active repair system in a highly transcriptionally active context.",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'libraries': 'GO_Biological_Process_2023, KEGG_2021_Human', 'genes': 'POLR2H, POLR2A, POLR2G, POLR2E, POLR2J, POLR2F, POLR2C, POLR2K, GTF2H3, POLR2D, ERCC3, DDB2, POLR1C, XPC, PCNA, POLR2I, SUPT4H1, POLD3, POLR3GL, POLR3C, GTF2B, POLR1D, NCBP2, NELFE, GTF2F1, ERCC5, LIG1, ERCC1, ERCC4, POLD4, NELFB, RFC2, ELL, TAF10, RRM2B, SUPT5H, RPA3, SNAPC5, SSRP1, RFC3, RPA2, ELOA, TAF12, NELFCD, TAF13, TAF6, TAF9, GTF2A2, VPS37D, NME1, RNMT, ERCC2, POLE4, VPS37B, NT5C3A, SNAPC4, AAAS, ZNRD1, RFC4, ITPA, POM121, BRF2, RFC5, SAC3D1, CLP1, NME4, PRIM1, VPS28, TSG101, USP11, TAF1C, TARBP2, POLH, CETN2, POLD1, CANT1, PDE4B, DGCR8, RAD51, SURF1, PNP, ADA, NME3, GTF3C5, NT5C, AK1, GTF2H1, HCLS1, APRT, ERCC8, IMPDH2, POLB, SDCBP, SF3A3, DAD1, UPF3B, GUK1, TP53, ADRM1, SEC61A1, POLA2, FEN1, ZNF707, NUDT9, PDE6G, TYMS, BCAP31, DDB1, NFX1, RAD52, ADCY6, ARL6IP1, DGUOK, POLL, SMAD5, MPG, DUT, POLA1, AGO4, RALA, ZWINT, BCAM, TK2, CSTF3, GTF2H5, HPRT1, BOLA2, GPX4, MPC2, CDA, ALYREF, MRPL40, NPR2, REV3L, EDF1, GSDME, TMED2, STX3, RAE1, UMPS, EIF1B, AK3, NUDT21, RBX1, SRSF6, GMPR2, DCTN4, COX17, CMPK2, CCNO'}",
+    "Tool: search_literature | Args: {'max_results': 5, 'query': '\"transcription-coupled DNA repair\" AND \"RNA polymerase II\"', 'sort_by': 'relevance'}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: DNA Repair) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: POLR2H, POLR2A, POLR2G, POLR2E, POLR2J, POLR2F, POLR2C, POLR2K, GTF2H"
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given this gene list and the client wants a deep dive into its biological implications, specifically within the realm of DNA repair. My first thought is, this is a perfect application for a robust bioinformatics pipeline. Here's how I'm going to approach this problem:\n\nFirst, I need to get a handle on the landscape. I'll kick things off by running `run_enrichment_analysis`. I'm going to use the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries to cast the widest net possible. The goal here is to identify which biological pathways and processes are significantly over-represented in the gene list. These enriched terms are going to be key to my understanding.\n\nOnce I have those enrichment results, I need to put on my interpretation hat. I'll need to meticulously go through the enriched terms, but with a laser focus on anything remotely related to DNA repair. I'll be looking for common threads, significant overlaps, and any potential clues that these genes are involved in DNA damage response, repair mechanisms, or even related processes like cell cycle control.\n\nNow, based on what the enrichment analysis tells me, and the initial context around DNA repair, I'll formulate a precise literature search query using `search_literature`. The goal isn't to be exhaustive, but rather to uncover *relevant* and *supporting* evidence. I'll keep the search focused; aim for a maximum of five key papers that directly validate or elaborate on my interpretations. I want the most relevant, not the most papers.\n\nFinally, I'll synthesize everything into a concise and clear biological interpretation. I'll structure this as a summary and a detailed analysis. If any papers I find are relevant to my findings, I'll weave them into the answer by citing them and noting what they've shown. This should provide a cohesive and evidence-backed answer for the client. I'm ready to begin with the enrichment analysis now.",
+      "action": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023, KEGG_2021_Human, genes=POLR2H, POLR2A, POLR2G, POLR2E, POLR2J, POLR2F, PO...",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "c7037f37-9594-4852-9e8b-8f9e827bd1c1",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 150 | Total significant terms: 143"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "## Summary of DNA Repair Gene Set Analysis\n\nThe provided gene set is highly enriched for processes central to DNA repair, DNA replication, and associated transcriptional regulation. Key pathways highlighted include **Nucleotide Excision Repair (NER)**, **DNA Replication**, **Base Excision Repair (BER)**, **Mismatch Repair**, and **Homologous Recombination (HR)**. A significant component of the gene set also participates in **RNA Polymerase II-mediated transcription** and its regulation, suggesti"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so the enrichment analysis is really hitting home on the \"DNA Repair\" context. The results are screaming DNA repair, replication, and transcription, which is precisely what I'd expect. Let's break down the most compelling results, focusing on what jumps out from both the GO Biological Process and KEGG analyses.\n\nLooking at the GO terms, the prominence of DNA repair is unmistakable. **DNA Repair (GO:0006281)** and **Nucleotide-Excision Repair (GO:0006289)** are right at the top, and incredibly significant. This is a very robust signal. It's also interesting to see **DNA Metabolic Process (GO:0006259)**, **DNA Replication (GO:0006260)**, and **DNA Damage Response (GO:0006974)** ranking so highly. These are all intimately linked to the initial context.\n\nDelving deeper, terms like **Base-Excision Repair (GO:0006284)**, **UV-damage Excision Repair (GO:0070914)**, **DNA Synthesis Involved In DNA Repair (GO:0000731)**, and several others related to different repair mechanisms, such as **Double-Strand Break Repair (GO:0006302)**, **Mismatch Repair (GO:0006298)**, **Transcription-Coupled Nucleotide-Excision Repair (GO:0006283)**, **Double-Strand Break Repair Via Nonhomologous End Joining (GO:0006303)**, **Translesion Synthesis (GO:0019985)**, and **Nucleotide-Excision Repair, DNA Gap Filling (GO:0006297)**, all appear with high significance. It suggests a comprehensive activation of various repair pathways. This level of detail reinforces the strength and breadth of the response to whatever the perturbation is.\n\nThe KEGG analysis further corroborates these findings. The extremely high significance of **Nucleotide excision repair** in the KEGG pathway is completely in line with what we're seeing in the GO analysis. This degree of concordance is excellent, and gives me greater confidence in the interpretation.",
+      "action": "search_literature",
+      "args": "max_results=5, query=\"transcription-coupled DNA repair\" AND \"RNA polyme..., sort_by=relevance",
+      "tool_name": "search_literature",
+      "tool_call_id": "0d27dae2-972c-408c-8298-2bf20b3ac7f4",
+      "observation": "=== LITERATURE SEARCH: '\"transcription-coupled DNA repair\" AND \"RNA polymerase II\"' === | Found 2 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "### Summary\n\nThe gene set provided is highly enriched in pathways related to DNA repair, DNA replication, and RNA polymerase-mediated transcription, with a strong emphasis on **Transcription-Coupled Nucleotide Excision Repair (TC-NER)**. This suggests that the gene set represents a complex interplay between the cellular machinery responsible for transcribing genetic information and the mechanisms that safeguard its integrity, particularly in response to DNA damage that impedes transcription. Key"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "libraries=GO_Biological_Process_2023, KEGG_2021_Human, genes=POLR2H, POLR2A, POLR2G, POLR2E, POLR2J, POLR2F, PO...",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List**\n\nOkay, so I've been given this gene list and the client wants a deep dive into its biological implications, specifically within the realm of DNA repair. My first thought is, this is a perfect application for a robust bioinformatics pipeline. Here's how I'm going to approach this problem:\n\nFirst, I need to get a handle on the landscape. I'll kick things off by running `run_enrichment_analysis`. I'm going to use the `GO_Biological_Process_2023` and `KEGG_2021_Human` libraries to cast the widest net possible. The goal here is to identify which biological pathways and processes are significantly over-represented in the gene list. These enriched terms are going to be key to my understanding.\n\nOnce I have those enrichment results, I need to put on my interpretation hat. I'll need to meticulously go through the enriched terms, but with a laser focus on anything remotely related to DNA repair. I'll be looking for common threads, significant overlaps, and any potential clues that these genes are involved in DNA damage response, repair mechanisms, or even related processes like cell cycle control.\n\nNow, based on what the enrichment analysis tells me, and the initial context around DNA repair, I'll formulate a precise literature search query using `search_literature`. The goal isn't to be exhaustive, but rather to uncover *relevant* and *supporting* evidence. I'll keep the search focused; aim for a maximum of five key papers that directly validate or elaborate on my interpretations. I want the most relevant, not the most papers.\n\nFinally, I'll synthesize everything into a concise and clear biological interpretation. I'll structure this as a summary and a detailed analysis. If any papers I find are relevant to my findings, I'll weave them into the answer by citing them and noting what they've shown. This should provide a cohesive and evidence-backed answer for the client. I'm ready to begin with the enrichment analysis now.",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 150 | Total significant terms: 143"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "max_results=5, query=\"transcription-coupled DNA repair\" AND \"RNA polyme..., sort_by=relevance",
+      "thought": "**My Interpretation of the Enrichment Analysis**\n\nOkay, so the enrichment analysis is really hitting home on the \"DNA Repair\" context. The results are screaming DNA repair, replication, and transcription, which is precisely what I'd expect. Let's break down the most compelling results, focusing on what jumps out from both the GO Biological Process and KEGG analyses.\n\nLooking at the GO terms, the prominence of DNA repair is unmistakable. **DNA Repair (GO:0006281)** and **Nucleotide-Excision Repair (GO:0006289)** are right at the top, and incredibly significant. This is a very robust signal. It's also interesting to see **DNA Metabolic Process (GO:0006259)**, **DNA Replication (GO:0006260)**, and **DNA Damage Response (GO:0006974)** ranking so highly. These are all intimately linked to the initial context.\n\nDelving deeper, terms like **Base-Excision Repair (GO:0006284)**, **UV-damage Excision Repair (GO:0070914)**, **DNA Synthesis Involved In DNA Repair (GO:0000731)**, and several others related to different repair mechanisms, such as **Double-Strand Break Repair (GO:0006302)**, **Mismatch Repair (GO:0006298)**, **Transcription-Coupled Nucleotide-Excision Repair (GO:0006283)**, **Double-Strand Break Repair Via Nonhomologous End Joining (GO:0006303)**, **Translesion Synthesis (GO:0019985)**, and **Nucleotide-Excision Repair, DNA Gap Filling (GO:0006297)**, all appear with high significance. It suggests a comprehensive activation of various repair pathways. This level of detail reinforces the strength and breadth of the response to whatever the perturbation is.\n\nThe KEGG analysis further corroborates these findings. The extremely high significance of **Nucleotide excision repair** in the KEGG pathway is completely in line with what we're seeing in the GO analysis. This degree of concordance is excellent, and gives me greater confidence in the interpretation.",
+      "observation": "=== LITERATURE SEARCH: '\"transcription-coupled DNA repair\" AND \"RNA polymerase II\"' === | Found 2 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "POLR2H",
+      "POLR2A",
+      "POLR2G",
+      "POLR2E",
+      "POLR2J",
+      "POLR2F",
+      "POLR2C",
+      "POLR2K",
+      "GTF2H3",
+      "POLR2D",
+      "ERCC3",
+      "DDB2",
+      "POLR1C",
+      "XPC",
+      "PCNA",
+      "POLR2I",
+      "SUPT4H1",
+      "POLD3",
+      "POLR3GL",
+      "POLR3C",
+      "GTF2B",
+      "POLR1D",
+      "NCBP2",
+      "NELFE",
+      "GTF2F1",
+      "ERCC5",
+      "LIG1",
+      "ERCC1",
+      "ERCC4",
+      "POLD4",
+      "NELFB",
+      "RFC2",
+      "ELL",
+      "TAF10",
+      "RRM2B",
+      "SUPT5H",
+      "RPA3",
+      "SNAPC5",
+      "SSRP1",
+      "RFC3",
+      "RPA2",
+      "ELOA",
+      "TAF12",
+      "NELFCD",
+      "TAF13",
+      "TAF6",
+      "TAF9",
+      "GTF2A2",
+      "VPS37D",
+      "NME1",
+      "RNMT",
+      "ERCC2",
+      "POLE4",
+      "VPS37B",
+      "NT5C3A",
+      "SNAPC4",
+      "AAAS",
+      "ZNRD1",
+      "RFC4",
+      "ITPA",
+      "POM121",
+      "BRF2",
+      "RFC5",
+      "SAC3D1",
+      "CLP1",
+      "NME4",
+      "PRIM1",
+      "VPS28",
+      "TSG101",
+      "USP11",
+      "TAF1C",
+      "TARBP2",
+      "POLH",
+      "CETN2",
+      "POLD1",
+      "CANT1",
+      "PDE4B",
+      "DGCR8",
+      "RAD51",
+      "SURF1",
+      "PNP",
+      "ADA",
+      "NME3",
+      "GTF3C5",
+      "NT5C",
+      "AK1",
+      "GTF2H1",
+      "HCLS1",
+      "APRT",
+      "ERCC8",
+      "IMPDH2",
+      "POLB",
+      "SDCBP",
+      "SF3A3",
+      "DAD1",
+      "UPF3B",
+      "GUK1",
+      "TP53",
+      "ADRM1",
+      "SEC61A1",
+      "POLA2",
+      "FEN1",
+      "ZNF707",
+      "NUDT9",
+      "PDE6G",
+      "TYMS",
+      "BCAP31",
+      "DDB1",
+      "NFX1",
+      "RAD52",
+      "ADCY6",
+      "ARL6IP1",
+      "DGUOK",
+      "POLL",
+      "SMAD5",
+      "MPG",
+      "DUT",
+      "POLA1",
+      "AGO4",
+      "RALA",
+      "ZWINT",
+      "BCAM",
+      "TK2",
+      "CSTF3",
+      "GTF2H5",
+      "HPRT1",
+      "BOLA2",
+      "GPX4",
+      "MPC2",
+      "CDA",
+      "ALYREF",
+      "MRPL40",
+      "NPR2",
+      "REV3L",
+      "EDF1",
+      "GSDME",
+      "TMED2",
+      "STX3",
+      "RAE1",
+      "UMPS",
+      "EIF1B",
+      "AK3",
+      "NUDT21",
+      "RBX1",
+      "SRSF6",
+      "GMPR2",
+      "DCTN4",
+      "COX17",
+      "CMPK2",
+      "CCNO"
+    ],
+    "gene_count": 150,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Transcription By RNA Polymerase II (GO:0006366)",
+          "term": "Transcription By RNA Polymerase II (GO:0006366)",
+          "overlap": "33/192",
+          "p_value": 9.577011886422601e-36,
+          "z_score": 34.93001128850185,
+          "combined_score": 2816.5359714571705,
+          "overlap_genes": [
+            "GTF2A2",
+            "ELL",
+            "GTF2B",
+            "TAF9",
+            "SUPT4H1",
+            "SNAPC5",
+            "POLR2A",
+            "TAF1C",
+            "POLR2C",
+            "SNAPC4",
+            "POLR2D",
+            "POLR2E",
+            "ELOA",
+            "POLR2F",
+            "POLR2G",
+            "POLR2H",
+            "POLR2I",
+            "POLR2J",
+            "POLR2K",
+            "TAF12",
+            "NCBP2",
+            "TAF13",
+            "TAF10",
+            "ADRM1",
+            "GTF2H1",
+            "GTF2F1",
+            "SUPT5H",
+            "GTF2H3",
+            "GTF2H5",
+            "ERCC3",
+            "NFX1",
+            "ERCC2",
+            "TAF6"
+          ],
+          "genes": [
+            "GTF2A2",
+            "ELL",
+            "GTF2B",
+            "TAF9",
+            "SUPT4H1",
+            "SNAPC5",
+            "POLR2A",
+            "TAF1C",
+            "POLR2C",
+            "SNAPC4",
+            "POLR2D",
+            "POLR2E",
+            "ELOA",
+            "POLR2F",
+            "POLR2G",
+            "POLR2H",
+            "POLR2I",
+            "POLR2J",
+            "POLR2K",
+            "TAF12",
+            "NCBP2",
+            "TAF13",
+            "TAF10",
+            "ADRM1",
+            "GTF2H1",
+            "GTF2F1",
+            "SUPT5H",
+            "GTF2H3",
+            "GTF2H5",
+            "ERCC3",
+            "NFX1",
+            "ERCC2",
+            "TAF6"
+          ],
+          "adjusted_p_value": 8.638464721553186e-33
+        },
+        {
+          "rank": 2,
+          "term_name": "Nucleotide-Excision Repair (GO:0006289)",
+          "term": "Nucleotide-Excision Repair (GO:0006289)",
+          "overlap": "21/56",
+          "p_value": 5.988707775862819e-31,
+          "z_score": 92.16279069767442,
+          "combined_score": 6413.6327719653245,
+          "overlap_genes": [
+            "CETN2",
+            "RPA2",
+            "XPC",
+            "GTF2H3",
+            "GTF2H5",
+            "DDB2",
+            "POLB",
+            "DDB1",
+            "POLD3",
+            "POLA1",
+            "ERCC3",
+            "ERCC4",
+            "POLD1",
+            "ERCC1",
+            "RPA3",
+            "ERCC2",
+            "ERCC8",
+            "POLL",
+            "ERCC5",
+            "POLR2I",
+            "TP53"
+          ],
+          "genes": [
+            "CETN2",
+            "RPA2",
+            "XPC",
+            "GTF2H3",
+            "GTF2H5",
+            "DDB2",
+            "POLB",
+            "DDB1",
+            "POLD3",
+            "POLA1",
+            "ERCC3",
+            "ERCC4",
+            "POLD1",
+            "ERCC1",
+            "RPA3",
+            "ERCC2",
+            "ERCC8",
+            "POLL",
+            "ERCC5",
+            "POLR2I",
+            "TP53"
+          ],
+          "adjusted_p_value": 2.7009072069141313e-28
+        },
+        {
+          "rank": 3,
+          "term_name": "DNA Repair (GO:0006281)",
+          "term": "DNA Repair (GO:0006281)",
+          "overlap": "33/291",
+          "p_value": 1.388934436899602e-29,
+          "z_score": 21.418405883522162,
+          "combined_score": 1423.1766251530892,
+          "overlap_genes": [
+            "FEN1",
+            "PCNA",
+            "MPG",
+            "CETN2",
+            "XPC",
+            "POLB",
+            "POLD3",
+            "POLD1",
+            "POLL",
+            "POLH",
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "RPA2",
+            "GTF2H1",
+            "GTF2H3",
+            "GTF2H5",
+            "DDB2",
+            "DDB1",
+            "RAD52",
+            "POLA1",
+            "RAD51",
+            "RRM2B",
+            "ERCC3",
+            "ERCC4",
+            "RPA3",
+            "ERCC1",
+            "ERCC2",
+            "ERCC8",
+            "ERCC5",
+            "TP53"
+          ],
+          "genes": [
+            "FEN1",
+            "PCNA",
+            "MPG",
+            "CETN2",
+            "XPC",
+            "POLB",
+            "POLD3",
+            "POLD1",
+            "POLL",
+            "POLH",
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "RPA2",
+            "GTF2H1",
+            "GTF2H3",
+            "GTF2H5",
+            "DDB2",
+            "DDB1",
+            "RAD52",
+            "POLA1",
+            "RAD51",
+            "RRM2B",
+            "ERCC3",
+            "ERCC4",
+            "RPA3",
+            "ERCC1",
+            "ERCC2",
+            "ERCC8",
+            "ERCC5",
+            "TP53"
+          ],
+          "adjusted_p_value": 4.1760628736114695e-27
+        },
+        {
+          "rank": 4,
+          "term_name": "DNA-templated Transcription (GO:0006351)",
+          "term": "DNA-templated Transcription (GO:0006351)",
+          "overlap": "28/199",
+          "p_value": 8.279561323108058e-28,
+          "z_score": 26.41223276771163,
+          "combined_score": 1647.0296632708207,
+          "overlap_genes": [
+            "GTF2A2",
+            "GTF3C5",
+            "GTF2B",
+            "POLR2A",
+            "TAF1C",
+            "POLR2C",
+            "POLR2D",
+            "POLR2E",
+            "POLR2F",
+            "POLR2G",
+            "POLR2H",
+            "POLR2I",
+            "POLR2J",
+            "POLR2K",
+            "TAF12",
+            "POLR3GL",
+            "TAF13",
+            "TAF10",
+            "GTF2H1",
+            "GTF2F1",
+            "GTF2H3",
+            "GTF2H5",
+            "ERCC3",
+            "NFX1",
+            "POLR1C",
+            "ERCC2",
+            "TAF6",
+            "TP53"
+          ],
+          "genes": [
+            "GTF2A2",
+            "GTF3C5",
+            "GTF2B",
+            "POLR2A",
+            "TAF1C",
+            "POLR2C",
+            "POLR2D",
+            "POLR2E",
+            "POLR2F",
+            "POLR2G",
+            "POLR2H",
+            "POLR2I",
+            "POLR2J",
+            "POLR2K",
+            "TAF12",
+            "POLR3GL",
+            "TAF13",
+            "TAF10",
+            "GTF2H1",
+            "GTF2F1",
+            "GTF2H3",
+            "GTF2H5",
+            "ERCC3",
+            "NFX1",
+            "POLR1C",
+            "ERCC2",
+            "TAF6",
+            "TP53"
+          ],
+          "adjusted_p_value": 1.867041078360867e-25
+        },
+        {
+          "rank": 5,
+          "term_name": "DNA Metabolic Process (GO:0006259)",
+          "term": "DNA Metabolic Process (GO:0006259)",
+          "overlap": "30/288",
+          "p_value": 8.527602919581246e-26,
+          "z_score": 18.984496124031008,
+          "combined_score": 1095.859233906081,
+          "overlap_genes": [
+            "FEN1",
+            "PRIM1",
+            "XPC",
+            "TYMS",
+            "POLB",
+            "POLD3",
+            "POLD1",
+            "POLL",
+            "POLH",
+            "RFC5",
+            "DUT",
+            "RFC3",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "RPA2",
+            "GTF2H1",
+            "GTF2H3",
+            "DDB2",
+            "DDB1",
+            "RAD52",
+            "POLA1",
+            "POLA2",
+            "RAD51",
+            "RRM2B",
+            "ERCC3",
+            "ERCC4",
+            "RPA3",
+            "ERCC1",
+            "ERCC5"
+          ],
+          "genes": [
+            "FEN1",
+            "PRIM1",
+            "XPC",
+            "TYMS",
+            "POLB",
+            "POLD3",
+            "POLD1",
+            "POLL",
+            "POLH",
+            "RFC5",
+            "DUT",
+            "RFC3",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "RPA2",
+            "GTF2H1",
+            "GTF2H3",
+            "DDB2",
+            "DDB1",
+            "RAD52",
+            "POLA1",
+            "POLA2",
+            "RAD51",
+            "RRM2B",
+            "ERCC3",
+            "ERCC4",
+            "RPA3",
+            "ERCC1",
+            "ERCC5"
+          ],
+          "adjusted_p_value": 1.5383795666924568e-23
+        },
+        {
+          "rank": 6,
+          "term_name": "DNA Replication (GO:0006260)",
+          "term": "DNA Replication (GO:0006260)",
+          "overlap": "16/73",
+          "p_value": 1.6153269797916543e-19,
+          "z_score": 41.46216286986122,
+          "combined_score": 1794.0503470016426,
+          "overlap_genes": [
+            "RFC5",
+            "FEN1",
+            "RFC3",
+            "DUT",
+            "RFC4",
+            "RFC2",
+            "RPA2",
+            "POLB",
+            "POLD3",
+            "POLE4",
+            "POLA1",
+            "POLA2",
+            "POLD1",
+            "RPA3",
+            "REV3L",
+            "POLL"
+          ],
+          "genes": [
+            "RFC5",
+            "FEN1",
+            "RFC3",
+            "DUT",
+            "RFC4",
+            "RFC2",
+            "RPA2",
+            "POLB",
+            "POLD3",
+            "POLE4",
+            "POLA1",
+            "POLA2",
+            "POLD1",
+            "RPA3",
+            "REV3L",
+            "POLL"
+          ],
+          "adjusted_p_value": 2.4283748929534536e-17
+        },
+        {
+          "rank": 7,
+          "term_name": "DNA-templated DNA Replication (GO:0006261)",
+          "term": "DNA-templated DNA Replication (GO:0006261)",
+          "overlap": "14/69",
+          "p_value": 1.0417328655165857e-16,
+          "z_score": 37.04946524064171,
+          "combined_score": 1363.437954345114,
+          "overlap_genes": [
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "RFC2",
+            "PRIM1",
+            "POLB",
+            "POLD3",
+            "POLE4",
+            "POLA1",
+            "POLA2",
+            "RAD51",
+            "RRM2B",
+            "POLD1",
+            "REV3L"
+          ],
+          "genes": [
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "RFC2",
+            "PRIM1",
+            "POLB",
+            "POLD3",
+            "POLE4",
+            "POLA1",
+            "POLA2",
+            "RAD51",
+            "RRM2B",
+            "POLD1",
+            "REV3L"
+          ],
+          "adjusted_p_value": 1.3423472067085149e-14
+        },
+        {
+          "rank": 8,
+          "term_name": "DNA Damage Response (GO:0006974)",
+          "term": "DNA Damage Response (GO:0006974)",
+          "overlap": "25/384",
+          "p_value": 1.2187781457028547e-16,
+          "z_score": 10.85849582172702,
+          "combined_score": 397.8934290135402,
+          "overlap_genes": [
+            "FEN1",
+            "TAF9",
+            "XPC",
+            "POLB",
+            "POLD1",
+            "POLH",
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "GTF2H1",
+            "GTF2H3",
+            "RBX1",
+            "DDB2",
+            "DDB1",
+            "POLA1",
+            "RAD51",
+            "RRM2B",
+            "ERCC3",
+            "ERCC4",
+            "RPA3",
+            "ERCC1",
+            "ERCC8",
+            "TP53"
+          ],
+          "genes": [
+            "FEN1",
+            "TAF9",
+            "XPC",
+            "POLB",
+            "POLD1",
+            "POLH",
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "GTF2H1",
+            "GTF2H3",
+            "RBX1",
+            "DDB2",
+            "DDB1",
+            "POLA1",
+            "RAD51",
+            "RRM2B",
+            "ERCC3",
+            "ERCC4",
+            "RPA3",
+            "ERCC1",
+            "ERCC8",
+            "TP53"
+          ],
+          "adjusted_p_value": 1.3741723592799687e-14
+        },
+        {
+          "rank": 9,
+          "term_name": "DNA-templated Transcription Initiation (GO:0006352)",
+          "term": "DNA-templated Transcription Initiation (GO:0006352)",
+          "overlap": "13/59",
+          "p_value": 4.211363681720699e-16,
+          "z_score": 40.852427800698194,
+          "combined_score": 1446.3219906656075,
+          "overlap_genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "GTF2F1",
+            "ERCC3",
+            "TAF1C",
+            "POLR2D",
+            "ELOA",
+            "POLR2G",
+            "TAF6",
+            "POLR2I"
+          ],
+          "genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "GTF2F1",
+            "ERCC3",
+            "TAF1C",
+            "POLR2D",
+            "ELOA",
+            "POLR2G",
+            "TAF6",
+            "POLR2I"
+          ],
+          "adjusted_p_value": 4.220722267680078e-14
+        },
+        {
+          "rank": 10,
+          "term_name": "Transcription Initiation At RNA Polymerase II Promoter (GO:0006367)",
+          "term": "Transcription Initiation At RNA Polymerase II Promoter (GO:0006367)",
+          "overlap": "13/76",
+          "p_value": 1.4257086823096738e-14,
+          "z_score": 29.803151430888658,
+          "combined_score": 950.1698366829455,
+          "overlap_genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "TAF9",
+            "GTF2F1",
+            "ERCC3",
+            "POLR2D",
+            "ELOA",
+            "POLR2G",
+            "TAF6",
+            "POLR2I"
+          ],
+          "genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "TAF9",
+            "GTF2F1",
+            "ERCC3",
+            "POLR2D",
+            "ELOA",
+            "POLR2G",
+            "TAF6",
+            "POLR2I"
+          ],
+          "adjusted_p_value": 1.2859892314433258e-12
+        },
+        {
+          "rank": 11,
+          "term_name": "DNA Biosynthetic Process (GO:0071897)",
+          "term": "DNA Biosynthetic Process (GO:0071897)",
+          "overlap": "8/17",
+          "p_value": 1.9032605458578355e-13,
+          "z_score": 124.20031298904539,
+          "combined_score": 3637.831851882567,
+          "overlap_genes": [
+            "POLD3",
+            "POLA1",
+            "RFC3",
+            "RRM2B",
+            "POLD1",
+            "POLL",
+            "TYMS",
+            "POLH"
+          ],
+          "genes": [
+            "POLD3",
+            "POLA1",
+            "RFC3",
+            "RRM2B",
+            "POLD1",
+            "POLL",
+            "TYMS",
+            "POLH"
+          ],
+          "adjusted_p_value": 1.560673647603425e-11
+        },
+        {
+          "rank": 12,
+          "term_name": "Base-Excision Repair (GO:0006284)",
+          "term": "Base-Excision Repair (GO:0006284)",
+          "overlap": "9/36",
+          "p_value": 4.6673537114585865e-12,
+          "z_score": 46.8628841607565,
+          "combined_score": 1222.6727454612612,
+          "overlap_genes": [
+            "POLB",
+            "FEN1",
+            "LIG1",
+            "MPG",
+            "POLD1",
+            "RPA3",
+            "RPA2",
+            "POLL",
+            "ERCC5"
+          ],
+          "genes": [
+            "POLB",
+            "FEN1",
+            "LIG1",
+            "MPG",
+            "POLD1",
+            "RPA3",
+            "RPA2",
+            "POLL",
+            "ERCC5"
+          ],
+          "adjusted_p_value": 3.508294206446371e-10
+        },
+        {
+          "rank": 13,
+          "term_name": "Response To UV (GO:0009411)",
+          "term": "Response To UV (GO:0009411)",
+          "overlap": "12/100",
+          "p_value": 1.2100658002750399e-11,
+          "z_score": 19.527667984189723,
+          "combined_score": 490.88185622781253,
+          "overlap_genes": [
+            "DDB1",
+            "FEN1",
+            "PCNA",
+            "ERCC3",
+            "ERCC4",
+            "POLD1",
+            "ERCC8",
+            "ERCC5",
+            "TP53",
+            "POLH",
+            "RBX1",
+            "DDB2"
+          ],
+          "genes": [
+            "DDB1",
+            "FEN1",
+            "PCNA",
+            "ERCC3",
+            "ERCC4",
+            "POLD1",
+            "ERCC8",
+            "ERCC5",
+            "TP53",
+            "POLH",
+            "RBX1",
+            "DDB2"
+          ],
+          "adjusted_p_value": 8.395995014216046e-10
+        },
+        {
+          "rank": 14,
+          "term_name": "Nucleobase-Containing Compound Biosynthetic Process (GO:0034654)",
+          "term": "Nucleobase-Containing Compound Biosynthetic Process (GO:0034654)",
+          "overlap": "6/9",
+          "p_value": 1.3267987583378694e-11,
+          "z_score": 275.65277777777777,
+          "combined_score": 6903.907660737967,
+          "overlap_genes": [
+            "POLD3",
+            "CDA",
+            "PNP",
+            "POLD1",
+            "POLL",
+            "TYMS"
+          ],
+          "genes": [
+            "POLD3",
+            "CDA",
+            "PNP",
+            "POLD1",
+            "POLL",
+            "TYMS"
+          ],
+          "adjusted_p_value": 8.548374857291131e-10
+        },
+        {
+          "rank": 15,
+          "term_name": "RNA Biosynthetic Process (GO:0032774)",
+          "term": "RNA Biosynthetic Process (GO:0032774)",
+          "overlap": "8/29",
+          "p_value": 3.114960818709585e-11,
+          "z_score": 53.19651240778001,
+          "combined_score": 1286.941702092464,
+          "overlap_genes": [
+            "POLA1",
+            "POLA2",
+            "POLR2A",
+            "TAF12",
+            "TAF13",
+            "PRIM1",
+            "TAF10",
+            "TAF6"
+          ],
+          "genes": [
+            "POLA1",
+            "POLA2",
+            "POLR2A",
+            "TAF12",
+            "TAF13",
+            "PRIM1",
+            "TAF10",
+            "TAF6"
+          ],
+          "adjusted_p_value": 1.8731297723173636e-09
+        },
+        {
+          "rank": 16,
+          "term_name": "UV-damage Excision Repair (GO:0070914)",
+          "term": "UV-damage Excision Repair (GO:0070914)",
+          "overlap": "6/12",
+          "p_value": 1.432702076955378e-10,
+          "z_score": 137.80555555555554,
+          "combined_score": 3123.5405072848935,
+          "overlap_genes": [
+            "DDB1",
+            "POLD3",
+            "POLA1",
+            "ERCC1",
+            "XPC",
+            "DDB2"
+          ],
+          "genes": [
+            "DDB1",
+            "POLD3",
+            "POLA1",
+            "ERCC1",
+            "XPC",
+            "DDB2"
+          ],
+          "adjusted_p_value": 8.076857958835944e-09
+        },
+        {
+          "rank": 17,
+          "term_name": "DNA Synthesis Involved In DNA Repair (GO:0000731)",
+          "term": "DNA Synthesis Involved In DNA Repair (GO:0000731)",
+          "overlap": "7/27",
+          "p_value": 9.078651832628634e-10,
+          "z_score": 48.53496503496503,
+          "combined_score": 1010.4943428227458,
+          "overlap_genes": [
+            "POLD3",
+            "POLA1",
+            "RFC3",
+            "PCNA",
+            "RRM2B",
+            "POLD1",
+            "POLH"
+          ],
+          "genes": [
+            "POLD3",
+            "POLA1",
+            "RFC3",
+            "PCNA",
+            "RRM2B",
+            "POLD1",
+            "POLH"
+          ],
+          "adjusted_p_value": 4.817025854724134e-08
+        },
+        {
+          "rank": 18,
+          "term_name": "Transcription By RNA Polymerase III (GO:0006383)",
+          "term": "Transcription By RNA Polymerase III (GO:0006383)",
+          "overlap": "7/28",
+          "p_value": 1.2029263653817796e-09,
+          "z_score": 46.22144522144522,
+          "combined_score": 949.3195506928788,
+          "overlap_genes": [
+            "SNAPC5",
+            "ELL",
+            "GTF3C5",
+            "POLR3GL",
+            "SNAPC4",
+            "POLR2F",
+            "POLR2K"
+          ],
+          "genes": [
+            "SNAPC5",
+            "ELL",
+            "GTF3C5",
+            "POLR3GL",
+            "SNAPC4",
+            "POLR2F",
+            "POLR2K"
+          ],
+          "adjusted_p_value": 6.02799767541314e-08
+        },
+        {
+          "rank": 19,
+          "term_name": "Double-Strand Break Repair (GO:0006302)",
+          "term": "Double-Strand Break Repair (GO:0006302)",
+          "overlap": "12/168",
+          "p_value": 5.2635615929986855e-09,
+          "z_score": 10.977703455964326,
+          "combined_score": 209.26201030168832,
+          "overlap_genes": [
+            "RAD52",
+            "POLB",
+            "POLA1",
+            "FEN1",
+            "RAD51",
+            "ERCC4",
+            "RPA3",
+            "ERCC1",
+            "REV3L",
+            "RPA2",
+            "ERCC5",
+            "POLL"
+          ],
+          "genes": [
+            "RAD52",
+            "POLB",
+            "POLA1",
+            "FEN1",
+            "RAD51",
+            "ERCC4",
+            "RPA3",
+            "ERCC1",
+            "REV3L",
+            "RPA2",
+            "ERCC5",
+            "POLL"
+          ],
+          "adjusted_p_value": 2.4988066088867443e-07
+        },
+        {
+          "rank": 20,
+          "term_name": "Cellular Response To UV (GO:0034644)",
+          "term": "Cellular Response To UV (GO:0034644)",
+          "overlap": "9/79",
+          "p_value": 7.762780681832608e-09,
+          "z_score": 18.03647416413374,
+          "combined_score": 336.8117699836264,
+          "overlap_genes": [
+            "DDB1",
+            "PCNA",
+            "ERCC4",
+            "POLD1",
+            "ERCC1",
+            "XPC",
+            "TP53",
+            "DDB2",
+            "RBX1"
+          ],
+          "genes": [
+            "DDB1",
+            "PCNA",
+            "ERCC4",
+            "POLD1",
+            "ERCC1",
+            "XPC",
+            "TP53",
+            "DDB2",
+            "RBX1"
+          ],
+          "adjusted_p_value": 3.5010140875065067e-07
+        },
+        {
+          "rank": 21,
+          "term_name": "DNA Strand Elongation Involved In DNA Replication (GO:0006271)",
+          "term": "DNA Strand Elongation Involved In DNA Replication (GO:0006271)",
+          "overlap": "5/12",
+          "p_value": 1.684670464007588e-08,
+          "z_score": 97.7487684729064,
+          "combined_score": 1749.616034488176,
+          "overlap_genes": [
+            "POLD3",
+            "POLA1",
+            "RFC3",
+            "PCNA",
+            "RFC4"
+          ],
+          "genes": [
+            "POLD3",
+            "POLA1",
+            "RFC3",
+            "PCNA",
+            "RFC4"
+          ],
+          "adjusted_p_value": 6.331553160561851e-07
+        },
+        {
+          "rank": 22,
+          "term_name": "Base-Excision Repair, Gap-Filling (GO:0006287)",
+          "term": "Base-Excision Repair, Gap-Filling (GO:0006287)",
+          "overlap": "5/12",
+          "p_value": 1.684670464007588e-08,
+          "z_score": 97.7487684729064,
+          "combined_score": 1749.616034488176,
+          "overlap_genes": [
+            "POLB",
+            "FEN1",
+            "LIG1",
+            "POLD1",
+            "POLL"
+          ],
+          "genes": [
+            "POLB",
+            "FEN1",
+            "LIG1",
+            "POLD1",
+            "POLL"
+          ],
+          "adjusted_p_value": 6.331553160561851e-07
+        },
+        {
+          "rank": 23,
+          "term_name": "Positive Regulation Of DNA-directed DNA Polymerase Activity (GO:1900264)",
+          "term": "Positive Regulation Of DNA-directed DNA Polymerase Activity (GO:1900264)",
+          "overlap": "5/12",
+          "p_value": 1.684670464007588e-08,
+          "z_score": 97.7487684729064,
+          "combined_score": 1749.616034488176,
+          "overlap_genes": [
+            "RFC5",
+            "RFC3",
+            "PCNA",
+            "RFC4",
+            "RFC2"
+          ],
+          "genes": [
+            "RFC5",
+            "RFC3",
+            "PCNA",
+            "RFC4",
+            "RFC2"
+          ],
+          "adjusted_p_value": 6.331553160561851e-07
+        },
+        {
+          "rank": 24,
+          "term_name": "Regulation Of DNA-directed DNA Polymerase Activity (GO:1900262)",
+          "term": "Regulation Of DNA-directed DNA Polymerase Activity (GO:1900262)",
+          "overlap": "5/12",
+          "p_value": 1.684670464007588e-08,
+          "z_score": 97.7487684729064,
+          "combined_score": 1749.616034488176,
+          "overlap_genes": [
+            "RFC5",
+            "RFC3",
+            "PCNA",
+            "RFC4",
+            "RFC2"
+          ],
+          "genes": [
+            "RFC5",
+            "RFC3",
+            "PCNA",
+            "RFC4",
+            "RFC2"
+          ],
+          "adjusted_p_value": 6.331553160561851e-07
+        },
+        {
+          "rank": 25,
+          "term_name": "Mismatch Repair (GO:0006298)",
+          "term": "Mismatch Repair (GO:0006298)",
+          "overlap": "6/25",
+          "p_value": 2.5340800843664308e-08,
+          "z_score": 43.4890350877193,
+          "combined_score": 760.6601919133507,
+          "overlap_genes": [
+            "POLD3",
+            "PCNA",
+            "LIG1",
+            "RPA3",
+            "RPA2",
+            "XPC"
+          ],
+          "genes": [
+            "POLD3",
+            "PCNA",
+            "LIG1",
+            "RPA3",
+            "RPA2",
+            "XPC"
+          ],
+          "adjusted_p_value": 9.142960944394082e-07
+        },
+        {
+          "rank": 26,
+          "term_name": "mRNA Transcription (GO:0009299)",
+          "term": "mRNA Transcription (GO:0009299)",
+          "overlap": "7/43",
+          "p_value": 2.980205529354472e-08,
+          "z_score": 26.942113442113442,
+          "combined_score": 466.87149072966776,
+          "overlap_genes": [
+            "TAF12",
+            "NCBP2",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6",
+            "TP53"
+          ],
+          "genes": [
+            "TAF12",
+            "NCBP2",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6",
+            "TP53"
+          ],
+          "adjusted_p_value": 1.0339020721068207e-06
+        },
+        {
+          "rank": 27,
+          "term_name": "Recombinational Repair (GO:0000725)",
+          "term": "Recombinational Repair (GO:0000725)",
+          "overlap": "9/95",
+          "p_value": 4.003320031928971e-08,
+          "z_score": 14.668975754576943,
+          "combined_score": 249.8648305269293,
+          "overlap_genes": [
+            "RAD52",
+            "FEN1",
+            "RAD51",
+            "ERCC4",
+            "RPA3",
+            "REV3L",
+            "RPA2",
+            "POLL",
+            "ERCC5"
+          ],
+          "genes": [
+            "RAD52",
+            "FEN1",
+            "RAD51",
+            "ERCC4",
+            "RPA3",
+            "REV3L",
+            "RPA2",
+            "POLL",
+            "ERCC5"
+          ],
+          "adjusted_p_value": 1.3374054328888634e-06
+        },
+        {
+          "rank": 28,
+          "term_name": "Positive Regulation Of Transcription Initiation By RNA Polymerase II (GO:0060261)",
+          "term": "Positive Regulation Of Transcription Initiation By RNA Polymerase II (GO:0060261)",
+          "overlap": "7/52",
+          "p_value": 1.1694961899329574e-07,
+          "z_score": 21.543900543900545,
+          "combined_score": 343.87345546199776,
+          "overlap_genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6",
+            "TP53"
+          ],
+          "genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6",
+            "TP53"
+          ],
+          "adjusted_p_value": 3.7674484404268844e-06
+        },
+        {
+          "rank": 29,
+          "term_name": "Double-Strand Break Repair Via Homologous Recombination (GO:0000724)",
+          "term": "Double-Strand Break Repair Via Homologous Recombination (GO:0000724)",
+          "overlap": "9/111",
+          "p_value": 1.5552156160667107e-07,
+          "z_score": 12.357947434292866,
+          "combined_score": 193.72913377666345,
+          "overlap_genes": [
+            "RAD52",
+            "FEN1",
+            "RAD51",
+            "ERCC4",
+            "RPA3",
+            "REV3L",
+            "RPA2",
+            "POLL",
+            "ERCC5"
+          ],
+          "genes": [
+            "RAD52",
+            "FEN1",
+            "RAD51",
+            "ERCC4",
+            "RPA3",
+            "REV3L",
+            "RPA2",
+            "POLL",
+            "ERCC5"
+          ],
+          "adjusted_p_value": 4.83725684721439e-06
+        },
+        {
+          "rank": 30,
+          "term_name": "Negative Regulation Of DNA-templated Transcription, Elongation (GO:0032785)",
+          "term": "Negative Regulation Of DNA-templated Transcription, Elongation (GO:0032785)",
+          "overlap": "5/18",
+          "p_value": 1.7575604855534698e-07,
+          "z_score": 52.61803713527851,
+          "combined_score": 818.429836323987,
+          "overlap_genes": [
+            "SUPT4H1",
+            "NELFB",
+            "NELFCD",
+            "SUPT5H",
+            "NELFE"
+          ],
+          "genes": [
+            "SUPT4H1",
+            "NELFB",
+            "NELFCD",
+            "SUPT5H",
+            "NELFE"
+          ],
+          "adjusted_p_value": 5.284398526564099e-06
+        },
+        {
+          "rank": 31,
+          "term_name": "RNA Polymerase II Preinitiation Complex Assembly (GO:0051123)",
+          "term": "RNA Polymerase II Preinitiation Complex Assembly (GO:0051123)",
+          "overlap": "7/56",
+          "p_value": 1.9772113744854926e-07,
+          "z_score": 19.781218781218783,
+          "combined_score": 305.3509677153255,
+          "overlap_genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 5.753047289631982e-06
+        },
+        {
+          "rank": 32,
+          "term_name": "Transcription-Coupled Nucleotide-Excision Repair (GO:0006283)",
+          "term": "Transcription-Coupled Nucleotide-Excision Repair (GO:0006283)",
+          "overlap": "4/8",
+          "p_value": 2.078460886190711e-07,
+          "z_score": 135.93150684931507,
+          "combined_score": 2091.505778930265,
+          "overlap_genes": [
+            "ERCC3",
+            "ERCC8",
+            "ERCC5",
+            "POLR2I"
+          ],
+          "genes": [
+            "ERCC3",
+            "ERCC8",
+            "ERCC5",
+            "POLR2I"
+          ],
+          "adjusted_p_value": 5.858661622950066e-06
+        },
+        {
+          "rank": 33,
+          "term_name": "Transcription Preinitiation Complex Assembly (GO:0070897)",
+          "term": "Transcription Preinitiation Complex Assembly (GO:0070897)",
+          "overlap": "7/59",
+          "p_value": 2.854376036198205e-07,
+          "z_score": 18.637170521785908,
+          "combined_score": 280.84803992572563,
+          "overlap_genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 7.801961165608427e-06
+        },
+        {
+          "rank": 34,
+          "term_name": "mRNA Transcription By RNA Polymerase II (GO:0042789)",
+          "term": "mRNA Transcription By RNA Polymerase II (GO:0042789)",
+          "overlap": "6/38",
+          "p_value": 3.645451646671999e-07,
+          "z_score": 25.8046875,
+          "combined_score": 382.5445673078563,
+          "overlap_genes": [
+            "TAF12",
+            "NCBP2",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "TAF12",
+            "NCBP2",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 9.671168780288657e-06
+        },
+        {
+          "rank": 35,
+          "term_name": "Cellular Response To Light Stimulus (GO:0071482)",
+          "term": "Cellular Response To Light Stimulus (GO:0071482)",
+          "overlap": "7/65",
+          "p_value": 5.610379586199804e-07,
+          "z_score": 16.704123462744153,
+          "combined_score": 240.43042139780502,
+          "overlap_genes": [
+            "DDB1",
+            "PCNA",
+            "ERCC4",
+            "POLD1",
+            "TP53",
+            "DDB2",
+            "RBX1"
+          ],
+          "genes": [
+            "DDB1",
+            "PCNA",
+            "ERCC4",
+            "POLD1",
+            "TP53",
+            "DDB2",
+            "RBX1"
+          ],
+          "adjusted_p_value": 1.4458749676434925e-05
+        },
+        {
+          "rank": 36,
+          "term_name": "Double-Strand Break Repair Via Nonhomologous End Joining (GO:0006303)",
+          "term": "Double-Strand Break Repair Via Nonhomologous End Joining (GO:0006303)",
+          "overlap": "6/41",
+          "p_value": 5.828507247432015e-07,
+          "z_score": 23.589285714285715,
+          "combined_score": 338.6320924733429,
+          "overlap_genes": [
+            "POLB",
+            "POLA1",
+            "ERCC4",
+            "ERCC1",
+            "ERCC8",
+            "POLL"
+          ],
+          "genes": [
+            "POLB",
+            "POLA1",
+            "ERCC4",
+            "ERCC1",
+            "ERCC8",
+            "POLL"
+          ],
+          "adjusted_p_value": 1.4603648714399104e-05
+        },
+        {
+          "rank": 37,
+          "term_name": "Translesion Synthesis (GO:0019985)",
+          "term": "Translesion Synthesis (GO:0019985)",
+          "overlap": "5/23",
+          "p_value": 6.69691801647396e-07,
+          "z_score": 37.99233716475096,
+          "combined_score": 540.1160943608919,
+          "overlap_genes": [
+            "POLD3",
+            "PCNA",
+            "POLD1",
+            "REV3L",
+            "POLH"
+          ],
+          "genes": [
+            "POLD3",
+            "PCNA",
+            "POLD1",
+            "REV3L",
+            "POLH"
+          ],
+          "adjusted_p_value": 1.632600013745814e-05
+        },
+        {
+          "rank": 38,
+          "term_name": "Regulation Of Cell Cycle Phase Transition (GO:1901987)",
+          "term": "Regulation Of Cell Cycle Phase Transition (GO:1901987)",
+          "overlap": "5/25",
+          "p_value": 1.0447038930036096e-06,
+          "z_score": 34.189655172413794,
+          "combined_score": 470.85230908944953,
+          "overlap_genes": [
+            "DDB1",
+            "ERCC3",
+            "ERCC2",
+            "XPC",
+            "TP53"
+          ],
+          "genes": [
+            "DDB1",
+            "ERCC3",
+            "ERCC2",
+            "XPC",
+            "TP53"
+          ],
+          "adjusted_p_value": 2.4797971354980418e-05
+        },
+        {
+          "rank": 39,
+          "term_name": "DNA Strand Elongation (GO:0022616)",
+          "term": "DNA Strand Elongation (GO:0022616)",
+          "overlap": "4/12",
+          "p_value": 1.4358033638587221e-06,
+          "z_score": 67.95205479452055,
+          "combined_score": 914.212405501629,
+          "overlap_genes": [
+            "POLD3",
+            "POLA1",
+            "RFC3",
+            "RFC4"
+          ],
+          "genes": [
+            "POLD3",
+            "POLA1",
+            "RFC3",
+            "RFC4"
+          ],
+          "adjusted_p_value": 3.320755472309147e-05
+        },
+        {
+          "rank": 40,
+          "term_name": "Regulation Of Transcription Elongation By RNA Polymerase II (GO:0034243)",
+          "term": "Regulation Of Transcription Elongation By RNA Polymerase II (GO:0034243)",
+          "overlap": "7/77",
+          "p_value": 1.7978644453218779e-06,
+          "z_score": 13.832167832167832,
+          "combined_score": 182.98451741953554,
+          "overlap_genes": [
+            "ELL",
+            "NCBP2",
+            "SUPT4H1",
+            "NELFB",
+            "NELFCD",
+            "SUPT5H",
+            "NELFE"
+          ],
+          "genes": [
+            "ELL",
+            "NCBP2",
+            "SUPT4H1",
+            "NELFB",
+            "NELFCD",
+            "SUPT5H",
+            "NELFE"
+          ],
+          "adjusted_p_value": 4.054184324200835e-05
+        },
+        {
+          "rank": 41,
+          "term_name": "Transcription Elongation By RNA Polymerase II (GO:0006368)",
+          "term": "Transcription Elongation By RNA Polymerase II (GO:0006368)",
+          "overlap": "5/28",
+          "p_value": 1.8977830725236485e-06,
+          "z_score": 29.725637181409294,
+          "combined_score": 391.6300428190306,
+          "overlap_genes": [
+            "ERCC3",
+            "SUPT4H1",
+            "POLR2I",
+            "GTF2F1",
+            "SUPT5H"
+          ],
+          "genes": [
+            "ERCC3",
+            "SUPT4H1",
+            "POLR2I",
+            "GTF2F1",
+            "SUPT5H"
+          ],
+          "adjusted_p_value": 4.175122759552027e-05
+        },
+        {
+          "rank": 42,
+          "term_name": "Protein Transport To Vacuole Involved In Ubiquitin-Dependent Protein Catabolic Process Via The Multivesicular Body Sorting Pathway (GO:0043328)",
+          "term": "Protein Transport To Vacuole Involved In Ubiquitin-Dependent Protein Catabolic Process Via The Multivesicular Body Sorting Pathway (GO:0043328)",
+          "overlap": "4/14",
+          "p_value": 2.869775809397004e-06,
+          "z_score": 54.35616438356164,
+          "combined_score": 693.6540511378128,
+          "overlap_genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "adjusted_p_value": 6.163185190657375e-05
+        },
+        {
+          "rank": 43,
+          "term_name": "Positive Regulation Of DNA-templated Transcription Initiation (GO:2000144)",
+          "term": "Positive Regulation Of DNA-templated Transcription Initiation (GO:2000144)",
+          "overlap": "6/56",
+          "p_value": 3.8368708121205456e-06,
+          "z_score": 16.5,
+          "combined_score": 205.76908136807722,
+          "overlap_genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 8.048505750076122e-05
+        },
+        {
+          "rank": 44,
+          "term_name": "Nucleotide-Excision Repair, DNA Gap Filling (GO:0006297)",
+          "term": "Nucleotide-Excision Repair, DNA Gap Filling (GO:0006297)",
+          "overlap": "3/5",
+          "p_value": 4.08960256001379e-06,
+          "z_score": 202.53061224489795,
+          "combined_score": 2512.8100182038156,
+          "overlap_genes": [
+            "POLB",
+            "POLD3",
+            "POLD1"
+          ],
+          "genes": [
+            "POLB",
+            "POLD3",
+            "POLD1"
+          ],
+          "adjusted_p_value": 8.38368524802827e-05
+        },
+        {
+          "rank": 45,
+          "term_name": "Regulation Of Transcription Initiation By RNA Polymerase II (GO:0060260)",
+          "term": "Regulation Of Transcription Initiation By RNA Polymerase II (GO:0060260)",
+          "overlap": "6/57",
+          "p_value": 4.26191913780268e-06,
+          "z_score": 16.17565359477124,
+          "combined_score": 200.02475159761488,
+          "overlap_genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 8.542780138440039e-05
+        },
+        {
+          "rank": 46,
+          "term_name": "Response To Light Stimulus (GO:0009416)",
+          "term": "Response To Light Stimulus (GO:0009416)",
+          "overlap": "6/60",
+          "p_value": 5.772115138862121e-06,
+          "z_score": 15.274691358024691,
+          "combined_score": 184.2505363477727,
+          "overlap_genes": [
+            "ERCC3",
+            "ERCC4",
+            "POLD1",
+            "ERCC8",
+            "ERCC5",
+            "DDB2"
+          ],
+          "genes": [
+            "ERCC3",
+            "ERCC4",
+            "POLD1",
+            "ERCC8",
+            "ERCC5",
+            "DDB2"
+          ],
+          "adjusted_p_value": 0.0001131836490272529
+        },
+        {
+          "rank": 47,
+          "term_name": "Transcription By RNA Polymerase I (GO:0006360)",
+          "term": "Transcription By RNA Polymerase I (GO:0006360)",
+          "overlap": "4/17",
+          "p_value": 6.704705398037817e-06,
+          "z_score": 41.806111696522656,
+          "combined_score": 498.02370777083144,
+          "overlap_genes": [
+            "TAF1C",
+            "POLR1C",
+            "POLR2F",
+            "GTF2H1"
+          ],
+          "genes": [
+            "TAF1C",
+            "POLR1C",
+            "POLR2F",
+            "GTF2H1"
+          ],
+          "adjusted_p_value": 0.0001286732823197896
+        },
+        {
+          "rank": 48,
+          "term_name": "Regulation Of Cellular Response To Stress (GO:0080135)",
+          "term": "Regulation Of Cellular Response To Stress (GO:0080135)",
+          "overlap": "7/107",
+          "p_value": 1.616424594326442e-05,
+          "z_score": 9.667832167832168,
+          "combined_score": 106.66237699018944,
+          "overlap_genes": [
+            "RAD51",
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "RPA2",
+            "TAF6",
+            "POLH"
+          ],
+          "genes": [
+            "RAD51",
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "RPA2",
+            "TAF6",
+            "POLH"
+          ],
+          "adjusted_p_value": 0.0003037531216838439
+        },
+        {
+          "rank": 49,
+          "term_name": "Error-Prone Translesion Synthesis (GO:0042276)",
+          "term": "Error-Prone Translesion Synthesis (GO:0042276)",
+          "overlap": "3/9",
+          "p_value": 3.360292958922156e-05,
+          "z_score": 67.49659863945578,
+          "combined_score": 695.2755309975752,
+          "overlap_genes": [
+            "POLD3",
+            "REV3L",
+            "POLH"
+          ],
+          "genes": [
+            "POLD3",
+            "REV3L",
+            "POLH"
+          ],
+          "adjusted_p_value": 0.0006135538926548557
+        },
+        {
+          "rank": 50,
+          "term_name": "Late Endosome To Vacuole Transport Via Multivesicular Body Sorting Pathway (GO:0032511)",
+          "term": "Late Endosome To Vacuole Transport Via Multivesicular Body Sorting Pathway (GO:0032511)",
+          "overlap": "4/25",
+          "p_value": 3.401074792987005e-05,
+          "z_score": 25.869536855838227,
+          "combined_score": 266.1673695314734,
+          "overlap_genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "adjusted_p_value": 0.0006135538926548557
+        },
+        {
+          "rank": 51,
+          "term_name": "DNA-templated Transcription Elongation (GO:0006354)",
+          "term": "DNA-templated Transcription Elongation (GO:0006354)",
+          "overlap": "4/26",
+          "p_value": 3.996081821045941e-05,
+          "z_score": 24.692403486924036,
+          "combined_score": 250.0750603474441,
+          "overlap_genes": [
+            "ERCC3",
+            "SUPT4H1",
+            "GTF2F1",
+            "SUPT5H"
+          ],
+          "genes": [
+            "ERCC3",
+            "SUPT4H1",
+            "GTF2F1",
+            "SUPT5H"
+          ],
+          "adjusted_p_value": 0.0007067580005065566
+        },
+        {
+          "rank": 52,
+          "term_name": "mRNA Metabolic Process (GO:0016071)",
+          "term": "mRNA Metabolic Process (GO:0016071)",
+          "overlap": "6/85",
+          "p_value": 4.3234147939443525e-05,
+          "z_score": 10.427742616033756,
+          "combined_score": 104.78713331640034,
+          "overlap_genes": [
+            "SF3A3",
+            "NUDT21",
+            "NCBP2",
+            "AGO4",
+            "CSTF3",
+            "TP53"
+          ],
+          "genes": [
+            "SF3A3",
+            "NUDT21",
+            "NCBP2",
+            "AGO4",
+            "CSTF3",
+            "TP53"
+          ],
+          "adjusted_p_value": 0.0007499461815649628
+        },
+        {
+          "rank": 53,
+          "term_name": "Establishment Of Protein Localization To Vacuole (GO:0072666)",
+          "term": "Establishment Of Protein Localization To Vacuole (GO:0072666)",
+          "overlap": "4/27",
+          "p_value": 4.663782862002e-05,
+          "z_score": 23.617629541393686,
+          "combined_score": 235.54094748117515,
+          "overlap_genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "adjusted_p_value": 0.000764860389368328
+        },
+        {
+          "rank": 54,
+          "term_name": "Monoubiquitinated Histone H2A Deubiquitination (GO:0035522)",
+          "term": "Monoubiquitinated Histone H2A Deubiquitination (GO:0035522)",
+          "overlap": "4/27",
+          "p_value": 4.663782862002e-05,
+          "z_score": 23.617629541393686,
+          "combined_score": 235.54094748117515,
+          "overlap_genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 0.000764860389368328
+        },
+        {
+          "rank": 55,
+          "term_name": "Monoubiquitinated Histone Deubiquitination (GO:0035521)",
+          "term": "Monoubiquitinated Histone Deubiquitination (GO:0035521)",
+          "overlap": "4/27",
+          "p_value": 4.663782862002e-05,
+          "z_score": 23.617629541393686,
+          "combined_score": 235.54094748117515,
+          "overlap_genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 0.000764860389368328
+        },
+        {
+          "rank": 56,
+          "term_name": "snRNA Transcription By RNA Polymerase II (GO:0042795)",
+          "term": "snRNA Transcription By RNA Polymerase II (GO:0042795)",
+          "overlap": "3/10",
+          "p_value": 4.774020653772085e-05,
+          "z_score": 57.85131195335277,
+          "combined_score": 575.6053165227497,
+          "overlap_genes": [
+            "SNAPC5",
+            "ELL",
+            "SNAPC4"
+          ],
+          "genes": [
+            "SNAPC5",
+            "ELL",
+            "SNAPC4"
+          ],
+          "adjusted_p_value": 0.0007689583267325752
+        },
+        {
+          "rank": 57,
+          "term_name": "Regulation Of DNA Repair (GO:0006282)",
+          "term": "Regulation Of DNA Repair (GO:0006282)",
+          "overlap": "7/129",
+          "p_value": 5.4017524447761255e-05,
+          "z_score": 7.915625358248309,
+          "combined_score": 77.78053402122472,
+          "overlap_genes": [
+            "RAD52",
+            "PCNA",
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6",
+            "POLH"
+          ],
+          "genes": [
+            "RAD52",
+            "PCNA",
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6",
+            "POLH"
+          ],
+          "adjusted_p_value": 0.0008548036324891343
+        },
+        {
+          "rank": 58,
+          "term_name": "Multivesicular Body Assembly (GO:0036258)",
+          "term": "Multivesicular Body Assembly (GO:0036258)",
+          "overlap": "4/29",
+          "p_value": 6.238506927078787e-05,
+          "z_score": 21.726027397260275,
+          "combined_score": 210.3554075748187,
+          "overlap_genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "adjusted_p_value": 0.0009701953876250113
+        },
+        {
+          "rank": 59,
+          "term_name": "Multivesicular Body Organization (GO:0036257)",
+          "term": "Multivesicular Body Organization (GO:0036257)",
+          "overlap": "4/30",
+          "p_value": 7.156457794632434e-05,
+          "z_score": 20.889357218124342,
+          "combined_score": 199.38704145306247,
+          "overlap_genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "adjusted_p_value": 0.0010940889713149924
+        },
+        {
+          "rank": 60,
+          "term_name": "snRNA Transcription (GO:0009301)",
+          "term": "snRNA Transcription (GO:0009301)",
+          "overlap": "3/12",
+          "p_value": 8.656412784288105e-05,
+          "z_score": 44.99092970521542,
+          "combined_score": 420.8732783290837,
+          "overlap_genes": [
+            "SNAPC5",
+            "ELL",
+            "SNAPC4"
+          ],
+          "genes": [
+            "SNAPC5",
+            "ELL",
+            "SNAPC4"
+          ],
+          "adjusted_p_value": 0.0013013473885713119
+        },
+        {
+          "rank": 61,
+          "term_name": "miRNA Processing (GO:0035196)",
+          "term": "miRNA Processing (GO:0035196)",
+          "overlap": "4/32",
+          "p_value": 9.28172357981351e-05,
+          "z_score": 19.395303326810176,
+          "combined_score": 180.08302913525495,
+          "overlap_genes": [
+            "NCBP2",
+            "AGO4",
+            "DGCR8",
+            "TARBP2"
+          ],
+          "genes": [
+            "NCBP2",
+            "AGO4",
+            "DGCR8",
+            "TARBP2"
+          ],
+          "adjusted_p_value": 0.0013724778145888176
+        },
+        {
+          "rank": 62,
+          "term_name": "Ubiquitin-Dependent Protein Catabolic Process Via The Multivesicular Body Sorting Pathway (GO:0043162)",
+          "term": "Ubiquitin-Dependent Protein Catabolic Process Via The Multivesicular Body Sorting Pathway (GO:0043162)",
+          "overlap": "4/33",
+          "p_value": 0.0001050063763753564,
+          "z_score": 18.725555030703827,
+          "combined_score": 171.55397546339074,
+          "overlap_genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "adjusted_p_value": 0.0015034246268344677
+        },
+        {
+          "rank": 63,
+          "term_name": "Monoubiquitinated Protein Deubiquitination (GO:0035520)",
+          "term": "Monoubiquitinated Protein Deubiquitination (GO:0035520)",
+          "overlap": "4/33",
+          "p_value": 0.0001050063763753564,
+          "z_score": 18.725555030703827,
+          "combined_score": 171.55397546339074,
+          "overlap_genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 0.0015034246268344677
+        },
+        {
+          "rank": 64,
+          "term_name": "Histone Deubiquitination (GO:0016578)",
+          "term": "Histone Deubiquitination (GO:0016578)",
+          "overlap": "4/34",
+          "p_value": 0.00011831640265006712,
+          "z_score": 18.100456621004565,
+          "combined_score": 163.667010233747,
+          "overlap_genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 0.0016675217998493835
+        },
+        {
+          "rank": 65,
+          "term_name": "Positive Regulation Of DNA Biosynthetic Process (GO:2000573)",
+          "term": "Positive Regulation Of DNA Biosynthetic Process (GO:2000573)",
+          "overlap": "5/65",
+          "p_value": 0.00012761993192584906,
+          "z_score": 11.373563218390805,
+          "combined_score": 101.98053133346264,
+          "overlap_genes": [
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "PCNA",
+            "RFC2"
+          ],
+          "genes": [
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "PCNA",
+            "RFC2"
+          ],
+          "adjusted_p_value": 0.001770971978417167
+        },
+        {
+          "rank": 66,
+          "term_name": "Negative Regulation Of Transcription Elongation By RNA Polymerase II (GO:0034244)",
+          "term": "Negative Regulation Of Transcription Elongation By RNA Polymerase II (GO:0034244)",
+          "overlap": "3/14",
+          "p_value": 0.00014165489659109397,
+          "z_score": 36.80705009276438,
+          "combined_score": 326.1883756621657,
+          "overlap_genes": [
+            "NELFB",
+            "NELFCD",
+            "NELFE"
+          ],
+          "genes": [
+            "NELFB",
+            "NELFCD",
+            "NELFE"
+          ],
+          "adjusted_p_value": 0.0019070554735099515
+        },
+        {
+          "rank": 67,
+          "term_name": "Mitotic Recombination (GO:0006312)",
+          "term": "Mitotic Recombination (GO:0006312)",
+          "overlap": "3/14",
+          "p_value": 0.00014165489659109397,
+          "z_score": 36.80705009276438,
+          "combined_score": 326.1883756621657,
+          "overlap_genes": [
+            "RAD52",
+            "RAD51",
+            "ERCC1"
+          ],
+          "genes": [
+            "RAD52",
+            "RAD51",
+            "ERCC1"
+          ],
+          "adjusted_p_value": 0.0019070554735099515
+        },
+        {
+          "rank": 68,
+          "term_name": "Histone H3 Acetylation (GO:0043966)",
+          "term": "Histone H3 Acetylation (GO:0043966)",
+          "overlap": "4/36",
+          "p_value": 0.00014854179030550704,
+          "z_score": 16.96746575342466,
+          "combined_score": 149.56217398429115,
+          "overlap_genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 0.0019703631596406966
+        },
+        {
+          "rank": 69,
+          "term_name": "Membrane Fission (GO:0090148)",
+          "term": "Membrane Fission (GO:0090148)",
+          "overlap": "4/38",
+          "p_value": 0.00018398739154628445,
+          "z_score": 15.967767929089444,
+          "combined_score": 137.33307668494118,
+          "overlap_genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "genes": [
+            "TSG101",
+            "VPS37D",
+            "VPS37B",
+            "VPS28"
+          ],
+          "adjusted_p_value": 0.0024051685097789648
+        },
+        {
+          "rank": 70,
+          "term_name": "Protein Targeting To Membrane (GO:0006612)",
+          "term": "Protein Targeting To Membrane (GO:0006612)",
+          "overlap": "5/72",
+          "p_value": 0.0002072745038665204,
+          "z_score": 10.181677817807515,
+          "combined_score": 86.35555970800276,
+          "overlap_genes": [
+            "SEC61A1",
+            "SDCBP",
+            "ARL6IP1",
+            "VPS37D",
+            "VPS37B"
+          ],
+          "genes": [
+            "SEC61A1",
+            "SDCBP",
+            "ARL6IP1",
+            "VPS37D",
+            "VPS37B"
+          ],
+          "adjusted_p_value": 0.0026708800355371627
+        },
+        {
+          "rank": 71,
+          "term_name": "Regulation Of DNA Metabolic Process (GO:0051052)",
+          "term": "Regulation Of DNA Metabolic Process (GO:0051052)",
+          "overlap": "6/124",
+          "p_value": 0.00034750562768015326,
+          "z_score": 6.9675141242937855,
+          "combined_score": 55.494366669279245,
+          "overlap_genes": [
+            "TAF12",
+            "ALYREF",
+            "TAF10",
+            "TAF9",
+            "TAF6",
+            "POLH"
+          ],
+          "genes": [
+            "TAF12",
+            "ALYREF",
+            "TAF10",
+            "TAF9",
+            "TAF6",
+            "POLH"
+          ],
+          "adjusted_p_value": 0.0044147898051760314
+        },
+        {
+          "rank": 72,
+          "term_name": "Nucleotide Biosynthetic Process (GO:0009165)",
+          "term": "Nucleotide Biosynthetic Process (GO:0009165)",
+          "overlap": "3/19",
+          "p_value": 0.0003668631809325769,
+          "z_score": 25.2984693877551,
+          "combined_score": 200.12408811924638,
+          "overlap_genes": [
+            "PNP",
+            "RRM2B",
+            "HPRT1"
+          ],
+          "genes": [
+            "PNP",
+            "RRM2B",
+            "HPRT1"
+          ],
+          "adjusted_p_value": 0.004595980405572005
+        },
+        {
+          "rank": 73,
+          "term_name": "DNA Replication Initiation (GO:0006270)",
+          "term": "DNA Replication Initiation (GO:0006270)",
+          "overlap": "3/21",
+          "p_value": 0.0004980321677705861,
+          "z_score": 22.485260770975056,
+          "combined_score": 170.9969429396908,
+          "overlap_genes": [
+            "POLA1",
+            "POLA2",
+            "PRIM1"
+          ],
+          "genes": [
+            "POLA1",
+            "POLA2",
+            "PRIM1"
+          ],
+          "adjusted_p_value": 0.006153767333274913
+        },
+        {
+          "rank": 74,
+          "term_name": "Regulation Of Extracellular Exosome Assembly (GO:1903551)",
+          "term": "Regulation Of Extracellular Exosome Assembly (GO:1903551)",
+          "overlap": "2/5",
+          "p_value": 0.0005505377030005599,
+          "z_score": 89.40090090090091,
+          "combined_score": 670.919352240136,
+          "overlap_genes": [
+            "SDCBP",
+            "TSG101"
+          ],
+          "genes": [
+            "SDCBP",
+            "TSG101"
+          ],
+          "adjusted_p_value": 0.006710608217655474
+        },
+        {
+          "rank": 75,
+          "term_name": "Negative Regulation Of Telomere Capping (GO:1904354)",
+          "term": "Negative Regulation Of Telomere Capping (GO:1904354)",
+          "overlap": "2/6",
+          "p_value": 0.0008217415222286749,
+          "z_score": 67.04729729729729,
+          "combined_score": 476.3096763717786,
+          "overlap_genes": [
+            "ERCC4",
+            "ERCC1"
+          ],
+          "genes": [
+            "ERCC4",
+            "ERCC1"
+          ],
+          "adjusted_p_value": 0.00978736276369409
+        },
+        {
+          "rank": 76,
+          "term_name": "Positive Regulation Of DNA-templated Transcription, Elongation (GO:0032786)",
+          "term": "Positive Regulation Of DNA-templated Transcription, Elongation (GO:0032786)",
+          "overlap": "4/56",
+          "p_value": 0.0008246558426172404,
+          "z_score": 10.430979978925185,
+          "combined_score": 74.0656366754054,
+          "overlap_genes": [
+            "ELL",
+            "NCBP2",
+            "SUPT4H1",
+            "SUPT5H"
+          ],
+          "genes": [
+            "ELL",
+            "NCBP2",
+            "SUPT4H1",
+            "SUPT5H"
+          ],
+          "adjusted_p_value": 0.00978736276369409
+        },
+        {
+          "rank": 77,
+          "term_name": "Purine Ribonucleotide Catabolic Process (GO:0009154)",
+          "term": "Purine Ribonucleotide Catabolic Process (GO:0009154)",
+          "overlap": "3/25",
+          "p_value": 0.0008425464086497794,
+          "z_score": 18.393320964749535,
+          "combined_score": 130.2078239186263,
+          "overlap_genes": [
+            "NUDT9",
+            "PNP",
+            "HPRT1"
+          ],
+          "genes": [
+            "NUDT9",
+            "PNP",
+            "HPRT1"
+          ],
+          "adjusted_p_value": 0.009869829358468843
+        },
+        {
+          "rank": 78,
+          "term_name": "Histone Acetylation (GO:0016573)",
+          "term": "Histone Acetylation (GO:0016573)",
+          "overlap": "4/60",
+          "p_value": 0.0010697898914654384,
+          "z_score": 9.683953033268102,
+          "combined_score": 66.24107627077846,
+          "overlap_genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TAF6"
+          ],
+          "adjusted_p_value": 0.012371160026946479
+        },
+        {
+          "rank": 79,
+          "term_name": "Response To UV-C (GO:0010225)",
+          "term": "Response To UV-C (GO:0010225)",
+          "overlap": "2/7",
+          "p_value": 0.0011447777472071098,
+          "z_score": 53.63513513513514,
+          "combined_score": 363.2463538436442,
+          "overlap_genes": [
+            "ERCC5",
+            "POLH"
+          ],
+          "genes": [
+            "ERCC5",
+            "POLH"
+          ],
+          "adjusted_p_value": 0.01244083768651582
+        },
+        {
+          "rank": 80,
+          "term_name": "snRNA Transcription By RNA Polymerase III (GO:0042796)",
+          "term": "snRNA Transcription By RNA Polymerase III (GO:0042796)",
+          "overlap": "2/7",
+          "p_value": 0.0011447777472071098,
+          "z_score": 53.63513513513514,
+          "combined_score": 363.2463538436442,
+          "overlap_genes": [
+            "SNAPC5",
+            "SNAPC4"
+          ],
+          "genes": [
+            "SNAPC5",
+            "SNAPC4"
+          ],
+          "adjusted_p_value": 0.01244083768651582
+        },
+        {
+          "rank": 81,
+          "term_name": "tRNA Transcription By RNA Polymerase III (GO:0042797)",
+          "term": "tRNA Transcription By RNA Polymerase III (GO:0042797)",
+          "overlap": "2/7",
+          "p_value": 0.0011447777472071098,
+          "z_score": 53.63513513513514,
+          "combined_score": 363.2463538436442,
+          "overlap_genes": [
+            "GTF3C5",
+            "POLR2F"
+          ],
+          "genes": [
+            "GTF3C5",
+            "POLR2F"
+          ],
+          "adjusted_p_value": 0.01244083768651582
+        },
+        {
+          "rank": 82,
+          "term_name": "Hair Cell Differentiation (GO:0035315)",
+          "term": "Hair Cell Differentiation (GO:0035315)",
+          "overlap": "2/7",
+          "p_value": 0.0011447777472071098,
+          "z_score": 53.63513513513514,
+          "combined_score": 363.2463538436442,
+          "overlap_genes": [
+            "ERCC3",
+            "ERCC2"
+          ],
+          "genes": [
+            "ERCC3",
+            "ERCC2"
+          ],
+          "adjusted_p_value": 0.01244083768651582
+        },
+        {
+          "rank": 83,
+          "term_name": "Purine Ribonucleoside Monophosphate Catabolic Process (GO:0009169)",
+          "term": "Purine Ribonucleoside Monophosphate Catabolic Process (GO:0009169)",
+          "overlap": "2/7",
+          "p_value": 0.0011447777472071098,
+          "z_score": 53.63513513513514,
+          "combined_score": 363.2463538436442,
+          "overlap_genes": [
+            "PNP",
+            "HPRT1"
+          ],
+          "genes": [
+            "PNP",
+            "HPRT1"
+          ],
+          "adjusted_p_value": 0.01244083768651582
+        },
+        {
+          "rank": 84,
+          "term_name": "RNA Export From Nucleus (GO:0006405)",
+          "term": "RNA Export From Nucleus (GO:0006405)",
+          "overlap": "4/65",
+          "p_value": 0.0014429645108763986,
+          "z_score": 8.887940714125309,
+          "combined_score": 58.13651432264878,
+          "overlap_genes": [
+            "POM121",
+            "NCBP2",
+            "ALYREF",
+            "RAE1"
+          ],
+          "genes": [
+            "POM121",
+            "NCBP2",
+            "ALYREF",
+            "RAE1"
+          ],
+          "adjusted_p_value": 0.01549469034298228
+        },
+        {
+          "rank": 85,
+          "term_name": "GMP Metabolic Process (GO:0046037)",
+          "term": "GMP Metabolic Process (GO:0046037)",
+          "overlap": "2/8",
+          "p_value": 0.0015188640882368835,
+          "z_score": 44.693693693693696,
+          "combined_score": 290.05279964440666,
+          "overlap_genes": [
+            "GMPR2",
+            "HPRT1"
+          ],
+          "genes": [
+            "GMPR2",
+            "HPRT1"
+          ],
+          "adjusted_p_value": 0.015747303535513436
+        },
+        {
+          "rank": 86,
+          "term_name": "RISC Complex Assembly (GO:0070922)",
+          "term": "RISC Complex Assembly (GO:0070922)",
+          "overlap": "2/8",
+          "p_value": 0.0015188640882368835,
+          "z_score": 44.693693693693696,
+          "combined_score": 290.05279964440666,
+          "overlap_genes": [
+            "AGO4",
+            "TARBP2"
+          ],
+          "genes": [
+            "AGO4",
+            "TARBP2"
+          ],
+          "adjusted_p_value": 0.015747303535513436
+        },
+        {
+          "rank": 87,
+          "term_name": "tRNA Transcription (GO:0009304)",
+          "term": "tRNA Transcription (GO:0009304)",
+          "overlap": "2/8",
+          "p_value": 0.0015188640882368835,
+          "z_score": 44.693693693693696,
+          "combined_score": 290.05279964440666,
+          "overlap_genes": [
+            "GTF3C5",
+            "POLR2F"
+          ],
+          "genes": [
+            "GTF3C5",
+            "POLR2F"
+          ],
+          "adjusted_p_value": 0.015747303535513436
+        },
+        {
+          "rank": 88,
+          "term_name": "Telomere Maintenance (GO:0000723)",
+          "term": "Telomere Maintenance (GO:0000723)",
+          "overlap": "4/68",
+          "p_value": 0.0017058488547135359,
+          "z_score": 8.470034246575343,
+          "combined_score": 53.9853931603963,
+          "overlap_genes": [
+            "RAD51",
+            "ERCC4",
+            "RPA3",
+            "RPA2"
+          ],
+          "genes": [
+            "RAD51",
+            "ERCC4",
+            "RPA3",
+            "RPA2"
+          ],
+          "adjusted_p_value": 0.017484950760813744
+        },
+        {
+          "rank": 89,
+          "term_name": "IMP Metabolic Process (GO:0046040)",
+          "term": "IMP Metabolic Process (GO:0046040)",
+          "overlap": "2/9",
+          "p_value": 0.0019432269245114177,
+          "z_score": 38.30694980694981,
+          "combined_score": 239.1658143943945,
+          "overlap_genes": [
+            "PNP",
+            "HPRT1"
+          ],
+          "genes": [
+            "PNP",
+            "HPRT1"
+          ],
+          "adjusted_p_value": 0.01905207267292716
+        },
+        {
+          "rank": 90,
+          "term_name": "Nucleoside Metabolic Process (GO:0009116)",
+          "term": "Nucleoside Metabolic Process (GO:0009116)",
+          "overlap": "2/9",
+          "p_value": 0.0019432269245114177,
+          "z_score": 38.30694980694981,
+          "combined_score": 239.1658143943945,
+          "overlap_genes": [
+            "NT5C3A",
+            "NME4"
+          ],
+          "genes": [
+            "NT5C3A",
+            "NME4"
+          ],
+          "adjusted_p_value": 0.01905207267292716
+        },
+        {
+          "rank": 91,
+          "term_name": "Positive Regulation Of mRNA 3'-End Processing (GO:0031442)",
+          "term": "Positive Regulation Of mRNA 3'-End Processing (GO:0031442)",
+          "overlap": "2/9",
+          "p_value": 0.0019432269245114177,
+          "z_score": 38.30694980694981,
+          "combined_score": 239.1658143943945,
+          "overlap_genes": [
+            "NUDT21",
+            "NCBP2"
+          ],
+          "genes": [
+            "NUDT21",
+            "NCBP2"
+          ],
+          "adjusted_p_value": 0.01905207267292716
+        },
+        {
+          "rank": 92,
+          "term_name": "Telomere Maintenance Via Recombination (GO:0000722)",
+          "term": "Telomere Maintenance Via Recombination (GO:0000722)",
+          "overlap": "2/9",
+          "p_value": 0.0019432269245114177,
+          "z_score": 38.30694980694981,
+          "combined_score": 239.1658143943945,
+          "overlap_genes": [
+            "RAD51",
+            "ERCC4"
+          ],
+          "genes": [
+            "RAD51",
+            "ERCC4"
+          ],
+          "adjusted_p_value": 0.01905207267292716
+        },
+        {
+          "rank": 93,
+          "term_name": "Protein Autoubiquitination (GO:0051865)",
+          "term": "Protein Autoubiquitination (GO:0051865)",
+          "overlap": "4/71",
+          "p_value": 0.002000269712413651,
+          "z_score": 8.08955223880597,
+          "combined_score": 50.272306003115595,
+          "overlap_genes": [
+            "RAD51",
+            "NFX1",
+            "ERCC8",
+            "DDB2"
+          ],
+          "genes": [
+            "RAD51",
+            "NFX1",
+            "ERCC8",
+            "DDB2"
+          ],
+          "adjusted_p_value": 0.01940046538276466
+        },
+        {
+          "rank": 94,
+          "term_name": "Regulation Of mRNA Polyadenylation (GO:1900363)",
+          "term": "Regulation Of mRNA Polyadenylation (GO:1900363)",
+          "overlap": "2/10",
+          "p_value": 0.0024171012251306507,
+          "z_score": 33.516891891891895,
+          "combined_score": 201.94551776695783,
+          "overlap_genes": [
+            "NUDT21",
+            "NCBP2"
+          ],
+          "genes": [
+            "NUDT21",
+            "NCBP2"
+          ],
+          "adjusted_p_value": 0.022710680261123408
+        },
+        {
+          "rank": 95,
+          "term_name": "Mitotic DNA Replication (GO:1902969)",
+          "term": "Mitotic DNA Replication (GO:1902969)",
+          "overlap": "2/10",
+          "p_value": 0.0024171012251306507,
+          "z_score": 33.516891891891895,
+          "combined_score": 201.94551776695783,
+          "overlap_genes": [
+            "POLA1",
+            "LIG1"
+          ],
+          "genes": [
+            "POLA1",
+            "LIG1"
+          ],
+          "adjusted_p_value": 0.022710680261123408
+        },
+        {
+          "rank": 96,
+          "term_name": "Mitotic G1/S Transition Checkpoint Signaling (GO:0044819)",
+          "term": "Mitotic G1/S Transition Checkpoint Signaling (GO:0044819)",
+          "overlap": "2/10",
+          "p_value": 0.0024171012251306507,
+          "z_score": 33.516891891891895,
+          "combined_score": 201.94551776695783,
+          "overlap_genes": [
+            "RPA2",
+            "TP53"
+          ],
+          "genes": [
+            "RPA2",
+            "TP53"
+          ],
+          "adjusted_p_value": 0.022710680261123408
+        },
+        {
+          "rank": 97,
+          "term_name": "Regulation Of Mitotic Cell Cycle (GO:0007346)",
+          "term": "Regulation Of Mitotic Cell Cycle (GO:0007346)",
+          "overlap": "5/125",
+          "p_value": 0.002530625752014232,
+          "z_score": 5.669540229885057,
+          "combined_score": 33.899817683409815,
+          "overlap_genes": [
+            "DDB1",
+            "SDCBP",
+            "ERCC3",
+            "ERCC2",
+            "XPC"
+          ],
+          "genes": [
+            "DDB1",
+            "SDCBP",
+            "ERCC3",
+            "ERCC2",
+            "XPC"
+          ],
+          "adjusted_p_value": 0.02353221060120451
+        },
+        {
+          "rank": 98,
+          "term_name": "RNA 3'-End Processing (GO:0031123)",
+          "term": "RNA 3'-End Processing (GO:0031123)",
+          "overlap": "3/38",
+          "p_value": 0.0028779786051375033,
+          "z_score": 11.553935860058308,
+          "combined_score": 67.5982324637005,
+          "overlap_genes": [
+            "NUDT21",
+            "NCBP2",
+            "CSTF3"
+          ],
+          "genes": [
+            "NUDT21",
+            "NCBP2",
+            "CSTF3"
+          ],
+          "adjusted_p_value": 0.025744047379584165
+        },
+        {
+          "rank": 99,
+          "term_name": "Protein Targeting (GO:0006605)",
+          "term": "Protein Targeting (GO:0006605)",
+          "overlap": "5/129",
+          "p_value": 0.0028999347989682005,
+          "z_score": 5.485539488320356,
+          "combined_score": 32.052374900497675,
+          "overlap_genes": [
+            "BCAP31",
+            "SDCBP",
+            "SEC61A1",
+            "VPS37D",
+            "VPS37B"
+          ],
+          "genes": [
+            "BCAP31",
+            "SDCBP",
+            "SEC61A1",
+            "VPS37D",
+            "VPS37B"
+          ],
+          "adjusted_p_value": 0.025744047379584165
+        },
+        {
+          "rank": 100,
+          "term_name": "pre-mRNA Cleavage Required For Polyadenylation (GO:0098789)",
+          "term": "pre-mRNA Cleavage Required For Polyadenylation (GO:0098789)",
+          "overlap": "2/11",
+          "p_value": 0.002939730465739655,
+          "z_score": 29.79129129129129,
+          "combined_score": 173.66646705651294,
+          "overlap_genes": [
+            "NUDT21",
+            "NCBP2"
+          ],
+          "genes": [
+            "NUDT21",
+            "NCBP2"
+          ],
+          "adjusted_p_value": 0.025744047379584165
+        },
+        {
+          "rank": 101,
+          "term_name": "Purine Ribonucleoside Monophosphate Metabolic Process (GO:0009167)",
+          "term": "Purine Ribonucleoside Monophosphate Metabolic Process (GO:0009167)",
+          "overlap": "2/11",
+          "p_value": 0.002939730465739655,
+          "z_score": 29.79129129129129,
+          "combined_score": 173.66646705651294,
+          "overlap_genes": [
+            "GMPR2",
+            "HPRT1"
+          ],
+          "genes": [
+            "GMPR2",
+            "HPRT1"
+          ],
+          "adjusted_p_value": 0.025744047379584165
+        },
+        {
+          "rank": 102,
+          "term_name": "Pyrimidine Nucleobase Metabolic Process (GO:0006206)",
+          "term": "Pyrimidine Nucleobase Metabolic Process (GO:0006206)",
+          "overlap": "2/11",
+          "p_value": 0.002939730465739655,
+          "z_score": 29.79129129129129,
+          "combined_score": 173.66646705651294,
+          "overlap_genes": [
+            "CDA",
+            "UMPS"
+          ],
+          "genes": [
+            "CDA",
+            "UMPS"
+          ],
+          "adjusted_p_value": 0.025744047379584165
+        },
+        {
+          "rank": 103,
+          "term_name": "Regulation Of Cell Cycle Checkpoint (GO:1901976)",
+          "term": "Regulation Of Cell Cycle Checkpoint (GO:1901976)",
+          "overlap": "2/11",
+          "p_value": 0.002939730465739655,
+          "z_score": 29.79129129129129,
+          "combined_score": 173.66646705651294,
+          "overlap_genes": [
+            "RAD51",
+            "RPA2"
+          ],
+          "genes": [
+            "RAD51",
+            "RPA2"
+          ],
+          "adjusted_p_value": 0.025744047379584165
+        },
+        {
+          "rank": 104,
+          "term_name": "Positive Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001244)",
+          "term": "Positive Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001244)",
+          "overlap": "3/39",
+          "p_value": 0.0031008256012906733,
+          "z_score": 11.232426303854876,
+          "combined_score": 64.87947020372073,
+          "overlap_genes": [
+            "BCAP31",
+            "TP53",
+            "GSDME"
+          ],
+          "genes": [
+            "BCAP31",
+            "TP53",
+            "GSDME"
+          ],
+          "adjusted_p_value": 0.026637568498706545
+        },
+        {
+          "rank": 105,
+          "term_name": "Internal Peptidyl-Lysine Acetylation (GO:0018393)",
+          "term": "Internal Peptidyl-Lysine Acetylation (GO:0018393)",
+          "overlap": "3/39",
+          "p_value": 0.0031008256012906733,
+          "z_score": 11.232426303854876,
+          "combined_score": 64.87947020372073,
+          "overlap_genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9"
+          ],
+          "genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9"
+          ],
+          "adjusted_p_value": 0.026637568498706545
+        },
+        {
+          "rank": 106,
+          "term_name": "mRNA 3'-End Processing (GO:0031124)",
+          "term": "mRNA 3'-End Processing (GO:0031124)",
+          "overlap": "3/40",
+          "p_value": 0.003333988620254291,
+          "z_score": 10.928295642581357,
+          "combined_score": 62.330473024396646,
+          "overlap_genes": [
+            "NUDT21",
+            "NCBP2",
+            "CSTF3"
+          ],
+          "genes": [
+            "NUDT21",
+            "NCBP2",
+            "CSTF3"
+          ],
+          "adjusted_p_value": 0.02837035599499406
+        },
+        {
+          "rank": 107,
+          "term_name": "Nucleotide Metabolic Process (GO:0009117)",
+          "term": "Nucleotide Metabolic Process (GO:0009117)",
+          "overlap": "2/12",
+          "p_value": 0.0035103665492271833,
+          "z_score": 26.81081081081081,
+          "combined_score": 151.5356361741005,
+          "overlap_genes": [
+            "PNP",
+            "GUK1"
+          ],
+          "genes": [
+            "PNP",
+            "GUK1"
+          ],
+          "adjusted_p_value": 0.028525681327954227
+        },
+        {
+          "rank": 108,
+          "term_name": "pre-miRNA Processing (GO:0031054)",
+          "term": "pre-miRNA Processing (GO:0031054)",
+          "overlap": "2/12",
+          "p_value": 0.0035103665492271833,
+          "z_score": 26.81081081081081,
+          "combined_score": 151.5356361741005,
+          "overlap_genes": [
+            "AGO4",
+            "TARBP2"
+          ],
+          "genes": [
+            "AGO4",
+            "TARBP2"
+          ],
+          "adjusted_p_value": 0.028525681327954227
+        },
+        {
+          "rank": 109,
+          "term_name": "Primary miRNA Processing (GO:0031053)",
+          "term": "Primary miRNA Processing (GO:0031053)",
+          "overlap": "2/12",
+          "p_value": 0.0035103665492271833,
+          "z_score": 26.81081081081081,
+          "combined_score": 151.5356361741005,
+          "overlap_genes": [
+            "NCBP2",
+            "DGCR8"
+          ],
+          "genes": [
+            "NCBP2",
+            "DGCR8"
+          ],
+          "adjusted_p_value": 0.028525681327954227
+        },
+        {
+          "rank": 110,
+          "term_name": "mRNA Cleavage Involved In mRNA Processing (GO:0098787)",
+          "term": "mRNA Cleavage Involved In mRNA Processing (GO:0098787)",
+          "overlap": "2/12",
+          "p_value": 0.0035103665492271833,
+          "z_score": 26.81081081081081,
+          "combined_score": 151.5356361741005,
+          "overlap_genes": [
+            "NUDT21",
+            "NCBP2"
+          ],
+          "genes": [
+            "NUDT21",
+            "NCBP2"
+          ],
+          "adjusted_p_value": 0.028525681327954227
+        },
+        {
+          "rank": 111,
+          "term_name": "Pyrimidine Deoxyribonucleotide Catabolic Process (GO:0009223)",
+          "term": "Pyrimidine Deoxyribonucleotide Catabolic Process (GO:0009223)",
+          "overlap": "2/12",
+          "p_value": 0.0035103665492271833,
+          "z_score": 26.81081081081081,
+          "combined_score": 151.5356361741005,
+          "overlap_genes": [
+            "NT5C",
+            "DUT"
+          ],
+          "genes": [
+            "NT5C",
+            "DUT"
+          ],
+          "adjusted_p_value": 0.028525681327954227
+        },
+        {
+          "rank": 112,
+          "term_name": "DNA Recombination (GO:0006310)",
+          "term": "DNA Recombination (GO:0006310)",
+          "overlap": "3/42",
+          "p_value": 0.003831850587075852,
+          "z_score": 10.366823652537938,
+          "combined_score": 57.68523035532435,
+          "overlap_genes": [
+            "RAD52",
+            "RAD51",
+            "ERCC1"
+          ],
+          "genes": [
+            "RAD52",
+            "RAD51",
+            "ERCC1"
+          ],
+          "adjusted_p_value": 0.030860082406628735
+        },
+        {
+          "rank": 113,
+          "term_name": "Regulation Of Mitotic Cell Cycle Phase Transition (GO:1901990)",
+          "term": "Regulation Of Mitotic Cell Cycle Phase Transition (GO:1901990)",
+          "overlap": "4/86",
+          "p_value": 0.00400959545202075,
+          "z_score": 6.60474440360842,
+          "combined_score": 36.4520131932931,
+          "overlap_genes": [
+            "DDB1",
+            "ERCC3",
+            "ERCC2",
+            "XPC"
+          ],
+          "genes": [
+            "DDB1",
+            "ERCC3",
+            "ERCC2",
+            "XPC"
+          ],
+          "adjusted_p_value": 0.032005797324979796
+        },
+        {
+          "rank": 114,
+          "term_name": "DNA-templated DNA Replication Maintenance Of Fidelity (GO:0045005)",
+          "term": "DNA-templated DNA Replication Maintenance Of Fidelity (GO:0045005)",
+          "overlap": "3/43",
+          "p_value": 0.004096830907172753,
+          "z_score": 10.107142857142858,
+          "combined_score": 55.56443784553058,
+          "overlap_genes": [
+            "PCNA",
+            "RAD51",
+            "POLD1"
+          ],
+          "genes": [
+            "PCNA",
+            "RAD51",
+            "POLD1"
+          ],
+          "adjusted_p_value": 0.032415276125173885
+        },
+        {
+          "rank": 115,
+          "term_name": "Regulation Of DNA-templated Transcription Elongation (GO:0032784)",
+          "term": "Regulation Of DNA-templated Transcription Elongation (GO:0032784)",
+          "overlap": "3/44",
+          "p_value": 0.004372690160215806,
+          "z_score": 9.860129417620707,
+          "combined_score": 53.5639389043474,
+          "overlap_genes": [
+            "ELL",
+            "SUPT4H1",
+            "SUPT5H"
+          ],
+          "genes": [
+            "ELL",
+            "SUPT4H1",
+            "SUPT5H"
+          ],
+          "adjusted_p_value": 0.03429710021317093
+        },
+        {
+          "rank": 116,
+          "term_name": "Positive Regulation Of Transferase Activity (GO:0051347)",
+          "term": "Positive Regulation Of Transferase Activity (GO:0051347)",
+          "overlap": "5/143",
+          "p_value": 0.004501418959174439,
+          "z_score": 4.9255372313843075,
+          "combined_score": 26.61446369864555,
+          "overlap_genes": [
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "PCNA",
+            "RFC2"
+          ],
+          "genes": [
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "PCNA",
+            "RFC2"
+          ],
+          "adjusted_p_value": 0.03500241294116675
+        },
+        {
+          "rank": 117,
+          "term_name": "Positive Regulation Of Exosomal Secretion (GO:1903543)",
+          "term": "Positive Regulation Of Exosomal Secretion (GO:1903543)",
+          "overlap": "2/14",
+          "p_value": 0.004792708495455789,
+          "z_score": 22.34009009009009,
+          "combined_score": 119.31081614567599,
+          "overlap_genes": [
+            "SDCBP",
+            "TSG101"
+          ],
+          "genes": [
+            "SDCBP",
+            "TSG101"
+          ],
+          "adjusted_p_value": 0.03694891506753095
+        },
+        {
+          "rank": 118,
+          "term_name": "Regulation Of RNA Metabolic Process (GO:0051252)",
+          "term": "Regulation Of RNA Metabolic Process (GO:0051252)",
+          "overlap": "4/91",
+          "p_value": 0.004903382108671617,
+          "z_score": 6.223586836718627,
+          "combined_score": 33.0959773212852,
+          "overlap_genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TARBP2"
+          ],
+          "genes": [
+            "TAF12",
+            "TAF10",
+            "TAF9",
+            "TARBP2"
+          ],
+          "adjusted_p_value": 0.03748178527137118
+        },
+        {
+          "rank": 119,
+          "term_name": "Regulation Of Epidermal Growth Factor Receptor Signaling Pathway (GO:0042058)",
+          "term": "Regulation Of Epidermal Growth Factor Receptor Signaling Pathway (GO:0042058)",
+          "overlap": "3/46",
+          "p_value": 0.004957554720709854,
+          "z_score": 9.400569530137636,
+          "combined_score": 49.887343407696136,
+          "overlap_genes": [
+            "RALA",
+            "TSG101",
+            "PDE6G"
+          ],
+          "genes": [
+            "RALA",
+            "TSG101",
+            "PDE6G"
+          ],
+          "adjusted_p_value": 0.03757743158050662
+        },
+        {
+          "rank": 120,
+          "term_name": "protein-RNA Complex Assembly (GO:0022618)",
+          "term": "protein-RNA Complex Assembly (GO:0022618)",
+          "overlap": "5/150",
+          "p_value": 0.005502173199583985,
+          "z_score": 4.686087990487515,
+          "combined_score": 24.37989825711954,
+          "overlap_genes": [
+            "NUDT21",
+            "AGO4",
+            "POLR2D",
+            "SRSF6",
+            "TARBP2"
+          ],
+          "genes": [
+            "NUDT21",
+            "AGO4",
+            "POLR2D",
+            "SRSF6",
+            "TARBP2"
+          ],
+          "adjusted_p_value": 0.040671336380705005
+        },
+        {
+          "rank": 121,
+          "term_name": "Negative Regulation Of Telomere Maintenance (GO:0032205)",
+          "term": "Negative Regulation Of Telomere Maintenance (GO:0032205)",
+          "overlap": "2/15",
+          "p_value": 0.0055029595646660405,
+          "z_score": 20.62058212058212,
+          "combined_score": 107.27794396232315,
+          "overlap_genes": [
+            "ERCC4",
+            "ERCC1"
+          ],
+          "genes": [
+            "ERCC4",
+            "ERCC1"
+          ],
+          "adjusted_p_value": 0.040671336380705005
+        },
+        {
+          "rank": 122,
+          "term_name": "Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001242)",
+          "term": "Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001242)",
+          "overlap": "3/48",
+          "p_value": 0.0055874159497017245,
+          "z_score": 8.98185941043084,
+          "combined_score": 46.59104569331382,
+          "overlap_genes": [
+            "BCAP31",
+            "TP53",
+            "GSDME"
+          ],
+          "genes": [
+            "BCAP31",
+            "TP53",
+            "GSDME"
+          ],
+          "adjusted_p_value": 0.040671336380705005
+        },
+        {
+          "rank": 123,
+          "term_name": "Cellular Response To Radiation (GO:0071478)",
+          "term": "Cellular Response To Radiation (GO:0071478)",
+          "overlap": "3/48",
+          "p_value": 0.0055874159497017245,
+          "z_score": 8.98185941043084,
+          "combined_score": 46.59104569331382,
+          "overlap_genes": [
+            "RAD51",
+            "ERCC4",
+            "TP53"
+          ],
+          "genes": [
+            "RAD51",
+            "ERCC4",
+            "TP53"
+          ],
+          "adjusted_p_value": 0.040671336380705005
+        },
+        {
+          "rank": 124,
+          "term_name": "mRNA Processing (GO:0006397)",
+          "term": "mRNA Processing (GO:0006397)",
+          "overlap": "6/214",
+          "p_value": 0.005591181498012661,
+          "z_score": 3.9346955128205128,
+          "combined_score": 20.407552674719117,
+          "overlap_genes": [
+            "SF3A3",
+            "NUDT21",
+            "RNMT",
+            "NCBP2",
+            "ALYREF",
+            "SRSF6"
+          ],
+          "genes": [
+            "SF3A3",
+            "NUDT21",
+            "RNMT",
+            "NCBP2",
+            "ALYREF",
+            "SRSF6"
+          ],
+          "adjusted_p_value": 0.040671336380705005
+        },
+        {
+          "rank": 125,
+          "term_name": "Alternative mRNA Splicing, Via Spliceosome (GO:0000380)",
+          "term": "Alternative mRNA Splicing, Via Spliceosome (GO:0000380)",
+          "overlap": "2/16",
+          "p_value": 0.006258307725943112,
+          "z_score": 19.146718146718147,
+          "combined_score": 97.14748897584924,
+          "overlap_genes": [
+            "NCBP2",
+            "SRSF6"
+          ],
+          "genes": [
+            "NCBP2",
+            "SRSF6"
+          ],
+          "adjusted_p_value": 0.0451599485504055
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Nucleotide excision repair",
+          "term": "Nucleotide excision repair",
+          "overlap": "26/47",
+          "p_value": 6.327834174563786e-44,
+          "z_score": 197.98540706605223,
+          "combined_score": 19693.368099771174,
+          "overlap_genes": [
+            "PCNA",
+            "CETN2",
+            "XPC",
+            "POLD3",
+            "POLD4",
+            "POLD1",
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "RPA2",
+            "GTF2H1",
+            "GTF2H3",
+            "GTF2H5",
+            "DDB2",
+            "RBX1",
+            "DDB1",
+            "POLE4",
+            "ERCC3",
+            "ERCC4",
+            "ERCC1",
+            "RPA3",
+            "ERCC2",
+            "ERCC8",
+            "ERCC5"
+          ],
+          "genes": [
+            "PCNA",
+            "CETN2",
+            "XPC",
+            "POLD3",
+            "POLD4",
+            "POLD1",
+            "RFC5",
+            "RFC3",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "RPA2",
+            "GTF2H1",
+            "GTF2H3",
+            "GTF2H5",
+            "DDB2",
+            "RBX1",
+            "DDB1",
+            "POLE4",
+            "ERCC3",
+            "ERCC4",
+            "ERCC1",
+            "RPA3",
+            "ERCC2",
+            "ERCC8",
+            "ERCC5"
+          ],
+          "adjusted_p_value": 9.112081211371853e-42
+        },
+        {
+          "rank": 2,
+          "term_name": "Purine metabolism",
+          "term": "Purine metabolism",
+          "overlap": "23/129",
+          "p_value": 2.0052327887723044e-25,
+          "z_score": 33.732877729906406,
+          "combined_score": 1918.350542772794,
+          "overlap_genes": [
+            "CANT1",
+            "PDE6G",
+            "NPR2",
+            "GMPR2",
+            "AK1",
+            "AK3",
+            "NME3",
+            "NME4",
+            "ADCY6",
+            "APRT",
+            "NME1",
+            "NT5C3A",
+            "NT5C",
+            "NUDT9",
+            "DGUOK",
+            "PNP",
+            "RRM2B",
+            "GUK1",
+            "IMPDH2",
+            "PDE4B",
+            "HPRT1",
+            "ADA",
+            "ITPA"
+          ],
+          "genes": [
+            "CANT1",
+            "PDE6G",
+            "NPR2",
+            "GMPR2",
+            "AK1",
+            "AK3",
+            "NME3",
+            "NME4",
+            "ADCY6",
+            "APRT",
+            "NME1",
+            "NT5C3A",
+            "NT5C",
+            "NUDT9",
+            "DGUOK",
+            "PNP",
+            "RRM2B",
+            "GUK1",
+            "IMPDH2",
+            "PDE4B",
+            "HPRT1",
+            "ADA",
+            "ITPA"
+          ],
+          "adjusted_p_value": 1.3579744392165738e-23
+        },
+        {
+          "rank": 3,
+          "term_name": "DNA replication",
+          "term": "DNA replication",
+          "overlap": "16/36",
+          "p_value": 2.8291134150345287e-25,
+          "z_score": 118.38805970149254,
+          "combined_score": 6691.845289512617,
+          "overlap_genes": [
+            "RFC5",
+            "FEN1",
+            "RFC3",
+            "PCNA",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "PRIM1",
+            "RPA2",
+            "POLD3",
+            "POLE4",
+            "POLD4",
+            "POLA1",
+            "POLA2",
+            "POLD1",
+            "RPA3"
+          ],
+          "genes": [
+            "RFC5",
+            "FEN1",
+            "RFC3",
+            "PCNA",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "PRIM1",
+            "RPA2",
+            "POLD3",
+            "POLE4",
+            "POLD4",
+            "POLA1",
+            "POLA2",
+            "POLD1",
+            "RPA3"
+          ],
+          "adjusted_p_value": 1.3579744392165738e-23
+        },
+        {
+          "rank": 4,
+          "term_name": "RNA polymerase",
+          "term": "RNA polymerase",
+          "overlap": "14/31",
+          "p_value": 2.2754398375573644e-22,
+          "z_score": 120.09602076124567,
+          "combined_score": 5984.949006938956,
+          "overlap_genes": [
+            "POLR3GL",
+            "POLR2A",
+            "POLR3C",
+            "POLR2C",
+            "POLR2D",
+            "POLR1C",
+            "POLR2E",
+            "POLR1D",
+            "POLR2F",
+            "POLR2G",
+            "POLR2H",
+            "POLR2I",
+            "POLR2J",
+            "POLR2K"
+          ],
+          "genes": [
+            "POLR3GL",
+            "POLR2A",
+            "POLR3C",
+            "POLR2C",
+            "POLR2D",
+            "POLR1C",
+            "POLR2E",
+            "POLR1D",
+            "POLR2F",
+            "POLR2G",
+            "POLR2H",
+            "POLR2I",
+            "POLR2J",
+            "POLR2K"
+          ],
+          "adjusted_p_value": 8.191583415206512e-21
+        },
+        {
+          "rank": 5,
+          "term_name": "Mismatch repair",
+          "term": "Mismatch repair",
+          "overlap": "11/23",
+          "p_value": 3.64012679269731e-18,
+          "z_score": 130.826139088729,
+          "combined_score": 5253.259923670094,
+          "overlap_genes": [
+            "RFC5",
+            "POLD3",
+            "POLD4",
+            "RFC3",
+            "PCNA",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "POLD1",
+            "RPA3",
+            "RPA2"
+          ],
+          "genes": [
+            "RFC5",
+            "POLD3",
+            "POLD4",
+            "RFC3",
+            "PCNA",
+            "RFC4",
+            "LIG1",
+            "RFC2",
+            "POLD1",
+            "RPA3",
+            "RPA2"
+          ],
+          "adjusted_p_value": 1.0197264265470221e-16
+        },
+        {
+          "rank": 6,
+          "term_name": "Pyrimidine metabolism",
+          "term": "Pyrimidine metabolism",
+          "overlap": "14/56",
+          "p_value": 4.248860110612592e-18,
+          "z_score": 48.549019607843135,
+          "combined_score": 1941.9550038828995,
+          "overlap_genes": [
+            "CDA",
+            "DUT",
+            "CANT1",
+            "NME3",
+            "NME4",
+            "TYMS",
+            "NME1",
+            "NT5C3A",
+            "NT5C",
+            "PNP",
+            "RRM2B",
+            "CMPK2",
+            "TK2",
+            "UMPS"
+          ],
+          "genes": [
+            "CDA",
+            "DUT",
+            "CANT1",
+            "NME3",
+            "NME4",
+            "TYMS",
+            "NME1",
+            "NT5C3A",
+            "NT5C",
+            "PNP",
+            "RRM2B",
+            "CMPK2",
+            "TK2",
+            "UMPS"
+          ],
+          "adjusted_p_value": 1.0197264265470221e-16
+        },
+        {
+          "rank": 7,
+          "term_name": "Basal transcription factors",
+          "term": "Basal transcription factors",
+          "overlap": "13/45",
+          "p_value": 8.305985329914995e-18,
+          "z_score": 58.7668795620438,
+          "combined_score": 2311.2752392434936,
+          "overlap_genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "TAF9",
+            "GTF2H1",
+            "GTF2F1",
+            "GTF2H3",
+            "GTF2H5",
+            "ERCC3",
+            "ERCC2",
+            "TAF6"
+          ],
+          "genes": [
+            "GTF2A2",
+            "TAF12",
+            "TAF13",
+            "GTF2B",
+            "TAF10",
+            "TAF9",
+            "GTF2H1",
+            "GTF2F1",
+            "GTF2H3",
+            "GTF2H5",
+            "ERCC3",
+            "ERCC2",
+            "TAF6"
+          ],
+          "adjusted_p_value": 1.7086598392967992e-16
+        },
+        {
+          "rank": 8,
+          "term_name": "Base excision repair",
+          "term": "Base excision repair",
+          "overlap": "10/33",
+          "p_value": 3.318134937274537e-14,
+          "z_score": 61.57453416149068,
+          "combined_score": 1911.0757902291589,
+          "overlap_genes": [
+            "POLB",
+            "POLD3",
+            "POLE4",
+            "POLD4",
+            "FEN1",
+            "PCNA",
+            "LIG1",
+            "MPG",
+            "POLD1",
+            "POLL"
+          ],
+          "genes": [
+            "POLB",
+            "POLD3",
+            "POLE4",
+            "POLD4",
+            "FEN1",
+            "PCNA",
+            "LIG1",
+            "MPG",
+            "POLD1",
+            "POLL"
+          ],
+          "adjusted_p_value": 5.972642887094166e-13
+        },
+        {
+          "rank": 9,
+          "term_name": "Drug metabolism",
+          "term": "Drug metabolism",
+          "overlap": "11/151",
+          "p_value": 5.396268710615792e-10,
+          "z_score": 16.11533041607951,
+          "combined_score": 343.9034587093987,
+          "overlap_genes": [
+            "CDA",
+            "DUT",
+            "RRM2B",
+            "IMPDH2",
+            "NME3",
+            "TK2",
+            "NME4",
+            "HPRT1",
+            "UMPS",
+            "ITPA",
+            "NME1"
+          ],
+          "genes": [
+            "CDA",
+            "DUT",
+            "RRM2B",
+            "IMPDH2",
+            "NME3",
+            "TK2",
+            "NME4",
+            "HPRT1",
+            "UMPS",
+            "ITPA",
+            "NME1"
+          ],
+          "adjusted_p_value": 8.634029936985268e-09
+        },
+        {
+          "rank": 10,
+          "term_name": "Homologous recombination",
+          "term": "Homologous recombination",
+          "overlap": "7/41",
+          "p_value": 2.1054199180781863e-08,
+          "z_score": 28.529823118058413,
+          "combined_score": 504.29788398445214,
+          "overlap_genes": [
+            "POLD3",
+            "RAD52",
+            "POLD4",
+            "RAD51",
+            "POLD1",
+            "RPA3",
+            "RPA2"
+          ],
+          "genes": [
+            "POLD3",
+            "RAD52",
+            "POLD4",
+            "RAD51",
+            "POLD1",
+            "RPA3",
+            "RPA2"
+          ],
+          "adjusted_p_value": 2.9678727199860044e-07
+        },
+        {
+          "rank": 11,
+          "term_name": "Cytosolic DNA-sensing pathway",
+          "term": "Cytosolic DNA-sensing pathway",
+          "overlap": "8/63",
+          "p_value": 2.2671249944337533e-08,
+          "z_score": 20.276568501920615,
+          "combined_score": 356.9115700490291,
+          "overlap_genes": [
+            "POLR3GL",
+            "POLR3C",
+            "POLR1C",
+            "POLR1D",
+            "POLR2E",
+            "POLR2F",
+            "POLR2H",
+            "POLR2K"
+          ],
+          "genes": [
+            "POLR3GL",
+            "POLR3C",
+            "POLR1C",
+            "POLR1D",
+            "POLR2E",
+            "POLR2F",
+            "POLR2H",
+            "POLR2K"
+          ],
+          "adjusted_p_value": 2.9678727199860044e-07
+        },
+        {
+          "rank": 12,
+          "term_name": "Fanconi anemia pathway",
+          "term": "Fanconi anemia pathway",
+          "overlap": "7/54",
+          "p_value": 1.528888936684051e-07,
+          "z_score": 20.625055795268562,
+          "combined_score": 323.68043439446984,
+          "overlap_genes": [
+            "RAD51",
+            "ERCC4",
+            "ERCC1",
+            "RPA3",
+            "REV3L",
+            "RPA2",
+            "POLH"
+          ],
+          "genes": [
+            "RAD51",
+            "ERCC4",
+            "ERCC1",
+            "RPA3",
+            "REV3L",
+            "RPA2",
+            "POLH"
+          ],
+          "adjusted_p_value": 1.8346667240208611e-06
+        },
+        {
+          "rank": 13,
+          "term_name": "Huntington disease",
+          "term": "Huntington disease",
+          "overlap": "13/306",
+          "p_value": 5.484440966611352e-07,
+          "z_score": 6.333698712040059,
+          "combined_score": 91.30774375660185,
+          "overlap_genes": [
+            "DCTN4",
+            "ADRM1",
+            "POLR2A",
+            "POLR2C",
+            "POLR2D",
+            "POLR2E",
+            "POLR2F",
+            "POLR2G",
+            "POLR2H",
+            "POLR2I",
+            "TP53",
+            "POLR2J",
+            "POLR2K"
+          ],
+          "genes": [
+            "DCTN4",
+            "ADRM1",
+            "POLR2A",
+            "POLR2C",
+            "POLR2D",
+            "POLR2E",
+            "POLR2F",
+            "POLR2G",
+            "POLR2H",
+            "POLR2I",
+            "TP53",
+            "POLR2J",
+            "POLR2K"
+          ],
+          "adjusted_p_value": 6.07507307070796e-06
+        },
+        {
+          "rank": 14,
+          "term_name": "mRNA surveillance pathway",
+          "term": "mRNA surveillance pathway",
+          "overlap": "7/98",
+          "p_value": 9.071254681318408e-06,
+          "z_score": 10.628832705755782,
+          "combined_score": 123.40499893115822,
+          "overlap_genes": [
+            "NUDT21",
+            "CLP1",
+            "NCBP2",
+            "RNMT",
+            "CSTF3",
+            "ALYREF",
+            "UPF3B"
+          ],
+          "genes": [
+            "NUDT21",
+            "CLP1",
+            "NCBP2",
+            "RNMT",
+            "CSTF3",
+            "ALYREF",
+            "UPF3B"
+          ],
+          "adjusted_p_value": 9.330433386498935e-05
+        },
+        {
+          "rank": 15,
+          "term_name": "RNA transport",
+          "term": "RNA transport",
+          "overlap": "7/186",
+          "p_value": 0.0005169344274735264,
+          "z_score": 5.379419463218346,
+          "combined_score": 40.70926527343904,
+          "overlap_genes": [
+            "POM121",
+            "NCBP2",
+            "ALYREF",
+            "UPF3B",
+            "AAAS",
+            "EIF1B",
+            "RAE1"
+          ],
+          "genes": [
+            "POM121",
+            "NCBP2",
+            "ALYREF",
+            "UPF3B",
+            "AAAS",
+            "EIF1B",
+            "RAE1"
+          ],
+          "adjusted_p_value": 0.0049625705037458535
+        },
+        {
+          "rank": 16,
+          "term_name": "Viral carcinogenesis",
+          "term": "Viral carcinogenesis",
+          "overlap": "7/203",
+          "p_value": 0.000866489297323151,
+          "z_score": 4.908591408591408,
+          "combined_score": 34.61077646680333,
+          "overlap_genes": [
+            "DDB1",
+            "POLB",
+            "GTF2A2",
+            "GTF2B",
+            "GTF2H1",
+            "GTF2H3",
+            "TP53"
+          ],
+          "genes": [
+            "DDB1",
+            "POLB",
+            "GTF2A2",
+            "GTF2B",
+            "GTF2H1",
+            "GTF2H3",
+            "TP53"
+          ],
+          "adjusted_p_value": 0.007798403675908359
+        },
+        {
+          "rank": 17,
+          "term_name": "Pancreatic cancer",
+          "term": "Pancreatic cancer",
+          "overlap": "4/76",
+          "p_value": 0.0025660958372378142,
+          "z_score": 7.525875190258752,
+          "combined_score": 44.89462755954714,
+          "overlap_genes": [
+            "RALA",
+            "RAD51",
+            "TP53",
+            "DDB2"
+          ],
+          "genes": [
+            "RALA",
+            "RAD51",
+            "TP53",
+            "DDB2"
+          ],
+          "adjusted_p_value": 0.02173634120954384
+        },
+        {
+          "rank": 18,
+          "term_name": "Non-homologous end-joining",
+          "term": "Non-homologous end-joining",
+          "overlap": "2/13",
+          "p_value": 0.0041282697223318475,
+          "z_score": 24.372235872235873,
+          "combined_score": 133.8010624833854,
+          "overlap_genes": [
+            "FEN1",
+            "POLL"
+          ],
+          "genes": [
+            "FEN1",
+            "POLL"
+          ],
+          "adjusted_p_value": 0.03302615777865478
+        }
+      ]
+    },
+    "significant_terms_total": 143,
+    "execution_time": 1.78,
+    "dataframe": "     rank  ...                     library\n125     1  ...             KEGG_2021_Human\n13     14  ...  GO_Biological_Process_2023\n127     3  ...             KEGG_2021_Human\n1       2  ...  GO_Biological_Process_2023\n128     4  ...             KEGG_2021_Human\n..    ...  ...                         ...\n117   118  ...  GO_Biological_Process_2023\n98     99  ...  GO_Biological_Process_2023\n115   116  ...  GO_Biological_Process_2023\n119   120  ...  GO_Biological_Process_2023\n123   124  ...  GO_Biological_Process_2023\n\n[143 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "40764391",
+      "pmcid": "",
+      "doi": "10.1038/s41556-025-01715-9",
+      "url": "https://doi.org/10.1038/s41556-025-01715-9",
+      "title": "The molecular basis of human transcription-coupled DNA repair.",
+      "abstract": "The stalling of RNA polymerase II (RNAPII) on DNA lesions triggers transcription-coupled DNA repair (TCR). Although the initial assembly of the TCR complex is known, recent advances have substantially deepened our understanding of its mechanisms. The elongation factor ELOF1 and DNA-binding protein STK19 have been identified as key TCR factors, with new insights into their functions. Cryo-electron microscopy of repair intermediates and mutational analyses have elucidated how TCR proteins interact with damage-stalled RNAPII. A newly discovered transcription-coupled pathway resolves DNA-protein crosslinks using only early TCR proteins. Here we integrate these advances, outlining the TCR mechanism step by step. First we discuss how early TCR factors ubiquitylate RNAPII, then we examine the transition to later nucleotide excision repair stages, and finally, the fate of damage-stalled RNAPII. Despite these advancements, significant gaps remain in our understanding of TCR mechanisms and we discuss these along with potential future research directions.",
+      "authors": "van der Meer PJ, Luijsterburg MS.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2025,
+      "pub_year": 2025,
+      "citations": 7,
+      "citation_count": 7,
+      "is_open_access": false,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "1230-1239",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2025-08-05",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates [transcription-coupled DNA repair and RNA polymerase II]"
+    },
+    {
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1101/2024.07.22.604623",
+      "url": "https://doi.org/10.1101/2024.07.22.604623",
+      "title": "STK19 positions TFIIH for cell-free transcription-coupled DNA repair",
+      "abstract": "In transcription-coupled repair, stalled RNA polymerase II (Pol II) is recognized by CSB and CRL4  CSA , which co-operate with UVSSSA and ELOF1 to recruit TFIIH for nucleotide excision repair (TC-NER). To explore the mechanism of TC-NER, we recapitulated this reaction  in vitro . When a plasmid containing a site-specific lesion is transcribed in frog egg extract, error-free repair is observed that depends on CSB, CRL4  CSA , UVSSA, and ELOF1. Repair also depends on STK19, a factor previously implicated in transcription recovery after UV exposure. A 1.9 Å cryo-electron microscopy structure shows that STK19 joins the TC-NER complex by binding CSA and the RPB1 subunit of Pol II. Furthermore, AlphaFold predicts that STK19 interacts with the XPD subunit of TFIIH, and disrupting this interface impairs cell-free repair. Molecular modeling suggests that STK19 positions TFIIH ahead of Pol II for lesion verification. In summary, our analysis of cell-free TC-NER suggests that STK19 couples RNA polymerase II stalling to downstream repair events.",
+      "authors": "Mevissen TE, Kümmecke M, Schmid EW, Farnung L, Walter JC.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2024,
+      "pub_year": 2024,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "PPR",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2024-07-23",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates [transcription-coupled DNA repair and RNA polymerase II]"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 41.199662923812866,
+  "phase": 2,
+  "rep": 3,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Transcription By RNA Polymerase II (GO:0006366) -> genes: [GTF2A2, ELL, GTF2B, TAF9, SUPT4H1, SNAPC5, POLR2A, TAF1C, POLR2C, SNAPC4, POLR2D, POLR2E, ELOA, POLR2F, POLR2G, POLR2H, POLR2I, POLR2J, POLR2K, TAF12, NCBP2, TAF13, TAF10, ADRM1, GTF2H1, GTF2F1, SUPT5H, GTF2H3, GTF2H5, ERCC3, NFX1, ERCC2, TAF6]\n- Nucleotide-Excision Repair (GO:0006289) -> genes: [CETN2, RPA2, XPC, GTF2H3, GTF2H5, DDB2, POLB, DDB1, POLD3, POLA1, ERCC3, ERCC4, POLD1, ERCC1, RPA3, ERCC2, ERCC8, POLL, ERCC5, POLR2I, TP53]\n- DNA Repair (GO:0006281) -> genes: [FEN1, PCNA, MPG, CETN2, XPC, POLB, POLD3, POLD1, POLL, POLH, RFC5, RFC3, RFC4, LIG1, RFC2, RPA2, GTF2H1, GTF2H3, GTF2H5, DDB2, DDB1, RAD52, POLA1, RAD51, RRM2B, ERCC3, ERCC4, RPA3, ERCC1, ERCC2, ERCC8, ERCC5, TP53]\n- DNA-templated Transcription (GO:0006351) -> genes: [GTF2A2, GTF3C5, GTF2B, POLR2A, TAF1C, POLR2C, POLR2D, POLR2E, POLR2F, POLR2G, POLR2H, POLR2I, POLR2J, POLR2K, TAF12, POLR3GL, TAF13, TAF10, GTF2H1, GTF2F1, GTF2H3, GTF2H5, ERCC3, NFX1, POLR1C, ERCC2, TAF6, TP53]\n- DNA Metabolic Process (GO:0006259) -> genes: [FEN1, PRIM1, XPC, TYMS, POLB, POLD3, POLD1, POLL, POLH, RFC5, DUT, RFC3, RFC4, LIG1, RFC2, RPA2, GTF2H1, GTF2H3, DDB2, DDB1, RAD52, POLA1, POLA2, RAD51, RRM2B, ERCC3, ERCC4, RPA3, ERCC1, ERCC5]\n- DNA Replication (GO:0006260) -> genes: [RFC5, FEN1, RFC3, DUT, RFC4, RFC2, RPA2, POLB, POLD3, POLE4, POLA1, POLA2, POLD1, RPA3, REV3L, POLL]\n- DNA-templated DNA Replication (GO:0006261) -> genes: [RFC5, RFC3, RFC4, RFC2, PRIM1, POLB, POLD3, POLE4, POLA1, POLA2, RAD51, RRM2B, POLD1, REV3L]\n- DNA Damage Response (GO:0006974) -> genes: [FEN1, TAF9, XPC, POLB, POLD1, POLH, RFC5, RFC3, RFC4, LIG1, RFC2, GTF2H1, GTF2H3, RBX1, DDB2, DDB1, POLA1, RAD51, RRM2B, ERCC3, ERCC4, RPA3, ERCC1, ERCC8, TP53]\n- DNA-templated Transcription Initiation (GO:0006352) -> genes: [GTF2A2, TAF12, TAF13, GTF2B, TAF10, GTF2F1, ERCC3, TAF1C, POLR2D, ELOA, POLR2G, TAF6, POLR2I]\n- Transcription Initiation At RNA Polymerase II Promoter (GO:0006367) -> genes: [GTF2A2, TAF12, TAF13, GTF2B, TAF10, TAF9, GTF2F1, ERCC3, POLR2D, ELOA, POLR2G, TAF6, POLR2I]\n- DNA Biosynthetic Process (GO:0071897) -> genes: [POLD3, POLA1, RFC3, RRM2B, POLD1, POLL, TYMS, POLH]\n- Base-Excision Repair (GO:0006284) -> genes: [POLB, FEN1, LIG1, MPG, POLD1, RPA3, RPA2, POLL, ERCC5]\n- Response To UV (GO:0009411) -> genes: [DDB1, FEN1, PCNA, ERCC3, ERCC4, POLD1, ERCC8, ERCC5, TP53, POLH, RBX1, DDB2]\n- Nucleobase-Containing Compound Biosynthetic Process (GO:0034654) -> genes: [POLD3, CDA, PNP, POLD1, POLL, TYMS]\n- RNA Biosynthetic Process (GO:0032774) -> genes: [POLA1, POLA2, POLR2A, TAF12, TAF13, PRIM1, TAF10, TAF6]\n- UV-damage Excision Repair (GO:0070914) -> genes: [DDB1, POLD3, POLA1, ERCC1, XPC, DDB2]\n- DNA Synthesis Involved In DNA Repair (GO:0000731) -> genes: [POLD3, POLA1, RFC3, PCNA, RRM2B, POLD1, POLH]\n- Transcription By RNA Polymerase III (GO:0006383) -> genes: [SNAPC5, ELL, GTF3C5, POLR3GL, SNAPC4, POLR2F, POLR2K]\n- Double-Strand Break Repair (GO:0006302) -> genes: [RAD52, POLB, POLA1, FEN1, RAD51, ERCC4, RPA3, ERCC1, REV3L, RPA2, ERCC5, POLL]\n- Cellular Response To UV (GO:0034644) -> genes: [DDB1, PCNA, ERCC4, POLD1, ERCC1, XPC, TP53, DDB2, RBX1]\n- DNA Strand Elongation Involved In DNA Replication (GO:0006271) -> genes: [POLD3, POLA1, RFC3, PCNA, RFC4]\n- Base-Excision Repair, Gap-Filling (GO:0006287) -> genes: [POLB, FEN1, LIG1, POLD1, POLL]\n- Positive Regulation Of DNA-directed DNA Polymerase Activity (GO:1900264) -> genes: [RFC5, RFC3, PCNA, RFC4, RFC2]\n- Regulation Of DNA-directed DNA Polymerase Activity (GO:1900262) -> genes: [RFC5, RFC3, PCNA, RFC4, RFC2]\n- Mismatch Repair (GO:0006298) -> genes: [POLD3, PCNA, LIG1, RPA3, RPA2, XPC]\n- mRNA Transcription (GO:0009299) -> genes: [TAF12, NCBP2, TAF13, TAF10, TAF9, TAF6, TP53]\n- Recombinational Repair (GO:0000725) -> genes: [RAD52, FEN1, RAD51, ERCC4, RPA3, REV3L, RPA2, POLL, ERCC5]\n- Positive Regulation Of Transcription Initiation By RNA Polymerase II (GO:0060261) -> genes: [GTF2A2, TAF12, TAF13, TAF10, TAF9, TAF6, TP53]\n- Double-Strand Break Repair Via Homologous Recombination (GO:0000724) -> genes: [RAD52, FEN1, RAD51, ERCC4, RPA3, REV3L, RPA2, POLL, ERCC5]\n- Negative Regulation Of DNA-templated Transcription, Elongation (GO:0032785) -> genes: [SUPT4H1, NELFB, NELFCD, SUPT5H, NELFE]\n- RNA Polymerase II Preinitiation Complex Assembly (GO:0051123) -> genes: [GTF2A2, TAF12, TAF13, GTF2B, TAF10, TAF9, TAF6]\n- Transcription-Coupled Nucleotide-Excision Repair (GO:0006283) -> genes: [ERCC3, ERCC8, ERCC5, POLR2I]\n- Transcription Preinitiation Complex Assembly (GO:0070897) -> genes: [GTF2A2, TAF12, TAF13, GTF2B, TAF10, TAF9, TAF6]\n- mRNA Transcription By RNA Polymerase II (GO:0042789) -> genes: [TAF12, NCBP2, TAF13, TAF10, TAF9, TAF6]\n- Cellular Response To Light Stimulus (GO:0071482) -> genes: [DDB1, PCNA, ERCC4, POLD1, TP53, DDB2, RBX1]\n- Double-Strand Break Repair Via Nonhomologous End Joining (GO:0006303) -> genes: [POLB, POLA1, ERCC4, ERCC1, ERCC8, POLL]\n- Translesion Synthesis (GO:0019985) -> genes: [POLD3, PCNA, POLD1, REV3L, POLH]\n- Regulation Of Cell Cycle Phase Transition (GO:1901987) -> genes: [DDB1, ERCC3, ERCC2, XPC, TP53]\n- DNA Strand Elongation (GO:0022616) -> genes: [POLD3, POLA1, RFC3, RFC4]\n- Regulation Of Transcription Elongation By RNA Polymerase II (GO:0034243) -> genes: [ELL, NCBP2, SUPT4H1, NELFB, NELFCD, SUPT5H, NELFE]\n- Transcription Elongation By RNA Polymerase II (GO:0006368) -> genes: [ERCC3, SUPT4H1, POLR2I, GTF2F1, SUPT5H]\n- Protein Transport To Vacuole Involved In Ubiquitin-Dependent Protein Catabolic Process Via The Multivesicular Body Sorting Pathway (GO:0043328) -> genes: [TSG101, VPS37D, VPS37B, VPS28]\n- Positive Regulation Of DNA-templated Transcription Initiation (GO:2000144) -> genes: [GTF2A2, TAF12, TAF13, TAF10, TAF9, TAF6]\n- Nucleotide-Excision Repair, DNA Gap Filling (GO:0006297) -> genes: [POLB, POLD3, POLD1]\n- Regulation Of Transcription Initiation By RNA Polymerase II (GO:0060260) -> genes: [GTF2A2, TAF12, TAF13, TAF10, TAF9, TAF6]\n- Response To Light Stimulus (GO:0009416) -> genes: [ERCC3, ERCC4, POLD1, ERCC8, ERCC5, DDB2]\n- Transcription By RNA Polymerase I (GO:0006360) -> genes: [TAF1C, POLR1C, POLR2F, GTF2H1]\n- Regulation Of Cellular Response To Stress (GO:0080135) -> genes: [RAD51, TAF12, TAF10, TAF9, RPA2, TAF6, POLH]\n- Error-Prone Translesion Synthesis (GO:0042276) -> genes: [POLD3, REV3L, POLH]\n- Late Endosome To Vacuole Transport Via Multivesicular Body Sorting Pathway (GO:0032511) -> genes: [TSG101, VPS37D, VPS37B, VPS28]\n- DNA-templated Transcription Elongation (GO:0006354) -> genes: [ERCC3, SUPT4H1, GTF2F1, SUPT5H]\n- mRNA Metabolic Process (GO:0016071) -> genes: [SF3A3, NUDT21, NCBP2, AGO4, CSTF3, TP53]\n- Establishment Of Protein Localization To Vacuole (GO:0072666) -> genes: [TSG101, VPS37D, VPS37B, VPS28]\n- Monoubiquitinated Histone H2A Deubiquitination (GO:0035522) -> genes: [TAF12, TAF10, TAF9, TAF6]\n- Monoubiquitinated Histone Deubiquitination (GO:0035521) -> genes: [TAF12, TAF10, TAF9, TAF6]\n- snRNA Transcription By RNA Polymerase II (GO:0042795) -> genes: [SNAPC5, ELL, SNAPC4]\n- Regulation Of DNA Repair (GO:0006282) -> genes: [RAD52, PCNA, TAF12, TAF10, TAF9, TAF6, POLH]\n- Multivesicular Body Assembly (GO:0036258) -> genes: [TSG101, VPS37D, VPS37B, VPS28]\n- Multivesicular Body Organization (GO:0036257) -> genes: [TSG101, VPS37D, VPS37B, VPS28]\n- snRNA Transcription (GO:0009301) -> genes: [SNAPC5, ELL, SNAPC4]\n- miRNA Processing (GO:0035196) -> genes: [NCBP2, AGO4, DGCR8, TARBP2]\n- Ubiquitin-Dependent Protein Catabolic Process Via The Multivesicular Body Sorting Pathway (GO:0043162) -> genes: [TSG101, VPS37D, VPS37B, VPS28]\n- Monoubiquitinated Protein Deubiquitination (GO:0035520) -> genes: [TAF12, TAF10, TAF9, TAF6]\n- Histone Deubiquitination (GO:0016578) -> genes: [TAF12, TAF10, TAF9, TAF6]\n- Positive Regulation Of DNA Biosynthetic Process (GO:2000573) -> genes: [RFC5, RFC3, RFC4, PCNA, RFC2]\n- Negative Regulation Of Transcription Elongation By RNA Polymerase II (GO:0034244) -> genes: [NELFB, NELFCD, NELFE]\n- Mitotic Recombination (GO:0006312) -> genes: [RAD52, RAD51, ERCC1]\n- Histone H3 Acetylation (GO:0043966) -> genes: [TAF12, TAF10, TAF9, TAF6]\n- Membrane Fission (GO:0090148) -> genes: [TSG101, VPS37D, VPS37B, VPS28]\n- Protein Targeting To Membrane (GO:0006612) -> genes: [SEC61A1, SDCBP, ARL6IP1, VPS37D, VPS37B]\n- Regulation Of DNA Metabolic Process (GO:0051052) -> genes: [TAF12, ALYREF, TAF10, TAF9, TAF6, POLH]\n- Nucleotide Biosynthetic Process (GO:0009165) -> genes: [PNP, RRM2B, HPRT1]\n- DNA Replication Initiation (GO:0006270) -> genes: [POLA1, POLA2, PRIM1]\n- Regulation Of Extracellular Exosome Assembly (GO:1903551) -> genes: [SDCBP, TSG101]\n- Negative Regulation Of Telomere Capping (GO:1904354) -> genes: [ERCC4, ERCC1]\n- Positive Regulation Of DNA-templated Transcription, Elongation (GO:0032786) -> genes: [ELL, NCBP2, SUPT4H1, SUPT5H]\n- Purine Ribonucleotide Catabolic Process (GO:0009154) -> genes: [NUDT9, PNP, HPRT1]\n- Histone Acetylation (GO:0016573) -> genes: [TAF12, TAF10, TAF9, TAF6]\n- Response To UV-C (GO:0010225) -> genes: [ERCC5, POLH]\n- snRNA Transcription By RNA Polymerase III (GO:0042796) -> genes: [SNAPC5, SNAPC4]\n- tRNA Transcription By RNA Polymerase III (GO:0042797) -> genes: [GTF3C5, POLR2F]\n- Hair Cell Differentiation (GO:0035315) -> genes: [ERCC3, ERCC2]\n- Purine Ribonucleoside Monophosphate Catabolic Process (GO:0009169) -> genes: [PNP, HPRT1]\n- RNA Export From Nucleus (GO:0006405) -> genes: [POM121, NCBP2, ALYREF, RAE1]\n- GMP Metabolic Process (GO:0046037) -> genes: [GMPR2, HPRT1]\n- RISC Complex Assembly (GO:0070922) -> genes: [AGO4, TARBP2]\n- tRNA Transcription (GO:0009304) -> genes: [GTF3C5, POLR2F]\n- Telomere Maintenance (GO:0000723) -> genes: [RAD51, ERCC4, RPA3, RPA2]\n- IMP Metabolic Process (GO:0046040) -> genes: [PNP, HPRT1]\n- Nucleoside Metabolic Process (GO:0009116) -> genes: [NT5C3A, NME4]\n- Positive Regulation Of mRNA 3'-End Processing (GO:0031442) -> genes: [NUDT21, NCBP2]\n- Telomere Maintenance Via Recombination (GO:0000722) -> genes: [RAD51, ERCC4]\n- Protein Autoubiquitination (GO:0051865) -> genes: [RAD51, NFX1, ERCC8, DDB2]\n- Regulation Of mRNA Polyadenylation (GO:1900363) -> genes: [NUDT21, NCBP2]\n- Mitotic DNA Replication (GO:1902969) -> genes: [POLA1, LIG1]\n- Mitotic G1/S Transition Checkpoint Signaling (GO:0044819) -> genes: [RPA2, TP53]\n- Regulation Of Mitotic Cell Cycle (GO:0007346) -> genes: [DDB1, SDCBP, ERCC3, ERCC2, XPC]\n- RNA 3'-End Processing (GO:0031123) -> genes: [NUDT21, NCBP2, CSTF3]\n- Protein Targeting (GO:0006605) -> genes: [BCAP31, SDCBP, SEC61A1, VPS37D, VPS37B]\n- pre-mRNA Cleavage Required For Polyadenylation (GO:0098789) -> genes: [NUDT21, NCBP2]\n- Purine Ribonucleoside Monophosphate Metabolic Process (GO:0009167) -> genes: [GMPR2, HPRT1]\n- Pyrimidine Nucleobase Metabolic Process (GO:0006206) -> genes: [CDA, UMPS]\n- Regulation Of Cell Cycle Checkpoint (GO:1901976) -> genes: [RAD51, RPA2]\n- Positive Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001244) -> genes: [BCAP31, TP53, GSDME]\n- Internal Peptidyl-Lysine Acetylation (GO:0018393) -> genes: [TAF12, TAF10, TAF9]\n- mRNA 3'-End Processing (GO:0031124) -> genes: [NUDT21, NCBP2, CSTF3]\n- Nucleotide Metabolic Process (GO:0009117) -> genes: [PNP, GUK1]\n- pre-miRNA Processing (GO:0031054) -> genes: [AGO4, TARBP2]\n- Primary miRNA Processing (GO:0031053) -> genes: [NCBP2, DGCR8]\n- mRNA Cleavage Involved In mRNA Processing (GO:0098787) -> genes: [NUDT21, NCBP2]\n- Pyrimidine Deoxyribonucleotide Catabolic Process (GO:0009223) -> genes: [NT5C, DUT]\n- DNA Recombination (GO:0006310) -> genes: [RAD52, RAD51, ERCC1]\n- Regulation Of Mitotic Cell Cycle Phase Transition (GO:1901990) -> genes: [DDB1, ERCC3, ERCC2, XPC]\n- DNA-templated DNA Replication Maintenance Of Fidelity (GO:0045005) -> genes: [PCNA, RAD51, POLD1]\n- Regulation Of DNA-templated Transcription Elongation (GO:0032784) -> genes: [ELL, SUPT4H1, SUPT5H]\n- Positive Regulation Of Transferase Activity (GO:0051347) -> genes: [RFC5, RFC3, RFC4, PCNA, RFC2]\n- Positive Regulation Of Exosomal Secretion (GO:1903543) -> genes: [SDCBP, TSG101]\n- Regulation Of RNA Metabolic Process (GO:0051252) -> genes: [TAF12, TAF10, TAF9, TARBP2]\n- Regulation Of Epidermal Growth Factor Receptor Signaling Pathway (GO:0042058) -> genes: [RALA, TSG101, PDE6G]\n- protein-RNA Complex Assembly (GO:0022618) -> genes: [NUDT21, AGO4, POLR2D, SRSF6, TARBP2]\n- Negative Regulation Of Telomere Maintenance (GO:0032205) -> genes: [ERCC4, ERCC1]\n- Regulation Of Intrinsic Apoptotic Signaling Pathway (GO:2001242) -> genes: [BCAP31, TP53, GSDME]\n- Cellular Response To Radiation (GO:0071478) -> genes: [RAD51, ERCC4, TP53]\n- mRNA Processing (GO:0006397) -> genes: [SF3A3, NUDT21, RNMT, NCBP2, ALYREF, SRSF6]\n- Alternative mRNA Splicing, Via Spliceosome (GO:0000380) -> genes: [NCBP2, SRSF6]\n\n[KEGG_2021_Human]\n- Nucleotide excision repair -> genes: [PCNA, CETN2, XPC, POLD3, POLD4, POLD1, RFC5, RFC3, RFC4, LIG1, RFC2, RPA2, GTF2H1, GTF2H3, GTF2H5, DDB2, RBX1, DDB1, POLE4, ERCC3, ERCC4, ERCC1, RPA3, ERCC2, ERCC8, ERCC5]\n- Purine metabolism -> genes: [CANT1, PDE6G, NPR2, GMPR2, AK1, AK3, NME3, NME4, ADCY6, APRT, NME1, NT5C3A, NT5C, NUDT9, DGUOK, PNP, RRM2B, GUK1, IMPDH2, PDE4B, HPRT1, ADA, ITPA]\n- DNA replication -> genes: [RFC5, FEN1, RFC3, PCNA, RFC4, LIG1, RFC2, PRIM1, RPA2, POLD3, POLE4, POLD4, POLA1, POLA2, POLD1, RPA3]\n- RNA polymerase -> genes: [POLR3GL, POLR2A, POLR3C, POLR2C, POLR2D, POLR1C, POLR2E, POLR1D, POLR2F, POLR2G, POLR2H, POLR2I, POLR2J, POLR2K]\n- Mismatch repair -> genes: [RFC5, POLD3, POLD4, RFC3, PCNA, RFC4, LIG1, RFC2, POLD1, RPA3, RPA2]\n- Pyrimidine metabolism -> genes: [CDA, DUT, CANT1, NME3, NME4, TYMS, NME1, NT5C3A, NT5C, PNP, RRM2B, CMPK2, TK2, UMPS]\n- Basal transcription factors -> genes: [GTF2A2, TAF12, TAF13, GTF2B, TAF10, TAF9, GTF2H1, GTF2F1, GTF2H3, GTF2H5, ERCC3, ERCC2, TAF6]\n- Base excision repair -> genes: [POLB, POLD3, POLE4, POLD4, FEN1, PCNA, LIG1, MPG, POLD1, POLL]\n- Drug metabolism -> genes: [CDA, DUT, RRM2B, IMPDH2, NME3, TK2, NME4, HPRT1, UMPS, ITPA, NME1]\n- Homologous recombination -> genes: [POLD3, RAD52, POLD4, RAD51, POLD1, RPA3, RPA2]\n- Cytosolic DNA-sensing pathway -> genes: [POLR3GL, POLR3C, POLR1C, POLR1D, POLR2E, POLR2F, POLR2H, POLR2K]\n- Fanconi anemia pathway -> genes: [RAD51, ERCC4, ERCC1, RPA3, REV3L, RPA2, POLH]\n- Huntington disease -> genes: [DCTN4, ADRM1, POLR2A, POLR2C, POLR2D, POLR2E, POLR2F, POLR2G, POLR2H, POLR2I, TP53, POLR2J, POLR2K]\n- mRNA surveillance pathway -> genes: [NUDT21, CLP1, NCBP2, RNMT, CSTF3, ALYREF, UPF3B]\n- RNA transport -> genes: [POM121, NCBP2, ALYREF, UPF3B, AAAS, EIF1B, RAE1]\n- Viral carcinogenesis -> genes: [DDB1, POLB, GTF2A2, GTF2B, GTF2H1, GTF2H3, TP53]\n- Pancreatic cancer -> genes: [RALA, RAD51, TP53, DDB2]\n- Non-homologous end-joining -> genes: [FEN1, POLL]\n\n=== ABSTRACTS ===\n[1] The molecular basis of human transcription-coupled DNA repair.\nThe stalling of RNA polymerase II (RNAPII) on DNA lesions triggers transcription-coupled DNA repair (TCR). Although the initial assembly of the TCR complex is known, recent advances have substantially deepened our understanding of its mechanisms. The elongation factor ELOF1 and DNA-binding protein STK19 have been identified as key TCR factors, with new insights into their functions. Cryo-electron microscopy of repair intermediates and mutational analyses have elucidated how TCR proteins interact with damage-stalled RNAPII. A newly discovered transcription-coupled pathway resolves DNA-protein crosslinks using only early TCR proteins. Here we integrate these advances, outlining the TCR mechanism step by step. First we discuss how early TCR factors ubiquitylate RNAPII, then we examine the transition to later nucleotide excision repair stages, and finally, the fate of damage-stalled RNAPII. Despite these advancements, significant gaps remain in our understanding of TCR mechanisms and we discuss these along with potential future research directions.\n[2] STK19 positions TFIIH for cell-free transcription-coupled DNA repair\nIn transcription-coupled repair, stalled RNA polymerase II (Pol II) is recognized by CSB and CRL4  CSA , which co-operate with UVSSSA and ELOF1 to recruit TFIIH for nucleotide excision repair (TC-NER). To explore the mechanism of TC-NER, we recapitulated this reaction  in vitro . When a plasmid containing a site-specific lesion is transcribed in frog egg extract, error-free repair is observed that depends on CSB, CRL4  CSA , UVSSA, and ELOF1. Repair also depends on STK19, a factor previously implicated in transcription recovery after UV exposure. A 1.9 Å cryo-electron microscopy structure shows that STK19 joins the TC-NER complex by binding CSA and the RPB1 subunit of Pol II. Furthermore, AlphaFold predicts that STK19 interacts with the XPD subunit of TFIIH, and disrupting this interface impairs cell-free repair. Molecular modeling suggests that STK19 positions TFIIH ahead of Pol II for lesion verification. In summary, our analysis of cell-free TC-NER suggests that STK19 couples RNA polymerase II stalling to downstream repair events.",
+  "judge_claims": [
+    {
+      "claim": "The gene set is highly enriched in pathways related to DNA repair.",
+      "label": "GROUNDED",
+      "why": "Multiple DNA repair terms are enriched including Nucleotide-Excision Repair, DNA Repair, Base-Excision Repair, and others with many overlapping genes."
+    },
+    {
+      "claim": "The gene set is highly enriched in pathways related to DNA replication.",
+      "label": "GROUNDED",
+      "why": "DNA Replication and DNA-templated DNA Replication terms are enriched with genes like RFC5, FEN1, RFC3, POLD3, POLA1, etc."
+    },
+    {
+      "claim": "The gene set is highly enriched in pathways related to RNA polymerase-mediated transcription.",
+      "label": "GROUNDED",
+      "why": "Transcription By RNA Polymerase II is enriched with genes including GTF2A2, ELL, GTF2B, TAF9, POLR2A, and multiple POLR2 subunits."
+    },
+    {
+      "claim": "The gene set shows strong emphasis on Transcription-Coupled Nucleotide Excision Repair (TC-NER).",
+      "label": "GROUNDED",
+      "why": "Transcription-Coupled Nucleotide-Excision Repair (GO:0006283) is explicitly enriched with genes ERCC3, ERCC8, ERCC5, POLR2I."
+    },
+    {
+      "claim": "The gene set represents an interplay between cellular machinery responsible for transcribing genetic information and mechanisms that safeguard its integrity.",
+      "label": "GROUNDED",
+      "why": "The enrichment of both Transcription By RNA Polymerase II and multiple DNA repair pathways demonstrates this interplay."
+    },
+    {
+      "claim": "The gene set is involved in responding to DNA damage that impedes transcription.",
+      "label": "GROUNDED",
+      "why": "DNA Damage Response term is enriched, and TC-NER specifically addresses damage that stalls transcription."
+    },
+    {
+      "claim": "Key processes identified include nucleotide excision repair.",
+      "label": "GROUNDED",
+      "why": "Nucleotide-Excision Repair (GO:0006289) is enriched with genes like CETN2, RPA2, XPC, GTF2H3, DDB2, ERCC3, etc."
+    },
+    {
+      "claim": "Key processes identified include base excision repair.",
+      "label": "GROUNDED",
+      "why": "Base-Excision Repair (GO:0006284) is enriched with genes POLB, FEN1, LIG1, MPG, POLD1, RPA3, RPA2, POLL, ERCC5."
+    },
+    {
+      "claim": "Key processes identified include mismatch repair.",
+      "label": "GROUNDED",
+      "why": "Mismatch Repair (GO:0006298) is enriched with genes POLD3, PCNA, LIG1, RPA3, RPA2, XPC."
+    },
+    {
+      "claim": "Key processes identified include homologous recombination.",
+      "label": "GROUNDED",
+      "why": "Double-Strand Break Repair Via Homologous Recombination (GO:0000724) is enriched with genes RAD52, FEN1, RAD51, ERCC4, RPA3, REV3L, RPA2, POLL, ERCC5."
+    },
+    {
+      "claim": "Key processes identified include non-homologous end-joining.",
+      "label": "GROUNDED",
+      "why": "Double-Strand Break Repair Via Nonhomologous End Joining (GO:0006303) is enriched with genes POLB, POLA1, ERCC4, ERCC1, ERCC8, POLL."
+    },
+    {
+      "claim": "Nucleotide Excision Repair (NER) is a crucial pathway for removing bulky DNA lesions.",
+      "label": "BACKGROUND",
+      "why": "This is textbook knowledge about NER function not explicitly stated in the evidence."
+    },
+    {
+      "claim": "NER removes lesions such as those caused by UV radiation.",
+      "label": "GROUNDED",
+      "why": "Response To UV (GO:0009411) is enriched, and NER is known to repair UV-induced lesions; UV-damage Excision Repair term is also present."
+    },
+    {
+      "claim": "XPC is involved in NER.",
+      "label": "GROUNDED",
+      "why": "XPC appears in Nucleotide-Excision Repair term gene list."
+    },
+    {
+      "claim": "DDB1 is involved in NER.",
+      "label": "GROUNDED",
+      "why": "DDB1 appears in Nucleotide-Excision Repair term gene list."
+    },
+    {
+      "claim": "DDB2 is involved in NER.",
+      "label": "GROUNDED",
+      "why": "DDB2 appears in Nucleotide-Excision Repair term gene list."
+    },
+    {
+      "claim": "ERCC1 is involved in NER.",
+      "label": "GROUNDED",
+      "why": "ERCC1 appears in Nucleotide-Excision Repair term gene list."
+    },
+    {
+      "claim": "ERCC2 is involved in NER.",
+      "label": "GROUNDED",
+      "why": "ERCC2 appears in Nucleotide-Excision Repair term gene list."
+    },
+    {
+      "claim": "ERCC3 is involved in NER.",
+      "label": "GROUNDED",
+      "why": "ERCC3 appears in Nucleotide-Excision Repair term gene list."
+    },
+    {
+      "claim": "ERCC4 is involved in NER.",
+      "label": "GROUNDED",
+      "why": "ERCC4 appears in Nucleotide-Excision Repair term gene list."
+    },
+    {
+      "claim": "ERCC5 is involved in NER.",
+      "label": "GROUNDED",
+      "why": "ERCC5 appears in Nucleotide-Excision Repair term gene list."
+    },
+    {
+      "claim": "ERCC8 is involved in NER.",
+      "label": "GROUNDED",
+      "why": "ERCC8 appears in Nucleotide-Excision Repair term gene list."
+    },
+    {
+      "claim": "Transcription-Coupled Nucleotide Excision Repair (TC-NER) is a specialized sub-pathway of NER.",
+      "label": "GROUNDED",
+      "why": "Transcription-Coupled Nucleotide-Excision Repair (GO:0006283) is explicitly listed as an enriched term."
+    },
+    {
+      "claim": "TC-NER deals with DNA damage that stalls RNA polymerase during transcription.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] states 'The stalling of RNA polymerase II (RNAPII) on DNA lesions triggers transcription-coupled DNA repair (TCR)'."
+    },
+    {
+      "claim": "Stalled RNA polymerase II (RNAPII) triggers TCR.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] explicitly states 'The stalling of RNA polymerase II (RNAPII) on DNA lesions triggers transcription-coupled DNA repair (TCR)'."
+    },
+    {
+      "claim": "PCNA is involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "PCNA appears in DNA Replication (GO:0006260) term gene list."
+    },
+    {
+      "claim": "POLD1 is a DNA polymerase delta subunit involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "POLD1 appears in DNA Replication and DNA-templated DNA Replication term gene lists."
+    },
+    {
+      "claim": "POLD3 is a DNA polymerase delta subunit involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "POLD3 appears in DNA Replication and DNA-templated DNA Replication term gene lists."
+    },
+    {
+      "claim": "POLD4 is a DNA polymerase delta subunit involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "POLD4 appears in KEGG DNA replication pathway gene list."
+    },
+    {
+      "claim": "POLA1 is a DNA polymerase alpha subunit involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "POLA1 appears in DNA Replication and DNA-templated DNA Replication term gene lists."
+    },
+    {
+      "claim": "POLA2 is a DNA polymerase alpha subunit involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "POLA2 appears in DNA Replication and DNA-templated DNA Replication term gene lists."
+    },
+    {
+      "claim": "RFC2 is involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "RFC2 appears in DNA Replication (GO:0006260) term gene list."
+    },
+    {
+      "claim": "RFC3 is involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "RFC3 appears in DNA Replication (GO:0006260) term gene list."
+    },
+    {
+      "claim": "RFC4 is involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "RFC4 appears in DNA Replication (GO:0006260) term gene list."
+    },
+    {
+      "claim": "RFC5 is involved in DNA replication.",
+      "label": "GROUNDED",
+      "why": "RFC5 appears in DNA Replication (GO:0006260) term gene list."
+    },
+    {
+      "claim": "The cellular response to DNA damage involves the machinery for DNA synthesis.",
+      "label": "GROUNDED",
+      "why": "DNA Damage Response term includes genes involved in DNA synthesis like POLA1, and DNA Synthesis Involved In DNA Repair is enriched."
+    },
+    {
+      "claim": "DNA synthesis is critical for gap-filling during repair.",
+      "label": "GROUNDED",
+      "why": "Base-Excision Repair, Gap-Filling (GO:0006287) and Nucleotide-Excision Repair, DNA Gap Filling (GO:0006297) terms are enriched."
+    },
+    {
+      "claim": "DNA synthesis is critical for maintaining genomic stability during replication.",
+      "label": "BACKGROUND",
+      "why": "This is general biological knowledge about DNA synthesis during replication not explicitly stated in the evidence."
+    },
+    {
+      "claim": "POLB plays a role in Base Excision Repair (BER).",
+      "label": "GROUNDED",
+      "why": "POLB appears in Base-Excision Repair (GO:0006284) term gene list."
+    },
+    {
+      "claim": "FEN1 plays a role in Base Excision Repair (BER).",
+      "label": "GROUNDED",
+      "why": "FEN1 appears in Base-Excision Repair (GO:0006284) term gene list."
+    },
+    {
+      "claim": "LIG1 plays a role in Base Excision Repair (BER).",
+      "label": "GROUNDED",
+      "why": "LIG1 appears in Base-Excision Repair (GO:0006284) term gene list."
+    },
+    {
+      "claim": "BER removes damaged or modified bases.",
+      "label": "BACKGROUND",
+      "why": "This is textbook knowledge about BER function not explicitly stated in the evidence."
+    },
+    {
+      "claim": "RFC genes are involved in Mismatch Repair (MMR).",
+      "label": "GROUNDED",
+      "why": "RFC genes (RFC5, RFC3, RFC4, RFC2) appear in Mismatch Repair (GO:0006298) term gene list."
+    },
+    {
+      "claim": "PCNA is involved in Mismatch Repair (MMR).",
+      "label": "GROUNDED",
+      "why": "PCNA appears in Mismatch Repair (GO:0006298) term gene list."
+    },
+    {
+      "claim": "POLD genes are involved in Mismatch Repair (MMR).",
+      "label": "GROUNDED",
+      "why": "POLD3 appears in Mismatch Repair (GO:0006298) term gene list."
+    },
+    {
+      "claim": "MMR corrects errors that occur during DNA replication.",
+      "label": "BACKGROUND",
+      "why": "This is textbook knowledge about MMR function not explicitly stated in the evidence."
+    },
+    {
+      "claim": "RAD51 is involved in Homologous Recombination.",
+      "label": "GROUNDED",
+      "why": "RAD51 appears in Double-Strand Break Repair Via Homologous Recombination (GO:0000724) and Recombinational Repair terms."
+    },
+    {
+      "claim": "RAD52 is involved in Homologous Recombination.",
+      "label": "GROUNDED",
+      "why": "RAD52 appears in Double-Strand Break Repair Via Homologous Recombination (GO:0000724) and Recombinational Repair terms."
+    },
+    {
+      "claim": "FEN1 is involved in Non-homologous End-Joining.",
+      "label": "GROUNDED",
+      "why": "FEN1 appears in Double-Strand Break Repair Via Nonhomologous End Joining (GO:0006303) term gene list."
+    },
+    {
+      "claim": "POLL is involved in Non-homologous End-Joining.",
+      "label": "GROUNDED",
+      "why": "POLL appears in Double-Strand Break Repair Via Nonhomologous End Joining (GO:0006303) term gene list."
+    },
+    {
+      "claim": "POLR2A is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2A appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "POLR2C is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2C appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "POLR2D is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2D appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "POLR2E is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2E appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "POLR2F is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2F appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "POLR2G is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2G appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "POLR2H is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2H appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "POLR2I is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2I appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "POLR2J is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2J appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "POLR2K is an RNA Polymerase II subunit.",
+      "label": "GROUNDED",
+      "why": "POLR2K appears in Transcription By RNA Polymerase II (GO:0006366) term gene list."
+    },
+    {
+      "claim": "GTF2A2 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "GTF2A2 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "GTF2B is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "GTF2B appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "GTF2F1 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "GTF2F1 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "GTF2H1 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "GTF2H1 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "GTF2H3 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "GTF2H3 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "GTF2H5 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "GTF2H5 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "TAF6 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "TAF6 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "TAF9 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "TAF9 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "TAF10 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "TAF10 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "TAF12 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "TAF12 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "TAF13 is a basal transcription factor.",
+      "label": "GROUNDED",
+      "why": "TAF13 appears in Basal transcription factors KEGG pathway and transcription initiation terms."
+    },
+    {
+      "claim": "The co-enrichment of Transcription By RNA Polymerase II and Nucleotide Excision Repair suggests DNA repair activities are engaged when transcription is ongoing.",
+      "label": "GROUNDED",
+      "why": "Both Transcription By RNA Polymerase II and Nucleotide-Excision Repair are enriched with overlapping genes, and TC-NER specifically addresses this coupling."
+    },
+    {
+      "claim": "The co-enrichment of Transcription By RNA Polymerase II and Nucleotide Excision Repair suggests DNA repair activities are engaged when transcription is stalled due to DNA damage.",
+      "label": "GROUNDED",
+      "why": "Transcription-Coupled Nucleotide-Excision Repair term is enriched, and abstract [1] describes repair triggered by stalled RNAPII."
+    },
+    {
+      "claim": "HPRT1 is involved in purine metabolism.",
+      "label": "GROUNDED",
+      "why": "HPRT1 appears in Purine metabolism KEGG pathway gene list."
+    },
+    {
+      "claim": "RRM2B is involved in purine metabolism.",
+      "label": "GROUNDED",
+      "why": "RRM2B appears in Purine metabolism KEGG pathway gene list."
+    },
+    {
+      "claim": "TYMS is involved in pyrimidine metabolism.",
+      "label": "GROUNDED",
+      "why": "TYMS appears in Pyrimidine metabolism KEGG pathway gene list."
+    },
+    {
+      "claim": "UMPS is involved in pyrimidine metabolism.",
+      "label": "GROUNDED",
+      "why": "UMPS appears in Pyrimidine metabolism KEGG pathway gene list."
+    },
+    {
+      "claim": "CDA is involved in pyrimidine metabolism.",
+      "label": "GROUNDED",
+      "why": "CDA appears in Pyrimidine metabolism KEGG pathway gene list."
+    },
+    {
+      "claim": "Nucleotide synthesis is essential for providing building blocks for DNA repair.",
+      "label": "BACKGROUND",
+      "why": "This is general biological knowledge about nucleotide synthesis supporting DNA repair not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Nucleotide synthesis is essential for providing building blocks for DNA replication.",
+      "label": "BACKGROUND",
+      "why": "This is general biological knowledge about nucleotide synthesis supporting DNA replication not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Nucleotide catabolism is essential for providing building blocks for DNA repair.",
+      "label": "BACKGROUND",
+      "why": "While nucleotide catabolism pathways are enriched, their role in providing building blocks for DNA repair is not explicitly stated."
+    },
+    {
+      "claim": "Nucleotide catabolism is essential for providing building blocks for DNA replication.",
+      "label": "BACKGROUND",
+      "why": "While nucleotide catabolism pathways are enriched, their role in providing building blocks for DNA replication is not explicitly stated."
+    },
+    {
+      "claim": "DNA repair mechanisms are tightly coupled with cell cycle checkpoints.",
+      "label": "GROUNDED",
+      "why": "Regulation Of Cell Cycle Phase Transition and DNA Damage Response terms are enriched with overlapping genes like DDB1, ERCC3, ERCC2, XPC, TP53."
+    },
+    {
+      "claim": "Cell cycle checkpoints ensure genomic integrity before cell division.",
+      "label": "BACKGROUND",
+      "why": "This is general biological knowledge about cell cycle checkpoint function not explicitly stated in the evidence."
+    },
+    {
+      "claim": "The gene list points to a highly active and integrated system for maintaining genome stability.",
+      "label": "GROUNDED",
+      "why": "Multiple enriched terms for DNA repair, replication, and damage response demonstrate an integrated system for genome stability."
+    },
+    {
+      "claim": "Genome stability is maintained primarily through DNA repair and replication.",
+      "label": "GROUNDED",
+      "why": "The enrichment of DNA Repair, DNA Replication, and related pathways supports this claim."
+    },
+    {
+      "claim": "Many genes in the set are involved in detecting DNA lesions that interfere with RNA Polymerase II activity.",
+      "label": "GROUNDED",
+      "why": "TC-NER term and abstracts describe detecting lesions that stall RNA Polymerase II."
+    },
+    {
+      "claim": "Many genes in the set are involved in repairing DNA lesions that interfere with RNA Polymerase II activity.",
+      "label": "GROUNDED",
+      "why": "TC-NER term and abstracts describe repairing lesions that stall RNA Polymerase II."
+    },
+    {
+      "claim": "Unrepaired lesions can lead to mutations.",
+      "label": "BACKGROUND",
+      "why": "This is general biological knowledge about consequences of unrepaired DNA damage not explicitly stated in the evidence."
+    },
+    {
+      "claim": "Unrepaired lesions can lead to cell death.",
+      "label": "BACKGROUND",
+      "why": "This is general biological knowledge about consequences of unrepaired DNA damage not explicitly stated in the evidence."
+    },
+    {
+      "claim": "The identified genes represent core components across multiple repair pathways including NER.",
+      "label": "GROUNDED",
+      "why": "NER terms are enriched with genes like XPC, ERCC1-5, DDB1/2."
+    },
+    {
+      "claim": "The identified genes represent core components across multiple repair pathways including BER.",
+      "label": "GROUNDED",
+      "why": "BER terms are enriched with genes like POLB, FEN1, LIG1."
+    },
+    {
+      "claim": "The identified genes represent core components across multiple repair pathways including MMR.",
+      "label": "GROUNDED",
+      "why": "MMR terms are enriched with genes like PCNA, POLD3, RFC genes."
+    },
+    {
+      "claim": "The identified genes represent core components across multiple repair pathways including HR.",
+      "label": "GROUNDED",
+      "why": "HR terms are enriched with genes like RAD51, RAD52."
+    },
+    {
+      "claim": "The identified genes represent core components across multiple repair pathways including NHEJ.",
+      "label": "GROUNDED",
+      "why": "NHEJ terms are enriched with genes like FEN1, POLL."
+    },
+    {
+      "claim": "The cell has a robust and redundant defense system against various types of DNA damage.",
+      "label": "BACKGROUND",
+      "why": "This is an interpretive statement about cellular defense systems not explicitly stated in the evidence."
+    },
+    {
+      "claim": "The prominent role of RNA polymerase suggests the cell is actively transcribing.",
+      "label": "GROUNDED",
+      "why": "Multiple RNA Polymerase II transcription terms are enriched with many POLR2 subunits and transcription factors."
+    },
+    {
+      "claim": "The prominent role of basal transcription factors suggests the cell is actively transcribing.",
+      "label": "GROUNDED",
+      "why": "Multiple basal transcription factor genes (GTF2A2, GTF2B, TAF genes) are enriched in transcription initiation terms."
+    },
+    {
+      "claim": "A substantial part of the DNA repair machinery is dedicated to resolving conflicts arising from transcription encountering damaged DNA.",
+      "label": "GROUNDED",
+      "why": "TC-NER pathway is enriched, and abstracts describe resolving conflicts between transcription and DNA damage."
+    },
+    {
+      "claim": "The gene set could imply a cellular state under genotoxic stress.",
+      "label": "BACKGROUND",
+      "why": "This is an interpretation about cellular state not explicitly stated in the evidence."
+    },
+    {
+      "claim": "The gene set could imply a tissue with high transcriptional activity where efficient TC-NER is paramount for cell survival and function.",
+      "label": "BACKGROUND",
+      "why": "This is an interpretation about tissue context not explicitly stated in the evidence."
+    },
+    {
+      "claim": "RNA Polymerase II stalling on DNA lesions is a trigger for transcription-coupled DNA repair.",
+      "label": "GROUNDED",
+      "why": "Abstract [1] explicitly states 'The stalling of RNA polymerase II (RNAPII) on DNA lesions triggers transcription-coupled DNA repair (TCR)'."
+    },
+    {
+      "claim": "The gene set describes a comprehensive and highly active network for safeguarding genomic integrity.",
+      "label": "GROUNDED",
+      "why": "Multiple enriched pathways for DNA repair, replication, transcription, and damage response demonstrate a comprehensive network for genomic integrity."
+    },
+    {
+      "claim": "The gene set prominently features the Transcription-Coupled Nucleotide Excision Repair pathway.",
+      "label": "GROUNDED",
+      "why": "Transcription-Coupled Nucleotide-Excision Repair (GO:0006283) is explicitly enriched, and abstracts focus on TC-NER mechanisms."
+    },
+    {
+      "claim": "The gene set indicates a cellular focus on repairing DNA damage that occurs during active gene transcription.",
+      "label": "GROUNDED",
+      "why": "TC-NER enrichment and abstracts describe repairing damage during active transcription."
+    },
+    {
+      "claim": "The gene set suggests a response to DNA damage.",
+      "label": "GROUNDED",
+      "why": "DNA Damage Response (GO:0006974) and Response To UV terms are enriched with many genes."
+    },
+    {
+      "claim": "The gene set suggests a continuously active repair system in a highly transcriptionally active context.",
+      "label": "GROUNDED",
+      "why": "Multiple transcription and TC-NER terms are enriched, suggesting active repair in a transcriptionally active context."
+    }
+  ],
+  "summary": {
+    "n_claims": 107,
+    "n_scored": 107,
+    "grounded_rate": 0.869,
+    "hallucination_rate": 0.0,
+    "grounded": 93,
+    "background": 14,
+    "unsupported": 0
+  }
+}

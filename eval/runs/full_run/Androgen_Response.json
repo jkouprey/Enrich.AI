@@ -1,0 +1,2773 @@
+{
+  "gene_set": "Androgen_Response",
+  "context": "Androgen Response",
+  "genes": [
+    "KLK3",
+    "KLK2",
+    "ACSL3",
+    "PIAS1",
+    "CAMKK2",
+    "NKX3-1",
+    "TMPRSS2",
+    "APPBP2",
+    "CENPN",
+    "BMPR1B",
+    "MAF",
+    "FADS1",
+    "ZBTB10",
+    "HMGCR",
+    "SPCS3",
+    "INSIG1",
+    "NGLY1",
+    "UBE2J1",
+    "ELK4",
+    "ABCC4",
+    "ELOVL5",
+    "ALDH1A3",
+    "AZGP1",
+    "ABHD2",
+    "SAT1",
+    "DBI",
+    "DHCR24",
+    "SORD",
+    "STK39",
+    "TPD52",
+    "IDI1",
+    "B2M",
+    "MAP7",
+    "DNAJB9",
+    "FKBP5",
+    "HERC3",
+    "PGM3",
+    "HOMER2",
+    "ELL2",
+    "UAP1",
+    "SEC24D",
+    "LMAN1",
+    "PMEPA1",
+    "INPP4B",
+    "RRP12",
+    "SELENOP",
+    "NDRG1",
+    "KRT19",
+    "ITGAV",
+    "B4GALT1",
+    "MAK",
+    "SPDEF",
+    "GSR",
+    "KRT8",
+    "LIFR",
+    "PLPP1",
+    "STEAP4",
+    "GUCY1A1",
+    "SRP19",
+    "CCND3",
+    "IQGAP2",
+    "RAB4A",
+    "SLC26A2",
+    "SMS",
+    "ZMIZ1",
+    "SGK1",
+    "MERTK",
+    "HPGD",
+    "ANKH",
+    "GNAI3",
+    "SRF",
+    "SLC38A2",
+    "HMGCS1",
+    "ARID5B",
+    "CDC14B",
+    "TNFAIP8",
+    "XRCC5",
+    "GPD1L",
+    "ACTN1",
+    "RPS6KA3",
+    "TSC22D1",
+    "PDLIM5",
+    "TMEM50A",
+    "ADAMTS1",
+    "NCOA4",
+    "AKAP12",
+    "SCD",
+    "PTK2B",
+    "CDK6",
+    "ADRM1",
+    "H1-0",
+    "HSD17B14",
+    "VAPA",
+    "CCND1",
+    "XRCC6",
+    "MYL12A",
+    "UBE2I",
+    "PTPN21",
+    "AKT1",
+    "PA2G4"
+  ],
+  "n_genes": 100,
+  "query": "Analyze this gene set (biological context: Androgen Response) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: KLK3, KLK2, ACSL3, PIAS1, CAMKK2, NKX3-1, TMPRSS2, APPBP2, CENPN, BMPR1B, MAF, FADS1, ZBTB10, HMGCR, SPCS3, INSIG1, NGLY1, UBE2J1, ELK4, ABCC4, ELOVL5, ALDH1A3, AZGP1, ABHD2, SAT1, DBI, DHCR24, SORD, STK39, TPD52, IDI1, B2M, MAP7, DNAJB9, FKBP5, HERC3, PGM3, HOMER2, ELL2, UAP1, SEC24D, LMAN1, PMEPA1, INPP4B, RRP12, SELENOP, NDRG1, KRT19, ITGAV, B4GALT1, MAK, SPDEF, GSR, KRT8, LIFR, PLPP1, STEAP4, GUCY1A1, SRP19, CCND3, IQGAP2, RAB4A, SLC26A2, SMS, ZMIZ1, SGK1, MERTK, HPGD, ANKH, GNAI3, SRF, SLC38A2, HMGCS1, ARID5B, CDC14B, TNFAIP8, XRCC5, GPD1L, ACTN1, RPS6KA3, TSC22D1, PDLIM5, TMEM50A, ADAMTS1, NCOA4, AKAP12, SCD, PTK2B, CDK6, ADRM1, H1-0, HSD17B14, VAPA, CCND1, XRCC6, MYL12A, UBE2I, PTPN21, AKT1, PA2G4",
+  "valid": true,
+  "tool_less": false,
+  "n_evidence_terms": 73,
+  "n_papers": 4,
+  "citation_guard": {
+    "checked": true,
+    "n_papers_retrieved": 4,
+    "removed_pmids": [],
+    "removed_author_years": [],
+    "removed_reference_lines": [],
+    "n_removed": 0
+  },
+  "citation_audit": {
+    "n_papers_retrieved": 4,
+    "cited_pmids": [],
+    "fabricated_pmids": [],
+    "fabricated_titles": [],
+    "fabricated_author_years": [],
+    "et_al_with_no_papers": 0,
+    "has_fabricated_citation": false
+  },
+  "interpretation": "The enrichment analysis of your gene set in the context of Androgen Response reveals a strong signature related to androgen receptor signaling, lipid and sterol biosynthesis, and cell proliferation/cancer pathways. This suggests that the given genes are highly active in processes fundamental to androgen-driven cellular functions and, importantly, prostate cancer development and progression.\n\n## Summary\n\nThe most prominent findings from the enrichment analysis indicate significant activation of the **Androgen Receptor Signaling Pathway** and processes related to **steroid/lipid biosynthesis and metabolism**, alongside pathways involved in **cell proliferation** and directly related to **Prostate cancer**. These interconnected pathways highlight a coordinated cellular response that likely contributes to growth and survival in an androgen-rich environment.\n\n## Detailed Analysis\n\n### GO Biological Process (2023)\n\nThe GO_Biological_Process_2023 enrichment results strongly align with the given context of \"Androgen Response\":\n\n*   **Androgen Receptor Signaling Pathway (GO:0030521)** and **Intracellular Steroid Hormone Receptor Signaling Pathway (GO:0030518)** are the top terms, indicating a direct involvement of the gene set in mediating androgenic signals. Genes like *ZMIZ1, PMEPA1, PLPP1*, and *NKX3-1* (for AR signaling) and *NCOA4* (for intracellular steroid hormone receptor signaling) are key players here. *NKX3-1* is a known prostate-specific tumor suppressor and androgen-regulated gene.\n*   **Response To Testosterone (GO:0033574)** further reinforces the direct link to androgenic stimuli, with *NCOA4* and *NKX3-1* as overlapping genes.\n*   Several terms related to **lipid and sterol biosynthesis and metabolism** are highly enriched:\n    *   **Polyamine Biosynthetic Process (GO:0006596)** and **Polyamine Metabolic Process (GO:0006595)**, with genes like *SMS, SAT1*, and *SLC38A2*. Polyamines are crucial for cell growth and proliferation, often dysregulated in cancer.\n    *   **Secondary Alcohol Biosynthetic Process (GO:1902653), Cholesterol Biosynthetic Process (GO:0006695), Sterol Biosynthetic Process (GO:0016126)**, and **Cholesterol Metabolic Process (GO:0008203)**, all share the genes *HMGCS1, INSIG1, DHCR24*, and *HMGCR*. This highlights a robust activation of cholesterol and sterol synthesis pathways, which are critical for membrane synthesis and steroid hormone production.\n    *   **Fatty Acid Biosynthetic Process (GO:0006633), Unsaturated Fatty Acid Biosynthetic Process (GO:0006636)**, and **Unsaturated Fatty Acid Metabolic Process (GO:0033559)**, involving genes such as *ELOVL5, SCD, ABHD2*, and *FADS1*. These processes indicate active fatty acid synthesis, providing building blocks for cell growth and signaling molecules.\n    *   **Isoprenoid Biosynthetic Process (GO:0008299)** (*IDI1, HMGCR*) further underscores the active synthesis of precursors for cholesterol and other lipids.\n*   **Cell Population Proliferation** related terms, both positive and negative regulation, are present, including **Regulation Of Cell Population Proliferation (GO:0042127)** and **Negative Regulation Of Cell Population Proliferation (GO:0008285)**. This suggests a complex interplay regulating cell growth, with genes like *CCND1, CDK6, AKT1*, and *NKX3-1* involved.\n*   **Protein Phosphorylation** and **Protein Sumoylation** (e.g., *UBE2I, ZMIZ1, PIAS1*) pathways are also enriched, indicating active post-translational modifications that regulate protein function, often crucial in signaling and cell cycle control.\n\n### KEGG Human (2021)\n\nThe KEGG_2021_Human enrichment provides a disease context, further supporting the androgen response interpretation:\n\n*   The most significant KEGG term is **Prostate cancer**, with an overlap of *CCND1, AKT1, TMPRSS2, KLK3*, and *NKX3-1*. The presence of *KLK3* (PSA), *KLK2*, *TMPRSS2*, and *NKX3-1* strongly links this gene set to prostate function and pathology, as these are well-established androgen-regulated genes and markers in prostate cancer.\n*   **Terpenoid backbone biosynthesis** (*IDI1, HMGCS1, HMGCR*) and **Biosynthesis of unsaturated fatty acids** (*ELOVL5, SCD, FADS1*) further corroborate the GO findings regarding active lipid and sterol metabolism, which is often reprogrammed in prostate cancer to support rapid cell proliferation.\n*   **AMPK signaling pathway** (*CCND1, SCD, AKT1, HMGCR, CAMKK2*) and **PPAR signaling pathway** (*HMGCS1, SCD, DBI, ACSL3*) are metabolic regulators. AMPK is a key energy sensor, and PPARs are nuclear receptors involved in lipid metabolism; their enrichment suggests metabolic reprogramming influenced by androgen signaling.\n*   Several general cancer pathways, such as **Pathways in cancer** and specific cancer types like **Small cell lung cancer, Melanoma, Non-small cell lung cancer, Glioma, Chronic myeloid leukemia**, and **Pancreatic cancer**, also appear. While broad, their enrichment with genes like *CCND1, CDK6*, and *AKT1* reflects the general oncogenic potential associated with dysregulated cell cycle and signaling often driven by androgen receptor activity.\n*   **Cell cycle** regulation (*CCND3, CDK6, CCND1, CDC14B*) is consistently enriched across both GO and KEGG, pointing to active cell division.\n\n### Literature Support\n\nThe literature search for \"Androgen receptor signaling lipid metabolism prostate cancer\" provided relevant context:\n\n*   Pandey et al. (2026) highlights that precursor-dependent steroid conversion sustains AR signaling in prostate cancer, emphasizing the \"metabolic hyperactivity (oxidative phosphorylation and fatty acid metabolism)\" associated with an AR-High phenotype. This aligns perfectly with the strong enrichment of lipid and sterol biosynthetic pathways in our gene set.\n*   Zargar et al. (2026) reinforces the concept of metabolic rewiring in prostate cancer, linking increased citrate export, acetyl-CoA generation, and de novo lipogenesis to AR signaling. They found that AR activity shows grade-dependent associations with lipid metabolic pathways, further supporting the observed connection between androgen response and lipid synthesis in our gene list.\n\n### Biological Interpretation\n\nThe gene set strongly indicates a robust **androgen-responsive program** characterized by heightened **lipid and sterol metabolism** and **active cell proliferation**. This metabolic rewiring is a hallmark of many cancers, particularly prostate cancer, where androgen receptor signaling directly drives the expression of genes involved in fatty acid, cholesterol, and polyamine synthesis to support rapid growth and membrane biogenesis.\n\nThe presence of core androgen-regulated genes like *KLK3, KLK2, TMPRSS2*, and *NKX3-1*, alongside genes in lipid metabolism (*HMGCR, SCD, FADS1, ELOVL5*) and cell cycle regulation (*CCND1, CCND3, CDK6, AKT1*), paints a picture of cells actively responding to androgens by increasing their biosynthetic capacity and proliferative drive. This coordinated activation is crucial for the normal function of androgen-dependent tissues but can be co-opted in prostate cancer to fuel uncontrolled growth and progression. The enrichment of \"Prostate cancer\" and several pan-cancer pathways in the KEGG analysis further strengthens this interpretation. The literature supports this interplay, demonstrating that metabolic adaptations, particularly in lipid synthesis, are integral to sustaining androgen receptor signaling and disease progression in prostate cancer (Pandey et al., 2026; Zargar et al., 2026).",
+  "reasoning_trace": [
+    "Tool: run_enrichment_analysis | Args: {'genes': 'KLK3, KLK2, ACSL3, PIAS1, CAMKK2, NKX3-1, TMPRSS2, APPBP2, CENPN, BMPR1B, MAF, FADS1, ZBTB10, HMGCR, SPCS3, INSIG1, NGLY1, UBE2J1, ELK4, ABCC4, ELOVL5, ALDH1A3, AZGP1, ABHD2, SAT1, DBI, DHCR24, SORD, STK39, TPD52, IDI1, B2M, MAP7, DNAJB9, FKBP5, HERC3, PGM3, HOMER2, ELL2, UAP1, SEC24D, LMAN1, PMEPA1, INPP4B, RRP12, SELENOP, NDRG1, KRT19, ITGAV, B4GALT1, MAK, SPDEF, GSR, KRT8, LIFR, PLPP1, STEAP4, GUCY1A1, SRP19, CCND3, IQGAP2, RAB4A, SLC26A2, SMS, ZMIZ1, SGK1, MERTK, HPGD, ANKH, GNAI3, SRF, SLC38A2, HMGCS1, ARID5B, CDC14B, TNFAIP8, XRCC5, GPD1L, ACTN1, RPS6KA3, TSC22D1, PDLIM5, TMEM50A, ADAMTS1, NCOA4, AKAP12, SCD, PTK2B, CDK6, ADRM1, H1-0, HSD17B14, VAPA, CCND1, XRCC6, MYL12A, UBE2I, PTPN21, AKT1, PA2G4', 'libraries': 'GO_Biological_Process_2023,KEGG_2021_Human'}",
+    "Tool: search_literature | Args: {'query': 'Androgen receptor signaling lipid metabolism prostate cancer', 'max_results': 5, 'sort_by': 'relevance'}"
+  ],
+  "reasoning_steps": [
+    {
+      "step": 0,
+      "type": "query",
+      "content": "Analyze this gene set (biological context: Androgen Response) and give a biological interpretation. Use the GO_Biological_Process_2023 and KEGG_2021_Human libraries for enrichment, and you must call search_literature to retrieve at most the five most relevant papers for supporting evidence, and cite only papers you actually retrieved from the search results. Investigate thoroughly, but keep the final interpretation focused and brief: KLK3, KLK2, ACSL3, PIAS1, CAMKK2, NKX3-1, TMPRSS2, APPBP2, CEN"
+    },
+    {
+      "step": 1,
+      "type": "thought_action",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List in Androgen Response**\n\nOkay, so I've been given this gene list and the task is to decipher its biological meaning, specifically in the context of Androgen Response. My strategy is quite clear-cut, as this type of analysis is right in my wheelhouse. First, I’m going to **run an enrichment analysis**. I'll be using the provided gene list with the GO Biological Process 2023 and KEGG 2021 Human libraries. This will give me an initial, unbiased view of the pathways and processes potentially involved.\n\nNext, I'll dive into the **enriched terms**. I'll meticulously interpret the results, keeping the \"Androgen Response\" context front and center. I'll be looking for biological processes that resonate with androgen signaling, metabolism, and related regulatory pathways. I'll be particularly attentive to highly relevant terms.\n\nThis is where it gets exciting! After identifying the most promising enriched terms, I'll perform a **literature search**. I need to find supporting evidence, but this will be no ordinary search. I will formulate precise queries for the `search_literature` function, combining key enriched terms and known genes related to androgen response. This targeted approach is crucial for efficiently sifting through the literature and finding relevant evidence.\n\nImportantly, I'll **cite only the papers** that are retrieved during *this* search, ensuring that the evidence is fresh and directly pertinent to my analysis. I won't be relying on any pre-existing knowledge that isn't directly supported by this targeted retrieval.\n\nFinally, I’ll synthesize all of this information into a concise **biological interpretation**. I'll highlight the most relevant pathways and genes, weaving a narrative that explains their significance in the context of androgen response. I'll aim to create a clear, coherent picture of how this gene list might be contributing to, or affected by, androgen-related processes.",
+      "action": "run_enrichment_analysis",
+      "args": "genes=KLK3, KLK2, ACSL3, PIAS1, CAMKK2, NKX3-1, TMPRSS2,..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "tool_name": "run_enrichment_analysis",
+      "tool_call_id": "84be3de7-6b22-4348-9015-57f0b95e5b2e",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 100 | Total significant terms: 73"
+    },
+    {
+      "step": 1,
+      "type": "reasoning",
+      "content": "The gene set provided shows a strong and coherent enrichment for processes central to **androgen receptor signaling, prostate cancer, lipid metabolism, and cell proliferation**. These interconnected pathways are highly relevant to the provided context of \"Androgen Response,\" suggesting that the genes are likely involved in mediating or responding to androgenic stimuli, potentially in the context of prostate biology or disease.\n\n## Detailed Analysis\n\nThe enrichment analysis, performed using the G"
+    },
+    {
+      "step": 2,
+      "type": "thought_action",
+      "thought": "**My Approach to Interpreting the Gene List**\n\nOkay, so I have a gene list to interpret within the framework of \"Androgen Response.\" My plan is pretty straightforward, leveraging my expertise in this area. I've already got the enrichment analysis results, stored in `enrichment_analysis_response`, which is a good starting point. My priority here is to make sure I'm zeroing in on the most relevant aspects.\n\nFirst, I'll dive deep into those enrichment results from both \"GO_Biological_Process_2023\" and \"KEGG_2021_Human\" libraries. I'll need to identify the top significant terms, especially those directly linked to Androgen Response. I'll also look for broader themes that often accompany it like lipid metabolism and cell proliferation, to see if they are represented in the gene list. I have to look for any connections between the genes that overlap these terms.\n\nNext, I'll craft very precise literature search queries for `search_literature`, based on the prioritized terms and key genes I identified. I want to make sure the queries are very targeted, focused on androgen response, prostate cancer, and any relevant metabolic pathways. I don't need a flood of information; I want to find the most relevant supporting evidence. So, I will limit the results to at most 5 results from the literature search.\n\nFinally, I'll synthesize everything. I'll merge the insights from the enrichment analysis with the evidence I find in the literature. I will be explaining the biological significance of any enriched pathways within the context of the androgen response, highlighting key genes and their roles, and making sure to cite any relevant literature I retrieved. My goal is a concise and well-supported interpretation.",
+      "action": "search_literature",
+      "args": "query=Androgen receptor signaling lipid metabolism prost..., max_results=5, sort_by=relevance",
+      "tool_name": "search_literature",
+      "tool_call_id": "1b921934-1646-4e5f-9519-a779d07a3019",
+      "observation": "=== LITERATURE SEARCH: 'Androgen receptor signaling lipid metabolism prostate cancer' === | Found 4 papers (sorted by relevance)"
+    },
+    {
+      "step": 3,
+      "type": "final_answer",
+      "content": "The enrichment analysis of your gene set in the context of Androgen Response reveals a strong signature related to androgen receptor signaling, lipid and sterol biosynthesis, and cell proliferation/cancer pathways. This suggests that the given genes are highly active in processes fundamental to androgen-driven cellular functions and, importantly, prostate cancer development and progression.\n\n## Summary\n\nThe most prominent findings from the enrichment analysis indicate significant activation of t"
+    }
+  ],
+  "tools_used": [
+    "run_enrichment_analysis",
+    "search_literature"
+  ],
+  "tool_calls": [
+    {
+      "step": 1,
+      "tool": "run_enrichment_analysis",
+      "args": "genes=KLK3, KLK2, ACSL3, PIAS1, CAMKK2, NKX3-1, TMPRSS2,..., libraries=GO_Biological_Process_2023,KEGG_2021_Human",
+      "thought": "**My Approach to Unraveling the Biological Significance of This Gene List in Androgen Response**\n\nOkay, so I've been given this gene list and the task is to decipher its biological meaning, specifically in the context of Androgen Response. My strategy is quite clear-cut, as this type of analysis is right in my wheelhouse. First, I’m going to **run an enrichment analysis**. I'll be using the provided gene list with the GO Biological Process 2023 and KEGG 2021 Human libraries. This will give me an initial, unbiased view of the pathways and processes potentially involved.\n\nNext, I'll dive into the **enriched terms**. I'll meticulously interpret the results, keeping the \"Androgen Response\" context front and center. I'll be looking for biological processes that resonate with androgen signaling, metabolism, and related regulatory pathways. I'll be particularly attentive to highly relevant terms.\n\nThis is where it gets exciting! After identifying the most promising enriched terms, I'll perform a **literature search**. I need to find supporting evidence, but this will be no ordinary search. I will formulate precise queries for the `search_literature` function, combining key enriched terms and known genes related to androgen response. This targeted approach is crucial for efficiently sifting through the literature and finding relevant evidence.\n\nImportantly, I'll **cite only the papers** that are retrieved during *this* search, ensuring that the evidence is fresh and directly pertinent to my analysis. I won't be relying on any pre-existing knowledge that isn't directly supported by this targeted retrieval.\n\nFinally, I’ll synthesize all of this information into a concise **biological interpretation**. I'll highlight the most relevant pathways and genes, weaving a narrative that explains their significance in the context of androgen response. I'll aim to create a clear, coherent picture of how this gene list might be contributing to, or affected by, androgen-related processes.",
+      "observation": "=== ENRICHMENT ANALYSIS SUMMARY === | Genes analyzed: 100 | Total significant terms: 73"
+    },
+    {
+      "step": 2,
+      "tool": "search_literature",
+      "args": "query=Androgen receptor signaling lipid metabolism prost..., max_results=5, sort_by=relevance",
+      "thought": "**My Approach to Interpreting the Gene List**\n\nOkay, so I have a gene list to interpret within the framework of \"Androgen Response.\" My plan is pretty straightforward, leveraging my expertise in this area. I've already got the enrichment analysis results, stored in `enrichment_analysis_response`, which is a good starting point. My priority here is to make sure I'm zeroing in on the most relevant aspects.\n\nFirst, I'll dive deep into those enrichment results from both \"GO_Biological_Process_2023\" and \"KEGG_2021_Human\" libraries. I'll need to identify the top significant terms, especially those directly linked to Androgen Response. I'll also look for broader themes that often accompany it like lipid metabolism and cell proliferation, to see if they are represented in the gene list. I have to look for any connections between the genes that overlap these terms.\n\nNext, I'll craft very precise literature search queries for `search_literature`, based on the prioritized terms and key genes I identified. I want to make sure the queries are very targeted, focused on androgen response, prostate cancer, and any relevant metabolic pathways. I don't need a flood of information; I want to find the most relevant supporting evidence. So, I will limit the results to at most 5 results from the literature search.\n\nFinally, I'll synthesize everything. I'll merge the insights from the enrichment analysis with the evidence I find in the literature. I will be explaining the biological significance of any enriched pathways within the context of the androgen response, highlighting key genes and their roles, and making sure to cite any relevant literature I retrieved. My goal is a concise and well-supported interpretation.",
+      "observation": "=== LITERATURE SEARCH: 'Androgen receptor signaling lipid metabolism prostate cancer' === | Found 4 papers (sorted by relevance)"
+    }
+  ],
+  "full_enrichment_results": {
+    "query_genes": [
+      "KLK3",
+      "KLK2",
+      "ACSL3",
+      "PIAS1",
+      "CAMKK2",
+      "NKX3-1",
+      "TMPRSS2",
+      "APPBP2",
+      "CENPN",
+      "BMPR1B",
+      "MAF",
+      "FADS1",
+      "ZBTB10",
+      "HMGCR",
+      "SPCS3",
+      "INSIG1",
+      "NGLY1",
+      "UBE2J1",
+      "ELK4",
+      "ABCC4",
+      "ELOVL5",
+      "ALDH1A3",
+      "AZGP1",
+      "ABHD2",
+      "SAT1",
+      "DBI",
+      "DHCR24",
+      "SORD",
+      "STK39",
+      "TPD52",
+      "IDI1",
+      "B2M",
+      "MAP7",
+      "DNAJB9",
+      "FKBP5",
+      "HERC3",
+      "PGM3",
+      "HOMER2",
+      "ELL2",
+      "UAP1",
+      "SEC24D",
+      "LMAN1",
+      "PMEPA1",
+      "INPP4B",
+      "RRP12",
+      "SELENOP",
+      "NDRG1",
+      "KRT19",
+      "ITGAV",
+      "B4GALT1",
+      "MAK",
+      "SPDEF",
+      "GSR",
+      "KRT8",
+      "LIFR",
+      "PLPP1",
+      "STEAP4",
+      "GUCY1A1",
+      "SRP19",
+      "CCND3",
+      "IQGAP2",
+      "RAB4A",
+      "SLC26A2",
+      "SMS",
+      "ZMIZ1",
+      "SGK1",
+      "MERTK",
+      "HPGD",
+      "ANKH",
+      "GNAI3",
+      "SRF",
+      "SLC38A2",
+      "HMGCS1",
+      "ARID5B",
+      "CDC14B",
+      "TNFAIP8",
+      "XRCC5",
+      "GPD1L",
+      "ACTN1",
+      "RPS6KA3",
+      "TSC22D1",
+      "PDLIM5",
+      "TMEM50A",
+      "ADAMTS1",
+      "NCOA4",
+      "AKAP12",
+      "SCD",
+      "PTK2B",
+      "CDK6",
+      "ADRM1",
+      "H1-0",
+      "HSD17B14",
+      "VAPA",
+      "CCND1",
+      "XRCC6",
+      "MYL12A",
+      "UBE2I",
+      "PTPN21",
+      "AKT1",
+      "PA2G4"
+    ],
+    "gene_count": 100,
+    "libraries_tested": [
+      "GO_Biological_Process_2023",
+      "KEGG_2021_Human"
+    ],
+    "enrichment_results": {
+      "GO_Biological_Process_2023": [
+        {
+          "rank": 1,
+          "term_name": "Androgen Receptor Signaling Pathway (GO:0030521)",
+          "term": "Androgen Receptor Signaling Pathway (GO:0030521)",
+          "overlap": "4/17",
+          "p_value": 1.331899620230903e-06,
+          "z_score": 63.74038461538461,
+          "combined_score": 862.3375666219024,
+          "overlap_genes": [
+            "ZMIZ1",
+            "PMEPA1",
+            "PLPP1",
+            "NKX3-1"
+          ],
+          "genes": [
+            "ZMIZ1",
+            "PMEPA1",
+            "PLPP1",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.000798965827093053
+        },
+        {
+          "rank": 2,
+          "term_name": "Intracellular Steroid Hormone Receptor Signaling Pathway (GO:0030518)",
+          "term": "Intracellular Steroid Hormone Receptor Signaling Pathway (GO:0030518)",
+          "overlap": "5/43",
+          "p_value": 2.338821443560366e-06,
+          "z_score": 27.509695290858726,
+          "combined_score": 356.6869516489501,
+          "overlap_genes": [
+            "ZMIZ1",
+            "NCOA4",
+            "PMEPA1",
+            "PLPP1",
+            "NKX3-1"
+          ],
+          "genes": [
+            "ZMIZ1",
+            "NCOA4",
+            "PMEPA1",
+            "PLPP1",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.000798965827093053
+        },
+        {
+          "rank": 3,
+          "term_name": "Polyamine Biosynthetic Process (GO:0006596)",
+          "term": "Polyamine Biosynthetic Process (GO:0006596)",
+          "overlap": "3/6",
+          "p_value": 2.3992967780572162e-06,
+          "z_score": 205.1237113402062,
+          "combined_score": 2654.3695150710146,
+          "overlap_genes": [
+            "SMS",
+            "SAT1",
+            "SLC38A2"
+          ],
+          "genes": [
+            "SMS",
+            "SAT1",
+            "SLC38A2"
+          ],
+          "adjusted_p_value": 0.000798965827093053
+        },
+        {
+          "rank": 4,
+          "term_name": "Secondary Alcohol Biosynthetic Process (GO:1902653)",
+          "term": "Secondary Alcohol Biosynthetic Process (GO:1902653)",
+          "overlap": "4/24",
+          "p_value": 5.788898332949143e-06,
+          "z_score": 41.416666666666664,
+          "combined_score": 499.4671309916732,
+          "overlap_genes": [
+            "HMGCS1",
+            "INSIG1",
+            "DHCR24",
+            "HMGCR"
+          ],
+          "genes": [
+            "HMGCS1",
+            "INSIG1",
+            "DHCR24",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.0013716577247964072
+        },
+        {
+          "rank": 5,
+          "term_name": "Cholesterol Biosynthetic Process (GO:0006695)",
+          "term": "Cholesterol Biosynthetic Process (GO:0006695)",
+          "overlap": "4/25",
+          "p_value": 6.865153777759796e-06,
+          "z_score": 39.442460317460316,
+          "combined_score": 468.9334664055757,
+          "overlap_genes": [
+            "HMGCS1",
+            "INSIG1",
+            "DHCR24",
+            "HMGCR"
+          ],
+          "genes": [
+            "HMGCS1",
+            "INSIG1",
+            "DHCR24",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.0013716577247964072
+        },
+        {
+          "rank": 6,
+          "term_name": "Sterol Biosynthetic Process (GO:0016126)",
+          "term": "Sterol Biosynthetic Process (GO:0016126)",
+          "overlap": "4/28",
+          "p_value": 1.0984632189032872e-05,
+          "z_score": 34.50694444444444,
+          "combined_score": 394.0352587856317,
+          "overlap_genes": [
+            "HMGCS1",
+            "INSIG1",
+            "DHCR24",
+            "HMGCR"
+          ],
+          "genes": [
+            "HMGCS1",
+            "INSIG1",
+            "DHCR24",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.0018289412594739733
+        },
+        {
+          "rank": 7,
+          "term_name": "Polyamine Metabolic Process (GO:0006595)",
+          "term": "Polyamine Metabolic Process (GO:0006595)",
+          "overlap": "3/11",
+          "p_value": 1.943756475353003e-05,
+          "z_score": 76.9020618556701,
+          "combined_score": 834.256871154208,
+          "overlap_genes": [
+            "SMS",
+            "SAT1",
+            "SLC38A2"
+          ],
+          "genes": [
+            "SMS",
+            "SAT1",
+            "SLC38A2"
+          ],
+          "adjusted_p_value": 0.0027740181698252147
+        },
+        {
+          "rank": 8,
+          "term_name": "Regulation Of Cell Population Proliferation (GO:0042127)",
+          "term": "Regulation Of Cell Population Proliferation (GO:0042127)",
+          "overlap": "14/766",
+          "p_value": 2.709165524560164e-05,
+          "z_score": 4.145101434933202,
+          "combined_score": 43.59106722299301,
+          "overlap_genes": [
+            "XRCC6",
+            "TSC22D1",
+            "XRCC5",
+            "LIFR",
+            "PIAS1",
+            "AZGP1",
+            "CDK6",
+            "ADAMTS1",
+            "AKT1",
+            "PTK2B",
+            "ITGAV",
+            "SGK1",
+            "PLPP1",
+            "NKX3-1"
+          ],
+          "genes": [
+            "XRCC6",
+            "TSC22D1",
+            "XRCC5",
+            "LIFR",
+            "PIAS1",
+            "AZGP1",
+            "CDK6",
+            "ADAMTS1",
+            "AKT1",
+            "PTK2B",
+            "ITGAV",
+            "SGK1",
+            "PLPP1",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.0033830704487945048
+        },
+        {
+          "rank": 9,
+          "term_name": "Positive Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity (GO:0045737)",
+          "term": "Positive Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity (GO:0045737)",
+          "overlap": "3/15",
+          "p_value": 5.2826809188518965e-05,
+          "z_score": 51.25773195876289,
+          "combined_score": 504.8113501315131,
+          "overlap_genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1"
+          ],
+          "genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.005863775819925605
+        },
+        {
+          "rank": 10,
+          "term_name": "Positive Regulation Of Cyclin-Dependent Protein Kinase Activity (GO:1904031)",
+          "term": "Positive Regulation Of Cyclin-Dependent Protein Kinase Activity (GO:1904031)",
+          "overlap": "3/18",
+          "p_value": 9.371291441807692e-05,
+          "z_score": 41.0,
+          "combined_score": 380.2862565875762,
+          "overlap_genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1"
+          ],
+          "genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.009361920150365884
+        },
+        {
+          "rank": 11,
+          "term_name": "Response To Testosterone (GO:0033574)",
+          "term": "Response To Testosterone (GO:0033574)",
+          "overlap": "2/5",
+          "p_value": 0.0002450871709985121,
+          "z_score": 135.35374149659864,
+          "combined_score": 1125.3170126751409,
+          "overlap_genes": [
+            "NCOA4",
+            "NKX3-1"
+          ],
+          "genes": [
+            "NCOA4",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.02189985647270235
+        },
+        {
+          "rank": 12,
+          "term_name": "Positive Regulation Of Cell Cycle (GO:0045787)",
+          "term": "Positive Regulation Of Cell Cycle (GO:0045787)",
+          "overlap": "4/65",
+          "p_value": 0.00031526265874562236,
+          "z_score": 13.551229508196721,
+          "combined_score": 109.25142744049542,
+          "overlap_genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1",
+            "NKX3-1"
+          ],
+          "genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.02189985647270235
+        },
+        {
+          "rank": 13,
+          "term_name": "Fatty Acid Biosynthetic Process (GO:0006633)",
+          "term": "Fatty Acid Biosynthetic Process (GO:0006633)",
+          "overlap": "4/65",
+          "p_value": 0.00031526265874562236,
+          "z_score": 13.551229508196721,
+          "combined_score": 109.25142744049542,
+          "overlap_genes": [
+            "ELOVL5",
+            "SCD",
+            "ABHD2",
+            "FADS1"
+          ],
+          "genes": [
+            "ELOVL5",
+            "SCD",
+            "ABHD2",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.02189985647270235
+        },
+        {
+          "rank": 14,
+          "term_name": "Phospholipid Biosynthetic Process (GO:0008654)",
+          "term": "Phospholipid Biosynthetic Process (GO:0008654)",
+          "overlap": "3/27",
+          "p_value": 0.0003251243529193447,
+          "z_score": 25.61340206185567,
+          "combined_score": 205.70898832313847,
+          "overlap_genes": [
+            "IDI1",
+            "VAPA",
+            "FADS1"
+          ],
+          "genes": [
+            "IDI1",
+            "VAPA",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.02189985647270235
+        },
+        {
+          "rank": 15,
+          "term_name": "Regulation Of Protein Kinase Activity (GO:0045859)",
+          "term": "Regulation Of Protein Kinase Activity (GO:0045859)",
+          "overlap": "5/119",
+          "p_value": 0.00032882667376429956,
+          "z_score": 9.134810710987995,
+          "combined_score": 73.26099713674138,
+          "overlap_genes": [
+            "XRCC6",
+            "XRCC5",
+            "AKT1",
+            "PTK2B",
+            "CAMKK2"
+          ],
+          "genes": [
+            "XRCC6",
+            "XRCC5",
+            "AKT1",
+            "PTK2B",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.02189985647270235
+        },
+        {
+          "rank": 16,
+          "term_name": "Cholesterol Metabolic Process (GO:0008203)",
+          "term": "Cholesterol Metabolic Process (GO:0008203)",
+          "overlap": "4/67",
+          "p_value": 0.0003541950453595573,
+          "z_score": 13.119708994708995,
+          "combined_score": 104.244783981203,
+          "overlap_genes": [
+            "HMGCS1",
+            "INSIG1",
+            "DHCR24",
+            "HMGCR"
+          ],
+          "genes": [
+            "HMGCS1",
+            "INSIG1",
+            "DHCR24",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.022115053144637357
+        },
+        {
+          "rank": 17,
+          "term_name": "Negative Regulation Of Epithelial Cell Proliferation (GO:0050680)",
+          "term": "Negative Regulation Of Epithelial Cell Proliferation (GO:0050680)",
+          "overlap": "4/70",
+          "p_value": 0.0004188784573037018,
+          "z_score": 12.521464646464647,
+          "combined_score": 97.39107248944859,
+          "overlap_genes": [
+            "CDK6",
+            "SORD",
+            "B2M",
+            "NKX3-1"
+          ],
+          "genes": [
+            "CDK6",
+            "SORD",
+            "B2M",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.02461526934390577
+        },
+        {
+          "rank": 18,
+          "term_name": "Spermidine Metabolic Process (GO:0008216)",
+          "term": "Spermidine Metabolic Process (GO:0008216)",
+          "overlap": "2/7",
+          "p_value": 0.0005113327792346296,
+          "z_score": 81.20408163265306,
+          "combined_score": 615.4043164173056,
+          "overlap_genes": [
+            "SAT1",
+            "SLC38A2"
+          ],
+          "genes": [
+            "SAT1",
+            "SLC38A2"
+          ],
+          "adjusted_p_value": 0.026885339287126053
+        },
+        {
+          "rank": 19,
+          "term_name": "Negative Regulation Of Amyloid-Beta Clearance (GO:1900222)",
+          "term": "Negative Regulation Of Amyloid-Beta Clearance (GO:1900222)",
+          "overlap": "2/7",
+          "p_value": 0.0005113327792346296,
+          "z_score": 81.20408163265306,
+          "combined_score": 615.4043164173056,
+          "overlap_genes": [
+            "SRF",
+            "HMGCR"
+          ],
+          "genes": [
+            "SRF",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.026885339287126053
+        },
+        {
+          "rank": 20,
+          "term_name": "Positive Regulation Of Protein Phosphorylation (GO:0001934)",
+          "term": "Positive Regulation Of Protein Phosphorylation (GO:0001934)",
+          "overlap": "8/377",
+          "p_value": 0.0006094174097593082,
+          "z_score": 4.602568634381996,
+          "combined_score": 34.0728483850309,
+          "overlap_genes": [
+            "CCND3",
+            "XRCC6",
+            "CCND1",
+            "XRCC5",
+            "AKT1",
+            "PTK2B",
+            "NKX3-1",
+            "CAMKK2"
+          ],
+          "genes": [
+            "CCND3",
+            "XRCC6",
+            "CCND1",
+            "XRCC5",
+            "AKT1",
+            "PTK2B",
+            "NKX3-1",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.02828648381331115
+        },
+        {
+          "rank": 21,
+          "term_name": "Negative Regulation Of Cell Population Proliferation (GO:0008285)",
+          "term": "Negative Regulation Of Cell Population Proliferation (GO:0008285)",
+          "overlap": "8/379",
+          "p_value": 0.0006308556627616829,
+          "z_score": 4.577288175319349,
+          "combined_score": 33.72744337103023,
+          "overlap_genes": [
+            "AZGP1",
+            "CDK6",
+            "ADAMTS1",
+            "PTK2B",
+            "BMPR1B",
+            "B2M",
+            "PLPP1",
+            "NKX3-1"
+          ],
+          "genes": [
+            "AZGP1",
+            "CDK6",
+            "ADAMTS1",
+            "PTK2B",
+            "BMPR1B",
+            "B2M",
+            "PLPP1",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.02828648381331115
+        },
+        {
+          "rank": 22,
+          "term_name": "UDP-N-acetylglucosamine Biosynthetic Process (GO:0006048)",
+          "term": "UDP-N-acetylglucosamine Biosynthetic Process (GO:0006048)",
+          "overlap": "2/8",
+          "p_value": 0.0006795551666861537,
+          "z_score": 67.66666666666667,
+          "combined_score": 493.5655481733249,
+          "overlap_genes": [
+            "PGM3",
+            "UAP1"
+          ],
+          "genes": [
+            "PGM3",
+            "UAP1"
+          ],
+          "adjusted_p_value": 0.02828648381331115
+        },
+        {
+          "rank": 23,
+          "term_name": "Unsaturated Fatty Acid Biosynthetic Process (GO:0006636)",
+          "term": "Unsaturated Fatty Acid Biosynthetic Process (GO:0006636)",
+          "overlap": "2/8",
+          "p_value": 0.0006795551666861537,
+          "z_score": 67.66666666666667,
+          "combined_score": 493.5655481733249,
+          "overlap_genes": [
+            "SCD",
+            "FADS1"
+          ],
+          "genes": [
+            "SCD",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.02828648381331115
+        },
+        {
+          "rank": 24,
+          "term_name": "Isoprenoid Biosynthetic Process (GO:0008299)",
+          "term": "Isoprenoid Biosynthetic Process (GO:0008299)",
+          "overlap": "2/8",
+          "p_value": 0.0006795551666861537,
+          "z_score": 67.66666666666667,
+          "combined_score": 493.5655481733249,
+          "overlap_genes": [
+            "IDI1",
+            "HMGCR"
+          ],
+          "genes": [
+            "IDI1",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.02828648381331115
+        },
+        {
+          "rank": 25,
+          "term_name": "Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0043281)",
+          "term": "Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0043281)",
+          "overlap": "4/84",
+          "p_value": 0.0008356618925326059,
+          "z_score": 10.322916666666666,
+          "combined_score": 73.16146753439465,
+          "overlap_genes": [
+            "RPS6KA3",
+            "AKT1",
+            "DHCR24",
+            "NKX3-1"
+          ],
+          "genes": [
+            "RPS6KA3",
+            "AKT1",
+            "DHCR24",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.029999873364122857
+        },
+        {
+          "rank": 26,
+          "term_name": "Protein Modification Process (GO:0036211)",
+          "term": "Protein Modification Process (GO:0036211)",
+          "overlap": "11/711",
+          "p_value": 0.0008493929271608196,
+          "z_score": 3.390048154093098,
+          "combined_score": 23.97099207812514,
+          "overlap_genes": [
+            "UBE2I",
+            "CDK6",
+            "MAK",
+            "NGLY1",
+            "STK39",
+            "AKT1",
+            "PTK2B",
+            "BMPR1B",
+            "SGK1",
+            "CDC14B",
+            "CAMKK2"
+          ],
+          "genes": [
+            "UBE2I",
+            "CDK6",
+            "MAK",
+            "NGLY1",
+            "STK39",
+            "AKT1",
+            "PTK2B",
+            "BMPR1B",
+            "SGK1",
+            "CDC14B",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.029999873364122857
+        },
+        {
+          "rank": 27,
+          "term_name": "Negative Regulation Of Protein Exit From Endoplasmic Reticulum (GO:0070862)",
+          "term": "Negative Regulation Of Protein Exit From Endoplasmic Reticulum (GO:0070862)",
+          "overlap": "2/9",
+          "p_value": 0.000870867194754317,
+          "z_score": 57.99708454810496,
+          "combined_score": 408.64867956136595,
+          "overlap_genes": [
+            "INSIG1",
+            "UBE2J1"
+          ],
+          "genes": [
+            "INSIG1",
+            "UBE2J1"
+          ],
+          "adjusted_p_value": 0.029999873364122857
+        },
+        {
+          "rank": 28,
+          "term_name": "Alpha-Linolenic Acid Metabolic Process (GO:0036109)",
+          "term": "Alpha-Linolenic Acid Metabolic Process (GO:0036109)",
+          "overlap": "2/9",
+          "p_value": 0.000870867194754317,
+          "z_score": 57.99708454810496,
+          "combined_score": 408.64867956136595,
+          "overlap_genes": [
+            "ELOVL5",
+            "FADS1"
+          ],
+          "genes": [
+            "ELOVL5",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.029999873364122857
+        },
+        {
+          "rank": 29,
+          "term_name": "Amino Sugar Biosynthetic Process (GO:0046349)",
+          "term": "Amino Sugar Biosynthetic Process (GO:0046349)",
+          "overlap": "2/9",
+          "p_value": 0.000870867194754317,
+          "z_score": 57.99708454810496,
+          "combined_score": 408.64867956136595,
+          "overlap_genes": [
+            "PGM3",
+            "UAP1"
+          ],
+          "genes": [
+            "PGM3",
+            "UAP1"
+          ],
+          "adjusted_p_value": 0.029999873364122857
+        },
+        {
+          "rank": 30,
+          "term_name": "Protein Phosphorylation (GO:0006468)",
+          "term": "Protein Phosphorylation (GO:0006468)",
+          "overlap": "9/500",
+          "p_value": 0.0009016959857803719,
+          "z_score": 3.909514111143439,
+          "combined_score": 27.410514894622892,
+          "overlap_genes": [
+            "RPS6KA3",
+            "CDK6",
+            "MAK",
+            "STK39",
+            "AKT1",
+            "PTK2B",
+            "BMPR1B",
+            "SGK1",
+            "CAMKK2"
+          ],
+          "genes": [
+            "RPS6KA3",
+            "CDK6",
+            "MAK",
+            "STK39",
+            "AKT1",
+            "PTK2B",
+            "BMPR1B",
+            "SGK1",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.030026476326486383
+        },
+        {
+          "rank": 31,
+          "term_name": "Positive Regulation Of Phosphorylation (GO:0042327)",
+          "term": "Positive Regulation Of Phosphorylation (GO:0042327)",
+          "overlap": "6/231",
+          "p_value": 0.0010744192101797838,
+          "z_score": 5.581560283687943,
+          "combined_score": 38.15540674448032,
+          "overlap_genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1",
+            "MERTK",
+            "NKX3-1",
+            "CAMKK2"
+          ],
+          "genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1",
+            "MERTK",
+            "NKX3-1",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.03387354319347645
+        },
+        {
+          "rank": 32,
+          "term_name": "UDP-N-acetylglucosamine Metabolic Process (GO:0006047)",
+          "term": "UDP-N-acetylglucosamine Metabolic Process (GO:0006047)",
+          "overlap": "2/10",
+          "p_value": 0.0010850384206118583,
+          "z_score": 50.744897959183675,
+          "combined_score": 346.39177176286466,
+          "overlap_genes": [
+            "PGM3",
+            "UAP1"
+          ],
+          "genes": [
+            "PGM3",
+            "UAP1"
+          ],
+          "adjusted_p_value": 0.03387354319347645
+        },
+        {
+          "rank": 33,
+          "term_name": "Biogenic Amine Biosynthetic Process (GO:0042401)",
+          "term": "Biogenic Amine Biosynthetic Process (GO:0042401)",
+          "overlap": "2/11",
+          "p_value": 0.0013218400851343036,
+          "z_score": 45.10430839002267,
+          "combined_score": 298.984305122014,
+          "overlap_genes": [
+            "SAT1",
+            "SLC38A2"
+          ],
+          "genes": [
+            "SAT1",
+            "SLC38A2"
+          ],
+          "adjusted_p_value": 0.03903950171345036
+        },
+        {
+          "rank": 34,
+          "term_name": "Protein Autophosphorylation (GO:0046777)",
+          "term": "Protein Autophosphorylation (GO:0046777)",
+          "overlap": "5/162",
+          "p_value": 0.0013286717299872994,
+          "z_score": 6.618504860878311,
+          "combined_score": 43.83816687504718,
+          "overlap_genes": [
+            "MAK",
+            "STK39",
+            "AKT1",
+            "PTK2B",
+            "CAMKK2"
+          ],
+          "genes": [
+            "MAK",
+            "STK39",
+            "AKT1",
+            "PTK2B",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.03903950171345036
+        },
+        {
+          "rank": 35,
+          "term_name": "Phosphorylation (GO:0016310)",
+          "term": "Phosphorylation (GO:0016310)",
+          "overlap": "8/429",
+          "p_value": 0.0013989936534811458,
+          "z_score": 4.02333987400599,
+          "combined_score": 26.441398180551378,
+          "overlap_genes": [
+            "CDK6",
+            "MAK",
+            "STK39",
+            "AKT1",
+            "PTK2B",
+            "BMPR1B",
+            "SGK1",
+            "CAMKK2"
+          ],
+          "genes": [
+            "CDK6",
+            "MAK",
+            "STK39",
+            "AKT1",
+            "PTK2B",
+            "BMPR1B",
+            "SGK1",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.039931275995076135
+        },
+        {
+          "rank": 36,
+          "term_name": "Protein Sumoylation (GO:0016925)",
+          "term": "Protein Sumoylation (GO:0016925)",
+          "overlap": "3/46",
+          "p_value": 0.0015751859953084873,
+          "z_score": 14.282186526012946,
+          "combined_score": 92.16840432528492,
+          "overlap_genes": [
+            "UBE2I",
+            "ZMIZ1",
+            "PIAS1"
+          ],
+          "genes": [
+            "UBE2I",
+            "ZMIZ1",
+            "PIAS1"
+          ],
+          "adjusted_p_value": 0.0426882177618621
+        },
+        {
+          "rank": 37,
+          "term_name": "Negative Regulation Of Potassium Ion Transport (GO:0043267)",
+          "term": "Negative Regulation Of Potassium Ion Transport (GO:0043267)",
+          "overlap": "2/12",
+          "p_value": 0.001581045102291189,
+          "z_score": 40.59183673469388,
+          "combined_score": 261.8039188938469,
+          "overlap_genes": [
+            "STK39",
+            "PTK2B"
+          ],
+          "genes": [
+            "STK39",
+            "PTK2B"
+          ],
+          "adjusted_p_value": 0.0426882177618621
+        },
+        {
+          "rank": 38,
+          "term_name": "Positive Regulation Of Kinase Activity (GO:0033674)",
+          "term": "Positive Regulation Of Kinase Activity (GO:0033674)",
+          "overlap": "4/104",
+          "p_value": 0.0018455372762019304,
+          "z_score": 8.25,
+          "combined_score": 51.933624907465536,
+          "overlap_genes": [
+            "XRCC6",
+            "XRCC5",
+            "PTK2B",
+            "MERTK"
+          ],
+          "genes": [
+            "XRCC6",
+            "XRCC5",
+            "PTK2B",
+            "MERTK"
+          ],
+          "adjusted_p_value": 0.04844404885278384
+        },
+        {
+          "rank": 39,
+          "term_name": "Unsaturated Fatty Acid Metabolic Process (GO:0033559)",
+          "term": "Unsaturated Fatty Acid Metabolic Process (GO:0033559)",
+          "overlap": "3/49",
+          "p_value": 0.0018912091143729426,
+          "z_score": 13.348722545943524,
+          "combined_score": 83.70368414188104,
+          "overlap_genes": [
+            "ELOVL5",
+            "SCD",
+            "FADS1"
+          ],
+          "genes": [
+            "ELOVL5",
+            "SCD",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.04844404885278384
+        }
+      ],
+      "KEGG_2021_Human": [
+        {
+          "rank": 1,
+          "term_name": "Prostate cancer",
+          "term": "Prostate cancer",
+          "overlap": "5/97",
+          "p_value": 0.00012652505731123543,
+          "z_score": 11.331807780320366,
+          "combined_score": 101.70377018417237,
+          "overlap_genes": [
+            "CCND1",
+            "AKT1",
+            "TMPRSS2",
+            "KLK3",
+            "NKX3-1"
+          ],
+          "genes": [
+            "CCND1",
+            "AKT1",
+            "TMPRSS2",
+            "KLK3",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.011969286356108213
+        },
+        {
+          "rank": 2,
+          "term_name": "Human cytomegalovirus infection",
+          "term": "Human cytomegalovirus infection",
+          "overlap": "7/225",
+          "p_value": 0.0001370267211415612,
+          "z_score": 6.795600276215843,
+          "combined_score": 60.44913830778135,
+          "overlap_genes": [
+            "CDK6",
+            "CCND1",
+            "GNAI3",
+            "AKT1",
+            "PTK2B",
+            "ITGAV",
+            "B2M"
+          ],
+          "genes": [
+            "CDK6",
+            "CCND1",
+            "GNAI3",
+            "AKT1",
+            "PTK2B",
+            "ITGAV",
+            "B2M"
+          ],
+          "adjusted_p_value": 0.011969286356108213
+        },
+        {
+          "rank": 3,
+          "term_name": "Terpenoid backbone biosynthesis",
+          "term": "Terpenoid backbone biosynthesis",
+          "overlap": "3/22",
+          "p_value": 0.00017430999547730406,
+          "z_score": 32.36190992946283,
+          "combined_score": 280.0818212549987,
+          "overlap_genes": [
+            "IDI1",
+            "HMGCS1",
+            "HMGCR"
+          ],
+          "genes": [
+            "IDI1",
+            "HMGCS1",
+            "HMGCR"
+          ],
+          "adjusted_p_value": 0.011969286356108213
+        },
+        {
+          "rank": 4,
+          "term_name": "Biosynthesis of unsaturated fatty acids",
+          "term": "Biosynthesis of unsaturated fatty acids",
+          "overlap": "3/27",
+          "p_value": 0.0003251243529193447,
+          "z_score": 25.61340206185567,
+          "combined_score": 205.70898832313847,
+          "overlap_genes": [
+            "ELOVL5",
+            "SCD",
+            "FADS1"
+          ],
+          "genes": [
+            "ELOVL5",
+            "SCD",
+            "FADS1"
+          ],
+          "adjusted_p_value": 0.013759214152867094
+        },
+        {
+          "rank": 5,
+          "term_name": "AMPK signaling pathway",
+          "term": "AMPK signaling pathway",
+          "overlap": "5/120",
+          "p_value": 0.0003417770167199186,
+          "z_score": 9.05491990846682,
+          "combined_score": 72.27050340596548,
+          "overlap_genes": [
+            "CCND1",
+            "SCD",
+            "AKT1",
+            "HMGCR",
+            "CAMKK2"
+          ],
+          "genes": [
+            "CCND1",
+            "SCD",
+            "AKT1",
+            "HMGCR",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.013759214152867094
+        },
+        {
+          "rank": 6,
+          "term_name": "PPAR signaling pathway",
+          "term": "PPAR signaling pathway",
+          "overlap": "4/74",
+          "p_value": 0.0005176957720029004,
+          "z_score": 11.803571428571429,
+          "combined_score": 89.30727091866535,
+          "overlap_genes": [
+            "HMGCS1",
+            "SCD",
+            "DBI",
+            "ACSL3"
+          ],
+          "genes": [
+            "HMGCS1",
+            "SCD",
+            "DBI",
+            "ACSL3"
+          ],
+          "adjusted_p_value": 0.013759214152867094
+        },
+        {
+          "rank": 7,
+          "term_name": "Focal adhesion",
+          "term": "Focal adhesion",
+          "overlap": "6/201",
+          "p_value": 0.0005205446373892402,
+          "z_score": 6.4500818330605565,
+          "combined_score": 48.76671391108642,
+          "overlap_genes": [
+            "CCND3",
+            "CCND1",
+            "ACTN1",
+            "AKT1",
+            "ITGAV",
+            "MYL12A"
+          ],
+          "genes": [
+            "CCND3",
+            "CCND1",
+            "ACTN1",
+            "AKT1",
+            "ITGAV",
+            "MYL12A"
+          ],
+          "adjusted_p_value": 0.013759214152867094
+        },
+        {
+          "rank": 8,
+          "term_name": "Epstein-Barr virus infection",
+          "term": "Epstein-Barr virus infection",
+          "overlap": "6/202",
+          "p_value": 0.0005343384137035765,
+          "z_score": 6.41684759009987,
+          "combined_score": 48.34761744232718,
+          "overlap_genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "ADRM1",
+            "AKT1",
+            "B2M"
+          ],
+          "genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "ADRM1",
+            "AKT1",
+            "B2M"
+          ],
+          "adjusted_p_value": 0.013759214152867094
+        },
+        {
+          "rank": 9,
+          "term_name": "Human T-cell leukemia virus 1 infection",
+          "term": "Human T-cell leukemia virus 1 infection",
+          "overlap": "6/219",
+          "p_value": 0.0008154725702648967,
+          "z_score": 5.899610428528619,
+          "combined_score": 41.95651182241112,
+          "overlap_genes": [
+            "ELK4",
+            "CCND3",
+            "CCND1",
+            "SRF",
+            "AKT1",
+            "B2M"
+          ],
+          "genes": [
+            "ELK4",
+            "CCND3",
+            "CCND1",
+            "SRF",
+            "AKT1",
+            "B2M"
+          ],
+          "adjusted_p_value": 0.018665261052729858
+        },
+        {
+          "rank": 10,
+          "term_name": "Ferroptosis",
+          "term": "Ferroptosis",
+          "overlap": "3/41",
+          "p_value": 0.0011263274602029934,
+          "z_score": 16.16549104720564,
+          "combined_score": 109.74417204757295,
+          "overlap_genes": [
+            "NCOA4",
+            "ACSL3",
+            "SAT1"
+          ],
+          "genes": [
+            "NCOA4",
+            "ACSL3",
+            "SAT1"
+          ],
+          "adjusted_p_value": 0.02171892472877299
+        },
+        {
+          "rank": 11,
+          "term_name": "Small cell lung cancer",
+          "term": "Small cell lung cancer",
+          "overlap": "4/92",
+          "p_value": 0.0011738374459389707,
+          "z_score": 9.380681818181818,
+          "combined_score": 63.29593508345567,
+          "overlap_genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1",
+            "ITGAV"
+          ],
+          "genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1",
+            "ITGAV"
+          ],
+          "adjusted_p_value": 0.02171892472877299
+        },
+        {
+          "rank": 12,
+          "term_name": "JAK-STAT signaling pathway",
+          "term": "JAK-STAT signaling pathway",
+          "overlap": "5/162",
+          "p_value": 0.0013286717299872994,
+          "z_score": 6.618504860878311,
+          "combined_score": 43.83816687504718,
+          "overlap_genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1",
+            "LIFR",
+            "PIAS1"
+          ],
+          "genes": [
+            "CCND3",
+            "CCND1",
+            "AKT1",
+            "LIFR",
+            "PIAS1"
+          ],
+          "adjusted_p_value": 0.02171892472877299
+        },
+        {
+          "rank": 13,
+          "term_name": "Pathways in cancer",
+          "term": "Pathways in cancer",
+          "overlap": "9/531",
+          "p_value": 0.0013706117547283925,
+          "z_score": 3.671466464569913,
+          "combined_score": 24.20413570111238,
+          "overlap_genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "NCOA4",
+            "GNAI3",
+            "AKT1",
+            "KLK3",
+            "ITGAV",
+            "NKX3-1"
+          ],
+          "genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "NCOA4",
+            "GNAI3",
+            "AKT1",
+            "KLK3",
+            "ITGAV",
+            "NKX3-1"
+          ],
+          "adjusted_p_value": 0.02171892472877299
+        },
+        {
+          "rank": 14,
+          "term_name": "Non-homologous end-joining",
+          "term": "Non-homologous end-joining",
+          "overlap": "2/13",
+          "p_value": 0.0018624280503563755,
+          "z_score": 36.89981447124304,
+          "combined_score": 231.94759321375395,
+          "overlap_genes": [
+            "XRCC6",
+            "XRCC5"
+          ],
+          "genes": [
+            "XRCC6",
+            "XRCC5"
+          ],
+          "adjusted_p_value": 0.02740429845524381
+        },
+        {
+          "rank": 15,
+          "term_name": "Leukocyte transendothelial migration",
+          "term": "Leukocyte transendothelial migration",
+          "overlap": "4/114",
+          "p_value": 0.0025784986150308945,
+          "z_score": 7.496212121212121,
+          "combined_score": 44.681532028701994,
+          "overlap_genes": [
+            "ACTN1",
+            "GNAI3",
+            "PTK2B",
+            "MYL12A"
+          ],
+          "genes": [
+            "ACTN1",
+            "GNAI3",
+            "PTK2B",
+            "MYL12A"
+          ],
+          "adjusted_p_value": 0.035411380979757615
+        },
+        {
+          "rank": 16,
+          "term_name": "Cell cycle",
+          "term": "Cell cycle",
+          "overlap": "4/124",
+          "p_value": 0.0034901927235166455,
+          "z_score": 6.868055555555555,
+          "combined_score": 38.85807320211981,
+          "overlap_genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "CDC14B"
+          ],
+          "genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "CDC14B"
+          ],
+          "adjusted_p_value": 0.04053249103101837
+        },
+        {
+          "rank": 17,
+          "term_name": "Platelet activation",
+          "term": "Platelet activation",
+          "overlap": "4/124",
+          "p_value": 0.0034901927235166455,
+          "z_score": 6.868055555555555,
+          "combined_score": 38.85807320211981,
+          "overlap_genes": [
+            "GUCY1A1",
+            "GNAI3",
+            "AKT1",
+            "MYL12A"
+          ],
+          "genes": [
+            "GUCY1A1",
+            "GNAI3",
+            "AKT1",
+            "MYL12A"
+          ],
+          "adjusted_p_value": 0.04053249103101837
+        },
+        {
+          "rank": 18,
+          "term_name": "Viral carcinogenesis",
+          "term": "Viral carcinogenesis",
+          "overlap": "5/203",
+          "p_value": 0.0035416739735841295,
+          "z_score": 5.237107921318447,
+          "combined_score": 29.55381588753612,
+          "overlap_genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "ACTN1",
+            "SRF"
+          ],
+          "genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "ACTN1",
+            "SRF"
+          ],
+          "adjusted_p_value": 0.04053249103101837
+        },
+        {
+          "rank": 19,
+          "term_name": "FoxO signaling pathway",
+          "term": "FoxO signaling pathway",
+          "overlap": "4/131",
+          "p_value": 0.004245021604363929,
+          "z_score": 6.487204724409449,
+          "combined_score": 35.433166501749184,
+          "overlap_genes": [
+            "CCND1",
+            "HOMER2",
+            "AKT1",
+            "SGK1"
+          ],
+          "genes": [
+            "CCND1",
+            "HOMER2",
+            "AKT1",
+            "SGK1"
+          ],
+          "adjusted_p_value": 0.04467822521746866
+        },
+        {
+          "rank": 20,
+          "term_name": "Estrogen signaling pathway",
+          "term": "Estrogen signaling pathway",
+          "overlap": "4/137",
+          "p_value": 0.004973996484079867,
+          "z_score": 6.192669172932331,
+          "combined_score": 32.84301689755327,
+          "overlap_genes": [
+            "KRT19",
+            "GNAI3",
+            "AKT1",
+            "FKBP5"
+          ],
+          "genes": [
+            "KRT19",
+            "GNAI3",
+            "AKT1",
+            "FKBP5"
+          ],
+          "adjusted_p_value": 0.04467822521746866
+        },
+        {
+          "rank": 21,
+          "term_name": "Adipocytokine signaling pathway",
+          "term": "Adipocytokine signaling pathway",
+          "overlap": "3/69",
+          "p_value": 0.005004400960297444,
+          "z_score": 9.294283036551077,
+          "combined_score": 49.23588406625014,
+          "overlap_genes": [
+            "AKT1",
+            "ACSL3",
+            "CAMKK2"
+          ],
+          "genes": [
+            "AKT1",
+            "ACSL3",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.04467822521746866
+        },
+        {
+          "rank": 22,
+          "term_name": "Measles",
+          "term": "Measles",
+          "overlap": "4/139",
+          "p_value": 0.005234517220934926,
+          "z_score": 6.1003086419753085,
+          "combined_score": 32.04175316395329,
+          "overlap_genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.04467822521746866
+        },
+        {
+          "rank": 23,
+          "term_name": "Ubiquitin mediated proteolysis",
+          "term": "Ubiquitin mediated proteolysis",
+          "overlap": "4/140",
+          "p_value": 0.005368142491188597,
+          "z_score": 6.055147058823529,
+          "combined_score": 31.651908760738742,
+          "overlap_genes": [
+            "HERC3",
+            "UBE2I",
+            "PIAS1",
+            "UBE2J1"
+          ],
+          "genes": [
+            "HERC3",
+            "UBE2I",
+            "PIAS1",
+            "UBE2J1"
+          ],
+          "adjusted_p_value": 0.04467822521746866
+        },
+        {
+          "rank": 24,
+          "term_name": "Melanoma",
+          "term": "Melanoma",
+          "overlap": "3/72",
+          "p_value": 0.00563543249072426,
+          "z_score": 8.888839085611833,
+          "combined_score": 46.03246549484361,
+          "overlap_genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.04467822521746866
+        },
+        {
+          "rank": 25,
+          "term_name": "Non-small cell lung cancer",
+          "term": "Non-small cell lung cancer",
+          "overlap": "3/72",
+          "p_value": 0.00563543249072426,
+          "z_score": 8.888839085611833,
+          "combined_score": 46.03246549484361,
+          "overlap_genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.04467822521746866
+        },
+        {
+          "rank": 26,
+          "term_name": "Protein export",
+          "term": "Protein export",
+          "overlap": "2/23",
+          "p_value": 0.005847619592062275,
+          "z_score": 19.318756073858115,
+          "combined_score": 99.33164622370634,
+          "overlap_genes": [
+            "SRP19",
+            "SPCS3"
+          ],
+          "genes": [
+            "SRP19",
+            "SPCS3"
+          ],
+          "adjusted_p_value": 0.04467822521746866
+        },
+        {
+          "rank": 27,
+          "term_name": "p53 signaling pathway",
+          "term": "p53 signaling pathway",
+          "overlap": "3/73",
+          "p_value": 0.005855883887726475,
+          "z_score": 8.761413843888072,
+          "combined_score": 45.036368568128694,
+          "overlap_genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1"
+          ],
+          "genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1"
+          ],
+          "adjusted_p_value": 0.04467822521746866
+        },
+        {
+          "rank": 28,
+          "term_name": "Glioma",
+          "term": "Glioma",
+          "overlap": "3/75",
+          "p_value": 0.006312136885679514,
+          "z_score": 8.517182130584192,
+          "combined_score": 43.1419208970586,
+          "overlap_genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.04496292292312382
+        },
+        {
+          "rank": 29,
+          "term_name": "Chronic myeloid leukemia",
+          "term": "Chronic myeloid leukemia",
+          "overlap": "3/76",
+          "p_value": 0.006547998483950072,
+          "z_score": 8.400084733794662,
+          "combined_score": 42.240631240424875,
+          "overlap_genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.04496292292312382
+        },
+        {
+          "rank": 30,
+          "term_name": "Pancreatic cancer",
+          "term": "Pancreatic cancer",
+          "overlap": "3/76",
+          "p_value": 0.006547998483950072,
+          "z_score": 8.400084733794662,
+          "combined_score": 42.240631240424875,
+          "overlap_genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.04496292292312382
+        },
+        {
+          "rank": 31,
+          "term_name": "Chemical carcinogenesis",
+          "term": "Chemical carcinogenesis",
+          "overlap": "5/281",
+          "p_value": 0.0070158527005147195,
+          "z_score": 4.423301844354476,
+          "combined_score": 21.93773271485405,
+          "overlap_genes": [
+            "RPS6KA3",
+            "CCND3",
+            "CCND1",
+            "GNAI3",
+            "AKT1"
+          ],
+          "genes": [
+            "RPS6KA3",
+            "CCND3",
+            "CCND1",
+            "GNAI3",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.04662147278406556
+        },
+        {
+          "rank": 32,
+          "term_name": "Oxytocin signaling pathway",
+          "term": "Oxytocin signaling pathway",
+          "overlap": "4/154",
+          "p_value": 0.007484368118967975,
+          "z_score": 5.486111111111111,
+          "combined_score": 26.854177504242614,
+          "overlap_genes": [
+            "GUCY1A1",
+            "CCND1",
+            "GNAI3",
+            "CAMKK2"
+          ],
+          "genes": [
+            "GUCY1A1",
+            "CCND1",
+            "GNAI3",
+            "CAMKK2"
+          ],
+          "adjusted_p_value": 0.04818061976585634
+        },
+        {
+          "rank": 33,
+          "term_name": "Cellular senescence",
+          "term": "Cellular senescence",
+          "overlap": "4/156",
+          "p_value": 0.007825550130049605,
+          "z_score": 5.413377192982456,
+          "combined_score": 26.25683491903793,
+          "overlap_genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "genes": [
+            "CCND3",
+            "CDK6",
+            "CCND1",
+            "AKT1"
+          ],
+          "adjusted_p_value": 0.04847008197203757
+        },
+        {
+          "rank": 34,
+          "term_name": "Hepatitis C",
+          "term": "Hepatitis C",
+          "overlap": "4/157",
+          "p_value": 0.007999916441986783,
+          "z_score": 5.377723311546841,
+          "combined_score": 25.965391509830216,
+          "overlap_genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1",
+            "PIAS1"
+          ],
+          "genes": [
+            "CDK6",
+            "CCND1",
+            "AKT1",
+            "PIAS1"
+          ],
+          "adjusted_p_value": 0.04847008197203757
+        }
+      ]
+    },
+    "significant_terms_total": 73,
+    "execution_time": 1.7,
+    "dataframe": "    rank  ...                     library\n2      3  ...  GO_Biological_Process_2023\n10    11  ...  GO_Biological_Process_2023\n0      1  ...  GO_Biological_Process_2023\n6      7  ...  GO_Biological_Process_2023\n18    19  ...  GO_Biological_Process_2023\n..   ...  ...                         ...\n71    33  ...             KEGG_2021_Human\n72    34  ...             KEGG_2021_Human\n51    13  ...             KEGG_2021_Human\n25    26  ...  GO_Biological_Process_2023\n69    31  ...             KEGG_2021_Human\n\n[73 rows x 11 columns]"
+  },
+  "full_literature_results": [
+    {
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.21203/rs.3.rs-10247743/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-10247743/v1",
+      "title": "Precursor-dependent steroid conversion sustains androgen receptor signaling and lineage-state divergence in prostate cancer",
+      "abstract": "<title>Abstract</title>  <p>  Castration-resistant prostate cancer (CRPC) persists despite systemic androgen deprivation, an adaptive mechanism frequently attributed to autonomous  <italic>de novo</italic>  intratumoral steroidogenesis. Despite the widespread clinical deployment of upstream inhibitors, the true structural and metabolic fidelity of the models underpinning this \"tumor-as-gonad\" dogma remains highly controversial. Here, by integrating LC-HRMS steroid profiling with transcriptomics across prostate cancer models, we show that the malignant lines examined lack transcriptionally supported autonomous steroidogenic capacity, largely because of marked CYP17A1 suppression and absence of a functional cortisol-producing branch. Instead, these models retain downstream precursor-conversion machinery, including HSD3B1, AKR1C3, and SRD5A1, consistent with efficient use of adrenal steroid precursors. Multiomic stratification of an 818-patient TCGA-PRAD clinical cohort corroborated this precursor-dependent phenotype on a global scale. We identify a critical, continuous evolutionary trajectory: an androgen receptor (AR)-High phenotype fueled by intense metabolic hyperactivity (oxidative phosphorylation and fatty acid metabolism) and an AR-low state marked by extensive lineage plasticity and an elevated iron-lipid redox stress profile. While standard linear Cox models were limited by strict multi-variable co-linearity, an explainable SHAP machine-learning framework identified AR activity and plasticity score as dominant contributors to survival-risk prediction. These findings reconcile conflicting models of intratumoral androgen synthesis by demonstrating that metabolic topology, rather than pathway completeness, dictates localized androgenic output. Our findings redefine CRPC metabolism, and support a therapeutic shift toward targeting downstream cytosolic conversion nodes and adaptive lineage-plasticity vulnerabilities.  </p>",
+      "authors": "Pandey A, Yakubu J, du Toit T.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "PPR",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-07-07",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates androgen receptor signaling and steroid metabolism in prostate cancer"
+    },
+    {
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.20944/preprints202605.1718.v1",
+      "url": "https://doi.org/10.20944/preprints202605.1718.v1",
+      "title": "Natural Products in Prostate Cancer: Crosstalk among the Gut Microbiome, Androgen Receptor Signaling, and Epigenetic Regulation",
+      "abstract": "Prostate cancer remains one of the most biologically heterogeneous malignancies in men and continues to pose major clinical challenges despite substantial advances in diagnosis and treatment. Although androgen deprivation therapy and newer androgen receptor targeted agents have improved disease control, therapeutic resistance and progression to castration resistant prostate cancer remain common. Increasing evidence suggests that prostate cancer progression is influenced not only by tumor intrinsic genetic alterations, but also by complex interactions involving inflammatory signaling, metabolic reprogramming, oxidative stress, epigenetic regulation, immune dysfunction, and the gut microbiome. In parallel, interest has grown in the potential role of natural products as modulators of multiple interconnected biological pathways relevant to prostate cancer biology. This review examines the molecular mechanisms underlying prostate cancer progression with particular emphasis on androgen receptor signaling, PI3K/AKT and MAPK pathway activation, oxidative stress, lipid metabolism, inflammatory signaling, and epigenetic dysregulation. The emerging role of the gut microbiome in systemic androgen metabolism, immune regulation, microbial metabolite production, and inflammatory signaling is also discussed. In this context, the review evaluates current evidence describing the biological effects of selected natural products including curcumin, epigallocatechin gallate, resveratrol, quercetin, sulforaphane, genistein, and related phytochemicals that may influence tumor growth through modulation of microbiome composition, androgen receptor activity, inflammatory pathways, metabolic adaptation, and epigenetic regulation. Available translational and clinical evidence is critically examined together with important limitations related to bioavailability, pharmacokinetics, interindividual variability, microbiome heterogeneity, and incomplete mechanistic understanding. Rather than considering natural products as isolated therapeutic alternatives, this review adopts a systems level perspective in which dietary bioactive compounds may function as modulators of interconnected regulatory networks linking microbiome dynamics, metabolism, endocrine signaling, inflammation, and tumor biology. A more integrated understanding of these interactions may help inform future translational and precision based strategies in prostate cancer research.",
+      "authors": "Mir MM, Wani JI, Mir R, Alharthi MH, Ayed A, Nandi P, Patel AA, Mallick AK, Alamri MMS, O’haj M, Khalid TBA, Jehangir A, Sonpol HMA, Senbel AM.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "PPR",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-05-26",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but broader context of natural products and gut microbiome, not directly lipid metabolism"
+    },
+    {
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.64898/2026.06.25.734531",
+      "url": "https://doi.org/10.64898/2026.06.25.734531",
+      "title": "Spatial Metabolic Modeling Reveals Zinc–Citrate Rewiring and Therapeutic Vulnerabilities in Prostate Cancer",
+      "abstract": "Prostate cancer exhibits a metabolic phenotype distinct from the Warburg paradigm, characterized by reprogramming of the zinc–citrate secretory axis that normally drives citrate accumulation and secretion in prostatic epithelium. How this metabolic rewiring is organized across the spatial architecture of tumors and linked to androgen receptor (AR) signaling remains poorly understood. We integrated spatial transcriptomics data from twelve regions spanning normal, inflamed, and Gleason-graded prostate tissues with genome-scale metabolic modeling to quantify metabolic activity across tissue states. The analysis identified the zinc–citrate–aconitase axis as a central feature of prostate cancer metabolic reprogramming, linking increased aconitase activity to enhanced citrate export, acetyl-CoA generation, and de novo lipogenesis. Metabolic similarity was more strongly associated with spatial proximity than with histological classification, suggesting field-level metabolic reprogramming beyond visible pathological boundaries. AR activity displayed grade-dependent associations with lipid metabolic pathways, indicating heterogeneous coupling between androgen signaling and metabolism across tumor regions. Consistent with the established biology of prostate cancer, predicted flux distributions did not support a classical Warburg phenotype. A flux-based target prioritization framework identified HMGCR, FASN, and SLC25A1 as candidate therapeutic targets, with independent support from TCGA-PRAD expression profiles and DepMap CRISPR essentiality data. Together, these findings provide a spatially resolved view of prostate cancer metabolism, establish the zinc–citrate axis as a dominant feature of metabolic organization, and identify candidate metabolic vulnerabilities for therapeutic intervention.",
+      "authors": "Zargar MR, Malla S, Raghunath VS, Saha R, Chowdhury R.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": false,
+      "source": "PPR",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "",
+      "pub_type": "",
+      "has_pdf": false,
+      "has_suppl": false,
+      "first_publication_date": "2026-06-26",
+      "relevance_rating": "High",
+      "relevance_details": "Directly investigates metabolic rewiring and its link to androgen receptor signaling in prostate cancer"
+    },
+    {
+      "pmid": "42255241",
+      "pmcid": "PMC13236528",
+      "doi": "10.3389/fonc.2026.1842091",
+      "url": "https://doi.org/10.3389/fonc.2026.1842091",
+      "title": "The role of lysophosphatidic acid metabolism in castration-resistant prostate cancer progression.",
+      "abstract": "Prostate cancer (PCa) is a leading malignancy in men, with mortality primarily attributed to progression to castration-resistant prostate cancer (CRPC). Although androgen deprivation therapy (ADT) initially demonstrates efficacy, most advanced patients eventually develop CRPC-a stage characterized by limited treatment options and poor prognosis. Elucidating the molecular mechanisms underlying CRPC transformation therefore represents a research priority. Tumor metabolic reprogramming has emerged as a hallmark of cancer, and among various metabolic pathways, lysophosphatidic acid (LPA)-a bioactive lipid mediator-has been increasingly implicated in PCa progression, particularly CRPC transformation. This review systematically examines LPA metabolic sources and signal transduction mechanisms and explores how LPA promotes CRPC progression through driving proliferation, survival, invasion, therapy resistance, and tumor microenvironment remodeling. Finally, we discuss the potential and challenges of targeting the LPA signaling pathway as a novel therapeutic strategy for CRPC.",
+      "authors": "Feng J, Liu J, He Y.",
+      "journal": "",
+      "journalTitle": "",
+      "year": 2026,
+      "pub_year": 2026,
+      "citations": 0,
+      "citation_count": 0,
+      "is_open_access": true,
+      "source": "MED",
+      "has_full_text": false,
+      "issue": "",
+      "journal_volume": "",
+      "page_info": "1842091",
+      "pub_type": "",
+      "has_pdf": true,
+      "has_suppl": false,
+      "first_publication_date": "2026-05-22",
+      "relevance_rating": "Medium",
+      "relevance_details": "Related but focuses on lysophosphatidic acid metabolism in CRPC, a specific lipid class, rather than general lipid metabolism"
+    }
+  ],
+  "full_db_results": null,
+  "gene_info": null,
+  "execution_time": 32.28921866416931,
+  "phase": 2,
+  "judge": {
+    "decompose_model": "claude-sonnet-4-5-20250929",
+    "judge_model": "claude-sonnet-4-5-20250929",
+    "temperature": 0,
+    "via": "anthropic_batches_api"
+  },
+  "evidence_bundle": "=== ENRICHED TERMS (adjusted p<0.05), each lists overlapping genes ===\n\n[GO_Biological_Process_2023]\n- Androgen Receptor Signaling Pathway (GO:0030521) -> genes: [ZMIZ1, PMEPA1, PLPP1, NKX3-1]\n- Intracellular Steroid Hormone Receptor Signaling Pathway (GO:0030518) -> genes: [ZMIZ1, NCOA4, PMEPA1, PLPP1, NKX3-1]\n- Polyamine Biosynthetic Process (GO:0006596) -> genes: [SMS, SAT1, SLC38A2]\n- Secondary Alcohol Biosynthetic Process (GO:1902653) -> genes: [HMGCS1, INSIG1, DHCR24, HMGCR]\n- Cholesterol Biosynthetic Process (GO:0006695) -> genes: [HMGCS1, INSIG1, DHCR24, HMGCR]\n- Sterol Biosynthetic Process (GO:0016126) -> genes: [HMGCS1, INSIG1, DHCR24, HMGCR]\n- Polyamine Metabolic Process (GO:0006595) -> genes: [SMS, SAT1, SLC38A2]\n- Regulation Of Cell Population Proliferation (GO:0042127) -> genes: [XRCC6, TSC22D1, XRCC5, LIFR, PIAS1, AZGP1, CDK6, ADAMTS1, AKT1, PTK2B, ITGAV, SGK1, PLPP1, NKX3-1]\n- Positive Regulation Of Cyclin-Dependent Protein Serine/Threonine Kinase Activity (GO:0045737) -> genes: [CCND3, CCND1, AKT1]\n- Positive Regulation Of Cyclin-Dependent Protein Kinase Activity (GO:1904031) -> genes: [CCND3, CCND1, AKT1]\n- Response To Testosterone (GO:0033574) -> genes: [NCOA4, NKX3-1]\n- Positive Regulation Of Cell Cycle (GO:0045787) -> genes: [CCND3, CCND1, AKT1, NKX3-1]\n- Fatty Acid Biosynthetic Process (GO:0006633) -> genes: [ELOVL5, SCD, ABHD2, FADS1]\n- Phospholipid Biosynthetic Process (GO:0008654) -> genes: [IDI1, VAPA, FADS1]\n- Regulation Of Protein Kinase Activity (GO:0045859) -> genes: [XRCC6, XRCC5, AKT1, PTK2B, CAMKK2]\n- Cholesterol Metabolic Process (GO:0008203) -> genes: [HMGCS1, INSIG1, DHCR24, HMGCR]\n- Negative Regulation Of Epithelial Cell Proliferation (GO:0050680) -> genes: [CDK6, SORD, B2M, NKX3-1]\n- Spermidine Metabolic Process (GO:0008216) -> genes: [SAT1, SLC38A2]\n- Negative Regulation Of Amyloid-Beta Clearance (GO:1900222) -> genes: [SRF, HMGCR]\n- Positive Regulation Of Protein Phosphorylation (GO:0001934) -> genes: [CCND3, XRCC6, CCND1, XRCC5, AKT1, PTK2B, NKX3-1, CAMKK2]\n- Negative Regulation Of Cell Population Proliferation (GO:0008285) -> genes: [AZGP1, CDK6, ADAMTS1, PTK2B, BMPR1B, B2M, PLPP1, NKX3-1]\n- UDP-N-acetylglucosamine Biosynthetic Process (GO:0006048) -> genes: [PGM3, UAP1]\n- Unsaturated Fatty Acid Biosynthetic Process (GO:0006636) -> genes: [SCD, FADS1]\n- Isoprenoid Biosynthetic Process (GO:0008299) -> genes: [IDI1, HMGCR]\n- Regulation Of Cysteine-Type Endopeptidase Activity Involved In Apoptotic Process (GO:0043281) -> genes: [RPS6KA3, AKT1, DHCR24, NKX3-1]\n- Protein Modification Process (GO:0036211) -> genes: [UBE2I, CDK6, MAK, NGLY1, STK39, AKT1, PTK2B, BMPR1B, SGK1, CDC14B, CAMKK2]\n- Negative Regulation Of Protein Exit From Endoplasmic Reticulum (GO:0070862) -> genes: [INSIG1, UBE2J1]\n- Alpha-Linolenic Acid Metabolic Process (GO:0036109) -> genes: [ELOVL5, FADS1]\n- Amino Sugar Biosynthetic Process (GO:0046349) -> genes: [PGM3, UAP1]\n- Protein Phosphorylation (GO:0006468) -> genes: [RPS6KA3, CDK6, MAK, STK39, AKT1, PTK2B, BMPR1B, SGK1, CAMKK2]\n- Positive Regulation Of Phosphorylation (GO:0042327) -> genes: [CCND3, CCND1, AKT1, MERTK, NKX3-1, CAMKK2]\n- UDP-N-acetylglucosamine Metabolic Process (GO:0006047) -> genes: [PGM3, UAP1]\n- Biogenic Amine Biosynthetic Process (GO:0042401) -> genes: [SAT1, SLC38A2]\n- Protein Autophosphorylation (GO:0046777) -> genes: [MAK, STK39, AKT1, PTK2B, CAMKK2]\n- Phosphorylation (GO:0016310) -> genes: [CDK6, MAK, STK39, AKT1, PTK2B, BMPR1B, SGK1, CAMKK2]\n- Protein Sumoylation (GO:0016925) -> genes: [UBE2I, ZMIZ1, PIAS1]\n- Negative Regulation Of Potassium Ion Transport (GO:0043267) -> genes: [STK39, PTK2B]\n- Positive Regulation Of Kinase Activity (GO:0033674) -> genes: [XRCC6, XRCC5, PTK2B, MERTK]\n- Unsaturated Fatty Acid Metabolic Process (GO:0033559) -> genes: [ELOVL5, SCD, FADS1]\n\n[KEGG_2021_Human]\n- Prostate cancer -> genes: [CCND1, AKT1, TMPRSS2, KLK3, NKX3-1]\n- Human cytomegalovirus infection -> genes: [CDK6, CCND1, GNAI3, AKT1, PTK2B, ITGAV, B2M]\n- Terpenoid backbone biosynthesis -> genes: [IDI1, HMGCS1, HMGCR]\n- Biosynthesis of unsaturated fatty acids -> genes: [ELOVL5, SCD, FADS1]\n- AMPK signaling pathway -> genes: [CCND1, SCD, AKT1, HMGCR, CAMKK2]\n- PPAR signaling pathway -> genes: [HMGCS1, SCD, DBI, ACSL3]\n- Focal adhesion -> genes: [CCND3, CCND1, ACTN1, AKT1, ITGAV, MYL12A]\n- Epstein-Barr virus infection -> genes: [CCND3, CDK6, CCND1, ADRM1, AKT1, B2M]\n- Human T-cell leukemia virus 1 infection -> genes: [ELK4, CCND3, CCND1, SRF, AKT1, B2M]\n- Ferroptosis -> genes: [NCOA4, ACSL3, SAT1]\n- Small cell lung cancer -> genes: [CDK6, CCND1, AKT1, ITGAV]\n- JAK-STAT signaling pathway -> genes: [CCND3, CCND1, AKT1, LIFR, PIAS1]\n- Pathways in cancer -> genes: [CCND3, CDK6, CCND1, NCOA4, GNAI3, AKT1, KLK3, ITGAV, NKX3-1]\n- Non-homologous end-joining -> genes: [XRCC6, XRCC5]\n- Leukocyte transendothelial migration -> genes: [ACTN1, GNAI3, PTK2B, MYL12A]\n- Cell cycle -> genes: [CCND3, CDK6, CCND1, CDC14B]\n- Platelet activation -> genes: [GUCY1A1, GNAI3, AKT1, MYL12A]\n- Viral carcinogenesis -> genes: [CCND3, CDK6, CCND1, ACTN1, SRF]\n- FoxO signaling pathway -> genes: [CCND1, HOMER2, AKT1, SGK1]\n- Estrogen signaling pathway -> genes: [KRT19, GNAI3, AKT1, FKBP5]\n- Adipocytokine signaling pathway -> genes: [AKT1, ACSL3, CAMKK2]\n- Measles -> genes: [CCND3, CDK6, CCND1, AKT1]\n- Ubiquitin mediated proteolysis -> genes: [HERC3, UBE2I, PIAS1, UBE2J1]\n- Melanoma -> genes: [CDK6, CCND1, AKT1]\n- Non-small cell lung cancer -> genes: [CDK6, CCND1, AKT1]\n- Protein export -> genes: [SRP19, SPCS3]\n- p53 signaling pathway -> genes: [CCND3, CDK6, CCND1]\n- Glioma -> genes: [CDK6, CCND1, AKT1]\n- Chronic myeloid leukemia -> genes: [CDK6, CCND1, AKT1]\n- Pancreatic cancer -> genes: [CDK6, CCND1, AKT1]\n- Chemical carcinogenesis -> genes: [RPS6KA3, CCND3, CCND1, GNAI3, AKT1]\n- Oxytocin signaling pathway -> genes: [GUCY1A1, CCND1, GNAI3, CAMKK2]\n- Cellular senescence -> genes: [CCND3, CDK6, CCND1, AKT1]\n- Hepatitis C -> genes: [CDK6, CCND1, AKT1, PIAS1]\n\n=== ABSTRACTS ===\n[1] Precursor-dependent steroid conversion sustains androgen receptor signaling and lineage-state divergence in prostate cancer\n<title>Abstract</title>  <p>  Castration-resistant prostate cancer (CRPC) persists despite systemic androgen deprivation, an adaptive mechanism frequently attributed to autonomous  <italic>de novo</italic>  intratumoral steroidogenesis. Despite the widespread clinical deployment of upstream inhibitors, the true structural and metabolic fidelity of the models underpinning this \"tumor-as-gonad\" dogma remains highly controversial. Here, by integrating LC-HRMS steroid profiling with transcriptomics across prostate cancer models, we show that the malignant lines examined lack transcriptionally supported autonomous steroidogenic capacity, largely because of marked CYP17A1 suppression and absence of a functional cortisol-producing branch. Instead, these models retain downstream precursor-conversion machinery, including HSD3B1, AKR1C3, and SRD5A1, consistent with efficient use of adrenal steroid precursors. Multiomic stratification of an 818-patient TCGA-PRAD clinical cohort corroborated this precursor-dependent phenotype on a global scale. We identify a critical, continuous evolutionary trajectory: an androgen receptor (AR)-High phenotype fueled by intense metabolic hyperactivity (oxidative phosphorylation and fatty acid metabolism) and an AR-low state marked by extensive lineage plasticity and an elevated iron-lipid redox stress profile. While standard linear Cox models were limited by strict multi-variable co-linearity, an explainable SHAP machine-learning framework identified AR activity and plasticity score as dominant contributors to survival-risk prediction. These findings reconcile conflicting models of intratumoral androgen synthesis by demonstrating that metabolic topology, rather than pathway completeness, dictates localized androgenic output. Our findings redefine CRPC metabolism, and support a therapeutic shift toward targeting downstream cytosolic conversion nodes and adaptive lineage-plasticity vulnerabilities.  </p>\n[2] Natural Products in Prostate Cancer: Crosstalk among the Gut Microbiome, Androgen Receptor Signaling, and Epigenetic Regulation\nProstate cancer remains one of the most biologically heterogeneous malignancies in men and continues to pose major clinical challenges despite substantial advances in diagnosis and treatment. Although androgen deprivation therapy and newer androgen receptor targeted agents have improved disease control, therapeutic resistance and progression to castration resistant prostate cancer remain common. Increasing evidence suggests that prostate cancer progression is influenced not only by tumor intrinsic genetic alterations, but also by complex interactions involving inflammatory signaling, metabolic reprogramming, oxidative stress, epigenetic regulation, immune dysfunction, and the gut microbiome. In parallel, interest has grown in the potential role of natural products as modulators of multiple interconnected biological pathways relevant to prostate cancer biology. This review examines the molecular mechanisms underlying prostate cancer progression with particular emphasis on androgen receptor signaling, PI3K/AKT and MAPK pathway activation, oxidative stress, lipid metabolism, inflammatory signaling, and epigenetic dysregulation. The emerging role of the gut microbiome in systemic androgen metabolism, immune regulation, microbial metabolite production, and inflammatory signaling is also discussed. In this context, the review evaluates current evidence describing the biological effects of selected natural products including curcumin, epigallocatechin gallate, resveratrol, quercetin, sulforaphane, genistein, and related phytochemicals that may influence tumor growth through modulation of microbiome composition, androgen receptor activity, inflammatory pathways, metabolic adaptation, and epigenetic regulation. Available translational and clinical evidence is critically examined together with important limitations related to bioavailability, pharmacokinetics, interindividual variability, microbiome heterogeneity, and incomplete mechanistic understanding. Rather than considering natural products as isolated therapeutic alternatives, this review adopts a systems level perspective in which dietary bioactive compounds may function as modulators of interconnected regulatory networks linking microbiome dynamics, metabolism, endocrine signaling, inflammation, and tumor biology. A more integrated understanding of these interactions may help inform future translational and precision based strategies in prostate cancer research.\n[3] Spatial Metabolic Modeling Reveals Zinc–Citrate Rewiring and Therapeutic Vulnerabilities in Prostate Cancer\nProstate cancer exhibits a metabolic phenotype distinct from the Warburg paradigm, characterized by reprogramming of the zinc–citrate secretory axis that normally drives citrate accumulation and secretion in prostatic epithelium. How this metabolic rewiring is organized across the spatial architecture of tumors and linked to androgen receptor (AR) signaling remains poorly understood. We integrated spatial transcriptomics data from twelve regions spanning normal, inflamed, and Gleason-graded prostate tissues with genome-scale metabolic modeling to quantify metabolic activity across tissue states. The analysis identified the zinc–citrate–aconitase axis as a central feature of prostate cancer metabolic reprogramming, linking increased aconitase activity to enhanced citrate export, acetyl-CoA generation, and de novo lipogenesis. Metabolic similarity was more strongly associated with spatial proximity than with histological classification, suggesting field-level metabolic reprogramming beyond visible pathological boundaries. AR activity displayed grade-dependent associations with lipid metabolic pathways, indicating heterogeneous coupling between androgen signaling and metabolism across tumor regions. Consistent with the established biology of prostate cancer, predicted flux distributions did not support a classical Warburg phenotype. A flux-based target prioritization framework identified HMGCR, FASN, and SLC25A1 as candidate therapeutic targets, with independent support from TCGA-PRAD expression profiles and DepMap CRISPR essentiality data. Together, these findings provide a spatially resolved view of prostate cancer metabolism, establish the zinc–citrate axis as a dominant feature of metabolic organization, and identify candidate metabolic vulnerabilities for therapeutic intervention.\n[4] The role of lysophosphatidic acid metabolism in castration-resistant prostate cancer progression.\nProstate cancer (PCa) is a leading malignancy in men, with mortality primarily attributed to progression to castration-resistant prostate cancer (CRPC). Although androgen deprivation therapy (ADT) initially demonstrates efficacy, most advanced patients eventually develop CRPC-a stage characterized by limited treatment options and poor prognosis. Elucidating the molecular mechanisms underlying CRPC transformation therefore represents a research priority. Tumor metabolic reprogramming has emerged as a hallmark of cancer, and among various metabolic pathways, lysophosphatidic acid (LPA)-a bioactive lipid mediator-has been increasingly implicated in PCa progression, particularly CRPC transformation. This review systematically examines LPA metabolic sources and signal transduction mechanisms and explores how LPA promotes CRPC progression through driving proliferation, survival, invasion, therapy resistance, and tumor microenvironment remodeling. Finally, we discuss the potential and challenges of targeting the LPA signaling pathway as a novel therapeutic strategy for CRPC.",
+  "judge_claims": [
+    {
+      "claim": "ZMIZ1 is involved in the androgen receptor signaling pathway.",
+      "label": "GROUNDED",
+      "why": "ZMIZ1 appears in the Androgen Receptor Signaling Pathway term gene list."
+    },
+    {
+      "claim": "PMEPA1 is involved in the androgen receptor signaling pathway.",
+      "label": "GROUNDED",
+      "why": "PMEPA1 appears in the Androgen Receptor Signaling Pathway term gene list."
+    },
+    {
+      "claim": "PLPP1 is involved in the androgen receptor signaling pathway.",
+      "label": "GROUNDED",
+      "why": "PLPP1 appears in the Androgen Receptor Signaling Pathway term gene list."
+    },
+    {
+      "claim": "NKX3-1 is involved in the androgen receptor signaling pathway.",
+      "label": "GROUNDED",
+      "why": "NKX3-1 appears in the Androgen Receptor Signaling Pathway term gene list."
+    },
+    {
+      "claim": "NCOA4 is involved in intracellular steroid hormone receptor signaling.",
+      "label": "GROUNDED",
+      "why": "NCOA4 appears in the Intracellular Steroid Hormone Receptor Signaling Pathway term gene list."
+    },
+    {
+      "claim": "NKX3-1 is a prostate-specific tumor suppressor.",
+      "label": "BACKGROUND",
+      "why": "NKX3-1's role as a prostate-specific tumor suppressor is well-established but not explicitly stated in the evidence."
+    },
+    {
+      "claim": "NKX3-1 is an androgen-regulated gene.",
+      "label": "BACKGROUND",
+      "why": "NKX3-1 being androgen-regulated is well-established but not explicitly stated in the evidence."
+    },
+    {
+      "claim": "NCOA4 is involved in response to testosterone.",
+      "label": "GROUNDED",
+      "why": "NCOA4 appears in the Response To Testosterone term gene list."
+    },
+    {
+      "claim": "NKX3-1 is involved in response to testosterone.",
+      "label": "GROUNDED",
+      "why": "NKX3-1 appears in the Response To Testosterone term gene list."
+    },
+    {
+      "claim": "SMS is involved in polyamine biosynthesis.",
+      "label": "GROUNDED",
+      "why": "SMS appears in the Polyamine Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "SAT1 is involved in polyamine biosynthesis.",
+      "label": "GROUNDED",
+      "why": "SAT1 appears in the Polyamine Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "SLC38A2 is involved in polyamine biosynthesis.",
+      "label": "GROUNDED",
+      "why": "SLC38A2 appears in the Polyamine Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "SMS is involved in polyamine metabolism.",
+      "label": "GROUNDED",
+      "why": "SMS appears in the Polyamine Metabolic Process term gene list."
+    },
+    {
+      "claim": "SAT1 is involved in polyamine metabolism.",
+      "label": "GROUNDED",
+      "why": "SAT1 appears in the Polyamine Metabolic Process term gene list."
+    },
+    {
+      "claim": "SLC38A2 is involved in polyamine metabolism.",
+      "label": "GROUNDED",
+      "why": "SLC38A2 appears in the Polyamine Metabolic Process term gene list."
+    },
+    {
+      "claim": "Polyamines are crucial for cell growth and proliferation.",
+      "label": "BACKGROUND",
+      "why": "General role of polyamines in cell growth is textbook biology not stated in evidence."
+    },
+    {
+      "claim": "Polyamines are often dysregulated in cancer.",
+      "label": "BACKGROUND",
+      "why": "Polyamine dysregulation in cancer is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "HMGCS1 is involved in cholesterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "HMGCS1 appears in the Cholesterol Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "INSIG1 is involved in cholesterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "INSIG1 appears in the Cholesterol Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "DHCR24 is involved in cholesterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "DHCR24 appears in the Cholesterol Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "HMGCR is involved in cholesterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "HMGCR appears in the Cholesterol Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "HMGCS1 is involved in sterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "HMGCS1 appears in the Sterol Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "INSIG1 is involved in sterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "INSIG1 appears in the Sterol Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "DHCR24 is involved in sterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "DHCR24 appears in the Sterol Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "HMGCR is involved in sterol biosynthesis.",
+      "label": "GROUNDED",
+      "why": "HMGCR appears in the Sterol Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "HMGCS1 is involved in cholesterol metabolism.",
+      "label": "GROUNDED",
+      "why": "HMGCS1 appears in the Cholesterol Metabolic Process term gene list."
+    },
+    {
+      "claim": "INSIG1 is involved in cholesterol metabolism.",
+      "label": "GROUNDED",
+      "why": "INSIG1 appears in the Cholesterol Metabolic Process term gene list."
+    },
+    {
+      "claim": "DHCR24 is involved in cholesterol metabolism.",
+      "label": "GROUNDED",
+      "why": "DHCR24 appears in the Cholesterol Metabolic Process term gene list."
+    },
+    {
+      "claim": "HMGCR is involved in cholesterol metabolism.",
+      "label": "GROUNDED",
+      "why": "HMGCR appears in the Cholesterol Metabolic Process term gene list."
+    },
+    {
+      "claim": "Cholesterol and sterol synthesis pathways are critical for membrane synthesis.",
+      "label": "BACKGROUND",
+      "why": "General role of cholesterol/sterol pathways in membrane synthesis is textbook biology."
+    },
+    {
+      "claim": "Cholesterol and sterol synthesis pathways are critical for steroid hormone production.",
+      "label": "BACKGROUND",
+      "why": "Role of cholesterol in steroid hormone production is textbook biology."
+    },
+    {
+      "claim": "ELOVL5 is involved in fatty acid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "ELOVL5 appears in the Fatty Acid Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "SCD is involved in fatty acid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "SCD appears in the Fatty Acid Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "ABHD2 is involved in fatty acid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "ABHD2 appears in the Fatty Acid Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "FADS1 is involved in fatty acid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "FADS1 appears in the Fatty Acid Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "ELOVL5 is involved in unsaturated fatty acid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "ELOVL5 appears in the Biosynthesis of unsaturated fatty acids KEGG term gene list."
+    },
+    {
+      "claim": "SCD is involved in unsaturated fatty acid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "SCD appears in the Biosynthesis of unsaturated fatty acids KEGG term gene list."
+    },
+    {
+      "claim": "ABHD2 is involved in unsaturated fatty acid biosynthesis.",
+      "label": "UNSUPPORTED",
+      "why": "ABHD2 does not appear in the Unsaturated Fatty Acid Biosynthetic Process term; only ELOVL5, SCD, and FADS1 are listed."
+    },
+    {
+      "claim": "FADS1 is involved in unsaturated fatty acid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "FADS1 appears in the Unsaturated Fatty Acid Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "ELOVL5 is involved in unsaturated fatty acid metabolism.",
+      "label": "GROUNDED",
+      "why": "ELOVL5 appears in the Unsaturated Fatty Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "SCD is involved in unsaturated fatty acid metabolism.",
+      "label": "GROUNDED",
+      "why": "SCD appears in the Unsaturated Fatty Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "ABHD2 is involved in unsaturated fatty acid metabolism.",
+      "label": "UNSUPPORTED",
+      "why": "ABHD2 does not appear in the Unsaturated Fatty Acid Metabolic Process term; only ELOVL5, SCD, and FADS1 are listed."
+    },
+    {
+      "claim": "FADS1 is involved in unsaturated fatty acid metabolism.",
+      "label": "GROUNDED",
+      "why": "FADS1 appears in the Unsaturated Fatty Acid Metabolic Process term gene list."
+    },
+    {
+      "claim": "Fatty acid synthesis provides building blocks for cell growth.",
+      "label": "BACKGROUND",
+      "why": "General role of fatty acid synthesis in cell growth is textbook biology."
+    },
+    {
+      "claim": "Fatty acid synthesis provides building blocks for signaling molecules.",
+      "label": "BACKGROUND",
+      "why": "General role of fatty acid synthesis in signaling molecules is textbook biology."
+    },
+    {
+      "claim": "IDI1 is involved in isoprenoid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "IDI1 appears in the Isoprenoid Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "HMGCR is involved in isoprenoid biosynthesis.",
+      "label": "GROUNDED",
+      "why": "HMGCR appears in the Isoprenoid Biosynthetic Process term gene list."
+    },
+    {
+      "claim": "Isoprenoid biosynthesis produces precursors for cholesterol.",
+      "label": "BACKGROUND",
+      "why": "Isoprenoid pathway producing cholesterol precursors is textbook biology."
+    },
+    {
+      "claim": "Isoprenoid biosynthesis produces precursors for other lipids.",
+      "label": "BACKGROUND",
+      "why": "Isoprenoid pathway producing other lipid precursors is textbook biology."
+    },
+    {
+      "claim": "CCND1 is involved in regulation of cell population proliferation.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Regulation Of Cell Population Proliferation term gene list."
+    },
+    {
+      "claim": "CDK6 is involved in regulation of cell population proliferation.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Regulation Of Cell Population Proliferation term gene list."
+    },
+    {
+      "claim": "AKT1 is involved in regulation of cell population proliferation.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the Regulation Of Cell Population Proliferation term gene list."
+    },
+    {
+      "claim": "NKX3-1 is involved in regulation of cell population proliferation.",
+      "label": "GROUNDED",
+      "why": "NKX3-1 appears in the Regulation Of Cell Population Proliferation term gene list."
+    },
+    {
+      "claim": "CCND1 is involved in negative regulation of cell population proliferation.",
+      "label": "UNSUPPORTED",
+      "why": "CCND1 does not appear in the Negative Regulation Of Cell Population Proliferation term gene list."
+    },
+    {
+      "claim": "CDK6 is involved in negative regulation of cell population proliferation.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Negative Regulation Of Cell Population Proliferation term gene list."
+    },
+    {
+      "claim": "AKT1 is involved in negative regulation of cell population proliferation.",
+      "label": "UNSUPPORTED",
+      "why": "AKT1 does not appear in the Negative Regulation Of Cell Population Proliferation term gene list."
+    },
+    {
+      "claim": "NKX3-1 is involved in negative regulation of cell population proliferation.",
+      "label": "GROUNDED",
+      "why": "NKX3-1 appears in the Negative Regulation Of Cell Population Proliferation term gene list."
+    },
+    {
+      "claim": "UBE2I is involved in protein sumoylation.",
+      "label": "GROUNDED",
+      "why": "UBE2I appears in the Protein Sumoylation term gene list."
+    },
+    {
+      "claim": "ZMIZ1 is involved in protein sumoylation.",
+      "label": "GROUNDED",
+      "why": "ZMIZ1 appears in the Protein Sumoylation term gene list."
+    },
+    {
+      "claim": "PIAS1 is involved in protein sumoylation.",
+      "label": "GROUNDED",
+      "why": "PIAS1 appears in the Protein Sumoylation term gene list."
+    },
+    {
+      "claim": "Post-translational modifications regulate protein function in signaling.",
+      "label": "BACKGROUND",
+      "why": "General role of post-translational modifications in signaling is textbook biology."
+    },
+    {
+      "claim": "Post-translational modifications regulate protein function in cell cycle control.",
+      "label": "BACKGROUND",
+      "why": "General role of post-translational modifications in cell cycle is textbook biology."
+    },
+    {
+      "claim": "CCND1 is associated with prostate cancer.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Prostate cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "AKT1 is associated with prostate cancer.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the Prostate cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "TMPRSS2 is associated with prostate cancer.",
+      "label": "GROUNDED",
+      "why": "TMPRSS2 appears in the Prostate cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "KLK3 is associated with prostate cancer.",
+      "label": "GROUNDED",
+      "why": "KLK3 appears in the Prostate cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "NKX3-1 is associated with prostate cancer.",
+      "label": "GROUNDED",
+      "why": "NKX3-1 appears in the Prostate cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "KLK3 encodes PSA.",
+      "label": "BACKGROUND",
+      "why": "KLK3 encoding PSA is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "KLK3 is an androgen-regulated gene.",
+      "label": "BACKGROUND",
+      "why": "KLK3 being androgen-regulated is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "KLK2 is an androgen-regulated gene.",
+      "label": "BACKGROUND",
+      "why": "KLK2 being androgen-regulated is well-established but KLK2 does not appear in the evidence."
+    },
+    {
+      "claim": "TMPRSS2 is an androgen-regulated gene.",
+      "label": "BACKGROUND",
+      "why": "TMPRSS2 being androgen-regulated is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "KLK3 is a marker in prostate cancer.",
+      "label": "BACKGROUND",
+      "why": "KLK3 as a prostate cancer marker is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "KLK2 is a marker in prostate cancer.",
+      "label": "BACKGROUND",
+      "why": "KLK2 as a prostate cancer marker is well-established but KLK2 does not appear in the evidence."
+    },
+    {
+      "claim": "TMPRSS2 is a marker in prostate cancer.",
+      "label": "BACKGROUND",
+      "why": "TMPRSS2 as a prostate cancer marker is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "NKX3-1 is a marker in prostate cancer.",
+      "label": "BACKGROUND",
+      "why": "NKX3-1 as a prostate cancer marker is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "IDI1 is involved in terpenoid backbone biosynthesis.",
+      "label": "GROUNDED",
+      "why": "IDI1 appears in the Terpenoid backbone biosynthesis KEGG pathway gene list."
+    },
+    {
+      "claim": "HMGCS1 is involved in terpenoid backbone biosynthesis.",
+      "label": "GROUNDED",
+      "why": "HMGCS1 appears in the Terpenoid backbone biosynthesis KEGG pathway gene list."
+    },
+    {
+      "claim": "HMGCR is involved in terpenoid backbone biosynthesis.",
+      "label": "GROUNDED",
+      "why": "HMGCR appears in the Terpenoid backbone biosynthesis KEGG pathway gene list."
+    },
+    {
+      "claim": "ELOVL5 is involved in biosynthesis of unsaturated fatty acids.",
+      "label": "GROUNDED",
+      "why": "ELOVL5 appears in the Biosynthesis of unsaturated fatty acids KEGG pathway gene list."
+    },
+    {
+      "claim": "SCD is involved in biosynthesis of unsaturated fatty acids.",
+      "label": "GROUNDED",
+      "why": "SCD appears in the Biosynthesis of unsaturated fatty acids KEGG pathway gene list."
+    },
+    {
+      "claim": "FADS1 is involved in biosynthesis of unsaturated fatty acids.",
+      "label": "GROUNDED",
+      "why": "FADS1 appears in the Biosynthesis of unsaturated fatty acids KEGG pathway gene list."
+    },
+    {
+      "claim": "Lipid and sterol metabolism is often reprogrammed in prostate cancer to support rapid cell proliferation.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states lipid metabolic reprogramming and de novo lipogenesis are linked to prostate cancer."
+    },
+    {
+      "claim": "CCND1 is involved in AMPK signaling pathway.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the AMPK signaling pathway KEGG term gene list."
+    },
+    {
+      "claim": "SCD is involved in AMPK signaling pathway.",
+      "label": "GROUNDED",
+      "why": "SCD appears in the AMPK signaling pathway KEGG term gene list."
+    },
+    {
+      "claim": "AKT1 is involved in AMPK signaling pathway.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the AMPK signaling pathway KEGG term gene list."
+    },
+    {
+      "claim": "HMGCR is involved in AMPK signaling pathway.",
+      "label": "GROUNDED",
+      "why": "HMGCR appears in the AMPK signaling pathway KEGG term gene list."
+    },
+    {
+      "claim": "CAMKK2 is involved in AMPK signaling pathway.",
+      "label": "GROUNDED",
+      "why": "CAMKK2 appears in the AMPK signaling pathway KEGG term gene list."
+    },
+    {
+      "claim": "AMPK is a key energy sensor.",
+      "label": "BACKGROUND",
+      "why": "AMPK as a key energy sensor is textbook biology not explicitly stated in evidence."
+    },
+    {
+      "claim": "HMGCS1 is involved in PPAR signaling pathway.",
+      "label": "GROUNDED",
+      "why": "HMGCS1 appears in the PPAR signaling pathway KEGG term gene list."
+    },
+    {
+      "claim": "SCD is involved in PPAR signaling pathway.",
+      "label": "GROUNDED",
+      "why": "SCD appears in the PPAR signaling pathway KEGG term gene list."
+    },
+    {
+      "claim": "DBI is involved in PPAR signaling pathway.",
+      "label": "GROUNDED",
+      "why": "DBI appears in the PPAR signaling pathway KEGG term gene list."
+    },
+    {
+      "claim": "ACSL3 is involved in PPAR signaling pathway.",
+      "label": "GROUNDED",
+      "why": "ACSL3 appears in the PPAR signaling pathway KEGG term gene list."
+    },
+    {
+      "claim": "PPARs are nuclear receptors involved in lipid metabolism.",
+      "label": "BACKGROUND",
+      "why": "PPARs as nuclear receptors in lipid metabolism is textbook biology."
+    },
+    {
+      "claim": "CCND1 is involved in pathways in cancer.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Pathways in cancer KEGG term gene list."
+    },
+    {
+      "claim": "CDK6 is involved in pathways in cancer.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Pathways in cancer KEGG term gene list."
+    },
+    {
+      "claim": "AKT1 is involved in pathways in cancer.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the Pathways in cancer KEGG term gene list."
+    },
+    {
+      "claim": "CCND1 is involved in small cell lung cancer pathways.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Small cell lung cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "CDK6 is involved in small cell lung cancer pathways.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Small cell lung cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "AKT1 is involved in small cell lung cancer pathways.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the Small cell lung cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "CCND1 is involved in melanoma pathways.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Melanoma KEGG pathway gene list."
+    },
+    {
+      "claim": "CDK6 is involved in melanoma pathways.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Melanoma KEGG pathway gene list."
+    },
+    {
+      "claim": "AKT1 is involved in melanoma pathways.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the Melanoma KEGG pathway gene list."
+    },
+    {
+      "claim": "CCND1 is involved in non-small cell lung cancer pathways.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Non-small cell lung cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "CDK6 is involved in non-small cell lung cancer pathways.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Non-small cell lung cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "AKT1 is involved in non-small cell lung cancer pathways.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the Non-small cell lung cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "CCND1 is involved in glioma pathways.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Glioma KEGG pathway gene list."
+    },
+    {
+      "claim": "CDK6 is involved in glioma pathways.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Glioma KEGG pathway gene list."
+    },
+    {
+      "claim": "AKT1 is involved in glioma pathways.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the Glioma KEGG pathway gene list."
+    },
+    {
+      "claim": "CCND1 is involved in chronic myeloid leukemia pathways.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Chronic myeloid leukemia KEGG pathway gene list."
+    },
+    {
+      "claim": "CDK6 is involved in chronic myeloid leukemia pathways.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Chronic myeloid leukemia KEGG pathway gene list."
+    },
+    {
+      "claim": "AKT1 is involved in chronic myeloid leukemia pathways.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the Chronic myeloid leukemia KEGG pathway gene list."
+    },
+    {
+      "claim": "CCND1 is involved in pancreatic cancer pathways.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Pancreatic cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "CDK6 is involved in pancreatic cancer pathways.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Pancreatic cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "AKT1 is involved in pancreatic cancer pathways.",
+      "label": "GROUNDED",
+      "why": "AKT1 appears in the Pancreatic cancer KEGG pathway gene list."
+    },
+    {
+      "claim": "CCND3 is involved in cell cycle regulation.",
+      "label": "GROUNDED",
+      "why": "CCND3 appears in the Cell cycle KEGG pathway gene list."
+    },
+    {
+      "claim": "CDK6 is involved in cell cycle regulation.",
+      "label": "GROUNDED",
+      "why": "CDK6 appears in the Cell cycle KEGG pathway gene list."
+    },
+    {
+      "claim": "CCND1 is involved in cell cycle regulation.",
+      "label": "GROUNDED",
+      "why": "CCND1 appears in the Cell cycle KEGG pathway gene list."
+    },
+    {
+      "claim": "CDC14B is involved in cell cycle regulation.",
+      "label": "GROUNDED",
+      "why": "CDC14B appears in the Cell cycle KEGG pathway gene list."
+    },
+    {
+      "claim": "Precursor-dependent steroid conversion sustains AR signaling in prostate cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 title explicitly states precursor-dependent steroid conversion sustains AR signaling."
+    },
+    {
+      "claim": "Metabolic hyperactivity including oxidative phosphorylation is associated with an AR-High phenotype in prostate cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states AR-High phenotype is fueled by intense oxidative phosphorylation."
+    },
+    {
+      "claim": "Metabolic hyperactivity including fatty acid metabolism is associated with an AR-High phenotype in prostate cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract 1 states AR-High phenotype is fueled by intense fatty acid metabolism."
+    },
+    {
+      "claim": "Increased citrate export is linked to AR signaling in prostate cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states increased citrate export is linked to aconitase activity in prostate cancer metabolic reprogramming."
+    },
+    {
+      "claim": "Increased acetyl-CoA generation is linked to AR signaling in prostate cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states increased aconitase activity is linked to acetyl-CoA generation."
+    },
+    {
+      "claim": "De novo lipogenesis is linked to AR signaling in prostate cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states increased aconitase activity is linked to de novo lipogenesis."
+    },
+    {
+      "claim": "AR activity shows grade-dependent associations with lipid metabolic pathways in prostate cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states AR activity displayed grade-dependent associations with lipid metabolic pathways."
+    },
+    {
+      "claim": "Androgen receptor signaling directly drives expression of genes involved in fatty acid synthesis.",
+      "label": "BACKGROUND",
+      "why": "AR directly driving fatty acid synthesis genes is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "Androgen receptor signaling directly drives expression of genes involved in cholesterol synthesis.",
+      "label": "BACKGROUND",
+      "why": "AR directly driving cholesterol synthesis genes is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "Androgen receptor signaling directly drives expression of genes involved in polyamine synthesis.",
+      "label": "BACKGROUND",
+      "why": "AR directly driving polyamine synthesis genes is well-established but not explicitly stated in evidence."
+    },
+    {
+      "claim": "Fatty acid synthesis supports rapid growth in androgen-responsive cells.",
+      "label": "BACKGROUND",
+      "why": "Fatty acid synthesis supporting growth in androgen-responsive cells is well-established but not explicitly stated."
+    },
+    {
+      "claim": "Cholesterol synthesis supports rapid growth in androgen-responsive cells.",
+      "label": "BACKGROUND",
+      "why": "Cholesterol synthesis supporting growth in androgen-responsive cells is well-established but not explicitly stated."
+    },
+    {
+      "claim": "Polyamine synthesis supports rapid growth in androgen-responsive cells.",
+      "label": "BACKGROUND",
+      "why": "Polyamine synthesis supporting growth in androgen-responsive cells is well-established but not explicitly stated."
+    },
+    {
+      "claim": "Fatty acid synthesis supports membrane biogenesis in androgen-responsive cells.",
+      "label": "BACKGROUND",
+      "why": "Fatty acid synthesis supporting membrane biogenesis is textbook biology."
+    },
+    {
+      "claim": "Cholesterol synthesis supports membrane biogenesis in androgen-responsive cells.",
+      "label": "BACKGROUND",
+      "why": "Cholesterol synthesis supporting membrane biogenesis is textbook biology."
+    },
+    {
+      "claim": "Polyamine synthesis supports membrane biogenesis in androgen-responsive cells.",
+      "label": "BACKGROUND",
+      "why": "Polyamine synthesis supporting membrane biogenesis is textbook biology."
+    },
+    {
+      "claim": "HMGCR is involved in lipid metabolism.",
+      "label": "BACKGROUND",
+      "why": "HMGCR involvement in lipid metabolism is well-established textbook biology."
+    },
+    {
+      "claim": "SCD is involved in lipid metabolism.",
+      "label": "BACKGROUND",
+      "why": "SCD involvement in lipid metabolism is well-established textbook biology."
+    },
+    {
+      "claim": "FADS1 is involved in lipid metabolism.",
+      "label": "BACKGROUND",
+      "why": "FADS1 involvement in lipid metabolism is well-established textbook biology."
+    },
+    {
+      "claim": "ELOVL5 is involved in lipid metabolism.",
+      "label": "BACKGROUND",
+      "why": "ELOVL5 involvement in lipid metabolism is well-established textbook biology."
+    },
+    {
+      "claim": "Metabolic adaptations in lipid synthesis are integral to sustaining androgen receptor signaling in prostate cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 states AR activity is associated with lipid metabolic pathways and Abstract 1 links metabolic hyperactivity including fatty acid metabolism to AR-High phenotype."
+    },
+    {
+      "claim": "Metabolic adaptations in lipid synthesis are integral to disease progression in prostate cancer.",
+      "label": "GROUNDED",
+      "why": "Abstract 3 identifies lipid metabolic targets and Abstract 1 discusses metabolic reprogramming in disease progression."
+    }
+  ],
+  "summary": {
+    "n_claims": 140,
+    "n_scored": 140,
+    "grounded_rate": 0.721,
+    "hallucination_rate": 0.029,
+    "grounded": 101,
+    "background": 35,
+    "unsupported": 4
+  }
+}

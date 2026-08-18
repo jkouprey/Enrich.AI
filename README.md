@@ -30,6 +30,7 @@ Give Enrich.AI a biological question in natural language. The model decides whic
 
 ### Website
 Use it online at: [EnrichAI](https://enrichai.streamlit.app/)
+(In case of a white screen, the app is in sleep mode and you have to wake it up by pressing the only button that exists on your screen :) )
 
 ### Or Locally
 

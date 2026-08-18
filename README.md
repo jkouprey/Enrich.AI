@@ -65,10 +65,10 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-#### Also a Gemini API key is required
+#### API key
+Although this app can be used for free it has limited usage and is advised to get your own API key.
 
-Get a free key at [Google AI Studio](https://aistudio.google.com/app/apikey).
-Enter your API key in the sidebar when prompted.
+For example, for Gemini you can get an API key from here: [Google AI Studio](https://aistudio.google.com/app/apikey).
 
 ## Architecture
 
@@ -99,6 +99,7 @@ EnrichAI/
 ├── visualizer.py          # 6 plot types with AI interpretation
 ├── config.py              # Model and logging configuration
 ├── tool_registry.py       # Enrichr library discovery
+├── llm_factory.py         # Models  
 ├── requirements.txt       # Python dependencies
 └── assets/                # Icons, logos, figures
 ```

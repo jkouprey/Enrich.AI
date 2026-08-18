@@ -126,7 +126,10 @@ def get_utility_llm(
 
     kwargs: Dict[str, Any] = {}
     if provider_cfg.get("type") == "google":
-        kwargs["thinking_budget"] = 0
+        # A small thinking budget, not zero: these are one-shot calls, but with thinking
+        # fully disabled the result summary came back markedly terser. include_thoughts
+        # stays False so the reply is plain text rather than content blocks.
+        kwargs["thinking_budget"] = CONFIG.get("gemini", {}).get("utility_thinking_budget", 256)
         kwargs["include_thoughts"] = False
         if max_tokens:
             kwargs["max_output_tokens"] = max_tokens

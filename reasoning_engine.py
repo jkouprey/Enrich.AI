@@ -456,6 +456,22 @@ Respond with exactly {len(batch)} lines."""
     return papers
 
 
+def keep_relevant_papers(papers: List[Dict]) -> List[Dict]:
+    """The single relevance gate for literature results.
+
+    A paper is kept only if it has a usable abstract AND was rated High or Medium.
+    Anything rated Low, or left unrated because scoring failed to parse, is dropped -
+    an unscored paper must never pass as relevant.
+
+    Used BOTH for what the agent reasons over and for what the UI displays, so the two
+    can never diverge (the display list previously came straight from the raw tool
+    observation and still contained Low papers).
+    """
+    return [p for p in papers
+            if (p.get("abstract") or "").strip()
+            and str(p.get("relevance_rating", "")).strip().lower() in ("high", "medium")]
+
+
 def _wrap_search_literature(
         query: str,
         max_results: int = 20,
@@ -487,15 +503,25 @@ def _wrap_search_literature(
             papers = _score_paper_relevance(query, papers, scoring_llm)
             # Drop papers with no usable abstract or rated Low relevance
             # (Low = "only briefly mentions the topic"). Keep the rest.
-            filtered = [p for p in papers
-                        if (p.get("abstract") or "").strip()
-                        and str(p.get("relevance_rating", "")).strip().lower() != "low"]
-            papers = filtered if filtered else papers  # never return empty
+            # Keep only High/Medium with a usable abstract. No "if empty, keep them
+            # anyway" fallback: if everything scored Low the honest answer is none.
+            papers = keep_relevant_papers(papers)
             result["papers"] = papers
 
         # Create concise summary for LLM
         summary_parts = []
         summary_parts.append(f"=== LITERATURE SEARCH: '{query}' ===")
+        if not papers:
+            summary_parts.append(
+                "No sufficiently relevant papers found: every result was rated Low "
+                "relevance to this query, or lacked a usable abstract. Do not cite any "
+                "papers for this query."
+            )
+            # Same envelope shape as the normal return - callers parse this JSON and read
+            # full_results.papers, so a bare string here would break the tool contract.
+            result["papers"] = []
+            return json.dumps({"summary": "\n".join(summary_parts),
+                               "full_results": result}, indent=2, default=str)
         summary_parts.append(f"Found {len(papers)} papers (sorted by {sort_by})")
         if min_year or max_year:
             summary_parts.append(f"Year range: {min_year or 'any'} - {max_year or 'any'}")
@@ -584,8 +610,10 @@ Enrichment tools return lists. You provide biological meaning.
 
 Your role is to interpret what those pathways mean in the specific experimental context — identifying what is expected, mechanistically coherent, surprising, potentially artifactual, and worth follow-up.
 When biological context is provided (e.g., tissue, disease, condition), your primary task is to prioritize: rank the enriched terms by biological relevance to that context, explain why certain terms matter more than others, and flag which are noise or generic.
+That ranking is a claim about the specific context, so it must rest on retrieved evidence, not on recall alone. Before you assert that a term matters more in a named disease, tissue or condition, retrieve support for it with search_literature or db_retrieve. Prior knowledge tells you what to look for; it does not substitute for looking.
 You have to be consise in your answer, highlighting terms based on context is your main aim and you have a variety of tools to validate your answer.
 You are a knowledgeable colleague reviewing results together and sharing your experience. When the user explicitly asks for any specific analysis or tool, you must do it and not skip an explicitly requested action.
+The same obligation applies when the user names a biological context - a disease, tissue, cell type, treatment or condition (for example "in the context of lung cancer"). Naming a context is a request for evidence about that context, even when no tool is named. Answering it from your own knowledge alone is skipping a requested action.
 
 === HOW YOU THINK ===
 
@@ -598,9 +626,9 @@ You reason, then act, then observe, then reason again. There is no fixed pipelin
 - If a tool fails or returns weak signal, adapt.
 - Let the biology determine your workflow.
 
-=== VALIDATE WHAT YOU CLAIM IF NEEDED ===
+=== VALIDATE WHAT YOU CLAIM ===
 
-Do not state biological conclusions without evidence. Use your tools to support your interpretations:
+Do not state biological conclusions without evidence. Any claim tied to a specific context - that a term, pathway or gene matters in a named disease, tissue or condition - requires retrieved support before you state it. Use your tools:
 - Use search_literature to find papers that confirm or challenge a mechanistic link. 
   CONSTRUCT SPECIFIC QUERIES from the enriched terms and key genes you actually found
   never a broad single word. If the search returns off-topic or 
@@ -620,9 +648,15 @@ If search_literature was not called, include ZERO citations — do not cite any 
 from memory.
 Never invent, recall, or reconstruct a citation. If you did not retrieve it via search_literature, it
 does not get cited.
-This does not oblige you to search — you decide whether a search is warranted. It forbids citing
-anything when no search results exist. Uncited established biology is fine; a fabricated reference is
-not, and destroys the credibility of the entire analysis.
+This rule governs CITING, not searching. It forbids citing anything when no search results exist.
+Whether you must search is decided by what you are claiming:
+- General background biology - what a gene or pathway does in general - may be stated without a
+  search and without a citation. Uncited background of this kind is fine.
+- A claim tying terms, pathways or genes to a SPECIFIC NAMED CONTEXT (a disease, tissue, cell type,
+  treatment or condition) is not background. It requires a search first, and the papers you retrieve
+  should be cited. Recalling that a pathway is 'known to matter' in that context is not a substitute.
+A fabricated reference destroys the credibility of the entire analysis; so does presenting recall as
+if it were a validated, context-specific finding.
 
 When you are given a gene list to interpret, analyse it with your tools before interpreting it. Do not
 answer from memory alone and present the result as if it were an evidence-based interpretation.
@@ -632,11 +666,19 @@ answer from memory alone and present the result as if it were an evidence-based 
 Look your memory to see what you have. Does the user ask about previous results?  
 If yes, do NOT re-query tools to find information you already have. Use tools only to validate or expand — 
 not to re-discover what is already in the conversation context.
+One exception: if the follow-up names a NEW context ("what about breast cancer?"), that is not
+information you already have - it is a new claim to validate. Retrieve evidence for the new context
+even though the underlying results are already in memory. Reuse the existing results; do not reuse
+the old context's evidence.
 
 === CONTEXT IS EVERYTHING ===
 
 The same enriched term can mean different things depending on the tissue, disease, perturbation, species, or experimental design. Always anchor interpretation to the biological context.
-If context is not explicitly provided, infer it from the gene signature itself — read it like a biologist would.
+If context is not explicitly provided, infer it from the gene signature itself — read it like a
+biologist would. The evidence obligation differs between the two cases, deliberately:
+- Context the USER NAMED: validate it. Retrieve support before ranking terms by relevance to it.
+- Context YOU INFERRED: interpret freely without being forced to search. Say that the context is
+  your inference, and search only if you intend to make a firm claim that depends on it.
 
 === EVIDENCE AND CONFIDENCE ===
 
@@ -804,6 +846,98 @@ def verify_citations(text: str, papers: List[Dict]) -> tuple:
 # ===============================================================================
 # REASONING ENGINE CLASS
 # ===============================================================================
+
+# Phrases that constitute an EXPLICIT request to run an analysis. Deliberately a flat
+# list of tool-shaped nouns, not biology: the guard must not know what a pathway is, only
+# that the user named an analysis this system can perform.
+# Phrases that constitute an EXPLICIT request to run an analysis. A flat phrase list,
+# not biology: the guard must not know what a pathway is, only that the user named an
+# analysis this system can perform. Matched case-insensitively as plain substrings.
+_EXPLICIT_ANALYSIS_PHRASES = (
+    "enrichment",
+    "over-representation", "overrepresentation",
+    "pathway analysis",
+    "gene info", "gene information",
+    "literature search", "search the literature", "search literature",
+    "paper annotation",
+    "db_retrieve", "db retrieve",
+    "database query", "database search", "database lookup",
+)
+
+_NOTHING_DONE_NUDGE = (
+    "You returned a final answer without calling any tool, but the request explicitly asked "
+    "for an analysis this system can run. Run the analysis that was asked for, using the "
+    "appropriate tool, and then answer. Do not answer from memory alone."
+)
+
+
+def _current_user_request(messages) -> str:
+    """The CURRENT question only.
+
+    The message the agent receives is not the raw user query: run() prepends conversation
+    memory as "<memory>
+
+CURRENT QUESTION: <query>" and appends a hint that itself
+    contains the words "enrichment analysis" when libraries are selected. Matching against
+    the whole blob made the guard fire on every follow-up, and on every query at all once a
+    library was selected. Both are stripped here so only what the user just asked is seen.
+    """
+    texts = [str(getattr(m, "content", "")) for m in messages
+             if type(m).__name__ == "HumanMessage"
+             and str(getattr(m, "content", "")).strip() != _NOTHING_DONE_NUDGE]
+    if not texts:
+        return ""
+    text = texts[-1]
+    if "CURRENT QUESTION:" in text:
+        text = text.rsplit("CURRENT QUESTION:", 1)[1]
+    marker = "[USER HAS SELECTED THESE ENRICHR LIBRARIES:"
+    if marker in text:
+        head, _, rest = text.partition(marker)
+        _, _, tail = rest.partition("]")
+        text = head + " " + tail
+    return text
+
+
+def _make_no_tool_guard(state=None):
+    """Deterministic safety net for one degenerate case: the model was explicitly asked to
+    run an analysis and returned a final answer having called NOTHING at all.
+
+    Deliberately narrow, and in the same category as verify_citations() - a mechanical
+    check on a clear-cut failure, not a decision tree:
+      * It encodes no workflow: no tool ordering, no "if context then literature", no biology.
+      * It fires ONLY when zero tools were called in the entire run. If the model engaged any
+        tool, the guard never looks again - what it does next is the model's decision.
+      * It bounces at most ONCE per run. If the second attempt still calls nothing, the answer
+        is allowed through rather than looping.
+    """
+    state = state if state is not None else {"bounced": False}
+
+    def post_model_hook(s):
+        messages = s.get("messages") or []
+        if not messages:
+            return None
+        last = messages[-1]
+
+        # only inspect a final answer: an AI message with no tool calls
+        if type(last).__name__ != "AIMessage" or getattr(last, "tool_calls", None):
+            return None
+        # the model engaged tools at some point -> not our case, leave it alone
+        if any(type(m).__name__ == "ToolMessage" for m in messages):
+            return None
+        if state["bounced"]:
+            return None                      # one bounce only, never loop
+
+        low = _current_user_request(messages).lower()
+        if not any(ph in low for ph in _EXPLICIT_ANALYSIS_PHRASES):
+            return None                      # no analysis was requested -> zero tools is correct
+
+        state["bounced"] = True
+        logger.info("no-tool guard: explicit analysis requested but no tool called - bouncing once")
+        from langchain_core.messages import HumanMessage as _HM
+        return {"messages": [_HM(content=_NOTHING_DONE_NUDGE)]}
+
+    return post_model_hook
+
 
 class ReasoningEngine:
     """
@@ -973,7 +1107,13 @@ class ReasoningEngine:
         self._langgraph_system_prompt = SYSTEM_PROMPT
 
         # Create agent without any custom prompt parameters (most compatible)
-        self.agent_executor = create_langgraph_react_agent(self.llm, self.tools)
+        # the guard's one-bounce flag lives on the ENGINE and is cleared at the start of
+        # every run, so a cached engine still gets one bounce per query
+        self._no_tool_guard_state = {"bounced": False}
+        self.agent_executor = create_langgraph_react_agent(
+            self.llm, self.tools,
+            post_model_hook=_make_no_tool_guard(self._no_tool_guard_state),
+        )
         self.use_langgraph = True
 
     def _init_legacy_agent(self):
@@ -1557,8 +1697,13 @@ class ReasoningEngine:
 
             # Literature - ALL papers
             if result.get("literature"):
-                self.envelope.literature = result["literature"][:20]  # Top 20 for display
-                self.envelope.full_literature_results = result["literature"]  # ALL papers
+                # Same relevance gate the agent's list went through. results["literature"]
+                # is accumulated from the RAW tool observations (and across back-to-back
+                # search_literature calls), so without this the table still showed Low and
+                # unscored papers the agent never reasoned over.
+                _lit = keep_relevant_papers(result["literature"])
+                self.envelope.literature = _lit[:20]              # top 20 for display
+                self.envelope.full_literature_results = _lit      # all relevant papers
 
             # Database - COMPLETE results (merge multiple calls into single structure)
             if result.get("db_results"):
@@ -1648,6 +1793,10 @@ class ReasoningEngine:
         """Run using LangGraph"""
         from langchain_core.messages import HumanMessage, SystemMessage
 
+        # fresh bounce allowance for this run
+        if hasattr(self, "_no_tool_guard_state"):
+            self._no_tool_guard_state["bounced"] = False
+
         # Build messages - prepend system prompt if using fallback method
         messages = []
         if hasattr(self, '_langgraph_system_prompt'):
@@ -1668,7 +1817,11 @@ class ReasoningEngine:
 
         for chunk in self.agent_executor.stream(
                 {"messages": messages},
-                config={"recursion_limit": 30},
+                # 60, not 30: each tool call costs ~2 graph steps, so 30 capped the run at
+                # ~14 calls. Validation-heavy runs legitimately reach 9-10 calls and were
+                # dying with GraphRecursionError, returning an empty answer. This raises the
+                # ceiling only - it does not encourage more calls.
+                config={"recursion_limit": 60},
                 stream_mode="values",
         ):
             result = chunk  # each chunk is the full state; last one is final

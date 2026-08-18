@@ -28,7 +28,7 @@ from reasoning_engine import create_reasoning_engine
 from llm_factory import get_llm, get_utility_llm, complete_text
 from config import CONFIG
 from tool_registry import get_available_enrichr_libraries
-from visualizer import Visualizer, get_llm_interpretation, add_pdf_download_button
+from visualizer import Visualizer, get_llm_interpretation, add_pdf_download_button, export_figure_to_pdf
 
 # Configure logging
 logging.basicConfig(level=getattr(logging, CONFIG["logging"]["level"], "INFO"))
@@ -225,6 +225,20 @@ def apply_fancy_styling():
             color: #ffffff !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+        }}
+
+        /* Centre every Plotly figure and keep it centred as the container grows.
+           Figures render at a fixed pixel width (use_container_width=False), so without
+           this they hug the left edge.
+           `safe center` is deliberate: plain `center` overflows in BOTH directions when the
+           figure is wider than its container, making the left edge unreachable - which reads
+           as the plot escaping the dialog. `safe` falls back to start alignment in exactly
+           that case, so it centres when it fits and stays scrollable when it does not. */
+        [data-testid="stPlotlyChart"], .stPlotlyChart {{
+            display: flex !important;
+            justify-content: safe center !important;
+            width: 100% !important;
+            overflow-x: auto !important;
         }}
 
         /* Main area buttons */
@@ -1935,13 +1949,19 @@ DIALOG_FUNCTIONS = {
 
 def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
     """Render Bar/Bubble dialog with term selection and deselect all"""
+    # Clear any figure deferred by a previous dialog: if this plot fails to render we
+    # must show no PDF button rather than the previous plot's one.
+    st.session_state.pop("_pending_pdf", None)
     # Add marker for wide dialog CSS
     st.markdown("<span class='wide-dialog'></span>", unsafe_allow_html=True)
 
     visualizer = get_visualizer()
 
     # Get all available terms sorted by significance
-    all_terms = df.nsmallest(100, 'adjusted_p_value')['term'].tolist()
+    # No 100-term cap: every significant term is selectable. Ordered by adjusted
+    # p-value; _term_selector() presents them alphabetically and returns them in this
+    # p-value order for the plot.
+    all_terms = df.sort_values('adjusted_p_value')['term'].tolist()
 
     # Get unique libraries for color-by-library option
     libraries = df['library'].unique().tolist() if 'library' in df.columns else []
@@ -1951,7 +1971,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
     has_z_score = 'z_score' in df.columns
 
     # Parameters in SLIDING EXPANDER
-    with st.expander("Parameters", expanded=True):
+    with st.expander("Parameters", expanded=False):
         # Row 1: Number of terms, X-axis, Color by
         col1, col2, col3 = st.columns(3)
         with col1:
@@ -1984,42 +2004,12 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
         with col2:
             width = st.slider("Width (px)", 200, 1500, 800, step=50, key=f"dlg_{plot_id}_w")
         with col3:
-            height = st.slider("Height (px)", 200, 1500, 550, step=50, key=f"dlg_{plot_id}_h")
+            height = st.slider("Height (px)", 200, 1500, 450, step=50, key=f"dlg_{plot_id}_h")
         with col4:
             font_size = st.slider("Font size", 8, 16, 11, key=f"dlg_{plot_id}_fs")
 
         # Track n_terms changes to auto-update selection
-        prev_n_key = f"prev_n_terms_{plot_id}"
-        if prev_n_key not in st.session_state:
-            st.session_state[prev_n_key] = n_terms
-
-        # If n_terms slider changed, update the term selection
-        if st.session_state[prev_n_key] != n_terms:
-            st.session_state[f"selected_terms_{plot_id}"] = all_terms[:n_terms]
-            st.session_state[prev_n_key] = n_terms
-
-        # Term selection with deselect all
-        st.markdown("##### Select Terms to Include")
-        col_sel, col_desel = st.columns([4, 1])
-        with col_desel:
-            if st.button("Deselect All", key=f"desel_{plot_id}"):
-                st.session_state[f"selected_terms_{plot_id}"] = []
-                st.rerun()
-
-        # Initialize selected terms if not exists (use n_terms from slider)
-        if f"selected_terms_{plot_id}" not in st.session_state:
-            st.session_state[f"selected_terms_{plot_id}"] = all_terms[:n_terms]
-
-        # Use key directly without default to avoid double-click issue
-        selected_terms = st.multiselect(
-            "Terms",
-            options=all_terms,
-            default=st.session_state.get(f"selected_terms_{plot_id}", all_terms[:n_terms]),
-            key=f"terms_select_{plot_id}",
-            label_visibility="collapsed"
-        )
-        # Update session state after selection
-        st.session_state[f"selected_terms_{plot_id}"] = selected_terms
+        selected_terms = _term_selector(plot_id, df, n_terms)
 
     if not selected_terms:
         st.warning("Please select at least one term")
@@ -2161,7 +2151,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
             margin=dict(l=left_margin, r=80, t=40, b=60)
         )
         st.plotly_chart(fig, use_container_width=False, key=f"pc_bar_{width}_{height}_{font_size}_{palette}_{color_by}_{x_axis}_{len(selected_terms)}")
-        add_pdf_download_button(fig, "bar_plot.pdf", "dlg_pdf_bar", width=width, height=height)
+        _defer_pdf_button(fig, "bar_plot.pdf", "dlg_pdf_bar", width=width, height=height)
 
     else:  # bubble
         # Handle duplicate term names by appending library
@@ -2273,14 +2263,90 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
             )]
         )
         st.plotly_chart(fig, use_container_width=False, key=f"pc_bub_{width}_{height}_{font_size}_{palette}_{color_by}_{x_axis}_{len(selected_terms)}")
-        add_pdf_download_button(fig, "bubble_chart.pdf", "dlg_pdf_bubble", width=width, height=height)
+        _defer_pdf_button(fig, "bubble_chart.pdf", "dlg_pdf_bubble", width=width, height=height)
 
-    st.markdown("---")
+    _render_plot_actions(plot_id, plot_df)
 
-    # AI Interpretation as a BUTTON
-    if st.button("🤖 Generate AI Interpretation", key=f"ai_interp_{plot_id}"):
+
+def _term_selector(plot_id: str, df: pd.DataFrame, n_terms: int):
+    """Library filter + term picker, shared by every plot dialog.
+
+    Three deliberate behaviours:
+      * OPTIONS are alphabetical (easy to find a term); the RETURN value is ordered by
+        adjusted p-value, which is the order the plots expect.
+      * No `default=` on the multiselect. Passing both `default` and `key` while also
+        writing a shadow session_state entry AFTER the widget made a keyed widget's stored
+        state get discarded on the next rerun - that is why the first click did nothing.
+        The widget key is now the single source of truth, seeded once.
+      * No 100-term cap: every significant term is offered.
+    """
+    tkey = f"terms_select_{plot_id}"
+    prev_key = f"prev_n_terms_{plot_id}"
+
+    # --- library filter (only worth showing when more than one library is present) ---
+    if "library" in df.columns:
+        libs = sorted({str(x) for x in df["library"].dropna().unique()})
+        if len(libs) > 1:
+            lkey = f"lib_filter_{plot_id}"
+            if lkey not in st.session_state:
+                st.session_state[lkey] = libs
+            st.multiselect("Libraries", options=libs, key=lkey,
+                           help="Restrict the term list below to these libraries")
+            chosen_libs = st.session_state.get(lkey) or libs
+            df = df[df["library"].astype(str).isin(chosen_libs)]
+
+    terms_by_p = df.sort_values("adjusted_p_value")["term"].tolist()
+    options = sorted(terms_by_p, key=str.lower)
+    valid = set(options)
+
+    # the n_terms slider reseeds the selection (also handles first render)
+    if st.session_state.get(prev_key) != n_terms:
+        st.session_state[tkey] = terms_by_p[:n_terms]
+        st.session_state[prev_key] = n_terms
+
+    st.markdown("##### Select Terms to Include")
+    col_sel, col_desel = st.columns([4, 1])
+    with col_desel:
+        if st.button("Deselect All", key=f"desel_{plot_id}"):
+            st.session_state[tkey] = []
+            st.rerun()
+
+    # a stored term that is no longer offered (library filter changed) would raise
+    st.session_state[tkey] = [t for t in st.session_state.get(tkey, []) if t in valid]
+
+    st.multiselect("Terms", options=options, key=tkey, label_visibility="collapsed")
+    picked = set(st.session_state.get(tkey) or [])
+    return [t for t in terms_by_p if t in picked]      # p-value order for the plot
+
+
+def _defer_pdf_button(fig, filename: str, key: str, width: int = None, height: int = None):
+    """Stash the PDF-download args so the caller can put it beside the AI button."""
+    st.session_state["_pending_pdf"] = (fig, filename, key, width, height)
+
+
+def _render_plot_actions(plot_id: str, df_for_interp):
+    """PDF download + AI interpretation on one row, equal width, directly under the plot."""
+    pending = st.session_state.pop("_pending_pdf", None)
+    col_pdf, _spacer, col_ai = st.columns([1.3, 5.4, 1.3])   # AI button pushed to the right
+    with col_pdf:
+        if pending:
+            # rendered here rather than via add_pdf_download_button() so this row controls
+            # both button widths without changing that helper's signature
+            _fig, _name, _key, _w, _h = pending
+            _pdf = export_figure_to_pdf(_fig, _name,
+                                        width=_w or _fig.layout.width or 1200,
+                                        height=_h or _fig.layout.height or 800)
+            if _pdf:
+                st.download_button("📄 Download as PDF", data=_pdf, file_name=_name,
+                                   mime="application/pdf", key=_key, use_container_width=True)
+            else:
+                st.caption("PDF export needs `kaleido`")
+    with col_ai:
+        clicked = st.button("🤖 AI Interpretation", key=f"ai_interp_{plot_id}",
+                            use_container_width=True)
+    if clicked:
         with st.spinner("Generating interpretation..."):
-            interpretation = get_visualizer().get_plot_interpretation(plot_id, plot_df)
+            interpretation = get_visualizer().get_plot_interpretation(plot_id, df_for_interp)
         st.info(interpretation)
 
 
@@ -2292,7 +2358,10 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
     visualizer = get_visualizer()
 
     # Get all available terms sorted by significance
-    all_terms = df.nsmallest(100, 'adjusted_p_value')['term'].tolist()
+    # No 100-term cap: every significant term is selectable. Ordered by adjusted
+    # p-value; _term_selector() presents them alphabetically and returns them in this
+    # p-value order for the plot.
+    all_terms = df.sort_values('adjusted_p_value')['term'].tolist()
 
     # Get all genes if available
     all_genes = set()
@@ -2307,7 +2376,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
     selected_terms = None
     selected_genes = None
 
-    with st.expander("Parameters", expanded=True):
+    with st.expander("Parameters", expanded=False):
         if plot_id == "dendrogram":
             # Row 1: Number of terms, Method, Width, Height, Font Size
             col1, col2, col3, col4, col5 = st.columns(5)
@@ -2318,37 +2387,13 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
             with col3:
                 params["width"] = st.slider("Width (px)", 200, 1500, 800, step=50, key="dlg_den_w")
             with col4:
-                params["height"] = st.slider("Height (px)", 200, 1500, 600, step=50, key="dlg_den_h")
+                params["height"] = st.slider("Height (px)", 200, 1500, 480, step=50, key="dlg_den_h")
             with col5:
                 params["font_size"] = st.slider("Font size", 8, 16, 10, key="dlg_den_fs")
 
             # Track n_terms changes to auto-update selection
             n_terms = params["n_terms"]
-            prev_n_key = "prev_n_terms_dendrogram"
-            if prev_n_key not in st.session_state:
-                st.session_state[prev_n_key] = n_terms
-
-            # If n_terms slider changed, update the term selection
-            if st.session_state[prev_n_key] != n_terms:
-                st.session_state["selected_terms_dendrogram"] = all_terms[:n_terms]
-                st.session_state[prev_n_key] = n_terms
-
-            st.markdown("##### Select Terms to Include")
-            col_sel, col_desel = st.columns([4, 1])
-            with col_desel:
-                if st.button("Deselect All", key="desel_dendrogram"):
-                    st.session_state["selected_terms_dendrogram"] = []
-                    st.rerun()
-
-            if "selected_terms_dendrogram" not in st.session_state:
-                st.session_state["selected_terms_dendrogram"] = all_terms[:n_terms]
-
-            selected_terms = st.multiselect(
-                "Terms", options=all_terms,
-                default=st.session_state.get("selected_terms_dendrogram", all_terms[:n_terms]),
-                key="terms_select_dendrogram", label_visibility="collapsed"
-            )
-            st.session_state["selected_terms_dendrogram"] = selected_terms
+            selected_terms = _term_selector("dendrogram", df, n_terms)
 
         elif plot_id == "similarity":
             # Row 1: Number of terms, Clusters, Width, Height, Font Size
@@ -2360,37 +2405,13 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
             with col3:
                 params["width"] = st.slider("Width (px)", 200, 1500, 1100, step=50, key="dlg_sim_w")
             with col4:
-                params["height"] = st.slider("Height (px)", 200, 1500, 800, step=50, key="dlg_sim_h")
+                params["height"] = st.slider("Height (px)", 200, 1500, 480, step=50, key="dlg_sim_h")
             with col5:
                 params["font_size"] = st.slider("Font size", 8, 16, 12, key="dlg_sim_fs")
 
             # Track n_terms changes to auto-update selection
             n_terms = params["n_terms"]
-            prev_n_key = "prev_n_terms_similarity"
-            if prev_n_key not in st.session_state:
-                st.session_state[prev_n_key] = n_terms
-
-            # If n_terms slider changed, update the term selection
-            if st.session_state[prev_n_key] != n_terms:
-                st.session_state["selected_terms_similarity"] = all_terms[:n_terms]
-                st.session_state[prev_n_key] = n_terms
-
-            st.markdown("##### Select Terms to Include")
-            col_sel, col_desel = st.columns([4, 1])
-            with col_desel:
-                if st.button("Deselect All", key="desel_similarity"):
-                    st.session_state["selected_terms_similarity"] = []
-                    st.rerun()
-
-            if "selected_terms_similarity" not in st.session_state:
-                st.session_state["selected_terms_similarity"] = all_terms[:n_terms]
-
-            selected_terms = st.multiselect(
-                "Terms", options=all_terms,
-                default=st.session_state.get("selected_terms_similarity", all_terms[:n_terms]),
-                key="terms_select_similarity", label_visibility="collapsed"
-            )
-            st.session_state["selected_terms_similarity"] = selected_terms
+            selected_terms = _term_selector("similarity", df, n_terms)
 
         elif plot_id == "upset":
             # Row 1: Number of terms, Width, Height, Font Size
@@ -2400,7 +2421,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
             with col2:
                 params["width"] = st.slider("Width (px)", 200, 1500, 900, step=50, key="dlg_ups_w")
             with col3:
-                params["height"] = st.slider("Height (px)", 200, 1500, 700, step=50, key="dlg_ups_h")
+                params["height"] = st.slider("Height (px)", 200, 1500, 520, step=50, key="dlg_ups_h")
             with col4:
                 params["font_size"] = st.slider("Font size", 8, 16, 10, key="dlg_ups_fs")
 
@@ -2413,31 +2434,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
 
             # Track n_terms changes to auto-update selection
             n_terms = params["n_terms"]
-            prev_n_key = "prev_n_terms_upset"
-            if prev_n_key not in st.session_state:
-                st.session_state[prev_n_key] = n_terms
-
-            # If n_terms slider changed, update the term selection
-            if st.session_state[prev_n_key] != n_terms:
-                st.session_state["selected_terms_upset"] = all_terms[:n_terms]
-                st.session_state[prev_n_key] = n_terms
-
-            st.markdown("##### Select Terms to Include")
-            col_sel, col_desel = st.columns([4, 1])
-            with col_desel:
-                if st.button("Deselect All", key="desel_upset"):
-                    st.session_state["selected_terms_upset"] = []
-                    st.rerun()
-
-            if "selected_terms_upset" not in st.session_state:
-                st.session_state["selected_terms_upset"] = all_terms[:n_terms]
-
-            selected_terms = st.multiselect(
-                "Terms", options=all_terms,
-                default=st.session_state.get("selected_terms_upset", all_terms[:n_terms]),
-                key="terms_select_upset", label_visibility="collapsed"
-            )
-            st.session_state["selected_terms_upset"] = selected_terms
+            selected_terms = _term_selector("upset", df, n_terms)
 
         elif plot_id == "cnetplot":
             # Row 1: Number of terms, Width, Height, Clusters, Font Size
@@ -2447,7 +2444,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
             with col2:
                 params["width"] = st.slider("Width (px)", 200, 1500, 1000, step=50, key="dlg_cnet_w")
             with col3:
-                params["height"] = st.slider("Height (px)", 200, 1500, 800, step=50, key="dlg_cnet_h")
+                params["height"] = st.slider("Height (px)", 200, 1500, 560, step=50, key="dlg_cnet_h")
             with col4:
                 params["n_clusters"] = st.slider("Clusters", 2, 10, 5, key="dlg_cnet_c")
             with col5:
@@ -2455,31 +2452,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
 
             # Track n_terms changes to auto-update selection
             n_terms = params["n_terms"]
-            prev_n_key = "prev_n_terms_cnetplot"
-            if prev_n_key not in st.session_state:
-                st.session_state[prev_n_key] = n_terms
-
-            # If n_terms slider changed, update the term selection
-            if st.session_state[prev_n_key] != n_terms:
-                st.session_state["selected_terms_cnetplot"] = all_terms[:n_terms]
-                st.session_state[prev_n_key] = n_terms
-
-            st.markdown("##### Select Terms to Include")
-            col_sel, col_desel = st.columns([4, 1])
-            with col_desel:
-                if st.button("Deselect All Terms", key="desel_cnet_terms"):
-                    st.session_state["selected_terms_cnetplot"] = []
-                    st.rerun()
-
-            if "selected_terms_cnetplot" not in st.session_state:
-                st.session_state["selected_terms_cnetplot"] = all_terms[:n_terms]
-
-            selected_terms = st.multiselect(
-                "Terms", options=all_terms,
-                default=st.session_state.get("selected_terms_cnetplot", all_terms[:n_terms]),
-                key="terms_select_cnetplot", label_visibility="collapsed"
-            )
-            st.session_state["selected_terms_cnetplot"] = selected_terms
+            selected_terms = _term_selector("cnetplot", df, n_terms)
 
             # Gene selection
             default_n_genes = min(50, len(all_genes))
@@ -2512,17 +2485,14 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
     # Render the actual plot
     _render_full_plot(plot_id, df, params, visualizer)
 
-    st.markdown("---")
-
-    # AI Interpretation as a BUTTON
-    if st.button("🤖 Generate AI Interpretation", key=f"ai_interp_{plot_id}"):
-        with st.spinner("Generating interpretation..."):
-            interpretation = get_visualizer().get_plot_interpretation(plot_id, df)
-        st.info(interpretation)
+    _render_plot_actions(plot_id, df)
 
 
 def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
     """Render the full plot with selected terms and params"""
+    # Clear any figure deferred by a previous dialog: if this plot fails to render we
+    # must show no PDF button rather than the previous plot's one.
+    st.session_state.pop("_pending_pdf", None)
 
     # Compute a hash of current params to use as plotly_chart key (forces re-render on param change)
     _params_hash = hashlib.md5(str(sorted((k, str(v)[:50]) for k, v in params.items() if k != "selected_terms")).encode()).hexdigest()[:8]
@@ -2540,7 +2510,7 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
         if visualizer and len(plot_df) >= 3:
             method = params.get("method", "ward")
             width = params.get("width", 800)
-            height = params.get("height", 600)
+            height = params.get("height", 480)
             font_size = params.get("font_size", 10)
             result = visualizer.render_dendrogram_with_clusters(plot_df, n_terms=len(plot_df), method=method,
                                                                 font_size=font_size)
@@ -2551,15 +2521,17 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                     paper_bgcolor='white', plot_bgcolor='white',
                     font=dict(size=font_size, color='black'),
                     xaxis=dict(tickfont=dict(color='black', size=font_size), title_font=dict(color='black')),
-                    yaxis=dict(tickfont=dict(color='black', size=font_size), title_font=dict(color='black')),
-                    margin=dict(l=10, r=10, t=30, b=30)
+                    yaxis=dict(tickfont=dict(color='black', size=font_size), title_font=dict(color='black'))
+                    # margin intentionally NOT set: the renderer reserves r=120 for the
+                    # cluster labels and t=50/b=60 for the axes. Forcing 10/30 clipped them,
+                    # on screen and in the exported PDF.
                 )
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
-                add_pdf_download_button(fig, "dendrogram.pdf", "dlg_pdf_dend", width=width, height=height)
+                _defer_pdf_button(fig, "dendrogram.pdf", "dlg_pdf_dend", width=width, height=height)
 
     elif plot_id == "upset":
         if visualizer and len(plot_df) >= 2:
-            height = params.get("height", 700)
+            height = params.get("height", 520)
             width = params.get("width", 900)
             font_size = params.get("font_size", 10)
             bar_color = params.get("bar_color", "#1a1a2e")
@@ -2573,19 +2545,20 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                 fig.update_layout(
                     height=height, width=width,
                     paper_bgcolor='white', plot_bgcolor='white',
-                    font=dict(color='black', size=font_size),
-                    margin=dict(l=10, r=10, t=30, b=30)
+                    font=dict(color='black', size=font_size)
+                    # margin intentionally NOT set: the renderer reserves l=180 for the term
+                    # names. Forcing l=10 cut every name off, on screen and in the PDF.
                 )
                 # Update all subplots' axes
                 fig.update_xaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 fig.update_yaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
-                add_pdf_download_button(fig, "upset_plot.pdf", "dlg_pdf_upset", width=width, height=height)
+                _defer_pdf_button(fig, "upset_plot.pdf", "dlg_pdf_upset", width=width, height=height)
 
     elif plot_id == "similarity":
         if visualizer and len(plot_df) >= 3:
             clusters = params.get("n_clusters", 8)
-            height = params.get("height", 800)
+            height = params.get("height", 480)
             width = params.get("width", 1100)
             font_size = params.get("font_size", 12)
             result = visualizer.render_similarity_clusters_with_data(plot_df, n_terms=len(plot_df), n_clusters=clusters,
@@ -2593,21 +2566,19 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                                                                      word_font_size=font_size)
             if result and result[0]:
                 fig = result[0]
+                # Keep the renderer's own margins: render_similarity_clusters sizes its
+                # word packing from them, so overriding here desynchronises the two.
                 fig.update_layout(
                     paper_bgcolor='white', plot_bgcolor='white',
-                    font=dict(color='black', size=font_size),
-                    margin=dict(l=10, r=10, t=30, b=30)
+                    font=dict(color='black', size=font_size)
                 )
-                fig.update_xaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
-                fig.update_yaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
-                fig.update_coloraxes(colorbar_tickfont=dict(color='black'), colorbar_title_font=dict(color='black'))
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
-                add_pdf_download_button(fig, "similarity.pdf", "dlg_pdf_sim", width=width, height=height)
+                _defer_pdf_button(fig, "similarity.pdf", "dlg_pdf_sim", width=width, height=height)
 
     elif plot_id == "cnetplot":
         if visualizer and len(plot_df) >= 2:
             clusters = params.get("n_clusters", 5)
-            height = params.get("height", 800)
+            height = params.get("height", 560)
             width = params.get("width", 1000)
             font_size = params.get("font_size", 10)
             selected_genes = params.get("selected_genes")
@@ -2626,7 +2597,7 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                 fig.update_xaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 fig.update_yaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
-                add_pdf_download_button(fig, "cnetplot.pdf", "dlg_pdf_cnet", width=width, height=height)
+                _defer_pdf_button(fig, "cnetplot.pdf", "dlg_pdf_cnet", width=width, height=height)
 
 def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
     """
@@ -3663,14 +3634,14 @@ def _add_relevance_scores(papers: List[Dict], query: str) -> List[Dict]:
 
     for p in papers:
         if not p.get("specificity"):
-            # Map from reasoning_engine's field name
+            # Map from reasoning_engine's field name. An unscored paper defaults to LOW,
+            # not Medium: scoring failures must not masquerade as relevant results. The
+            # relevance gate in reasoning_engine.keep_relevant_papers() drops these
+            # already, so seeing one here means scoring failed to parse.
             rating = p.get("relevance_rating", "")
-            if rating:
-                p["specificity"] = rating
-            else:
-                p["specificity"] = "Medium"
+            p["specificity"] = rating if rating else "Low"
             if not p.get("relevance_details"):
-                p["relevance_details"] = ""
+                p["relevance_details"] = "" if rating else "not scored - treated as low relevance"
 
     return papers
 

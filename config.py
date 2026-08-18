@@ -80,6 +80,12 @@ CONFIG = {
 
         # Higher token limit for response summaries (app.py)
         "summary_max_tokens": 8192,
+
+        # Thinking budget for one-shot utility calls: the result summary, plot
+        # interpretations and paper relevance scoring. 0 disables reasoning entirely
+        # and made the user-facing summary noticeably terser; a small budget restores
+        # its quality without spending the agent's full 512.
+        "utility_thinking_budget": 256,
     },
 
     # Logging configuration

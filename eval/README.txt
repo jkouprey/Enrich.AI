@@ -1,10 +1,6 @@
 ================================================================================
-ENRICH.AI EVALUATION - START HERE
+ENRICH.AI EVALUATION
 ================================================================================
-
-WANT THE ANSWER?           read  EVALUATION_FOR_PAPER.txt
-WANT TO CHECK A CLAIM?     open  results/ALL_CLAIMS.csv
-WANT TO RE-RUN IT?         read  HOW_THE_EVAL_CODE_WORKS.txt
 
 --------------------------------------------------------------------------------
 FOLDER LAYOUT
@@ -15,14 +11,8 @@ eval/
   data/          inputs and caches - the gene sets and the fetched database records
   runs/          raw per-run records: full_run/, reps/, _consistency/
   results/       everything derived: CSVs, summary JSONs, the figure
-  logs/          console output from each stage, for provenance
-../old/          superseded scripts and data. Nothing current reads it.
-
-Rule of thumb: runs/ is evidence, results/ is what you cite, data/ is input,
-old/ is history. If a file is not in one of those, it is a document or a script.
 
 --------------------------------------------------------------------------------
-THE HEADLINE
 --------------------------------------------------------------------------------
 50 MSigDB Hallmark gene sets -> Enrich.AI (Gemini 2.5 Flash) -> 4,737 atomic claims
 -> judged by Claude Sonnet 4.5 against (a) the tool's own retrieved evidence and
@@ -37,11 +27,9 @@ THE HEADLINE
   Fabricated citations                          0 / 90 runs
   Per-set reproducibility               +/- 3.4 pts SD - per-set rates are NOT stable
   Judge label reproducibility           98.0% on identical inputs (temp 0)
-  Total API spend                       $13.81
 
-Two DIFFERENT measurements, do not conflate them. The 2.64% / 4.20% pair is
-FACTUAL CORRECTNESS, judged against external curated databases. The 2.30%
-unsupported figure is EVIDENCE FAITHFULNESS - whether the tool stuck to what it
+The 2.64% / 4.20% pair is FACTUAL CORRECTNESS, judged against external curated databases. 
+The 2.30% unsupported figure is EVIDENCE FAITHFULNESS - whether the tool stuck to what it
 actually retrieved. A claim can be faithful and false, or unfaithful and true.
 
 All of these are conservative: ground truth is external curated text rather than
@@ -50,21 +38,7 @@ could settle are excluded from the denominator instead of being credited as
 correct. Counting those as correct would report 54/4,737 = 1.14%.
 
 --------------------------------------------------------------------------------
-THE THREE DOCUMENTS
---------------------------------------------------------------------------------
-EVALUATION_FOR_PAPER.txt     Methods, all metrics, the 50-set results table, the
-                             reproducibility table, limitations, conclusion.
-                             This is the manuscript text.
-
-HOW_THE_EVAL_CODE_WORKS.txt  What every script does, what it reads and writes, why
-                             each design decision was made, the failures we hit and
-                             how they were fixed, and the commands to reproduce
-                             everything from scratch.
-
-README.txt                   This file - the map.
-
---------------------------------------------------------------------------------
-results/ - WHAT YOU CAN OPEN AND CHECK
+results/ 
 --------------------------------------------------------------------------------
 ALL_CLAIMS.csv               *** THE MASTER FILE *** All 4,737 claims, one per row:
                              the claim, which genes were checked, its evidence label
@@ -157,13 +131,4 @@ make_figure_reproducibility.py   the figure                    -> results/figure
 verify_claims.py             (helper) export claims + records for manual review
 compare_judge_versions.py    (audit)  prove a re-judge changed / did not change labels
 
-Every paid step has a free --estimate that prices it via count_tokens first, and
-every paid step can be recovered from its batch id without paying twice.
-
---------------------------------------------------------------------------------
-../old/ - NOT USED BY ANYTHING CURRENT
---------------------------------------------------------------------------------
-Superseded first-attempt scripts, the results of a stricter GROUNDED criterion that
-was tried and reverted, and the pre-re-judge backup of the replicates. See
-../old/README.txt. No reported number depends on anything in there.
 ================================================================================

@@ -6,7 +6,7 @@ ENRICH.AI EVALUATION
 FOLDER LAYOUT
 --------------------------------------------------------------------------------
 eval/
-  *.txt          the three documents (this file, the paper text, the code guide)
+  *.txt          this file
   *.py           the pipeline scripts, listed in run order further down
   data/          inputs and caches - the gene sets and the fetched database records
   runs/          raw per-run records: full_run/, reps/, _consistency/

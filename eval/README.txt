@@ -10,7 +10,7 @@ eval/
   *.py           the pipeline scripts, listed in run order further down
   data/          inputs and caches - the gene sets and the fetched database records
   runs/          raw per-run records: full_run/, reps/, _consistency/
-  results/       everything derived: CSVs, summary JSONs, the figure
+  results/       everything derived: CSVs, summary JSONs
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -69,9 +69,6 @@ verify_db_headline_v2.csv    The database verdicts behind the headline rate.
 verify_multigene_detail.csv  Per-gene verdicts for the 88 multi-gene claims, before
                              the aggregation rule is applied in code.
 
-figure_reproducibility.pdf   The reproducibility figure (vector, for the manuscript)
-figure_reproducibility.png   600 dpi raster for slides
-figure_reproducibility_data.csv   The exact 47 points plotted, for the caption
 
 summary.json                 Per-set and aggregate faithfulness counts, 50 sets.
 summary_reps.json            The same for the 50 replicate runs.
@@ -84,7 +81,7 @@ recheck_incorrect_stats.json Sonnet's adjudication counts.
 final_rates.json             The two headline numbers.
 
 --------------------------------------------------------------------------------
-runs/ - THE RAW EVIDENCE
+runs/
 --------------------------------------------------------------------------------
 full_run/                    50 files, one per Hallmark set. Each holds the gene
                              list, the exact query, the full reasoning trace, every
@@ -112,7 +109,7 @@ _triplicate_sets.json        Which 10 sets were replicated.
 steps.txt                    The original evaluation brief.
 
 --------------------------------------------------------------------------------
-THE CODE - run in this order (details in HOW_THE_EVAL_CODE_WORKS.txt)
+THE CODE
 --------------------------------------------------------------------------------
 evalkit.py                   Shared constants and prompts. THE single source of
                              truth - the pinned query, the cutoffs, the judge

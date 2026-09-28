@@ -4792,11 +4792,17 @@ def handle_user_query(query: str):
             return None
 
     try:
-        result = st.session_state.reasoning_engine.run(
+        # Scope the engine's follow-up memory to THIS chat, so a new chat doesn't
+        # inherit gene lists / results from earlier chats in the same browser session.
+        engine = st.session_state.reasoning_engine
+        engine.previous_envelopes = st.session_state.current_session.setdefault("engine_memory", [])
+        result = engine.run(
             query,
             selected_libraries=st.session_state.selected_libraries or None,
             progress_callback=st.session_state.get("_progress_cb"),
         )
+        # run() may re-slice the list when trimming, so write it back
+        st.session_state.current_session["engine_memory"] = engine.previous_envelopes
         envelope = result.get("envelope", {})
         return {"content": envelope.get("final_text", "I processed your request."), "envelope": envelope}
     except Exception as e:

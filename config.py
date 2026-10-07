@@ -76,7 +76,7 @@ CONFIG = {
         # Gemini-only knobs for the ReAct agent LLM (reasoning_engine.py)
         "thinking_budget": 512,
         "include_thoughts": True,
-        "convert_system_message_to_human": True,
+        "convert_system_message_to_human": False,
 
         # Higher token limit for response summaries (app.py)
         "summary_max_tokens": 8192,

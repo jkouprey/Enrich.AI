@@ -11,6 +11,8 @@ Powered by Google Gemini 2.5 Flash and orchestrated via LangGraph, Enrich.AI use
   <p><em>Figure 1. Enrich.AI system architecture — from user query to synthesized biological insight.</em></p>
 </div>
 
+## Paper
+https://www.biorxiv.org/content/10.64898/2026.09.29.755561v1
 
 ## What it does
 

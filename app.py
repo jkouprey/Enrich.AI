@@ -991,6 +991,8 @@ def apply_fancy_styling():
         footer {visibility: hidden;}
         header {visibility: hidden;}
         [data-testid="stExpandSidebarButton"] {visibility: visible;}
+        [data-testid="stExpandSidebarButton"] [data-testid="stIconMaterial"] {color: var(--text-primary) !important;}
+        
         /* ============= WIDE DIALOG STYLING ============= */
         div[data-testid="stDialog"] div[role="dialog"]:has(.wide-dialog) {
             width: 98vw !important;

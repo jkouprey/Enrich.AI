@@ -11,9 +11,6 @@ Powered by Google Gemini 2.5 Flash and orchestrated via LangGraph, Enrich.AI use
   <p><em>Figure 1. Enrich.AI system architecture — from user query to synthesized biological insight.</em></p>
 </div>
 
-## Paper
-https://www.biorxiv.org/content/10.64898/2026.09.29.755561v1
-
 ## What it does
 
 Give Enrich.AI a biological question in natural language. The model decides which tools to call, in what order, and with what parameters.
@@ -106,6 +103,26 @@ EnrichAI/
 ├── llm_factory.py         # Models  
 ├── requirements.txt       # Python dependencies
 └── assets/                # Icons, logos, figures
+```
+
+## Citation
+
+The paper is available as a preprint on bioRxiv:
+**[Enrich.AI: An Agentic AI Platform for Interactive Gene Set Enrichment Analysis and Biological Interpretation](https://www.biorxiv.org/content/10.64898/2026.09.29.755561v1)**
+
+If you use Enrich.AI in your research, please cite:
+
+> Koumadorakis, D. E., Exarchos, T. P., Vlamos, P., & Vrahatis, A. G. (2026). Enrich.AI: An agentic AI platform for interactive gene set enrichment analysis and biological interpretation. *bioRxiv*. https://doi.org/10.64898/2026.09.29.755561
+
+```bibtex
+@article{koumadorakis2026enrich,
+  title={Enrich. AI: An Agentic AI Platform for Interactive Gene Set Enrichment Analysis and Biological Interpretation},
+  author={Koumadorakis, Dimitrios E and Exarchos, Themis P and Vlamos, Panagiotis and Vrahatis, Aristidis G},
+  journal={bioRxiv},
+  pages={2026--09},
+  year={2026},
+  publisher={Cold Spring Harbor Laboratory}
+}
 ```
 
 ## License

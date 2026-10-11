@@ -351,6 +351,14 @@ def _wrap_enrichment_analysis(
         summary_parts.append(f"Genes analyzed: {result.get('gene_count', 0)}")
         summary_parts.append(f"Total significant terms: {result.get('significant_terms_total', 0)}")
         summary_parts.append(f"Libraries tested: {', '.join(result.get('libraries_tested', []))}")
+        failed_libs = result.get("libraries_failed") or []
+        if failed_libs:
+            summary_parts.append(
+                "WARNING - these libraries could NOT be queried (Enrichr request failed), so they "
+                "are missing from the results below. This is not the same as having no significant "
+                "terms. Tell the user which libraries are missing: "
+                + "; ".join(f"{f.get('library')} ({f.get('error')})" for f in failed_libs)
+            )
         summary_parts.append("")
 
         # Per-library breakdown with ALL terms listed

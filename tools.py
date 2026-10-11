@@ -16,6 +16,7 @@ import pandas as pd
 import time
 import random
 import logging
+import sys
 from collections import OrderedDict, defaultdict
 from typing import List, Dict, Any, Optional, Tuple, Union
 from datetime import datetime
@@ -47,13 +48,19 @@ class SmartCache:
         return None
 
     def set(self, key: str, value: Any):
-        self.cache[key] = (value, time.time())
+        # Drop every expired entry, not only the one being re-requested,
+        # so libraries nobody asks for again are actually freed.
+        now = time.time()
+        for k in [k for k, (_, ts) in list(self.cache.items()) if now - ts >= self.ttl]:
+            self.cache.pop(k, None)
+        self.cache[key] = (value, now)
         self.cache.move_to_end(key)
         if len(self.cache) > self.max_size:
             self.cache.popitem(last=False)
 
 
-cache = SmartCache()
+# Entries are whole parsed Enrichr libraries (up to ~50 MB each), so keep few.
+cache = SmartCache(max_size=16)
 
 
 def _retry_request(
@@ -196,10 +203,10 @@ def _fetch_enrichr_library_data(library_name: str) -> Dict[str, Dict]:
 
             if len(potential_desc) < 15 and potential_desc.isupper():
                 description = ""
-                genes = [g.strip() for g in parts[1:] if g.strip()]
+                genes = [sys.intern(g.strip()) for g in parts[1:] if g.strip()]
             else:
                 description = potential_desc
-                genes = [g.strip() for g in parts[2:] if g.strip()]
+                genes = [sys.intern(g.strip()) for g in parts[2:] if g.strip()]
 
             library_data[term_name] = {
                 "id": term_name,
@@ -931,6 +938,7 @@ def run_enrichment_analysis(
         "query_genes": genes,
         "gene_count": len(genes),
         "libraries_tested": [],
+        "libraries_failed": [],
         "enrichment_results": {},
         "significant_terms_total": 0,
         "execution_time": 0
@@ -993,6 +1001,8 @@ def run_enrichment_analysis(
                 success, data, error = _retry_request(url, params=params, timeout=30)
 
                 if not success or not data:
+                    logger.warning(f"Enrichr request failed for library {library}: {error}")
+                    results["libraries_failed"].append({"library": library, "error": str(error)})
                     continue
 
                 enrichment_data = data.get(library, [])
@@ -1052,6 +1062,7 @@ def run_enrichment_analysis(
 
             except Exception as e:
                 logger.warning(f"Error with library {library}: {e}")
+                results["libraries_failed"].append({"library": library, "error": str(e)})
                 continue
 
         results["execution_time"] = round(time.time() - start_time, 2)

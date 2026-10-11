@@ -990,7 +990,7 @@ def apply_fancy_styling():
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
         header {visibility: hidden;}
-
+        [data-testid="stExpandSidebarButton"] {visibility: visible;}
         /* ============= WIDE DIALOG STYLING ============= */
         div[data-testid="stDialog"] div[role="dialog"]:has(.wide-dialog) {
             width: 98vw !important;

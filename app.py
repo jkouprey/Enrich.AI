@@ -34,6 +34,88 @@ from visualizer import Visualizer, get_llm_interpretation, add_pdf_download_butt
 logging.basicConfig(level=getattr(logging, CONFIG["logging"]["level"], "INFO"))
 logger = logging.getLogger(__name__)
 
+
+# ===============================================================================
+# MEMORY LOG - one "MEM" line in the app log every few minutes, to see what grows
+# before Streamlit Community Cloud restricts the app. Read-only: changes nothing.
+# Interval in seconds via ENRICHAI_MEMLOG_SECONDS (default 300, 0 = off).
+# ===============================================================================
+
+def _read_mb(path, key=None):
+    """MB from a /proc or cgroup file: a bare byte count, or a 'Key: N kB' line."""
+    try:
+        with open(path) as f:
+            text = f.read()
+        if key is None:
+            return int(text.split()[0]) / 1e6
+        for line in text.splitlines():
+            if line.startswith(key):
+                return int(line.split()[1]) / 1024
+    except Exception:
+        return None
+    return None
+
+
+def _memlog_line(started):
+    import time as _time
+    # whole container (what the platform most likely enforces): cgroup v2, then v1
+    used = _read_mb("/sys/fs/cgroup/memory.current") or _read_mb("/sys/fs/cgroup/memory/memory.usage_in_bytes")
+    limit = _read_mb("/sys/fs/cgroup/memory.max") or _read_mb("/sys/fs/cgroup/memory/memory.limit_in_bytes")
+    container = "n/a" if used is None else (f"{used:.0f} MB" + (f" of {limit:.0f} MB" if limit and limit < 1e6 else ""))
+    app_mb = _read_mb("/proc/self/status", "VmRSS:") or 0
+    # Kaleido's Chromium = the child processes of this app (plot thumbnails / PDF export).
+    # PSS avoids double-counting memory the Chromium processes share.
+    parent = {}
+    for pid in os.listdir("/proc"):
+        if pid.isdigit():
+            try:
+                with open(f"/proc/{pid}/stat") as f:
+                    parent[int(pid)] = int(f.read().rsplit(")", 1)[1].split()[1])
+            except Exception:
+                pass
+    kaleido = 0.0
+    for pid in parent:
+        p, depth = parent.get(pid), 0
+        while p and p != os.getpid() and depth < 50:
+            p, depth = parent.get(p), depth + 1
+        if p == os.getpid():
+            kaleido += _read_mb(f"/proc/{pid}/smaps_rollup", "Pss:") or _read_mb(f"/proc/{pid}/status", "VmRSS:") or 0
+    try:  # internal Streamlit API - may change between versions, hence the fallback
+        from streamlit.runtime import Runtime
+        sessions = str(len(Runtime.instance()._session_mgr.list_active_sessions()))
+    except Exception:
+        sessions = "n/a"
+    try:
+        import tools as _tools
+        libs = str(sum(1 for k in list(_tools.cache.cache) if str(k).startswith("enrichr_lib_")))
+    except Exception:
+        libs = "n/a"
+    up = int(_time.time() - started)
+    return (f"MEM | container {container} | app {app_mb:.0f} MB | kaleido {kaleido:.0f} MB | "
+            f"sessions {sessions} | cached libs {libs} | uptime {up // 3600}h{up % 3600 // 60:02d}")
+
+
+def _start_memlog():
+    """Start the logger thread once per server process (app.py reruns on every interaction)."""
+    import threading, time as _time
+    interval = int(os.environ.get("ENRICHAI_MEMLOG_SECONDS", "300"))
+    if interval <= 0 or any(t.name == "enrichai-memlog" for t in threading.enumerate()):
+        return
+    started = _time.time()
+
+    def _loop():
+        while True:
+            try:
+                logger.info(_memlog_line(started))
+            except Exception as e:
+                logger.warning(f"MEM log failed: {e}")
+            _time.sleep(interval)
+
+    threading.Thread(target=_loop, name="enrichai-memlog", daemon=True).start()
+
+
+_start_memlog()
+
 # Load favicon
 _favicon_path = Path(__file__).parent / "assets" / "dimitris_tool_icon.jpeg"
 _favicon = Image.open(_favicon_path) if _favicon_path.exists() else "🧬"

@@ -118,7 +118,7 @@ _start_memlog()
 
 # Load favicon
 _favicon_path = Path(__file__).parent / "assets" / "dimitris_tool_icon.jpeg"
-_favicon = Image.open(_favicon_path) if _favicon_path.exists() else "🧬"
+_favicon = str(_favicon_path) if _favicon_path.exists() else "🧬"
 
 st.set_page_config(
     page_title="Enrich.AI - Biology Research Assistant",

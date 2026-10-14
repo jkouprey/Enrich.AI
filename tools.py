@@ -952,7 +952,7 @@ def run_enrichment_analysis(
                 "GO_Cellular_Component_2023",
                 "KEGG_2021_Human",
                 "Reactome_2022",
-                "WikiPathways_2021_Human",
+                "WikiPathways_2024_Human",
                 "MSigDB_Hallmark_2020"
             ]
 

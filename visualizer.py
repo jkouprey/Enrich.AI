@@ -222,7 +222,7 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
         return sorted_words[:n_keywords]
 
 
-    def render_dendrogram(self, df: pd.DataFrame, n_terms: int = 25, method: str = "ward",
+    def render_dendrogram(self, df: pd.DataFrame, n_terms: int = 25, method: str = "average",
                           font_size: int = 10, tree_scale: float = 0.3,
                           dot_size: int = 12) -> go.Figure:
         """
@@ -537,7 +537,7 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
 
         return fig
 
-    def render_dendrogram_with_clusters(self, df: pd.DataFrame, n_terms: int = 25, method: str = "ward",
+    def render_dendrogram_with_clusters(self, df: pd.DataFrame, n_terms: int = 25, method: str = "average",
                                         font_size: int = 10, tree_scale: float = 0.3,
                                         dot_size: int = 12) -> Tuple[Optional[go.Figure], Dict, Dict]:
         """
@@ -574,10 +574,8 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
         Z = linkage(condensed, method=method)
         order = leaves_list(Z)
 
-        # Automatic cluster detection using distance threshold
-        max_dist = Z[:, 2].max() if len(Z) > 0 else 1
-        threshold = max_dist * 0.7
-        clusters = fcluster(Z, t=threshold, criterion='distance')
+        # Same cut as render_dendrogram, so the cluster lists match the drawn clusters
+        clusters = fcluster(Z, t=max(2, min(8, len(terms) // 5)), criterion='maxclust')
 
         # Reorder data according to dendrogram leaves
         terms_ordered = [terms[i] for i in order]
@@ -930,7 +928,7 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
         dist = (dist + dist.T) / 2
         condensed = np.clip(np.nan_to_num(squareform(dist, checks=False), nan=0.5), 0, 1)
 
-        Z = linkage(condensed, method='ward')
+        Z = linkage(condensed, method='average')
         clusters = fcluster(Z, n_clusters, criterion='maxclust')
         order = leaves_list(Z)
 
@@ -1088,7 +1086,7 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
         condensed = np.nan_to_num(condensed, nan=0.5)
         condensed = np.clip(condensed, 0, 1)
 
-        Z = linkage(condensed, method='ward')
+        Z = linkage(condensed, method='average')
         clusters = fcluster(Z, n_clusters, criterion='maxclust')
         order = leaves_list(Z)
 
@@ -1162,7 +1160,7 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
         dist = (dist + dist.T) / 2
         condensed = squareform(dist, checks=False)
         condensed = np.nan_to_num(condensed, nan=0.5)
-        Z = linkage(condensed, method='ward')
+        Z = linkage(condensed, method='average')
         clusters = fcluster(Z, n_clusters, criterion='maxclust')
 
         # Build cluster info
@@ -1384,7 +1382,7 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
         dist = (dist + dist.T) / 2
         condensed = squareform(dist, checks=False)
         condensed = np.nan_to_num(condensed, nan=0.5)
-        Z = linkage(condensed, method='ward')
+        Z = linkage(condensed, method='average')
         clusters = fcluster(Z, n_clusters, criterion='maxclust')
 
         # Build cluster data for expanders with descriptive names
@@ -1399,7 +1397,7 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
         for c, term_list in cluster_term_data.items():
             keywords = self._extract_keywords(term_list, n_keywords=3)
             if keywords:
-                cluster_names[c] = " / ".join([kw[0].title() for kw in keywords[:2]])
+                cluster_names[c] = ' '.join([w for w, _ in keywords])  # as on the plot
             else:
                 cluster_names[c] = f"Cluster {c}"
 

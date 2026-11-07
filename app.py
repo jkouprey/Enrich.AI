@@ -1,6 +1,7 @@
 # app.py - Enrich.AI: Autonomous Biology Research Assistant
 # Full integration with visualizer.py, Gemini interpretations, and beautiful UI
 import socket
+
 _orig = socket.getaddrinfo
 socket.getaddrinfo = lambda *a, **k: [r for r in _orig(*a, **k) if r[0] == socket.AF_INET]
 
@@ -1089,7 +1090,7 @@ def apply_fancy_styling():
         header {visibility: hidden;}
         [data-testid="stExpandSidebarButton"] {visibility: visible;}
         [data-testid="stExpandSidebarButton"] [data-testid="stIconMaterial"] {color: var(--text-primary) !important;}
-        
+
         /* ============= WIDE DIALOG STYLING ============= */
         div[data-testid="stDialog"] div[role="dialog"]:has(.wide-dialog) {
             width: 98vw !important;
@@ -2112,7 +2113,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
     P_LBL = "-log10(FDR)" if has_nes else "-log10(p-value)"
     GC_LBL = "Leading-edge Genes" if has_nes else "Gene Count"
     GR_LBL = "Leading-edge Ratio" if has_nes else "Gene Ratio"
-    HOV_GENES = "Leading-edge genes" if has_nes else "Genes"        # hover / size legend wording
+    HOV_GENES = "Leading-edge genes" if has_nes else "Genes"  # hover / size legend wording
     SIZE_LBL = "Leading-edge genes" if has_nes else "Gene count"
 
     # Parameters in SLIDING EXPANDER
@@ -2154,6 +2155,9 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
             height = st.slider("Height (px)", 200, 1500, 450, step=50, key=f"dlg_{plot_id}_h")
         with col4:
             font_size = st.slider("Font size", 8, 16, 11, key=f"dlg_{plot_id}_fs")
+        if plot_id == "bubble":
+            bubble_range = st.slider("Bubble size (px): smallest – largest", 4, 60, (8, 26),
+                                     key=f"dlg_{plot_id}_bsize")
 
         # Track n_terms changes to auto-update selection
         selected_terms = _term_selector(plot_id, df, n_terms)
@@ -2301,7 +2305,8 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
             legend=dict(font=dict(color='black', size=font_size)),
             margin=dict(l=left_margin, r=80, t=40, b=60)
         )
-        st.plotly_chart(fig, use_container_width=False, key=f"pc_bar_{width}_{height}_{font_size}_{palette}_{color_by}_{x_axis}_{len(selected_terms)}")
+        st.plotly_chart(fig, use_container_width=False,
+                        key=f"pc_bar_{width}_{height}_{font_size}_{palette}_{color_by}_{x_axis}_{len(selected_terms)}")
         _defer_pdf_button(fig, "bar_plot.pdf", "dlg_pdf_bar", width=width, height=height)
 
     else:  # bubble
@@ -2328,16 +2333,16 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
         left_margin = max(200, min(400, int(max_term_len * 6)))
 
         # Bubble size scaling - consistent sizing based on gene count range
-        min_bubble = 10
-        max_bubble = 50
+        min_bubble, max_bubble = bubble_range
         gene_min = plot_df['gene_count'].min()
         gene_max = plot_df['gene_count'].max()
 
-        if gene_max > gene_min:
-            plot_df['bubble_size'] = min_bubble + (plot_df['gene_count'] - gene_min) / (gene_max - gene_min) * (
-                        max_bubble - min_bubble)
-        else:
-            plot_df['bubble_size'] = (min_bubble + max_bubble) / 2
+        def to_px(g):
+            if gene_max > gene_min:
+                return min_bubble + (g - gene_min) / (gene_max - gene_min) * (max_bubble - min_bubble)
+            return (min_bubble + max_bubble) / 2
+
+        plot_df['bubble_size'] = plot_df['gene_count'].apply(to_px)
 
         if color_by == "Library" and 'library' in plot_df.columns:
             # Create traces per library for legend
@@ -2378,17 +2383,16 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
                     showscale=True,
                     colorbar=dict(
                         title=dict(text=color_by, font=dict(color='black', size=font_size)),
-                        tickfont=dict(color='black', size=font_size)
+                        tickfont=dict(color='black', size=font_size),
+                        x=1, xanchor="left", xpad=20, y=1, yanchor="top", lenmode="pixels", len=150,
+                        thickness=14
                     ),
                     opacity=0.7,
                     line=dict(width=1, color='black')
                 ),
                 hovertemplate=f"<b>%{{y}}</b><br>{x_axis}: %{{x:.2f}}<br>{HOV_GENES}: %{{customdata}}<extra></extra>",
-                customdata=plot_df['gene_count']
+                customdata=plot_df['gene_count'], showlegend=False
             ))
-
-        # Add size legend annotation
-        size_legend_text = f"Bubble size: {SIZE_LBL} ({gene_min}-{gene_max})"
 
         fig.update_layout(
             width=width, height=height,
@@ -2406,17 +2410,42 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
                 tickfont=dict(color='black', size=font_size)
             ),
             legend=dict(font=dict(color='black', size=font_size)),
-            margin=dict(l=left_margin, r=80, t=40, b=70),
-            annotations=[dict(
-                x=0.5, y=-0.08, xref="paper", yref="paper",
-                text=size_legend_text, showarrow=False,
-                font=dict(size=font_size - 1, color='black')
-            )]
+            margin=dict(l=left_margin, r=40, t=40, b=60),
         )
-        st.plotly_chart(fig, use_container_width=False, key=f"pc_bub_{width}_{height}_{font_size}_{palette}_{color_by}_{x_axis}_{len(selected_terms)}")
+        if x_col != "nes":  # NES has a sign; every other x measure starts at 0
+            fig.update_layout(xaxis_rangemode="tozero")
+        _add_size_legend(fig, plot_df['gene_count'], to_px, SIZE_LBL, font_size,
+                         below_colorbar=color_by != "Library")
+        st.plotly_chart(fig, use_container_width=False,
+                        key=f"pc_bub_{width}_{height}_{font_size}_{palette}_{color_by}_{x_axis}_{len(selected_terms)}")
         _defer_pdf_button(fig, "bubble_chart.pdf", "dlg_pdf_bubble", width=width, height=height)
 
     _render_plot_actions(plot_id, plot_df)
+
+
+def _add_size_legend(fig: go.Figure, counts: pd.Series, to_px, title: str, font_size: int = 11,
+                     below_colorbar: bool = True):
+    """ggplot-style size key: reference bubbles at their real size, placed at fixed pixel offsets
+    right of the plot, so it keeps its place and size when the figure is resized. (Plotly's own
+    legend caps symbols at 16 px, so it cannot show bubble sizes.)"""
+    vals = sorted({int(counts.min()), int(round(counts.median())), int(counts.max())})
+    sizes = [to_px(v) for v in vals]
+    cx = 20 + max(sizes) / 2  # bubble centre, px right of the plot edge
+    y = (170 if below_colorbar else 0) + 4  # px below the top of the plot
+    fig.add_annotation(x=1, y=1, xref="paper", yref="paper", xanchor="left", yanchor="top",
+                       xshift=cx - max(sizes) / 2, yshift=-y, text=f"<b>{title}</b>", showarrow=False,
+                       font=dict(size=font_size, color="black"))
+    y += font_size + 14
+    for v, d in zip(vals, sizes):
+        cy = y + d / 2
+        fig.add_shape(type="circle", xref="paper", yref="paper", xsizemode="pixel", ysizemode="pixel",
+                      xanchor=1, yanchor=1, x0=cx - d / 2, x1=cx + d / 2, y0=-cy - d / 2, y1=-cy + d / 2,
+                      fillcolor="lightgrey", line=dict(color="black", width=1))
+        fig.add_annotation(x=1, y=1, xref="paper", yref="paper", xanchor="left", yanchor="middle",
+                           xshift=cx + max(sizes) / 2 + 8, yshift=-cy, text=str(v), showarrow=False,
+                           font=dict(size=font_size, color="black"))
+        y += d + 8
+    fig.update_layout(margin_r=max(fig.layout.margin.r or 0, int(cx + max(sizes) / 2 + 60), 140))
 
 
 def _term_selector(plot_id: str, df: pd.DataFrame, n_terms: int):
@@ -2467,7 +2496,7 @@ def _term_selector(plot_id: str, df: pd.DataFrame, n_terms: int):
 
     st.multiselect("Terms", options=options, key=tkey, label_visibility="collapsed")
     picked = set(st.session_state.get(tkey) or [])
-    return [t for t in terms_by_p if t in picked]      # p-value order for the plot
+    return [t for t in terms_by_p if t in picked]  # p-value order for the plot
 
 
 def _defer_pdf_button(fig, filename: str, key: str, width: int = None, height: int = None):
@@ -2477,12 +2506,14 @@ def _defer_pdf_button(fig, filename: str, key: str, width: int = None, height: i
     card, plot = st.session_state.get("_active_card"), st.session_state.get("_active_plot")
     if card and plot:
         st.session_state.setdefault("report_figs", {})[(card, plot)] = fig
+        st.session_state.setdefault("report_clusters", {})[(card, plot)] = st.session_state.pop("_pending_clusters",
+                                                                                                None)
 
 
 def _render_plot_actions(plot_id: str, df_for_interp):
     """PDF download + AI interpretation on one row, equal width, directly under the plot."""
     pending = st.session_state.pop("_pending_pdf", None)
-    col_pdf, _spacer, col_ai = st.columns([1.3, 5.4, 1.3])   # AI button pushed to the right
+    col_pdf, _spacer, col_ai = st.columns([1.3, 5.4, 1.3])  # AI button pushed to the right
     with col_pdf:
         if pending:
             # rendered here rather than via add_pdf_download_button() so this row controls
@@ -2538,7 +2569,7 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
             with col1:
                 params["n_terms"] = st.slider("Number of terms", 5, min(50, len(all_terms)), 10, key="dlg_den_n")
             with col2:
-                params["method"] = st.selectbox("Clustering method", ["ward", "complete", "average"], key="dlg_den_m")
+                params["method"] = st.selectbox("Clustering method", ["average", "complete"], key="dlg_den_m")
             with col3:
                 params["width"] = st.slider("Width (px)", 200, 1500, 800, step=50, key="dlg_den_w")
             with col4:
@@ -2650,9 +2681,11 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
     # Clear any figure deferred by a previous dialog: if this plot fails to render we
     # must show no PDF button rather than the previous plot's one.
     st.session_state.pop("_pending_pdf", None)
+    st.session_state.pop("_pending_clusters", None)
 
     # Compute a hash of current params to use as plotly_chart key (forces re-render on param change)
-    _params_hash = hashlib.md5(str(sorted((k, str(v)[:50]) for k, v in params.items() if k != "selected_terms")).encode()).hexdigest()[:8]
+    _params_hash = hashlib.md5(
+        str(sorted((k, str(v)[:50]) for k, v in params.items() if k != "selected_terms")).encode()).hexdigest()[:8]
     _n_terms = len(params.get("selected_terms", []))
     _chart_key = f"pc_{plot_id}_{_params_hash}_{_n_terms}"
 
@@ -2665,7 +2698,7 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
 
     if plot_id == "dendrogram":
         if visualizer and len(plot_df) >= 3:
-            method = params.get("method", "ward")
+            method = params.get("method", "average")
             width = params.get("width", 800)
             height = params.get("height", 480)
             font_size = params.get("font_size", 10)
@@ -2684,6 +2717,7 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                     # on screen and in the exported PDF.
                 )
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
+                st.session_state["_pending_clusters"] = (result[1], result[2])
                 _defer_pdf_button(fig, "dendrogram.pdf", "dlg_pdf_dend", width=width, height=height)
 
     elif plot_id == "upset":
@@ -2730,6 +2764,7 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                     font=dict(color='black', size=font_size)
                 )
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
+                st.session_state["_pending_clusters"] = (result[1], result[2])
                 _defer_pdf_button(fig, "similarity.pdf", "dlg_pdf_sim", width=width, height=height)
 
     elif plot_id == "cnetplot":
@@ -2754,9 +2789,24 @@ def _render_full_plot(plot_id: str, df: pd.DataFrame, params: Dict, visualizer):
                 fig.update_xaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 fig.update_yaxes(tickfont=dict(color='black'), title_font=dict(color='black'))
                 st.plotly_chart(fig, use_container_width=False, key=_chart_key)
+                st.session_state["_pending_clusters"] = (result[1], result[2])
                 _defer_pdf_button(fig, "cnetplot.pdf", "dlg_pdf_cnet", width=width, height=height)
 
-def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
+
+def _wrap_label(text, width: int = 45) -> str:
+    """Full term name, wrapped onto lines of ~width characters for axis labels."""
+    import textwrap
+    return "<br>".join(textwrap.wrap(str(text), width)) or str(text)
+
+
+def _fit_labels(fig: go.Figure) -> go.Figure:
+    """Let axis margins grow to fit the labels (report figures: nothing clipped)."""
+    fig.update_xaxes(automargin=True)
+    fig.update_yaxes(automargin=True)
+    return fig
+
+
+def _create_full_figure(plot_id: str, df: pd.DataFrame, with_clusters: bool = False, full_labels: bool = False):
     """
     Create the FULL-SIZE figure for thumbnail conversion.
     Uses white/light theme for clean thumbnail appearance.
@@ -2770,7 +2820,8 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
         if plot_id == "bar":
             plot_df = df.nsmallest(8, 'adjusted_p_value').copy()
             plot_df['-log10p'] = -np.log10(plot_df['adjusted_p_value'].replace(0, 1e-300))
-            plot_df['term_short'] = plot_df['term'].apply(lambda x: x[:25] + "..." if len(str(x)) > 25 else x)
+            plot_df['term_short'] = plot_df['term'].apply(
+                lambda x: _wrap_label(x) if full_labels else (x[:25] + "..." if len(str(x)) > 25 else x))
             is_gsea = 'nes' in plot_df.columns
             x_vals = plot_df['nes'] if is_gsea else plot_df['-log10p']
 
@@ -2791,7 +2842,7 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
                 margin=dict(l=180, r=30, t=30, b=50),
                 font=dict(size=14),
             )
-            return fig
+            return _fit_labels(fig) if full_labels else fig
 
         # ===== BUBBLE CHART =====
         elif plot_id == "bubble":
@@ -2800,7 +2851,8 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
             plot_df['gene_count'] = plot_df['genes'].apply(
                 lambda x: len(x) if isinstance(x, list) else 1
             ) if 'genes' in plot_df.columns else 5
-            plot_df['term_short'] = plot_df['term'].apply(lambda x: x[:20] + "..." if len(str(x)) > 20 else x)
+            plot_df['term_short'] = plot_df['term'].apply(
+                lambda x: _wrap_label(x) if full_labels else (x[:20] + "..." if len(str(x)) > 20 else x))
             is_gsea = 'nes' in plot_df.columns
 
             fig = go.Figure(go.Scatter(
@@ -2827,12 +2879,17 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
                 margin=dict(l=180, r=30, t=30, b=50),
                 font=dict(size=14),
             )
-            return fig
+            if not is_gsea:
+                fig.update_layout(xaxis_rangemode="tozero")
+            sizeref = 2.0 * plot_df['gene_count'].max() / (40 ** 2)  # area mode: diameter = sqrt(2*size/sizeref)
+            _add_size_legend(fig, plot_df['gene_count'], lambda g: max(6, np.sqrt(2 * g / sizeref)),
+                             "Leading-edge genes" if is_gsea else "Gene count", 14, below_colorbar=False)
+            return _fit_labels(fig) if full_labels else fig
 
         # ===== DENDROGRAM =====
         elif plot_id == "dendrogram":
             if visualizer:
-                result = visualizer.render_dendrogram_with_clusters(df, n_terms=20, method="ward")
+                result = visualizer.render_dendrogram_with_clusters(df, n_terms=20, method="average")
                 if result and result[0]:
                     fig = result[0]
                     fig.update_layout(
@@ -2843,7 +2900,8 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
                         margin=dict(l=30, r=30, t=30, b=30),
                         font=dict(size=12)
                     )
-                    return fig
+                    fig = _fit_labels(fig) if full_labels else fig
+                    return (fig, (result[1], result[2])) if with_clusters else fig
             return None
 
         # ===== SIMILARITY CLUSTERS =====
@@ -2860,7 +2918,8 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
                         margin=dict(l=30, r=30, t=30, b=30),
                         font=dict(size=12)
                     )
-                    return fig
+                    fig = _fit_labels(fig) if full_labels else fig
+                    return (fig, (result[1], result[2])) if with_clusters else fig
             return None
 
         # ===== CNETPLOT =====
@@ -2877,7 +2936,8 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
                         margin=dict(l=30, r=30, t=30, b=30),
                         font=dict(size=12)
                     )
-                    return fig
+                    fig = _fit_labels(fig) if full_labels else fig
+                    return (fig, (result[1], result[2])) if with_clusters else fig
             return None
 
         # ===== UPSET PLOT =====
@@ -2893,7 +2953,7 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
                         margin=dict(l=30, r=30, t=30, b=30),
                         font=dict(size=12)
                     )
-                    return fig
+                    return _fit_labels(fig) if full_labels else fig
             return None
 
         # ===== NETWORK/ENRICHMENT MAP =====
@@ -2901,6 +2961,7 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
         logger.warning(f"Full figure creation failed for {plot_id}: {e}")
 
     return None
+
 
 def _style_df(df):
     """Apply theme-aware colors to a dataframe (dark/light)."""
@@ -2918,6 +2979,7 @@ def _style_df(df):
         ]},
         {"selector": "td", "props": [("border", f"1px solid {_line}")]},
     ])
+
 
 def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_idx: int = None,
                               title: str = "📊 Enrichment Analysis Results"):
@@ -3278,8 +3340,6 @@ def render_gsea_results(gsea_df: pd.DataFrame, envelope: Dict, msg_idx: int = No
                f"{full.get('genes_ranked', '-')} genes ranked · genes = leading edge, p-value = FDR")
 
 
-
-
 def toggle_pin_message(idx):
     """Callback to toggle pin status of a message"""
     if "pinned_messages" not in st.session_state:
@@ -3291,15 +3351,16 @@ def toggle_pin_message(idx):
         st.session_state.pinned_messages.append(idx)
 
 
-REPORT_PLOTS = [("bar", "Bar plot"), ("bubble", "Bubble chart"), ("upset", "UpSet plot"),
-                ("running_score", "Enrichment plot"), ("dendrogram", "Dendrogram"),
-                ("similarity", "Similarity clusters"), ("cnetplot", "Concept network")]
+REPORT_PLOTS = [("bar", "Bar plot", "term"), ("bubble", "Bubble chart", "term"), ("upset", "UpSet plot", "term"),
+                ("running_score", "Enrichment plot", "term"), ("dendrogram", "Dendrogram", "cluster"),
+                ("similarity", "Similarity clusters", "cluster"), ("cnetplot", "Concept network", "net")]
 
 
 def _report_figures(message_idx: int, envelope: Dict) -> Dict[str, list]:
     """Figures of a response for the HTML report: the version configured in a plot dialog if the
     user opened one, otherwise the default figure shown on the card."""
     stored = st.session_state.get("report_figs", {})
+    stored_clusters = st.session_state.get("report_clusters", {})
     sid = st.session_state.current_session["id"]
     out = {}
     for sec, key, suffix in (("ora", "enrichment_df", f"_{message_idx}"), ("gsea", "gsea_df", f"_{message_idx}_gsea")):
@@ -3309,8 +3370,9 @@ def _report_figures(message_idx: int, envelope: Dict) -> Dict[str, list]:
         if df is None or df.empty:
             continue
         figs = []
-        for plot_id, title in REPORT_PLOTS:
+        for plot_id, title, panel in REPORT_PLOTS:
             fig, custom = stored.get((f"{sid}{suffix}", plot_id)), True
+            clusters = stored_clusters.get((f"{sid}{suffix}", plot_id))
             if plot_id == "running_score":
                 pdata = envelope.get("gsea_plot_data") or {}
                 if sec != "gsea" or not pdata.get("terms"):
@@ -3321,11 +3383,37 @@ def _report_figures(message_idx: int, envelope: Dict) -> Dict[str, list]:
                                                                  name.split("::", 1)[1], t["nes"], t["fdr"])
                     custom = False
             elif fig is None:
-                fig, custom = _create_full_figure(plot_id, df.sort_values("adjusted_p_value").head(50)), False
+                res = _create_full_figure(plot_id, df.sort_values("adjusted_p_value").head(50),
+                                          with_clusters=plot_id in ("dendrogram", "similarity", "cnetplot"),
+                                          full_labels=True)
+                fig, clusters = res if isinstance(res, tuple) else (res, None)
+                custom = False
             if fig is not None:
-                figs.append((title, go.Figure(fig), custom))
+                fig = _fit_labels(go.Figure(fig))
+                if plot_id == "cnetplot":  # node labels sit beside the nodes: pad the x range so none is cut
+                    xs = [x for t in fig.data if t.x is not None for x in t.x if x is not None]
+                    if xs:
+                        pad = 0.25 * ((max(xs) - min(xs)) or 1)
+                        fig.update_xaxes(range=[min(xs) - pad, max(xs) + pad], autorange=False)
+                if plot_id == "upset" and not custom:  # room for the wrapped set labels
+                    fig.update_layout(height=760)
+                figs.append((title, fig, custom,
+                             _cluster_table(clusters, bottom_up=plot_id == "dendrogram"), panel))
         out[sec] = figs
     return out
+
+
+def _cluster_table(clusters, bottom_up: bool = False) -> Optional[pd.DataFrame]:
+    """Term -> cluster table for a clustering plot, clusters numbered top to bottom as drawn
+    (bottom_up: the plot draws its first leaf at the bottom, e.g. the dendrogram)."""
+    if not clusters or not clusters[0]:
+        return None
+    term_data, names = clusters
+    items = list(term_data.items())
+    if bottom_up:
+        items = [(c, terms[::-1]) for c, terms in items[::-1]]
+    return pd.DataFrame([{"Cluster": i, "Cluster label": names.get(c, ""), "Term": t}
+                         for i, (c, terms) in enumerate(items, 1) for t in terms])
 
 
 def _report_tool_defaults() -> Dict[str, Dict]:
@@ -3491,8 +3579,6 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
             reasoning_steps = envelope.get("reasoning_steps", []) if envelope else []
             confidence = envelope.get("confidence_score", 0) if envelope else 0
 
-
-
             def summarize_observation(obs_text: str, tool_name: str) -> tuple:
                 """Generate a clear assessment of the tool result. Returns (summary, status)"""
                 obs_lower = obs_text.lower()
@@ -3594,7 +3680,7 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
 
             # === SUMMARY METRICS ===
             st.markdown("#### 📊 Execution Summary")
-            col1, col2, col3= st.columns(3)
+            col1, col2, col3 = st.columns(3)
             with col1:
                 st.metric("⏱️ Time", f"{exec_time:.2f}s" if exec_time else "N/A")
             with col2:
@@ -3902,7 +3988,8 @@ def _render_single_gene_card(gene_info):
                             else:
                                 go_table_data.append({"Term": str(t)})
                         if go_table_data:
-                            st.dataframe(_style_df(pd.DataFrame(go_table_data)), use_container_width=True, hide_index=True)
+                            st.dataframe(_style_df(pd.DataFrame(go_table_data)), use_container_width=True,
+                                         hide_index=True)
                     else:
                         st.caption(f"No {label} terms found")
 
@@ -3965,6 +4052,7 @@ def _add_relevance_scores(papers: List[Dict], query: str) -> List[Dict]:
                 p["relevance_details"] = "" if rating else "not scored - treated as low relevance"
 
     return papers
+
 
 def render_literature_card(papers: List[Dict], query: str = "", card_key: str = ""):
     """Render literature results with table with relevance, and expandable details"""
@@ -4506,81 +4594,91 @@ def render_overview_page():
     """)
 
     def _make_icon_bar():
-        fig = go.Figure(go.Bar(x=[8,6,5,4,3], y=["A","B","C","D","E"], orientation='h',
-            marker=dict(color=[8,6,5,4,3], colorscale='Viridis', showscale=False)))
-        fig.update_layout(height=180, width=180, margin=dict(l=0,r=0,t=0,b=0), showlegend=False,
-            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-            xaxis=dict(visible=False), yaxis=dict(visible=False))
+        fig = go.Figure(go.Bar(x=[8, 6, 5, 4, 3], y=["A", "B", "C", "D", "E"], orientation='h',
+                               marker=dict(color=[8, 6, 5, 4, 3], colorscale='Viridis', showscale=False)))
+        fig.update_layout(height=180, width=180, margin=dict(l=0, r=0, t=0, b=0), showlegend=False,
+                          paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+                          xaxis=dict(visible=False), yaxis=dict(visible=False))
         return fig
 
     def _make_icon_bubble():
-        fig = go.Figure(go.Scatter(x=[8,6,5,3.5,2.5], y=[1,2,3,4,5], mode='markers',
-            marker=dict(size=[42,32,26,18,14], color=[8,6,5,3.5,2.5], colorscale='Viridis', showscale=False,
-                        line=dict(width=1, color='#888'))))
-        fig.update_layout(height=180, width=180, margin=dict(l=0,r=0,t=0,b=0), showlegend=False,
-            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-            xaxis=dict(visible=False), yaxis=dict(visible=False))
+        fig = go.Figure(go.Scatter(x=[8, 6, 5, 3.5, 2.5], y=[1, 2, 3, 4, 5], mode='markers',
+                                   marker=dict(size=[42, 32, 26, 18, 14], color=[8, 6, 5, 3.5, 2.5],
+                                               colorscale='Viridis', showscale=False,
+                                               line=dict(width=1, color='#888'))))
+        fig.update_layout(height=180, width=180, margin=dict(l=0, r=0, t=0, b=0), showlegend=False,
+                          paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+                          xaxis=dict(visible=False), yaxis=dict(visible=False))
         return fig
 
     def _make_icon_upset():
-        fig = make_subplots(rows=2, cols=1, row_heights=[0.55,0.45], vertical_spacing=0.02, shared_xaxes=True)
-        fig.add_trace(go.Bar(x=[0,1,2,3,4], y=[15,10,8,5,3], marker=dict(color='#3b82f6'), width=0.5, showlegend=False), row=1, col=1)
-        mat = [[1,0,1,1,0],[0,1,1,0,1],[0,0,0,1,1]]
+        fig = make_subplots(rows=2, cols=1, row_heights=[0.55, 0.45], vertical_spacing=0.02, shared_xaxes=True)
+        fig.add_trace(
+            go.Bar(x=[0, 1, 2, 3, 4], y=[15, 10, 8, 5, 3], marker=dict(color='#3b82f6'), width=0.5, showlegend=False),
+            row=1, col=1)
+        mat = [[1, 0, 1, 1, 0], [0, 1, 1, 0, 1], [0, 0, 0, 1, 1]]
         for ri in range(3):
             for ci in range(5):
-                fig.add_trace(go.Scatter(x=[ci],y=[ri],mode='markers',
-                    marker=dict(size=10 if mat[ri][ci] else 5, color='#1e293b' if mat[ri][ci] else '#ddd'),
-                    showlegend=False), row=2, col=1)
+                fig.add_trace(go.Scatter(x=[ci], y=[ri], mode='markers',
+                                         marker=dict(size=10 if mat[ri][ci] else 5,
+                                                     color='#1e293b' if mat[ri][ci] else '#ddd'),
+                                         showlegend=False), row=2, col=1)
         for ci in range(5):
             a = [r for r in range(3) if mat[r][ci]]
             if len(a) > 1:
-                fig.add_trace(go.Scatter(x=[ci,ci],y=[min(a),max(a)],mode='lines',
-                    line=dict(color='#1e293b',width=2),showlegend=False), row=2, col=1)
-        fig.update_layout(height=180, width=180, margin=dict(l=0,r=0,t=0,b=0), showlegend=False,
-            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
-        fig.update_xaxes(visible=False); fig.update_yaxes(visible=False)
+                fig.add_trace(go.Scatter(x=[ci, ci], y=[min(a), max(a)], mode='lines',
+                                         line=dict(color='#1e293b', width=2), showlegend=False), row=2, col=1)
+        fig.update_layout(height=180, width=180, margin=dict(l=0, r=0, t=0, b=0), showlegend=False,
+                          paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)')
+        fig.update_xaxes(visible=False);
+        fig.update_yaxes(visible=False)
         return fig
 
     def _make_icon_dendrogram():
         fig = go.Figure()
         # Simplified tree shape
         branches = [
-            ([5,5,15,15],[0,0.3,0.3,0]),    # left pair
-            ([25,25,35,35],[0,0.4,0.4,0]),   # right pair
-            ([10,10,30,30],[0.3,1.0,1.0,0.4]), # top merge
-            ([45,45,20,20],[0,0.6,0.6,1.0]),   # far right merges in
+            ([5, 5, 15, 15], [0, 0.3, 0.3, 0]),  # left pair
+            ([25, 25, 35, 35], [0, 0.4, 0.4, 0]),  # right pair
+            ([10, 10, 30, 30], [0.3, 1.0, 1.0, 0.4]),  # top merge
+            ([45, 45, 20, 20], [0, 0.6, 0.6, 1.0]),  # far right merges in
         ]
         for xs, ys in branches:
             fig.add_trace(go.Scatter(x=xs, y=ys, mode='lines', line=dict(color='#3b82f6', width=2.5), showlegend=False))
-        fig.update_layout(height=180, width=180, margin=dict(l=0,r=0,t=0,b=0), showlegend=False,
-            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-            xaxis=dict(visible=False), yaxis=dict(visible=False))
+        fig.update_layout(height=180, width=180, margin=dict(l=0, r=0, t=0, b=0), showlegend=False,
+                          paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+                          xaxis=dict(visible=False), yaxis=dict(visible=False))
         return fig
 
     def _make_icon_heatmap():
         import numpy as np
         np.random.seed(7)
-        z = np.array([[1,.7,.2,.15],[.7,1,.25,.1],[.2,.25,1,.6],[.15,.1,.6,1]])
+        z = np.array([[1, .7, .2, .15], [.7, 1, .25, .1], [.2, .25, 1, .6], [.15, .1, .6, 1]])
         fig = go.Figure(go.Heatmap(z=z, colorscale='Reds', showscale=False))
-        fig.update_layout(height=180, width=180, margin=dict(l=0,r=0,t=0,b=0), showlegend=False,
-            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-            xaxis=dict(visible=False), yaxis=dict(visible=False))
+        fig.update_layout(height=180, width=180, margin=dict(l=0, r=0, t=0, b=0), showlegend=False,
+                          paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+                          xaxis=dict(visible=False), yaxis=dict(visible=False))
         return fig
 
     def _make_icon_cnetplot():
         fig = go.Figure()
-        edges = [(0.3,0.8,0.15,0.5),(0.3,0.8,0.35,0.45),(0.3,0.8,0.45,0.55),
-                 (0.75,0.75,0.65,0.45),(0.75,0.75,0.85,0.5),
-                 (0.5,0.2,0.4,0.4),(0.5,0.2,0.6,0.35)]
-        for x1,y1,x2,y2 in edges:
-            fig.add_trace(go.Scatter(x=[x1,x2],y=[y1,y2],mode='lines',line=dict(color='#bbb',width=1),showlegend=False))
-        fig.add_trace(go.Scatter(x=[0.3,0.75,0.5],y=[0.8,0.75,0.2],mode='markers',
-            marker=dict(size=16,symbol='triangle-up',color=['#e74c3c','#3498db','#2ecc71'],line=dict(width=1,color='#333')),showlegend=False))
-        fig.add_trace(go.Scatter(x=[0.15,0.35,0.45,0.65,0.85,0.4,0.6],y=[0.5,0.45,0.55,0.45,0.5,0.4,0.35],mode='markers',
-            marker=dict(size=7,color=['#e74c3c','#e74c3c','#e74c3c','#3498db','#3498db','#2ecc71','#2ecc71']),showlegend=False))
-        fig.update_layout(height=180, width=180, margin=dict(l=0,r=0,t=0,b=0), showlegend=False,
-            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-            xaxis=dict(visible=False, range=[-0.05,1.05]), yaxis=dict(visible=False, range=[0.05,0.95]))
+        edges = [(0.3, 0.8, 0.15, 0.5), (0.3, 0.8, 0.35, 0.45), (0.3, 0.8, 0.45, 0.55),
+                 (0.75, 0.75, 0.65, 0.45), (0.75, 0.75, 0.85, 0.5),
+                 (0.5, 0.2, 0.4, 0.4), (0.5, 0.2, 0.6, 0.35)]
+        for x1, y1, x2, y2 in edges:
+            fig.add_trace(
+                go.Scatter(x=[x1, x2], y=[y1, y2], mode='lines', line=dict(color='#bbb', width=1), showlegend=False))
+        fig.add_trace(go.Scatter(x=[0.3, 0.75, 0.5], y=[0.8, 0.75, 0.2], mode='markers',
+                                 marker=dict(size=16, symbol='triangle-up', color=['#e74c3c', '#3498db', '#2ecc71'],
+                                             line=dict(width=1, color='#333')), showlegend=False))
+        fig.add_trace(go.Scatter(x=[0.15, 0.35, 0.45, 0.65, 0.85, 0.4, 0.6], y=[0.5, 0.45, 0.55, 0.45, 0.5, 0.4, 0.35],
+                                 mode='markers',
+                                 marker=dict(size=7,
+                                             color=['#e74c3c', '#e74c3c', '#e74c3c', '#3498db', '#3498db', '#2ecc71',
+                                                    '#2ecc71']), showlegend=False))
+        fig.update_layout(height=180, width=180, margin=dict(l=0, r=0, t=0, b=0), showlegend=False,
+                          paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+                          xaxis=dict(visible=False, range=[-0.05, 1.05]), yaxis=dict(visible=False, range=[0.05, 0.95]))
         return fig
 
     def _make_icon_enrichment():
@@ -4590,9 +4688,9 @@ def render_overview_page():
         fig = go.Figure(go.Scatter(x=x, y=es, mode='lines', line=dict(color='#2ecc71', width=4)))
         for t in ticks:
             fig.add_shape(type='line', x0=t, x1=t, y0=-0.25, y1=-0.08, line=dict(color='#888', width=2))
-        fig.update_layout(height=180, width=180, margin=dict(l=0,r=0,t=0,b=0), showlegend=False,
-            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-            xaxis=dict(visible=False), yaxis=dict(visible=False, range=[-0.3, 0.9]))
+        fig.update_layout(height=180, width=180, margin=dict(l=0, r=0, t=0, b=0), showlegend=False,
+                          paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+                          xaxis=dict(visible=False), yaxis=dict(visible=False, range=[-0.3, 0.9]))
         return fig
 
     plot_config = {'displayModeBar': False, 'staticPlot': True}
@@ -4629,12 +4727,12 @@ def render_overview_page():
             ("Dendrogram", _make_icon_dendrogram,
              "A **Jaccard similarity matrix** is computed pairwise between all enriched term gene sets: "
              "J(A,B) = |A∩B| / |A∪B|. This is converted to a distance matrix (1 − J) and clustered using "
-             "**Ward's minimum variance linkage** (scipy `linkage`). The resulting hierarchy is rendered "
+             "**average linkage** (UPGMA, scipy `linkage`). The resulting hierarchy is rendered "
              "as a tree — terms sharing more genes merge at lower branch heights. Leaf order follows the "
              "optimal ordering from `leaves_list`."),
             ("Similarity Heatmap", _make_icon_heatmap,
              "The same **Jaccard similarity matrix** is displayed as a heatmap, with rows and columns "
-             "reordered by **Ward's hierarchical clustering**. A colored sidebar shows cluster assignments "
+             "reordered by **average-linkage hierarchical clustering**. A colored sidebar shows cluster assignments "
              "(via `fcluster` with `maxclust` criterion). Each cluster is annotated with **keyword summaries** "
              "extracted from term names using word frequency analysis (stopword-filtered). "
              "Design inspired by the R package "
@@ -4642,7 +4740,7 @@ def render_overview_page():
         ]),
         ("Network", [
             ("Concept Network", _make_icon_cnetplot,
-             "Terms are clustered using **Ward's linkage** on the Jaccard distance matrix, then each cluster "
+             "Terms are clustered using **average linkage** on the Jaccard distance matrix, then each cluster "
              "is represented as a single triangle node (▲) named by its top keywords. Individual genes (●) are "
              "connected to their parent cluster. A **spring-force layout** (NetworkX `spring_layout`, k=0.5, "
              "30 iterations) positions nodes so that same-cluster elements group spatially. Genes appearing "
@@ -5284,6 +5382,7 @@ def render_chat_interface():
         with st.status("🔄 Analyzing...", expanded=True) as status:
             def _cb(msg):
                 status.write(msg)
+
             st.session_state["_progress_cb"] = _cb
             result = handle_user_query(query)
             st.session_state["_progress_cb"] = None

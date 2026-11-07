@@ -161,7 +161,7 @@ class GeneInfoInput(BaseModel):
 class DbRetrieveInput(BaseModel):
     query: str = Field(description="Search query - gene symbols, term names, IDs, or keywords")
     libraries: Optional[str] = Field(default=None, description="Comma-separated Enrichr library names"
-                                     "Names are exact — do not guess library names")
+                                                               "Names are exact — do not guess library names")
     task: str = Field(default="auto",
                       description=(
                           "Task type: "
@@ -182,11 +182,13 @@ class DbRetrieveInput(BaseModel):
 
 class EnrichmentInput(BaseModel):
     genes: str = Field(default="", description="Comma-separated gene symbols (minimum 4 genes). "
-                       "Leave empty when selecting genes from an uploaded table with table_filter.")
-    libraries: Optional[str] = Field(default=None, description="Comma-separated Enrichr libraries to test. None = default set.")
+                                               "Leave empty when selecting genes from an uploaded table with table_filter.")
+    libraries: Optional[str] = Field(default=None,
+                                     description="Comma-separated Enrichr libraries to test. None = default set.")
     p_value_threshold: float = Field(default=0.05, description="Adjusted p-value cutoff for significance")
     top_n: Optional[int] = Field(default=None, description="Max terms per library. None = all significant terms.")
-    table_name: Optional[str] = Field(default=None, description="Uploaded table to take genes from. None = most recent upload.")
+    table_name: Optional[str] = Field(default=None,
+                                      description="Uploaded table to take genes from. None = most recent upload.")
     gene_column: Optional[str] = Field(default=None, description="Gene symbol column of the uploaded table.")
     table_filter: Optional[str] = Field(default=None, description=(
         "pandas query selecting genes from the uploaded table, e.g. 'padj < 0.05 and log2FoldChange > 1'. "
@@ -198,7 +200,8 @@ class GSEAInput(BaseModel):
     score_column: Optional[str] = Field(default=None, description=(
         "Column to rank genes by (e.g. DESeq2 'stat', limma 't', or a logFC). "
         "Leave empty to build sign(logFC) * -log10(p) from logfc_column and pvalue_column."))
-    logfc_column: Optional[str] = Field(default=None, description="Log fold-change column (used when score_column is empty).")
+    logfc_column: Optional[str] = Field(default=None,
+                                        description="Log fold-change column (used when score_column is empty).")
     pvalue_column: Optional[str] = Field(default=None, description="P-value column (used when score_column is empty).")
     table_name: Optional[str] = Field(default=None, description="Uploaded table to use. None = most recent upload.")
     libraries: Optional[str] = Field(default=None, description="Comma-separated Enrichr libraries. None = default set.")
@@ -789,7 +792,6 @@ Distinguish clearly between strong conclusions supported by data, plausible mech
 - For get_gene_info, be selective. Do not look up only one or every gene in a list if you have hundreds of them. Focus on the most 
   biologically informative or ambiguous genes that would change interpretation."""
 
-
 # Legacy AgentExecutor format — wraps SYSTEM_PROMPT with template variables
 REACT_PROMPT = SYSTEM_PROMPT + """
 
@@ -811,7 +813,6 @@ Begin.
 
 Question: {input}
 Thought:{agent_scratchpad}"""
-
 
 # ===============================================================================
 # CITATION GUARD - deterministic, post-generation
@@ -844,7 +845,9 @@ def _norm_paper_title(s: str) -> str:
 
 def _tidy(text: str) -> str:
     """Clean up punctuation left behind after removing a citation."""
-    text = re.sub(r"\(\s*[,;]?\s*\)", "", text)      # empty parens
+    text = re.sub(r"\(\s*[,;]?\s*\)", "", text)  # empty parens
+    text = re.sub(r"\[\s*[,;]?\s*\]", "", text)  # empty brackets
+    text = re.sub(r"\s*[,;]\s*([\])])", r"\1", text)  # dangling separator before ) or ]
     text = re.sub(r"[ \t]{2,}", " ", text)
     text = re.sub(r"\s+([.,;:])", r"\1", text)
     text = re.sub(r"\.\s*\.", ".", text)
@@ -898,10 +901,10 @@ def verify_citations(text: str, papers: List[Dict]) -> tuple:
         for line in out.split("\n"):
             is_list_item = re.match(r"^\s*(?:[-*•]|\d+[.)])\s", line) is not None
             looks_like_reference = (
-                "et al." in line
-                or re.search(r"\(\d{4}\)", line)
-                or _REF_LINE_RE.match(line)
-                or _BY_AUTHOR_YEAR_RE.search(line)
+                    "et al." in line
+                    or re.search(r"\(\d{4}\)", line)
+                    or _REF_LINE_RE.match(line)
+                    or _BY_AUTHOR_YEAR_RE.search(line)
             )
             # a bibliography entry: drop the whole line, quoted title or not
             if is_list_item and looks_like_reference:
@@ -921,9 +924,7 @@ def verify_citations(text: str, papers: List[Dict]) -> tuple:
 
     n_removed = len(removed_pmids) + len(removed_author_years) + len(removed_refs)
     if n_removed:
-        out = _tidy(out)
-        out += (f"\n\n> *{n_removed} citation(s) were removed by the citation guard: they did not "
-                f"correspond to any paper retrieved by search_literature in this run.*")
+        out = _tidy(out)  # removals are logged and kept in envelope.citation_guard, not shown to the user
 
     return out, {
         "checked": True,
@@ -1018,11 +1019,11 @@ def _make_no_tool_guard(state=None):
         if any(type(m).__name__ == "ToolMessage" for m in messages):
             return None
         if state["bounced"]:
-            return None                      # one bounce only, never loop
+            return None  # one bounce only, never loop
 
         low = _current_user_request(messages).lower()
         if not any(ph in low for ph in _EXPLICIT_ANALYSIS_PHRASES):
-            return None                      # no analysis was requested -> zero tools is correct
+            return None  # no analysis was requested -> zero tools is correct
 
         state["bounced"] = True
         logger.info("no-tool guard: explicit analysis requested but no tool called - bouncing once")
@@ -1428,7 +1429,7 @@ class ReasoningEngine:
 
         context_parts.append("\n=== END PREVIOUS RESULTS ===\n")
         return "\n".join(context_parts)
-    
+
     def _store_envelope_in_memory(self, query: str, envelope_dict: Dict):
         """Store envelope for future follow-up questions"""
         self.previous_envelopes.append({
@@ -1895,8 +1896,8 @@ class ReasoningEngine:
                 # search_literature calls), so without this the table still showed Low and
                 # unscored papers the agent never reasoned over.
                 _lit = keep_relevant_papers(result["literature"])
-                self.envelope.literature = _lit[:20]              # top 20 for display
-                self.envelope.full_literature_results = _lit      # all relevant papers
+                self.envelope.literature = _lit[:20]  # top 20 for display
+                self.envelope.full_literature_results = _lit  # all relevant papers
 
             # Database - COMPLETE results (merge multiple calls into single structure)
             if result.get("db_results"):

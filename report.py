@@ -9,6 +9,7 @@ short methodology section built from the tool calls the agent actually made.
 import ast
 import html
 import re
+import urllib.parse
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 
@@ -28,32 +29,157 @@ TOOL_LABELS = {
 }
 
 CSS = """
-:root { --ink:#1e293b; --muted:#64748b; --line:#e2e8f0; --accent:#3b82f6; --accent2:#8b5cf6; }
+:root { --bg:#f5f7fb; --ink:#0f172a; --muted:#64748b; --line:#e5e7eb; --card:#fff;
+        --brand1:#6366f1; --brand2:#8b5cf6; --brand3:#06b6d4;
+        --term:#3b82f6; --cluster:#8b5cf6; --net:#06b6d4; }
 * { box-sizing: border-box; }
-body { margin:0; background:#f8fafc; color:var(--ink); font:15px/1.6 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
-.page { max-width: 1100px; margin: 0 auto; padding: 0 24px 48px; }
-header { display:flex; align-items:center; gap:18px; padding:22px 24px; margin:0 -24px 28px;
-         background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 100%); color:#f1f5f9; }
-header img { width:64px; height:64px; border-radius:14px; object-fit:cover; }
-header .name { font-size:28px; font-weight:800; letter-spacing:.3px;
-               background:linear-gradient(135deg,#93c5fd,#c4b5fd,#67e8f9); -webkit-background-clip:text; background-clip:text; color:transparent; }
-header .sub { color:#cbd5e1; font-size:13px; }
-h2 { font-size:20px; margin:34px 0 12px; padding-bottom:6px; border-bottom:2px solid var(--line); }
-h3 { font-size:16px; margin:22px 0 8px; }
-.card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 22px; margin:12px 0; }
-.query { border-left:4px solid var(--accent); }
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+body { margin:0; background:var(--bg); color:var(--ink);
+       font:15px/1.65 Inter, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+a { color:var(--brand1); }
+
+/* hero */
+.hero { position:relative; overflow:hidden; color:#e2e8f0;
+        background: radial-gradient(900px 300px at 10% -20%, rgba(99,102,241,.55), transparent 60%),
+                    radial-gradient(700px 260px at 90% 0%, rgba(6,182,212,.35), transparent 60%),
+                    linear-gradient(135deg,#0b1020 0%,#151a3a 55%,#1e1b4b 100%); }
+.hero::after { content:""; position:absolute; inset:0; opacity:.12; pointer-events:none;
+               background-image: linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px),
+                                 linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px);
+               background-size: 36px 36px; mask-image: linear-gradient(to bottom, #000, transparent); }
+.hero-in { position:relative; z-index:1; max-width:1320px; margin:0 auto; padding:34px 32px 30px;
+           display:flex; align-items:center; gap:22px; }
+.hero img { width:78px; height:78px; border-radius:18px; object-fit:cover;
+            box-shadow:0 0 0 1px rgba(255,255,255,.15), 0 10px 30px rgba(99,102,241,.45); }
+.wordmark { font-size:34px; font-weight:800; letter-spacing:.2px; line-height:1.1;
+            background:linear-gradient(90deg,#a5b4fc,#c4b5fd 45%,#67e8f9); -webkit-background-clip:text;
+            background-clip:text; color:transparent; }
+.tagline { color:#cbd5e1; font-size:14px; margin-top:2px; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.chip { font-size:12px; padding:4px 10px; border-radius:999px; color:#e0e7ff;
+        background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); }
+
+/* layout + floating table of contents */
+.layout { max-width:1320px; margin:0 auto; padding:28px 32px 10px; display:grid;
+          grid-template-columns: 240px minmax(0,1fr); gap:32px; }
+.toc { position:sticky; top:20px; align-self:start; max-height:calc(100vh - 40px); overflow:auto;
+       background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 10px;
+       box-shadow:0 1px 2px rgba(15,23,42,.04); }
+.toc-title { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+             color:var(--muted); padding:2px 10px 8px; }
+.toc a { display:block; text-decoration:none; color:#334155; font-size:13.5px; padding:6px 10px;
+         border-left:3px solid transparent; border-radius:0 8px 8px 0; transition:all .15s; }
+.toc a.l2 { font-size:12.5px; padding:4px 10px 4px 24px; color:var(--muted); }
+.toc a:hover { background:#f1f5f9; color:var(--ink); }
+.toc a.active { border-left-color:var(--brand1); background:#eef2ff; color:#3730a3; font-weight:600; }
+
+/* sections */
+section { margin:0 0 34px; }
+.eyebrow { font-size:11px; font-weight:700; letter-spacing:.14em; color:var(--brand1); text-transform:uppercase; }
+h2 { font-size:22px; margin:2px 0 14px; letter-spacing:-.01em; }
+h3 { font-size:16px; margin:20px 0 8px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 24px;
+        box-shadow:0 1px 2px rgba(15,23,42,.04), 0 6px 24px rgba(15,23,42,.04); }
+.query { border-left:4px solid var(--brand1); font-size:16px; }
+.response h2, .response h3 { margin-top:18px; }
+.response table, .response th, .response td { border:1px solid var(--line); }
 .meta { color:var(--muted); font-size:13px; }
-.scroll { max-height:520px; overflow:auto; border:1px solid var(--line); border-radius:10px; }
-table { border-collapse:collapse; width:100%; font-size:13px; background:#fff; }
-th, td { padding:6px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
-th { background:#f1f5f9; position:sticky; top:0; }
-.plot { background:#fff; border:1px solid var(--line); border-radius:12px; padding:10px; margin:14px 0; overflow-x:auto; }
-.plot .cap { font-weight:600; margin:2px 6px 6px; }
-.plot .note { color:var(--muted); font-weight:400; font-size:12px; }
-.methods li { margin:4px 0; }
-.methods code, .response code { background:#f1f5f9; padding:1px 5px; border-radius:4px; font-size:12.5px; }
-footer { margin-top:40px; color:var(--muted); font-size:12px; text-align:center; }
+
+/* at a glance */
+.tiles { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:12px; margin-bottom:30px; }
+.tile { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; position:relative; overflow:hidden; }
+.tile::before { content:""; position:absolute; inset:0 auto 0 0; width:4px;
+                background:linear-gradient(var(--brand1),var(--brand3)); }
+.tile .v { font-size:24px; font-weight:800; }
+.tile .k { font-size:12px; color:var(--muted); }
+
+/* tables */
+.scroll { max-height:380px; overflow:auto; border:1px solid var(--line); border-radius:12px; background:#fff; }
+table { border-collapse:collapse; width:100%; font-size:12px; line-height:1.45; }
+th, td { padding:5px 10px; border-bottom:1px solid #eef0f4; text-align:left; vertical-align:top; }
+th { background:#f8fafc; position:sticky; top:0; font-weight:600; color:#334155; z-index:1; }
+tbody tr:nth-child(even) { background:#fbfcfe; }
+tbody tr:hover { background:#eef2ff; }
+
+/* panels + plots */
+.panel { margin:22px 0 8px; }
+.panel-h { display:inline-flex; align-items:center; gap:8px; font-weight:700; font-size:14px;
+           padding:6px 14px; border-radius:999px; color:#fff; margin-bottom:10px; }
+.panel-term .panel-h { background:var(--term); }  .panel-term .plot { border-top:3px solid var(--term); }
+.panel-cluster .panel-h { background:var(--cluster); }  .panel-cluster .plot { border-top:3px solid var(--cluster); }
+.panel-net .panel-h { background:var(--net); }  .panel-net .plot { border-top:3px solid var(--net); }
+.plot { background:var(--card); border:1px solid var(--line); border-radius:14px; margin:12px 0 16px;
+        box-shadow:0 1px 2px rgba(15,23,42,.04), 0 6px 24px rgba(15,23,42,.04); }
+.plot-h { display:flex; align-items:center; gap:10px; padding:12px 16px; border-bottom:1px solid #eef0f4; }
+.plot-h .t { font-weight:700; }
+.badge { font-size:11px; padding:2px 8px; border-radius:999px; background:#fef3c7; color:#92400e; }
+.plot-h .dl { margin:0 0 0 auto; }
+.plot-b { padding:8px 10px; overflow-x:auto; }
+.plot-b > div { max-width:860px; margin:0 auto; }
+.plot details { margin:0 16px 14px; }
+.plot summary { cursor:pointer; font-weight:600; font-size:13.5px; padding:6px 0; }
+
+/* buttons */
+.dl { display:flex; gap:8px; margin:8px 0; flex-wrap:wrap; }
+.dl a, .dl button { font-family:inherit; font-size:12px; font-weight:600; line-height:1; padding:7px 12px; border-radius:8px; border:1px solid #c7d2fe;
+                    background:#eef2ff; color:#3730a3; text-decoration:none; cursor:pointer; }
+.dl a:hover, .dl button:hover { background:var(--brand1); border-color:var(--brand1); color:#fff; }
+
+/* methods timeline */
+.steps { list-style:none; margin:0; padding:0; }
+.steps li { position:relative; padding:0 0 16px 44px; }
+.steps li::before { content:""; position:absolute; left:15px; top:30px; bottom:0; width:2px; background:#e0e7ff; }
+.steps li:last-child::before { display:none; }
+.steps .num { position:absolute; left:0; top:0; width:32px; height:32px; border-radius:50%; display:grid; place-items:center;
+              font-weight:700; font-size:13px; color:#fff; background:linear-gradient(135deg,var(--brand1),var(--brand2)); }
+.steps .tool { font-weight:700; }
+.args { margin-top:4px; display:flex; flex-wrap:wrap; gap:6px; }
+code { background:#f1f5f9; padding:2px 6px; border-radius:6px; font-size:12.5px; }
+.defaults { margin-top:4px; font-size:12.5px; color:var(--muted); }
+.facts { margin:14px 0 0; padding-left:18px; }
+.facts li { margin:5px 0; }
+
+/* footer */
+footer { max-width:1320px; margin:10px auto 0; padding:0 32px 40px; }
+.cite { color:var(--muted); font-size:12px; line-height:1.6; border-top:1px solid var(--line); padding-top:14px; }
+.cite b { color:#475569; }  .cite a { color:var(--muted); }
+.totop { position:fixed; right:22px; bottom:22px; width:42px; height:42px; border-radius:50%; display:grid;
+         place-items:center; text-decoration:none; color:#fff; font-size:18px;
+         background:linear-gradient(135deg,var(--brand1),var(--brand2)); box-shadow:0 8px 20px rgba(99,102,241,.35); }
+
+@media (max-width: 980px) {
+  .layout { grid-template-columns:1fr; padding:20px 16px; }
+  .toc { position:static; max-height:none; }
+  .hero-in { padding:24px 16px; } footer { padding:0 16px 30px; }
+}
+@media print {
+  .toc, .totop, .dl { display:none !important; }
+  .layout { display:block; } .hero { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
 """
+
+CITATION = ("Koumadorakis, D. E., Exarchos, T. P., Vlamos, P., & Vrahatis, A. G. (2026). Enrich.AI: An agentic AI "
+            "platform for interactive gene set enrichment analysis and biological interpretation. <i>bioRxiv</i>. "
+            '<a href="https://doi.org/10.64898/2026.09.29.755561">https://doi.org/10.64898/2026.09.29.755561</a>')
+
+PANELS = [("term", "📊 Term Analysis"), ("cluster", "🧬 Clustering"), ("net", "🔬 Networks")]
+
+SCROLLSPY = """
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
+  var byId = {}; links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+  var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+                     .filter(Boolean);
+  function update() {
+    var y = window.scrollY + 120, current = targets[0];
+    targets.forEach(function (t) { if (t.getBoundingClientRect().top + window.scrollY <= y) current = t; });
+    links.forEach(function (a) { a.classList.remove('active'); });
+    if (current && byId[current.id]) byId[current.id].classList.add('active');
+  }
+  window.addEventListener('scroll', update, {passive: true}); update();
+})();
+</script>"""
 
 
 def _esc(x) -> str:
@@ -64,8 +190,10 @@ def _md(text: str) -> str:
     return markdown.markdown(text or "", extensions=["tables", "fenced_code", "sane_lists"])
 
 
-def _table(df: pd.DataFrame) -> str:
-    """Escaped HTML table (link column rendered as links)."""
+def _table(df: pd.DataFrame, name: str = "table") -> str:
+    """Escaped HTML table (link column rendered as links) with a CSV download button."""
+    csv = "data:text/csv;charset=utf-8," + urllib.parse.quote(df.to_csv(index=False))
+    button = f'<div class="dl"><a href="{csv}" download="{_esc(name)}.csv">⬇ Download table (CSV)</a></div>'
     rows = []
     for _, r in df.iterrows():
         cells = []
@@ -77,7 +205,7 @@ def _table(df: pd.DataFrame) -> str:
                 cells.append(f"<td>{_esc(v)}</td>")
         rows.append("<tr>" + "".join(cells) + "</tr>")
     head = "".join(f"<th>{_esc(c)}</th>" for c in df.columns)
-    return f'<div class="scroll"><table><thead><tr>{head}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
+    return button + f'<div class="scroll"><table><thead><tr>{head}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
 
 
 def tool_calls_from_trace(trace: List[str]) -> List[Tuple[str, Dict]]:
@@ -145,38 +273,38 @@ def _gene_html(gene_info) -> str:
 
 
 def _methods_html(envelope: Dict, tool_defaults: Dict[str, Dict], model: str) -> str:
-    items = []
     calls = tool_calls_from_trace(envelope.get("reasoning_trace") or envelope.get("trace"))
     if calls:
         steps = []
         for i, (tool, args) in enumerate(calls, 1):
             defaults = tool_defaults.get(tool, {})
             given = {k: v for k, v in args.items() if v not in (None, "")}
-            if tool in ("run_enrichment_analysis",) and len(str(given.get("genes", ""))) > 120:
+            if tool == "run_enrichment_analysis" and len(str(given.get("genes", ""))) > 120:
                 given["genes"] = f"{len(str(given['genes']).split(','))} genes"
-            shown = ", ".join(f"<code>{_esc(k)}={_esc(v)}</code>" for k, v in given.items()) or "no arguments"
+            shown = "".join(f"<code>{_esc(k)}={_esc(v)}</code>" for k, v in given.items()) or \
+                "<span class='meta'>no arguments</span>"
             dflt = ", ".join(f"<code>{_esc(k)}={_esc(v)}</code>" for k, v in defaults.items()
                              if k not in given and v not in (None, ""))
-            steps.append(f"<li><b>{i}. {_esc(TOOL_LABELS.get(tool, tool))}</b> — {shown}"
-                         + (f'<br><span class="meta">defaults: {dflt}</span>' if dflt else "") + "</li>")
-        items.append(f"<li>Tools run by the agent, in order:<ol style='list-style:none;padding-left:8px'>"
-                     f"{''.join(steps)}</ol></li>")
+            steps.append(f'<li><span class="num">{i}</span><div class="tool">{_esc(TOOL_LABELS.get(tool, tool))}</div>'
+                         f'<div class="args">{shown}</div>'
+                         + (f'<div class="defaults">Defaults used: {dflt}</div>' if dflt else "") + "</li>")
+        steps_html = f"<h3>Tools run by the agent</h3><ol class='steps'>{''.join(steps)}</ol>"
     else:
-        items.append("<li>No tools were called; the answer is from the language model alone.</li>")
+        steps_html = "<p>No tools were called; the answer is from the language model alone.</p>"
 
+    facts = []
     ora = envelope.get("full_enrichment_results") or {}
     if envelope.get("enrichment_df") is not None:
-        libs = ora.get("libraries_tested") or sorted(set(envelope["enrichment_df"]["library"]))
-        items.append(
-            "<li><b>Over-representation analysis:</b> Fisher's exact test via the Enrichr API, "
-            "Benjamini–Hochberg adjusted p-values"
-            + (f", {ora['gene_count']} input genes" if ora.get("gene_count") else "")
-            + f". Libraries: {_esc(', '.join(libs))}.</li>")
+        libs = ora.get("libraries_tested") or sorted(set(pd.DataFrame(envelope["enrichment_df"])["library"]))
+        facts.append("<li><b>Over-representation analysis:</b> Fisher's exact test via the Enrichr API, "
+                     "Benjamini–Hochberg adjusted p-values"
+                     + (f", {ora['gene_count']} input genes" if ora.get("gene_count") else "")
+                     + f". Libraries: {_esc(', '.join(libs))}.</li>")
     gsea = envelope.get("full_gsea_results") or {}
     if envelope.get("gsea_df") is not None:
         prm = gsea.get("parameters", {})
-        libs = gsea.get("libraries_tested") or sorted(set(envelope["gsea_df"]["library"]))
-        items.append(
+        libs = gsea.get("libraries_tested") or sorted(set(pd.DataFrame(envelope["gsea_df"])["library"]))
+        facts.append(
             f"<li><b>GSEA:</b> {_esc(gsea.get('method', 'preranked GSEA (gseapy)'))}; ranking metric "
             f"<code>{_esc(gsea.get('ranking_metric', ''))}</code>, {_esc(gsea.get('genes_ranked', ''))} genes ranked; "
             f"gene-set size {_esc(prm.get('min_size', ''))}–{_esc(prm.get('max_size', ''))}, "
@@ -184,78 +312,137 @@ def _methods_html(envelope: Dict, tool_defaults: Dict[str, Dict], model: str) ->
             f"Libraries: {_esc(', '.join(libs))}.</li>")
     if envelope.get("full_literature_results") or envelope.get("literature"):
         q = envelope.get("literature_query", "")
-        items.append("<li><b>Literature:</b> Europe PMC search"
-                     + (f" for <code>{_esc(q)}</code>" if q else "")
+        facts.append("<li><b>Literature:</b> Europe PMC search" + (f" for <code>{_esc(q)}</code>" if q else "")
                      + "; each paper's relevance rated by the same language model.</li>")
     if model:
-        items.append(f"<li><b>Language model:</b> {_esc(model)}.</li>")
+        facts.append(f"<li><b>Language model:</b> {_esc(model)}.</li>")
     if envelope.get("execution_time"):
-        items.append(f"<li><b>Run time:</b> {envelope['execution_time']:.1f} s.</li>")
-    return f'<ul class="methods">{"".join(items)}</ul>'
+        facts.append(f"<li><b>Run time:</b> {envelope['execution_time']:.1f} s.</li>")
+    facts_html = f"<h3>Statistics and data</h3><ul class='facts'>{''.join(facts)}</ul>" if facts else ""
+    return f'<div class="card">{steps_html}{facts_html}</div>'
 
 
 def build_report_html(content: str, envelope: Dict, query: str = "",
-                      figures: Optional[Dict[str, List[Tuple[str, go.Figure, bool]]]] = None,
+                      figures: Optional[Dict[str, List[Tuple]]] = None,
                       tool_defaults: Optional[Dict[str, Dict]] = None, model: str = "",
                       created: str = "", logo_b64: str = "") -> str:
-    """figures: {"ora"|"gsea": [(title, figure, customised_in_app), ...]}"""
+    """figures: {"ora"|"gsea": [(title, figure, customised_in_app, cluster_table_or_None, panel), ...]}
+    panel is one of "term", "cluster", "net"."""
     envelope = envelope or {}
     figures = figures or {}
     plotly_js_done = False
+    n_fig = 0
+    toc, body = [], []
 
-    def fig_html(title, fig, customised):
-        nonlocal plotly_js_done
-        inner = fig.to_html(full_html=False, include_plotlyjs=not plotly_js_done,
+    def section(sid, title, html_, sub=()):
+        """Numbered section + its table-of-contents entry (sub: [(id, label)] second-level entries)."""
+        toc.append(f'<a href="#{sid}">{_esc(title)}</a>')
+        toc.extend(f'<a class="l2" href="#{i}">{_esc(lbl)}</a>' for i, lbl in sub)
+        body.append(f'<section id="{sid}"><div class="eyebrow">{len(body) + 1:02d}</div>'
+                    f'<h2>{_esc(title)}</h2>{html_}</section>')
+
+    def fig_html(sec, title, fig, customised, clusters):
+        nonlocal plotly_js_done, n_fig
+        n_fig += 1
+        div_id, fname = f"fig{n_fig}", re.sub(r"\W+", "_", f"{sec}_{title}").lower()
+        if not customised:  # default figures take the column width; customised keep the user's size
+            fig.update_layout(width=None, autosize=True)
+        inner = fig.to_html(full_html=False, include_plotlyjs=not plotly_js_done, div_id=div_id,
                             config={"displaylogo": False, "responsive": True})
         plotly_js_done = True
-        note = ' <span class="note">(as customised in the app)</span>' if customised else ""
-        return f'<div class="plot"><div class="cap">{_esc(title)}{note}</div>{inner}</div>'
+        badge = '<span class="badge">customised in the app</span>' if customised else ""
+        buttons = ''.join(
+            f'<button onclick="Plotly.downloadImage(\'{div_id}\', {{format: \'{fmt}\', scale: {sc}, '
+            f'filename: \'{fname}\'}})">⬇ {fmt.upper()}</button>' for fmt, sc in (("png", 3), ("svg", 1)))
+        table = ""
+        if clusters is not None and not clusters.empty:
+            table = (f"<details open><summary>Terms per cluster ({clusters['Cluster'].nunique()} clusters)</summary>"
+                     f"{_table(clusters, fname + '_clusters')}</details>")
+        return (f'<div class="plot"><div class="plot-h"><span class="t">{_esc(title)}</span>{badge}'
+                f'<div class="dl">{buttons}</div></div><div class="plot-b">{inner}</div>{table}</div>')
 
-    body = []
-    if query:
-        body.append(f'<h2>Question</h2><div class="card query">{_md(query)}</div>')
-    body.append(f'<h2>Response</h2><div class="card response">{_md(content)}</div>')
-
-    if envelope.get("gene_info"):
-        body.append("<h2>Gene information</h2>" + _gene_html(envelope["gene_info"]))
-
+    calls = tool_calls_from_trace(envelope.get("reasoning_trace") or envelope.get("trace"))
     papers = envelope.get("full_literature_results") or envelope.get("literature")
-    if papers:
-        body.append(f"<h2>Literature search results</h2><p class='meta'>{len(papers)} papers</p>"
-                    + _table(_literature_table(papers)))
-
-    for key, title in (("enrichment_df", "Over-representation analysis (ORA)"), ("gsea_df", "GSEA")):
+    genes = envelope.get("gene_info")
+    genes = genes if isinstance(genes, list) else ([genes] if genes else [])
+    dfs = {}
+    for sec, key in (("ora", "enrichment_df"), ("gsea", "gsea_df")):
         df = envelope.get(key)
-        if isinstance(df, list):
-            df = pd.DataFrame(df)
-        if df is None or df.empty:
+        df = pd.DataFrame(df) if isinstance(df, list) else df
+        if df is not None and not df.empty:
+            dfs[sec] = df
+
+    # at a glance
+    tiles = [(len(calls), "tools run")]
+    if "ora" in dfs:
+        tiles.append((len(dfs["ora"]), "ORA significant terms"))
+    if "gsea" in dfs:
+        g = dfs["gsea"]
+        tiles.append((f"{int((g['nes'] > 0).sum())} ↑ / {int((g['nes'] < 0).sum())} ↓", "GSEA terms (NES)"))
+    if papers:
+        tiles.append((len(papers), "papers"))
+    if genes:
+        tiles.append((len(genes), "genes profiled"))
+    tiles_html = '<div class="tiles">' + "".join(
+        f'<div class="tile"><div class="v">{_esc(v)}</div><div class="k">{_esc(k)}</div></div>' for v, k in tiles) + "</div>"
+
+    if query:
+        section("question", "Question", f'<div class="card query">{_md(query)}</div>')
+    section("response", "Response", f'<div class="card response">{_md(content)}</div>')
+    if genes:
+        section("genes", "Gene information", _gene_html(genes))
+    if papers:
+        section("literature", "Literature", f"<p class='meta'>{len(papers)} papers</p>"
+                + _table(_literature_table(papers), "literature"))
+
+    for sec, title in (("ora", "Over-representation analysis (ORA)"), ("gsea", "Gene set enrichment analysis (GSEA)")):
+        if sec not in dfs:
             continue
-        sec = "ora" if key == "enrichment_df" else "gsea"
-        body.append(f"<h2>{title} results</h2><p class='meta'>{len(df)} significant terms</p>"
-                    + _table(_enrichment_table(df)))
-        for t, f, c in figures.get(sec, []):
-            body.append(fig_html(t, f, c))
+        df = dfs[sec]
+        parts = [f"<p class='meta'>{len(df)} significant terms across {df['library'].nunique()} libraries</p>",
+                 _table(_enrichment_table(df), f"{sec}_results")]
+        sub = []
+        for panel, label in PANELS:
+            figs = [f for f in figures.get(sec, []) if (f[4] if len(f) > 4 else "term") == panel]
+            if not figs:
+                continue
+            pid = f"{sec}-{panel}"
+            sub.append((pid, label.split(" ", 1)[1]))
+            parts.append(f'<div class="panel panel-{panel}" id="{pid}"><div class="panel-h">{label}</div>'
+                         + "".join(fig_html(sec, f[0], f[1], f[2], f[3]) for f in figs) + "</div>")
+        section(sec, title, "".join(parts), sub)
 
     db = envelope.get("full_db_results") or envelope.get("db")
     if isinstance(db, dict) and db.get("results"):
         rdf = pd.DataFrame(db["results"])
         cols = [c for c in ["term_name", "term_id", "library", "num_genes", "overlap_count", "matched_query",
                             "description"] if c in rdf.columns]
-        body.append(f"<h2>Database query results</h2><p class='meta'>Task: {_esc(db.get('task_performed', ''))}</p>"
-                    + _table(rdf[cols] if cols else rdf))
+        section("database", "Database query", f"<p class='meta'>Task: {_esc(db.get('task_performed', ''))}</p>"
+                + _table(rdf[cols] if cols else rdf, "database_results"))
 
-    body.append("<h2>Methodology</h2>" + _methods_html(envelope, tool_defaults or {}, model))
+    section("methods", "Methodology", _methods_html(envelope, tool_defaults or {}, model))
 
-    created = created or "time not recorded"
-    version = f" · version {APP_VERSION}" if APP_VERSION else ""
+    chips = [f"📅 Analysis {_esc(created or 'time not recorded')}", f"💾 Saved {datetime.now():%Y-%m-%d %H:%M}"]
+    if model:
+        chips.append(f"🤖 {_esc(model)}")
+    if APP_VERSION:
+        chips.append(f"🏷️ v{_esc(APP_VERSION)}")
     logo = f'<img src="data:image/jpeg;base64,{logo_b64}" alt="Enrich.AI logo">' if logo_b64 else ""
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Enrich.AI report</title><style>{CSS}</style></head>
-<body><div class="page">
-<header>{logo}<div><div class="name">Enrich.AI</div>
-<div class="sub">Agentic gene set enrichment analysis and biological interpretation{version}</div>
-<div class="sub">Analysis run {_esc(created)} · report saved {datetime.now():%Y-%m-%d %H:%M}</div></div></header>
-{''.join(body)}
-<footer>Generated with Enrich.AI · enrichai.streamlit.app</footer>
-</div></body></html>"""
+<body id="top">
+<header class="hero"><div class="hero-in">{logo}<div>
+<div class="wordmark">Enrich.AI</div>
+<div class="tagline">Agentic gene set enrichment analysis and biological interpretation</div>
+<div class="chips">{''.join(f'<span class="chip">{c}</span>' for c in chips)}</div>
+</div></div></header>
+<div class="layout">
+<nav class="toc"><div class="toc-title">Contents</div>{''.join(toc)}</nav>
+<main>{tiles_html}{''.join(body)}</main>
+</div>
+<footer><div class="cite"><b>How to cite.</b> {CITATION}<br>
+<span class="meta">Generated with Enrich.AI · <a href="https://enrichai.streamlit.app">enrichai.streamlit.app</a></span></div></footer>
+<a class="totop" href="#top" title="Back to top">↑</a>
+{SCROLLSPY}
+</body></html>"""

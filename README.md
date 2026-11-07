@@ -18,11 +18,11 @@ Give Enrich.AI a biological question in natural language. The model decides whic
 **6 autonomous tools:**
 
 - **Over-Representation Analysis (ORA)** - Statistical enrichment (Fisher's exact test) of a gene list against 222 Enrichr gene set libraries (GO, KEGG, Reactome, MSigDB, and more)
-- **Gene Set Enrichment Analysis (GSEA)** — Preranked GSEA (gseapy, fgsea multilevel) on an uploaded table with a score for every gene, against the same Enrichr libraries.
-- **Database Query** — Search Enrichr libraries for pathways, GO terms, and gene-term associations. Supports keyword search, term lookup, gene-set Jaccard similarity, and more
-- **Gene Information** — Gene function, GO annotations, pathway memberships, and disease associations via MyGene.info
-- **Literature Search** — Scientific paper search via Europe PMC with AI-scored relevance ratings
-- **Paper Annotations** — Text-mined genes, diseases, drugs, and GO terms extracted from full-text papers via Europe PMC
+- **Gene Set Enrichment Analysis (GSEA)** - Preranked GSEA (gseapy, fgsea multilevel) on an uploaded table with a score for every gene, against the same Enrichr libraries.
+- **Database Query** - Search Enrichr libraries for pathways, GO terms, and gene-term associations. Supports keyword search, term lookup, gene-set Jaccard similarity, and more
+- **Gene Information** - Gene function, GO annotations, pathway memberships, and disease associations via MyGene.info
+- **Literature Search** - Scientific paper search via Europe PMC with AI-scored relevance ratings
+- **Paper Annotations** - Text-mined genes, diseases, drugs, and GO terms extracted from full-text papers via Europe PMC
 
 **7 visualization types:** Bar plot, bubble chart, UpSet plot, hierarchical dendrogram, similarity heatmap with clustering, concept network (cnetplot) and GSEA enrichment plot. All include interactive controls and optional AI interpretation.
 

@@ -732,6 +732,7 @@ Do not state biological conclusions without evidence. Any claim tied to a specif
   Decide if the literature results answered the question or you want to reframe or have a differet one.
 - Use db_retrieve with short keyword queries to check pathway membership or term overlap.
 - Use get_gene_info to verify gene functions before making claims about their role.
+- A gene's membership in an enriched term supports a statement about the set, not about that gene's own function. State a gene's own role only if get_gene_info or a retrieved paper supports it; otherwise describe it as part of the set.
 - If a paper has full text available, you can retrieve it for deeper validation.
 Your credibility depends on grounding interpretation in data, not generating plausible-sounding text.
 

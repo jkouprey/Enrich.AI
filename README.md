@@ -7,7 +7,7 @@
 Powered by Google Gemini 2.5 Flash and orchestrated via LangGraph, Enrich.AI uses a ReAct (Reason → Act → Observe) reasoning loop to autonomously select tools, interpret results, and synthesize biological insights. It can be run either from Streamlit or locally.
 
 <div align="center">
-  <img src="assets/figure1.png" alt="Enrich.AI System Architecture" width="700" />
+  <img src="assets/figure1.png" alt="Enrich.AI System Architecture" width="100%" />
   <p><em>Figure 1. Enrich.AI system architecture — from user query to synthesized biological insight.</em></p>
 </div>
 
@@ -15,15 +15,16 @@ Powered by Google Gemini 2.5 Flash and orchestrated via LangGraph, Enrich.AI use
 
 Give Enrich.AI a biological question in natural language. The model decides which tools to call, in what order, and with what parameters.
 
-**5 autonomous tools:**
+**6 autonomous tools:**
 
-- **Enrichment Analysis** — Statistical enrichment (Fisher's exact test) against 222 Enrichr gene set libraries (GO, KEGG, Reactome, MSigDB, and more)
+- **Over-Representation Analysis (ORA)** - Statistical enrichment (Fisher's exact test) of a gene list against 222 Enrichr gene set libraries (GO, KEGG, Reactome, MSigDB, and more)
+- **Gene Set Enrichment Analysis (GSEA)** — Preranked GSEA (gseapy, fgsea multilevel) on an uploaded table with a score for every gene, against the same Enrichr libraries.
 - **Database Query** — Search Enrichr libraries for pathways, GO terms, and gene-term associations. Supports keyword search, term lookup, gene-set Jaccard similarity, and more
 - **Gene Information** — Gene function, GO annotations, pathway memberships, and disease associations via MyGene.info
 - **Literature Search** — Scientific paper search via Europe PMC with AI-scored relevance ratings
 - **Paper Annotations** — Text-mined genes, diseases, drugs, and GO terms extracted from full-text papers via Europe PMC
 
-**6 visualization types:** Bar plot, bubble chart, UpSet plot, hierarchical dendrogram, similarity heatmap with clustering, and concept network (cnetplot). All include interactive controls and optional AI interpretation.
+**7 visualization types:** Bar plot, bubble chart, UpSet plot, hierarchical dendrogram, similarity heatmap with clustering, concept network (cnetplot) and GSEA enrichment plot. All include interactive controls and optional AI interpretation.
 
 ## Quick Start
 
@@ -97,7 +98,8 @@ EnrichAI/
 ├── app.py                 # Streamlit UI and main application
 ├── reasoning_engine.py    # LangGraph ReAct agent and tool wrappers
 ├── tools.py               # Biological tool implementations (Enrichr, MyGene, Europe PMC)
-├── visualizer.py          # 6 plot types with AI interpretation
+├── visualizer.py          # 7 plot types with AI interpretation
+├── report.py              # HTML report export
 ├── config.py              # Model and logging configuration
 ├── tool_registry.py       # Enrichr library discovery
 ├── llm_factory.py         # Models  

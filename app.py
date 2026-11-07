@@ -29,6 +29,7 @@ from llm_factory import get_llm, get_utility_llm, complete_text
 from config import CONFIG
 from tool_registry import get_available_enrichr_libraries
 from visualizer import Visualizer, get_llm_interpretation, add_pdf_download_button, export_figure_to_pdf
+from report import build_report_html
 
 # Configure logging
 logging.basicConfig(level=getattr(logging, CONFIG["logging"]["level"], "INFO"))
@@ -855,6 +856,20 @@ def apply_fancy_styling():
         [data-testid="stChatInput"] div[data-baseweb="textarea"] {
             background: var(--bg-card) !important;
 }
+        /* Attach-file button and attached file chip (Streamlit default icon is dark grey) */
+        [data-testid="stChatInputFileUploadButton"] svg,
+        [data-testid="stChatInputDeleteBtn"] svg {
+            color: var(--text-secondary) !important;
+            fill: var(--text-secondary) !important;
+        }
+        [data-testid="stChatInputFileUploadButton"]:hover svg {
+            color: var(--text-primary) !important;
+            fill: var(--text-primary) !important;
+        }
+        [data-testid="stChatInputFile"],
+        [data-testid="stChatInputFileName"] {
+            color: var(--text-primary) !important;
+        }
 
         /* Buttons - General */
         .stButton > button {
@@ -2021,6 +2036,39 @@ def show_upset_dialog():
     _render_simple_dialog("upset", df)
 
 
+@st.dialog("📈 Enrichment Plot", width="large")
+def show_running_score_dialog():
+    """GSEA enrichment plot (running enrichment score) for a selected term"""
+    df = st.session_state.get("_enrichment_df")
+    plot_data = st.session_state.get("_gsea_plot_data") or {}
+    if df is None or not plot_data.get("terms"):
+        st.error("No data available")
+        return
+    st.markdown("<span class='wide-dialog'></span>", unsafe_allow_html=True)
+    st.session_state.pop("_pending_pdf", None)
+
+    terms = sorted(plot_data["terms"], key=lambda k: plot_data["terms"][k]["fdr"])  # most significant first
+    choice = st.selectbox("Term", terms, format_func=lambda k: k.replace("::", " · "),
+                          key="dlg_running_score_term")
+    with st.expander("Parameters", expanded=False):
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            width = st.slider("Width (px)", 200, 1500, 1000, step=50, key="dlg_running_score_w")
+        with col2:
+            height = st.slider("Height (px)", 200, 1500, 500, step=50, key="dlg_running_score_h")
+        with col3:
+            font_size = st.slider("Font size", 8, 16, 12, key="dlg_running_score_fs")
+    t = plot_data["terms"][choice]
+    library, term = choice.split("::", 1)
+    fig = get_visualizer().render_gsea_running_score(plot_data["ranking"], t["hits"], term, t["nes"], t["fdr"],
+                                                     font_size=font_size)
+    fig.update_layout(width=width, height=height)
+    st.plotly_chart(fig, use_container_width=False, key=f"dlg_running_score_fig_{width}_{height}_{font_size}")
+
+    _defer_pdf_button(fig, f"enrichment_plot_{term[:40]}.pdf", "pdf_running_score", width=width, height=height)
+    _render_plot_actions("running_score", df[(df["term"] == term) & (df["library"] == library)])
+
+
 DIALOG_FUNCTIONS = {
     "bar": show_bar_dialog,
     "bubble": show_bubble_dialog,
@@ -2028,7 +2076,12 @@ DIALOG_FUNCTIONS = {
     "similarity": show_similarity_dialog,
     "cnetplot": show_cnetplot_dialog,
     "upset": show_upset_dialog,
+    "running_score": show_running_score_dialog,
 }
+
+# GSEA-only card, shown in Term Analysis when GSEA results are displayed
+GSEA_PLOT_CONFIG = {"id": "running_score", "icon": "📈", "title": "Enrichment Plot",
+                    "desc": "GSEA running enrichment score"}
 
 
 def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
@@ -2053,6 +2106,14 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
     # Check available metrics
     has_combined_score = 'combined_score' in df.columns
     has_z_score = 'z_score' in df.columns
+    has_nes = 'nes' in df.columns  # GSEA
+
+    # Labels: GSEA p = FDR and genes = leading edge; ORA labels unchanged
+    P_LBL = "-log10(FDR)" if has_nes else "-log10(p-value)"
+    GC_LBL = "Leading-edge Genes" if has_nes else "Gene Count"
+    GR_LBL = "Leading-edge Ratio" if has_nes else "Gene Ratio"
+    HOV_GENES = "Leading-edge genes" if has_nes else "Genes"        # hover / size legend wording
+    SIZE_LBL = "Leading-edge genes" if has_nes else "Gene count"
 
     # Parameters in SLIDING EXPANDER
     with st.expander("Parameters", expanded=False):
@@ -2063,20 +2124,22 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
         with col2:
             # X-axis options differ for bar vs bubble
             if plot_id == "bar":
-                x_options = ["Gene Count", "-log10(p-value)"]
+                x_options = (["NES"] if has_nes else []) + [GC_LBL, P_LBL]
                 if has_combined_score:
                     x_options.append("Combined Score")
                 x_axis = st.selectbox("X-axis", x_options, key=f"dlg_{plot_id}_xaxis")
             else:  # bubble
-                x_options = ["-log10(p-value)"]
+                x_options = (["NES"] if has_nes else []) + [P_LBL]
                 if has_combined_score:
                     x_options.append("Combined Score")
-                x_options.append("Gene Ratio")
+                x_options.append(GR_LBL)
                 x_axis = st.selectbox("X-axis", x_options, key=f"dlg_{plot_id}_xaxis")
         with col3:
-            color_options = ["-log10(p-value)"]
+            color_options = [P_LBL]
             if has_combined_score:
                 color_options.append("Combined Score")
+            if has_nes:
+                color_options.append("NES")
             color_options.append("Library")
             color_by = st.selectbox("Color by", color_options, key=f"dlg_{plot_id}_colorby")
 
@@ -2139,18 +2202,22 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
 
     # Determine X and Color values based on selections
     x_col_map = {
-        "Gene Count": "gene_count",
-        "-log10(p-value)": "-log10p",
+        GC_LBL: "gene_count",
+        P_LBL: "-log10p",
         "Combined Score": "combined_score",
-        "Gene Ratio": "gene_ratio"
+        GR_LBL: "gene_ratio",
+        "NES": "nes"
     }
     color_col_map = {
-        "-log10(p-value)": "-log10p",
-        "Combined Score": "combined_score"
+        P_LBL: "-log10p",
+        "Combined Score": "combined_score",
+        "NES": "nes"
     }
 
     x_col = x_col_map.get(x_axis, "-log10p")
     color_col = color_col_map.get(color_by, "-log10p") if color_by != "Library" else None
+    # NES has a sign: always a diverging scale centred at 0 (red = up, blue = down)
+    nes_color = dict(colorscale="RdBu_r", cmid=0) if color_col == "nes" else dict(colorscale=palette)
 
     # Render plot
     if plot_id == "bar":
@@ -2206,7 +2273,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
                 orientation='h',
                 marker=dict(
                     color=plot_df[color_col],
-                    colorscale=palette,
+                    **nes_color,
                     showscale=True,
                     colorbar=dict(
                         title=dict(text=color_by, font=dict(color='black', size=font_size)),
@@ -2288,7 +2355,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
                         opacity=0.7,
                         line=dict(width=1, color='black')
                     ),
-                    hovertemplate=f"<b>%{{y}}</b><br>{x_axis}: %{{x:.2f}}<br>Genes: %{{customdata}}<br>Library: {lib}<extra></extra>",
+                    hovertemplate=f"<b>%{{y}}</b><br>{x_axis}: %{{x:.2f}}<br>{HOV_GENES}: %{{customdata}}<br>Library: {lib}<extra></extra>",
                     customdata=lib_df['gene_count']
                 ))
             fig.update_layout(
@@ -2307,7 +2374,7 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
                 marker=dict(
                     size=plot_df['bubble_size'],
                     color=plot_df[color_col],
-                    colorscale=palette,
+                    **nes_color,
                     showscale=True,
                     colorbar=dict(
                         title=dict(text=color_by, font=dict(color='black', size=font_size)),
@@ -2316,12 +2383,12 @@ def _render_bar_bubble_dialog(plot_id: str, df: pd.DataFrame):
                     opacity=0.7,
                     line=dict(width=1, color='black')
                 ),
-                hovertemplate=f"<b>%{{y}}</b><br>{x_axis}: %{{x:.2f}}<br>Genes: %{{customdata}}<extra></extra>",
+                hovertemplate=f"<b>%{{y}}</b><br>{x_axis}: %{{x:.2f}}<br>{HOV_GENES}: %{{customdata}}<extra></extra>",
                 customdata=plot_df['gene_count']
             ))
 
         # Add size legend annotation
-        size_legend_text = f"Bubble size: Gene count ({gene_min}-{gene_max})"
+        size_legend_text = f"Bubble size: {SIZE_LBL} ({gene_min}-{gene_max})"
 
         fig.update_layout(
             width=width, height=height,
@@ -2404,8 +2471,12 @@ def _term_selector(plot_id: str, df: pd.DataFrame, n_terms: int):
 
 
 def _defer_pdf_button(fig, filename: str, key: str, width: int = None, height: int = None):
-    """Stash the PDF-download args so the caller can put it beside the AI button."""
+    """Stash the PDF-download args so the caller can put it beside the AI button.
+    Also keeps this figure (as configured in the dialog) for the response's HTML report."""
     st.session_state["_pending_pdf"] = (fig, filename, key, width, height)
+    card, plot = st.session_state.get("_active_card"), st.session_state.get("_active_plot")
+    if card and plot:
+        st.session_state.setdefault("report_figs", {})[(card, plot)] = fig
 
 
 def _render_plot_actions(plot_id: str, df_for_interp):
@@ -2549,6 +2620,8 @@ def _render_simple_dialog(plot_id: str, df: pd.DataFrame):
 
             if "selected_genes_cnetplot" not in st.session_state:
                 st.session_state["selected_genes_cnetplot"] = all_genes[:default_n_genes]
+            st.session_state["selected_genes_cnetplot"] = [
+                g for g in st.session_state["selected_genes_cnetplot"] if g in all_genes]
 
             selected_genes = st.multiselect(
                 "Genes", options=all_genes,
@@ -2698,12 +2771,15 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
             plot_df = df.nsmallest(8, 'adjusted_p_value').copy()
             plot_df['-log10p'] = -np.log10(plot_df['adjusted_p_value'].replace(0, 1e-300))
             plot_df['term_short'] = plot_df['term'].apply(lambda x: x[:25] + "..." if len(str(x)) > 25 else x)
+            is_gsea = 'nes' in plot_df.columns
+            x_vals = plot_df['nes'] if is_gsea else plot_df['-log10p']
 
             fig = go.Figure(go.Bar(
                 y=plot_df['term_short'],
-                x=plot_df['-log10p'],
+                x=x_vals,
                 orientation='h',
-                marker=dict(color=plot_df['-log10p'], colorscale='Blues'),
+                marker=dict(color=x_vals, colorscale='RdBu_r', cmid=0) if is_gsea
+                else dict(color=plot_df['-log10p'], colorscale='Blues'),
             ))
             fig.update_layout(
                 width=900,
@@ -2711,7 +2787,7 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
                 paper_bgcolor='white',
                 plot_bgcolor='white',
                 yaxis=dict(categoryorder='total ascending'),
-                xaxis_title="-log10(p)",
+                xaxis_title="NES" if is_gsea else "-log10(p)",
                 margin=dict(l=180, r=30, t=30, b=50),
                 font=dict(size=14),
             )
@@ -2725,9 +2801,10 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
                 lambda x: len(x) if isinstance(x, list) else 1
             ) if 'genes' in plot_df.columns else 5
             plot_df['term_short'] = plot_df['term'].apply(lambda x: x[:20] + "..." if len(str(x)) > 20 else x)
+            is_gsea = 'nes' in plot_df.columns
 
             fig = go.Figure(go.Scatter(
-                x=plot_df['-log10p'],
+                x=plot_df['nes'] if is_gsea else plot_df['-log10p'],
                 y=plot_df['term_short'],
                 mode='markers',
                 marker=dict(
@@ -2746,7 +2823,7 @@ def _create_full_figure(plot_id: str, df: pd.DataFrame) -> Optional[go.Figure]:
                 height=550,
                 paper_bgcolor='white',
                 plot_bgcolor='white',
-                xaxis_title="-log10(p)",
+                xaxis_title="NES" if is_gsea else "-log10(p)",
                 margin=dict(l=180, r=30, t=30, b=50),
                 font=dict(size=14),
             )
@@ -2842,8 +2919,9 @@ def _style_df(df):
         {"selector": "td", "props": [("border", f"1px solid {_line}")]},
     ])
 
-def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_idx: int = None):
-    """Render enrichment results with Enrichr-style layout"""
+def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_idx: int = None,
+                              title: str = "📊 Enrichment Analysis Results"):
+    """Render enrichment results with Enrichr-style layout (ORA, or GSEA with an extra 'nes' column)"""
     if enrichment_df is None or enrichment_df.empty:
         return
 
@@ -2852,15 +2930,20 @@ def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_i
 
     st.session_state["_enrichment_df"] = enrichment_df
 
-    st.markdown("### 📊 Enrichment Analysis Results")
+    st.markdown(f"### {title}")
 
     # === METRICS ROW ===
     col1, col2, col3, col4 = st.columns(4)
+    is_gsea = "nes" in enrichment_df.columns
     with col1:
         st.metric("Total Terms", len(enrichment_df))
     with col2:
-        n_sig = len(enrichment_df[enrichment_df["adjusted_p_value"] < 0.05])
-        st.metric("Significant (p<0.05)", n_sig)
+        if is_gsea:
+            st.metric("Up / Down (NES)", f"{int((enrichment_df['nes'] > 0).sum())} / "
+                                         f"{int((enrichment_df['nes'] < 0).sum())}")
+        else:
+            n_sig = len(enrichment_df[enrichment_df["adjusted_p_value"] < 0.05])
+            st.metric("Significant (p<0.05)", n_sig)
     with col3:
         st.metric("Libraries", enrichment_df["library"].nunique())
     with col4:
@@ -2869,7 +2952,7 @@ def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_i
             for g in enrichment_df["genes"]:
                 if isinstance(g, list):
                     all_genes.update(g)
-            st.metric("Unique Genes", len(all_genes))
+            st.metric("Leading-edge Genes" if is_gsea else "Unique Genes", len(all_genes))
 
     st.markdown("<div style='height: 1rem;'></div>", unsafe_allow_html=True)
 
@@ -2985,6 +3068,9 @@ def render_enrichment_results(enrichment_df: pd.DataFrame, envelope: Dict, msg_i
                     unsafe_allow_html=True)
         for plot in PLOT_CONFIGS["term_plots"]:
             _render_plot_card(plot, enrichment_df, "term", _ks)
+        gsea_plot_data = (envelope or {}).get("gsea_plot_data") or {}
+        if "nes" in enrichment_df.columns and gsea_plot_data.get("terms"):
+            _render_plot_card(GSEA_PLOT_CONFIG, enrichment_df, "term", _ks, plot_data=gsea_plot_data)
 
     with col_clusters:
         st.markdown('<div class="viz-column-header viz-column-header-purple">🧬 Clustering</div>',
@@ -3026,8 +3112,22 @@ def _get_thumbnail_image(plot_id: str, df_hash: str, df_json: str, _version: str
         return None
 
 
-def _render_plot_card(plot_config: Dict, df: pd.DataFrame, theme: str, key_suffix: str = ""):
-    """Render a plot card with button + cached image thumbnail"""
+@st.cache_data(ttl=600, show_spinner=False)
+def _get_running_score_thumbnail(cache_key: str, _ranking: List[float], _hits: List[int],
+                                 title: str, nes: float, fdr: float) -> Optional[str]:
+    """Cached thumbnail of the GSEA enrichment plot (ranking/hits are not hashed; cache_key covers them)."""
+    import base64
+    try:
+        fig = Visualizer().render_gsea_running_score(_ranking, _hits, title, nes, fdr)
+        return base64.b64encode(fig.to_image(format="png", scale=2)).decode()
+    except Exception as e:
+        logger.warning(f"Thumbnail image generation failed for running_score: {e}")
+        return None
+
+
+def _render_plot_card(plot_config: Dict, df: pd.DataFrame, theme: str, key_suffix: str = "",
+                      plot_data: Optional[Dict] = None):
+    """Render a plot card with button + cached image thumbnail (plot_data: GSEA enrichment plot only)"""
     plot_id = plot_config["id"]
     icon = plot_config["icon"]
     title = plot_config["title"]
@@ -3041,6 +3141,18 @@ def _render_plot_card(plot_config: Dict, df: pd.DataFrame, theme: str, key_suffi
     ):
         dialog_func = DIALOG_FUNCTIONS.get(plot_id)
         if dialog_func:
+            st.session_state["_enrichment_df"] = df  # the clicked card's data (ORA or GSEA)
+            st.session_state["_gsea_plot_data"] = plot_data
+            # which response card / plot the dialog belongs to (HTML report keeps its figure)
+            st.session_state["_active_card"] = f"{st.session_state.current_session['id']}{key_suffix}"
+            st.session_state["_active_plot"] = plot_id
+            # Selections saved for another card (terms, libraries, genes, axes) are not valid here
+            data_id = hash((tuple(df["term"]), tuple(df["library"])))
+            if st.session_state.get("_enrichment_df_id") != data_id:
+                for k in [k for k in st.session_state if str(k).startswith(
+                        ("terms_select_", "prev_n_terms_", "lib_filter_", "selected_genes_", "genes_select_", "dlg_"))]:
+                    del st.session_state[k]
+                st.session_state["_enrichment_df_id"] = data_id
             dialog_func()
 
     # Create a hash of the dataframe for caching (handle list columns)
@@ -3055,7 +3167,14 @@ def _render_plot_card(plot_config: Dict, df: pd.DataFrame, theme: str, key_suffi
     df_hash = hashlib.md5(df_subset.to_json().encode()).hexdigest()
 
     # Get CACHED thumbnail image
-    img_b64 = _get_thumbnail_image(plot_id, df_hash, df.head(50).to_json())
+    if plot_data:  # GSEA enrichment plot: most significant term
+        name, t = min(plot_data["terms"].items(), key=lambda kv: kv[1]["fdr"])
+        key = hashlib.md5(json.dumps([name, t["hits"], len(plot_data["ranking"]),
+                                      plot_data["ranking"][:20]]).encode()).hexdigest()
+        img_b64 = _get_running_score_thumbnail(key, plot_data["ranking"], t["hits"],
+                                               name.split("::", 1)[1], t["nes"], t["fdr"])
+    else:
+        img_b64 = _get_thumbnail_image(plot_id, df_hash, df.head(50).to_json())
 
     if img_b64:
         # Smaller container, image fills 80%
@@ -3079,8 +3198,10 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
 
     # Build display columns - include z_score and combined_score if available
     display_df = df[['term', 'library', 'adjusted_p_value', 'overlap']].copy()
-    display_df['p-value'] = display_df['adjusted_p_value'].apply(lambda x: f"{x:.2e}")
-    display_df['-log10(p)'] = -np.log10(display_df['adjusted_p_value'].replace(0, 1e-300))
+    is_gsea = 'nes' in df.columns
+    p_col, lp_col = ("FDR", "-log10(FDR)") if is_gsea else ("p-value", "-log10(p)")
+    display_df[p_col] = display_df['adjusted_p_value'].apply(lambda x: f"{x:.2e}")
+    display_df[lp_col] = -np.log10(display_df['adjusted_p_value'].replace(0, 1e-300))
 
     # Add z_score if available
     if 'z_score' in df.columns:
@@ -3090,25 +3211,33 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
     if 'combined_score' in df.columns:
         display_df['combined_score'] = df['combined_score'].apply(lambda x: f"{x:.2f}" if pd.notna(x) else "N/A")
 
+    # GSEA: NES (sign = direction)
+    if 'nes' in df.columns:
+        display_df['NES'] = df['nes'].apply(lambda x: f"{x:.2f}")
+
     if 'genes' in df.columns:
-        display_df['genes'] = df['genes'].apply(
+        display_df['leading_edge' if is_gsea else 'genes'] = df['genes'].apply(
             lambda x: ", ".join(x[:5]) + f"... (+{len(x) - 5})" if isinstance(x, list) and len(x) > 5
             else ", ".join(x) if isinstance(x, list) else ""
         )
 
     # Build column order
-    cols = ['term', 'library', 'p-value', '-log10(p)']
+    cols = ['term', 'library', p_col, lp_col]
     if 'z_score' in display_df.columns:
         cols.append('z_score')
     if 'combined_score' in display_df.columns:
         cols.append('combined_score')
+    if 'NES' in display_df.columns:
+        cols.append('NES')
     cols.append('overlap')
     if 'genes' in display_df.columns:
         cols.append('genes')
+    if 'leading_edge' in display_df.columns:
+        cols.append('leading_edge')
 
     st.dataframe(_style_df(display_df[cols]), use_container_width=True, hide_index=True, height=400)
     csv = display_df.to_csv(index=False)
-    st.download_button("Download as CSV", csv, "enrichment_results.csv", "text/csv",
+    st.download_button("Download as CSV", csv, "gsea_results.csv" if is_gsea else "enrichment_results.csv", "text/csv",
                        key=f"dl_enrich_{hash(str(display_df.shape)) % 100000}{key_suffix}")
 
     st.markdown("---")
@@ -3120,8 +3249,11 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
     if visualizer and visualizer.llm:
         # Overall interpretation
         with st.expander("📊 Overall Biological Interpretation", expanded=True):
-            top_terms = df.nsmallest(15, 'adjusted_p_value')['term'].tolist()
-            prompt = """Provide a detailed biological interpretation of these enrichment results (3-4 paragraphs):
+            top = df.nsmallest(15, 'adjusted_p_value')
+            top_terms = ([f"{t} (NES {n:+.2f})" for t, n in zip(top['term'], top['nes'])]
+                         if is_gsea else top['term'].tolist())
+            prompt = ("These are preranked GSEA results: NES > 0 = enriched at the top of the ranking, "
+                      "NES < 0 = at the bottom.\n" if is_gsea else "") + """Provide a detailed biological interpretation of these enrichment results (3-4 paragraphs):
 1. Main biological themes and their significance
 2. Connections between pathways/terms
 3. Potential disease relevance
@@ -3137,6 +3269,17 @@ def _render_full_details(df: pd.DataFrame, key_suffix: str = ""):
 # MESSAGE DISPLAY
 # ===============================================================================
 
+def render_gsea_results(gsea_df: pd.DataFrame, envelope: Dict, msg_idx: int = None):
+    """GSEA: the same results card as ORA (genes = leading edge, p = FDR, plus NES);
+    the enrichment plot is an extra card in Term Analysis."""
+    full = envelope.get("full_gsea_results") or {}
+    render_enrichment_results(gsea_df, envelope, msg_idx=f"{msg_idx}_gsea", title="📈 GSEA Results")
+    st.caption(f"Ranking metric: {full.get('ranking_metric', '-')} · {full.get('method', '')} · "
+               f"{full.get('genes_ranked', '-')} genes ranked · genes = leading edge, p-value = FDR")
+
+
+
+
 def toggle_pin_message(idx):
     """Callback to toggle pin status of a message"""
     if "pinned_messages" not in st.session_state:
@@ -3146,6 +3289,85 @@ def toggle_pin_message(idx):
         st.session_state.pinned_messages.remove(idx)
     else:
         st.session_state.pinned_messages.append(idx)
+
+
+REPORT_PLOTS = [("bar", "Bar plot"), ("bubble", "Bubble chart"), ("upset", "UpSet plot"),
+                ("running_score", "Enrichment plot"), ("dendrogram", "Dendrogram"),
+                ("similarity", "Similarity clusters"), ("cnetplot", "Concept network")]
+
+
+def _report_figures(message_idx: int, envelope: Dict) -> Dict[str, list]:
+    """Figures of a response for the HTML report: the version configured in a plot dialog if the
+    user opened one, otherwise the default figure shown on the card."""
+    stored = st.session_state.get("report_figs", {})
+    sid = st.session_state.current_session["id"]
+    out = {}
+    for sec, key, suffix in (("ora", "enrichment_df", f"_{message_idx}"), ("gsea", "gsea_df", f"_{message_idx}_gsea")):
+        df = envelope.get(key)
+        if isinstance(df, list):
+            df = pd.DataFrame(df)
+        if df is None or df.empty:
+            continue
+        figs = []
+        for plot_id, title in REPORT_PLOTS:
+            fig, custom = stored.get((f"{sid}{suffix}", plot_id)), True
+            if plot_id == "running_score":
+                pdata = envelope.get("gsea_plot_data") or {}
+                if sec != "gsea" or not pdata.get("terms"):
+                    continue
+                if fig is None:
+                    name, t = min(pdata["terms"].items(), key=lambda kv: kv[1]["fdr"])
+                    fig = Visualizer().render_gsea_running_score(pdata["ranking"], t["hits"],
+                                                                 name.split("::", 1)[1], t["nes"], t["fdr"])
+                    custom = False
+            elif fig is None:
+                fig, custom = _create_full_figure(plot_id, df.sort_values("adjusted_p_value").head(50)), False
+            if fig is not None:
+                figs.append((title, go.Figure(fig), custom))
+        out[sec] = figs
+    return out
+
+
+def _report_tool_defaults() -> Dict[str, Dict]:
+    """Default parameter values of every agent tool, from the tools' input schemas."""
+    import reasoning_engine as re_mod
+    schemas = {"get_gene_info": "GeneInfoInput", "db_retrieve": "DbRetrieveInput",
+               "run_enrichment_analysis": "EnrichmentInput", "run_gsea": "GSEAInput",
+               "search_literature": "LiteratureSearchInput", "get_paper_annotations": "PaperAnnotationsInput"}
+    out = {}
+    for tool, cls in schemas.items():
+        model = getattr(re_mod, cls, None)
+        if model is not None:
+            out[tool] = {k: f.default for k, f in model.model_fields.items() if not f.is_required()}
+    return out
+
+
+def _render_report_button(message: Dict, message_idx: int, query: str):
+    """'Create HTML report' -> builds it (with the plots as currently configured) -> download button.
+    A built report is offered again only while its plots are unchanged."""
+    sid = st.session_state.current_session["id"]
+    cards = (f"{sid}_{message_idx}", f"{sid}_{message_idx}_gsea")
+    sig = tuple(sorted((k[1] + k[0][-5:], id(v)) for k, v in st.session_state.get("report_figs", {}).items()
+                       if k[0] in cards))
+    reports = st.session_state.setdefault("reports", {})
+    ready = reports.get(cards[0])
+    if ready and ready["sig"] == sig:
+        st.download_button("⬇️ Download HTML report", ready["html"], file_name=ready["name"], mime="text/html",
+                           key=f"dl_report_{message_idx}", on_click="ignore")
+    elif st.button("📄 Create HTML report", key=f"mk_report_{message_idx}",
+                   help="Response, tables, plots (as you set them) and methods in one HTML file"):
+        import base64
+        with st.spinner("Building report..."):
+            envelope = message.get("envelope") or {}
+            logo = Path(__file__).parent / "assets" / "dimitris_tool_icon.jpeg"
+            html_doc = build_report_html(
+                message.get("content", ""), envelope, query=query,
+                figures=_report_figures(message_idx, envelope), tool_defaults=_report_tool_defaults(),
+                model=message.get("model", ""), created=message.get("created", ""),
+                logo_b64=base64.b64encode(logo.read_bytes()).decode() if logo.exists() else "")
+        reports[cards[0]] = {"html": html_doc, "sig": sig,
+                             "name": f"enrichai_report_{datetime.now():%Y%m%d_%H%M}.html"}
+        st.rerun()
 
 
 def display_message_card(message: Dict, message_idx: int = None, previous_user_message: str = ""):
@@ -3234,6 +3456,11 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
                 if not enrichment_df.empty:
                     render_enrichment_results(enrichment_df, envelope, msg_idx=message_idx)
 
+            # GSEA results
+            gsea_df = envelope.get("gsea_df")
+            if gsea_df is not None and not gsea_df.empty:
+                render_gsea_results(gsea_df, envelope, msg_idx=message_idx)
+
             # Database results
             db_results = envelope.get("full_db_results") or envelope.get("db")
             if db_results:
@@ -3251,6 +3478,10 @@ def display_message_card(message: Dict, message_idx: int = None, previous_user_m
         else:
             # No tools used - just show the response directly
             st.markdown(content)
+
+        # === HTML REPORT ===
+        if message_idx is not None:
+            _render_report_button(message, message_idx, previous_user_message)
 
         # === EXECUTION DETAILS - ENHANCED REACT DISPLAY ===
         with st.expander("⚙️ Execution Details", expanded=False):
@@ -3535,6 +3766,12 @@ def generate_response_summary(content: str, envelope: Dict) -> str:
                 top_terms = df.nsmallest(5, 'adjusted_p_value')[
                     'term'].tolist() if 'adjusted_p_value' in df.columns else df['term'].head(5).tolist()
                 context_parts.append(f"Enrichment: {n_terms} terms including {', '.join(top_terms)}")
+
+        gdf = envelope.get("gsea_df")
+        if isinstance(gdf, pd.DataFrame) and not gdf.empty:
+            top = gdf.nsmallest(5, 'adjusted_p_value')
+            context_parts.append("GSEA: " + f"{len(gdf)} terms including " + ", ".join(
+                f"{t} (NES {n:+.2f})" for t, n in zip(top['term'], top['nes'])))
 
         papers = envelope.get("full_literature_results") or envelope.get("literature", [])
         if papers:
@@ -3938,7 +4175,7 @@ def render_followup_suggestions(envelope: Dict, msg_idx: int = None):
         if symbol:
             suggestions.append(f"Find papers about {symbol}")
 
-    if envelope.get("enrichment_df") is not None:
+    if envelope.get("enrichment_df") is not None or envelope.get("gsea_df") is not None:
         suggestions.append("Explain the top pathway in detail")
 
     if not suggestions:
@@ -4007,7 +4244,7 @@ def render_overview_page():
         </div>
         <div style="flex:1; padding:1.1rem 1rem; background:linear-gradient(135deg, #2d1b4e 0%, #1f1635 100%); border-radius:10px; border-left:3px solid #8b5cf6;">
             <div style="color:#c4b5fd; font-weight:700; font-size:0.95rem; letter-spacing:0.5px; margin-bottom:0.4rem;">ACT</div>
-            <div style="color:#cbd5e1; font-size:0.8rem; line-height:1.45;">Call biological tools — enrichment analysis, literature search, gene info, database queries.</div>
+            <div style="color:#cbd5e1; font-size:0.8rem; line-height:1.45;">Call biological tools — enrichment analysis (ORA or GSEA), literature search, gene info, database queries.</div>
         </div>
         <div style="flex:1; padding:1.1rem 1rem; background:linear-gradient(135deg, #0c3547 0%, #0f2130 100%); border-radius:10px; border-left:3px solid #06b6d4;">
             <div style="color:#67e8f9; font-weight:700; font-size:0.95rem; letter-spacing:0.5px; margin-bottom:0.4rem;">OBSERVE</div>
@@ -4030,7 +4267,7 @@ def render_overview_page():
 
     # ── 3. FUNCTIONS ──
     st.markdown("### Autonomous Functions")
-    st.markdown("The agent has access to **5 tools** connecting to external biological databases. "
+    st.markdown("The agent has access to **6 tools** connecting to external biological databases. "
                 "It decides which to call, in what order, and with what parameters.")
 
     with st.expander("**Gene Information** — MyGene.info", expanded=False):
@@ -4136,25 +4373,80 @@ def render_overview_page():
             ]
         })
 
-    with st.expander("**Enrichment Analysis** — Enrichr", expanded=False):
+    with st.expander("**Over-Representation Analysis (ORA)** — Enrichr", expanded=False):
         st.markdown("""
-        **What it does:** Performs statistical enrichment analysis (Fisher\'s exact test) on a gene list 
-        against selected Enrichr libraries. Returns enriched terms ranked by adjusted p-value, 
-        with gene overlap, odds ratio, and combined score. Minimum 4 genes required.
+        **What it does:** Performs over-representation analysis (Fisher\'s exact test, Benjamini–Hochberg 
+        adjusted) on an **unranked gene list** against selected Enrichr libraries. Returns enriched terms 
+        ranked by adjusted p-value, with gene overlap, odds ratio, and combined score. Minimum 4 genes required.
+        Genes can be pasted in chat, or **selected from an uploaded table** with a filter the agent writes 
+        (e.g. `padj < 0.05 and log2FoldChange > 1`).
 
         **Data source:** [Enrichr](https://maayanlab.cloud/Enrichr) — tests against 222 gene set libraries. 
         Default: GO BP, GO MF, GO CC, KEGG, Reactome, MSigDB Hallmark.
         """)
         st.markdown("**Parameters:**")
         st.table({
-            "Parameter": ["genes", "libraries", "p_value_threshold", "top_n"],
-            "Type": ["str", "str", "float", "int"],
-            "Default": ["— (required)", "None (defaults)", "0.05", "None (all)"],
+            "Parameter": ["genes", "libraries", "p_value_threshold", "top_n",
+                          "table_name", "gene_column", "table_filter"],
+            "Type": ["str", "str", "float", "int", "str", "str", "str"],
+            "Default": ["'' (or use table_filter)", "None (defaults)", "0.05", "None (all)",
+                        "None (latest upload)", "None", "None"],
             "Description": [
                 "Comma-separated gene symbols (minimum 4 genes)",
                 "Comma-separated Enrichr libraries to test",
                 "Adjusted p-value cutoff for significance",
-                "Max terms per library. None = all significant."
+                "Max terms per library. None = all significant.",
+                "Uploaded table to take genes from",
+                "Gene symbol column of the uploaded table",
+                "pandas query selecting genes from the table"
+            ]
+        })
+
+    with st.expander("**Gene Set Enrichment Analysis (GSEA)** — gseapy", expanded=False):
+        st.markdown("""
+        **What it does:** Performs **preranked GSEA** on an uploaded table that has a score for every 
+        gene (e.g. a differential expression table attached in the chat as CSV/TSV). Unlike ORA, it uses 
+        the **whole ranking** instead of a cut-off list, so weak but coordinated shifts across a gene set 
+        are detected, and every term gets a **direction**. The agent chooses the gene column and the ranking 
+        metric from the table's columns: an existing statistic (e.g. DESeq2 `stat`, limma `t`) or 
+        sign(logFC) × −log10(p). Returns terms with the **normalized enrichment score (NES)**, FDR, and 
+        **leading-edge genes** (the genes driving each signal).
+
+        **Input:** a **CSV or TSV file** attached in the chat (paperclip icon in the chat box), with at least 
+        **2 columns**: gene symbols and a score per gene. The **first row must be a header** with the 
+        column names, for example:
+        """)
+        st.code("gene,score\nTP53,2.31\nMYC,1.87\nEGFR,-0.42", language=None)
+        st.markdown("""
+        A full differential expression 
+        table also works (e.g. DESeq2 or limma output with `log2FoldChange`, `stat`, `pvalue`, `padj` columns); 
+        the agent picks the gene column and the ranking metric. Gene symbols must match the libraries 
+        (e.g. HGNC symbols for human); all genes should be included, not only the significant ones.
+
+        **Statistics:** [gseapy](https://gseapy.readthedocs.io) preranked GSEA with **fgsea multilevel** 
+        p-values (Korotkevich et al., 2021), Benjamini–Hochberg FDR per library, fixed seed (42) so the 
+        same input always gives the same result.
+
+        **Data source:** the same [Enrichr](https://maayanlab.cloud/Enrichr) gene set libraries as ORA.
+        """)
+        st.markdown("**Parameters:**")
+        st.table({
+            "Parameter": ["gene_column", "score_column", "logfc_column", "pvalue_column", "table_name",
+                          "libraries", "fdr_threshold", "top_n", "min_size", "max_size"],
+            "Type": ["str", "str", "str", "str", "str", "str", "float", "int", "int", "int"],
+            "Default": ["— (required)", "None", "None", "None", "None (latest upload)",
+                        "None (defaults)", "0.05", "None (all)", "15", "500"],
+            "Description": [
+                "Column holding gene symbols",
+                "Column to rank genes by (e.g. stat, t, logFC)",
+                "Log fold-change column (if no score_column)",
+                "P-value column (if no score_column)",
+                "Uploaded table to use",
+                "Comma-separated Enrichr libraries to test",
+                "FDR cutoff for reporting terms",
+                "Max terms per library. None = all significant.",
+                "Minimum gene-set size after matching to the ranking",
+                "Maximum gene-set size after matching to the ranking"
             ]
         })
 
@@ -4206,6 +4498,12 @@ def render_overview_page():
     st.markdown("### Interactive Visualizations")
     st.markdown("Enrichment results generate **6 interactive visualizations** across three categories. "
                 "All are built with **Plotly**, support PDF export, and can be interpreted by the AI.")
+    st.markdown("""
+    > **ORA and GSEA share the same plots.** For GSEA, significance is the **FDR**, the genes are the 
+    > **leading-edge genes**, and the bar and bubble plots can also show the **NES** (default axis; 
+    > coloured red = up, blue = down). GSEA results add a 7th plot, the **Enrichment Plot** in Term Analysis 
+    > (below).
+    """)
 
     def _make_icon_bar():
         fig = go.Figure(go.Bar(x=[8,6,5,4,3], y=["A","B","C","D","E"], orientation='h',
@@ -4285,6 +4583,18 @@ def render_overview_page():
             xaxis=dict(visible=False, range=[-0.05,1.05]), yaxis=dict(visible=False, range=[0.05,0.95]))
         return fig
 
+    def _make_icon_enrichment():
+        x = np.linspace(0, 1, 60)
+        es = np.where(x < 0.25, x / 0.25 * 0.8, 0.8 * (1 - (x - 0.25) / 0.75))
+        ticks = [0.02, 0.05, 0.08, 0.1, 0.13, 0.17, 0.2, 0.24, 0.35, 0.5, 0.7]
+        fig = go.Figure(go.Scatter(x=x, y=es, mode='lines', line=dict(color='#2ecc71', width=4)))
+        for t in ticks:
+            fig.add_shape(type='line', x0=t, x1=t, y0=-0.25, y1=-0.08, line=dict(color='#888', width=2))
+        fig.update_layout(height=180, width=180, margin=dict(l=0,r=0,t=0,b=0), showlegend=False,
+            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+            xaxis=dict(visible=False), yaxis=dict(visible=False, range=[-0.3, 0.9]))
+        return fig
+
     plot_config = {'displayModeBar': False, 'staticPlot': True}
 
     viz_items = [
@@ -4293,17 +4603,27 @@ def render_overview_page():
              "Enriched terms are ranked by **-log₁₀(adjusted p-value)** from the Enrichr Fisher's exact test. "
              "The transformation converts small p-values into large bars, making the most statistically "
              "significant terms visually prominent. Color encodes the same significance gradient. "
-             "Built directly from Enrichr's `adjusted_p_value` column."),
+             "Built directly from Enrichr's `adjusted_p_value` column. "
+             "*GSEA:* bars show the **NES** (positive = up, negative = down) or -log₁₀(FDR)."),
             ("Bubble Plot", _make_icon_bubble,
              "Two-dimensional encoding: the **x-axis** maps -log₁₀(adjusted p-value) for significance, "
              "while **bubble diameter** scales with the number of overlapping genes between the input list "
              "and the gene set. This separates terms that are significant but involve few genes from "
-             "those with broad gene involvement. Same Enrichr data, additional `gene_count` dimension."),
+             "those with broad gene involvement. Same Enrichr data, additional `gene_count` dimension. "
+             "*GSEA:* x-axis NES or -log₁₀(FDR); bubble size = number of **leading-edge genes**."),
             ("UpSet Plot", _make_icon_upset,
              "Computes **all pairwise and higher-order gene set intersections** between the top enriched terms. "
              "For each term, the set of overlapping genes is extracted. All 2ⁿ possible combinations are evaluated, "
              "and the intersection size (shared gene count) is plotted as a bar. The dot matrix below indicates "
-             "which terms participate in each intersection. More scalable than Venn diagrams for >3 sets."),
+             "which terms participate in each intersection. More scalable than Venn diagrams for >3 sets. "
+             "*GSEA:* intersections of the terms' **leading-edge genes**."),
+            ("Enrichment Plot (GSEA only)", _make_icon_enrichment,
+             "The classic GSEA plot for one selected term. **Top:** the running enrichment score, walking down "
+             "the ranked gene list and going up at each gene in the set and down otherwise; its maximum deviation "
+             "from zero is the enrichment score (normalized to NES). **Middle:** a tick for each gene of the set at "
+             "its position in the ranking — ticks bunched on the left mean the set is enriched among the top-ranked "
+             "genes (positive NES), on the right among the bottom-ranked (negative NES). **Bottom:** the ranking "
+             "metric. Built from gseapy's preranked GSEA output; shown only for GSEA results."),
         ]),
         ("Clustering", [
             ("Dendrogram", _make_icon_dendrogram,
@@ -4369,8 +4689,9 @@ def render_overview_page():
     2. **Write anything in the chat** — Enrich.AI understands natural language queries about biology
     3. **For enrichment analysis:**
        - Libraries can be selected from the **Enrichr Libraries** button in the sidebar, or specified manually in chat
-       - Paste your gene list directly in chat (e.g., *"Perform enrichment analysis on TP53, BRCA1, MYC, EGFR, AKT1"*)
-       - Minimum **4 genes** required for statistical enrichment
+       - **ORA:** paste your gene list directly in chat (e.g., *"Perform enrichment analysis on TP53, BRCA1, MYC, EGFR, AKT1"*). Minimum **4 genes** required
+       - **GSEA:** attach a **CSV/TSV table with a score for every gene** (e.g. your DESeq2/limma results) using the attach button in the chat box, and ask for GSEA (e.g., *"Run GSEA on this table"*)
+       - With a table attached you can also ask for ORA on part of it (e.g., *"ORA on the genes with padj < 0.05 and logFC > 1"*); if you don't say which method, the agent decides and tells you which one it ran
     4. **For literature search:** Ask naturally (e.g., *"Find papers about TP53 in lung cancer"*)
     5. **For gene info:** Ask naturally (e.g., *"What does BRCA1 do?"*)
     6. **Follow up** — the system remembers context, so you can refine and ask follow-up questions
@@ -4404,52 +4725,71 @@ def render_overview_page():
         "You need **Python 3.10+** and a free **Google Gemini API key**."
     )
 
-    st.markdown("#### Option A — Conda (recommended)")
+    st.markdown("#### Option A — pip")
     st.html("""
-    <div style="background: #000000; border: 1px solid #1e293b; border-radius: 10px;
-                padding: 1.1rem 1.3rem; margin: 0.5rem 0 1.5rem 0; overflow-x: auto;">
-<pre style="margin: 0; color: #e2e8f0; font-size: 0.84rem; line-height: 1.75;
-            font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
-            background: transparent; white-space: pre; overflow-x: auto;">
-<span style="color: #6b7280; font-style: italic;"># 1. Clone the repository</span>
-<span style="color: #f472b6;">git</span> <span style="color: #22d3ee;">clone</span> https://github.com/jkouprey/Enrich.AI.git
-<span style="color: #f472b6;">cd</span> EnrichAI
+        <div style="background: #000000; border: 1px solid #1e293b; border-radius: 10px;
+                    padding: 1.1rem 1.3rem; margin: 0.5rem 0 1.5rem 0; overflow-x: auto;">
+    <pre style="margin: 0; color: #e2e8f0; font-size: 0.84rem; line-height: 1.75;
+                font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+                background: transparent; white-space: pre; overflow-x: auto;">
+    <span style="color: #6b7280; font-style: italic;"># 1. Clone the repository</span>
+    <span style="color: #f472b6;">git</span> <span style="color: #22d3ee;">clone</span> https://github.com/jkouprey/EnrichAI.git
+    <span style="color: #f472b6;">cd</span> EnrichAI
 
-<span style="color: #6b7280; font-style: italic;"># 2. Create the conda environment</span>
-<span style="color: #f472b6;">conda</span> <span style="color: #22d3ee;">env create</span> -f environment.yml
+    <span style="color: #6b7280; font-style: italic;"># 2. Install dependencies</span>
+    <span style="color: #f472b6;">pip</span> <span style="color: #22d3ee;">install</span> -r requirements.txt
 
-<span style="color: #6b7280; font-style: italic;"># 3. Activate</span>
-<span style="color: #f472b6;">conda</span> <span style="color: #22d3ee;">activate</span> enrichai
+    <span style="color: #6b7280; font-style: italic;"># 3. Launch</span>
+    <span style="color: #f472b6;">streamlit</span> <span style="color: #22d3ee;">run</span> app.py
+    </pre>
+        </div>
+        """)
 
-<span style="color: #6b7280; font-style: italic;"># 4. Launch</span>
-<span style="color: #f472b6;">streamlit</span> <span style="color: #22d3ee;">run</span> app.py
-</pre>
-    </div>
-    """)
-
-    st.markdown("#### Option B — pip + virtual environment")
+    st.markdown("#### Option B — Conda")
     st.html("""
-    <div style="background: #000000; border: 1px solid #1e293b; border-radius: 10px;
-                padding: 1.1rem 1.3rem; margin: 0.5rem 0 1.5rem 0; overflow-x: auto;">
-<pre style="margin: 0; color: #e2e8f0; font-size: 0.84rem; line-height: 1.75;
-            font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
-            background: transparent; white-space: pre; overflow-x: auto;">
-<span style="color: #6b7280; font-style: italic;"># 1. Clone the repository</span>
-<span style="color: #f472b6;">git</span> <span style="color: #22d3ee;">clone</span> https://github.com/jkouprey/Enrich.AI.git
-<span style="color: #f472b6;">cd</span> EnrichAI
+        <div style="background: #000000; border: 1px solid #1e293b; border-radius: 10px;
+                    padding: 1.1rem 1.3rem; margin: 0.5rem 0 1.5rem 0; overflow-x: auto;">
+    <pre style="margin: 0; color: #e2e8f0; font-size: 0.84rem; line-height: 1.75;
+                font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+                background: transparent; white-space: pre; overflow-x: auto;">
+    <span style="color: #6b7280; font-style: italic;"># 1. Clone the repository</span>
+    <span style="color: #f472b6;">git</span> <span style="color: #22d3ee;">clone</span> https://github.com/jkouprey/EnrichAI.git
+    <span style="color: #f472b6;">cd</span> EnrichAI
 
-<span style="color: #6b7280; font-style: italic;"># 2. Create a virtual environment</span>
-<span style="color: #f472b6;">python</span> -m venv venv
-<span style="color: #f472b6;">source</span> venv/bin/activate   <span style="color: #6b7280; font-style: italic;"># Windows: venv&#92;Scripts&#92;activate</span>
+    <span style="color: #6b7280; font-style: italic;"># 2. Create and activate the conda environment</span>
+    <span style="color: #f472b6;">conda</span> <span style="color: #22d3ee;">create</span> -n enrichai python=3.11 -y
+    <span style="color: #f472b6;">conda</span> <span style="color: #22d3ee;">activate</span> enrichai
 
-<span style="color: #6b7280; font-style: italic;"># 3. Install dependencies</span>
-<span style="color: #f472b6;">pip</span> <span style="color: #22d3ee;">install</span> -r requirements.txt
+    <span style="color: #6b7280; font-style: italic;"># 3. Install dependencies</span>
+    <span style="color: #f472b6;">pip</span> <span style="color: #22d3ee;">install</span> -r requirements.txt
 
-<span style="color: #6b7280; font-style: italic;"># 4. Launch</span>
-<span style="color: #f472b6;">streamlit</span> <span style="color: #22d3ee;">run</span> app.py
-</pre>
-    </div>
-    """)
+    <span style="color: #6b7280; font-style: italic;"># 4. Launch</span>
+    <span style="color: #f472b6;">streamlit</span> <span style="color: #22d3ee;">run</span> app.py
+    </pre>
+        </div>
+        """)
+
+    st.markdown("#### Windows")
+    st.html("""
+        <div style="background: #000000; border: 1px solid #1e293b; border-radius: 10px;
+                    padding: 1.1rem 1.3rem; margin: 0.5rem 0 1.5rem 0; overflow-x: auto;">
+    <pre style="margin: 0; color: #e2e8f0; font-size: 0.84rem; line-height: 1.75;
+                font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+                background: transparent; white-space: pre; overflow-x: auto;">
+    <span style="color: #6b7280; font-style: italic;"># 1. Download the folder (GitHub: Code &#8594; Download ZIP) and extract it</span>
+    <span style="color: #6b7280; font-style: italic;"># 2. Open cmd and navigate into the extracted folder</span>
+    <span style="color: #f472b6;">cd</span> path&#92;to&#92;EnrichAI
+
+    <span style="color: #6b7280; font-style: italic;"># 3. Create a virtual environment and install dependencies</span>
+    <span style="color: #f472b6;">python</span> -m venv .venv
+    .venv&#92;Scripts&#92;activate
+    <span style="color: #f472b6;">pip</span> <span style="color: #22d3ee;">install</span> -r requirements.txt
+
+    <span style="color: #6b7280; font-style: italic;"># 4. Launch</span>
+    <span style="color: #f472b6;">streamlit</span> <span style="color: #22d3ee;">run</span> app.py
+    </pre>
+        </div>
+        """)
 
     st.markdown("#### API Key Configuration")
     st.markdown("""
@@ -4495,10 +4835,11 @@ EnrichAI/
 &#9500;&#9472;&#9472; <span style="color: #22d3ee;">reasoning_engine.py</span>   <span style="color: #6b7280;"># LangGraph ReAct agent</span>
 &#9500;&#9472;&#9472; <span style="color: #22d3ee;">tools.py</span>              <span style="color: #6b7280;"># Biological database functions</span>
 &#9500;&#9472;&#9472; <span style="color: #22d3ee;">visualizer.py</span>         <span style="color: #6b7280;"># Plot rendering &amp; AI interpretation</span>
+&#9500;&#9472;&#9472; <span style="color: #22d3ee;">report.py</span>             <span style="color: #6b7280;"># HTML report export</span>
 &#9500;&#9472;&#9472; <span style="color: #22d3ee;">config.py</span>             <span style="color: #6b7280;"># Model &amp; logging configuration</span>
+&#9500;&#9472;&#9472; <span style="color: #22d3ee;">llm_factory.py</span>        <span style="color: #6b7280;"># LLM provider clients (Gemini, OpenAI, Groq)</span>
 &#9500;&#9472;&#9472; <span style="color: #22d3ee;">tool_registry.py</span>      <span style="color: #6b7280;"># Enrichr library browser</span>
 &#9500;&#9472;&#9472; <span style="color: #c084fc;">requirements.txt</span>      <span style="color: #6b7280;"># pip dependencies</span>
-&#9500;&#9472;&#9472; <span style="color: #c084fc;">environment.yml</span>       <span style="color: #6b7280;"># Conda environment</span>
 &#9492;&#9472;&#9472; assets/
     &#9492;&#9472;&#9472; <span style="color: #34d399;">figure1.png</span>       <span style="color: #6b7280;"># Architecture diagram</span>
 </pre>
@@ -4880,6 +5221,7 @@ def handle_user_query(query: str):
         # inherit gene lists / results from earlier chats in the same browser session.
         engine = st.session_state.reasoning_engine
         engine.previous_envelopes = st.session_state.current_session.setdefault("engine_memory", [])
+        engine.uploaded_tables = st.session_state.current_session.setdefault("uploaded_tables", {})
         result = engine.run(
             query,
             selected_libraries=st.session_state.selected_libraries or None,
@@ -4951,7 +5293,9 @@ def render_chat_interface():
 
         if result:
             st.session_state.current_session["messages"].append({
-                "role": "assistant", "content": result["content"], "envelope": result["envelope"]
+                "role": "assistant", "content": result["content"], "envelope": result["envelope"],
+                "model": "{} · {}".format(*get_active_llm_choice()[:2]),
+                "created": datetime.now().strftime("%Y-%m-%d %H:%M"),
             })
             save_current_session()
             st.session_state.scroll_to_bottom = True
@@ -4962,12 +5306,23 @@ def render_chat_interface():
         st.session_state.pending_query = None
         _process_query(query)
 
-    # Chat input
-    user_query = st.chat_input("Ask about genes, pathways, literature...",
+    # Chat input (a CSV/TSV table, e.g. a DE results table, can be attached)
+    user_input = st.chat_input("Ask about genes, pathways, literature... (attach a CSV/TSV table)",
+                               accept_file=True, file_type=["csv", "tsv", "txt"],
                                disabled=st.session_state.get("processing", False))
 
-    if user_query:
-        _process_query(user_query)
+    if user_input:
+        query = (user_input.text or "").strip()
+        for f in user_input.files:
+            try:
+                table = pd.read_csv(f, sep=None, engine="python")  # first row = header
+            except Exception as e:
+                st.error(f"Could not read {f.name}: {e}")
+                continue
+            st.session_state.current_session.setdefault("uploaded_tables", {})[f.name] = table
+            query = f"{query}\n\n📎 {f.name}".strip() if query else f"I uploaded {f.name}."
+        if query:
+            _process_query(query)
 
 
 def main():

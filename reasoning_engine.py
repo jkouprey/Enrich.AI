@@ -85,7 +85,9 @@ from tools import (
     db_retrieve,
     run_enrichment_analysis,
     search_literature,
-    get_paper_annotations
+    get_paper_annotations,
+    build_ranking,
+    run_gsea_prerank
 )
 
 logger = logging.getLogger(__name__)
@@ -108,6 +110,11 @@ class MergedEnvelope:
     # === ENRICHMENT (FULL DATA) ===
     enrichment_df: Optional[pd.DataFrame] = None
     full_enrichment_results: Optional[Dict] = None  # Complete API response
+
+    # === GSEA (FULL DATA) ===
+    gsea_df: Optional[pd.DataFrame] = None
+    full_gsea_results: Optional[Dict] = None
+    gsea_plot_data: Optional[Dict] = None  # ranked scores + hit positions (not sent to the LLM)
 
     # === LITERATURE (FULL DATA) ===
     literature: Optional[List[Dict]] = None  # Top results for display
@@ -174,10 +181,31 @@ class DbRetrieveInput(BaseModel):
 
 
 class EnrichmentInput(BaseModel):
-    genes: str = Field(description="Comma-separated gene symbols (minimum 4 genes)")
+    genes: str = Field(default="", description="Comma-separated gene symbols (minimum 4 genes). "
+                       "Leave empty when selecting genes from an uploaded table with table_filter.")
     libraries: Optional[str] = Field(default=None, description="Comma-separated Enrichr libraries to test. None = default set.")
     p_value_threshold: float = Field(default=0.05, description="Adjusted p-value cutoff for significance")
     top_n: Optional[int] = Field(default=None, description="Max terms per library. None = all significant terms.")
+    table_name: Optional[str] = Field(default=None, description="Uploaded table to take genes from. None = most recent upload.")
+    gene_column: Optional[str] = Field(default=None, description="Gene symbol column of the uploaded table.")
+    table_filter: Optional[str] = Field(default=None, description=(
+        "pandas query selecting genes from the uploaded table, e.g. 'padj < 0.05 and log2FoldChange > 1'. "
+        "Wrap column names with spaces in backticks."))
+
+
+class GSEAInput(BaseModel):
+    gene_column: str = Field(description="Column of the uploaded table holding gene symbols.")
+    score_column: Optional[str] = Field(default=None, description=(
+        "Column to rank genes by (e.g. DESeq2 'stat', limma 't', or a logFC). "
+        "Leave empty to build sign(logFC) * -log10(p) from logfc_column and pvalue_column."))
+    logfc_column: Optional[str] = Field(default=None, description="Log fold-change column (used when score_column is empty).")
+    pvalue_column: Optional[str] = Field(default=None, description="P-value column (used when score_column is empty).")
+    table_name: Optional[str] = Field(default=None, description="Uploaded table to use. None = most recent upload.")
+    libraries: Optional[str] = Field(default=None, description="Comma-separated Enrichr libraries. None = default set.")
+    fdr_threshold: float = Field(default=0.05, description="FDR cutoff for reporting terms.")
+    top_n: Optional[int] = Field(default=None, description="Max terms per library. None = all significant terms.")
+    min_size: int = Field(default=15, description="Minimum gene-set size after matching to the ranking.")
+    max_size: int = Field(default=500, description="Maximum gene-set size after matching to the ranking.")
 
 
 class LiteratureSearchInput(BaseModel):
@@ -390,6 +418,62 @@ def _wrap_enrichment_analysis(
         return json.dumps(output, indent=2, default=str)
     except Exception as e:
         return json.dumps({"error": str(e), "tool": "run_enrichment_analysis"})
+
+
+def _wrap_gsea(table: pd.DataFrame, gene_column: str, score_column: Optional[str] = None,
+               logfc_column: Optional[str] = None, pvalue_column: Optional[str] = None,
+               libraries: Optional[str] = None, fdr_threshold: float = 0.05,
+               top_n: Optional[int] = None, min_size: int = 15, max_size: int = 500):
+    """Wrapper - returns (JSON for the LLM, plot data kept out of the LLM context)"""
+    try:
+        ranking = build_ranking(table, gene_column, score_column, logfc_column, pvalue_column)
+        libs = [lib.strip() for lib in libraries.split(",") if lib.strip()] if libraries else None
+        if not libs and st:
+            try:
+                libs = list(st.session_state.get("selected_libraries", [])) or None
+            except Exception:
+                pass
+
+        result = run_gsea_prerank(ranking, libraries=libs, fdr_threshold=fdr_threshold,
+                                  top_n=top_n, min_size=min_size, max_size=max_size)
+        plot_data = result.pop("_plot_data", None)
+        result["ranking_metric"] = score_column or f"sign({logfc_column}) * -log10({pvalue_column})"
+
+        summary_parts = ["=== PRERANKED GSEA SUMMARY ===",
+                         f"Method: {result['method']}",
+                         f"Ranking metric: {result['ranking_metric']}",
+                         f"Genes ranked: {result['genes_ranked']}",
+                         f"Total significant terms (FDR <= {fdr_threshold}): {result['significant_terms_total']}",
+                         f"Libraries tested: {', '.join(result['libraries_tested'])}",
+                         f"Ranked genes found in each library: {result['gene_match']}"]
+        for w in result.get("warnings", []):
+            summary_parts.append(f"WARNING - {w}")
+        if result.get("libraries_failed"):
+            summary_parts.append("WARNING - these libraries could NOT be tested: " + "; ".join(
+                f"{f.get('library')} ({f.get('error')})" for f in result["libraries_failed"]))
+        summary_parts.append("")
+
+        for library, terms in result.get("gsea_results", {}).items():
+            for direction, label in (("up", "positive NES - top of the ranking"),
+                                     ("down", "negative NES - bottom of the ranking")):
+                sel = [t for t in terms if t["direction"] == direction]
+                summary_parts.append(f"--- {library}: {len(sel)} terms with {label} ---")
+                for i, t in enumerate(sel, 1):
+                    lead = t["leading_edge"]
+                    summary_parts.append(
+                        f"  {i}. {t['term_name']} (NES={t['nes']:.2f}, FDR={t['fdr']:.2e}, "
+                        f"leading edge {len(lead)}/{t['set_size']}: {', '.join(lead[:8])}"
+                        f"{'...' if len(lead) > 8 else ''})")
+            summary_parts.append("")
+
+        summary_parts.append("=== INTERPRETATION GUIDE ===")
+        summary_parts.append("- NES sign gives direction relative to the ranking metric; |NES| gives strength")
+        summary_parts.append("- Leading-edge genes drive each enrichment signal")
+
+        return json.dumps({"summary": "\n".join(summary_parts), "full_results": result},
+                          indent=2, default=str), plot_data
+    except Exception as e:
+        return json.dumps({"error": str(e), "tool": "run_gsea"}), None
 
 
 def _score_paper_relevance(query: str, papers: List[Dict], llm) -> List[Dict]:
@@ -864,6 +948,7 @@ def verify_citations(text: str, papers: List[Dict]) -> tuple:
 _EXPLICIT_ANALYSIS_PHRASES = (
     "enrichment",
     "over-representation", "overrepresentation",
+    "gsea",
     "pathway analysis",
     "gene info", "gene information",
     "literature search", "search the literature", "search literature",
@@ -898,11 +983,11 @@ CURRENT QUESTION: <query>" and appends a hint that itself
     text = texts[-1]
     if "CURRENT QUESTION:" in text:
         text = text.rsplit("CURRENT QUESTION:", 1)[1]
-    marker = "[USER HAS SELECTED THESE ENRICHR LIBRARIES:"
-    if marker in text:
-        head, _, rest = text.partition(marker)
-        _, _, tail = rest.partition("]")
-        text = head + " " + tail
+    for marker in ("[USER HAS SELECTED THESE ENRICHR LIBRARIES:", "[UPLOADED TABLE:"):
+        while marker in text:
+            head, _, rest = text.partition(marker)
+            _, _, tail = rest.partition("]")
+            text = head + " " + tail
     return text
 
 
@@ -980,6 +1065,11 @@ class ReasoningEngine:
         self.previous_envelopes: List[Dict] = []
         self.max_memory_envelopes = 10  # Keep last 10 queries
 
+        # Tables the user uploaded in this chat ({file name: DataFrame}); set by app.py.
+        # Kept out of the prompt - the agent sees a short description and the tools read them.
+        self.uploaded_tables: Dict[str, pd.DataFrame] = {}
+        self._gsea_plot_data: Dict = {}
+
         # Rate limiting
         self.last_call_time = 0
         self.min_call_interval = 1.0
@@ -1039,6 +1129,48 @@ class ReasoningEngine:
                 scoring_llm=self.utility_llm,
             )
 
+        def _get_table(table_name: Optional[str]):
+            tables = self.uploaded_tables or {}
+            if not tables:
+                raise ValueError("No table has been uploaded in this chat.")
+            if table_name:
+                if table_name not in tables:
+                    raise ValueError(f"No uploaded table '{table_name}'. Available: {list(tables)}")
+                return tables[table_name]
+            return tables[list(tables)[-1]]
+
+        def _gsea_tool(gene_column: str, score_column: Optional[str] = None,
+                       logfc_column: Optional[str] = None, pvalue_column: Optional[str] = None,
+                       table_name: Optional[str] = None, libraries: Optional[str] = None,
+                       fdr_threshold: float = 0.05, top_n: Optional[int] = None,
+                       min_size: int = 15, max_size: int = 500) -> str:
+            try:
+                table = _get_table(table_name)
+            except ValueError as e:
+                return json.dumps({"error": str(e), "tool": "run_gsea"})
+            output, plot_data = _wrap_gsea(table, gene_column, score_column, logfc_column, pvalue_column,
+                                           libraries, fdr_threshold, top_n, min_size, max_size)
+            if plot_data:
+                self._gsea_plot_data = plot_data
+            return output
+
+        def _enrichment_tool(genes: str = "", libraries: Optional[str] = None,
+                             p_value_threshold: float = 0.05, top_n: Optional[int] = None,
+                             table_name: Optional[str] = None, gene_column: Optional[str] = None,
+                             table_filter: Optional[str] = None) -> str:
+            if table_filter:
+                try:
+                    table = _get_table(table_name)
+                    if not gene_column:
+                        raise ValueError("gene_column is required with table_filter.")
+                    selected = table.query(table_filter)[gene_column].dropna().astype(str)
+                    genes = ",".join(selected)
+                except Exception as e:
+                    return json.dumps({"error": f"Could not select genes from the table: {e}",
+                                       "tool": "run_enrichment_analysis"})
+            return _wrap_enrichment_analysis(genes=genes, libraries=libraries,
+                                             p_value_threshold=p_value_threshold, top_n=top_n)
+
         # Create tools with proper schemas
         self.tools = [
             StructuredTool.from_function(
@@ -1068,14 +1200,28 @@ class ReasoningEngine:
                 args_schema=DbRetrieveInput
             ),
             StructuredTool.from_function(
-                func=_wrap_enrichment_analysis,
+                func=_enrichment_tool,
                 name="run_enrichment_analysis",
                 description=(
-                    "Run statistical enrichment analysis on a gene list (minimum 4 genes). "
-                    "Tests against Enrichr libraries and returns significantly enriched terms "
-                    "with adjusted p-values, combined scores, and overlapping genes."
+                    "Run over-representation analysis (ORA, Fisher's exact test via Enrichr) on an "
+                    "unranked gene list (minimum 4 genes). Genes can be given directly, or selected "
+                    "from an uploaded table with table_filter. Tests against Enrichr libraries and "
+                    "returns significantly enriched terms with adjusted p-values, combined scores, "
+                    "and overlapping genes."
                 ),
                 args_schema=EnrichmentInput
+            ),
+            StructuredTool.from_function(
+                func=_gsea_tool,
+                name="run_gsea",
+                description=(
+                    "Run preranked gene set enrichment analysis (GSEA) on an uploaded table that has "
+                    "a score for every gene (e.g. a differential expression table). Uses the whole "
+                    "ranking rather than a cut-off list. You choose the gene column and the ranking "
+                    "metric from the table's columns. Tests against Enrichr libraries and returns "
+                    "terms with NES (direction and strength), FDR and leading-edge genes."
+                ),
+                args_schema=GSEAInput
             ),
             StructuredTool.from_function(
                 func=_search_literature_with_scoring,
@@ -1210,6 +1356,20 @@ class ReasoningEngine:
                             more = f" (+{len(terms) - 5} more)" if len(terms) > 5 else ""
                             context_parts.append(f"    {lib}: {'; '.join(names)}{more}")
 
+            gsea = envelope.get("full_gsea_results") or {}
+            if gsea.get("gsea_results"):
+                context_parts.append("\nGSEA Results:")
+                context_parts.append(f"  Ranking metric: {gsea.get('ranking_metric', '')}, "
+                                     f"genes ranked: {gsea.get('genes_ranked', 0)}")
+                for lib, terms in gsea["gsea_results"].items():
+                    shown = terms if is_most_recent else terms[:5]
+                    context_parts.append(f"    {lib} ({len(terms)} significant terms):")
+                    for t in shown:
+                        lead = t.get("leading_edge", [])
+                        genes_txt = f", leading edge: {', '.join(lead[:10])}" if is_most_recent else ""
+                        context_parts.append(f"      - {t.get('term_name', '')} "
+                                             f"(NES={t.get('nes', 0):.2f}, FDR={t.get('fdr', 1):.2e}{genes_txt})")
+
             lit = envelope.get("full_literature_results") or []
             if lit:
                 if is_most_recent:
@@ -1292,6 +1452,8 @@ class ReasoningEngine:
         results = {
             "enrichment": None,
             "enrichment_df": None,
+            "gsea": None,
+            "gsea_df": None,
             "literature": [],
             "gene_info": [],
             "db_results": [],
@@ -1466,6 +1628,19 @@ class ReasoningEngine:
                         if rows:
                             results["enrichment_df"] = pd.DataFrame(rows)
 
+                elif tool_name == "run_gsea":
+                    results["gsea"] = obs_data
+                    # Same columns as ORA so the existing plots/table work: FDR -> adjusted_p_value,
+                    # leading edge -> genes, leading edge / set size -> overlap; plus NES.
+                    rows = [{"term": t.get("term", ""), "library": lib, "nes": t.get("nes", 0.0),
+                             "direction": t.get("direction", ""), "p_value": t.get("p_value", 1.0),
+                             "adjusted_p_value": t.get("fdr", 1.0),
+                             "overlap": f"{len(t.get('leading_edge', []))}/{t.get('set_size', '')}",
+                             "genes": t.get("leading_edge", [])}
+                            for lib, terms in (obs_data.get("gsea_results") or {}).items() for t in terms]
+                    if rows:
+                        results["gsea_df"] = pd.DataFrame(rows)
+
                 elif tool_name == "search_literature":
                     if obs_data.get("papers"):
                         results["literature"].extend(obs_data["papers"])
@@ -1544,6 +1719,8 @@ class ReasoningEngine:
         results = {
             "enrichment": None,
             "enrichment_df": None,
+            "gsea": None,
+            "gsea_df": None,
             "literature": [],
             "gene_info": [],
             "db_results": [],
@@ -1663,6 +1840,7 @@ class ReasoningEngine:
         start_time = time.time()
         self.query_id = str(uuid.uuid4())[:8]
         self.envelope = MergedEnvelope(query_id=self.query_id)
+        self._gsea_plot_data = {}
 
         if st:
             st.session_state.current_query_id = self.query_id
@@ -1702,6 +1880,13 @@ class ReasoningEngine:
                 self.envelope.enrichment_df = result["enrichment_df"]
             if result.get("enrichment"):
                 self.envelope.full_enrichment_results = result["enrichment"]
+
+            # GSEA - COMPLETE data (+ plot data that never went to the LLM)
+            if result.get("gsea_df") is not None:
+                self.envelope.gsea_df = result["gsea_df"]
+                self.envelope.gsea_plot_data = self._gsea_plot_data or None
+            if result.get("gsea"):
+                self.envelope.full_gsea_results = result["gsea"]
 
             # Literature - ALL papers
             if result.get("literature"):
@@ -1784,6 +1969,15 @@ class ReasoningEngine:
                 f"Use these libraries for any enrichment analysis unless the user specifies otherwise.]"
             )
 
+        # Describe uploaded tables (not their contents) so the agent can decide how to use them
+        if self.uploaded_tables:
+            for name, df in self.uploaded_tables.items():
+                cols = ", ".join(f"{c} ({df[c].dtype})" for c in df.columns)
+                augmented_query += (
+                    f"\n\n[UPLOADED TABLE: '{name}', {len(df)} rows. Columns: {cols}. "
+                    f"First rows:\n{df.head(3).to_string(index=False)}]"
+                )
+
         try:
             if LANGGRAPH_AVAILABLE and self.use_langgraph:
                 return self._run_langgraph_agent(augmented_query)
@@ -1815,6 +2009,7 @@ class ReasoningEngine:
         result = None
         PRETTY = {
             "run_enrichment_analysis": "Running enrichment analysis",
+            "run_gsea": "Running GSEA",
             "search_literature": "Searching literature",
             "db_retrieve": "Querying databases",
             "get_gene_info": "Looking up gene information",
@@ -1877,6 +2072,8 @@ class ReasoningEngine:
             "reasoning_steps": extracted.get("reasoning_steps", []),
             "enrichment": extracted.get("enrichment"),
             "enrichment_df": extracted.get("enrichment_df"),
+            "gsea": extracted.get("gsea"),
+            "gsea_df": extracted.get("gsea_df"),
             "literature": extracted.get("literature", []),
             "db_results": extracted.get("db_results", []),
             "gene_info": extracted.get("gene_info", [])

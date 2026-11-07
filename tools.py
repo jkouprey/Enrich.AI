@@ -1091,6 +1091,149 @@ def run_enrichment_analysis(
 
 
 # ===============================================================================
+# FUNCTION 3b: PRERANKED GSEA (gseapy, fgsea multilevel)
+# ===============================================================================
+
+def build_ranking(
+        table: pd.DataFrame,
+        gene_column: str,
+        score_column: Optional[str] = None,
+        logfc_column: Optional[str] = None,
+        pvalue_column: Optional[str] = None
+) -> pd.Series:
+    """Turn an uploaded table into a gene -> score ranking.
+
+    Either an existing score column (e.g. DESeq2 'stat', limma 't'), or
+    sign(logFC) * -log10(p) built from a logFC and a p-value column.
+    Genes are upper-cased (as for ORA); duplicates keep the largest |score|.
+    """
+    import numpy as np
+
+    missing = [c for c in (gene_column, score_column, logfc_column, pvalue_column)
+               if c and c not in table.columns]
+    if missing:
+        raise ValueError(f"Column(s) {missing} not in the table. Available: {list(table.columns)}")
+
+    if score_column:
+        score = pd.to_numeric(table[score_column], errors="coerce")
+    elif logfc_column and pvalue_column:
+        p = pd.to_numeric(table[pvalue_column], errors="coerce").clip(lower=1e-300)
+        score = np.sign(pd.to_numeric(table[logfc_column], errors="coerce")) * -np.log10(p)
+    else:
+        raise ValueError("Give score_column, or both logfc_column and pvalue_column.")
+
+    genes = table[gene_column].astype(str).str.strip().str.upper()
+    ranking = pd.DataFrame({"gene": genes, "score": score}).dropna()
+    ranking = ranking[(ranking["gene"] != "") & (ranking["gene"] != "NAN")]
+    ranking = ranking.loc[ranking["score"].abs().sort_values(ascending=False).index]
+    ranking = ranking.drop_duplicates("gene")
+    return ranking.set_index("gene")["score"].sort_values(ascending=False)
+
+
+def run_gsea_prerank(
+        ranking: pd.Series,
+        libraries: Optional[List[str]] = None,
+        fdr_threshold: float = 0.05,
+        top_n: Optional[int] = None,
+        min_size: int = 15,
+        max_size: int = 500,
+        seed: int = 42
+) -> Dict[str, Any]:
+    """Preranked GSEA with gseapy (fgsea multilevel p-values) on Enrichr libraries.
+
+    Each library is tested separately, so FDR is per library (as for ORA).
+    Fixed seed -> identical results for identical input.
+    Returns the result dict plus "_plot_data" (ranked scores + hit positions of
+    the reported terms) for the running-score plot; the caller removes it before
+    the result is shown to the LLM.
+    """
+    import gseapy as gp
+
+    if libraries is None:
+        libraries = [
+            "GO_Biological_Process_2023",
+            "KEGG_2021_Human",
+            "Reactome_2022",
+            "MSigDB_Hallmark_2020"
+        ]
+
+    start_time = time.time()
+    results = {
+        "method": "preranked GSEA (gseapy, fgsea multilevel)",
+        "genes_ranked": int(len(ranking)),
+        "libraries_tested": libraries,
+        "libraries_failed": [],
+        "gene_match": {},
+        "gsea_results": {},
+        "significant_terms_total": 0,
+        "parameters": {"fdr_threshold": fdr_threshold, "min_size": min_size,
+                       "max_size": max_size, "seed": seed},
+        "warnings": [],
+    }
+    plot_data = {"ranking": ranking.values.astype("float32").tolist(), "terms": {}}
+
+    for library in libraries:
+        try:
+            lib_data = _fetch_enrichr_library_data(library)
+            gene_sets = {t: v["genes"] for t, v in lib_data.items() if v.get("genes")}
+            if not gene_sets:
+                results["libraries_failed"].append({"library": library, "error": "library could not be loaded"})
+                continue
+
+            lib_genes = {g.upper() for genes in gene_sets.values() for g in genes}
+            matched = int(ranking.index.isin(lib_genes).sum())
+            results["gene_match"][library] = f"{matched}/{len(ranking)}"
+            if matched < 0.5 * len(ranking):
+                results["warnings"].append(
+                    f"{library}: only {matched}/{len(ranking)} ranked genes are in the library - "
+                    "check that genes are symbols (not Ensembl/Entrez IDs) and the organism matches."
+                )
+
+            res = gp.prerank(rnk=ranking, gene_sets=gene_sets, method="multilevel",
+                             min_size=min_size, max_size=max_size, seed=seed,
+                             threads=2, outdir=None, no_plot=True, verbose=False)
+
+            df = res.res2d.copy()
+            df["NES"] = pd.to_numeric(df["NES"], errors="coerce")
+            df["FDR q-val"] = pd.to_numeric(df["FDR q-val"], errors="coerce")
+            df["NOM p-val"] = pd.to_numeric(df["NOM p-val"], errors="coerce")
+            df = df[df["FDR q-val"] <= fdr_threshold].sort_values("FDR q-val")
+            if top_n is not None:
+                df = df.head(top_n)
+
+            terms = []
+            for _, row in df.iterrows():
+                lead = [g for g in str(row["Lead_genes"]).split(";") if g]
+                terms.append({
+                    "term": row["Term"],
+                    "term_name": row["Term"],
+                    "nes": round(float(row["NES"]), 3),
+                    "direction": "up" if row["NES"] > 0 else "down",
+                    "p_value": float(row["NOM p-val"]),
+                    "fdr": float(row["FDR q-val"]),
+                    "set_size": str(row["Tag %"]).split("/")[-1],
+                    "leading_edge": lead,
+                })
+                plot_data["terms"][f"{library}::{row['Term']}"] = {
+                    "hits": [int(h) for h in res.results[row["Term"]]["hits"]],
+                    "nes": float(row["NES"]), "fdr": float(row["FDR q-val"]),
+                }
+
+            if terms:
+                results["gsea_results"][library] = terms
+                results["significant_terms_total"] += len(terms)
+
+        except Exception as e:
+            logger.warning(f"GSEA failed for library {library}: {e}")
+            results["libraries_failed"].append({"library": library, "error": str(e)})
+
+    results["execution_time"] = round(time.time() - start_time, 2)
+    results["_plot_data"] = plot_data
+    logger.info(f"GSEA complete: {results['significant_terms_total']} significant terms")
+    return results
+
+
+# ===============================================================================
 # FUNCTION 4: SEARCH LITERATURE (Europe PMC - Abstracts)
 # ===============================================================================
 

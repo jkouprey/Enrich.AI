@@ -146,6 +146,8 @@ class Visualizer:
         "upset": "UpSet Plot shows gene set intersections. Bars indicate shared genes between term combinations.",
         "similarity": "Similarity Clusters group terms by semantic and gene overlap similarity.",
         "cnetplot": "Concept Network shows term-gene relationships. Terms connected to their member genes.",
+        "running_score": "GSEA Enrichment Plot: running enrichment score along the ranked gene list for one term; "
+                         "black ticks mark where the term's genes sit in the ranking, the peak is the enrichment score.",
     }
 
     def get_plot_interpretation(self, plot_type: str, df: pd.DataFrame) -> str:
@@ -153,13 +155,15 @@ class Visualizer:
         if not self.llm:
             return "Enable an API key for interpretation."
 
-        top_terms = (
-            df.nsmallest(8, 'adjusted_p_value')['term'].tolist()
-            if 'adjusted_p_value' in df.columns
-            else df['term'].head(8).tolist()
-        )
+        top = df.nsmallest(8, 'adjusted_p_value') if 'adjusted_p_value' in df.columns else df.head(8)
+        is_gsea = 'nes' in df.columns
+        top_terms = ([f"{t} (NES {n:+.2f})" for t, n in zip(top['term'], top['nes'])]
+                     if is_gsea else top['term'].tolist())
 
         desc = self.PLOT_DESCRIPTIONS.get(plot_type, "visualization")
+        if is_gsea:  # same plots, GSEA meaning: p = FDR, genes = leading edge, NES sign = direction
+            desc += (" These are preranked GSEA results: significance is FDR, genes are leading-edge genes, "
+                     "NES > 0 = enriched at the top of the ranking, NES < 0 = at the bottom.")
         prompt = f"""This is a {desc}.
 
 For these enrichment results with top terms: {top_terms[:5]}
@@ -248,6 +252,9 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
 
         df_subset['gene_count'] = df_subset['genes'].apply(lambda x: len(x) if isinstance(x, list) else 0)
         df_subset['-log10p'] = -np.log10(df_subset['adjusted_p_value'].replace(0, np.finfo(float).tiny))
+        is_gsea = 'nes' in df_subset.columns
+        p_lbl = "-log10(FDR)" if is_gsea else "-log10(p)"
+        nes_by_term = dict(zip(df_subset['term'], df_subset['nes'])) if is_gsea else {}
 
         # Compute similarity matrix
         sim_matrix, terms, df_top = self._compute_term_similarity_matrix(df_subset, len(df_subset))
@@ -397,7 +404,7 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
                 cmin=min(log_pvals) if log_pvals else 0,
                 cmax=max(log_pvals) if log_pvals else 5,
                 colorbar=dict(
-                    title=dict(text='-log10(p)', font=dict(size=font_size, color='black')),
+                    title=dict(text=p_lbl, font=dict(size=font_size, color='black')),
                     x=1.02,
                     len=0.4,
                     y=0.8,
@@ -406,7 +413,8 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
                 ),
                 line=dict(width=0.5, color='black')
             ),
-            hovertext=[f"{t}<br>Genes: {g}<br>-log10(p): {p:.2f}"
+            hovertext=[f"{t}<br>{'Leading-edge genes' if is_gsea else 'Genes'}: {g}<br>{p_lbl}: {p:.2f}"
+                       + (f"<br>NES: {nes_by_term[t]:+.2f}" if t in nes_by_term else "")
                        for t, g, p in zip(terms_ordered, gene_counts, log_pvals)],
             hoverinfo='text',
             showlegend=False
@@ -1400,3 +1408,37 @@ Provide 2-3 sentences explaining what this plot reveals about this specific data
                                    max_genes=max_genes, font_size=font_size, show_labels=show_labels)
 
         return fig, cluster_term_data, cluster_names
+
+    # ── GSEA plots ──
+
+    def render_gsea_running_score(self, ranking: List[float], hits: List[int], title: str,
+                                  nes: float, fdr: float, font_size: int = 12) -> go.Figure:
+        """Classic GSEA plot: running enrichment score, gene-set hits, ranked metric."""
+        scores = np.asarray(ranking, dtype=float)
+        hit = np.zeros(len(scores))
+        hit[hits] = 1
+        weight = np.abs(scores) * hit
+        res = np.cumsum(weight) / weight.sum() - np.cumsum(1 - hit) / (len(scores) - hit.sum())
+        x = np.arange(len(scores))
+
+        fig = make_subplots(rows=3, cols=1, shared_xaxes=True, row_heights=[0.6, 0.12, 0.28],
+                            vertical_spacing=0.02)
+        fig.add_trace(go.Scatter(x=x, y=res, mode="lines", line=dict(color="#2ca02c", width=2),
+                                 hovertemplate="Rank %{x}<br>ES %{y:.3f}<extra></extra>"), row=1, col=1)
+        fig.add_trace(go.Scatter(x=np.repeat(hits, 3), y=np.tile([0, 1, None], len(hits)), mode="lines",
+                                 line=dict(color="black", width=1), hoverinfo="skip"), row=2, col=1)
+        fig.add_trace(go.Scatter(x=x, y=scores, mode="lines", fill="tozeroy", line=dict(color="#7f7f7f"),
+                                 hovertemplate="Rank %{x}<br>Score %{y:.2f}<extra></extra>"), row=3, col=1)
+        fig.update_layout(
+            title=dict(text=f"{title}<br><sup>NES = {nes:.2f}, FDR = {fdr:.2e}</sup>",
+                       font=dict(color="black", size=font_size + 2)),
+            showlegend=False, height=480, paper_bgcolor="white", plot_bgcolor="white",
+            font=dict(color="black", size=font_size), margin=dict(l=80, r=10, t=70, b=40),
+        )
+        fig.update_yaxes(automargin=True)
+        fig.update_yaxes(title_text="Enrichment score", gridcolor="#eee", zerolinecolor="black",
+                         color="black", row=1, col=1)
+        fig.update_yaxes(showticklabels=False, showgrid=False, row=2, col=1)
+        fig.update_yaxes(title_text="Ranked metric", gridcolor="#eee", color="black", row=3, col=1)
+        fig.update_xaxes(title_text="Rank in ordered gene list", color="black", row=3, col=1)
+        return fig
